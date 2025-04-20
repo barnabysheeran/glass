@@ -8,10 +8,12 @@
   "scripts": {
     "start": "webpack serve --config script/webpack.config.development.js",
     "build": "webpack --config script/webpack.config.production.js",
+    "lint": "run-s lint:*",
     "lint:js": "eslint . || exit 0",
     "lint:todo": "leasot \"src/**/*.{js,css,html}\" || exit 0",
-    "lint": "run-s lint:*",
-    "depcruise": "depcruise --config ./tool/depcruise/config.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph.svg"
+    "depcruise": "run-s depcruise:*",
+    "depcruise:all": "depcruise --config ./tool/depcruise/config-all.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-all.svg",
+    "depcruise:selected": "depcruise --config ./tool/depcruise/config-selected.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-selected.svg"
   },
   "dependencies": {
   },
