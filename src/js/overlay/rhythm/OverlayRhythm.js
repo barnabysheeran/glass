@@ -1,6 +1,6 @@
 // import ApplicationLogger from '../../application/ApplicationLogger';
 
-import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil';
+import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil.js';
 
 export default class OverlayRhythm {
 	#HOLDER;

@@ -1,6 +1,6 @@
 // import ApplicationLogger from '../../application/ApplicationLogger';
 
-import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil';
+import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil.js';
 
 export default class OverlayFormat {
 	#HOLDER;
@@ -29,21 +29,21 @@ export default class OverlayFormat {
 		// Create Buttons
 		this.#BUTTON_WIDE_2_39_1 = overlayCreateButton(
 			'2.39:1',
-			'format-button-wide-2-39-1'
+			'format-button-wide-2-39-1',
 		);
 		this.#BUTTON_WIDE_2_39_1.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_39_1);
 
 		this.#BUTTON_WIDE_2_1 = overlayCreateButton(
 			'2:1',
-			'format-button-wide-2-1'
+			'format-button-wide-2-1',
 		);
 		this.#BUTTON_WIDE_2_1.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_1);
 
 		this.#BUTTON_WIDE_4_3 = overlayCreateButton(
 			'4:3',
-			'format-button-wide-4-3'
+			'format-button-wide-4-3',
 		);
 		this.#BUTTON_WIDE_4_3.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_4_3);

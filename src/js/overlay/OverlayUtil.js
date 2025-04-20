@@ -1,13 +1,13 @@
-import ApplicationLogger from '../application/ApplicationLogger';
+import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import OverlayDispatcher from './dispatcher/OverlayDispatcher';
+import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
 
 export function overlayCreateLabel(text) {
 	// Check Parameters
 	if (text === undefined || text === null) {
 		ApplicationLogger.warn(
 			`OverlayUtils. overlayCreateLabel. Missing required parameter ${text}`,
-			3
+			3,
 		);
 	}
 
@@ -20,11 +20,10 @@ export function overlayCreateLabel(text) {
 	return LABEL;
 }
 
-/* eslint-disable-next-line import/prefer-default-export */
 export function overlayCreateButton(
 	text,
 	overlayDispatcherEventName,
-	classNameType = 'standard'
+	classNameType = 'standard',
 ) {
 	// Check Parameters
 	if (
@@ -35,7 +34,7 @@ export function overlayCreateButton(
 	) {
 		ApplicationLogger.warn(
 			`OverlayUtils. overlayCreateButton. Missing required parameter. text ${text} overlayDispatcherEventName ${overlayDispatcherEventName}`,
-			3
+			3,
 		);
 	}
 

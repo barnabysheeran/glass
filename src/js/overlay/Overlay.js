@@ -1,17 +1,15 @@
-import ApplicationLogger from '../application/ApplicationLogger';
-import ApplicationConfiguration from '../application/ApplicationConfiguration';
+import ApplicationLogger from '../application/ApplicationLogger.js';
+import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 
-import OverlayDispatcher from './dispatcher/OverlayDispatcher';
+import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
 
-import OverlayOverlay from './overlay/OverlayOverlay';
+import OverlayOverlay from './overlay/OverlayOverlay.js';
 
-import OverlayFormat from './format/OverlayFormat';
-import OverlayMedia from './media/OverlayMedia';
-import OverlayRhythm from './rhythm/OverlayRhythm';
-import OverlayTeleprompt from './teleprompt/OverlayTeleprompt';
-import OverlayPathTracer from './pathtracer/OverlayPathTracer';
+import OverlayFormat from './format/OverlayFormat.js';
+import OverlayMedia from './media/OverlayMedia.js';
+import OverlayRhythm from './rhythm/OverlayRhythm.js';
 
-import OverlayCapture from './capture/OverlayCapture';
+import OverlayCapture from './capture/OverlayCapture.js';
 
 export default class Overlay {
 	static #HOLDER;
@@ -21,12 +19,12 @@ export default class Overlay {
 	static #OVERLAY_FORMAT;
 	static #OVERLAY_MEDIA;
 	static #OVERLAY_RHYTHM;
-	static #OVERLAY_TELEPROMPT;
-	static #OVERLAY_PATH_TRACER;
 
 	static #OVERLAY_CAPTURE;
 
 	static #isShown = false;
+
+	static #LOG_LEVEL = 1;
 
 	// ______________________________________________________________ Initialise
 
@@ -46,15 +44,13 @@ export default class Overlay {
 		this.#OVERLAY_FORMAT = new OverlayFormat(this.#HOLDER);
 		this.#OVERLAY_MEDIA = new OverlayMedia(this.#HOLDER);
 		this.#OVERLAY_RHYTHM = new OverlayRhythm(this.#HOLDER);
-		this.#OVERLAY_TELEPROMPT = new OverlayTeleprompt(this.#HOLDER);
-		this.#OVERLAY_PATH_TRACER = new OverlayPathTracer(this.#HOLDER);
 
 		this.#OVERLAY_CAPTURE = new OverlayCapture(this.#HOLDER);
 
 		// Dispatcher
 		OverlayDispatcher.on(
 			'overlay-button-show-hide',
-			this.#toggleVisibility.bind(this)
+			this.#toggleVisibility.bind(this),
 		);
 
 		// Start Hidden

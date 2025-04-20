@@ -1,6 +1,6 @@
 // import ApplicationLogger from '../../application/ApplicationLogger';
 
-import { overlayCreateButton } from '../OverlayUtil';
+import { overlayCreateButton } from '../OverlayUtil.js';
 
 export default class OverlayMedia {
 	#HOLDER;
@@ -29,7 +29,7 @@ export default class OverlayMedia {
 		// Create Button 1280x720
 		this.#BUTTON_1280_720 = overlayCreateButton(
 			'1280x720',
-			'media-button-1280-720'
+			'media-button-1280-720',
 		);
 		this.#BUTTON_1280_720.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_1280_720);
@@ -37,7 +37,7 @@ export default class OverlayMedia {
 		// Create Button 1024x1024
 		this.#BUTTON_1024_1024 = overlayCreateButton(
 			'1024x1024',
-			'media-button-1024-1024'
+			'media-button-1024-1024',
 		);
 		this.#BUTTON_1280_720.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_1024_1024);
@@ -45,7 +45,7 @@ export default class OverlayMedia {
 		// Create Button 2048x1024
 		this.#BUTTON_2048_1024 = overlayCreateButton(
 			'2048x1024',
-			'media-button-2048-1024'
+			'media-button-2048-1024',
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_2048_1024);
 	}

@@ -1,6 +1,6 @@
-import ApplicationLogger from '../../application/ApplicationLogger';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-import OverlayDispatcherEvent from './OverlayDispatcherEvent';
+import OverlayDispatcherEvent from './OverlayDispatcherEvent.js';
 
 export default class OverlayDispatcher {
 	static #OVERLAY_DISPATCHER_EVENTS = [];
@@ -23,7 +23,7 @@ export default class OverlayDispatcher {
 			// Event Not Found
 			ApplicationLogger.warn(
 				`OverlayDispatcher.dispatch. eventName ${eventName} has no listeners`,
-				1
+				1,
 			);
 		}
 	}
@@ -51,7 +51,7 @@ export default class OverlayDispatcher {
 	static #getOrCreateEvent(eventName) {
 		if (this.#OVERLAY_DISPATCHER_EVENTS[eventName] === undefined) {
 			this.#OVERLAY_DISPATCHER_EVENTS[eventName] = new OverlayDispatcherEvent(
-				eventName
+				eventName,
 			);
 		}
 
