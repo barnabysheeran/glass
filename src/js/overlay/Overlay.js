@@ -5,22 +5,20 @@ import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
 
 import OverlayOverlay from './overlay/OverlayOverlay.js';
 
-import OverlayFormat from './format/OverlayFormat.js';
-import OverlayMedia from './media/OverlayMedia.js';
-import OverlayRhythm from './rhythm/OverlayRhythm.js';
-
-import OverlayCapture from './capture/OverlayCapture.js';
+// import OverlayFormat from './format/OverlayFormat.js';
+// import OverlayMedia from './media/OverlayMedia.js';
+// import OverlayRhythm from './rhythm/OverlayRhythm.js';
+// import OverlayCapture from './capture/OverlayCapture.js';
 
 export default class Overlay {
 	static #HOLDER;
 
 	static #OVERLAY_OVERLAY;
 
-	static #OVERLAY_FORMAT;
-	static #OVERLAY_MEDIA;
-	static #OVERLAY_RHYTHM;
-
-	static #OVERLAY_CAPTURE;
+	// static #OVERLAY_FORMAT;
+	// static #OVERLAY_MEDIA;
+	// static #OVERLAY_RHYTHM;
+	// static #OVERLAY_CAPTURE;
 
 	static #isShown = false;
 

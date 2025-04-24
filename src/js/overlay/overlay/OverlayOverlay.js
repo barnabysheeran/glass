@@ -1,6 +1,6 @@
 // import ApplicationLogger from '../../application/ApplicationLogger';
 
-// import { overlayCreateButton } from '../OverlayUtil';
+import { overlayCreateButton } from '../OverlayUtil.js';
 
 export default class OverlayOverlay {
 	#HOLDER;
@@ -17,10 +17,11 @@ export default class OverlayOverlay {
 		container.appendChild(this.#HOLDER);
 
 		// Create Buttons
-		// this.#BUTTON_SHOW_HIDE = overlayCreateButton(
-		// 	'OVERLAY',
-		// 	'overlay-button-show-hide'
-		// );
-		// this.#HOLDER.appendChild(this.#BUTTON_SHOW_HIDE);
+		this.#BUTTON_SHOW_HIDE = overlayCreateButton(
+			'*',
+			'overlay-button-show-hide',
+			'half',
+		);
+		this.#HOLDER.appendChild(this.#BUTTON_SHOW_HIDE);
 	}
 }
