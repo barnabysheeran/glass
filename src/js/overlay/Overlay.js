@@ -43,22 +43,16 @@ export default class Overlay {
 		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
 
 		// Create Overlays
-		this.#OVERLAY_FORMAT = new OverlayFormat(this.#HOLDER);
-		this.#OVERLAY_MEDIA = new OverlayMedia(this.#HOLDER);
-		this.#OVERLAY_RHYTHM = new OverlayRhythm(this.#HOLDER);
-
-		this.#OVERLAY_CAPTURE = new OverlayCapture(this.#HOLDER);
+		// this.#OVERLAY_FORMAT = new OverlayFormat(this.#HOLDER);
+		// this.#OVERLAY_MEDIA = new OverlayMedia(this.#HOLDER);
+		// this.#OVERLAY_RHYTHM = new OverlayRhythm(this.#HOLDER);
+		// this.#OVERLAY_CAPTURE = new OverlayCapture(this.#HOLDER);
 
 		// Dispatcher
 		OverlayDispatcher.on(
 			'overlay-button-show-hide',
 			this.#toggleVisibility.bind(this),
 		);
-
-		// Start Hidden
-		if (ApplicationConfiguration.isDevelopment === false) {
-			this.#hide();
-		}
 	}
 
 	// ______________________________________________________________ Visibility
@@ -75,10 +69,10 @@ export default class Overlay {
 
 	static #show() {
 		// Show Overlays
-		this.#OVERLAY_FORMAT.show();
-		this.#OVERLAY_MEDIA.show();
-		this.#OVERLAY_CAPTURE.show();
-		this.#OVERLAY_RHYTHM.show();
+		// this.#OVERLAY_FORMAT.show();
+		// this.#OVERLAY_MEDIA.show();
+		// this.#OVERLAY_CAPTURE.show();
+		// this.#OVERLAY_RHYTHM.show();
 
 		// Store
 		this.#isShown = true;
@@ -86,10 +80,10 @@ export default class Overlay {
 
 	static #hide() {
 		// Hide Overlays
-		this.#OVERLAY_FORMAT.hide();
-		this.#OVERLAY_MEDIA.hide();
-		this.#OVERLAY_CAPTURE.hide();
-		this.#OVERLAY_RHYTHM.hide();
+		// this.#OVERLAY_FORMAT.hide();
+		// this.#OVERLAY_MEDIA.hide();
+		// this.#OVERLAY_CAPTURE.hide();
+		// this.#OVERLAY_RHYTHM.hide();
 
 		// Store
 		this.#isShown = false;
