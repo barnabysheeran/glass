@@ -2,6 +2,21 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
 
+// ______________________________________________________________________ Styles
+
+// ______________________________________________________________________ Holder
+
+export function overlayCreateHolder() {
+	// Create Holder
+	const HOLDER = document.createElement('div');
+	HOLDER.id = 'overlay-holder';
+	HOLDER.className = 'overlay-holder';
+
+	return HOLDER;
+}
+
+// _______________________________________________________________________ Label
+
 export function overlayCreateLabel(text) {
 	// Check Parameters
 	if (text === undefined || text === null) {
@@ -19,6 +34,8 @@ export function overlayCreateLabel(text) {
 
 	return LABEL;
 }
+
+// ______________________________________________________________________ Button
 
 export function overlayCreateButton(
 	text,

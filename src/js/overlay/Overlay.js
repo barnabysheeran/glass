@@ -24,18 +24,20 @@ export default class Overlay {
 
 	static #isShown = false;
 
-	static #LOG_LEVEL = 1;
+	static #LOG_LEVEL = 2;
 
 	// ______________________________________________________________ Initialise
 
 	static initialise() {
-		ApplicationLogger.log('Overlay. initialise');
+		ApplicationLogger.log('Overlay. initialise', this.#LOG_LEVEL);
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'overlay';
 		this.#HOLDER.className = 'overlay';
-		ApplicationConfiguration.applicationContainer.appendChild(this.#HOLDER);
+		ApplicationConfiguration.getApplicationContainer().appendChild(
+			this.#HOLDER,
+		);
 
 		// Create Overlay Overlay
 		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
@@ -62,7 +64,7 @@ export default class Overlay {
 	// ______________________________________________________________ Visibility
 
 	static #toggleVisibility() {
-		// ApplicationLogger.log('Overlay. toggleVisibility');
+		ApplicationLogger.log('Overlay. toggleVisibility', this.#LOG_LEVEL);
 
 		if (this.#isShown === true) {
 			this.#hide();

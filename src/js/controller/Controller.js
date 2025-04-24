@@ -1,6 +1,5 @@
 import Overlay from '../overlay/Overlay.js';
 
-// import PieceOne from '../piece/pieces/PieceOne';
 // import Renderer from '../renderer/Renderer';
 
 export default class Controller {
@@ -10,16 +9,12 @@ export default class Controller {
 	#frameRateDelayMS = 0;
 
 	#OVERLAY;
-	// #PIECE;
 
 	// _________________________________________________________________________
 
 	constructor() {
-		// Create Overlay
-		this.#OVERLAY = new Overlay();
-
-		// Create Piece
-		// this.#PIECE = new PieceOne();
+		// Initialise Overlay
+		Overlay.initialise();
 
 		// Initialise Renderer
 		// Renderer.initialise();
@@ -28,8 +23,7 @@ export default class Controller {
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		// Tick
-		// this.#PIECE.tick(frameDeltaMS);
+		// Tick 60 FPS
 
 		// Frame Rate Delay
 		this.#frameRateDelayMS += frameDeltaMS;
@@ -39,8 +33,7 @@ export default class Controller {
 			// Reset
 			this.#frameRateDelayMS -= this.#FRAMERATE_MS;
 
-			// Tick Piece at Frame Rate
-			// this.#PIECE.tickFrameRate();
+			// Tick at Frame Rate FPS
 		}
 
 		// Render
