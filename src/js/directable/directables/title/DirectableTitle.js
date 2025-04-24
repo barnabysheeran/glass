@@ -13,7 +13,6 @@ export default class DirectableTitle extends Directable {
 
 	// ________________________________________________________________ Set Text
 
-	/* eslint-disable class-methods-use-this */
 	setText(text) {
 		document.title = text;
 	}

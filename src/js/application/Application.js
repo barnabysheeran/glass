@@ -21,10 +21,10 @@ export default class Application {
 			this.#LOG_LEVEL,
 		);
 
-		// Initialise Configuration
+		// Initialise Application Configuration
 		ApplicationConfiguration.initialise(creationParameters);
 
-		// Initialise Logger
+		// Initialise Application Logger
 		ApplicationLogger.initialise(creationParameters);
 
 		// Create Controller

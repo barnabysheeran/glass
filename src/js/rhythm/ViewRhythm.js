@@ -24,12 +24,12 @@ export default class ViewRhythm {
 		// Overlay Dispatcher Events
 		OverlayDispatcher.on(
 			'rhythm-button-stop',
-			this.#onRhythmButtonStop.bind(this)
+			this.#onRhythmButtonStop.bind(this),
 		);
 
 		OverlayDispatcher.on(
 			'rhythm-button-start',
-			this.#onRhythmButtonStart.bind(this)
+			this.#onRhythmButtonStart.bind(this),
 		);
 	}
 
