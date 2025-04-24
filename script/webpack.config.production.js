@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 const TerserPlugin = require('terser-webpack-plugin');
 
 const path = require('path');

@@ -15,8 +15,6 @@
     "depcruise:all": "depcruise --config ./tool/depcruise/config-all.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-all.svg",
     "depcruise:selected": "depcruise --config ./tool/depcruise/config-selected.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-selected.svg"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/eslint-parser": "^7.26.10",
@@ -36,6 +34,7 @@
     "leasot": "^14.4.0",
     "mini-css-extract-plugin": "^2.9.2",
     "npm-run-all": "^4.1.5",
+    "postcss-loader": "^8.1.1",
     "prettier": "^3.5.3",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
@@ -64,6 +63,4 @@
     "printWidth": 80,
     "endOfLine": "auto"
   }
-
-
 }

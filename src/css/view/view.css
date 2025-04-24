@@ -1,0 +1,15 @@
+.view {
+    position: absolute;
+
+    background-color: #000000;
+
+    pointer-events: none;
+}
+
+.view-renderer-pixi {
+    position: absolute;
+}
+
+.view-canvas {
+    position: absolute;
+}
