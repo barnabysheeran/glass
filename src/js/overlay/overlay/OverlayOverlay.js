@@ -19,7 +19,7 @@ export default class OverlayOverlay {
 		// Create Buttons
 		this.#BUTTON_SHOW_HIDE = overlayCreateButton(
 			'[  &nbsp;&nbsp;&nbsp; ]',
-			'overlay-button-show-hide',
+			'overlay-toggle-visibility',
 			'half',
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_SHOW_HIDE);

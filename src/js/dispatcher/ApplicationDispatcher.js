@@ -1,9 +1,9 @@
-import ApplicationEvent from './ApplicationEvent';
+import ApplicationEvent from './ApplicationEvent.js';
 
-export default class ApplicationEventDispatcher {
+export default class ApplicationDispatcher {
 	static #EVENTS = [];
 
-	static #VALID_EVENT_NAMES = ['assets-preloaded', 'beat-start'];
+	static #VALID_EVENT_NAMES = ['overlay-toggle-visibility'];
 
 	// ________________________________________________________________ Dispatch
 

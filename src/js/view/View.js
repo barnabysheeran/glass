@@ -1,4 +1,4 @@
-import RenderController from './RenderController.js';
+import RenderController from './render/RenderController.js';
 
 export default class View {
 	static #RENDER_CONTROLLER;

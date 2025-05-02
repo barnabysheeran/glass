@@ -1,6 +1,5 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
-
-import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
+import ApplicationDispatcher from '../dispatcher/ApplicationDispatcher.js';
 
 // ______________________________________________________________________ Styles
 
@@ -64,7 +63,7 @@ export function overlayCreateButton(
 
 	// Add Event Listener
 	BUTTON.addEventListener('click', () => {
-		OverlayDispatcher.dispatch(overlayDispatcherEventName);
+		ApplicationDispatcher.dispatch(overlayDispatcherEventName);
 	});
 
 	return BUTTON;

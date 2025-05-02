@@ -1,9 +1,8 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 
-import OverlayDispatcher from './dispatcher/OverlayDispatcher.js';
-
 import OverlayOverlay from './overlay/OverlayOverlay.js';
+import ApplicationDispatcher from '../dispatcher/ApplicationDispatcher.js';
 
 // import OverlayFormat from './format/OverlayFormat.js';
 // import OverlayMedia from './media/OverlayMedia.js';
@@ -47,8 +46,8 @@ export default class Overlay {
 		// this.#OVERLAY_CAPTURE = new OverlayCapture(this.#HOLDER);
 
 		// Dispatcher
-		OverlayDispatcher.on(
-			'overlay-button-show-hide',
+		ApplicationDispatcher.on(
+			'overlay-toggle-visibility',
 			this.#toggleVisibility.bind(this),
 		);
 	}
