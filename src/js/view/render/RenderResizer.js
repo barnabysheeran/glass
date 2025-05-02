@@ -1,9 +1,9 @@
-import ApplicationConfiguration from '../application/ApplicationConfiguration';
-import ApplicationLogger from '../application/ApplicationLogger';
+import ApplicationConfiguration from '../../application/ApplicationConfiguration';
+import ApplicationLogger from '../../application/ApplicationLogger';
 
-import OverlayDispatcher from '../overlay/dispatcher/OverlayDispatcher';
+import OverlayDispatcher from '../../overlay/dispatcher/OverlayDispatcher';
 
-export default class RendererResizer {
+export default class RenderResizer {
 	#VIEW_HOLDER;
 
 	#SCALE_MODES = {

@@ -1,6 +1,5 @@
 import Overlay from '../overlay/Overlay.js';
-
-// import Renderer from '../renderer/Renderer';
+import View from '../view/View.js';
 
 export default class Controller {
 	#FRAMERATE_FPS = 20;
@@ -8,16 +7,14 @@ export default class Controller {
 
 	#frameRateDelayMS = 0;
 
-	#OVERLAY;
-
 	// _________________________________________________________________________
 
 	constructor() {
 		// Initialise Overlay
 		Overlay.initialise();
 
-		// Initialise Renderer
-		// Renderer.initialise();
+		// Initialise View
+		View.initialise();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -34,9 +31,10 @@ export default class Controller {
 			this.#frameRateDelayMS -= this.#FRAMERATE_MS;
 
 			// Tick at Frame Rate FPS
+			// TODO
 		}
 
-		// Render
-		// Renderer.tick(frameDeltaMS);
+		// View
+		View.tick(frameDeltaMS);
 	}
 }
