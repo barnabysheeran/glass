@@ -1,8 +1,8 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
+import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 import OverlayOverlay from './overlay/OverlayOverlay.js';
-import ApplicationDispatcher from '../dispatcher/ApplicationDispatcher.js';
 
 // import OverlayFormat from './format/OverlayFormat.js';
 // import OverlayMedia from './media/OverlayMedia.js';

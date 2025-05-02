@@ -1,5 +1,5 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
-import ApplicationDispatcher from '../dispatcher/ApplicationDispatcher.js';
+import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 // ______________________________________________________________________ Styles
 
