@@ -3,6 +3,7 @@ export default class ApplicationLogger {
 
 	static #colourLog = '#999';
 	static #colourWarn = '#f00';
+	static #colourError = '#f00';
 
 	// _________________________________________________________________________
 
@@ -35,7 +36,7 @@ export default class ApplicationLogger {
 		console.log(`%c${message}`, `color: ${this.#colourLog}`);
 	}
 
-	// _____________________________________________________________________ Warn
+	// ____________________________________________________________________ Warn
 
 	static warn(messageIn, logLevel = 0) {
 		// Active ?
@@ -57,5 +58,29 @@ export default class ApplicationLogger {
 
 		// Log
 		console.log(`%c${message}`, `color: ${this.#colourWarn}`);
+	}
+
+	// ___________________________________________________________________ Error
+
+	static error(messageIn, logLevel = 0) {
+		// Active ?
+		if (this.#isActive !== true) {
+			return;
+		}
+
+		// Level
+		if (logLevel <= 0) {
+			return;
+		}
+
+		// Message
+		let message = messageIn;
+
+		for (let i = 1; i < logLevel; i += 1) {
+			message = `  ${message}`;
+		}
+
+		// Log
+		console.error(`%c${message}`, `color: ${this.#colourError}`);
 	}
 }
