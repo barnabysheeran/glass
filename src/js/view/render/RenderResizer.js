@@ -1,7 +1,7 @@
-import ApplicationConfiguration from '../../application/ApplicationConfiguration';
-import ApplicationLogger from '../../application/ApplicationLogger';
+import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-import OverlayDispatcher from '../../overlay/dispatcher/OverlayDispatcher';
+import ApplicationDispatcher from '../../application/ApplicationDispatcher.js';
 
 export default class RenderResizer {
 	#VIEW_HOLDER;
@@ -33,48 +33,48 @@ export default class RenderResizer {
 		this.#VIEW_HOLDER = viewHolder;
 
 		// Dispatcher Overlay Format
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-wide-2-39-1',
 			this.#onOverlayButtonAspectWide2_39_1.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-wide-2-1',
 			this.#onOverlayButtonAspectWide2_1.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-wide-4-3',
 			this.#onOverlayButtonAspectWide4_3.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-square',
 			this.#onOverlayButtonAspectSquare.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-paper-a',
 			this.#onOverlayButtonAspectPaperA.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'format-button-fill',
 			this.#onOverlayButtonAspectFill.bind(this),
 		);
 
 		// Dispatcher Overlay Media
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'media-button-1280-720',
 			this.#onOverlayButtonMedia1280_720.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'media-button-1024-1024',
 			this.#onOverlayButtonMedia1024_1024.bind(this),
 		);
 
-		OverlayDispatcher.on(
+		ApplicationDispatcher.on(
 			'media-button-2048-1024',
 			this.#onOverlayButtonMedia2048_1024.bind(this),
 		);

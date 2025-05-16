@@ -1,13 +1,18 @@
 import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
 
+import RenderResizer from './RenderResizer.js';
 import RenderSurface from './RenderSurface.js';
 
 export default class RenderController {
+	#RENDER_RESIZER;
 	#RENDER_SURFACE;
 
 	// _________________________________________________________________________
 
 	constructor() {
+		// Create Render Resizer
+		this.#RENDER_RESIZER = new RenderResizer();
+
 		// Create Render Surface
 		this.#RENDER_SURFACE = new RenderSurface();
 
