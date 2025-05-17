@@ -1,24 +1,13 @@
 import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../../application/ApplicationLogger.js';
+import DisplayFormats from '../../enum/DisplayFormats.js';
 
 import ApplicationDispatcher from '../../application/ApplicationDispatcher.js';
 
 export default class RenderResizer {
 	#VIEW_HOLDER;
 
-	#SCALE_MODES = {
-		SCALE_MODE_WIDE_2_39_1: 'SCALE_MODE_WIDE_2_39_1',
-		SCALE_MODE_WIDE_2_1: 'SCALE_MODE_WIDE_2_1',
-		SCALE_MODE_WIDE_4_3: 'SCALE_MODE_WIDE_4_3',
-		SCALE_MODE_SQUARE: 'SCALE_MODE_SQUARE',
-		SCALE_MODE_PAPER_A: 'SCALE_MODE_PAPER_A',
-		SCALE_MODE_FILL: 'SCALE_MODE_FILL',
-		SCALE_MODE_1280_720: 'SCALE_MODE_1280_720',
-		SCALE_MODE_1024_1024: 'SCALE_MODE_1024_1024',
-		SCALE_MODE_2048_1024: 'SCALE_MODE_2048_1024',
-	};
-
-	#scaleMode = this.#SCALE_MODES.SCALE_MODE_SQUARE; // Set initial scale mode
+	#scaleMode = DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE; // Set initial scale mode
 
 	#width = -1;
 	#height = -1;
@@ -32,51 +21,9 @@ export default class RenderResizer {
 		// Store
 		this.#VIEW_HOLDER = viewHolder;
 
-		// Dispatcher Overlay Format
 		ApplicationDispatcher.on(
-			'format-button-wide-2-39-1',
-			this.#onOverlayButtonAspectWide2_39_1.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'format-button-wide-2-1',
-			this.#onOverlayButtonAspectWide2_1.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'format-button-wide-4-3',
-			this.#onOverlayButtonAspectWide4_3.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'format-button-square',
-			this.#onOverlayButtonAspectSquare.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'format-button-paper-a',
-			this.#onOverlayButtonAspectPaperA.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'format-button-fill',
-			this.#onOverlayButtonAspectFill.bind(this),
-		);
-
-		// Dispatcher Overlay Media
-		ApplicationDispatcher.on(
-			'media-button-1280-720',
-			this.#onOverlayButtonMedia1280_720.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'media-button-1024-1024',
-			this.#onOverlayButtonMedia1024_1024.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'media-button-2048-1024',
-			this.#onOverlayButtonMedia2048_1024.bind(this),
+			'display-format-change',
+			this.#onDisplayFormatChange.bind(this),
 		);
 
 		// Initial Resize
@@ -85,60 +32,31 @@ export default class RenderResizer {
 
 	// _______________________________________________ Dispatcher Overlay Format
 
-	#onOverlayButtonAspectWide2_39_1() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectWide2_39_1', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_WIDE_2_39_1;
-	}
-
-	#onOverlayButtonAspectWide2_1() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectWide2_1', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_WIDE_2_1;
-	}
-
-	#onOverlayButtonAspectWide4_3() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectWide4_3', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_WIDE_4_3;
-	}
-
-	#onOverlayButtonAspectSquare() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectSquare', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_SQUARE;
-	}
-
-	#onOverlayButtonAspectPaperA() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectPaperA', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_PAPER_A;
-	}
-
-	#onOverlayButtonAspectFill() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonAspectFill', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_FILL;
-	}
-
-	// ________________________________________________ Dispatcher Overlay Media
-
-	#onOverlayButtonMedia1280_720() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonMedia1280_720', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_1280_720;
-	}
-
-	#onOverlayButtonMedia1024_1024() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonMedia1024_1024', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_1024_1024;
-	}
-
-	#onOverlayButtonMedia2048_1024() {
-		ApplicationLogger.log('ViewShaper. onOverlayButtonMedia2048_1024', 1);
-
-		this.#scaleMode = this.#SCALE_MODES.SCALE_MODE_2048_1024;
+	#onDisplayFormatChange(data) {
+		ApplicationLogger.log(
+			`RenderResizer.#onDisplayFormatChange: ${data.displayFormat}`,
+			1,
+		);
+		if (data && data.displayFormat) {
+			// Check if the received format is a valid one
+			if (
+				Object.values(DisplayFormats.DISPLAY_FORMATS).includes(
+					data.displayFormat,
+				)
+			) {
+				this.#scaleMode = data.displayFormat;
+			} else {
+				ApplicationLogger.warn(
+					`RenderResizer.#onDisplayFormatChange: Invalid displayFormat received - ${data.displayFormat}`,
+					2,
+				);
+			}
+		} else {
+			ApplicationLogger.warn(
+				'RenderResizer.#onDisplayFormatChange: No displayFormat received in event data.',
+				2,
+			);
+		}
 	}
 
 	// __________________________________________________________________ Resize
@@ -165,57 +83,7 @@ export default class RenderResizer {
 
 		// Scale Mode
 		switch (this.#scaleMode) {
-			case this.#SCALE_MODES.SCALE_MODE_WIDE_2_39_1:
-				// Wide 2:39:1
-				width = APPLICATION_WIDTH;
-				height = APPLICATION_WIDTH * 0.208;
-
-				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = 0;
-
-				break;
-
-			case this.#SCALE_MODES.SCALE_MODE_WIDE_2_1:
-				// Wide 2:1
-				width = APPLICATION_WIDTH;
-				height = APPLICATION_WIDTH * 0.5;
-
-				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = 0;
-
-				break;
-
-			case this.#SCALE_MODES.SCALE_MODE_WIDE_4_3:
-				// Wide 4:3
-				width = APPLICATION_WIDTH;
-				height = APPLICATION_WIDTH * 0.75;
-
-				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = 0;
-
-				break;
-
-			case this.#SCALE_MODES.SCALE_MODE_SQUARE:
-				// Square
-				width = APPLICATION_MIN;
-				height = APPLICATION_MIN;
-
-				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = (APPLICATION_WIDTH - width) * 0.5;
-
-				break;
-
-			case this.#SCALE_MODES.SCALE_MODE_PAPER_A:
-				// Paper A
-				width = APPLICATION_MIN * 0.707;
-				height = APPLICATION_MIN;
-
-				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = (APPLICATION_WIDTH - width) * 0.5;
-
-				break;
-
-			case this.#SCALE_MODES.SCALE_MODE_FILL:
+			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_FILL:
 				// Fill
 				width = APPLICATION_WIDTH;
 				height = APPLICATION_HEIGHT;
@@ -225,30 +93,40 @@ export default class RenderResizer {
 
 				break;
 
-			case this.#SCALE_MODES.SCALE_MODE_1280_720:
-				// 1280:720
-				width = 1280;
-				height = 720;
+			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_39_1:
+				// Wide 2:39:1
+				width = APPLICATION_WIDTH;
+				height = APPLICATION_WIDTH * 0.208;
 
 				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = (APPLICATION_WIDTH - width) * 0.5;
+				left = 0;
 
 				break;
 
-			case this.#SCALE_MODES.SCALE_MODE_1024_1024:
-				// 1024:1024
-				width = 1024;
-				height = 1024;
+			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_1:
+				// Wide 2:1
+				width = APPLICATION_WIDTH;
+				height = APPLICATION_WIDTH * 0.5;
 
 				top = (APPLICATION_HEIGHT - height) * 0.5;
-				left = (APPLICATION_WIDTH - width) * 0.5;
+				left = 0;
 
 				break;
 
-			case this.#SCALE_MODES.SCALE_MODE_2048_1024:
-				// 2048:1024
-				width = 2048;
-				height = 1024;
+			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_4_3:
+				// Wide 4:3
+				width = APPLICATION_WIDTH;
+				height = APPLICATION_WIDTH * 0.75;
+
+				top = (APPLICATION_HEIGHT - height) * 0.5;
+				left = 0;
+
+				break;
+
+			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE:
+				// Square
+				width = APPLICATION_MIN;
+				height = APPLICATION_MIN;
 
 				top = (APPLICATION_HEIGHT - height) * 0.5;
 				left = (APPLICATION_WIDTH - width) * 0.5;

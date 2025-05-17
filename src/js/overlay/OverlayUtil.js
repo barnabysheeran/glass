@@ -38,32 +38,18 @@ export function overlayCreateLabel(text) {
 
 export function overlayCreateButton(
 	text,
-	overlayDispatcherEventName,
-	classNameType = 'standard',
+	dispatcherEventName,
+	dispatcherEventData = {},
 ) {
-	// Check Parameters
-	if (
-		text === undefined ||
-		text === null ||
-		overlayDispatcherEventName === undefined ||
-		overlayDispatcherEventName === null
-	) {
-		ApplicationLogger.warn(
-			`OverlayUtils. overlayCreateButton. Missing required parameter. text ${text} overlayDispatcherEventName ${overlayDispatcherEventName}`,
-			3,
-		);
-	}
-
 	// Create Button
 	const BUTTON = document.createElement('div');
 	BUTTON.id = 'overlay-button';
-	BUTTON.className = 'overlay-button';
-	BUTTON.classList.add(`${classNameType}`);
+	BUTTON.className = 'overlay-button standard';
 	BUTTON.innerHTML = text;
 
 	// Add Event Listener
 	BUTTON.addEventListener('click', () => {
-		ApplicationDispatcher.dispatch(overlayDispatcherEventName);
+		ApplicationDispatcher.dispatch(dispatcherEventName, dispatcherEventData);
 	});
 
 	return BUTTON;

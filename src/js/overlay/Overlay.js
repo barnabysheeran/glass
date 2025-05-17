@@ -3,14 +3,12 @@ import ApplicationConfiguration from '../application/ApplicationConfiguration.js
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 import OverlayOverlay from './overlay/OverlayOverlay.js';
-
-import OverlayFormat from './format/OverlayFormat.js';
+import OverlayDisplayFormat from './displayFormat/OverlayDisplayFormat.js';
 
 export default class Overlay {
 	static #HOLDER;
 
 	static #OVERLAY_OVERLAY;
-
 	static #OVERLAY_FORMAT;
 
 	static #isShown = false;
@@ -30,11 +28,9 @@ export default class Overlay {
 			this.#HOLDER,
 		);
 
-		// Create Overlay Overlay
-		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
-
 		// Create Overlays
-		this.#OVERLAY_FORMAT = new OverlayFormat(this.#HOLDER);
+		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
+		this.#OVERLAY_FORMAT = new OverlayDisplayFormat(this.#HOLDER);
 
 		// Dispatcher
 		ApplicationDispatcher.on(

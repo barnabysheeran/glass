@@ -2,15 +2,17 @@
 
 import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil.js';
 
-export default class OverlayFormat {
+import DisplayFormats from '../../enum/DisplayFormats.js';
+
+export default class OverlayDisplayFormat {
 	#HOLDER;
 
 	#LABEL;
 
+	#BUTTON_FILL;
 	#BUTTON_WIDE_2_39_1;
 	#BUTTON_WIDE_2_1;
 	#BUTTON_WIDE_4_3;
-
 	#BUTTON_SQUARE;
 
 	constructor(container) {
@@ -27,33 +29,47 @@ export default class OverlayFormat {
 		this.#HOLDER.appendChild(this.#LABEL);
 
 		// Create Buttons
+		this.#BUTTON_FILL = overlayCreateButton('FILL', 'display-format-change', {
+			displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_FILL,
+		});
+		this.#HOLDER.appendChild(this.#BUTTON_FILL);
+
 		this.#BUTTON_WIDE_2_39_1 = overlayCreateButton(
 			'2.39:1',
-			'format-button-wide-2-39-1',
+			'display-format-change',
+			{
+				displayFormat:
+					DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_39_1,
+			},
 		);
-		this.#BUTTON_WIDE_2_39_1.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_39_1);
 
 		this.#BUTTON_WIDE_2_1 = overlayCreateButton(
 			'2:1',
-			'format-button-wide-2-1',
+			'display-format-change',
+			{
+				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_1,
+			},
 		);
-		this.#BUTTON_WIDE_2_1.classList.add('inactive');
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_1);
 
 		this.#BUTTON_WIDE_4_3 = overlayCreateButton(
 			'4:3',
-			'format-button-wide-4-3',
+			'display-format-change',
+			{
+				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_4_3,
+			},
 		);
-		this.#BUTTON_WIDE_4_3.classList.add('inactive');
+
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_4_3);
 
-		this.#BUTTON_SQUARE = overlayCreateButton('SQUARE', 'format-button-square');
-		this.#BUTTON_SQUARE.classList.add('inactive');
-		this.#HOLDER.appendChild(this.#BUTTON_SQUARE);
-
-		this.#BUTTON_SQUARE = overlayCreateButton('FILL', 'format-button-fill');
-		this.#BUTTON_SQUARE.classList.add('inactive');
+		this.#BUTTON_SQUARE = overlayCreateButton(
+			'SQUARE',
+			'display-format-change',
+			{
+				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE,
+			},
+		);
 		this.#HOLDER.appendChild(this.#BUTTON_SQUARE);
 	}
 

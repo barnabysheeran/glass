@@ -8,7 +8,7 @@ export default class ApplicationDispatcher {
 		'overlay-toggle-visibility',
 
 		// Display
-		'display-format-change', // { width, height }
+		'display-format-change',
 	];
 
 	// ________________________________________________________________ Dispatch
