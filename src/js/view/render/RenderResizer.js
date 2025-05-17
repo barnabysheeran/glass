@@ -7,7 +7,7 @@ import ApplicationDispatcher from '../../application/ApplicationDispatcher.js';
 export default class RenderResizer {
 	#VIEW_HOLDER;
 
-	#scaleMode = DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE; // Set initial scale mode
+	#scaleMode = DisplayFormats.DISPLAY_FORMAT_SQUARE; // Set initial scale mode
 
 	#width = -1;
 	#height = -1;
@@ -40,7 +40,19 @@ export default class RenderResizer {
 			this.#LOG_LEVEL,
 		);
 
-		this.#scaleMode = data.displayFormat;
+		// Check if the received format is a valid one by comparing against the direct static properties
+		const isValidFormat = Object.keys(DisplayFormats).some(
+			(key) => DisplayFormats[key] === data.displayFormat,
+		);
+
+		if (data && data.displayFormat && isValidFormat) {
+			this.#scaleMode = data.displayFormat;
+		} else {
+			ApplicationLogger.warn(
+				`RenderResizer.#onDisplayFormatChange: Invalid or missing displayFormat received - ${data?.displayFormat}`,
+				2,
+			);
+		}
 	}
 
 	// __________________________________________________________________ Resize
@@ -67,7 +79,7 @@ export default class RenderResizer {
 
 		// Scale Mode
 		switch (this.#scaleMode) {
-			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_FILL:
+			case DisplayFormats.DISPLAY_FORMAT_FILL:
 				// Fill
 				width = APPLICATION_WIDTH;
 				height = APPLICATION_HEIGHT;
@@ -77,7 +89,7 @@ export default class RenderResizer {
 
 				break;
 
-			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_39_1:
+			case DisplayFormats.DISPLAY_FORMAT_WIDE_2_39_1:
 				// Wide 2:39:1
 				width = APPLICATION_WIDTH;
 				height = APPLICATION_WIDTH * 0.208;
@@ -87,7 +99,7 @@ export default class RenderResizer {
 
 				break;
 
-			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_1:
+			case DisplayFormats.DISPLAY_FORMAT_WIDE_2_1:
 				// Wide 2:1
 				width = APPLICATION_WIDTH;
 				height = APPLICATION_WIDTH * 0.5;
@@ -97,7 +109,7 @@ export default class RenderResizer {
 
 				break;
 
-			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_4_3:
+			case DisplayFormats.DISPLAY_FORMAT_WIDE_4_3:
 				// Wide 4:3
 				width = APPLICATION_WIDTH;
 				height = APPLICATION_WIDTH * 0.75;
@@ -107,7 +119,7 @@ export default class RenderResizer {
 
 				break;
 
-			case DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE:
+			case DisplayFormats.DISPLAY_FORMAT_SQUARE:
 				// Square
 				width = APPLICATION_MIN;
 				height = APPLICATION_MIN;

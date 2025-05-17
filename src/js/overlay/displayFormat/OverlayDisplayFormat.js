@@ -30,7 +30,7 @@ export default class OverlayDisplayFormat {
 
 		// Create Buttons
 		this.#BUTTON_FILL = overlayCreateButton('FILL', 'display-format-change', {
-			displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_FILL,
+			displayFormat: DisplayFormats.DISPLAY_FORMAT_FILL,
 		});
 		this.#HOLDER.appendChild(this.#BUTTON_FILL);
 
@@ -38,8 +38,7 @@ export default class OverlayDisplayFormat {
 			'2.39:1',
 			'display-format-change',
 			{
-				displayFormat:
-					DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_39_1,
+				displayFormat: DisplayFormats.DISPLAY_FORMAT_WIDE_2_39_1,
 			},
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_39_1);
@@ -48,7 +47,7 @@ export default class OverlayDisplayFormat {
 			'2:1',
 			'display-format-change',
 			{
-				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_2_1,
+				displayFormat: DisplayFormats.DISPLAY_FORMAT_WIDE_2_1,
 			},
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_WIDE_2_1);
@@ -57,7 +56,7 @@ export default class OverlayDisplayFormat {
 			'4:3',
 			'display-format-change',
 			{
-				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_WIDE_4_3,
+				displayFormat: DisplayFormats.DISPLAY_FORMAT_WIDE_4_3,
 			},
 		);
 
@@ -67,7 +66,7 @@ export default class OverlayDisplayFormat {
 			'SQUARE',
 			'display-format-change',
 			{
-				displayFormat: DisplayFormats.DISPLAY_FORMATS.DISPLAY_FORMAT_SQUARE,
+				displayFormat: DisplayFormats.DISPLAY_FORMAT_SQUARE,
 			},
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_SQUARE);
