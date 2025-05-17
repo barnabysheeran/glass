@@ -354,12 +354,8 @@ export default class RenderSurface {
 		return this.#CANVAS;
 	}
 
-	// __________________________________________________________________ Size Control
-	/**
-	 * Resizes the RenderSurface.
-	 * @param {number} newWidth The new width.
-	 * @param {number} newHeight The new height.
-	 */
+	// ____________________________________________________________________ Size
+
 	setSize(newWidth, newHeight) {
 		if (newWidth === this.width && newHeight === this.height) {
 			return; // No change
@@ -441,6 +437,7 @@ export default class RenderSurface {
 	}
 
 	// _________________________________________________________________ Destroy
+
 	destroy() {
 		ApplicationLogger.log(
 			'RenderSurface: Destroying resources.',

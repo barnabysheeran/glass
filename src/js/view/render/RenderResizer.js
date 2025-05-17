@@ -7,7 +7,7 @@ import ApplicationDispatcher from '../../application/ApplicationDispatcher.js';
 export default class RenderResizer {
 	#VIEW_HOLDER;
 
-	#scaleMode = DisplayFormats.DISPLAY_FORMAT_SQUARE; // Set initial scale mode
+	#displayFormat = DisplayFormats.DISPLAY_FORMAT_SQUARE; // Set initial scale mode
 
 	#width = -1;
 	#height = -1;
@@ -46,7 +46,7 @@ export default class RenderResizer {
 		);
 
 		if (data && data.displayFormat && isValidFormat) {
-			this.#scaleMode = data.displayFormat;
+			this.#displayFormat = data.displayFormat;
 		} else {
 			ApplicationLogger.warn(
 				`RenderResizer.#onDisplayFormatChange: Invalid or missing displayFormat received - ${data?.displayFormat}`,
@@ -78,7 +78,7 @@ export default class RenderResizer {
 		let left = 0;
 
 		// Scale Mode
-		switch (this.#scaleMode) {
+		switch (this.#displayFormat) {
 			case DisplayFormats.DISPLAY_FORMAT_FILL:
 				// Fill
 				width = APPLICATION_WIDTH;
