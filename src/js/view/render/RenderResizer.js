@@ -15,6 +15,8 @@ export default class RenderResizer {
 	#top = -1;
 	#left = -1;
 
+	#LOG_LEVEL = 2;
+
 	// _________________________________________________________________________
 
 	constructor(viewHolder) {
@@ -34,29 +36,11 @@ export default class RenderResizer {
 
 	#onDisplayFormatChange(data) {
 		ApplicationLogger.log(
-			`RenderResizer.#onDisplayFormatChange: ${data.displayFormat}`,
-			1,
+			`RenderResizer. onDisplayFormatChange ${data.displayFormat}`,
+			this.#LOG_LEVEL,
 		);
-		if (data && data.displayFormat) {
-			// Check if the received format is a valid one
-			if (
-				Object.values(DisplayFormats.DISPLAY_FORMATS).includes(
-					data.displayFormat,
-				)
-			) {
-				this.#scaleMode = data.displayFormat;
-			} else {
-				ApplicationLogger.warn(
-					`RenderResizer.#onDisplayFormatChange: Invalid displayFormat received - ${data.displayFormat}`,
-					2,
-				);
-			}
-		} else {
-			ApplicationLogger.warn(
-				'RenderResizer.#onDisplayFormatChange: No displayFormat received in event data.',
-				2,
-			);
-		}
+
+		this.#scaleMode = data.displayFormat;
 	}
 
 	// __________________________________________________________________ Resize
