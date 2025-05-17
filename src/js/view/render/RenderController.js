@@ -18,19 +18,18 @@ export default class RenderController {
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
-		this.#HOLDER.id = 'render-holder';
+		this.#HOLDER.id = 'view-render';
 		APPLICATION_CONTAINER.appendChild(this.#HOLDER);
 
 		// Create Render Surface
 		this.#RENDER_SURFACE = new RenderSurface();
 
+		// Append Render Canvas
 		const RENDER_CANVAS = this.#RENDER_SURFACE.getCanvas();
+		this.#HOLDER.appendChild(RENDER_CANVAS);
 
 		// Create Render Resizer
 		this.#RENDER_RESIZER = new RenderResizer(this.#HOLDER);
-
-		// Add to Application Container
-		this.#HOLDER.appendChild(RENDER_CANVAS);
 	}
 
 	// ____________________________________________________________________ Tick

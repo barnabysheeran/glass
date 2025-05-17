@@ -6,7 +6,7 @@
     pointer-events: none;
 }
 
-.view-renderer-pixi {
+.view .view-render {
     position: absolute;
 }
 
