@@ -3,7 +3,13 @@ import ApplicationEvent from './ApplicationEvent.js';
 export default class ApplicationDispatcher {
 	static #EVENTS = [];
 
-	static #VALID_EVENT_NAMES = ['overlay-toggle-visibility'];
+	static #VALID_EVENT_NAMES = [
+		// Overlay
+		'overlay-toggle-visibility',
+
+		// Display
+		'display-format-change', // { width, height }
+	];
 
 	// ________________________________________________________________ Dispatch
 

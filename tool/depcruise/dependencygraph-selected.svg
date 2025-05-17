@@ -21,13 +21,13 @@
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_src/js/application</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M274.88,-903C274.88,-903 337.62,-903 337.62,-903 343.62,-903 349.62,-909 349.62,-915 349.62,-915 349.62,-944 349.62,-944 349.62,-950 343.62,-956 337.62,-956 337.62,-956 274.88,-956 274.88,-956 268.88,-956 262.88,-950 262.88,-944 262.88,-944 262.88,-915 262.88,-915 262.88,-909 268.88,-903 274.88,-903"/>
-<text text-anchor="middle" x="306.25" y="-943.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">application</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M274.88,-890C274.88,-890 337.62,-890 337.62,-890 343.62,-890 349.62,-896 349.62,-902 349.62,-902 349.62,-931 349.62,-931 349.62,-937 343.62,-943 337.62,-943 337.62,-943 274.88,-943 274.88,-943 268.88,-943 262.88,-937 262.88,-931 262.88,-931 262.88,-902 262.88,-902 262.88,-896 268.88,-890 274.88,-890"/>
+<text text-anchor="middle" x="306.25" y="-930.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">application</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_src/js/controller</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M423.12,-903C423.12,-903 479.88,-903 479.88,-903 485.88,-903 491.88,-909 491.88,-915 491.88,-915 491.88,-944 491.88,-944 491.88,-950 485.88,-956 479.88,-956 479.88,-956 423.12,-956 423.12,-956 417.12,-956 411.12,-950 411.12,-944 411.12,-944 411.12,-915 411.12,-915 411.12,-909 417.12,-903 423.12,-903"/>
-<text text-anchor="middle" x="451.5" y="-943.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">controller</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M423.12,-890C423.12,-890 479.88,-890 479.88,-890 485.88,-890 491.88,-896 491.88,-902 491.88,-902 491.88,-931 491.88,-931 491.88,-937 485.88,-943 479.88,-943 479.88,-943 423.12,-943 423.12,-943 417.12,-943 411.12,-937 411.12,-931 411.12,-931 411.12,-902 411.12,-902 411.12,-896 417.12,-890 423.12,-890"/>
+<text text-anchor="middle" x="451.5" y="-930.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">controller</text>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_src/js/data</title>
@@ -91,13 +91,13 @@
 </g>
 <g id="clust17" class="cluster">
 <title>cluster_src/js/overlay/format</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M627.38,-661C627.38,-661 704.38,-661 704.38,-661 710.38,-661 716.38,-667 716.38,-673 716.38,-673 716.38,-702 716.38,-702 716.38,-708 710.38,-714 704.38,-714 704.38,-714 627.38,-714 627.38,-714 621.38,-714 615.38,-708 615.38,-702 615.38,-702 615.38,-673 615.38,-673 615.38,-667 621.38,-661 627.38,-661"/>
-<text text-anchor="middle" x="665.88" y="-701.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">format</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M627.38,-783C627.38,-783 704.38,-783 704.38,-783 710.38,-783 716.38,-789 716.38,-795 716.38,-795 716.38,-824 716.38,-824 716.38,-830 710.38,-836 704.38,-836 704.38,-836 627.38,-836 627.38,-836 621.38,-836 615.38,-830 615.38,-824 615.38,-824 615.38,-795 615.38,-795 615.38,-789 621.38,-783 627.38,-783"/>
+<text text-anchor="middle" x="665.88" y="-823.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">format</text>
 </g>
 <g id="clust18" class="cluster">
 <title>cluster_src/js/overlay/media</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M628.88,-722C628.88,-722 702.88,-722 702.88,-722 708.88,-722 714.88,-728 714.88,-734 714.88,-734 714.88,-763 714.88,-763 714.88,-769 708.88,-775 702.88,-775 702.88,-775 628.88,-775 628.88,-775 622.88,-775 616.88,-769 616.88,-763 616.88,-763 616.88,-734 616.88,-734 616.88,-728 622.88,-722 628.88,-722"/>
-<text text-anchor="middle" x="665.88" y="-762.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">media</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M628.88,-661C628.88,-661 702.88,-661 702.88,-661 708.88,-661 714.88,-667 714.88,-673 714.88,-673 714.88,-702 714.88,-702 714.88,-708 708.88,-714 702.88,-714 702.88,-714 628.88,-714 628.88,-714 622.88,-714 616.88,-708 616.88,-702 616.88,-702 616.88,-673 616.88,-673 616.88,-667 622.88,-661 628.88,-661"/>
+<text text-anchor="middle" x="665.88" y="-701.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">media</text>
 </g>
 <g id="clust19" class="cluster">
 <title>cluster_src/js/overlay/overlay</title>
@@ -106,13 +106,13 @@
 </g>
 <g id="clust20" class="cluster">
 <title>cluster_src/js/overlay/rhythm</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M625.88,-783C625.88,-783 705.88,-783 705.88,-783 711.88,-783 717.88,-789 717.88,-795 717.88,-795 717.88,-824 717.88,-824 717.88,-830 711.88,-836 705.88,-836 705.88,-836 625.88,-836 625.88,-836 619.88,-836 613.88,-830 613.88,-824 613.88,-824 613.88,-795 613.88,-795 613.88,-789 619.88,-783 625.88,-783"/>
-<text text-anchor="middle" x="665.88" y="-823.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">rhythm</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M625.88,-722C625.88,-722 705.88,-722 705.88,-722 711.88,-722 717.88,-728 717.88,-734 717.88,-734 717.88,-763 717.88,-763 717.88,-769 711.88,-775 705.88,-775 705.88,-775 625.88,-775 625.88,-775 619.88,-775 613.88,-769 613.88,-763 613.88,-763 613.88,-734 613.88,-734 613.88,-728 619.88,-722 625.88,-722"/>
+<text text-anchor="middle" x="665.88" y="-762.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">rhythm</text>
 </g>
 <g id="clust21" class="cluster">
 <title>cluster_src/js/rhythm</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M74.75,-747C74.75,-747 351.88,-747 351.88,-747 357.88,-747 363.88,-753 363.88,-759 363.88,-759 363.88,-788 363.88,-788 363.88,-794 357.88,-800 351.88,-800 351.88,-800 74.75,-800 74.75,-800 68.75,-800 62.75,-794 62.75,-788 62.75,-788 62.75,-759 62.75,-759 62.75,-753 68.75,-747 74.75,-747"/>
-<text text-anchor="middle" x="213.31" y="-787.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">rhythm</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M74.75,-734C74.75,-734 351.88,-734 351.88,-734 357.88,-734 363.88,-740 363.88,-746 363.88,-746 363.88,-775 363.88,-775 363.88,-781 357.88,-787 351.88,-787 351.88,-787 74.75,-787 74.75,-787 68.75,-787 62.75,-781 62.75,-775 62.75,-775 62.75,-746 62.75,-746 62.75,-740 68.75,-734 74.75,-734"/>
+<text text-anchor="middle" x="213.31" y="-774.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">rhythm</text>
 </g>
 <g id="clust22" class="cluster">
 <title>cluster_src/js/view</title>
@@ -128,8 +128,8 @@
 <g id="node1" class="node">
 <title>src/js/application/Application.js</title>
 <g id="a_node1"><a xlink:href="src/js/application/Application.js" xlink:title="Application.js">
-<path fill="#ffffcc" stroke="black" d="M335.46,-929.25C335.46,-929.25 277.04,-929.25 277.04,-929.25 273.96,-929.25 270.88,-926.17 270.88,-923.08 270.88,-923.08 270.88,-916.92 270.88,-916.92 270.88,-913.83 273.96,-910.75 277.04,-910.75 277.04,-910.75 335.46,-910.75 335.46,-910.75 338.54,-910.75 341.62,-913.83 341.62,-916.92 341.62,-916.92 341.62,-923.08 341.62,-923.08 341.62,-926.17 338.54,-929.25 335.46,-929.25"/>
-<text text-anchor="start" x="278.88" y="-916.7" font-family="Helvetica,sans-Serif" font-size="9.00">Application.js</text>
+<path fill="#ffffcc" stroke="black" d="M335.46,-916.25C335.46,-916.25 277.04,-916.25 277.04,-916.25 273.96,-916.25 270.88,-913.17 270.88,-910.08 270.88,-910.08 270.88,-903.92 270.88,-903.92 270.88,-900.83 273.96,-897.75 277.04,-897.75 277.04,-897.75 335.46,-897.75 335.46,-897.75 338.54,-897.75 341.62,-900.83 341.62,-903.92 341.62,-903.92 341.62,-910.08 341.62,-910.08 341.62,-913.17 338.54,-916.25 335.46,-916.25"/>
+<text text-anchor="start" x="278.88" y="-903.7" font-family="Helvetica,sans-Serif" font-size="9.00">Application.js</text>
 </a>
 </g>
 </g>
@@ -137,31 +137,31 @@
 <g id="node2" class="node">
 <title>src/js/controller/Controller.js</title>
 <g id="a_node2"><a xlink:href="src/js/controller/Controller.js" xlink:title="Controller.js">
-<path fill="#ffffcc" stroke="black" d="M477.71,-929.25C477.71,-929.25 425.29,-929.25 425.29,-929.25 422.21,-929.25 419.12,-926.17 419.12,-923.08 419.12,-923.08 419.12,-916.92 419.12,-916.92 419.12,-913.83 422.21,-910.75 425.29,-910.75 425.29,-910.75 477.71,-910.75 477.71,-910.75 480.79,-910.75 483.88,-913.83 483.88,-916.92 483.88,-916.92 483.88,-923.08 483.88,-923.08 483.88,-926.17 480.79,-929.25 477.71,-929.25"/>
-<text text-anchor="start" x="427.12" y="-916.7" font-family="Helvetica,sans-Serif" font-size="9.00">Controller.js</text>
+<path fill="#ffffcc" stroke="black" d="M477.71,-916.25C477.71,-916.25 425.29,-916.25 425.29,-916.25 422.21,-916.25 419.12,-913.17 419.12,-910.08 419.12,-910.08 419.12,-903.92 419.12,-903.92 419.12,-900.83 422.21,-897.75 425.29,-897.75 425.29,-897.75 477.71,-897.75 477.71,-897.75 480.79,-897.75 483.88,-900.83 483.88,-903.92 483.88,-903.92 483.88,-910.08 483.88,-910.08 483.88,-913.17 480.79,-916.25 477.71,-916.25"/>
+<text text-anchor="start" x="427.12" y="-903.7" font-family="Helvetica,sans-Serif" font-size="9.00">Controller.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/application/Application.js&#45;&gt;src/js/controller/Controller.js -->
 <g id="edge1" class="edge">
 <title>src/js/application/Application.js&#45;&gt;src/js/controller/Controller.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M341.93,-920C362.5,-920 388.68,-920 410.18,-920"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="410.05,-922.1 416.05,-920 410.05,-917.9 410.05,-922.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M341.93,-907C362.5,-907 388.68,-907 410.18,-907"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="410.05,-909.1 416.05,-907 410.05,-904.9 410.05,-909.1"/>
 </g>
 <!-- src/js/overlay/Overlay.js -->
 <g id="node3" class="node">
 <title>src/js/overlay/Overlay.js</title>
 <g id="a_node3"><a xlink:href="src/js/overlay/Overlay.js" xlink:title="Overlay.js">
-<path fill="#ffffcc" stroke="black" d="M582.33,-883.25C582.33,-883.25 538.92,-883.25 538.92,-883.25 535.83,-883.25 532.75,-880.17 532.75,-877.08 532.75,-877.08 532.75,-870.92 532.75,-870.92 532.75,-867.83 535.83,-864.75 538.92,-864.75 538.92,-864.75 582.33,-864.75 582.33,-864.75 585.42,-864.75 588.5,-867.83 588.5,-870.92 588.5,-870.92 588.5,-877.08 588.5,-877.08 588.5,-880.17 585.42,-883.25 582.33,-883.25"/>
-<text text-anchor="start" x="540.75" y="-870.7" font-family="Helvetica,sans-Serif" font-size="9.00">Overlay.js</text>
+<path fill="#ffffcc" stroke="black" d="M582.33,-870.25C582.33,-870.25 538.92,-870.25 538.92,-870.25 535.83,-870.25 532.75,-867.17 532.75,-864.08 532.75,-864.08 532.75,-857.92 532.75,-857.92 532.75,-854.83 535.83,-851.75 538.92,-851.75 538.92,-851.75 582.33,-851.75 582.33,-851.75 585.42,-851.75 588.5,-854.83 588.5,-857.92 588.5,-857.92 588.5,-864.08 588.5,-864.08 588.5,-867.17 585.42,-870.25 582.33,-870.25"/>
+<text text-anchor="start" x="540.75" y="-857.7" font-family="Helvetica,sans-Serif" font-size="9.00">Overlay.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/controller/Controller.js&#45;&gt;src/js/overlay/Overlay.js -->
 <g id="edge2" class="edge">
 <title>src/js/controller/Controller.js&#45;&gt;src/js/overlay/Overlay.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M474.96,-910.36C490.67,-903.61 511.85,-894.52 529.09,-887.11"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="529.73,-889.12 534.42,-884.82 528.07,-885.26 529.73,-889.12"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M474.96,-897.36C490.67,-890.61 511.85,-881.52 529.09,-874.11"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="529.73,-876.12 534.42,-871.82 528.07,-872.26 529.73,-876.12"/>
 </g>
 <!-- src/js/view/View.js -->
 <g id="node4" class="node">
@@ -175,23 +175,38 @@
 <!-- src/js/controller/Controller.js&#45;&gt;src/js/view/View.js -->
 <g id="edge3" class="edge">
 <title>src/js/controller/Controller.js&#45;&gt;src/js/view/View.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M484.06,-929.72C496.92,-933.68 511.83,-938.28 524.99,-942.33"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="524.1,-944.25 530.45,-944.01 525.33,-940.24 524.1,-944.25"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M474.96,-916.64C490.67,-923.39 511.85,-932.48 529.09,-939.89"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="528.07,-941.74 534.42,-942.18 529.73,-937.88 528.07,-941.74"/>
+</g>
+<!-- src/js/overlay/format/OverlayFormat.js -->
+<g id="node18" class="node">
+<title>src/js/overlay/format/OverlayFormat.js</title>
+<g id="a_node18"><a xlink:href="src/js/overlay/format/OverlayFormat.js" xlink:title="OverlayFormat.js">
+<path fill="#ffffcc" stroke="black" d="M702.21,-809.25C702.21,-809.25 629.54,-809.25 629.54,-809.25 626.46,-809.25 623.38,-806.17 623.38,-803.08 623.38,-803.08 623.38,-796.92 623.38,-796.92 623.38,-793.83 626.46,-790.75 629.54,-790.75 629.54,-790.75 702.21,-790.75 702.21,-790.75 705.29,-790.75 708.38,-793.83 708.38,-796.92 708.38,-796.92 708.38,-803.08 708.38,-803.08 708.38,-806.17 705.29,-809.25 702.21,-809.25"/>
+<text text-anchor="start" x="631.38" y="-796.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayFormat.js</text>
+</a>
+</g>
+</g>
+<!-- src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/format/OverlayFormat.js -->
+<g id="edge13" class="edge">
+<title>src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/format/OverlayFormat.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M577.76,-851.47C594.71,-841.46 621.55,-825.6 640.96,-814.13"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="641.81,-816.07 645.91,-811.21 639.67,-812.45 641.81,-816.07"/>
 </g>
 <!-- src/js/overlay/overlay/OverlayOverlay.js -->
-<g id="node18" class="node">
+<g id="node19" class="node">
 <title>src/js/overlay/overlay/OverlayOverlay.js</title>
-<g id="a_node18"><a xlink:href="src/js/overlay/overlay/OverlayOverlay.js" xlink:title="OverlayOverlay.js">
+<g id="a_node19"><a xlink:href="src/js/overlay/overlay/OverlayOverlay.js" xlink:title="OverlayOverlay.js">
 <path fill="#ffffcc" stroke="black" d="M703.33,-870.25C703.33,-870.25 628.42,-870.25 628.42,-870.25 625.33,-870.25 622.25,-867.17 622.25,-864.08 622.25,-864.08 622.25,-857.92 622.25,-857.92 622.25,-854.83 625.33,-851.75 628.42,-851.75 628.42,-851.75 703.33,-851.75 703.33,-851.75 706.42,-851.75 709.5,-854.83 709.5,-857.92 709.5,-857.92 709.5,-864.08 709.5,-864.08 709.5,-867.17 706.42,-870.25 703.33,-870.25"/>
 <text text-anchor="start" x="630.25" y="-857.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayOverlay.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/overlay/OverlayOverlay.js -->
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/overlay/OverlayOverlay.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M588.75,-870.58C596.29,-869.64 604.74,-868.57 613.19,-867.51"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="613.26,-869.62 618.95,-866.78 612.73,-865.45 613.26,-869.62"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M588.75,-861C596.29,-861 604.74,-861 613.19,-861"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="612.92,-863.1 618.92,-861 612.92,-858.9 612.92,-863.1"/>
 </g>
 <!-- src/js/view/render/RenderController.js -->
 <g id="node26" class="node">
@@ -203,7 +218,7 @@
 </g>
 </g>
 <!-- src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M587.95,-954.02C594.47,-954.27 601.72,-954.55 609.08,-954.84"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="608.63,-956.92 614.71,-955.06 608.79,-952.73 608.63,-956.92"/>
@@ -368,98 +383,89 @@
 <g id="node17" class="node">
 <title>src/js/index.js</title>
 <g id="a_node17"><a xlink:href="src/js/index.js" xlink:title="index.js">
-<path fill="#ffffcc" stroke="black" d="M129.96,-929.25C129.96,-929.25 88.29,-929.25 88.29,-929.25 85.21,-929.25 82.12,-926.17 82.12,-923.08 82.12,-923.08 82.12,-916.92 82.12,-916.92 82.12,-913.83 85.21,-910.75 88.29,-910.75 88.29,-910.75 129.96,-910.75 129.96,-910.75 133.04,-910.75 136.12,-913.83 136.12,-916.92 136.12,-916.92 136.12,-923.08 136.12,-923.08 136.12,-926.17 133.04,-929.25 129.96,-929.25"/>
-<text text-anchor="start" x="93.38" y="-916.7" font-family="Helvetica,sans-Serif" font-size="9.00">index.js</text>
+<path fill="#ffffcc" stroke="black" d="M129.96,-916.25C129.96,-916.25 88.29,-916.25 88.29,-916.25 85.21,-916.25 82.12,-913.17 82.12,-910.08 82.12,-910.08 82.12,-903.92 82.12,-903.92 82.12,-900.83 85.21,-897.75 88.29,-897.75 88.29,-897.75 129.96,-897.75 129.96,-897.75 133.04,-897.75 136.12,-900.83 136.12,-903.92 136.12,-903.92 136.12,-910.08 136.12,-910.08 136.12,-913.17 133.04,-916.25 129.96,-916.25"/>
+<text text-anchor="start" x="93.38" y="-903.7" font-family="Helvetica,sans-Serif" font-size="9.00">index.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/index.js&#45;&gt;src/js/application/Application.js -->
 <g id="edge12" class="edge">
 <title>src/js/index.js&#45;&gt;src/js/application/Application.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M136.44,-920C168.51,-920 223.16,-920 261.57,-920"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="261.45,-922.1 267.45,-920 261.45,-917.9 261.45,-922.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M136.44,-907C168.51,-907 223.16,-907 261.57,-907"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="261.45,-909.1 267.45,-907 261.45,-904.9 261.45,-909.1"/>
 </g>
 <!-- src/js/overlay/OverlayUtil.js -->
-<g id="node19" class="node">
+<g id="node20" class="node">
 <title>src/js/overlay/OverlayUtil.js</title>
-<g id="a_node19"><a xlink:href="src/js/overlay/OverlayUtil.js" xlink:title="OverlayUtil.js">
+<g id="a_node20"><a xlink:href="src/js/overlay/OverlayUtil.js" xlink:title="OverlayUtil.js">
 <path fill="#ffffcc" stroke="black" d="M799.08,-748.25C799.08,-748.25 741.42,-748.25 741.42,-748.25 738.33,-748.25 735.25,-745.17 735.25,-742.08 735.25,-742.08 735.25,-735.92 735.25,-735.92 735.25,-732.83 738.33,-729.75 741.42,-729.75 741.42,-729.75 799.08,-729.75 799.08,-729.75 802.17,-729.75 805.25,-732.83 805.25,-735.92 805.25,-735.92 805.25,-742.08 805.25,-742.08 805.25,-745.17 802.17,-748.25 799.08,-748.25"/>
 <text text-anchor="start" x="743.25" y="-735.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayUtil.js</text>
 </a>
 </g>
 </g>
+<!-- src/js/overlay/format/OverlayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
+<g id="edge16" class="edge">
+<title>src/js/overlay/format/OverlayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M693.3,-790.29C701.62,-786.83 710.7,-782.63 718.62,-778 730.38,-771.13 742.5,-761.88 751.93,-754.12"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.01,-755.95 756.25,-750.48 750.31,-752.74 753.01,-755.95"/>
+</g>
 <!-- src/js/overlay/overlay/OverlayOverlay.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge17" class="edge">
+<g id="edge18" class="edge">
 <title>src/js/overlay/overlay/OverlayOverlay.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M699.34,-851.31C706.27,-848.17 713.14,-844.14 718.62,-839 743,-816.2 757.43,-779.07 764.31,-757.04"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="766.26,-757.86 765.94,-751.51 762.23,-756.67 766.26,-757.86"/>
 </g>
 <!-- src/js/overlay/capture/OverlayCapture.js -->
-<g id="node20" class="node">
+<g id="node21" class="node">
 <title>src/js/overlay/capture/OverlayCapture.js</title>
-<g id="a_node20"><a xlink:href="src/js/overlay/capture/OverlayCapture.js" xlink:title="OverlayCapture.js">
+<g id="a_node21"><a xlink:href="src/js/overlay/capture/OverlayCapture.js" xlink:title="OverlayCapture.js">
 <path fill="#ffffcc" stroke="black" d="M704.46,-626.25C704.46,-626.25 627.29,-626.25 627.29,-626.25 624.21,-626.25 621.12,-623.17 621.12,-620.08 621.12,-620.08 621.12,-613.92 621.12,-613.92 621.12,-610.83 624.21,-607.75 627.29,-607.75 627.29,-607.75 704.46,-607.75 704.46,-607.75 707.54,-607.75 710.62,-610.83 710.62,-613.92 710.62,-613.92 710.62,-620.08 710.62,-620.08 710.62,-623.17 707.54,-626.25 704.46,-626.25"/>
 <text text-anchor="start" x="629.12" y="-613.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayCapture.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/overlay/capture/OverlayCapture.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>src/js/overlay/capture/OverlayCapture.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M681.61,-626.61C692.62,-634.26 707.62,-645.7 718.62,-658 736.3,-677.76 751.64,-704.42 760.67,-721.66"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="758.59,-722.22 763.2,-726.61 762.33,-720.31 758.59,-722.22"/>
-</g>
-<!-- src/js/overlay/format/OverlayFormat.js -->
-<g id="node21" class="node">
-<title>src/js/overlay/format/OverlayFormat.js</title>
-<g id="a_node21"><a xlink:href="src/js/overlay/format/OverlayFormat.js" xlink:title="OverlayFormat.js">
-<path fill="#ffffcc" stroke="black" d="M702.21,-687.25C702.21,-687.25 629.54,-687.25 629.54,-687.25 626.46,-687.25 623.38,-684.17 623.38,-681.08 623.38,-681.08 623.38,-674.92 623.38,-674.92 623.38,-671.83 626.46,-668.75 629.54,-668.75 629.54,-668.75 702.21,-668.75 702.21,-668.75 705.29,-668.75 708.38,-671.83 708.38,-674.92 708.38,-674.92 708.38,-681.08 708.38,-681.08 708.38,-684.17 705.29,-687.25 702.21,-687.25"/>
-<text text-anchor="start" x="631.38" y="-674.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayFormat.js</text>
-</a>
-</g>
-</g>
-<!-- src/js/overlay/format/OverlayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge15" class="edge">
-<title>src/js/overlay/format/OverlayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M682.87,-687.53C699.6,-697.5 726.05,-713.26 745.28,-724.72"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="744.2,-726.52 750.43,-727.78 746.35,-722.91 744.2,-726.52"/>
 </g>
 <!-- src/js/overlay/media/OverlayMedia.js -->
 <g id="node22" class="node">
 <title>src/js/overlay/media/OverlayMedia.js</title>
 <g id="a_node22"><a xlink:href="src/js/overlay/media/OverlayMedia.js" xlink:title="OverlayMedia.js">
-<path fill="#ffffcc" stroke="black" d="M700.71,-748.25C700.71,-748.25 631.04,-748.25 631.04,-748.25 627.96,-748.25 624.88,-745.17 624.88,-742.08 624.88,-742.08 624.88,-735.92 624.88,-735.92 624.88,-732.83 627.96,-729.75 631.04,-729.75 631.04,-729.75 700.71,-729.75 700.71,-729.75 703.79,-729.75 706.88,-732.83 706.88,-735.92 706.88,-735.92 706.88,-742.08 706.88,-742.08 706.88,-745.17 703.79,-748.25 700.71,-748.25"/>
-<text text-anchor="start" x="632.88" y="-735.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayMedia.js</text>
+<path fill="#ffffcc" stroke="black" d="M700.71,-687.25C700.71,-687.25 631.04,-687.25 631.04,-687.25 627.96,-687.25 624.88,-684.17 624.88,-681.08 624.88,-681.08 624.88,-674.92 624.88,-674.92 624.88,-671.83 627.96,-668.75 631.04,-668.75 631.04,-668.75 700.71,-668.75 700.71,-668.75 703.79,-668.75 706.88,-671.83 706.88,-674.92 706.88,-674.92 706.88,-681.08 706.88,-681.08 706.88,-684.17 703.79,-687.25 700.71,-687.25"/>
+<text text-anchor="start" x="632.88" y="-674.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayMedia.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/overlay/media/OverlayMedia.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge16" class="edge">
+<g id="edge17" class="edge">
 <title>src/js/overlay/media/OverlayMedia.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M707.34,-739C713.49,-739 719.87,-739 726.08,-739"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="726,-741.1 732,-739 726,-736.9 726,-741.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M682.87,-687.53C699.6,-697.5 726.05,-713.26 745.28,-724.72"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="744.2,-726.52 750.43,-727.78 746.35,-722.91 744.2,-726.52"/>
 </g>
 <!-- src/js/overlay/rhythm/OverlayRhythm.js -->
 <g id="node23" class="node">
 <title>src/js/overlay/rhythm/OverlayRhythm.js</title>
 <g id="a_node23"><a xlink:href="src/js/overlay/rhythm/OverlayRhythm.js" xlink:title="OverlayRhythm.js">
-<path fill="#ffffcc" stroke="black" d="M703.71,-809.25C703.71,-809.25 628.04,-809.25 628.04,-809.25 624.96,-809.25 621.88,-806.17 621.88,-803.08 621.88,-803.08 621.88,-796.92 621.88,-796.92 621.88,-793.83 624.96,-790.75 628.04,-790.75 628.04,-790.75 703.71,-790.75 703.71,-790.75 706.79,-790.75 709.88,-793.83 709.88,-796.92 709.88,-796.92 709.88,-803.08 709.88,-803.08 709.88,-806.17 706.79,-809.25 703.71,-809.25"/>
-<text text-anchor="start" x="629.88" y="-796.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayRhythm.js</text>
+<path fill="#ffffcc" stroke="black" d="M703.71,-748.25C703.71,-748.25 628.04,-748.25 628.04,-748.25 624.96,-748.25 621.88,-745.17 621.88,-742.08 621.88,-742.08 621.88,-735.92 621.88,-735.92 621.88,-732.83 624.96,-729.75 628.04,-729.75 628.04,-729.75 703.71,-729.75 703.71,-729.75 706.79,-729.75 709.88,-732.83 709.88,-735.92 709.88,-735.92 709.88,-742.08 709.88,-742.08 709.88,-745.17 706.79,-748.25 703.71,-748.25"/>
+<text text-anchor="start" x="629.88" y="-735.7" font-family="Helvetica,sans-Serif" font-size="9.00">OverlayRhythm.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/overlay/rhythm/OverlayRhythm.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge18" class="edge">
+<g id="edge19" class="edge">
 <title>src/js/overlay/rhythm/OverlayRhythm.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M693.3,-790.29C701.62,-786.83 710.7,-782.63 718.62,-778 730.38,-771.13 742.5,-761.88 751.93,-754.12"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.01,-755.95 756.25,-750.48 750.31,-752.74 753.01,-755.95"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M710.29,-739C715.53,-739 720.88,-739 726.11,-739"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="725.74,-741.1 731.74,-739 725.74,-736.9 725.74,-741.1"/>
 </g>
 <!-- src/js/rhythm/ViewRhythm.js -->
 <g id="node24" class="node">
 <title>src/js/rhythm/ViewRhythm.js</title>
 <g id="a_node24"><a xlink:href="src/js/rhythm/ViewRhythm.js" xlink:title="ViewRhythm.js">
-<path fill="#ffffcc" stroke="black" d="M141.33,-773.25C141.33,-773.25 76.92,-773.25 76.92,-773.25 73.83,-773.25 70.75,-770.17 70.75,-767.08 70.75,-767.08 70.75,-760.92 70.75,-760.92 70.75,-757.83 73.83,-754.75 76.92,-754.75 76.92,-754.75 141.33,-754.75 141.33,-754.75 144.42,-754.75 147.5,-757.83 147.5,-760.92 147.5,-760.92 147.5,-767.08 147.5,-767.08 147.5,-770.17 144.42,-773.25 141.33,-773.25"/>
-<text text-anchor="start" x="78.75" y="-760.7" font-family="Helvetica,sans-Serif" font-size="9.00">ViewRhythm.js</text>
+<path fill="#ffffcc" stroke="black" d="M141.33,-760.25C141.33,-760.25 76.92,-760.25 76.92,-760.25 73.83,-760.25 70.75,-757.17 70.75,-754.08 70.75,-754.08 70.75,-747.92 70.75,-747.92 70.75,-744.83 73.83,-741.75 76.92,-741.75 76.92,-741.75 141.33,-741.75 141.33,-741.75 144.42,-741.75 147.5,-744.83 147.5,-747.92 147.5,-747.92 147.5,-754.08 147.5,-754.08 147.5,-757.17 144.42,-760.25 141.33,-760.25"/>
+<text text-anchor="start" x="78.75" y="-747.7" font-family="Helvetica,sans-Serif" font-size="9.00">ViewRhythm.js</text>
 </a>
 </g>
 </g>
@@ -467,40 +473,46 @@
 <g id="node25" class="node">
 <title>src/js/rhythm/ViewRhythmTrack.js</title>
 <g id="a_node25"><a xlink:href="src/js/rhythm/ViewRhythmTrack.js" xlink:title="ViewRhythmTrack.js">
-<path fill="#ffffcc" stroke="black" d="M349.71,-773.25C349.71,-773.25 262.79,-773.25 262.79,-773.25 259.71,-773.25 256.62,-770.17 256.62,-767.08 256.62,-767.08 256.62,-760.92 256.62,-760.92 256.62,-757.83 259.71,-754.75 262.79,-754.75 262.79,-754.75 349.71,-754.75 349.71,-754.75 352.79,-754.75 355.88,-757.83 355.88,-760.92 355.88,-760.92 355.88,-767.08 355.88,-767.08 355.88,-770.17 352.79,-773.25 349.71,-773.25"/>
-<text text-anchor="start" x="264.62" y="-760.7" font-family="Helvetica,sans-Serif" font-size="9.00">ViewRhythmTrack.js</text>
+<path fill="#ffffcc" stroke="black" d="M349.71,-760.25C349.71,-760.25 262.79,-760.25 262.79,-760.25 259.71,-760.25 256.62,-757.17 256.62,-754.08 256.62,-754.08 256.62,-747.92 256.62,-747.92 256.62,-744.83 259.71,-741.75 262.79,-741.75 262.79,-741.75 349.71,-741.75 349.71,-741.75 352.79,-741.75 355.88,-744.83 355.88,-747.92 355.88,-747.92 355.88,-754.08 355.88,-754.08 355.88,-757.17 352.79,-760.25 349.71,-760.25"/>
+<text text-anchor="start" x="264.62" y="-747.7" font-family="Helvetica,sans-Serif" font-size="9.00">ViewRhythmTrack.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/rhythm/ViewRhythm.js&#45;&gt;src/js/rhythm/ViewRhythmTrack.js -->
-<g id="edge19" class="edge">
+<g id="edge20" class="edge">
 <title>src/js/rhythm/ViewRhythm.js&#45;&gt;src/js/rhythm/ViewRhythmTrack.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M147.75,-764C175.99,-764 215.17,-764 247.39,-764"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="247.25,-766.1 253.25,-764 247.25,-761.9 247.25,-766.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M147.75,-751C175.99,-751 215.17,-751 247.39,-751"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="247.25,-753.1 253.25,-751 247.25,-748.9 247.25,-753.1"/>
+</g>
+<!-- src/js/view/render/RenderResizer.js -->
+<g id="node27" class="node">
+<title>src/js/view/render/RenderResizer.js</title>
+<g id="a_node27"><a xlink:href="src/js/view/render/RenderResizer.js" xlink:title="RenderResizer.js">
+<path fill="#ffffcc" stroke="black" d="M807.33,-966.25C807.33,-966.25 733.17,-966.25 733.17,-966.25 730.08,-966.25 727,-963.17 727,-960.08 727,-960.08 727,-953.92 727,-953.92 727,-950.83 730.08,-947.75 733.17,-947.75 733.17,-947.75 807.33,-947.75 807.33,-947.75 810.42,-947.75 813.5,-950.83 813.5,-953.92 813.5,-953.92 813.5,-960.08 813.5,-960.08 813.5,-963.17 810.42,-966.25 807.33,-966.25"/>
+<text text-anchor="start" x="735" y="-953.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderResizer.js</text>
+</a>
+</g>
+</g>
+<!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js -->
+<g id="edge22" class="edge">
+<title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M713.87,-957C715.21,-957 716.57,-957 717.92,-957"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="717.77,-959.1 723.77,-957 717.77,-954.9 717.77,-959.1"/>
 </g>
 <!-- src/js/view/render/RenderSurface.js -->
-<g id="node27" class="node">
+<g id="node28" class="node">
 <title>src/js/view/render/RenderSurface.js</title>
-<g id="a_node27"><a xlink:href="src/js/view/render/RenderSurface.js" xlink:title="RenderSurface.js">
-<path fill="#ffffcc" stroke="black" d="M807.71,-966.25C807.71,-966.25 732.79,-966.25 732.79,-966.25 729.71,-966.25 726.62,-963.17 726.62,-960.08 726.62,-960.08 726.62,-953.92 726.62,-953.92 726.62,-950.83 729.71,-947.75 732.79,-947.75 732.79,-947.75 807.71,-947.75 807.71,-947.75 810.79,-947.75 813.88,-950.83 813.88,-953.92 813.88,-953.92 813.88,-960.08 813.88,-960.08 813.88,-963.17 810.79,-966.25 807.71,-966.25"/>
-<text text-anchor="start" x="734.62" y="-953.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderSurface.js</text>
+<g id="a_node28"><a xlink:href="src/js/view/render/RenderSurface.js" xlink:title="RenderSurface.js">
+<path fill="#ffffcc" stroke="black" d="M807.71,-997.25C807.71,-997.25 732.79,-997.25 732.79,-997.25 729.71,-997.25 726.62,-994.17 726.62,-991.08 726.62,-991.08 726.62,-984.92 726.62,-984.92 726.62,-981.83 729.71,-978.75 732.79,-978.75 732.79,-978.75 807.71,-978.75 807.71,-978.75 810.79,-978.75 813.88,-981.83 813.88,-984.92 813.88,-984.92 813.88,-991.08 813.88,-991.08 813.88,-994.17 810.79,-997.25 807.71,-997.25"/>
+<text text-anchor="start" x="734.62" y="-984.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderSurface.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js -->
-<g id="edge21" class="edge">
+<g id="edge23" class="edge">
 <title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M713.87,-957C715.02,-957 716.18,-957 717.33,-957"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="717.14,-959.1 723.14,-957 717.14,-954.9 717.14,-959.1"/>
-</g>
-<!-- src/js/view/render/RenderResizer.js -->
-<g id="node28" class="node">
-<title>src/js/view/render/RenderResizer.js</title>
-<g id="a_node28"><a xlink:href="src/js/view/render/RenderResizer.js" xlink:title="RenderResizer.js">
-<path fill="#ffffcc" stroke="black" d="M702.96,-997.25C702.96,-997.25 628.79,-997.25 628.79,-997.25 625.71,-997.25 622.62,-994.17 622.62,-991.08 622.62,-991.08 622.62,-984.92 622.62,-984.92 622.62,-981.83 625.71,-978.75 628.79,-978.75 628.79,-978.75 702.96,-978.75 702.96,-978.75 706.04,-978.75 709.12,-981.83 709.12,-984.92 709.12,-984.92 709.12,-991.08 709.12,-991.08 709.12,-994.17 706.04,-997.25 702.96,-997.25"/>
-<text text-anchor="start" x="630.62" y="-984.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderResizer.js</text>
-</a>
-</g>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.99,-966.72C708.42,-969.58 718.86,-972.74 728.75,-975.74"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="728,-977.7 734.36,-977.43 729.22,-973.68 728,-977.7"/>
 </g>
 </g>
 </svg>
