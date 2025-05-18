@@ -28,6 +28,8 @@ export default class RenderSurface {
 
 		// Create Canvas
 		this.#CANVAS = document.createElement('canvas');
+		this.#CANVAS.id = 'render-surface';
+		this.#CANVAS.className = 'render-surface';
 		this.#CANVAS.width = this.width;
 		this.#CANVAS.height = this.height;
 
@@ -36,7 +38,7 @@ export default class RenderSurface {
 
 		if (!this.#GL) {
 			ApplicationLogger.warn(
-				'RenderSurface: WebGL2 not supported or context creation failed.',
+				'- WebGL2 not supported or context creation failed.',
 			);
 			return;
 		}
@@ -233,10 +235,10 @@ export default class RenderSurface {
 	}
 
 	render() {
-		ApplicationLogger.log(
-			'RenderSurface: render() called. Drawing a 10x10 red square at a random position.',
-			this.#LOG_LEVEL,
-		);
+		// ApplicationLogger.log(
+		// 	'RenderSurface: render() called. Drawing a 10x10 red square at a random position.',
+		// 	this.#LOG_LEVEL,
+		// );
 
 		if (!this.#GL) return;
 
