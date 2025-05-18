@@ -128,8 +128,8 @@ export default class RenderSurface {
 			}
 		`;
 
-		const vertexShader = this.#compileShader(gl.VERTEX_SHADER, vsSource); // Renamed from _compileShader
-		const fragmentShader = this.#compileShader(gl.FRAGMENT_SHADER, fsSource); // Renamed from _compileShader
+		const vertexShader = this.#compileShader(gl.VERTEX_SHADER, vsSource);
+		const fragmentShader = this.#compileShader(gl.FRAGMENT_SHADER, fsSource);
 
 		if (!vertexShader || !fragmentShader) {
 			ApplicationLogger.warn(
@@ -220,26 +220,7 @@ export default class RenderSurface {
 
 	// __________________________________________________________________ Render
 
-	beginRender(r = 0, g = 0, b = 0, a = 0) {
-		if (!this.#GL || !this.#FRAMEBUFFER) return;
-		const gl = this.#GL;
-		gl.bindFramebuffer(gl.FRAMEBUFFER, this.#FRAMEBUFFER);
-		gl.viewport(0, 0, this.width, this.height);
-		gl.clearColor(r, g, b, a);
-		gl.clear(gl.COLOR_BUFFER_BIT);
-	}
-
-	endRender() {
-		if (!this.#GL) return;
-		this.#GL.bindFramebuffer(this.#GL.FRAMEBUFFER, null);
-	}
-
 	render() {
-		// ApplicationLogger.log(
-		// 	'RenderSurface: render() called. Drawing a 10x10 red square at a random position.',
-		// 	this.#LOG_LEVEL,
-		// );
-
 		if (!this.#GL) return;
 
 		const squareSize = 10;
