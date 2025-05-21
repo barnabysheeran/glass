@@ -11,10 +11,9 @@ export default class Controller {
 
 	constructor() {
 		// Initialise Overlay
-		Overlay.initialise();
-
+		// Overlay.initialise();
 		// Initialise View
-		View.initialise();
+		// View.initialise();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -35,6 +34,6 @@ export default class Controller {
 		}
 
 		// View
-		View.tick(frameDeltaMS);
+		// View.tick(frameDeltaMS);
 	}
 }
