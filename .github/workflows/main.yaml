@@ -34,4 +34,4 @@ jobs:
           local-dir: ./dist/
           server-dir: ./indexopposable.net/
           port: 22
-          protocol: ftp
+          protocol: sftp
