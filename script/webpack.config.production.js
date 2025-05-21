@@ -1,20 +1,24 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import webpack from 'webpack';
+import fs from 'fs';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const TerserPlugin = require('terser-webpack-plugin');
-
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Define Application Version
-const webpack = require('webpack');
-const packageJson = require('../package.json');
-
+const packageJson = JSON.parse(
+	fs.readFileSync(new URL('../package.json', import.meta.url)),
+);
 const applicationVersion = packageJson.version;
 
-module.exports = {
+export default {
 	mode: 'production',
 	devtool: false,
 
@@ -49,7 +53,7 @@ module.exports = {
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						context: '',
+						context: '', // Consider setting a proper context or outputPath for assets
 					},
 				},
 			},
