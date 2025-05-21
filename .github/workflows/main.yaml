@@ -34,4 +34,5 @@ jobs:
           local-dir: ./dist/
           server-dir: ./indexopposable.net/
           port: 22
-          protocol: sftp
+          sftp: true # Use this to enable SFTP
+
