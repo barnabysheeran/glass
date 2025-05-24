@@ -157,16 +157,16 @@
 <g id="node4" class="node">
 <title>src/js/view/View.js</title>
 <g id="a_node4"><a xlink:href="src/js/view/View.js" xlink:title="View.js">
-<path fill="#ffffcc" stroke="black" d="M580.58,-559.25C580.58,-559.25 538.92,-559.25 538.92,-559.25 535.83,-559.25 532.75,-556.17 532.75,-553.08 532.75,-553.08 532.75,-546.92 532.75,-546.92 532.75,-543.83 535.83,-540.75 538.92,-540.75 538.92,-540.75 580.58,-540.75 580.58,-540.75 583.67,-540.75 586.75,-543.83 586.75,-546.92 586.75,-546.92 586.75,-553.08 586.75,-553.08 586.75,-556.17 583.67,-559.25 580.58,-559.25"/>
-<text text-anchor="start" x="545.5" y="-546.7" font-family="Helvetica,sans-Serif" font-size="9.00">View.js</text>
+<path fill="#ffffcc" stroke="black" d="M580.58,-575.25C580.58,-575.25 538.92,-575.25 538.92,-575.25 535.83,-575.25 532.75,-572.17 532.75,-569.08 532.75,-569.08 532.75,-562.92 532.75,-562.92 532.75,-559.83 535.83,-556.75 538.92,-556.75 538.92,-556.75 580.58,-556.75 580.58,-556.75 583.67,-556.75 586.75,-559.83 586.75,-562.92 586.75,-562.92 586.75,-569.08 586.75,-569.08 586.75,-572.17 583.67,-575.25 580.58,-575.25"/>
+<text text-anchor="start" x="545.5" y="-562.7" font-family="Helvetica,sans-Serif" font-size="9.00">View.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/controller/Controller.js&#45;&gt;src/js/view/View.js -->
 <g id="edge3" class="edge">
 <title>src/js/controller/Controller.js&#45;&gt;src/js/view/View.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M461.93,-649.33C480.33,-630.45 521.16,-588.57 543.47,-565.68"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="544.7,-567.43 547.38,-561.66 541.69,-564.49 544.7,-567.43"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M463.47,-649.4C481.84,-633.32 518.99,-600.81 541.08,-581.47"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="542.27,-583.22 545.4,-577.68 539.5,-580.05 542.27,-583.22"/>
 </g>
 <!-- src/js/overlay/displayFormat/OverlayDisplayFormat.js -->
 <g id="node19" class="node">
@@ -202,16 +202,16 @@
 <g id="node24" class="node">
 <title>src/js/view/render/RenderController.js</title>
 <g id="a_node24"><a xlink:href="src/js/view/render/RenderController.js" xlink:title="RenderController.js">
-<path fill="#ffffcc" stroke="black" d="M706.58,-530.25C706.58,-530.25 623.42,-530.25 623.42,-530.25 620.33,-530.25 617.25,-527.17 617.25,-524.08 617.25,-524.08 617.25,-517.92 617.25,-517.92 617.25,-514.83 620.33,-511.75 623.42,-511.75 623.42,-511.75 706.58,-511.75 706.58,-511.75 709.67,-511.75 712.75,-514.83 712.75,-517.92 712.75,-517.92 712.75,-524.08 712.75,-524.08 712.75,-527.17 709.67,-530.25 706.58,-530.25"/>
-<text text-anchor="start" x="625.25" y="-517.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderController.js</text>
+<path fill="#ffffcc" stroke="black" d="M706.58,-561.25C706.58,-561.25 623.42,-561.25 623.42,-561.25 620.33,-561.25 617.25,-558.17 617.25,-555.08 617.25,-555.08 617.25,-548.92 617.25,-548.92 617.25,-545.83 620.33,-542.75 623.42,-542.75 623.42,-542.75 706.58,-542.75 706.58,-542.75 709.67,-542.75 712.75,-545.83 712.75,-548.92 712.75,-548.92 712.75,-555.08 712.75,-555.08 712.75,-558.17 709.67,-561.25 706.58,-561.25"/>
+<text text-anchor="start" x="625.25" y="-548.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderController.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js -->
 <g id="edge19" class="edge">
 <title>src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M587.07,-542.61C597.36,-539.72 609.42,-536.33 620.9,-533.1"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="621.41,-535.14 626.62,-531.5 620.28,-531.1 621.41,-535.14"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M587.07,-562.43C593.6,-561.55 600.84,-560.56 608.2,-559.57"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="608.19,-561.69 613.86,-558.8 607.63,-557.52 608.19,-561.69"/>
 </g>
 <!-- src/js/data/Data.json -->
 <g id="node5" class="node">
@@ -445,9 +445,9 @@
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="247.25,-611.1 253.25,-609 247.25,-606.9 247.25,-611.1"/>
 </g>
 <!-- src/js/view/render/RenderResizer.js -->
-<g id="node26" class="node">
+<g id="node25" class="node">
 <title>src/js/view/render/RenderResizer.js</title>
-<g id="a_node26"><a xlink:href="src/js/view/render/RenderResizer.js" xlink:title="RenderResizer.js">
+<g id="a_node25"><a xlink:href="src/js/view/render/RenderResizer.js" xlink:title="RenderResizer.js">
 <path fill="#ffffcc" stroke="black" d="M823.71,-530.25C823.71,-530.25 749.54,-530.25 749.54,-530.25 746.46,-530.25 743.38,-527.17 743.38,-524.08 743.38,-524.08 743.38,-517.92 743.38,-517.92 743.38,-514.83 746.46,-511.75 749.54,-511.75 749.54,-511.75 823.71,-511.75 823.71,-511.75 826.79,-511.75 829.88,-514.83 829.88,-517.92 829.88,-517.92 829.88,-524.08 829.88,-524.08 829.88,-527.17 826.79,-530.25 823.71,-530.25"/>
 <text text-anchor="start" x="751.38" y="-517.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderResizer.js</text>
 </a>
@@ -456,13 +456,13 @@
 <!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js -->
 <g id="edge20" class="edge">
 <title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M712.94,-521C719.93,-521 727.17,-521 734.25,-521"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="734.08,-523.1 740.08,-521 734.08,-518.9 734.08,-523.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M701.01,-542.26C707.56,-540.48 714.36,-538.66 720.75,-537 725.98,-535.64 731.46,-534.24 736.92,-532.87"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="737.19,-534.97 742.5,-531.47 736.17,-530.89 737.19,-534.97"/>
 </g>
 <!-- src/js/view/render/RenderSurface.js -->
-<g id="node27" class="node">
+<g id="node26" class="node">
 <title>src/js/view/render/RenderSurface.js</title>
-<g id="a_node27"><a xlink:href="src/js/view/render/RenderSurface.js" xlink:title="RenderSurface.js">
+<g id="a_node26"><a xlink:href="src/js/view/render/RenderSurface.js" xlink:title="RenderSurface.js">
 <path fill="#ffffcc" stroke="black" d="M824.08,-561.25C824.08,-561.25 749.17,-561.25 749.17,-561.25 746.08,-561.25 743,-558.17 743,-555.08 743,-555.08 743,-548.92 743,-548.92 743,-545.83 746.08,-542.75 749.17,-542.75 749.17,-542.75 824.08,-542.75 824.08,-542.75 827.17,-542.75 830.25,-545.83 830.25,-548.92 830.25,-548.92 830.25,-555.08 830.25,-555.08 830.25,-558.17 827.17,-561.25 824.08,-561.25"/>
 <text text-anchor="start" x="751" y="-548.7" font-family="Helvetica,sans-Serif" font-size="9.00">RenderSurface.js</text>
 </a>
@@ -471,17 +471,8 @@
 <!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js -->
 <g id="edge21" class="edge">
 <title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M701.01,-530.74C707.56,-532.52 714.36,-534.34 720.75,-536 725.98,-537.36 731.46,-538.76 736.92,-540.13"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="736.17,-542.11 742.5,-541.53 737.19,-538.03 736.17,-542.11"/>
-</g>
-<!-- src/js/view/render/DisplayFormats.js -->
-<g id="node25" class="node">
-<title>src/js/view/render/DisplayFormats.js</title>
-<g id="a_node25"><a xlink:href="src/js/view/render/DisplayFormats.js" xlink:title="DisplayFormats.js">
-<path fill="#ccffcc" stroke="black" d="M703.21,-561.25C703.21,-561.25 626.79,-561.25 626.79,-561.25 623.71,-561.25 620.62,-558.17 620.62,-555.08 620.62,-555.08 620.62,-548.92 620.62,-548.92 620.62,-545.83 623.71,-542.75 626.79,-542.75 626.79,-542.75 703.21,-542.75 703.21,-542.75 706.29,-542.75 709.38,-545.83 709.38,-548.92 709.38,-548.92 709.38,-555.08 709.38,-555.08 709.38,-558.17 706.29,-561.25 703.21,-561.25"/>
-<text text-anchor="start" x="628.62" y="-548.7" font-family="Helvetica,sans-Serif" font-size="9.00">DisplayFormats.js</text>
-</a>
-</g>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M712.94,-552C719.84,-552 726.98,-552 733.98,-552"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="733.69,-554.1 739.69,-552 733.69,-549.9 733.69,-554.1"/>
 </g>
 <!-- src/js/view/render/RenderResizer.js&#45;&gt;src/js/enum/DisplayFormats.js -->
 <g id="edge22" class="edge">
