@@ -5,11 +5,11 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Lines
 {
-    public class ShapeLineHorizontal : Shape
+    export default class ShapeLineHorizontal : Shape
     {
         // _____________________________________________________________________
 
-        public ShapeLineHorizontal(DotManager dotManager,
+        ShapeLineHorizontal(DotManager dotManager,
                                    int gridX, int gridY,
                                    int gridLength,
                                    FillType fillType = FillType.PassThrough,
@@ -19,14 +19,14 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Lines
             // Store Initial Position Grids
             for (int i = 0; i < gridLength; i++)
             {
-                m_positionGrids.Add(new Vector2Int(gridX + i, gridY));
+                #positionGrids.Add(new Vector2Int(gridX + i, gridY));
             }
 
             // Fill Type
-            Fill.Apply(fillType, m_positionGrids, gridLength, 1);
+            Fill.Apply(fillType, #positionGrids, gridLength, 1);
 
             // Fill Strategy Type
-            FillStrategy.Apply(fillStrategyType, m_positionGrids);
+            FillStrategy.Apply(fillStrategyType, #positionGrids);
         }
     }
 }

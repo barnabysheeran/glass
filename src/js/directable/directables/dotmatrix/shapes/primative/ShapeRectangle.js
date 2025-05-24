@@ -5,11 +5,11 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Primitives
 {
-    public class ShapeRectangle : Shape
+    export default class ShapeRectangle : Shape
     {
         // _____________________________________________________________________
 
-        public ShapeRectangle(DotManager dotManager,
+        ShapeRectangle(DotManager dotManager,
                               int gridX, int gridY,
                               int gridWidth, int gridHeight,
                               FillType fillType,
@@ -21,15 +21,15 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Primitives
             {
                 for (int h = 0; h < gridHeight; h++)
                 {
-                    m_positionGrids.Add(new Vector2Int(gridX + w, gridY + h));
+                    #positionGrids.Add(new Vector2Int(gridX + w, gridY + h));
                 }
             }
 
             // Fill Type
-            Fill.Apply(fillType, m_positionGrids, gridWidth, gridHeight);
+            Fill.Apply(fillType, #positionGrids, gridWidth, gridHeight);
 
             // Fill Strategy Type
-            FillStrategy.Apply(fillStrategyType, m_positionGrids);
+            FillStrategy.Apply(fillStrategyType, #positionGrids);
         }
     }
 }

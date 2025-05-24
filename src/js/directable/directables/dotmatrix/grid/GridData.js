@@ -4,81 +4,81 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Grid
 {
-    public static class GridData
+    static class GridData
     {
-        private static int m_gridWidth = 16;
-        private static int m_gridHeight = 16;
+        private static int #gridWidth = 16;
+        private static int #gridHeight = 16;
 
-        private static int m_resolutionWidth = 0;
-        private static int m_resolutionHeight = 0;
-        private static float m_resolutionAspect = 0.0f;
+        private static int #resolutionWidth = 0;
+        private static int #resolutionHeight = 0;
+        private static float #resolutionAspect = 0.0f;
 
-        private static float m_pixelWidth = 0.0f;
-        private static float m_pixelHeight = 0.0f;
+        private static float #pixelWidth = 0.0f;
+        private static float #pixelHeight = 0.0f;
 
-        private static float m_cameraOrthographicSizeDoubled = 10.0f;
+        private static float #cameraOrthographicSizeDoubled = 10.0f;
         // TODO Repeated CameraUserInterfaceSize
 
         // __________________________________________________________ Initialize
 
-        public static void Initialize()
+        static Initialize()
         {
             SetResolution(DisplayController.GetResolution());
         }
 
         // ________________________________________________________________ Grid
 
-        public static Vector2 GetGridPixelPosition(Vector2Int positionGrid)
+        static Vector2 GetGridPixelPosition(Vector2Int positionGrid)
         {
-            float x = -m_cameraOrthographicSizeDoubled;
-            float y = m_cameraOrthographicSizeDoubled / m_resolutionAspect;
+            float x = -#cameraOrthographicSizeDoubled;
+            float y = #cameraOrthographicSizeDoubled / #resolutionAspect;
 
-            x += positionGrid.x * m_pixelWidth * m_gridWidth;
-            y += positionGrid.y * m_pixelHeight * -m_gridHeight;
+            x += positionGrid.x * #pixelWidth * #gridWidth;
+            y += positionGrid.y * #pixelHeight * -#gridHeight;
 
             return new Vector2(x, y);
         }
 
-        public static int GetGridWidth()
+        static int GetGridWidth()
         {
-            return m_gridWidth;
+            return #gridWidth;
         }
 
-        public static int GetGridHeight()
+        static int GetGridHeight()
         {
-            return m_gridHeight;
+            return #gridHeight;
         }
 
         // ____________________________________________________________ Max Grid
 
-        public static Vector2Int GetGridMax()
+        static Vector2Int GetGridMax()
         {
             return new Vector2Int(
-                (m_resolutionWidth / m_gridWidth * 2),
-                (m_resolutionHeight / m_gridHeight * 2) - 1
+                (#resolutionWidth / #gridWidth * 2),
+                (#resolutionHeight / #gridHeight * 2) - 1
             );
         }
 
-        public static Vector2Int GetGridMaxHalf()
+        static Vector2Int GetGridMaxHalf()
         {
             return new Vector2Int(
-                (m_resolutionWidth / m_gridWidth),
-                (m_resolutionHeight / m_gridHeight) - 1
+                (#resolutionWidth / #gridWidth),
+                (#resolutionHeight / #gridHeight) - 1
             );
         }
 
         // __________________________________________________________ Resolution
 
-        public static void SetResolution(Vector2Int resolution)
+        static SetResolution(Vector2Int resolution)
         {
             // Store
-            m_resolutionWidth = resolution.x;
-            m_resolutionHeight = resolution.y;
-            m_resolutionAspect = (float)resolution.x / (float)resolution.y;
+            #resolutionWidth = resolution.x;
+            #resolutionHeight = resolution.y;
+            #resolutionAspect = (float)resolution.x / (float)resolution.y;
 
             // Calculate Pixel Size
-            m_pixelWidth = m_cameraOrthographicSizeDoubled / (float)resolution.x;
-            m_pixelHeight = m_pixelWidth; // TODO Check
+            #pixelWidth = #cameraOrthographicSizeDoubled / (float)resolution.x;
+            #pixelHeight = #pixelWidth; // TODO Check
         }
     }
 }

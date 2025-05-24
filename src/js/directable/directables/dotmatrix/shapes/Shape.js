@@ -6,39 +6,39 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes
 {
-    public class Shape
+    export default class Shape
     {
-        public DotManager m_dotManager;
-        public List<Vector2Int> m_positionGrids = new List<Vector2Int>();
-        public int m_positionGridsIndex = 0;
+        DotManager #dotManager;
+        List<Vector2Int> #positionGrids = new List<Vector2Int>();
+        int #positionGridsIndex = 0;
 
-        public bool m_isComplete = false;
+        bool #isComplete = false;
 
         // _____________________________________________________________________
 
-        public Shape(DotManager dotManager)
+        Shape(DotManager dotManager)
         {
             // Store
-            m_dotManager = dotManager;
+            #dotManager = dotManager;
         }
 
         // ______________________________________________________________ Update
 
-        public virtual void Update()
+        virtual Update()
         {
-            // Debug.Log("Shape. Update " + m_positionGridsIndex);
+            // Debug.Log("Shape. Update " + #positionGridsIndex);
 
             // Complete ?
-            if (m_isComplete)
+            if (#isComplete)
             {
                 return;
             }
 
             // Get Dot Index
-            int dotIndex = m_dotManager.GetNextFreeDotIndex();
+            int dotIndex = #dotManager.GetNextFreeDotIndex();
 
             // Clear Current Dot
-            m_dotManager.ClearDot(dotIndex);
+            #dotManager.ClearDot(dotIndex);
 
             // if (dotIndex == -1)
             // {
@@ -49,18 +49,18 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes
             // TODO -1 Off Grid ?
 
             // Position
-            m_dotManager.SetDotPosition(dotIndex, m_positionGrids[m_positionGridsIndex]);
+            #dotManager.SetDotPosition(dotIndex, #positionGrids[#positionGridsIndex]);
 
             // Fill Dot
-            m_dotManager.FillDot(dotIndex);
+            #dotManager.FillDot(dotIndex);
 
             // Increment Index
-            m_positionGridsIndex++;
+            #positionGridsIndex++;
 
             // Check Complete
-            if (m_positionGridsIndex >= m_positionGrids.Count)
+            if (#positionGridsIndex >= #positionGrids.Count)
             {
-                m_isComplete = true;
+                #isComplete = true;
                 return;
             }
         }

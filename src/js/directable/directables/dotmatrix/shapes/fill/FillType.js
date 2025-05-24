@@ -1,6 +1,6 @@
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 {
-    public enum FillType
+    enum FillType
     {
         PassThrough,
         Random,

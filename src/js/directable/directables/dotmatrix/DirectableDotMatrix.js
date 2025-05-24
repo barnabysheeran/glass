@@ -2,9 +2,13 @@ import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 import Directable from '../../Directable.js';
 
+import ViewManager from './view/ViewManager.js';
+
 export default class DirectableDotMatrix extends Directable {
-	// private GameObject m_go;
-	// private ViewManager m_viewManager;
+	// private GameObject #go;
+	// private ViewManager #viewManager;
+
+	#VIEW_MANAGER;
 
 	// _________________________________________________________________________
 
@@ -12,27 +16,30 @@ export default class DirectableDotMatrix extends Directable {
 		super();
 
 		ApplicationLogger.log('DirectableDotMatrix', this.LOG_LEVEL);
+
+		// Create View Manager
+		this.#VIEW_MANAGER = new ViewManager();
 	}
 
-	// public DotMatrixController(GameObject container)
+	// DotMatrixController(GameObject container)
 	// {
 	//     // // Create Game Object
-	//     // m_go = new GameObject("DotMatrix");
-	//     // m_go.layer = LayerMask.NameToLayer("UserInterface");
-	//     // m_go.transform.position = Vector3.zero;
-	//     // m_go.transform.SetParent(container.transform);
+	//     // #go = new GameObject("DotMatrix");
+	//     // #go.layer = LayerMask.NameToLayer("UserInterface");
+	//     // #go.transform.position = Vector3.zero;
+	//     // #go.transform.SetParent(container.transform);
 
 	//     // // Create View Manager
-	//     // m_viewManager = new ViewManager(m_go);
+	//     // #viewManager = new ViewManager(#go);
 	// }
 
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {}
 
-	// public void Update()
+	// Update()
 	// {
-	//     // m_viewManager.Update();
+	//     // #viewManager.Update();
 	// }
 
 	// ____________________________________________________________________ Size

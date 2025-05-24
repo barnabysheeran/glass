@@ -6,31 +6,31 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Dots
 {
-    public class DotManager
+    export default class DotManager
     {
-        private List<Dot> m_dots;
-        private int m_dotPoolSize = 512;
-        private int m_dotPoolIndex = 0;
+        private List<Dot> #dots;
+        private int #dotPoolSize = 512;
+        private int #dotPoolIndex = 0;
 
         // _____________________________________________________________________
 
-        public DotManager(GameObject container)
+        DotManager(GameObject container)
         {
             // Create Dot Pool
-            m_dots = new List<Dot>();
+            #dots = new List<Dot>();
 
-            for (int i = 0; i < m_dotPoolSize; i++)
+            for (int i = 0; i < #dotPoolSize; i++)
             {
                 Dot dot = new Dot(i, container);
-                m_dots.Add(dot);
+                #dots.Add(dot);
             }
         }
 
         // ______________________________________________________________ Update
 
-        // public void Update()
+        // Update()
         // {
-        //     // foreach (Dot dot in m_dots)
+        //     // foreach (Dot dot in #dots)
         //     // {
         //     //     dot.Update();
         //     // }
@@ -38,17 +38,17 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // ____________________________________________________________ Dot Pool
 
-        public int GetNextFreeDotIndex()
+        int GetNextFreeDotIndex()
         {
-            int index = m_dotPoolIndex;
+            int index = #dotPoolIndex;
 
             // Next
-            m_dotPoolIndex++;
+            #dotPoolIndex++;
 
             // Recycle from Start of Pool
-            if (m_dotPoolIndex >= m_dotPoolSize)
+            if (#dotPoolIndex >= #dotPoolSize)
             {
-                m_dotPoolIndex = 0;
+                #dotPoolIndex = 0;
             }
 
             return index;
@@ -56,10 +56,10 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // ____________________________________________________________ Position
 
-        public void SetDotPosition(int dotIndex, Vector2Int positionGrid)
+        SetDotPosition(int dotIndex, Vector2Int positionGrid)
         {
             // Get Dot
-            Dot dot = m_dots[dotIndex];
+            Dot dot = #dots[dotIndex];
 
             // Set Position
             dot.SetPosition(GridData.GetGridPixelPosition(positionGrid));
@@ -67,10 +67,10 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // ________________________________________________________________ Fill
 
-        public void FillDot(int dotIndex)
+        FillDot(int dotIndex)
         {
             // Get Dot
-            Dot dot = m_dots[dotIndex];
+            Dot dot = #dots[dotIndex];
 
             // Fill
             dot.Fill();
@@ -78,10 +78,10 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // _______________________________________________________________ Clear
 
-        public void ClearDot(int dotIndex)
+        ClearDot(int dotIndex)
         {
             // Get Dot
-            Dot dot = m_dots[dotIndex];
+            Dot dot = #dots[dotIndex];
 
             // Clear
             dot.Clear();
@@ -89,9 +89,9 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // ______________________________________________________________ Status
 
-        public void LogStatus()
+        LogStatus()
         {
-            Debug.Log("DotManager. Index " + m_dotPoolIndex + " of " + m_dotPoolSize + " Dots");
+            Debug.Log("DotManager. Index " + #dotPoolIndex + " of " + #dotPoolSize + " Dots");
         }
     }
 }

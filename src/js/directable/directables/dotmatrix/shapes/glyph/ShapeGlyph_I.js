@@ -6,9 +6,9 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Glyphs
 {
-    public class ShapeGlyph_I : Shape
+    export default class ShapeGlyph_I : Shape
     {
-        private Vector2Int[] m_positionGridGlyphs = new Vector2Int[]
+        private Vector2Int[] #positionGridGlyphs = new Vector2Int[]
         {
             new Vector2Int(0, 0),
             new Vector2Int(0, 1),
@@ -17,25 +17,25 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Glyphs
             new Vector2Int(0, 4),
         };
 
-        private int m_glyphWidth = 4;
-        private int m_glyphHeight = 5;
+        private int #glyphWidth = 4;
+        private int #glyphHeight = 5;
 
         // _____________________________________________________________________
 
-        public ShapeGlyph_I(DotManager dotManager,
+        ShapeGlyph_I(DotManager dotManager,
                                    int gridX, int gridY,
                                    FillType fillType = FillType.PassThrough,
                                    FillStrategyType fillStrategyType = FillStrategyType.PassThrough)
             : base(dotManager)
         {
             // Store Initial Position Grids
-            for (int x = 0; x < m_glyphWidth; x++)
+            for (int x = 0; x < #glyphWidth; x++)
             {
-                for (int y = 0; y < m_glyphHeight; y++)
+                for (int y = 0; y < #glyphHeight; y++)
                 {
                     if (getIsFilled(x, y))
                     {
-                        m_positionGrids.Add(new Vector2Int(
+                        #positionGrids.Add(new Vector2Int(
                             gridX + x,
                             gridY + y
                         ));
@@ -44,10 +44,10 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Glyphs
             }
 
             // Fill Type
-            Fill.Apply(fillType, m_positionGrids);
+            Fill.Apply(fillType, #positionGrids);
 
             // Fill Strategy Type
-            FillStrategy.Apply(fillStrategyType, m_positionGrids);
+            FillStrategy.Apply(fillStrategyType, #positionGrids);
         }
 
         // _____________________________________________________________________
@@ -56,9 +56,9 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Glyphs
         {
             bool isFilled = false;
 
-            for (int i = 0; i < m_positionGridGlyphs.Length; i++)
+            for (int i = 0; i < #positionGridGlyphs.Length; i++)
             {
-                if (m_positionGridGlyphs[i].x == x && m_positionGridGlyphs[i].y == y)
+                if (#positionGridGlyphs[i].x == x && #positionGridGlyphs[i].y == y)
                 {
                     Debug.Log("getIsFilled: x: " + x + ", y: " + y);
 

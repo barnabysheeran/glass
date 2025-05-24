@@ -4,9 +4,9 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 {
-    public static class Fill
+    static class Fill
     {
-        public static void Apply(FillType fillType,
+        static Apply(FillType fillType,
                                  List<Vector2Int> positionGrids,
                                  int gridWidth = 0,
                                  int gridHeight = 0)
@@ -30,7 +30,7 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 
         // ______________________________________________________________ Random
 
-        private static void ApplyRandom(List<Vector2Int> positionGrids)
+        private static ApplyRandom(List<Vector2Int> positionGrids)
         {
             List<Vector2Int> itemsToRemove = new List<Vector2Int>();
 
@@ -51,7 +51,7 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 
         // ______________________________________________________________ Border
 
-        private static void ApplyBorder(List<Vector2Int> positionGrids,
+        private static ApplyBorder(List<Vector2Int> positionGrids,
                                         int gridWidth,
                                         int gridHeight)
         {

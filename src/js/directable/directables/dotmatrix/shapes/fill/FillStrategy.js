@@ -4,9 +4,9 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 {
-    public static class FillStrategy
+    static class FillStrategy
     {
-        public static void Apply(FillStrategyType fillType,
+        static Apply(FillStrategyType fillType,
                                  List<Vector2Int> positionGrids)
         {
             switch (fillType)
@@ -27,7 +27,7 @@ namespace UnityTest.UserInterface.DotMatrix.Shapes.Fills
 
         // ______________________________________________________________ Random
 
-        private static void ApplyRandom(List<Vector2Int> positionGrids)
+        private static ApplyRandom(List<Vector2Int> positionGrids)
         {
             // Randomize positionGrid order
             for (int i = 0; i < positionGrids.Count; i++)

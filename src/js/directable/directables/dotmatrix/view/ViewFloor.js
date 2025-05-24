@@ -8,11 +8,11 @@ using System.Numerics;
 
 namespace UnityTest.UserInterface.DotMatrix.Views
 {
-    public class ViewFloor : View
+    export default class ViewFloor : View
     {
         // _____________________________________________________________________
 
-        public ViewFloor(ShapeManager shapeManager) : base(shapeManager)
+        ViewFloor(ShapeManager shapeManager) : base(shapeManager)
         {
             Vector2Int gridMaxHalf = GridData.GetGridMaxHalf();
 
@@ -28,7 +28,7 @@ namespace UnityTest.UserInterface.DotMatrix.Views
 
             for (int i = 0; i < lineTotal; i += 1)
             {
-                m_shapeManager.AddShapeLineHorizontal(
+                #shapeManager.AddShapeLineHorizontal(
                     x + xOffset,
                     y + yOffset,
                     gridMaxHalf.x - 1 - xOffset * 2,
@@ -43,7 +43,7 @@ namespace UnityTest.UserInterface.DotMatrix.Views
 
         // ______________________________________________________________ Update
 
-        public override void Update()
+        override Update()
         {
             base.Update();
         }

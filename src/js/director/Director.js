@@ -6,7 +6,7 @@ import DirectableDotMatrix from '../directable/directables/dotmatrix/DirectableD
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
-	static #DIRECTABLE_RHYTHM_BPM;
+	static #DIRECTABLE_RHYTH_BPM;
 	static #DIRECTABLE_DOT_MATRIX;
 
 	static #LOG_LEVEL = 2;
@@ -21,7 +21,7 @@ export default class Director {
 		this.#DIRECTABLE_TITLE.setText('꒰ ঌᐢ.ˬ.ᐢ໒ ꒱');
 
 		// Create Rhythm BPM
-		this.#DIRECTABLE_RHYTHM_BPM = new DirectableRhythmBPM();
+		this.#DIRECTABLE_RHYTH_BPM = new DirectableRhythmBPM();
 
 		// Create Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix();
@@ -34,7 +34,7 @@ export default class Director {
 		this.#DIRECTABLE_TITLE.tick(frameDeltaMS);
 
 		// Tick Rhythm BPM
-		this.#DIRECTABLE_RHYTHM_BPM.tick(frameDeltaMS);
+		this.#DIRECTABLE_RHYTH_BPM.tick(frameDeltaMS);
 
 		// Tick Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);

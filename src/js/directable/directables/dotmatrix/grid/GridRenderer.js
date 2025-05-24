@@ -2,27 +2,27 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Grid
 {
-    public class GridRenderer
+    export default class GridRenderer
     {
-        private GameObject m_go;
-        private GridRendererComponent m_gridRendererComponent;
+        private GameObject #go;
+        private GridRendererComponent #gridRendererComponent;
 
-        public GridRenderer(GameObject container)
+        GridRenderer(GameObject container)
         {
             // Create GameObject
-            m_go = new GameObject("GridRenderer");
-            m_go.transform.SetParent(container.transform);
+            #go = new GameObject("GridRenderer");
+            #go.transform.SetParent(container.transform);
 
             // Create Component
-            m_gridRendererComponent = m_go.AddComponent<GridRendererComponent>();
+            #gridRendererComponent = #go.AddComponent<GridRendererComponent>();
         }
 
-        public void SetResolution(Vector2Int resolution)
+        SetResolution(Vector2Int resolution)
         {
-            m_gridRendererComponent.SetResolution(resolution);
+            #gridRendererComponent.SetResolution(resolution);
         }
 
-        // public void Update()
+        // Update()
         // {
         // }
     }

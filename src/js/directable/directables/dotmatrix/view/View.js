@@ -3,23 +3,23 @@
 
 namespace UnityTest.UserInterface.DotMatrix.Views
 {
-    public class View
+    export default class View
     {
-        public ShapeManager m_shapeManager;
+        ShapeManager #shapeManager;
 
         // _____________________________________________________________________
 
-        public View(ShapeManager shapeManager)
+        View(ShapeManager shapeManager)
         {
             // Store
-            m_shapeManager = shapeManager;
+            #shapeManager = shapeManager;
         }
 
         // ______________________________________________________________ Update
 
-        public virtual void Update()
+        virtual Update()
         {
-            m_shapeManager.Update();
+            #shapeManager.Update();
         }
     }
 }

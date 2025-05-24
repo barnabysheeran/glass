@@ -4,25 +4,25 @@ using UnityEngine.UIElements;
 
 namespace UnityTest.UserInterface.DotMatrix.Dots
 {
-    public class Dot
+    export default class Dot
     {
-        private GameObject m_go;
-        private SpriteRenderer m_spriteRenderer;
-        private Sprite m_sprite;
-        private Vector3 m_positionWorld = new Vector3(0, 0, 2);
+        private GameObject #go;
+        private SpriteRenderer #spriteRenderer;
+        private Sprite #sprite;
+        private Vector3 #positionWorld = new Vector3(0, 0, 2);
 
         // _____________________________________________________________________
 
-        public Dot(int dotIndex, GameObject container)
+        Dot(int dotIndex, GameObject container)
         {
             // Create Game Object
-            m_go = new GameObject("DotMatrix_" + dotIndex);
-            m_go.layer = LayerMask.NameToLayer("UserInterface");
-            m_go.transform.position = new Vector3(0, 0, 0);
-            m_go.transform.SetParent(container.transform);
+            #go = new GameObject("DotMatrix_" + dotIndex);
+            #go.layer = LayerMask.NameToLayer("UserInterface");
+            #go.transform.position = new Vector3(0, 0, 0);
+            #go.transform.SetParent(container.transform);
 
             // Add Sprite Renderer
-            m_spriteRenderer = m_go.AddComponent<SpriteRenderer>();
+            #spriteRenderer = #go.AddComponent<SpriteRenderer>();
 
             // Create Sprite
             CreateSprite(new Vector2Int(GridData.GetGridWidth(), GridData.GetGridHeight()));
@@ -36,47 +36,47 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
 
         // ______________________________________________________________ Update
 
-        public void Update()
+        Update()
         {
 
         }
 
         // __________________________________________________________ Resolution
 
-        public void SetResolution(Vector2Int resolution)
+        SetResolution(Vector2Int resolution)
         {
             CreateSprite(resolution);
         }
 
         // ____________________________________________________________ Position
 
-        public void SetPosition(Vector2 positionPixels)
+        SetPosition(Vector2 positionPixels)
         {
             // Store
-            m_positionWorld.x = positionPixels.x;
-            m_positionWorld.y = positionPixels.y;
+            #positionWorld.x = positionPixels.x;
+            #positionWorld.y = positionPixels.y;
 
             // Set
-            m_go.transform.position = m_positionWorld;
+            #go.transform.position = #positionWorld;
         }
 
         // ________________________________________________________________ Fill
 
-        public void Fill()
+        Fill()
         {
-            m_spriteRenderer.color = Color.white;
+            #spriteRenderer.color = Color.white;
         }
 
         // _______________________________________________________________ Clear
 
-        public void Clear()
+        Clear()
         {
-            m_spriteRenderer.color = Color.clear;
+            #spriteRenderer.color = Color.clear;
         }
 
         // ______________________________________________________________ Sprite
 
-        private void CreateSprite(Vector2Int resolution)
+        private CreateSprite(Vector2Int resolution)
         {
             // Create a new texture with the specified resolution
             Texture2D texture = new Texture2D(resolution.x, resolution.y);
@@ -91,18 +91,18 @@ namespace UnityTest.UserInterface.DotMatrix.Dots
             texture.Apply();
 
             // Create and assign sprite
-            m_sprite = Sprite.Create(texture,
+            #sprite = Sprite.Create(texture,
                 new Rect(0, 0, resolution.x, resolution.y),
                 new Vector2(0.0f, 1.0f));
 
-            m_spriteRenderer.sprite = m_sprite;
+            #spriteRenderer.sprite = #sprite;
         }
 
-        private void LoadSprite(string path)
+        private LoadSprite(string path)
         {
             // Load sprite from path
-            m_sprite = Resources.Load<Sprite>(path);
-            m_spriteRenderer.sprite = m_sprite;
+            #sprite = Resources.Load<Sprite>(path);
+            #spriteRenderer.sprite = #sprite;
         }
     }
 }
