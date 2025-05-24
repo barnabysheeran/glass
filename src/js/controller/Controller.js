@@ -1,3 +1,4 @@
+import ApplicationLogger from '../application/ApplicationLogger.js';
 import Overlay from '../overlay/Overlay.js';
 import View from '../view/View.js';
 
@@ -7,15 +8,21 @@ export default class Controller {
 
 	#frameRateDelayMS = 0;
 
+	#LOG_LEVEL = 1;
+
 	// _________________________________________________________________________
 
 	constructor() {
-		console.log('Controller');
+		ApplicationLogger.log(
+			`Controller: Initialising with Frame Rate ${this.#FRAMERATE_FPS} FPS`,
+			this.#LOG_LEVEL,
+		);
 
 		// Initialise Overlay
-		// Overlay.initialise();
+		Overlay.initialise();
+
 		// Initialise View
-		// View.initialise();
+		View.initialise();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -36,6 +43,6 @@ export default class Controller {
 		}
 
 		// View
-		// View.tick(frameDeltaMS);
+		View.tick(frameDeltaMS);
 	}
 }
