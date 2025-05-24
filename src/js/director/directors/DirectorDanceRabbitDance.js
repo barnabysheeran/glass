@@ -4,10 +4,12 @@ import Director from '../Director';
 
 import DirectableTitle from '../../directable/directables/title/DirectableTitle';
 import DirectableRhythmBPM from '../../directable/directables/rhythm/bpm/DirectableRhythmBPM';
+import DirectableDotMatrix from '../../directable/directables/dotmatrix/DirectableDotMatrix';
 
 export default class DirectorDanceRabbitDance extends Director {
 	#DIRECTABLE_TITLE;
 	#DIRECTABLE_RHYTHM_BPM;
+	#DIRECTABLE_DOT_MATRIX;
 
 	// _________________________________________________________________________
 
@@ -16,13 +18,15 @@ export default class DirectorDanceRabbitDance extends Director {
 
 		ApplicationLogger.log('DirectorDanceRabbitDance', this.LOG_LEVEL);
 
-		// Directable Title
+		// Create Directable Title
 		this.#DIRECTABLE_TITLE = new DirectableTitle();
-
 		this.#DIRECTABLE_TITLE.setText('꒰ ঌᐢ.ˬ.ᐢ໒ ꒱');
 
-		// Rhythm BPM
+		// Create Rhythm BPM
 		this.#DIRECTABLE_RHYTHM_BPM = new DirectableRhythmBPM();
+
+		// Create Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -32,6 +36,9 @@ export default class DirectorDanceRabbitDance extends Director {
 
 		// Rhythm BPM
 		this.#DIRECTABLE_RHYTHM_BPM.tick(frameDeltaMS);
+
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
 	}
 
 	// _________________________________________________________ Tick Frame Rate
