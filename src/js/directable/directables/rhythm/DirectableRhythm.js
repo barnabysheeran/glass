@@ -1,6 +1,6 @@
-import ApplicationLogger from '../../../application/ApplicationLogger';
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import Directable from '../../Directable';
+import Directable from '../../Directable.js';
 
 export default class DirectableRhythm extends Directable {
 	// __________________________________________________________________________

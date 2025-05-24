@@ -1,5 +1,7 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
+
 import Overlay from '../overlay/Overlay.js';
+import Director from '../director/Director.js';
 import View from '../view/View.js';
 
 export default class Controller {
@@ -20,6 +22,9 @@ export default class Controller {
 
 		// Initialise Overlay
 		Overlay.initialise();
+
+		// Initialise Director
+		Director.initialise();
 
 		// Initialise View
 		View.initialise();
@@ -42,7 +47,10 @@ export default class Controller {
 			// TODO
 		}
 
-		// View
+		// Tick Director
+		Director.tick(frameDeltaMS);
+
+		// Tick View
 		View.tick(frameDeltaMS);
 	}
 }

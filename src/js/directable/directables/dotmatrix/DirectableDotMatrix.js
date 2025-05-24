@@ -1,5 +1,6 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
-import Directable from '../Directable.js';
+
+import Directable from '../../Directable.js';
 
 export default class DirectableDotMatrix extends Directable {
 	// private GameObject m_go;

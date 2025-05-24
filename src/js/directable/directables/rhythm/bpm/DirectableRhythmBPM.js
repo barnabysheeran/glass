@@ -1,6 +1,6 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger';
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
-import DirectableRhythm from '../DirectableRhythm';
+import DirectableRhythm from '../DirectableRhythm.js';
 
 export default class DirectableRhythmBPM extends DirectableRhythm {
 	#BPM = 0;

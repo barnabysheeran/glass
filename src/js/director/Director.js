@@ -1,21 +1,29 @@
-/*
-
-  Director is a Superclass for all Directors
-
-*/
+import DirectableTitle from '../directable/directables/title/DirectableTitle.js';
+import DirectableRhythmBPM from '../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
+import DirectableDotMatrix from '../directable/directables/dotmatrix/DirectableDotMatrix.js';
 
 export default class Director {
-	LOG_LEVEL = 2;
+	static #DIRECTABLE_TITLE;
+	static #DIRECTABLE_RHYTHM_BPM;
+	static #DIRECTABLE_DOT_MATRIX;
+
+	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
 
-	constructor() {}
+	static initialise() {
+		// Create Directable Title
+		this.#DIRECTABLE_TITLE = new DirectableTitle();
+		this.#DIRECTABLE_TITLE.setText('꒰ ঌᐢ.ˬ.ᐢ໒ ꒱');
+
+		// Create Rhythm BPM
+		this.#DIRECTABLE_RHYTHM_BPM = new DirectableRhythmBPM();
+
+		// Create Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix();
+	}
 
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {}
-
-	// _________________________________________________________ Tick Frame Rate
-
-	tickFrameRate() {}
 }

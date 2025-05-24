@@ -1,10 +1,10 @@
-import ApplicationLogger from '../../application/ApplicationLogger';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-import Director from '../Director';
+import Director from '../Director.js';
 
-import DirectableTitle from '../../directable/directables/title/DirectableTitle';
-import DirectableRhythmBPM from '../../directable/directables/rhythm/bpm/DirectableRhythmBPM';
-import DirectableDotMatrix from '../../directable/directables/dotmatrix/DirectableDotMatrix';
+import DirectableTitle from '../../directable/directables/title/DirectableTitle.js';
+import DirectableRhythmBPM from '../../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
+import DirectableDotMatrix from '../../directable/directables/dotmatrix/DirectableDotMatrix.js';
 
 export default class DirectorDanceRabbitDance extends Director {
 	#DIRECTABLE_TITLE;
