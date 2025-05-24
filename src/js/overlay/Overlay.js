@@ -37,6 +37,9 @@ export default class Overlay {
 			'overlay-toggle-visibility',
 			this.#toggleVisibility.bind(this),
 		);
+
+		// Start Hidden
+		this.#hide();
 	}
 
 	// ______________________________________________________________ Visibility
