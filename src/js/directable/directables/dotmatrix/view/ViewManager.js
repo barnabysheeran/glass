@@ -1,14 +1,19 @@
+import GridData from '../grid/GridData.js';
+
 export default class ViewManager {
 	// private GridRenderer #gridRenderer;
 	// private DotManager #dotManager;
 	// private ShapeManager #shapeManager;
 	// private List<View> #views = new List<View>();
 
+	#LOG_LEVEL = 3;
+
 	// _________________________________________________________________________
 
 	constructor(container) {
-		// // Initialize Grid Data
-		// GridData.Initialize();
+		// Initialize Grid Data
+		GridData.initialize();
+
 		// // DEV
 		// // #gridRenderer = new GridRenderer(container);
 		// // Create Dot Manager
@@ -40,8 +45,13 @@ export default class ViewManager {
 
 	setSize(width, height) {
 		// Debug.Log("ViewManager.SetResolution: " + resolution);
+
+		//
+		GridData.setSize(width, height);
+
 		// // Set Resolution
 		// GridData.SetResolution(resolution);
+
 		// // DEV
 		// // #gridRenderer.SetResolution(resolution);
 		// // #textureWrapper.SetResolution(resolution);

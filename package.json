@@ -15,6 +15,9 @@
     "depcruise:all": "depcruise --config ./tool/depcruise/config-all.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-all.svg",
     "depcruise:selected": "depcruise --config ./tool/depcruise/config-selected.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-selected.svg"
   },
+    "dependencies": {
+    "gl-matrix": "^3.4.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/eslint-parser": "^7.26.10",
@@ -63,4 +66,5 @@
     "printWidth": 80,
     "endOfLine": "auto"
   }
+
 }

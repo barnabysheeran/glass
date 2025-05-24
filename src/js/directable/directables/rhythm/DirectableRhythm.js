@@ -1,13 +1,7 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
-
-import Directable from '../../Directable.js';
-
-export default class DirectableRhythm extends Directable {
+export default class DirectableRhythm {
 	// __________________________________________________________________________
 
-	constructor() {
-		super();
-	}
+	constructor() {}
 
 	// ____________________________________________________________________ Tick
 

@@ -1,21 +1,19 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import Directable from '../../Directable.js';
-
 import ViewManager from './view/ViewManager.js';
 
-export default class DirectableDotMatrix extends Directable {
+export default class DirectableDotMatrix {
 	// private GameObject #go;
 	// private ViewManager #viewManager;
 
 	#VIEW_MANAGER;
 
+	#LOG_LEVEL = 2;
+
 	// _________________________________________________________________________
 
 	constructor() {
-		super();
-
-		ApplicationLogger.log('DirectableDotMatrix', this.LOG_LEVEL);
+		ApplicationLogger.log('DirectableDotMatrix', this.#LOG_LEVEL);
 
 		// Create View Manager
 		this.#VIEW_MANAGER = new ViewManager();

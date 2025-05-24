@@ -1,84 +1,72 @@
+import { vec2 } from 'gl-matrix';
 
+export default class GridData {
+	static #gridWidth = 16;
+	static #gridHeight = 16;
 
+	static #resolutionWidth = 0;
+	static #resolutionHeight = 0;
+	static #resolutionAspect = 0.0;
 
+	static #pixelWidth = 0.0;
+	static #pixelHeight = 0.0;
 
-namespace UnityTest.UserInterface.DotMatrix.Grid
-{
-    static class GridData
-    {
-        private static int #gridWidth = 16;
-        private static int #gridHeight = 16;
+	static #cameraOrthographicSizeDoubled = 10.0;
+	// TODO Repeated CameraUserInterfaceSize
 
-        private static int #resolutionWidth = 0;
-        private static int #resolutionHeight = 0;
-        private static float #resolutionAspect = 0.0f;
+	// ______________________________________________________________ Initialize
 
-        private static float #pixelWidth = 0.0f;
-        private static float #pixelHeight = 0.0f;
+	static initialize() {
+		// TODO Initial Grid Size ?
+		this.setSize(100, 100);
+	}
 
-        private static float #cameraOrthographicSizeDoubled = 10.0f;
-        // TODO Repeated CameraUserInterfaceSize
+	// ____________________________________________________________________ Grid
 
-        // __________________________________________________________ Initialize
+	static getGridPixelPosition(positionGrid) {
+		let x = -this.#cameraOrthographicSizeDoubled;
+		let y = this.#cameraOrthographicSizeDoubled / this.#resolutionAspect;
 
-        static Initialize()
-        {
-            SetResolution(DisplayController.GetResolution());
-        }
+		x += positionGrid.x * this.#pixelWidth * this.#gridWidth;
+		y += positionGrid.y * this.#pixelHeight * -this.#gridHeight;
 
-        // ________________________________________________________________ Grid
+		return new vec2(x, y);
+	}
 
-        static Vector2 GetGridPixelPosition(Vector2Int positionGrid)
-        {
-            float x = -#cameraOrthographicSizeDoubled;
-            float y = #cameraOrthographicSizeDoubled / #resolutionAspect;
+	static getGridWidth() {
+		return this.#gridWidth;
+	}
 
-            x += positionGrid.x * #pixelWidth * #gridWidth;
-            y += positionGrid.y * #pixelHeight * -#gridHeight;
+	static getGridHeight() {
+		return this.#gridHeight;
+	}
 
-            return new Vector2(x, y);
-        }
+	// ________________________________________________________________ Max Grid
 
-        static int GetGridWidth()
-        {
-            return #gridWidth;
-        }
+	static getGridMax() {
+		return new vec2(
+			(this.#resolutionWidth / this.#gridWidth) * 2,
+			(this.#resolutionHeight / this.#gridHeight) * 2 - 1,
+		);
+	}
 
-        static int GetGridHeight()
-        {
-            return #gridHeight;
-        }
+	static getGridMaxHalf() {
+		return new vec2(
+			this.#resolutionWidth / this.#gridWidth,
+			this.#resolutionHeight / this.#gridHeight - 1,
+		);
+	}
 
-        // ____________________________________________________________ Max Grid
+	// ____________________________________________________________________ Size
 
-        static Vector2Int GetGridMax()
-        {
-            return new Vector2Int(
-                (#resolutionWidth / #gridWidth * 2),
-                (#resolutionHeight / #gridHeight * 2) - 1
-            );
-        }
+	static setSize(width, height) {
+		// Store
+		this.#resolutionWidth = width;
+		this.#resolutionHeight = height;
+		this.#resolutionAspect = width / height;
 
-        static Vector2Int GetGridMaxHalf()
-        {
-            return new Vector2Int(
-                (#resolutionWidth / #gridWidth),
-                (#resolutionHeight / #gridHeight) - 1
-            );
-        }
-
-        // __________________________________________________________ Resolution
-
-        static SetResolution(Vector2Int resolution)
-        {
-            // Store
-            #resolutionWidth = resolution.x;
-            #resolutionHeight = resolution.y;
-            #resolutionAspect = (float)resolution.x / (float)resolution.y;
-
-            // Calculate Pixel Size
-            #pixelWidth = #cameraOrthographicSizeDoubled / (float)resolution.x;
-            #pixelHeight = #pixelWidth; // TODO Check
-        }
-    }
+		// Calculate Pixel Size
+		this.#pixelWidth = this.#cameraOrthographicSizeDoubled / width;
+		this.#pixelHeight = this.#pixelWidth; // TODO Check
+	}
 }

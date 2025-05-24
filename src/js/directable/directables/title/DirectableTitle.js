@@ -1,13 +1,9 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import Directable from '../../Directable.js';
-
-export default class DirectableTitle extends Directable {
+export default class DirectableTitle {
 	// _________________________________________________________________________
 
 	constructor() {
-		super();
-
 		ApplicationLogger.log('DirectableTitle', this.LOG_LEVEL);
 	}
 
