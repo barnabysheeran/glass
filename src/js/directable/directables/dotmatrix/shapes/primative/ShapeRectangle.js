@@ -1,7 +1,7 @@
-using UnityEngine;
 
-using UnityTest.UserInterface.DotMatrix.Dots;
-using UnityTest.UserInterface.DotMatrix.Shapes.Fills;
+
+
+
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes.Primitives
 {

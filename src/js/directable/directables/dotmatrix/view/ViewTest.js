@@ -1,9 +1,9 @@
 
-using UnityTest.UserInterface.DotMatrix.Shapes;
-using UnityTest.UserInterface.DotMatrix.Shapes.Fills;
 
-using UnityEngine;
-using UnityTest.UserInterface.DotMatrix.Grid;
+
+
+
+
 
 namespace UnityTest.UserInterface.DotMatrix.Views
 {

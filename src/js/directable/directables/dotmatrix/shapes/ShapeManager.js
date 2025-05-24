@@ -1,12 +1,12 @@
-using System.Collections.Generic;
 
-using UnityEngine;
 
-using UnityTest.UserInterface.DotMatrix.Dots;
-using UnityTest.UserInterface.DotMatrix.Shapes.Fills;
-using UnityTest.UserInterface.DotMatrix.Shapes.Lines;
-using UnityTest.UserInterface.DotMatrix.Shapes.Primitives;
-using UnityTest.UserInterface.DotMatrix.Shapes.Glyphs;
+
+
+
+
+
+
+
 
 namespace UnityTest.UserInterface.DotMatrix.Shapes
 {

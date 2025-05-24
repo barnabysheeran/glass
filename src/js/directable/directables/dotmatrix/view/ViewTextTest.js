@@ -1,6 +1,6 @@
 
-using UnityTest.UserInterface.DotMatrix.Shapes;
-using UnityTest.UserInterface.DotMatrix.Shapes.Fills;
+
+
 
 namespace UnityTest.UserInterface.DotMatrix.Views
 {
