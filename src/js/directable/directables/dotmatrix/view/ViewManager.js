@@ -1,10 +1,16 @@
 import GridData from '../grid/GridData.js';
 
+import DotManager from '../dot/DotManager.js';
+import ShapeManager from '../shape/ShapeManager.js';
+
 export default class ViewManager {
 	// private GridRenderer #gridRenderer;
 	// private DotManager #dotManager;
 	// private ShapeManager #shapeManager;
 	// private List<View> #views = new List<View>();
+
+	#DOT_MANAGER;
+	#SHAPE_MANAGER;
 
 	#LOG_LEVEL = 3;
 
@@ -14,12 +20,16 @@ export default class ViewManager {
 		// Initialize Grid Data
 		GridData.initialize();
 
-		// // DEV
+		// // DEV -
+		// TODO Remove or re-implement
 		// // #gridRenderer = new GridRenderer(container);
-		// // Create Dot Manager
-		// #dotManager = new DotManager(container);
-		// // Create Shape Manager
-		// #shapeManager = new ShapeManager(#dotManager);
+
+		// Create Dot Manager
+		this.#DOT_MANAGER = new DotManager(container);
+
+		// Create Shape Manager
+		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
+
 		// // Dev - Create View Test
 		// ViewTest viewTest = new ViewTest(#shapeManager);
 		// #views.Add(viewTest);
