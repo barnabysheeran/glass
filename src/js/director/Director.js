@@ -1,12 +1,12 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import DirectableTitle from '../directable/directables/title/DirectableTitle.js';
-import DirectableRhythmBPM from '../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
+// import DirectableRhythmBPM from '../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
 import DirectableDotMatrix from '../directable/directables/dotmatrix/DirectableDotMatrix.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
-	static #DIRECTABLE_RHYTH_BPM;
+	// static #DIRECTABLE_RHYTH_BPM;
 	static #DIRECTABLE_DOT_MATRIX;
 
 	static #LOG_LEVEL = 2;
@@ -21,7 +21,7 @@ export default class Director {
 		this.#DIRECTABLE_TITLE.setText('꒰ ঌᐢ.ˬ.ᐢ໒ ꒱');
 
 		// Create Rhythm BPM
-		this.#DIRECTABLE_RHYTH_BPM = new DirectableRhythmBPM();
+		// this.#DIRECTABLE_RHYTH_BPM = new DirectableRhythmBPM();
 
 		// Create Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix();
@@ -31,10 +31,10 @@ export default class Director {
 
 	static tick(frameDeltaMS) {
 		// Tick Directable Title
-		this.#DIRECTABLE_TITLE.tick(frameDeltaMS);
+		// this.#DIRECTABLE_TITLE.tick(frameDeltaMS);
 
 		// Tick Rhythm BPM
-		this.#DIRECTABLE_RHYTH_BPM.tick(frameDeltaMS);
+		// this.#DIRECTABLE_RHYTH_BPM.tick(frameDeltaMS);
 
 		// Tick Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);

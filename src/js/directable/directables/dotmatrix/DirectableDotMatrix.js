@@ -8,7 +8,7 @@ export default class DirectableDotMatrix {
 
 	#VIEW_MANAGER;
 
-	#LOG_LEVEL = 2;
+	#LOG_LEVEL = 3;
 
 	// _________________________________________________________________________
 

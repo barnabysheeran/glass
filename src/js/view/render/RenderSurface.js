@@ -21,10 +21,7 @@ export default class RenderSurface {
 	// _________________________________________________________________________
 
 	constructor() {
-		ApplicationLogger.log(
-			`RenderSurface: Initializing with default width: ${this.width}, height: ${this.height}`,
-			this.#LOG_LEVEL,
-		);
+		ApplicationLogger.log(`RenderSurface`, this.#LOG_LEVEL);
 
 		// Create Canvas
 		this.#CANVAS = document.createElement('canvas');
@@ -95,7 +92,7 @@ export default class RenderSurface {
 		const status = this.#GL.checkFramebufferStatus(this.#GL.FRAMEBUFFER);
 		if (status !== this.#GL.FRAMEBUFFER_COMPLETE) {
 			ApplicationLogger.warn(
-				`RenderSurface: Framebuffer incomplete: ${status.toString(16)}`,
+				`RenderSurface Framebuffer incomplete: ${status.toString(16)}`,
 			);
 		}
 
@@ -133,7 +130,7 @@ export default class RenderSurface {
 
 		if (!vertexShader || !fragmentShader) {
 			ApplicationLogger.warn(
-				'RenderSurface: Failed to compile display shaders.',
+				'RenderSurface Failed to compile display shaders.',
 			);
 			return;
 		}
@@ -145,7 +142,7 @@ export default class RenderSurface {
 
 		if (!gl.getProgramParameter(this.#DISPLAY_SHADER_PROGRAM, gl.LINK_STATUS)) {
 			ApplicationLogger.warn(
-				'RenderSurface: Unable to initialize the display shader program: ' +
+				'RenderSurface Unable to initialize the display shader program: ' +
 					gl.getProgramInfoLog(this.#DISPLAY_SHADER_PROGRAM),
 			);
 			gl.deleteProgram(this.#DISPLAY_SHADER_PROGRAM);
@@ -210,7 +207,7 @@ export default class RenderSurface {
 		gl.compileShader(shader);
 		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
 			ApplicationLogger.warn(
-				`RenderSurface: An error occurred compiling the display shaders: ${gl.getShaderInfoLog(shader)}`,
+				`RenderSurface An error occurred compiling the display shaders: ${gl.getShaderInfoLog(shader)}`,
 			);
 			gl.deleteShader(shader);
 			return null;
@@ -229,7 +226,7 @@ export default class RenderSurface {
 
 		if (maxX < 0 || maxY < 0) {
 			ApplicationLogger.warn(
-				'RenderSurface: Canvas too small to draw test square.',
+				'RenderSurface - Canvas too small to draw test square.',
 			);
 			return;
 		}
@@ -283,7 +280,7 @@ export default class RenderSurface {
 		if (!this.#GL || !this.#FRAMEBUFFER) return null;
 		if (x < 0 || y < 0 || x + width > this.width || y + height > this.height) {
 			ApplicationLogger.warn(
-				'RenderSurface: getTextureData called with out-of-bounds coordinates.',
+				'RenderSurface getTextureData called with out-of-bounds coordinates.',
 			);
 			return null;
 		}
@@ -304,13 +301,15 @@ export default class RenderSurface {
 		if (!this.#GL || !this.#TEXTURE) return;
 		if (x < 0 || y < 0 || x + width > this.width || y + height > this.height) {
 			ApplicationLogger.warn(
-				'RenderSurface: setTextureData called with out-of-bounds coordinates.',
+				'RenderSurface setTextureData called with out-of-bounds coordinates.',
+				this.#LOG_LEVEL,
 			);
 			return;
 		}
 		if (!data || data.byteLength !== width * height * 4) {
 			ApplicationLogger.warn(
-				'RenderSurface: setTextureData called with invalid data size.',
+				'RenderSurface setTextureData called with invalid data size.',
+				this.#LOG_LEVEL,
 			);
 			return;
 		}
@@ -345,7 +344,8 @@ export default class RenderSurface {
 		}
 
 		ApplicationLogger.log(
-			`RenderSurface: Resizing from ${this.width}x${this.height} to ${newWidth}x${newHeight}`,
+			`RenderSurface setSize from ${this.width} ${this.height}` +
+				` to ${newWidth} ${newHeight}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -359,7 +359,9 @@ export default class RenderSurface {
 
 		if (!this.#GL) {
 			ApplicationLogger.warn(
-				'RenderSurface: setSize called, but GL context not available. Canvas resized, GL resources not updated.',
+				`RenderSurface setSize called, but GL context not available.` +
+					` Canvas resized, GL resources not updated.`,
+				this.#LOG_LEVEL,
 			);
 			return;
 		}
@@ -405,25 +407,21 @@ export default class RenderSurface {
 		const status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
 		if (status !== gl.FRAMEBUFFER_COMPLETE) {
 			ApplicationLogger.warn(
-				`RenderSurface: Framebuffer incomplete after resize: ${status.toString(16)}`,
+				`RenderSurface Framebuffer incomplete after resize: ${status.toString(16)}`,
+				this.#LOG_LEVEL,
 			);
 		}
 
 		// Unbind
 		gl.bindTexture(gl.TEXTURE_2D, null);
 		gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-
-		ApplicationLogger.log(
-			'RenderSurface: Resized successfully.',
-			this.#LOG_LEVEL,
-		);
 	}
 
 	// _________________________________________________________________ Destroy
 
 	destroy() {
 		ApplicationLogger.log(
-			'RenderSurface: Destroying resources.',
+			'RenderSurface Destroying resources.',
 			this.#LOG_LEVEL,
 		);
 		if (this.#GL) {

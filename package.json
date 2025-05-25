@@ -15,7 +15,7 @@
     "depcruise:all": "depcruise --config ./tool/depcruise/config-all.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-all.svg",
     "depcruise:selected": "depcruise --config ./tool/depcruise/config-selected.js --output-type dot src | dot -T svg > ./tool/depcruise/dependencygraph-selected.svg"
   },
-    "dependencies": {
+  "dependencies": {
     "gl-matrix": "^3.4.3"
   },
   "devDependencies": {

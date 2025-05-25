@@ -18,7 +18,7 @@ export default class Overlay {
 	// ______________________________________________________________ Initialise
 
 	static initialise() {
-		ApplicationLogger.log('Overlay. initialise', this.#LOG_LEVEL);
+		ApplicationLogger.log('Overlay initialise', this.#LOG_LEVEL);
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
@@ -45,7 +45,7 @@ export default class Overlay {
 	// ______________________________________________________________ Visibility
 
 	static #toggleVisibility() {
-		ApplicationLogger.log('Overlay. toggleVisibility', this.#LOG_LEVEL);
+		ApplicationLogger.log('Overlay toggleVisibility', this.#LOG_LEVEL);
 
 		if (this.#isShown === true) {
 			this.#hide();
