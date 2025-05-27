@@ -34,9 +34,9 @@ export default class ViewTest {
 		);
 
 		// TODO integers required ?
-		let blockWidth = gridMaxHalf[0];
-		let blockHeight = gridMaxHalf[1];
-		let lineWidth = gridMaxHalf[0] - 2;
+		// let blockWidth = gridMaxHalf[0];
+		// let blockHeight = gridMaxHalf[1];
+		// let lineWidth = gridMaxHalf[0] - 2;
 
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
 			1,
@@ -80,7 +80,7 @@ export default class ViewTest {
 	// ____________________________________________________________________ tick
 
 	tick() {
-		// base.Update();
+		// TODO Draw Random Lines ?
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// int randomChance = Random.Range(0, 500);
 		// int randomRow = Random.Range(1, gridMax.y - 1);
