@@ -44,14 +44,14 @@ export default class GridData {
 	// ________________________________________________________________ Max Grid
 
 	static getGridMax() {
-		return new vec2(
+		return vec2.fromValues(
 			(this.#resolutionWidth / this.#gridWidth) * 2,
 			(this.#resolutionHeight / this.#gridHeight) * 2 - 1,
 		);
 	}
 
 	static getGridMaxHalf() {
-		return new vec2(
+		return vec2.fromValues(
 			this.#resolutionWidth / this.#gridWidth,
 			this.#resolutionHeight / this.#gridHeight - 1,
 		);

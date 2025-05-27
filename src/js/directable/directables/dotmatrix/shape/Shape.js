@@ -1,68 +1,59 @@
+export default class Shape {
+	// DotManager #dotManager;
+	// List<Vector2Int> #positionGrids = new List<Vector2Int>();
+	// int #positionGridsIndex = 0;
 
+	// bool #isComplete = false;
 
+	positionGrids;
 
+	// _____________________________________________________________________
 
+	constructor(dotManager) {
+		// Store
+		this.dotManager = dotManager;
+	}
 
+	// ______________________________________________________________ Update
 
-namespace UnityTest.UserInterface.DotMatrix.Shapes
-{
-    export default class Shape
-    {
-        DotManager #dotManager;
-        List<Vector2Int> #positionGrids = new List<Vector2Int>();
-        int #positionGridsIndex = 0;
+	// virtual Update()
+	// {
+	//     // Debug.Log("Shape. Update " + #positionGridsIndex);
 
-        bool #isComplete = false;
+	//     // Complete ?
+	//     if (#isComplete)
+	//     {
+	//         return;
+	//     }
 
-        // _____________________________________________________________________
+	//     // Get Dot Index
+	//     int dotIndex = #dotManager.GetNextFreeDotIndex();
 
-        Shape(DotManager dotManager)
-        {
-            // Store
-            #dotManager = dotManager;
-        }
+	//     // Clear Current Dot
+	//     #dotManager.ClearDot(dotIndex);
 
-        // ______________________________________________________________ Update
+	//     // if (dotIndex == -1)
+	//     // {
+	//     //     Debug.Log("ShapeLineHorizontal. No more free Dots");
+	//     //     break;
+	//     // }
 
-        virtual Update()
-        {
-            // Debug.Log("Shape. Update " + #positionGridsIndex);
+	//     // TODO -1 Off Grid ?
 
-            // Complete ?
-            if (#isComplete)
-            {
-                return;
-            }
+	//     // Position
+	//     #dotManager.SetDotPosition(dotIndex, #positionGrids[#positionGridsIndex]);
 
-            // Get Dot Index
-            int dotIndex = #dotManager.GetNextFreeDotIndex();
+	//     // Fill Dot
+	//     #dotManager.FillDot(dotIndex);
 
-            // Clear Current Dot
-            #dotManager.ClearDot(dotIndex);
+	//     // Increment Index
+	//     #positionGridsIndex++;
 
-            // if (dotIndex == -1)
-            // {
-            //     Debug.Log("ShapeLineHorizontal. No more free Dots");
-            //     break;
-            // }
-
-            // TODO -1 Off Grid ?
-
-            // Position
-            #dotManager.SetDotPosition(dotIndex, #positionGrids[#positionGridsIndex]);
-
-            // Fill Dot
-            #dotManager.FillDot(dotIndex);
-
-            // Increment Index
-            #positionGridsIndex++;
-
-            // Check Complete
-            if (#positionGridsIndex >= #positionGrids.Count)
-            {
-                #isComplete = true;
-                return;
-            }
-        }
-    }
+	//     // Check Complete
+	//     if (#positionGridsIndex >= #positionGrids.Count)
+	//     {
+	//         #isComplete = true;
+	//         return;
+	//     }
+	// }
 }

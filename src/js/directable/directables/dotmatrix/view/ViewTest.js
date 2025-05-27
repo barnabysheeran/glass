@@ -1,20 +1,55 @@
 import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
-import View from './View.js';
+import GridData from '../grid/GridData.js';
 
-export default class ViewTest extends View {
+import FillType from '../shape/fill/FillType.js';
+import FillStrategyType from '../shape/fill/FillStrategyType.js';
+
+export default class ViewTest {
+	#SHAPE_MANAGER;
+
 	#LOG_LEVEL = 5;
 
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {
-		super(shapeManager);
-
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
+
+		// Store
+		this.#SHAPE_MANAGER = shapeManager;
+
+		// ---
+
+		const gridMax = GridData.getGridMax();
+		const gridMaxHalf = GridData.getGridMaxHalf();
+
+		ApplicationLogger.log(
+			'ViewTest: gridMax ' + gridMax[0] + ' ' + gridMax[1],
+			this.#LOG_LEVEL,
+		);
+
+		ApplicationLogger.log(
+			'ViewTest: gridMaxHalf ' + gridMaxHalf[0] + ' ' + gridMaxHalf[1],
+			this.#LOG_LEVEL,
+		);
+
+		// TODO integers required ?
+		let blockWidth = gridMaxHalf[0];
+		let blockHeight = gridMaxHalf[1];
+		let lineWidth = gridMaxHalf[0] - 2;
+
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			1,
+			gridMax.x - 2,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		// --------------
 
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// Vector2Int gridMaxHalf = GridData.GetGridMaxHalf();
-
 		// Debug.Log("ViewTest: gridMax: " + gridMax);
 
 		// int blockWidth = gridMaxHalf.x;
@@ -45,8 +80,6 @@ export default class ViewTest extends View {
 	// ____________________________________________________________________ tick
 
 	tick() {
-		super.tick();
-
 		// base.Update();
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// int randomChance = Random.Range(0, 500);
