@@ -3,6 +3,9 @@ import Shape from '../Shape.js';
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
+import Fill from '../../shape/fill/Fill.js';
+import FillStrategy from '../../shape/fill/FillStrategy.js';
+
 export default class ShapeLineHorizontal extends Shape {
 	// _____________________________________________________________________
 
@@ -21,10 +24,14 @@ export default class ShapeLineHorizontal extends Shape {
 		// 	this.positionGrids.Add(new Vector2Int(gridX + i, gridY));
 		// }
 
-		// // Fill Type
-		// Fill.Apply(fillType, this.positionGrids, gridLength, 1);
+		for (let i = 0; i < gridLength; i += 1) {
+			this.positionGrids.push([gridX + i, gridY]);
+		}
 
-		// // Fill Strategy Type
-		// FillStrategy.Apply(fillStrategyType, this.positionGrids);
+		// Fill Type
+		Fill.apply(fillType, this.positionGrids, gridLength, 1);
+
+		// Fill Strategy Type
+		FillStrategy.apply(fillStrategyType, this.positionGrids);
 	}
 }

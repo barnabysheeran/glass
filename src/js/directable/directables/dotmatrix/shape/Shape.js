@@ -5,16 +5,17 @@ export default class Shape {
 
 	// bool #isComplete = false;
 
-	positionGrids;
+	positionGrids = [];
+	#isComplete = false;
 
-	// _____________________________________________________________________
+	// _________________________________________________________________________
 
 	constructor(dotManager) {
 		// Store
 		this.dotManager = dotManager;
 	}
 
-	// ______________________________________________________________ Update
+	// __________________________________________________________________ Update
 
 	// virtual Update()
 	// {
