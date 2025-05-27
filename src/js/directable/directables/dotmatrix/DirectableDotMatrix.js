@@ -33,14 +33,19 @@ export default class DirectableDotMatrix {
 
 	// ____________________________________________________________________ Tick
 
-	tick(frameDeltaMS) {}
+	tick(frameDeltaMS) {
+		ApplicationLogger.log('DirectableDotMatrix tick', this.#LOG_LEVEL);
 
-	// Update()
-	// {
-	//     // #viewManager.Update();
-	// }
+		// View Manager
+		this.#VIEW_MANAGER.tick(frameDeltaMS);
+	}
 
 	// ____________________________________________________________________ Size
 
-	setSize(width, height) {}
+	setSize(width, height) {
+		ApplicationLogger.log('DirectableDotMatrix setSize', this.#LOG_LEVEL);
+
+		// View Manager
+		this.#VIEW_MANAGER.setSize(width, height);
+	}
 }

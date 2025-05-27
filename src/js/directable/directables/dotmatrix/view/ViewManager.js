@@ -64,7 +64,10 @@ export default class ViewManager {
 	// ____________________________________________________________________ Size
 
 	setSize(width, height) {
-		// Debug.Log("ViewManager.SetResolution: " + resolution);
+		ApplicationLogger.log(
+			'ViewManager setSize ' + width + ' ' + height,
+			this.#LOG_LEVEL,
+		);
 
 		//
 		GridData.setSize(width, height);

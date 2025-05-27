@@ -1,23 +1,42 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+
 export default class ShapeManager {
 	// private DotManager #dotManager;
 	// private List<Shape> #shapes = new List<Shape>();
 	// private int #shapeMax = 100;
 
+	#DOT_MANAGER;
+
+	#SHAPES = [];
+	#SHAPE_MAX = 100;
+
+	#LOG_LEVEL = 5;
+
 	// _________________________________________________________________________
 
 	constructor(dotManager) {
+		ApplicationLogger.log('ShapeManager', this.#LOG_LEVEL);
+
 		// // Store
 		// #dotManager = dotManager;
+
+		// Store
+		this.#DOT_MANAGER = dotManager;
 	}
 
 	// __________________________________________________________________ Update
 
-	update() {
+	tick() {
 		// // Update All Shapes
 		// foreach (Shape shape in #shapes)
 		// {
 		//     shape.Update();
 		// }
+
+		// Update All Shapes
+		for (let i = 0; i < this.#SHAPES.length; i += 1) {
+			this.#SHAPES[i].update();
+		}
 	}
 
 	// ____________________________________________________________________ List
@@ -29,12 +48,18 @@ export default class ShapeManager {
 		//     // TODO End Shape At 0 ?
 		//     #shapes.RemoveAt(0);
 		// }
+
+		// Ensure Space in List Removing Oldest
+		while (this.#SHAPES.length >= this.#SHAPE_MAX) {
+			// TODO End Shape At 0 ?
+			this.#SHAPES.shift();
+		}
 	}
 
 	// ______________________________________________________________ Resolution
 
-	setResolution(resolution) {
-		// TODO
+	setSize(resolution) {
+		// TODO Required ?
 	}
 
 	// _________________________________________________________ Line Horizontal

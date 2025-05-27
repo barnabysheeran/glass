@@ -45,7 +45,7 @@ export default class ViewTest extends View {
 	// ____________________________________________________________________ tick
 
 	tick() {
-		super.update();
+		super.tick();
 
 		// base.Update();
 		// Vector2Int gridMax = GridData.GetGridMax();

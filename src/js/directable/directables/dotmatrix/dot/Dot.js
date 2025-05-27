@@ -26,9 +26,9 @@ export default class Dot {
 
 	update() {}
 
-	// ______________________________________________________________ Resolution
+	// ____________________________________________________________________ Size
 
-	setResolution(resolution) {
+	setSize(resolution) {
 		// CreateSprite(resolution);
 	}
 

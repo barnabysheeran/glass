@@ -8,7 +8,7 @@ export default class View {
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {
-		ApplicationLogger.log('View', this.#LOG_LEVEL);
+		// ApplicationLogger.log('View', this.#LOG_LEVEL);
 
 		// Store
 		this.#shapeManager = shapeManager;
