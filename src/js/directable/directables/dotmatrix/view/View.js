@@ -1,25 +1,22 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
+export default class View {
+	#shapeManager;
 
+	#LOG_LEVEL = 6;
 
-namespace UnityTest.UserInterface.DotMatrix.Views
-{
-    export default class View
-    {
-        ShapeManager #shapeManager;
+	// _________________________________________________________________________
 
-        // _____________________________________________________________________
+	constructor(shapeManager) {
+		ApplicationLogger.log('View', this.#LOG_LEVEL);
 
-        View(ShapeManager shapeManager)
-        {
-            // Store
-            #shapeManager = shapeManager;
-        }
+		// Store
+		this.#shapeManager = shapeManager;
+	}
 
-        // ______________________________________________________________ Update
+	// ____________________________________________________________________ Tick
 
-        virtual Update()
-        {
-            #shapeManager.Update();
-        }
-    }
+	tick() {
+		this.#shapeManager.tick();
+	}
 }

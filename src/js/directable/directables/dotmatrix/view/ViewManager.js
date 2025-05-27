@@ -1,7 +1,11 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+
 import GridData from '../grid/GridData.js';
 
 import DotManager from '../dot/DotManager.js';
 import ShapeManager from '../shape/ShapeManager.js';
+
+import ViewTest from './ViewTest.js';
 
 export default class ViewManager {
 	// private GridRenderer #gridRenderer;
@@ -12,11 +16,15 @@ export default class ViewManager {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 
-	#LOG_LEVEL = 3;
+	#VIEWS = [];
+
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
 	constructor(container) {
+		ApplicationLogger.log('ViewManager', this.#LOG_LEVEL);
+
 		// Initialize Grid Data
 		GridData.initialize();
 
@@ -30,25 +38,27 @@ export default class ViewManager {
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
-		// // Dev - Create View Test
-		// ViewTest viewTest = new ViewTest(#shapeManager);
-		// #views.Add(viewTest);
+		// Dev - Create View Test
+		const VIEW_TEST = new ViewTest(this.#SHAPE_MANAGER);
+		this.#VIEWS.push(VIEW_TEST);
+
 		// ViewFloor viewFloor = new ViewFloor(#shapeManager);
 		// #views.Add(viewFloor);
+
 		// ViewTextTest viewTextTest = new ViewTextTest(#shapeManager);
 		// #views.Add(viewTextTest);
+
 		// // Set Initial Resolution
 		// SetResolution(DisplayController.GetResolution());
 	}
 
-	// __________________________________________________________________ Update
+	// ____________________________________________________________________ Tick
 
-	Update() {
-		// Update All Views
-		// for (int i = 0; i < #views.Count; i++)
-		// {
-		//     #views[i].Update();
-		// }
+	tick() {
+		// Tick Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].tick();
+		}
 	}
 
 	// ____________________________________________________________________ Size
