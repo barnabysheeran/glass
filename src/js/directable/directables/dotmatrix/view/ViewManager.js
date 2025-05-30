@@ -69,7 +69,7 @@ export default class ViewManager {
 			this.#LOG_LEVEL,
 		);
 
-		//
+		// Grid Data
 		GridData.setSize(width, height);
 
 		// // Set Resolution

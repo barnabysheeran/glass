@@ -66,8 +66,8 @@
 </g>
 <g id="clust12" class="cluster">
 <title>cluster_src/js/directable/directables/dotmatrix/shape/fill</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M1027.25,-535C1027.25,-535 1193.25,-535 1193.25,-535 1199.25,-535 1205.25,-541 1205.25,-547 1205.25,-547 1205.25,-638 1205.25,-638 1205.25,-644 1199.25,-650 1193.25,-650 1193.25,-650 1027.25,-650 1027.25,-650 1021.25,-650 1015.25,-644 1015.25,-638 1015.25,-638 1015.25,-547 1015.25,-547 1015.25,-541 1021.25,-535 1027.25,-535"/>
-<text text-anchor="middle" x="1110.25" y="-637.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">fill</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M1027.25,-637C1027.25,-637 1193.25,-637 1193.25,-637 1199.25,-637 1205.25,-643 1205.25,-649 1205.25,-649 1205.25,-709 1205.25,-709 1205.25,-715 1199.25,-721 1193.25,-721 1193.25,-721 1027.25,-721 1027.25,-721 1021.25,-721 1015.25,-715 1015.25,-709 1015.25,-709 1015.25,-649 1015.25,-649 1015.25,-643 1021.25,-637 1027.25,-637"/>
+<text text-anchor="middle" x="1110.25" y="-708.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">fill</text>
 </g>
 <g id="clust13" class="cluster">
 <title>cluster_src/js/directable/directables/dotmatrix/shape/glyph</title>
@@ -76,8 +76,8 @@
 </g>
 <g id="clust14" class="cluster">
 <title>cluster_src/js/directable/directables/dotmatrix/shape/line</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M882.62,-619C882.62,-619 986.62,-619 986.62,-619 992.62,-619 998.62,-625 998.62,-631 998.62,-631 998.62,-691 998.62,-691 998.62,-697 992.62,-703 986.62,-703 986.62,-703 882.62,-703 882.62,-703 876.62,-703 870.62,-697 870.62,-691 870.62,-691 870.62,-631 870.62,-631 870.62,-625 876.62,-619 882.62,-619"/>
-<text text-anchor="middle" x="934.62" y="-690.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">line</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M882.62,-626C882.62,-626 986.62,-626 986.62,-626 992.62,-626 998.62,-632 998.62,-638 998.62,-638 998.62,-698 998.62,-698 998.62,-704 992.62,-710 986.62,-710 986.62,-710 882.62,-710 882.62,-710 876.62,-710 870.62,-704 870.62,-698 870.62,-698 870.62,-638 870.62,-638 870.62,-632 876.62,-626 882.62,-626"/>
+<text text-anchor="middle" x="934.62" y="-697.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">line</text>
 </g>
 <g id="clust15" class="cluster">
 <title>cluster_src/js/directable/directables/dotmatrix/shape/primative</title>
@@ -233,7 +233,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/directables/dotmatrix/DirectableDotMatrix.js -->
-<g id="edge25" class="edge">
+<g id="edge28" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/directables/dotmatrix/DirectableDotMatrix.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M345.56,-1131.42C348.14,-1089.48 359.95,-917.89 388.25,-780 417.24,-638.74 473.77,-473.76 492.81,-419.95"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="494.78,-420.7 494.81,-414.34 490.82,-419.29 494.78,-420.7"/>
@@ -248,7 +248,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/directables/title/DirectableTitle.js -->
-<g id="edge26" class="edge">
+<g id="edge29" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/directables/title/DirectableTitle.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M372.58,-1141C393.74,-1141 423.53,-1141 448.91,-1141"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="448.65,-1143.1 454.65,-1141 448.65,-1138.9 448.65,-1143.1"/>
@@ -263,7 +263,7 @@
 </g>
 </g>
 <!-- src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/displayFormat/OverlayDisplayFormat.js -->
-<g id="edge28" class="edge">
+<g id="edge31" class="edge">
 <title>src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/displayFormat/OverlayDisplayFormat.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M528.37,-1299.26C548.53,-1303.17 576.81,-1308.65 602.09,-1313.55"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="601.62,-1315.6 607.91,-1314.68 602.42,-1311.48 601.62,-1315.6"/>
@@ -278,7 +278,7 @@
 </g>
 </g>
 <!-- src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/overlay/OverlayOverlay.js -->
-<g id="edge29" class="edge">
+<g id="edge32" class="edge">
 <title>src/js/overlay/Overlay.js&#45;&gt;src/js/overlay/overlay/OverlayOverlay.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M528.37,-1288.91C550.56,-1284.75 582.57,-1278.74 609.6,-1273.67"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="609.7,-1275.79 615.21,-1272.62 608.92,-1271.66 609.7,-1275.79"/>
@@ -293,7 +293,7 @@
 </g>
 </g>
 <!-- src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js -->
-<g id="edge33" class="edge">
+<g id="edge36" class="edge">
 <title>src/js/view/View.js&#45;&gt;src/js/view/render/RenderController.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M371.17,-1417.68C390.84,-1418.19 418.52,-1418.91 443.12,-1419.54"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="442.94,-1421.64 449,-1419.7 443.05,-1417.44 442.94,-1421.64"/>
@@ -347,7 +347,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/dot/DotManager.js -->
-<g id="edge16" class="edge">
+<g id="edge19" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/dot/DotManager.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M703.14,-66.86C712.59,-69.25 721.73,-73.54 728,-81 744.62,-100.78 720.38,-176.42 736,-197 740.42,-202.82 746.5,-207.1 753.14,-210.26"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="751.96,-212.05 758.31,-212.34 753.52,-208.15 751.96,-212.05"/>
@@ -362,7 +362,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/grid/GridData.js -->
-<g id="edge17" class="edge">
+<g id="edge20" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M702.58,-74.71C710.97,-76.78 719.78,-78.96 728,-81 731.56,-81.88 732.38,-82.43 736,-83 790.52,-91.54 854.36,-94.48 894.4,-95.49"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="894.23,-97.58 900.28,-95.62 894.33,-93.38 894.23,-97.58"/>
@@ -377,7 +377,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/ShapeManager.js -->
-<g id="edge18" class="edge">
+<g id="edge21" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/ShapeManager.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M703.09,-66.54C712.66,-68.92 721.87,-73.28 728,-81 749.31,-107.85 714.42,-671.36 736,-698 738.92,-701.61 742.55,-704.4 746.59,-706.56"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="745.62,-708.43 751.96,-708.81 747.23,-704.56 745.62,-708.43"/>
@@ -392,7 +392,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/view/ViewTest.js -->
-<g id="edge19" class="edge">
+<g id="edge22" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewManager.js&#45;&gt;src/js/directable/directables/dotmatrix/view/ViewTest.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M703.23,-65.89C720.82,-66.28 741.39,-66.74 758.87,-67.13"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="758.62,-69.22 764.67,-67.26 758.72,-65.03 758.62,-69.22"/>
@@ -440,8 +440,8 @@
 <g id="node15" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/Shape.js</title>
 <g id="a_node15"><a xlink:href="src/js/directable/directables/dotmatrix/shape/Shape.js" xlink:title="Shape.js">
-<path fill="#ffffcc" stroke="black" d="M1079.08,-676.25C1079.08,-676.25 1037.42,-676.25 1037.42,-676.25 1034.33,-676.25 1031.25,-673.17 1031.25,-670.08 1031.25,-670.08 1031.25,-663.92 1031.25,-663.92 1031.25,-660.83 1034.33,-657.75 1037.42,-657.75 1037.42,-657.75 1079.08,-657.75 1079.08,-657.75 1082.17,-657.75 1085.25,-660.83 1085.25,-663.92 1085.25,-663.92 1085.25,-670.08 1085.25,-670.08 1085.25,-673.17 1082.17,-676.25 1079.08,-676.25"/>
-<text text-anchor="start" x="1040.25" y="-663.7" font-family="Helvetica,sans-Serif" font-size="9.00">Shape.js</text>
+<path fill="#ffffcc" stroke="black" d="M1079.08,-605.25C1079.08,-605.25 1037.42,-605.25 1037.42,-605.25 1034.33,-605.25 1031.25,-602.17 1031.25,-599.08 1031.25,-599.08 1031.25,-592.92 1031.25,-592.92 1031.25,-589.83 1034.33,-586.75 1037.42,-586.75 1037.42,-586.75 1079.08,-586.75 1079.08,-586.75 1082.17,-586.75 1085.25,-589.83 1085.25,-592.92 1085.25,-592.92 1085.25,-599.08 1085.25,-599.08 1085.25,-602.17 1082.17,-605.25 1079.08,-605.25"/>
+<text text-anchor="start" x="1040.25" y="-592.7" font-family="Helvetica,sans-Serif" font-size="9.00">Shape.js</text>
 </a>
 </g>
 </g>
@@ -449,88 +449,106 @@
 <g id="node17" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js</title>
 <g id="a_node17"><a xlink:href="src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js" xlink:title="FillStrategyType.js">
-<path fill="#ffffcc" stroke="black" d="M1191.08,-623.25C1191.08,-623.25 1112.42,-623.25 1112.42,-623.25 1109.33,-623.25 1106.25,-620.17 1106.25,-617.08 1106.25,-617.08 1106.25,-610.92 1106.25,-610.92 1106.25,-607.83 1109.33,-604.75 1112.42,-604.75 1112.42,-604.75 1191.08,-604.75 1191.08,-604.75 1194.17,-604.75 1197.25,-607.83 1197.25,-610.92 1197.25,-610.92 1197.25,-617.08 1197.25,-617.08 1197.25,-620.17 1194.17,-623.25 1191.08,-623.25"/>
-<text text-anchor="start" x="1114.25" y="-610.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillStrategyType.js</text>
+<path fill="#ffffcc" stroke="black" d="M1191.08,-663.25C1191.08,-663.25 1112.42,-663.25 1112.42,-663.25 1109.33,-663.25 1106.25,-660.17 1106.25,-657.08 1106.25,-657.08 1106.25,-650.92 1106.25,-650.92 1106.25,-647.83 1109.33,-644.75 1112.42,-644.75 1112.42,-644.75 1191.08,-644.75 1191.08,-644.75 1194.17,-644.75 1197.25,-647.83 1197.25,-650.92 1197.25,-650.92 1197.25,-657.08 1197.25,-657.08 1197.25,-660.17 1194.17,-663.25 1191.08,-663.25"/>
+<text text-anchor="start" x="1114.25" y="-650.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillStrategyType.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js -->
 <g id="edge9" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.47,-719.01C904.44,-726.47 1016.47,-731.27 1093.25,-682 1113.64,-668.92 1130.61,-646.38 1140.71,-630.85"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1142.33,-632.23 1143.74,-626.03 1138.77,-630 1142.33,-632.23"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.4,-706.25C847.44,-704.19 851.1,-701.5 854,-698 870.91,-677.59 843.36,-597.84 862,-579 934.37,-505.83 1002.61,-518.26 1093.25,-567 1120.34,-581.57 1136.79,-615.11 1144.8,-636.03"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1142.78,-636.6 1146.78,-641.53 1146.73,-635.18 1142.78,-636.6"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/fill/FillType.js -->
 <g id="node18" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/fill/FillType.js</title>
 <g id="a_node18"><a xlink:href="src/js/directable/directables/dotmatrix/shape/fill/FillType.js" xlink:title="FillType.js">
-<path fill="#ffffcc" stroke="black" d="M1080.71,-561.25C1080.71,-561.25 1035.79,-561.25 1035.79,-561.25 1032.71,-561.25 1029.62,-558.17 1029.62,-555.08 1029.62,-555.08 1029.62,-548.92 1029.62,-548.92 1029.62,-545.83 1032.71,-542.75 1035.79,-542.75 1035.79,-542.75 1080.71,-542.75 1080.71,-542.75 1083.79,-542.75 1086.88,-545.83 1086.88,-548.92 1086.88,-548.92 1086.88,-555.08 1086.88,-555.08 1086.88,-558.17 1083.79,-561.25 1080.71,-561.25"/>
-<text text-anchor="start" x="1037.62" y="-548.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillType.js</text>
+<path fill="#ffffcc" stroke="black" d="M1174.21,-694.25C1174.21,-694.25 1129.29,-694.25 1129.29,-694.25 1126.21,-694.25 1123.12,-691.17 1123.12,-688.08 1123.12,-688.08 1123.12,-681.92 1123.12,-681.92 1123.12,-678.83 1126.21,-675.75 1129.29,-675.75 1129.29,-675.75 1174.21,-675.75 1174.21,-675.75 1177.29,-675.75 1180.38,-678.83 1180.38,-681.92 1180.38,-681.92 1180.38,-688.08 1180.38,-688.08 1180.38,-691.17 1177.29,-694.25 1174.21,-694.25"/>
+<text text-anchor="start" x="1131.12" y="-681.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillType.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js -->
 <g id="edge10" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.29,-706.16C847.35,-704.12 851.04,-701.46 854,-698 865.9,-684.08 850.55,-630.29 862,-616 900.4,-568.08 975.44,-555.67 1020.48,-552.68"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1020.45,-554.78 1026.32,-552.35 1020.22,-550.59 1020.45,-554.78"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.26,-706.13C847.33,-704.1 851.03,-701.45 854,-698 875.89,-672.61 840.28,-648.54 862,-623 907.75,-569.2 945.26,-590.42 1015.25,-581 1049.61,-576.38 1067.01,-558.35 1093.25,-581 1123.18,-606.83 1081.2,-638.41 1106.25,-669 1108.65,-671.93 1111.63,-674.32 1114.9,-676.28"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1113.88,-678.12 1120.2,-678.79 1115.68,-674.32 1113.88,-678.12"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js -->
 <g id="node19" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js</title>
 <g id="a_node19"><a xlink:href="src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js" xlink:title="ShapeLineHorizontal.js">
-<path fill="#ffffcc" stroke="black" d="M984.46,-645.25C984.46,-645.25 884.79,-645.25 884.79,-645.25 881.71,-645.25 878.62,-642.17 878.62,-639.08 878.62,-639.08 878.62,-632.92 878.62,-632.92 878.62,-629.83 881.71,-626.75 884.79,-626.75 884.79,-626.75 984.46,-626.75 984.46,-626.75 987.54,-626.75 990.62,-629.83 990.62,-632.92 990.62,-632.92 990.62,-639.08 990.62,-639.08 990.62,-642.17 987.54,-645.25 984.46,-645.25"/>
-<text text-anchor="start" x="886.62" y="-632.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeLineHorizontal.js</text>
+<path fill="#ffffcc" stroke="black" d="M984.46,-652.25C984.46,-652.25 884.79,-652.25 884.79,-652.25 881.71,-652.25 878.62,-649.17 878.62,-646.08 878.62,-646.08 878.62,-639.92 878.62,-639.92 878.62,-636.83 881.71,-633.75 884.79,-633.75 884.79,-633.75 984.46,-633.75 984.46,-633.75 987.54,-633.75 990.62,-636.83 990.62,-639.92 990.62,-639.92 990.62,-646.08 990.62,-646.08 990.62,-649.17 987.54,-652.25 984.46,-652.25"/>
+<text text-anchor="start" x="886.62" y="-639.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeLineHorizontal.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js -->
 <g id="edge11" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.3,-705.81C847.3,-703.83 850.98,-701.28 854,-698 868.06,-682.74 847.68,-667.02 862,-652 864.5,-649.38 867.33,-647.14 870.38,-645.24"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="871.29,-647.13 875.68,-642.53 869.38,-643.39 871.29,-647.13"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M843.46,-705.59C847.38,-703.64 851,-701.16 854,-698 866.19,-685.17 849.6,-671.62 862,-659 864.49,-656.47 867.29,-654.29 870.3,-652.43"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="871.07,-654.4 875.46,-649.81 869.16,-650.66 871.07,-654.4"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/Shape.js -->
-<g id="edge15" class="edge">
+<g id="edge18" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M981.21,-645.67C989.88,-647.65 998.87,-649.81 1007.25,-652 1012.19,-653.29 1017.38,-654.74 1022.47,-656.22"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1021.63,-658.16 1027.98,-657.85 1022.82,-654.13 1021.63,-658.16"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M991.03,-638.41C996.84,-636.37 1002.4,-633.64 1007.25,-630 1013.61,-625.23 1009.47,-619.45 1015.25,-614 1017.64,-611.74 1020.36,-609.75 1023.24,-607.99"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1024.09,-609.91 1028.42,-605.26 1022.13,-606.19 1024.09,-609.91"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js -->
-<g id="edge13" class="edge">
+<g id="edge16" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M990.98,-636.38C1021.33,-635.88 1059.53,-634.09 1093.25,-629 1098.67,-628.18 1104.32,-627.06 1109.87,-625.79"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1110.19,-627.87 1115.52,-624.41 1109.19,-623.79 1110.19,-627.87"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M990.83,-633.35C996.39,-632.27 1001.94,-631.14 1007.25,-630 1010.83,-629.23 1011.61,-628.45 1015.25,-628 1049.66,-623.76 1059.36,-620.69 1093.25,-628 1104.63,-630.45 1116.47,-635.35 1126.42,-640.24"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1125.31,-642.02 1131.6,-642.9 1127.23,-638.29 1125.31,-642.02"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js -->
-<g id="edge14" class="edge">
+<g id="edge17" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M990.89,-633.4C997.02,-631.07 1002.69,-627.73 1007.25,-623 1024.41,-605.23 999.8,-587.28 1015.25,-568 1017.06,-565.75 1019.22,-563.81 1021.59,-562.15"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1022.34,-564.13 1026.58,-559.39 1020.31,-560.46 1022.34,-564.13"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M991.08,-635.07C1029.62,-630.77 1076.89,-628.26 1093.25,-639 1105.4,-646.98 1095.65,-659.06 1106.25,-669 1108.8,-671.4 1111.74,-673.44 1114.87,-675.18"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1113.83,-677.01 1120.15,-677.63 1115.6,-673.2 1113.83,-677.01"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/fill/Fill.js -->
 <g id="node20" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/fill/Fill.js</title>
 <g id="a_node20"><a xlink:href="src/js/directable/directables/dotmatrix/shape/fill/Fill.js" xlink:title="Fill.js">
-<path fill="#ccffcc" stroke="black" d="M1079.08,-592.25C1079.08,-592.25 1037.42,-592.25 1037.42,-592.25 1034.33,-592.25 1031.25,-589.17 1031.25,-586.08 1031.25,-586.08 1031.25,-579.92 1031.25,-579.92 1031.25,-576.83 1034.33,-573.75 1037.42,-573.75 1037.42,-573.75 1079.08,-573.75 1079.08,-573.75 1082.17,-573.75 1085.25,-576.83 1085.25,-579.92 1085.25,-579.92 1085.25,-586.08 1085.25,-586.08 1085.25,-589.17 1082.17,-592.25 1079.08,-592.25"/>
-<text text-anchor="start" x="1047.75" y="-579.7" font-family="Helvetica,sans-Serif" font-size="9.00">Fill.js</text>
+<path fill="#ffffcc" stroke="black" d="M1079.08,-694.25C1079.08,-694.25 1037.42,-694.25 1037.42,-694.25 1034.33,-694.25 1031.25,-691.17 1031.25,-688.08 1031.25,-688.08 1031.25,-681.92 1031.25,-681.92 1031.25,-678.83 1034.33,-675.75 1037.42,-675.75 1037.42,-675.75 1079.08,-675.75 1079.08,-675.75 1082.17,-675.75 1085.25,-678.83 1085.25,-681.92 1085.25,-681.92 1085.25,-688.08 1085.25,-688.08 1085.25,-691.17 1082.17,-694.25 1079.08,-694.25"/>
+<text text-anchor="start" x="1047.75" y="-681.7" font-family="Helvetica,sans-Serif" font-size="9.00">Fill.js</text>
 </a>
 </g>
+</g>
+<!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/Fill.js -->
+<g id="edge14" class="edge">
+<title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/Fill.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M991.11,-651.37C996.78,-653.39 1002.28,-655.9 1007.25,-659 1012.08,-662.01 1010.65,-665.65 1015.25,-669 1017.58,-670.7 1020.12,-672.24 1022.75,-673.64"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1021.75,-675.49 1028.08,-676.12 1023.52,-671.68 1021.75,-675.49"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js -->
 <g id="node21" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js</title>
 <g id="a_node21"><a xlink:href="src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js" xlink:title="FillStrategy.js">
-<path fill="#ffffcc" stroke="black" d="M1087.08,-623.25C1087.08,-623.25 1029.42,-623.25 1029.42,-623.25 1026.33,-623.25 1023.25,-620.17 1023.25,-617.08 1023.25,-617.08 1023.25,-610.92 1023.25,-610.92 1023.25,-607.83 1026.33,-604.75 1029.42,-604.75 1029.42,-604.75 1087.08,-604.75 1087.08,-604.75 1090.17,-604.75 1093.25,-607.83 1093.25,-610.92 1093.25,-610.92 1093.25,-617.08 1093.25,-617.08 1093.25,-620.17 1090.17,-623.25 1087.08,-623.25"/>
-<text text-anchor="start" x="1031.25" y="-610.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillStrategy.js</text>
+<path fill="#ffffcc" stroke="black" d="M1087.08,-663.25C1087.08,-663.25 1029.42,-663.25 1029.42,-663.25 1026.33,-663.25 1023.25,-660.17 1023.25,-657.08 1023.25,-657.08 1023.25,-650.92 1023.25,-650.92 1023.25,-647.83 1026.33,-644.75 1029.42,-644.75 1029.42,-644.75 1087.08,-644.75 1087.08,-644.75 1090.17,-644.75 1093.25,-647.83 1093.25,-650.92 1093.25,-650.92 1093.25,-657.08 1093.25,-657.08 1093.25,-660.17 1090.17,-663.25 1087.08,-663.25"/>
+<text text-anchor="start" x="1031.25" y="-650.7" font-family="Helvetica,sans-Serif" font-size="9.00">FillStrategy.js</text>
 </a>
 </g>
 </g>
-<!-- src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js -->
+<!-- src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js -->
+<g id="edge15" class="edge">
+<title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M991.1,-648.02C998.93,-648.73 1006.89,-649.45 1014.44,-650.13"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1013.9,-652.19 1020.06,-650.64 1014.28,-648 1013.9,-652.19"/>
+</g>
+<!-- src/js/directable/directables/dotmatrix/shape/fill/Fill.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js -->
 <g id="edge12" class="edge">
+<title>src/js/directable/directables/dotmatrix/shape/fill/Fill.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M1085.72,-685C1094.52,-685 1104.48,-685 1113.92,-685"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1113.72,-687.1 1119.72,-685 1113.72,-682.9 1113.72,-687.1"/>
+</g>
+<!-- src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js -->
+<g id="edge13" class="edge">
 <title>src/js/directable/directables/dotmatrix/shape/fill/FillStrategy.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M1093.58,-614C1094.72,-614 1095.87,-614 1097.03,-614"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1096.97,-616.1 1102.97,-614 1096.97,-611.9 1096.97,-616.1"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M1093.58,-654C1094.72,-654 1095.87,-654 1097.03,-654"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1096.97,-656.1 1102.97,-654 1096.97,-651.9 1096.97,-656.1"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/shape/glyph/ShapeGlyph_A.js -->
 <g id="node22" class="node">
@@ -635,8 +653,8 @@
 <g id="node33" class="node">
 <title>src/js/directable/directables/dotmatrix/shape/line/ShapeLineVertical.js</title>
 <g id="a_node33"><a xlink:href="src/js/directable/directables/dotmatrix/shape/line/ShapeLineVertical.js" xlink:title="ShapeLineVertical.js">
-<path fill="#ccffcc" stroke="black" d="M978.46,-676.25C978.46,-676.25 890.79,-676.25 890.79,-676.25 887.71,-676.25 884.62,-673.17 884.62,-670.08 884.62,-670.08 884.62,-663.92 884.62,-663.92 884.62,-660.83 887.71,-657.75 890.79,-657.75 890.79,-657.75 978.46,-657.75 978.46,-657.75 981.54,-657.75 984.62,-660.83 984.62,-663.92 984.62,-663.92 984.62,-670.08 984.62,-670.08 984.62,-673.17 981.54,-676.25 978.46,-676.25"/>
-<text text-anchor="start" x="892.62" y="-663.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeLineVertical.js</text>
+<path fill="#ccffcc" stroke="black" d="M978.46,-683.25C978.46,-683.25 890.79,-683.25 890.79,-683.25 887.71,-683.25 884.62,-680.17 884.62,-677.08 884.62,-677.08 884.62,-670.92 884.62,-670.92 884.62,-667.83 887.71,-664.75 890.79,-664.75 890.79,-664.75 978.46,-664.75 978.46,-664.75 981.54,-664.75 984.62,-667.83 984.62,-670.92 984.62,-670.92 984.62,-677.08 984.62,-677.08 984.62,-680.17 981.54,-683.25 978.46,-683.25"/>
+<text text-anchor="start" x="892.62" y="-670.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeLineVertical.js</text>
 </a>
 </g>
 </g>
@@ -668,22 +686,22 @@
 </g>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/grid/GridData.js -->
-<g id="edge20" class="edge">
+<g id="edge23" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M830.32,-74.35C849.37,-78.35 874.13,-83.53 894.63,-87.83"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="894.16,-89.88 900.46,-89.05 895.02,-85.76 894.16,-89.88"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js -->
-<g id="edge21" class="edge">
+<g id="edge24" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillStrategyType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M825.11,-58.25C867.5,-43.6 953.86,-21.73 1007.25,-63 1095.55,-131.25 1139.72,-507.76 1148.92,-595.65"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1146.81,-595.73 1149.51,-601.48 1150.99,-595.3 1146.81,-595.73"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M823.88,-58.4C879.21,-37.89 1017.26,2.92 1093.25,-66 1136.54,-105.27 1148.33,-540.75 1150.39,-635.76"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1148.28,-635.56 1150.51,-641.51 1152.48,-635.47 1148.28,-635.56"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js -->
-<g id="edge22" class="edge">
+<g id="edge25" class="edge">
 <title>src/js/directable/directables/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/directables/dotmatrix/shape/fill/FillType.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M830.02,-67.04C884.36,-65.59 994.63,-64.19 1007.25,-76 1041.28,-107.85 1054.07,-449.54 1056.71,-533.46"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1054.61,-533.42 1056.89,-539.36 1058.8,-533.3 1054.61,-533.42"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M830.03,-60.14C873.17,-50.7 953.4,-40.25 1007.25,-76 1082.45,-125.93 1072.28,-172.2 1093.25,-260 1098.53,-282.11 1092.88,-650.61 1106.25,-669 1108.59,-672.22 1111.65,-674.8 1115.07,-676.86"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1113.91,-678.64 1120.23,-679.3 1115.7,-674.84 1113.91,-678.64"/>
 </g>
 <!-- src/js/directable/directables/dotmatrix/view/ViewTextTest.js -->
 <g id="node38" class="node">
@@ -749,7 +767,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/rhythm/bpm/DirectableRhythmBPM.js&#45;&gt;src/js/directable/directables/rhythm/DirectableRhythm.js -->
-<g id="edge23" class="edge">
+<g id="edge26" class="edge">
 <title>src/js/directable/directables/rhythm/bpm/DirectableRhythmBPM.js&#45;&gt;src/js/directable/directables/rhythm/DirectableRhythm.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M559.42,-992C573.84,-992 589.28,-992 603.66,-992"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="603.44,-994.1 609.44,-992 603.44,-989.9 603.44,-994.1"/>
@@ -773,7 +791,7 @@
 </g>
 </g>
 <!-- src/js/directable/directables/rhythm2/ViewRhythm.js&#45;&gt;src/js/directable/directables/rhythm2/ViewRhythmTrack.js -->
-<g id="edge24" class="edge">
+<g id="edge27" class="edge">
 <title>src/js/directable/directables/rhythm2/ViewRhythm.js&#45;&gt;src/js/directable/directables/rhythm2/ViewRhythmTrack.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M538.73,-1080C557.96,-1080 581.8,-1080 603.32,-1080"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="603.03,-1082.1 609.03,-1080 603.03,-1077.9 603.03,-1082.1"/>
@@ -797,13 +815,13 @@
 </g>
 </g>
 <!-- src/js/index.js&#45;&gt;src/js/application/Application.js -->
-<g id="edge27" class="edge">
+<g id="edge30" class="edge">
 <title>src/js/index.js&#45;&gt;src/js/application/Application.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M101.59,-1294C108.42,-1294 115.95,-1294 123.39,-1294"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="123.01,-1296.1 129.01,-1294 123.01,-1291.9 123.01,-1296.1"/>
 </g>
 <!-- src/js/overlay/displayFormat/OverlayDisplayFormat.js&#45;&gt;src/js/enum/DisplayFormats.js -->
-<g id="edge30" class="edge">
+<g id="edge33" class="edge">
 <title>src/js/overlay/displayFormat/OverlayDisplayFormat.js&#45;&gt;src/js/enum/DisplayFormats.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M671.73,-1334.64C684.58,-1348.58 710.07,-1374.51 736,-1391 743.68,-1395.89 752.44,-1400.21 760.9,-1403.86"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="760.07,-1405.79 766.42,-1406.13 761.67,-1401.9 760.07,-1405.79"/>
@@ -818,13 +836,13 @@
 </g>
 </g>
 <!-- src/js/overlay/displayFormat/OverlayDisplayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge31" class="edge">
+<g id="edge34" class="edge">
 <title>src/js/overlay/displayFormat/OverlayDisplayFormat.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M705.43,-1315.28C721.2,-1311.65 739.12,-1307.53 754.96,-1303.89"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="755.19,-1305.99 760.57,-1302.6 754.25,-1301.9 755.19,-1305.99"/>
 </g>
 <!-- src/js/overlay/overlay/OverlayOverlay.js&#45;&gt;src/js/overlay/OverlayUtil.js -->
-<g id="edge32" class="edge">
+<g id="edge35" class="edge">
 <title>src/js/overlay/overlay/OverlayOverlay.js&#45;&gt;src/js/overlay/OverlayUtil.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M706.17,-1273.57C721.91,-1277.08 739.7,-1281.03 755.41,-1284.53"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.62,-1286.5 760.93,-1285.76 755.53,-1282.4 754.62,-1286.5"/>
@@ -839,7 +857,7 @@
 </g>
 </g>
 <!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js -->
-<g id="edge34" class="edge">
+<g id="edge37" class="edge">
 <title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderResizer.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M548.35,-1421C567.6,-1421 589.93,-1421 609.61,-1421"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="609.42,-1423.1 615.42,-1421 609.42,-1418.9 609.42,-1423.1"/>
@@ -854,13 +872,13 @@
 </g>
 </g>
 <!-- src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js -->
-<g id="edge35" class="edge">
+<g id="edge38" class="edge">
 <title>src/js/view/render/RenderController.js&#45;&gt;src/js/view/render/RenderSurface.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M548.35,-1430.13C567.52,-1433.85 589.74,-1438.16 609.36,-1441.96"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="608.91,-1444.02 615.2,-1443.1 609.71,-1439.89 608.91,-1444.02"/>
 </g>
 <!-- src/js/view/render/RenderResizer.js&#45;&gt;src/js/enum/DisplayFormats.js -->
-<g id="edge36" class="edge">
+<g id="edge39" class="edge">
 <title>src/js/view/render/RenderResizer.js&#45;&gt;src/js/enum/DisplayFormats.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M705.8,-1419.73C718.34,-1419.36 732.21,-1418.95 745.3,-1418.56"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="745.25,-1420.67 751.18,-1418.39 745.12,-1416.47 745.25,-1420.67"/>
