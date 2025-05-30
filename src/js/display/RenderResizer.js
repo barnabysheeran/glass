@@ -1,6 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
-import DisplayFormats from '../enum/DisplayFormats.js';
+import DisplayFormats from './DisplayFormats.js';
 
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 

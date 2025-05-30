@@ -1,7 +1,7 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import RenderResizer from '../format/RenderResizer.js';
+import RenderResizer from '../display/RenderResizer.js';
 import RenderSurface from './RenderSurface.js';
 
 export default class RenderController {
