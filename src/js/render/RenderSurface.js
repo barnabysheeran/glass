@@ -217,9 +217,10 @@ export default class RenderSurface {
 
 	// __________________________________________________________________ Render
 
-	render() {
+	tick() {
 		if (!this.#GL) return;
 
+		// First perform the rendering to the texture
 		const squareSize = 10;
 		const maxX = this.width - squareSize;
 		const maxY = this.height - squareSize;
@@ -243,14 +244,9 @@ export default class RenderSurface {
 		}
 
 		this.setTextureData(randomX, randomY, squareSize, squareSize, squareData);
-	}
 
-	/**
-	 * Draws the surface's texture to its canvas (the default framebuffer).
-	 */
-	displayOnCanvas() {
+		// Then display the texture on the canvas
 		if (
-			!this.#GL ||
 			!this.#DISPLAY_SHADER_PROGRAM ||
 			!this.#TEXTURE ||
 			!this.#DISPLAY_QUAD_VAO

@@ -27,11 +27,8 @@ export default class RenderController {
 	// ____________________________________________________________________ Tick
 
 	static tick(frameDeltaMS) {
-		// Render Surface
-		this.#RENDER_SURFACE.render();
-
-		// Draw the RenderSurface's texture to its canvas for display
-		this.#RENDER_SURFACE.displayOnCanvas();
+		// Use the combined tick method
+		this.#RENDER_SURFACE.tick();
 	}
 
 	// ____________________________________________________________________ Size
