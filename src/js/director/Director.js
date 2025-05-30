@@ -39,4 +39,8 @@ export default class Director {
 		// Tick Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
 	}
+
+	static setSize(width, height) {
+		// TODO
+	}
 }

@@ -4,24 +4,25 @@ import DisplayFormats from './DisplayFormats.js';
 
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
-export default class RenderResizer {
-	#VIEW_HOLDER;
+export default class Display {
+	static #VIEW_HOLDER;
 
-	#displayFormat = DisplayFormats.SQUARE; // Set initial scale mode
+	static #displayFormat = DisplayFormats.SQUARE; // Set initial scale mode
 
-	#width = -1;
-	#height = -1;
+	static #width = -1;
+	static #height = -1;
 
-	#top = -1;
-	#left = -1;
+	static #top = -1;
+	static #left = -1;
 
-	#LOG_LEVEL = 2;
+	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
 
-	constructor(viewHolder) {
+	static initialise() {
 		// Store
-		this.#VIEW_HOLDER = viewHolder;
+
+		this.#VIEW_HOLDER = ApplicationConfiguration.getApplicationContainer();
 
 		ApplicationDispatcher.on(
 			'display-format-change',
@@ -34,7 +35,7 @@ export default class RenderResizer {
 
 	// _______________________________________________ Dispatcher Overlay Format
 
-	#onDisplayFormatChange(data) {
+	static #onDisplayFormatChange(data) {
 		ApplicationLogger.log(
 			`RenderResizer. onDisplayFormatChange ${data.displayFormat}`,
 			this.#LOG_LEVEL,
@@ -57,7 +58,7 @@ export default class RenderResizer {
 
 	// __________________________________________________________________ Resize
 
-	tick() {
+	static tick() {
 		// Assume No Change
 		let didResizeThisFrame = false;
 
@@ -170,11 +171,11 @@ export default class RenderResizer {
 
 	// __________________________________________________________________ Access
 
-	getWidth() {
+	static getWidth() {
 		return this.#width;
 	}
 
-	getHeight() {
+	static getHeight() {
 		return this.#height;
 	}
 }

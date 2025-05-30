@@ -15,6 +15,9 @@ export default class Application {
 	// _________________________________________________________________________
 
 	constructor(creationParameters) {
+		// TODO Dev Remove
+		creationParameters.isDebug = true;
+
 		// Always Log
 		ApplicationLogger.log(
 			'Application ' + APPLICATION_VERSION,

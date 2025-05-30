@@ -1,8 +1,10 @@
+import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Overlay from '../overlay/Overlay.js';
 import Director from '../director/Director.js';
 import RenderController from '../render/RenderController.js';
+import Display from '../display/Display.js';
 
 export default class Controller {
 	#FRAMERATE_FPS = 20;
@@ -20,21 +22,26 @@ export default class Controller {
 			this.#LOG_LEVEL,
 		);
 
-		// Initialise Overlay
-		Overlay.initialise();
+		// Order Important
+
+		// Initialise Display - Sets Initial Display Format
+		Display.initialise();
+
+		// Initialise Render Controller
+		RenderController.initialise();
 
 		// Initialise Director
 		Director.initialise();
 
-		// Initialise Render Controller
-		RenderController.initialise();
+		// Initialise Overlay ?
+		if (ApplicationConfiguration.isDebug === true) {
+			Overlay.initialise();
+		}
 	}
 
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		// Tick 60 FPS
-
 		// Frame Rate Delay
 		this.#frameRateDelayMS += frameDeltaMS;
 
@@ -47,10 +54,37 @@ export default class Controller {
 			// TODO
 		}
 
+		// Display
+		const IS_DISPLAY_UPDATED = Display.tick();
+
+		if (IS_DISPLAY_UPDATED) {
+			console;
+
+			this.#displayUpdated();
+		}
+
 		// Tick Director
 		Director.tick(frameDeltaMS);
 
 		// Tick Render Controller
 		RenderController.tick(frameDeltaMS);
+	}
+
+	// _________________________________________________________________ Display
+
+	#displayUpdated() {
+		const DISPLAY_WIDTH = Display.getWidth();
+		const DISPLAY_HEIGHT = Display.getHeight();
+
+		ApplicationLogger.log(
+			`Controller displayUpdated ${DISPLAY_WIDTH} ${DISPLAY_HEIGHT}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Director
+		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+
+		// Render Controller
+		RenderController.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 	}
 }
