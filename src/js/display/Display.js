@@ -28,9 +28,6 @@ export default class Display {
 			'display-format-change',
 			this.#onDisplayFormatChange.bind(this),
 		);
-
-		// Initial Resize
-		// this.resize();
 	}
 
 	// _______________________________________________ Dispatcher Overlay Format
