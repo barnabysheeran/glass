@@ -1,10 +1,10 @@
 import Shape from '../Shape.js';
 
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
+import FillType from '../fill/FillType.js';
+import FillStrategyType from '../fill/FillStrategyType.js';
 
-import Fill from '../../shape/fill/Fill.js';
-import FillStrategy from '../../shape/fill/FillStrategy.js';
+import Fill from '../fill/Fill.js';
+import FillStrategy from '../fill/FillStrategy.js';
 
 export default class ShapeLineHorizontal extends Shape {
 	// _____________________________________________________________________

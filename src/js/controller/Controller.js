@@ -2,7 +2,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Overlay from '../overlay/Overlay.js';
 import Director from '../director/Director.js';
-import View from '../view/View.js';
+import RenderController from '../render/RenderController.js';
 
 export default class Controller {
 	#FRAMERATE_FPS = 20;
@@ -16,7 +16,7 @@ export default class Controller {
 
 	constructor() {
 		ApplicationLogger.log(
-			`Controller: Initialising with Frame Rate ${this.#FRAMERATE_FPS} FPS`,
+			`Controller Initialising with Frame Rate ${this.#FRAMERATE_FPS} FPS`,
 			this.#LOG_LEVEL,
 		);
 
@@ -26,8 +26,8 @@ export default class Controller {
 		// Initialise Director
 		Director.initialise();
 
-		// Initialise View
-		View.initialise();
+		// Initialise Render Controller
+		RenderController.initialise();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -50,7 +50,7 @@ export default class Controller {
 		// Tick Director
 		Director.tick(frameDeltaMS);
 
-		// Tick View
-		View.tick(frameDeltaMS);
+		// Tick Render Controller
+		RenderController.tick(frameDeltaMS);
 	}
 }

@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 import GridData from '../grid/GridData.js';
 

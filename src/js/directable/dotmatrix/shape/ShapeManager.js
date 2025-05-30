@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 import FillType from './fill/FillType.js';
 import FillStrategyType from './fill/FillStrategyType.js';

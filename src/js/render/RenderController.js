@@ -1,15 +1,20 @@
-import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
+import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
+import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import RenderResizer from './RenderResizer.js';
+import RenderResizer from '../format/RenderResizer.js';
 import RenderSurface from './RenderSurface.js';
 
 export default class RenderController {
-	#RENDER_RESIZER;
-	#RENDER_SURFACE;
+	static #RENDER_RESIZER;
+	static #RENDER_SURFACE;
+
+	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
 
-	constructor() {
+	static initialise() {
+		ApplicationLogger.log('Overlay initialise', this.#LOG_LEVEL);
+
 		// Get Application Container
 		const APPLICATION_CONTAINER =
 			ApplicationConfiguration.getApplicationContainer();
@@ -26,7 +31,7 @@ export default class RenderController {
 
 	// ____________________________________________________________________ Tick
 
-	tick(frameDeltaMS) {
+	static tick(frameDeltaMS) {
 		// Resized ?
 		const DID_RESIZE_THIS_FRAME = this.#RENDER_RESIZER.tick();
 

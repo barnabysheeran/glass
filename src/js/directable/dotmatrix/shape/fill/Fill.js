@@ -1,4 +1,4 @@
-import FillType from '../../shape/fill/FillType.js';
+import FillType from './FillType.js';
 
 export default class Fill {
 	static apply(fillType, positionGrids, gridWidth = 0, gridHeight = 0) {

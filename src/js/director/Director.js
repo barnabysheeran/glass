@@ -1,8 +1,8 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import DirectableTitle from '../directable/directables/title/DirectableTitle.js';
+import DirectableTitle from '../directable/title/DirectableTitle.js';
 // import DirectableRhythmBPM from '../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
-import DirectableDotMatrix from '../directable/directables/dotmatrix/DirectableDotMatrix.js';
+import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;

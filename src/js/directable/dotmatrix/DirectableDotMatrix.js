@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 import ViewManager from './view/ViewManager.js';
 

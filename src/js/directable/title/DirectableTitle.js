@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 export default class DirectableTitle {
 	// _________________________________________________________________________

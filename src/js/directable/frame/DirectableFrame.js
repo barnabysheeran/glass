@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../application/ApplicationLogger';
+import ApplicationLogger from '../../application/ApplicationLogger';
 
 import Directable from '../../Directable';
 
