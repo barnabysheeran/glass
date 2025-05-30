@@ -5,10 +5,6 @@ import GridData from '../grid/GridData.js';
 import Dot from './Dot.js';
 
 export default class DotManager {
-	// private List<Dot> #dots;
-	// private int #dotPoolSize = 512;
-	// private int #dotPoolIndex = 0;
-
 	#DOTS = [];
 	#dotPoolSize = 512;
 	#dotPoolIndex = 0;
@@ -20,14 +16,6 @@ export default class DotManager {
 	constructor(container) {
 		ApplicationLogger.log('DotManager', this.#LOG_LEVEL);
 
-		// // Create Dot Pool
-		// #dots = new List<Dot>();
-		// for (int i = 0; i < #dotPoolSize; i++)
-		// {
-		//     Dot dot = new Dot(i, container);
-		//     #dots.Add(dot);
-		// }
-
 		// Create Dot Pool
 		for (let i = 0; i < this.#dotPoolSize; i += 1) {
 			const dot = new Dot(i, container);
@@ -38,11 +26,6 @@ export default class DotManager {
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		// foreach (Dot dot in #dots)
-		// {
-		//     dot.Update();
-		// }
-
 		for (let i = 0; i < this.#DOTS.length; i += 1) {
 			this.#DOTS[i].update();
 		}
@@ -51,25 +34,22 @@ export default class DotManager {
 	// ________________________________________________________________ Dot Pool
 
 	getNextFreeDotIndex() {
-		// int index = #dotPoolIndex;
-		// // Next
-		// #dotPoolIndex++;
-		// // Recycle from Start of Pool
-		// if (#dotPoolIndex >= #dotPoolSize)
-		// {
-		//     #dotPoolIndex = 0;
-		// }
-		// return index;
+		let index = this.#dotPoolIndex;
+
+		// Next
+		this.#dotPoolIndex += 1;
+
+		// Recycle from Start of Pool
+		if (this.#dotPoolIndex >= this.#dotPoolSize) {
+			this.#dotPoolIndex = 0;
+		}
+
+		return index;
 	}
 
 	// ________________________________________________________________ Position
 
 	setDotPosition(dotIndex, positionGrid) {
-		// // Get Dot
-		// Dot dot = #dots[dotIndex];
-		// // Set Position
-		// dot.SetPosition(GridData.GetGridPixelPosition(positionGrid));
-
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];
 
@@ -80,11 +60,6 @@ export default class DotManager {
 	// ____________________________________________________________________ Fill
 
 	fillDot(dotIndex) {
-		// // Get Dot
-		// Dot dot = #dots[dotIndex];
-		// // Fill
-		// dot.Fill();
-
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];
 
@@ -95,11 +70,6 @@ export default class DotManager {
 	// ___________________________________________________________________ Clear
 
 	clearDot(dotIndex) {
-		// // Get Dot
-		// Dot dot = #dots[dotIndex];
-		// // Clear
-		// dot.Clear();
-
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];
 

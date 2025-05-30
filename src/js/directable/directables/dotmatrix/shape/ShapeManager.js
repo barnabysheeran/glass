@@ -22,9 +22,6 @@ export default class ShapeManager {
 	constructor(dotManager) {
 		ApplicationLogger.log('ShapeManager', this.#LOG_LEVEL);
 
-		// // Store
-		// #dotManager = dotManager;
-
 		// Store
 		this.#DOT_MANAGER = dotManager;
 	}
@@ -32,12 +29,6 @@ export default class ShapeManager {
 	// __________________________________________________________________ Update
 
 	tick() {
-		// // Update All Shapes
-		// foreach (Shape shape in #shapes)
-		// {
-		//     shape.Update();
-		// }
-
 		console.log('ShapeManager.tick()');
 
 		// Update All Shapes
@@ -49,12 +40,7 @@ export default class ShapeManager {
 	// ____________________________________________________________________ List
 
 	#ensureSpaceInList() {
-		// // Ensure Space in List Removing Oldest
-		// while (#shapes.Count >= #shapeMax)
-		// {
-		//     // TODO End Shape At 0 ?
-		//     #shapes.RemoveAt(0);
-		// }
+
 
 		// Ensure Space in List Removing Oldest
 		while (this.#SHAPES.length >= this.#SHAPE_MAX) {
