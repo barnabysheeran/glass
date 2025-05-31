@@ -6,14 +6,9 @@ export default class GridData {
 
 	static #resolutionWidth = 0;
 	static #resolutionHeight = 0;
-	static #resolutionAspect = 0.0;
 
 	static #pixelWidth = 1.0;
 	static #pixelHeight = 1.0;
-
-	static #cameraOrthographicSizeDoubled = 10.0;
-	// TODO Repeated CameraUserInterfaceSize
-	// TODO Camera Orthographic Size ?
 
 	// ______________________________________________________________ Initialize
 
@@ -25,14 +20,6 @@ export default class GridData {
 	// ____________________________________________________________________ Grid
 
 	static getGridPixelPosition(positionGrid) {
-		console.log(`GridData getGridPixelPosition positionGrid ${positionGrid}`);
-
-		// let x = -this.#cameraOrthographicSizeDoubled;
-		// let y = this.#cameraOrthographicSizeDoubled / this.#resolutionAspect;
-
-		// x += positionGrid[0] * this.#pixelWidth * this.#gridWidth;
-		// y += positionGrid[1] * this.#pixelHeight * -this.#gridHeight;
-
 		let x = positionGrid[0] * this.#pixelWidth * this.#gridWidth;
 		let y = positionGrid[1] * this.#pixelHeight * this.#gridHeight;
 
@@ -69,10 +56,5 @@ export default class GridData {
 		// Store
 		this.#resolutionWidth = width;
 		this.#resolutionHeight = height;
-		this.#resolutionAspect = width / height;
-
-		// Calculate Pixel Size
-		// this.#pixelWidth = this.#cameraOrthographicSizeDoubled / width;
-		// this.#pixelHeight = this.#pixelWidth; // TODO Check
 	}
 }

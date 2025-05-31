@@ -47,11 +47,11 @@ export default class ShapeManager {
 
 	// ____________________________________________________________________ Size
 
-	setSize(resolution) {
-		ApplicationLogger.log('ShapeManager setSize', resolution);
+	// setSize(resolution) {
+	// 	ApplicationLogger.log('ShapeManager setSize', resolution);
 
-		// TODO Required ?
-	}
+	// TODO Required ?
+	// }
 
 	// _________________________________________________________ Line Horizontal
 
