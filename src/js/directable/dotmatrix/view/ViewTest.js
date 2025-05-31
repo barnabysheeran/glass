@@ -41,7 +41,7 @@ export default class ViewTest {
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
 			1,
 			1,
-			gridMax.x - 2,
+			gridMax[0] - 2,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);

@@ -6,10 +6,6 @@ import FillStrategyType from './fill/FillStrategyType.js';
 import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
 
 export default class ShapeManager {
-	// private DotManager #dotManager;
-	// private List<Shape> #shapes = new List<Shape>();
-	// private int #shapeMax = 100;
-
 	#DOT_MANAGER;
 
 	#SHAPES = [];
@@ -29,7 +25,7 @@ export default class ShapeManager {
 	// __________________________________________________________________ Update
 
 	tick() {
-		console.log('ShapeManager.tick()');
+		ApplicationLogger.log('ShapeManager tick');
 
 		// Update All Shapes
 		for (let i = 0; i < this.#SHAPES.length; i += 1) {
@@ -40,7 +36,7 @@ export default class ShapeManager {
 	// ____________________________________________________________________ List
 
 	#ensureSpaceInList() {
-
+		ApplicationLogger.log('ShapeManager ensureSpaceInList');
 
 		// Ensure Space in List Removing Oldest
 		while (this.#SHAPES.length >= this.#SHAPE_MAX) {
@@ -52,6 +48,8 @@ export default class ShapeManager {
 	// ____________________________________________________________________ Size
 
 	setSize(resolution) {
+		ApplicationLogger.log('ShapeManager setSize', resolution);
+
 		// TODO Required ?
 	}
 
@@ -64,12 +62,24 @@ export default class ShapeManager {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
+		ApplicationLogger.log(
+			`ShapeManager addShapeLineHorizontal`,
+			this.#LOG_LEVEL,
+		);
+		ApplicationLogger.log(
+			`gridX: ${gridX}, gridY: ${gridY}, length: ${length}`,
+			this.#LOG_LEVEL,
+		);
+		ApplicationLogger.log(
+			`fillType: ${fillType}, fillStrategyType: ${fillStrategyType}`,
+			this.#LOG_LEVEL,
+		);
+
 		// Ensure Space in List
 		this.#ensureSpaceInList();
 
 		// Create Shape
 		const shape = new ShapeLineHorizontal(
-			// #dotManager,
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,
