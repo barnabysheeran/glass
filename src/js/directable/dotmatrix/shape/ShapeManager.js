@@ -4,6 +4,7 @@ import FillType from './fill/FillType.js';
 import FillStrategyType from './fill/FillStrategyType.js';
 
 import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
+import ShapeLineVertical from './line/ShapeLineVertical.js';
 
 export default class ShapeManager {
 	#DOT_MANAGER;
@@ -45,14 +46,6 @@ export default class ShapeManager {
 		}
 	}
 
-	// ____________________________________________________________________ Size
-
-	// setSize(resolution) {
-	// 	ApplicationLogger.log('ShapeManager setSize', resolution);
-
-	// TODO Required ?
-	// }
-
 	// _________________________________________________________ Line Horizontal
 
 	addShapeLineHorizontal(
@@ -64,14 +57,6 @@ export default class ShapeManager {
 	) {
 		ApplicationLogger.log(
 			`ShapeManager addShapeLineHorizontal`,
-			this.#LOG_LEVEL,
-		);
-		ApplicationLogger.log(
-			`gridX: ${gridX}, gridY: ${gridY}, length: ${length}`,
-			this.#LOG_LEVEL,
-		);
-		ApplicationLogger.log(
-			`fillType: ${fillType}, fillStrategyType: ${fillStrategyType}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -95,49 +80,36 @@ export default class ShapeManager {
 		return shape;
 	}
 
-	// Shape AddShapeLineHorizontal(int gridX, int gridY,
-	//                             int length,
-	//                             FillType fillType = FillType.PassThrough,
-	//                             FillStrategyType fillStrategyType = FillStrategyType.PassThrough)
-	// {
-	//     EnsureSpaceInList();
-
-	//     // Create Shape
-	//     ShapeLineHorizontal shape = new ShapeLineHorizontal(#dotManager,
-	//         gridX, gridY,
-	//         length,
-	//         fillType,
-	//         fillStrategyType);
-
-	//     // Add
-	//     #shapes.Add(shape);
-
-	//     // Return
-	//     return shape;
-	// }
-
 	// ___________________________________________________________ Line Vertical
 
-	// Shape AddShapeLineVertical(int gridX, int gridY,
-	//                                  int length,
-	//                                  FillType fillType = FillType.PassThrough,
-	//                                  FillStrategyType fillStrategyType = FillStrategyType.PassThrough)
-	// {
-	//     EnsureSpaceInList();
+	addShapeLineVertical(
+		gridX,
+		gridY,
+		length,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeLineVertical`, this.#LOG_LEVEL);
 
-	//     // Create Shape
-	//     ShapeLineVertical shape = new ShapeLineVertical(#dotManager,
-	//         gridX, gridY,
-	//         length,
-	//         fillType,
-	//         fillStrategyType);
+		// Ensure Space in List
+		this.#ensureSpaceInList();
 
-	//     // Add
-	//     #shapes.Add(shape);
+		// Create Shape
+		const shape = new ShapeLineVertical(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			length,
+			fillType,
+			fillStrategyType,
+		);
 
-	//     // Return
-	//     return shape;
-	// }
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
 
 	// _______________________________________________________________ Rectangle
 

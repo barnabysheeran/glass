@@ -27,7 +27,7 @@ export default class ShapeLineVertical extends Shape {
 
 		// Store Initial Position Grids
 		for (let i = 0; i < gridLength; i += 1) {
-			this.positionGrids.Add([gridX, gridY + i]);
+			this.positionGrids.push([gridX, gridY + i]);
 		}
 
 		// Fill Type

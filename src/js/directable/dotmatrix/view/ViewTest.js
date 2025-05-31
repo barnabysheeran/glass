@@ -39,8 +39,16 @@ export default class ViewTest {
 		// let lineWidth = gridMaxHalf[0] - 2;
 
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			3,
 			1,
+			10,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeLineVertical(
 			1,
+			3,
 			10,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
