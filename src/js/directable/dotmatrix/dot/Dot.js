@@ -51,6 +51,7 @@ export default class Dot {
 
 		// Create data array for white with alpha 1
 		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);
+
 		for (let i = 0; i < GRID_WIDTH * GRID_HEIGHT; i++) {
 			// Set all RGBA values to 255, 255, 255, 255 (white, fully opaque)
 			data[i * 4 + 0] = 255; // R
