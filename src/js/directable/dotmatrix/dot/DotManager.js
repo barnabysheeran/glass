@@ -13,12 +13,12 @@ export default class DotManager {
 
 	// _________________________________________________________________________
 
-	constructor(container) {
+	constructor() {
 		ApplicationLogger.log('DotManager', this.#LOG_LEVEL);
 
 		// Create Dot Pool
 		for (let i = 0; i < this.#dotPoolSize; i += 1) {
-			const dot = new Dot(i, container);
+			const dot = new Dot(i);
 			this.#DOTS.push(dot);
 		}
 	}
@@ -27,7 +27,7 @@ export default class DotManager {
 
 	tick() {
 		for (let i = 0; i < this.#DOTS.length; i += 1) {
-			this.#DOTS[i].update();
+			this.#DOTS[i].tick();
 		}
 	}
 

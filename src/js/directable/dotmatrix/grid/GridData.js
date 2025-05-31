@@ -13,6 +13,7 @@ export default class GridData {
 
 	static #cameraOrthographicSizeDoubled = 10.0;
 	// TODO Repeated CameraUserInterfaceSize
+	// TODO Camera Orthographic Size ?
 
 	// ______________________________________________________________ Initialize
 

@@ -22,7 +22,7 @@ export default class ViewManager {
 
 	// _________________________________________________________________________
 
-	constructor(container) {
+	constructor() {
 		ApplicationLogger.log('ViewManager', this.#LOG_LEVEL);
 
 		// Initialize Grid Data
@@ -33,7 +33,7 @@ export default class ViewManager {
 		// // #gridRenderer = new GridRenderer(container);
 
 		// Create Dot Manager
-		this.#DOT_MANAGER = new DotManager(container);
+		this.#DOT_MANAGER = new DotManager();
 
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);

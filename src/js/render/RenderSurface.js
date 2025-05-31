@@ -46,11 +46,6 @@ export default class RenderSurface {
 		this.#CANVAS.height = this.#height;
 		APPLICATION_CONTAINER.appendChild(this.#CANVAS);
 
-		ApplicationLogger.log(
-			` - Created Canvas ${this.#width} ${this.#height}`,
-			this.#LOG_LEVEL,
-		);
-
 		// Get WebGL2 Context
 		this.#GL = this.#CANVAS.getContext('webgl2');
 
