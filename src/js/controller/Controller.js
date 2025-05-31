@@ -3,7 +3,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Overlay from '../overlay/Overlay.js';
 import Director from '../director/Director.js';
-import RenderController from '../render/RenderController.js';
+import RenderSurface from '../render/RenderSurface.js';
 import Display from '../display/Display.js';
 
 export default class Controller {
@@ -27,8 +27,8 @@ export default class Controller {
 		// Initialise Display - Sets Initial Display Format
 		Display.initialise();
 
-		// Initialise Render Controller
-		RenderController.initialise();
+		// Initialise Render Surface
+		RenderSurface.initialise();
 
 		// Initialise Director
 		Director.initialise();
@@ -58,16 +58,14 @@ export default class Controller {
 		const IS_DISPLAY_UPDATED = Display.tick();
 
 		if (IS_DISPLAY_UPDATED) {
-			console;
-
 			this.#displayUpdated();
 		}
 
 		// Tick Director
 		Director.tick(frameDeltaMS);
 
-		// Tick Render Controller
-		RenderController.tick(frameDeltaMS);
+		// Tick Render Surface
+		RenderSurface.tick(frameDeltaMS);
 	}
 
 	// _________________________________________________________________ Display
@@ -84,7 +82,7 @@ export default class Controller {
 		// Director
 		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-		// Render Controller
-		RenderController.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		// Render Surface
+		RenderSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 	}
 }

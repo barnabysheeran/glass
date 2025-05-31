@@ -34,7 +34,7 @@ export default class DirectableDotMatrix {
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		ApplicationLogger.log('DirectableDotMatrix tick', this.#LOG_LEVEL);
+		// ApplicationLogger.log('DirectableDotMatrix tick', this.#LOG_LEVEL);
 
 		// View Manager
 		this.#VIEW_MANAGER.tick(frameDeltaMS);

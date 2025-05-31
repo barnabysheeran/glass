@@ -5,13 +5,12 @@ import DisplayFormats from './DisplayFormats.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 export default class Display {
-	static #VIEW_HOLDER;
+	static #APPLICATION_CONTAINER;
 
 	static #displayFormat = DisplayFormats.SQUARE; // Set initial scale mode
 
 	static #width = -1;
 	static #height = -1;
-
 	static #top = -1;
 	static #left = -1;
 
@@ -21,13 +20,17 @@ export default class Display {
 
 	static initialise() {
 		// Store
+		this.#APPLICATION_CONTAINER =
+			ApplicationConfiguration.getApplicationContainer();
 
-		this.#VIEW_HOLDER = ApplicationConfiguration.getApplicationContainer();
-
+		// Application Dispatcher Events
 		ApplicationDispatcher.on(
 			'display-format-change',
 			this.#onDisplayFormatChange.bind(this),
 		);
+
+		// Set Initial Display Format
+		this.tick();
 	}
 
 	// _______________________________________________ Dispatcher Overlay Format
@@ -38,19 +41,8 @@ export default class Display {
 			this.#LOG_LEVEL,
 		);
 
-		// Check if the received format is a valid one by comparing against the direct static properties
-		const isValidFormat = Object.values(DisplayFormats).includes(
-			data.displayFormat,
-		);
-
-		if (data && data.displayFormat && isValidFormat) {
-			this.#displayFormat = data.displayFormat;
-		} else {
-			ApplicationLogger.warn(
-				`RenderResizer.#onDisplayFormatChange: Invalid or missing displayFormat received - ${data?.displayFormat}`,
-				2,
-			);
-		}
+		// Store
+		this.#displayFormat = data.displayFormat;
 	}
 
 	// __________________________________________________________________ Resize
@@ -61,9 +53,9 @@ export default class Display {
 
 		// Get Rectangle
 		const APPLICATION_RECTANGLE =
-			ApplicationConfiguration.getApplicationContainer().getBoundingClientRect();
+			this.#APPLICATION_CONTAINER.getBoundingClientRect();
 
-		// Get Width
+		// Get Dimensions
 		const APPLICATION_WIDTH = APPLICATION_RECTANGLE.width;
 		const APPLICATION_HEIGHT = APPLICATION_RECTANGLE.height;
 
@@ -140,10 +132,6 @@ export default class Display {
 
 		// Changed Width Height ?
 		if (width !== this.#width || height !== this.#height) {
-			// Set
-			this.#VIEW_HOLDER.style.width = `${width}px`;
-			this.#VIEW_HOLDER.style.height = `${height}px`;
-
 			// Store
 			this.#width = width;
 			this.#height = height;
@@ -154,10 +142,6 @@ export default class Display {
 
 		// Changed Top Left ? - Move Holder
 		if (top !== this.#top || left !== this.#left) {
-			// Set
-			this.#VIEW_HOLDER.style.top = `${top}px`;
-			this.#VIEW_HOLDER.style.left = `${left}px`;
-
 			// Store
 			this.#top = top;
 			this.#left = left;
@@ -167,6 +151,14 @@ export default class Display {
 	}
 
 	// __________________________________________________________________ Access
+
+	static getLeft() {
+		return this.#left;
+	}
+
+	static getTop() {
+		return this.#top;
+	}
 
 	static getWidth() {
 		return this.#width;
