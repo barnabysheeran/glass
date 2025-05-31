@@ -249,41 +249,8 @@ export default class RenderSurface {
 	// ____________________________________________________________________ Tick
 
 	static tick() {
-		// First perform the rendering to the texture
-		const squareSize = 10;
-		const maxX = this.#width - squareSize;
-		const maxY = this.#height - squareSize;
-
-		if (maxX < 0 || maxY < 0) {
-			ApplicationLogger.warn(
-				'RenderSurface - Canvas too small to draw test square.',
-			);
-			return;
-		}
-
-		const randomX = Math.floor(Math.random() * (maxX + 1));
-		const randomY = Math.floor(Math.random() * (maxY + 1));
-
-		const squareData = new Uint8Array(squareSize * squareSize * 4);
-
-		for (let i = 0; i < squareSize * squareSize; i++) {
-			squareData[i * 4 + 0] = 255;
-			squareData[i * 4 + 1] = 0;
-			squareData[i * 4 + 2] = 0;
-			squareData[i * 4 + 3] = 255;
-		}
-
-		this.setTextureData(randomX, randomY, squareSize, squareSize, squareData);
-
-		// Then display the texture on the canvas
-		if (
-			!this.#DISPLAY_SHADER_PROGRAM ||
-			!this.#TEXTURE ||
-			!this.#DISPLAY_QUAD_VAO
-		)
-			return;
-
 		const GL = this.#GL;
+
 		GL.bindFramebuffer(GL.FRAMEBUFFER, null);
 		GL.viewport(0, 0, GL.drawingBufferWidth, GL.drawingBufferHeight);
 

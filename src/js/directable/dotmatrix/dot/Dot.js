@@ -10,6 +10,8 @@ export default class Dot {
 
 	#LOG_LEVEL = 6;
 
+	// TODO Create Re-Useable Grid Sized Pixel Data Array
+
 	// _________________________________________________________________________
 
 	constructor(dotIndex) {

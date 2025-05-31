@@ -41,10 +41,26 @@ export default class ViewTest {
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
 			1,
 			1,
-			gridMax[0] - 2,
+			10,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
+
+		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
+		// 	1,
+		// 	1,
+		// 	gridMax[0] - 2,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
+		// 	1,
+		// 	3,
+		// 	gridMax[0] - 2,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
 		// --------------
 

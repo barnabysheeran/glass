@@ -8,8 +8,8 @@ export default class GridData {
 	static #resolutionHeight = 0;
 	static #resolutionAspect = 0.0;
 
-	static #pixelWidth = 0.0;
-	static #pixelHeight = 0.0;
+	static #pixelWidth = 1.0;
+	static #pixelHeight = 1.0;
 
 	static #cameraOrthographicSizeDoubled = 10.0;
 	// TODO Repeated CameraUserInterfaceSize
@@ -18,7 +18,7 @@ export default class GridData {
 	// ______________________________________________________________ Initialize
 
 	static initialize(width, height) {
-		// TODO Initial Grid Size ?
+		// Set Initial Size
 		this.setSize(width, height);
 	}
 
@@ -27,11 +27,14 @@ export default class GridData {
 	static getGridPixelPosition(positionGrid) {
 		console.log(`GridData getGridPixelPosition positionGrid ${positionGrid}`);
 
-		let x = -this.#cameraOrthographicSizeDoubled;
-		let y = this.#cameraOrthographicSizeDoubled / this.#resolutionAspect;
+		// let x = -this.#cameraOrthographicSizeDoubled;
+		// let y = this.#cameraOrthographicSizeDoubled / this.#resolutionAspect;
 
-		x += positionGrid[0] * this.#pixelWidth * this.#gridWidth;
-		y += positionGrid[1] * this.#pixelHeight * -this.#gridHeight;
+		// x += positionGrid[0] * this.#pixelWidth * this.#gridWidth;
+		// y += positionGrid[1] * this.#pixelHeight * -this.#gridHeight;
+
+		let x = positionGrid[0] * this.#pixelWidth * this.#gridWidth;
+		let y = positionGrid[1] * this.#pixelHeight * this.#gridHeight;
 
 		return vec2.fromValues(x, y);
 	}
@@ -69,7 +72,7 @@ export default class GridData {
 		this.#resolutionAspect = width / height;
 
 		// Calculate Pixel Size
-		this.#pixelWidth = this.#cameraOrthographicSizeDoubled / width;
-		this.#pixelHeight = this.#pixelWidth; // TODO Check
+		// this.#pixelWidth = this.#cameraOrthographicSizeDoubled / width;
+		// this.#pixelHeight = this.#pixelWidth; // TODO Check
 	}
 }
