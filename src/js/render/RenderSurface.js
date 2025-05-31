@@ -1,5 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
+
 import Display from '../display/Display.js';
 
 export default class RenderSurface {
@@ -29,7 +30,7 @@ export default class RenderSurface {
 		const APPLICATION_CONTAINER =
 			ApplicationConfiguration.getApplicationContainer();
 
-		// Get Display Dimensions
+		// Get Initial Display Dimensions
 		this.#width = Display.getWidth();
 		this.#height = Display.getHeight();
 

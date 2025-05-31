@@ -11,7 +11,7 @@ export default class Dot {
 	// _________________________________________________________________________
 
 	constructor(dotIndex) {
-		ApplicationLogger.log(`Dot ${dotIndex}`, this.#LOG_LEVEL);
+		// ApplicationLogger.log(`Dot ${dotIndex}`, this.#LOG_LEVEL);
 
 		// Store
 		this.#dotIndex = dotIndex;

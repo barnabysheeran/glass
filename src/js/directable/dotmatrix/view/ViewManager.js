@@ -22,11 +22,11 @@ export default class ViewManager {
 
 	// _________________________________________________________________________
 
-	constructor() {
+	constructor(width, height) {
 		ApplicationLogger.log('ViewManager', this.#LOG_LEVEL);
 
 		// Initialize Grid Data
-		GridData.initialize();
+		GridData.initialize(width, height);
 
 		// // DEV -
 		// TODO Remove or re-implement

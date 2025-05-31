@@ -17,9 +17,9 @@ export default class GridData {
 
 	// ______________________________________________________________ Initialize
 
-	static initialize() {
+	static initialize(width, height) {
 		// TODO Initial Grid Size ?
-		this.setSize(100, 100);
+		this.setSize(width, height);
 	}
 
 	// ____________________________________________________________________ Grid

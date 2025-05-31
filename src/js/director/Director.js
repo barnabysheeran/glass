@@ -3,6 +3,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 import DirectableTitle from '../directable/title/DirectableTitle.js';
 // import DirectableRhythmBPM from '../directable/directables/rhythm/bpm/DirectableRhythmBPM.js';
 import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
+import Display from '../display/Display.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
@@ -16,6 +17,10 @@ export default class Director {
 	static initialise() {
 		ApplicationLogger.log(`Director initialise`, this.#LOG_LEVEL);
 
+		// Get Initial Display Dimensions
+		const WIDTH = Display.getWidth();
+		const HEIGHT = Display.getHeight();
+
 		// Create Directable Title
 		this.#DIRECTABLE_TITLE = new DirectableTitle();
 		this.#DIRECTABLE_TITLE.setText('꒰ ঌᐢ.ˬ.ᐢ໒ ꒱');
@@ -24,7 +29,7 @@ export default class Director {
 		// this.#DIRECTABLE_RHYTH_BPM = new DirectableRhythmBPM();
 
 		// Create Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix();
+		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(WIDTH, HEIGHT);
 	}
 
 	// ____________________________________________________________________ Tick
