@@ -64,11 +64,13 @@ export default class Shape {
 		this.#positionGridsIndex += 1;
 
 		// Check Complete
-		if (this.#positionGridsIndex >= this.positionGrids.Count) {
+		if (this.#positionGridsIndex >= this.positionGrids.length) {
 			this.#isComplete = true;
 			return;
 		}
 	}
+
+	// TODO Tidy
 
 	// virtual Update()
 	// {
