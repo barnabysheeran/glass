@@ -1,3 +1,5 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+
 import Shape from '../Shape.js';
 
 import FillType from '../fill/FillType.js';
@@ -5,12 +7,11 @@ import FillStrategyType from '../fill/FillStrategyType.js';
 
 import Fill from '../fill/Fill.js';
 import FillStrategy from '../fill/FillStrategy.js';
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
 export default class ShapeLineHorizontal extends Shape {
 	#LOG_LEVEL = 6;
 
-	// _____________________________________________________________________
+	// _________________________________________________________________________
 
 	constructor(
 		dotManager,
@@ -23,20 +24,18 @@ export default class ShapeLineHorizontal extends Shape {
 		super(dotManager);
 
 		ApplicationLogger.log(`ShapeLineHorizontal`, this.#LOG_LEVEL);
+
 		ApplicationLogger.log(
-			`gridX: ${gridX}, gridY: ${gridY}, gridLength: ${gridLength}`,
+			`gridX ${gridX} gridY ${gridY} gridLength: ${gridLength}`,
 			this.#LOG_LEVEL,
 		);
+
 		ApplicationLogger.log(
-			`fillType: ${fillType}, fillStrategyType: ${fillStrategyType}`,
+			`fillType ${fillType} fillStrategyType ${fillStrategyType}`,
 			this.#LOG_LEVEL,
 		);
 
 		// Store Initial Position Grids
-		// for (let i = 0; i < gridLength; i++) {
-		// 	this.positionGrids.Add(new Vector2Int(gridX + i, gridY));
-		// }
-
 		for (let i = 0; i < gridLength; i += 1) {
 			this.positionGrids.push([gridX + i, gridY]);
 		}

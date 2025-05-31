@@ -80,6 +80,9 @@ export default class ViewTest {
 	// ____________________________________________________________________ tick
 
 	tick() {
+		// Shape Manager
+		this.#SHAPE_MANAGER.tick();
+
 		// TODO Draw Random Lines ?
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// int randomChance = Random.Range(0, 500);

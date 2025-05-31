@@ -50,6 +50,20 @@ export default class DotManager {
 	// ________________________________________________________________ Position
 
 	setDotPosition(dotIndex, positionGrid) {
+		ApplicationLogger.log(
+			`DotManager setDotPosition dotIndex ${dotIndex} positionGrid ${positionGrid}`,
+			this.#LOG_LEVEL,
+		);
+
+		// TODO Remove
+		if (positionGrid === undefined) {
+			ApplicationLogger.warn(
+				`DotManager setDotPosition positionGrid is undefined for dotIndex ${dotIndex}`,
+				this.#LOG_LEVEL,
+			);
+			return;
+		}
+
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];
 
@@ -75,16 +89,5 @@ export default class DotManager {
 
 		// Clear
 		DOT.clear();
-	}
-
-	// __________________________________________________________________ Status
-
-	LogStatus() {
-		ApplicationLogger.log(
-			`DotManager. Index ${this.#dotPoolIndex} of ${this.#dotPoolSize} Dots`,
-			this.#LOG_LEVEL,
-		);
-
-		// Debug.Log("DotManager. Index " + #dotPoolIndex + " of " + #dotPoolSize + " Dots");
 	}
 }

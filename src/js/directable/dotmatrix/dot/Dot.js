@@ -40,7 +40,7 @@ export default class Dot {
 
 	fill() {
 		ApplicationLogger.log(
-			`Dot fill at (${this.#positionPixelsX} ${this.#positionPixelsY})`,
+			`Dot fill at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -51,7 +51,7 @@ export default class Dot {
 
 	clear() {
 		ApplicationLogger.log(
-			`Dot clear at (${this.#positionPixelsX} ${this.#positionPixelsY})`,
+			`Dot clear at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 

@@ -29,7 +29,7 @@ export default class ShapeManager {
 
 		// Update All Shapes
 		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.#SHAPES[i].update();
+			this.#SHAPES[i].tick();
 		}
 	}
 

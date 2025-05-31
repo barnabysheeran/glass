@@ -25,13 +25,15 @@ export default class GridData {
 	// ____________________________________________________________________ Grid
 
 	static getGridPixelPosition(positionGrid) {
+		console.log(`GridData getGridPixelPosition positionGrid ${positionGrid}`);
+
 		let x = -this.#cameraOrthographicSizeDoubled;
 		let y = this.#cameraOrthographicSizeDoubled / this.#resolutionAspect;
 
-		x += positionGrid.x * this.#pixelWidth * this.#gridWidth;
-		y += positionGrid.y * this.#pixelHeight * -this.#gridHeight;
+		x += positionGrid[0] * this.#pixelWidth * this.#gridWidth;
+		y += positionGrid[1] * this.#pixelHeight * -this.#gridHeight;
 
-		return new vec2(x, y);
+		return vec2.fromValues(x, y);
 	}
 
 	static getGridWidth() {
