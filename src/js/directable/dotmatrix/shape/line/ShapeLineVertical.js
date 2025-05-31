@@ -1,32 +1,39 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
+import Shape from '../Shape.js';
 
+import FillType from '../fill/FillType.js';
+import FillStrategyType from '../fill/FillStrategyType.js';
 
+import Fill from '../fill/Fill.js';
+import FillStrategy from '../fill/FillStrategy.js';
 
+export default class ShapeLineVertical extends Shape {
+	#LOG_LEVEL = 6;
 
-namespace UnityTest.UserInterface.DotMatrix.Shapes.Lines
-{
-    export default class ShapeLineVertical : Shape
-    {
-        // _____________________________________________________________________
+	// _____________________________________________________________________
 
-        ShapeLineVertical(DotManager dotManager,
-                                 int gridX, int gridY,
-                                 int length,
-                                 FillType fillType,
-                                 FillStrategyType fillStrategyType)
-            : base(dotManager)
-        {
-            // Store Initial Position Grids
-            for (int i = 0; i < length; i++)
-            {
-                #positionGrids.Add(new Vector2Int(gridX, gridY + i));
-            }
+	constructor(
+		dotManager,
+		gridX,
+		gridY,
+		gridLength,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		super(dotManager);
 
-            // Fill Type
-            Fill.Apply(fillType, #positionGrids);
+		ApplicationLogger.log(`ShapeLineVertical`, this.#LOG_LEVEL);
 
-            // Fill Strategy Type
-            FillStrategy.Apply(fillStrategyType, #positionGrids);
-        }
-    }
+		// Store Initial Position Grids
+		for (let i = 0; i < gridLength; i += 1) {
+			this.positionGrids.Add([gridX, gridY + i]);
+		}
+
+		// Fill Type
+		Fill.apply(fillType, this.positionGrids);
+
+		// Fill Strategy Type
+		FillStrategy.apply(fillStrategyType, this.positionGrids);
+	}
 }

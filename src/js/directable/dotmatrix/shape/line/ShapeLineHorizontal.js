@@ -25,16 +25,6 @@ export default class ShapeLineHorizontal extends Shape {
 
 		ApplicationLogger.log(`ShapeLineHorizontal`, this.#LOG_LEVEL);
 
-		ApplicationLogger.log(
-			`gridX ${gridX} gridY ${gridY} gridLength: ${gridLength}`,
-			this.#LOG_LEVEL,
-		);
-
-		ApplicationLogger.log(
-			`fillType ${fillType} fillStrategyType ${fillStrategyType}`,
-			this.#LOG_LEVEL,
-		);
-
 		// Store Initial Position Grids
 		for (let i = 0; i < gridLength; i += 1) {
 			this.positionGrids.push([gridX + i, gridY]);
