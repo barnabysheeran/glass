@@ -12,15 +12,15 @@ export default class ShapeGlyph_V extends Shape {
 
 	/* eslint-disable */
     #positionGridGlyphs = [
-        vec2.fromValues(0, 0),                                               vec2.fromValues(3, 0),
-        vec2.fromValues(0, 1),                                               vec2.fromValues(3, 1),
-        vec2.fromValues(0, 2),                                               vec2.fromValues(3, 2),
-                               vec2.fromValues(1, 3),                        vec2.fromValues(2, 3),
-                                                      vec2.fromValues(1, 4),
+        vec2.fromValues(0, 0),                                                               vec2.fromValues(4, 0),
+        vec2.fromValues(0, 1),                                                               vec2.fromValues(4, 1),
+        vec2.fromValues(0, 2),                                                               vec2.fromValues(4, 2),
+                               vec2.fromValues(1, 3),                        vec2.fromValues(3, 3),
+                                               vec2.fromValues(2, 4),
     ];
     /* eslint-enable */
 
-	#glyphWidth = 4;
+	#glyphWidth = 5;
 	#glyphHeight = 5;
 
 	// _________________________________________________________________________
