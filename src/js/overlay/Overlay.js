@@ -2,12 +2,14 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
+import OverlayFPS from './fps/OverlayFPS.js';
 import OverlayOverlay from './overlay/OverlayOverlay.js';
 import OverlayDisplayFormat from './displayFormat/OverlayDisplayFormat.js';
 
 export default class Overlay {
 	static #HOLDER;
 
+	static #OVERLAY_FPS;
 	static #OVERLAY_OVERLAY;
 	static #OVERLAY_FORMAT;
 
@@ -29,6 +31,8 @@ export default class Overlay {
 		);
 
 		// Create Overlays
+		this.#OVERLAY_FPS = new OverlayFPS(this.#HOLDER);
+
 		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
 		this.#OVERLAY_FORMAT = new OverlayDisplayFormat(this.#HOLDER);
 
@@ -44,7 +48,9 @@ export default class Overlay {
 
 	// ____________________________________________________________________ Tick
 
-	static tick(frameDeltaMS) {}
+	static tick(frameDeltaMS) {
+		this.#OVERLAY_FPS.tick(frameDeltaMS);
+	}
 
 	// ______________________________________________________________ Visibility
 

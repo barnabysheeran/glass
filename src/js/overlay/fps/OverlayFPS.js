@@ -1,4 +1,4 @@
-import { overlayCreateButton } from '../OverlayUtil.js';
+import { overlayCreateLabel } from '../OverlayUtil.js';
 
 export default class OverlayFPS {
 	#HOLDER;
@@ -13,11 +13,19 @@ export default class OverlayFPS {
 		container.appendChild(this.#HOLDER);
 
 		// Create Buttons
-		this.#BUTTON_SHOW_HIDE = overlayCreateButton(
+		this.#BUTTON_SHOW_HIDE = overlayCreateLabel(
 			'[  &nbsp;&nbsp;&nbsp; ]',
 			'overlay-toggle-visibility',
 			'half',
 		);
 		this.#HOLDER.appendChild(this.#BUTTON_SHOW_HIDE);
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick(frameDeltaMS) {
+		// Update FPS
+		const FPS = Math.round(1000 / frameDeltaMS);
+		this.#BUTTON_SHOW_HIDE.innerHTML = `${FPS} FPS`;
 	}
 }
