@@ -1,6 +1,6 @@
 import { overlayCreateButton } from '../OverlayUtil.js';
 
-export default class OverlayOverlay {
+export default class OverlayFPS {
 	#HOLDER;
 
 	#BUTTON_SHOW_HIDE;

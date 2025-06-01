@@ -42,6 +42,10 @@ export default class Overlay {
 		this.#hide();
 	}
 
+	// ____________________________________________________________________ Tick
+
+	static tick(frameDeltaMS) {}
+
 	// ______________________________________________________________ Visibility
 
 	static #toggleVisibility() {

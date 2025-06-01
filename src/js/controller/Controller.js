@@ -51,21 +51,27 @@ export default class Controller {
 			this.#frameRateDelayMS -= this.#FRAMERATE_MS;
 
 			// Tick at Frame Rate FPS
-			// TODO
+
+			// Display
+			const IS_DISPLAY_UPDATED = Display.tick();
+
+			if (IS_DISPLAY_UPDATED) {
+				this.#displayUpdated();
+			}
+
+			// Tick Director
+			Director.tick(frameDeltaMS);
 		}
 
-		// Display
-		const IS_DISPLAY_UPDATED = Display.tick();
-
-		if (IS_DISPLAY_UPDATED) {
-			this.#displayUpdated();
-		}
-
-		// Tick Director
-		Director.tick(frameDeltaMS);
+		// Tick at Max Frame Rate
 
 		// Tick Render Surface
 		RenderSurface.tick(frameDeltaMS);
+
+		// Tick Overlay ?
+		if (ApplicationConfiguration.isDebug === true) {
+			Overlay.tick(frameDeltaMS);
+		}
 	}
 
 	// _________________________________________________________________ Display

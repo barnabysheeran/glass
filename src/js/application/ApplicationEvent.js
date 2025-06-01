@@ -3,8 +3,6 @@ export default class ApplicationEvent {
 
 	#EVENT_NAME;
 
-	// TODO Rename Event or similar for re-use ?
-
 	// _________________________________________________________________________
 
 	constructor(eventName) {
