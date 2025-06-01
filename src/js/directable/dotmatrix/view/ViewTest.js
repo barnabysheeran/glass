@@ -33,10 +33,7 @@ export default class ViewTest {
 			this.#LOG_LEVEL,
 		);
 
-		// TODO integers required ?
-		// let blockWidth = gridMaxHalf[0];
-		// let blockHeight = gridMaxHalf[1];
-		// let lineWidth = gridMaxHalf[0] - 2;
+		// Horizontal
 
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
 			3,
@@ -46,6 +43,8 @@ export default class ViewTest {
 			FillStrategyType.PassThrough,
 		);
 
+		// Vertical
+
 		this.#SHAPE_MANAGER.addShapeLineVertical(
 			1,
 			3,
@@ -53,6 +52,8 @@ export default class ViewTest {
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
+
+		// Rectangle
 
 		this.#SHAPE_MANAGER.addShapeRectangle(
 			10,
@@ -63,23 +64,30 @@ export default class ViewTest {
 			FillStrategyType.PassThrough,
 		);
 
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	1,
-		// 	gridMax[0] - 2,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeRectangle(
+			21,
+			10,
+			10,
+			10,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+		);
 
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	3,
-		// 	gridMax[0] - 2,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeRectangle(
+			32,
+			10,
+			10,
+			10,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+		);
 
 		// --------------
+
+		// TODO integers required ?
+		// let blockWidth = gridMaxHalf[0];
+		// let blockHeight = gridMaxHalf[1];
+		// let lineWidth = gridMaxHalf[0] - 2;
 
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// Vector2Int gridMaxHalf = GridData.GetGridMaxHalf();
