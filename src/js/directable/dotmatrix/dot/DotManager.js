@@ -11,7 +11,7 @@ export default class DotManager {
 
 	#LOG_LEVEL = -1; // 5;
 
-	// TODO Flatten Dot Class into Fast Arrays
+	// TODO Optimisation. Flatten Dot Class into Fast Arrays
 
 	// _________________________________________________________________________
 
@@ -23,14 +23,6 @@ export default class DotManager {
 			const dot = new Dot(i);
 			this.#DOTS.push(dot);
 		}
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		// for (let i = 0; i < this.#DOTS.length; i += 1) {
-		// 	this.#DOTS[i].tick();
-		// }
 	}
 
 	// ________________________________________________________________ Dot Pool

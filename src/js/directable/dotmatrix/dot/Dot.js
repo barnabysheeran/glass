@@ -10,7 +10,7 @@ export default class Dot {
 
 	#LOG_LEVEL = -1; // 6;
 
-	// TODO Create Re-Useable Grid Sized Pixel Data Array
+	// TODO Optimisation. Create Re-Useable Grid Sized Pixel Data Array
 
 	// _________________________________________________________________________
 
@@ -20,11 +20,6 @@ export default class Dot {
 		// Store
 		this.#dotIndex = dotIndex;
 	}
-
-	// ____________________________________________________________________ Tick
-
-	// tick() {
-	// }
 
 	// ________________________________________________________________ Position
 
