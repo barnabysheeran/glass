@@ -9,7 +9,7 @@ import Fill from '../fill/Fill.js';
 import FillStrategy from '../fill/FillStrategy.js';
 
 export default class ShapeLineHorizontal extends Shape {
-	#LOG_LEVEL = 6;
+	#LOG_LEVEL = -1; // 6;
 
 	// _________________________________________________________________________
 

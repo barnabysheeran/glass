@@ -8,7 +8,7 @@ export default class Dot {
 	#positionPixelsX = 0;
 	#positionPixelsY = 0;
 
-	#LOG_LEVEL = 6;
+	#LOG_LEVEL = -1; // 6;
 
 	// TODO Create Re-Useable Grid Sized Pixel Data Array
 

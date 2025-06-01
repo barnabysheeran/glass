@@ -8,7 +8,7 @@ import Fill from '../fill/Fill.js';
 import FillStrategy from '../fill/FillStrategy.js';
 
 export default class ShapeGlyph_Z extends Shape {
-	#LOG_LEVEL = 6;
+	#LOG_LEVEL = -1; // 6;
 
 	/* eslint-disable */
     #positionGridGlyphs = [
@@ -62,7 +62,7 @@ export default class ShapeGlyph_Z extends Shape {
 				this.#positionGridGlyphs[i][0] === x &&
 				this.#positionGridGlyphs[i][1] === y
 			) {
-				console.log(`getIsFilled: x: ${x}, y: ${y}`);
+				
 
 				isFilled = true;
 				break;

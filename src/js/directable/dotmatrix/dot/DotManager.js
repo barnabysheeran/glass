@@ -6,10 +6,10 @@ import Dot from './Dot.js';
 
 export default class DotManager {
 	#DOTS = [];
-	#dotPoolSize = 512;
+	#dotPoolSize = 1024;
 	#dotPoolIndex = 0;
 
-	#LOG_LEVEL = 5;
+	#LOG_LEVEL = -1; // 5;
 
 	// _________________________________________________________________________
 

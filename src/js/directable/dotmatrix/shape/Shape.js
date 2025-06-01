@@ -7,7 +7,7 @@ export default class Shape {
 	#dotManager;
 	#isComplete = false;
 
-	#LOG_LEVEL = 7;
+	#LOG_LEVEL = -1; // 7;
 
 	// _________________________________________________________________________
 
