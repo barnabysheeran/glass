@@ -7,16 +7,16 @@ import FillStrategyType from '../fill/FillStrategyType.js';
 import Fill from '../fill/Fill.js';
 import FillStrategy from '../fill/FillStrategy.js';
 
-export default class ShapeGlyph_A extends Shape {
+export default class ShapeGlyph_S extends Shape {
 	#LOG_LEVEL = 6;
 
 	/* eslint-disable */
     #positionGridGlyphs = [
-                               vec2.fromValues(1, 0), vec2.fromValues(2, 0),
-        vec2.fromValues(0, 1),                                               vec2.fromValues(3, 1),
-        vec2.fromValues(0, 2), vec2.fromValues(1, 2), vec2.fromValues(2, 2), vec2.fromValues(3, 2),
-        vec2.fromValues(0, 3),                                               vec2.fromValues(3, 3),
-        vec2.fromValues(0, 4),                                               vec2.fromValues(3, 4),
+                             vec2.fromValues(1, 0), vec2.fromValues(2, 0), vec2.fromValues(3, 0),
+        vec2.fromValues(0, 1),
+                             vec2.fromValues(1, 2), vec2.fromValues(2, 2),
+                                                                          vec2.fromValues(3, 3),
+        vec2.fromValues(0, 4), vec2.fromValues(1, 4), vec2.fromValues(2, 4),
     ];
     /* eslint-enable */
 
@@ -34,7 +34,7 @@ export default class ShapeGlyph_A extends Shape {
 	) {
 		super(dotManager);
 
-		ApplicationLogger.log(`ShapeGlyph_A`, this.#LOG_LEVEL);
+		ApplicationLogger.log(`ShapeGlyph_S`, this.#LOG_LEVEL);
 
 		// Store Initial Position Grids
 		for (let x = 0; x < this.#glyphWidth; x += 1) {

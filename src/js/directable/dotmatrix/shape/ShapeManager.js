@@ -20,6 +20,21 @@ import ShapeGlyph_H from './glyph/ShapeGlyph_H.js';
 import ShapeGlyph_I from './glyph/ShapeGlyph_I.js';
 import ShapeGlyph_J from './glyph/ShapeGlyph_J.js';
 import ShapeGlyph_K from './glyph/ShapeGlyph_K.js';
+import ShapeGlyph_L from './glyph/ShapeGlyph_L.js';
+import ShapeGlyph_M from './glyph/ShapeGlyph_M.js';
+import ShapeGlyph_N from './glyph/ShapeGlyph_N.js';
+import ShapeGlyph_O from './glyph/ShapeGlyph_O.js';
+import ShapeGlyph_P from './glyph/ShapeGlyph_P.js';
+import ShapeGlyph_Q from './glyph/ShapeGlyph_Q.js';
+import ShapeGlyph_R from './glyph/ShapeGlyph_R.js';
+import ShapeGlyph_S from './glyph/ShapeGlyph_S.js';
+import ShapeGlyph_T from './glyph/ShapeGlyph_T.js';
+import ShapeGlyph_U from './glyph/ShapeGlyph_U.js';
+import ShapeGlyph_V from './glyph/ShapeGlyph_V.js';
+import ShapeGlyph_W from './glyph/ShapeGlyph_W.js';
+import ShapeGlyph_X from './glyph/ShapeGlyph_X.js';
+import ShapeGlyph_Y from './glyph/ShapeGlyph_Y.js';
+import ShapeGlyph_Z from './glyph/ShapeGlyph_Z.js';
 
 export default class ShapeManager {
 	#DOT_MANAGER;
@@ -462,6 +477,441 @@ export default class ShapeManager {
 
 		// Create Shape
 		const shape = new ShapeGlyph_K(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_L
+
+	addShapeGlyph_L(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_L`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_L(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_M
+
+	addShapeGlyph_M(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_M`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_M(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_N
+
+	addShapeGlyph_N(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_N`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_N(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_O
+
+	addShapeGlyph_O(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_O`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_O(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_P
+
+	addShapeGlyph_P(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_P`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_P(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_Q
+
+	addShapeGlyph_Q(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_Q`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_Q(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_R
+
+	addShapeGlyph_R(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_R`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_R(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_S
+
+	addShapeGlyph_S(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_S`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_S(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_T
+
+	addShapeGlyph_T(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_T`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_T(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_U
+
+	addShapeGlyph_U(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_U`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_U(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_V
+
+	addShapeGlyph_V(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_V`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_V(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_W
+
+	addShapeGlyph_W(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_W`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_W(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_X
+
+	addShapeGlyph_X(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_X`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_X(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_Y
+
+	addShapeGlyph_Y(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_Y`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_Y(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Add
+		this.#SHAPES.push(shape);
+
+		// Return
+		return shape;
+	}
+
+	// _________________________________________________________________ Glyph_Z
+
+	addShapeGlyph_Z(
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		ApplicationLogger.log(`ShapeManager addShapeGlyph_Z`, this.#LOG_LEVEL);
+
+		// Ensure Space in List
+		this.#ensureSpaceInList();
+
+		// Create Shape
+		const shape = new ShapeGlyph_Z(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,

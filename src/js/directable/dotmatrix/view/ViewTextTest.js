@@ -94,6 +94,115 @@ export default class ViewTextTest {
 			FillStrategyType.PassThrough,
 		);
 
+		// Second Row of Letters
+
+		this.#SHAPE_MANAGER.addShapeGlyph_L(
+			10,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_M(
+			15,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_N(
+			20,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_O(
+			25,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_P(
+			30,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_Q(
+			35,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_R(
+			40,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_S(
+			45,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_T(
+			50,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_U(
+			55,
+			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		// Third Row of Letters
+
+		this.#SHAPE_MANAGER.addShapeGlyph_V(
+			10,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_W(
+			15,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_X(
+			20,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_Y(
+			25,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.#SHAPE_MANAGER.addShapeGlyph_Z(
+			30,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
 		// Numbers
 
 		// Symbols
