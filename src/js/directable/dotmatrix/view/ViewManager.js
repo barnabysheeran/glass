@@ -6,13 +6,9 @@ import DotManager from '../dot/DotManager.js';
 import ShapeManager from '../shape/ShapeManager.js';
 
 import ViewTest from './ViewTest.js';
+import ViewTextTest from './ViewTextTest.js';
 
 export default class ViewManager {
-	// private GridRenderer #gridRenderer;
-	// private DotManager #dotManager;
-	// private ShapeManager #shapeManager;
-	// private List<View> #views = new List<View>();
-
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 
@@ -28,10 +24,6 @@ export default class ViewManager {
 		// Initialize Grid Data
 		GridData.initialize(width, height);
 
-		// // DEV -
-		// TODO Remove or re-implement
-		// // #gridRenderer = new GridRenderer(container);
-
 		// Create Dot Manager
 		this.#DOT_MANAGER = new DotManager();
 
@@ -42,14 +34,8 @@ export default class ViewManager {
 		const VIEW_TEST = new ViewTest(this.#SHAPE_MANAGER);
 		this.#VIEWS.push(VIEW_TEST);
 
-		// ViewFloor viewFloor = new ViewFloor(#shapeManager);
-		// #views.Add(viewFloor);
-
-		// ViewTextTest viewTextTest = new ViewTextTest(#shapeManager);
-		// #views.Add(viewTextTest);
-
-		// // Set Initial Resolution
-		// SetResolution(DisplayController.GetResolution());
+		const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
+		this.#VIEWS.push(VIEW_TEXT_TEST);
 	}
 
 	// ____________________________________________________________________ Tick

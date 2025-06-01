@@ -1,38 +1,107 @@
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
+export default class ViewTextTest {
+	#SHAPE_MANAGER;
 
+	#LOG_LEVEL = 5;
 
+	// _____________________________________________________________________
 
-namespace UnityTest.UserInterface.DotMatrix.Views
-{
-    export default class ViewTextTest : View
-    {
-        // _____________________________________________________________________
+	ViewTextTest(shapeManager) {
+		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
-        ViewTextTest(ShapeManager shapeManager) : base(shapeManager)
-        {
-            // Alphabet
-            #shapeManager.AddShapeGlyph_A(10, 10, FillType.PassThrough, FillStrategyType.Reverse);
-            #shapeManager.AddShapeGlyph_B(15, 10, FillType.PassThrough, FillStrategyType.Random);
-            #shapeManager.AddShapeGlyph_C(20, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_D(25, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_E(30, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_F(35, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_G(40, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_H(45, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_I(50, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_J(55, 10, FillType.PassThrough, FillStrategyType.PassThrough);
-            #shapeManager.AddShapeGlyph_K(60, 10, FillType.PassThrough, FillStrategyType.PassThrough);
+		// Store
+		this.#SHAPE_MANAGER = shapeManager;
 
-            // Numbers
+		// TODO Add Text Glyphs
 
-            // Symbols
-        }
+		// Alphabet
+		// this.#SHAPE_MANAGER.AddShapeGlyph_A(
+		// 	10,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.Reverse,
+		// );
 
-        // ______________________________________________________________ Update
+		// this.#SHAPE_MANAGER.AddShapeGlyph_B(
+		// 	15,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.Random,
+		// );
 
-        override Update()
-        {
-            base.Update();
-        }
-    }
+		// this.#SHAPE_MANAGER.AddShapeGlyph_C(
+		// 	20,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_D(
+		// 	25,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_E(
+		// 	30,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_F(
+		// 	35,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_G(
+		// 	40,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_H(
+		// 	45,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_I(
+		// 	50,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_J(
+		// 	55,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.#SHAPE_MANAGER.AddShapeGlyph_K(
+		// 	60,
+		// 	10,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// Numbers
+
+		// Symbols
+	}
+
+	// ____________________________________________________________________ tick
+
+	tick() {
+		// Shape Manager
+		this.#SHAPE_MANAGER.tick();
+	}
 }

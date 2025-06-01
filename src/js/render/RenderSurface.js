@@ -316,12 +316,16 @@ export default class RenderSurface {
 		}
 
 		const GL = this.#GL;
+
+		// Flip Y coordinate to match WebGL's coordinate system
+		const yGL = this.#height - (y + height);
+
 		GL.bindTexture(GL.TEXTURE_2D, this.#TEXTURE);
 		GL.texSubImage2D(
 			GL.TEXTURE_2D,
 			0,
 			x,
-			y,
+			yGL,
 			width,
 			height,
 			GL.RGBA,
