@@ -6,10 +6,12 @@ import Dot from './Dot.js';
 
 export default class DotManager {
 	#DOTS = [];
-	#dotPoolSize = 1024;
+	#dotPoolSize = 256;
 	#dotPoolIndex = 0;
 
 	#LOG_LEVEL = -1; // 5;
+
+	// TODO Flatten Dot Class into Fast Arrays
 
 	// _________________________________________________________________________
 
@@ -26,9 +28,9 @@ export default class DotManager {
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		for (let i = 0; i < this.#DOTS.length; i += 1) {
-			this.#DOTS[i].tick();
-		}
+		// for (let i = 0; i < this.#DOTS.length; i += 1) {
+		// 	this.#DOTS[i].tick();
+		// }
 	}
 
 	// ________________________________________________________________ Dot Pool

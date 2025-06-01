@@ -82,6 +82,24 @@ export default class ViewTest {
 			FillStrategyType.Reverse,
 		);
 
+		this.#SHAPE_MANAGER.addShapeRectangle(
+			43,
+			10,
+			10,
+			10,
+			FillType.Random,
+			FillStrategyType.Reverse,
+		);
+
+		this.#SHAPE_MANAGER.addShapeRectangle(
+			43,
+			10,
+			10,
+			10,
+			FillType.Random,
+			FillStrategyType.Reverse,
+		);
+
 		// --------------
 
 		// TODO integers required ?
