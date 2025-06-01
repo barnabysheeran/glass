@@ -9,6 +9,9 @@ export default class ViewTextTest {
 	#LOG_LEVEL = 5;
 	#CHAR_SPACING = 1; // Additional spacing between characters
 
+	#CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	#MAX_LINE_LENGTH = 10; // Maximum length of random text lines
+
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {

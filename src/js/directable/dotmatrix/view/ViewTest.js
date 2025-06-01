@@ -159,14 +159,5 @@ export default class ViewTest {
 				FillStrategyType.PassThrough,
 			);
 		}
-
-		// TODO Draw Random Lines ?
-		// Vector2Int gridMax = GridData.GetGridMax();
-		// int randomChance = Random.Range(0, 500);
-		// int randomRow = Random.Range(1, gridMax.y - 1);
-		// if (randomChance < 1)
-		// {
-		//     #shapeManager.AddShapeLineHorizontal(1, randomRow, gridMax.x - 2, FillType.PassThrough, FillStrategyType.PassThrough);
-		// }
 	}
 }
