@@ -57,13 +57,5 @@ export default class ViewManager {
 
 		// Grid Data
 		GridData.setSize(width, height);
-
-		// // Set Resolution
-		// GridData.SetResolution(resolution);
-
-		// // DEV
-		// // #gridRenderer.SetResolution(resolution);
-		// // #textureWrapper.SetResolution(resolution);
-		// #shapeManager.SetResolution(resolution);
 	}
 }

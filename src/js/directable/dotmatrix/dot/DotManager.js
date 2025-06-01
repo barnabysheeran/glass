@@ -49,7 +49,7 @@ export default class DotManager {
 			this.#LOG_LEVEL,
 		);
 
-		// TODO Remove
+		// TODO Check
 		if (positionGrid === undefined) {
 			ApplicationLogger.warn(
 				`DotManager setDotPosition positionGrid is undefined for dotIndex ${dotIndex}`,

@@ -18,21 +18,6 @@ export default class ViewTest {
 		// Store
 		this.#SHAPE_MANAGER = shapeManager;
 
-		// ---
-
-		const gridMax = GridData.getGridMax();
-		const gridMaxHalf = GridData.getGridMaxHalf();
-
-		ApplicationLogger.log(
-			'ViewTest: gridMax ' + gridMax[0] + ' ' + gridMax[1],
-			this.#LOG_LEVEL,
-		);
-
-		ApplicationLogger.log(
-			'ViewTest: gridMaxHalf ' + gridMaxHalf[0] + ' ' + gridMaxHalf[1],
-			this.#LOG_LEVEL,
-		);
-
 		// Horizontal
 
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
@@ -105,35 +90,97 @@ export default class ViewTest {
 		// TODO integers required ?
 		// let blockWidth = gridMaxHalf[0];
 		// let blockHeight = gridMaxHalf[1];
-		// let lineWidth = gridMaxHalf[0] - 2;
 
-		// Vector2Int gridMax = GridData.GetGridMax();
-		// Vector2Int gridMaxHalf = GridData.GetGridMaxHalf();
-		// Debug.Log("ViewTest: gridMax: " + gridMax);
+		const gridMax = GridData.getGridMax();
+		const gridMaxHalf = GridData.getGridMaxHalf();
 
-		// int blockWidth = gridMaxHalf.x;
-		// int blockHeight = gridMaxHalf.y;
+		let lineWidth = gridMaxHalf[0] - 2;
 
-		// int lineWidth = gridMaxHalf.x - 2;
+		ApplicationLogger.log(
+			'ViewTest gridMax ' + gridMax[0] + ' ' + gridMax[1],
+			this.#LOG_LEVEL,
+		);
 
-		//
-		// #shapeManager.AddShapeLineHorizontal(1, 1, gridMax.x - 2, FillType.PassThrough, FillStrategyType.PassThrough);
+		ApplicationLogger.log(
+			'ViewTest gridMaxHalf ' + gridMaxHalf[0] + ' ' + gridMaxHalf[1],
+			this.#LOG_LEVEL,
+		);
+
+		// let blockWidth = gridMaxHalf.x;
+		// let blockHeight = gridMaxHalf.y;
+		// let lineWidth = gridMaxHalf.x - 2;
+
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			1,
+			gridMax.x - 2,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
 		// Top Left
-		// #shapeManager.AddShapeLineHorizontal(1, 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
-		// #shapeManager.AddShapeLineHorizontal(1, gridMaxHalf.y - 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			gridMaxHalf.y - 1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
 		// Top Right
-		// #shapeManager.AddShapeLineHorizontal(gridMaxHalf.x + 1, 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
-		// #shapeManager.AddShapeLineHorizontal(gridMaxHalf.x + 1, gridMaxHalf.y - 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			gridMaxHalf.x + 1,
+			1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			gridMaxHalf.x + 1,
+			gridMaxHalf.y - 1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
 		// Bottom Left
-		// #shapeManager.AddShapeLineHorizontal(1, gridMaxHalf.y + 2, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
-		// #shapeManager.AddShapeLineHorizontal(1, gridMax.y - 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			gridMaxHalf.y + 2,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			1,
+			gridMax.y - 1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
 		// Bottom Right
-		// #shapeManager.AddShapeLineHorizontal(gridMaxHalf.x + 1, gridMaxHalf.y + 2, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
-		// #shapeManager.AddShapeLineHorizontal(gridMaxHalf.x + 1, gridMax.y - 1, lineWidth, FillType.PassThrough, FillStrategyType.PassThrough);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			gridMaxHalf.x + 1,
+			gridMaxHalf.y + 2,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+		this.#SHAPE_MANAGER.addShapeLineHorizontal(
+			gridMaxHalf.x + 1,
+			gridMax.y - 1,
+			lineWidth,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 	}
 
 	// ____________________________________________________________________ tick

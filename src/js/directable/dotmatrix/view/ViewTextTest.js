@@ -1,4 +1,5 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import GridData from '../grid/GridData.js';
 
 import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
@@ -10,7 +11,7 @@ export default class ViewTextTest {
 	#CHAR_SPACING = 1; // Additional spacing between characters
 
 	#CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-	#MAX_LINE_LENGTH = 10; // Maximum length of random text lines
+	#MAX_LINE_LENGTH = 20; // Increased for wider text lines
 
 	// _________________________________________________________________________
 
@@ -128,6 +129,50 @@ export default class ViewTextTest {
 				);
 			}
 		}
+	}
+
+	// ____________________________________________________________ Random Text
+
+	#generateRandomText(length = 20) {
+		let result = '';
+		const charactersLength = this.#CHARACTERS.length;
+
+		for (let i = 0; i < length; i++) {
+			result += this.#CHARACTERS.charAt(
+				Math.floor(Math.random() * charactersLength),
+			);
+		}
+
+		return result;
+	}
+
+	#randomFillTypeIndex = 0;
+	#getRandomFillType() {
+		const fillType = [
+			FillType.PassThrough,
+			FillType.Random,
+			FillType.Solid,
+			FillType.None,
+		];
+
+		this.#randomFillTypeIndex =
+			(this.#randomFillTypeIndex + 1) % fillType.length;
+
+		return fillType[this.#randomFillTypeIndex];
+	}
+
+	#randomFillStrategyTypeIndex = 0;
+	#getRandomFillStrategyType() {
+		const fillStrategyType = [
+			FillStrategyType.PassThrough,
+			FillStrategyType.Reverse,
+			FillStrategyType.Random,
+		];
+
+		this.#randomFillStrategyTypeIndex =
+			(this.#randomFillStrategyTypeIndex + 1) % fillStrategyType.length;
+
+		return fillStrategyType[this.#randomFillStrategyTypeIndex];
 	}
 
 	// ____________________________________________________________________ tick

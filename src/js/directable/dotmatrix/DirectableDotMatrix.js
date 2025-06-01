@@ -28,7 +28,10 @@ export default class DirectableDotMatrix {
 	// ____________________________________________________________________ Size
 
 	setSize(width, height) {
-		ApplicationLogger.log('DirectableDotMatrix setSize', this.#LOG_LEVEL);
+		ApplicationLogger.log(
+			'DirectableDotMatrix setSize ' + width + ' ' + height,
+			this.#LOG_LEVEL,
+		);
 
 		// View Manager
 		this.#VIEW_MANAGER.setSize(width, height);

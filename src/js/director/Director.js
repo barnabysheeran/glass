@@ -41,11 +41,12 @@ export default class Director {
 		// Tick Rhythm BPM
 		// this.#DIRECTABLE_RHYTH_BPM.tick(frameDeltaMS);
 
-		// Tick Dot Matrix
+		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
 	}
 
 	static setSize(width, height) {
-		// TODO
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.setSize(width, height);
 	}
 }
