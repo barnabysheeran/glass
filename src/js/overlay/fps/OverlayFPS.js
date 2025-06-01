@@ -13,11 +13,7 @@ export default class OverlayFPS {
 		container.appendChild(this.#HOLDER);
 
 		// Create Buttons
-		this.#BUTTON_SHOW_HIDE = overlayCreateLabel(
-			'[  &nbsp;&nbsp;&nbsp; ]',
-			'overlay-toggle-visibility',
-			'half',
-		);
+		this.#BUTTON_SHOW_HIDE = overlayCreateLabel('0 FPS');
 		this.#HOLDER.appendChild(this.#BUTTON_SHOW_HIDE);
 	}
 
