@@ -15,8 +15,10 @@ export default class Application {
 	// _________________________________________________________________________
 
 	constructor(creationParameters) {
-		// TODO Dev Remove
-		creationParameters.isDebug = true;
+		// TODO Manually Set isDebug
+		const IS_DEBUG = false;
+
+		// Order Important
 
 		// Always Log
 		ApplicationLogger.log(
@@ -24,11 +26,14 @@ export default class Application {
 			this.#LOG_LEVEL,
 		);
 
-		// Initialise Application Configuration
-		ApplicationConfiguration.initialise(creationParameters);
+		// Initialise Application Configuration Is Debug
+		ApplicationConfiguration.isDebug = IS_DEBUG;
 
 		// Initialise Application Logger
 		ApplicationLogger.initialise(creationParameters);
+
+		// Initialise Application Configuration
+		ApplicationConfiguration.initialise(creationParameters);
 
 		// Create Controller
 		this.#CONTROLLER = new Controller();

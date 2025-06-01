@@ -3,7 +3,7 @@ import ApplicationLogger from './ApplicationLogger.js';
 export default class ApplicationConfiguration {
 	static #applicationContainer;
 	static #assetPath;
-	static #isDebug;
+	static #isDebug = false;
 
 	static #LOG_LEVEL = 1;
 
@@ -15,7 +15,6 @@ export default class ApplicationConfiguration {
 		// Store
 		this.#applicationContainer = creationParameters.applicationContainer;
 		this.#assetPath = creationParameters.assetPath;
-		this.#isDebug = creationParameters.isDebug;
 	}
 
 	// ___________________________________________________ Application Container
