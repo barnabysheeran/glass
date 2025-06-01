@@ -124,6 +124,24 @@ export default class ViewTest {
 		// Shape Manager
 		this.#SHAPE_MANAGER.tick();
 
+		//
+		let r = Math.random();
+
+		if (r < 0.01) {
+			ApplicationLogger.log('ViewTest tick Random Line', this.#LOG_LEVEL);
+
+			// Random Line
+			const randomRow = Math.floor(Math.random() * 100);
+
+			this.#SHAPE_MANAGER.addShapeLineHorizontal(
+				1,
+				randomRow,
+				100,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+			);
+		}
+
 		// TODO Draw Random Lines ?
 		// Vector2Int gridMax = GridData.GetGridMax();
 		// int randomChance = Random.Range(0, 500);

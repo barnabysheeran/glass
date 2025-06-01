@@ -44,7 +44,7 @@ export default class Dot {
 
 	fill() {
 		ApplicationLogger.log(
-			`Dot fill at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
+			`Dot ${this.#dotIndex} fill at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -76,7 +76,7 @@ export default class Dot {
 
 	clear() {
 		ApplicationLogger.log(
-			`Dot clear at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
+			`Dot ${this.#dotIndex} clear at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -87,9 +87,9 @@ export default class Dot {
 		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);
 		for (let i = 0; i < GRID_WIDTH * GRID_HEIGHT; i++) {
 			// Set all RGBA values to 255, 255, 255, 0 (white, fully transparent)
-			data[i * 4 + 0] = 255; // R
-			data[i * 4 + 1] = 255; // G
-			data[i * 4 + 2] = 255; // B
+			data[i * 4 + 0] = 0; // R
+			data[i * 4 + 1] = 0; // G
+			data[i * 4 + 2] = 0; // B
 			data[i * 4 + 3] = 0; // A
 		}
 
