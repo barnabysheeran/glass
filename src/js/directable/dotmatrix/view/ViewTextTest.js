@@ -17,7 +17,7 @@ export default class ViewTextTest {
 		// Store
 		this.#SHAPE_MANAGER = shapeManager;
 
-		// Line
+		// Line with letters
 		this.addTextLine(
 			'ABCDEFGHIJKLMNO',
 			10,
@@ -30,6 +30,24 @@ export default class ViewTextTest {
 			'PQRSTUVWXYZ',
 			10,
 			27,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		// Line with numbers
+		this.addTextLine(
+			'0123456789',
+			10,
+			33,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+		);
+
+		// Mixed line
+		this.addTextLine(
+			'HELLO 2023',
+			10,
+			40,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -53,9 +71,8 @@ export default class ViewTextTest {
 		for (let i = 0; i < upperText.length; i += 1) {
 			const char = upperText[i];
 
-			// Only process letters A-Z
+			// Process letters A-Z
 			if (char >= 'A' && char <= 'Z') {
-				// Get the method name for the character
 				const methodName = `addShapeGlyph_${char}`;
 
 				// Check if the method exists in the shape manager
@@ -73,6 +90,28 @@ export default class ViewTextTest {
 				} else {
 					ApplicationLogger.log(
 						`No glyph defined for character: ${char}`,
+						this.#LOG_LEVEL,
+					);
+				}
+			}
+			// Process numbers 0-9
+			else if (char >= '0' && char <= '9') {
+				const methodName = `addShapeGlyph_${char}`;
+
+				if (this.#SHAPE_MANAGER[methodName]) {
+					// Add the glyph at the current position
+					const glyph = this.#SHAPE_MANAGER[methodName](
+						currentX,
+						gridY,
+						fillType,
+						fillStrategyType,
+					);
+
+					// Advance position based on glyph's actual width plus spacing
+					currentX += glyph.getGlyphWidth() + this.#CHAR_SPACING;
+				} else {
+					ApplicationLogger.log(
+						`No glyph defined for digit: ${char}`,
 						this.#LOG_LEVEL,
 					);
 				}
