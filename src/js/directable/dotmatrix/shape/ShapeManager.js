@@ -6,6 +6,8 @@ import FillStrategyType from './fill/FillStrategyType.js';
 import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
 import ShapeLineVertical from './line/ShapeLineVertical.js';
 
+import ShapeRectangle from './primative/ShapeRectangle.js';
+
 export default class ShapeManager {
 	#DOT_MANAGER;
 
@@ -113,26 +115,34 @@ export default class ShapeManager {
 
 	// _______________________________________________________________ Rectangle
 
-	// Shape AddShapeRectangle(int gridX, int gridY,
-	//                                int gridWidth, int gridHeight,
-	//                                FillType fillType = FillType.PassThrough,
-	//                                FillStrategyType fillStrategyType = FillStrategyType.PassThrough)
-	// {
-	//     EnsureSpaceInList();
+	addShapeRectangle(
+		gridX,
+		gridY,
+		gridWidth,
+		gridHeight,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		// Ensure Space in List
+		this.#ensureSpaceInList();
 
-	//     // Create Shape
-	//     ShapeRectangle shape = new ShapeRectangle(#dotManager,
-	//         gridX, gridY,
-	//         gridWidth, gridHeight,
-	//         fillType,
-	//         fillStrategyType);
+		// Create Shape
+		const shape = new ShapeRectangle(
+			this.#DOT_MANAGER,
+			gridX,
+			gridY,
+			gridWidth,
+			gridHeight,
+			fillType,
+			fillStrategyType,
+		);
 
-	//     // Add
-	//     #shapes.Add(shape);
+		// Add
+		this.#SHAPES.push(shape);
 
-	//     // Return
-	//     return shape;
-	// }
+		// Return
+		return shape;
+	}
 
 	// _________________________________________________________________ Glyph_A
 

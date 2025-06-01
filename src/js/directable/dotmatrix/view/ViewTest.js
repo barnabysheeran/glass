@@ -54,6 +54,15 @@ export default class ViewTest {
 			FillStrategyType.PassThrough,
 		);
 
+		this.#SHAPE_MANAGER.addShapeRectangle(
+			10,
+			10,
+			10,
+			10,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
 		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
 		// 	1,
 		// 	1,
