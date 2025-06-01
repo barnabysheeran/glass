@@ -71,4 +71,14 @@ export default class ShapeGlyph_Q extends Shape {
 
 		return isFilled;
 	}
+
+	// __________________________________________________________________ Access
+
+	getGlyphWidth() {
+		return this.#glyphWidth;
+	}
+
+	getGlyphHeight() {
+		return this.#glyphHeight;
+	}
 }

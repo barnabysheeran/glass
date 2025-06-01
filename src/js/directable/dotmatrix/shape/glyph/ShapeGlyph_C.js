@@ -71,4 +71,14 @@ export default class ShapeGlyph_C extends Shape {
 
 		return isFilled;
 	}
+
+	// __________________________________________________________________ Access
+
+	getGlyphWidth() {
+		return this.#glyphWidth;
+	}
+
+	getGlyphHeight() {
+		return this.#glyphHeight;
+	}
 }

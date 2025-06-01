@@ -16,11 +16,11 @@ export default class ShapeGlyph_L extends Shape {
         vec2.fromValues(0, 1),
         vec2.fromValues(0, 2),
         vec2.fromValues(0, 3),
-        vec2.fromValues(0, 4), vec2.fromValues(1, 4), vec2.fromValues(2, 4), vec2.fromValues(3, 4),
+        vec2.fromValues(0, 4), vec2.fromValues(1, 4), vec2.fromValues(2, 4),
     ];
     /* eslint-enable */
 
-	#glyphWidth = 4;
+	#glyphWidth = 3;
 	#glyphHeight = 5;
 
 	// _________________________________________________________________________
@@ -70,5 +70,15 @@ export default class ShapeGlyph_L extends Shape {
 		}
 
 		return isFilled;
+	}
+
+	// __________________________________________________________________ Access
+
+	getGlyphWidth() {
+		return this.#glyphWidth;
+	}
+
+	getGlyphHeight() {
+		return this.#glyphHeight;
 	}
 }

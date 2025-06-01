@@ -20,7 +20,7 @@ export default class ShapeGlyph_I extends Shape {
     ];
     /* eslint-enable */
 
-	#glyphWidth = 4;
+	#glyphWidth = 1;
 	#glyphHeight = 5;
 
 	// _________________________________________________________________________
@@ -70,5 +70,15 @@ export default class ShapeGlyph_I extends Shape {
 		}
 
 		return isFilled;
+	}
+
+	// __________________________________________________________________ Access
+
+	getGlyphWidth() {
+		return this.#glyphWidth;
+	}
+
+	getGlyphHeight() {
+		return this.#glyphHeight;
 	}
 }
