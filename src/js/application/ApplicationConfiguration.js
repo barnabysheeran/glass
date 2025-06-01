@@ -9,12 +9,15 @@ export default class ApplicationConfiguration {
 
 	// _________________________________________________________________________
 
-	static initialise(creationParameters) {
+	static initialise(creationParameters, isDebug) {
 		ApplicationLogger.log('ApplicationConfiguration', this.#LOG_LEVEL);
 
 		// Store
 		this.#applicationContainer = creationParameters.applicationContainer;
 		this.#assetPath = creationParameters.assetPath;
+
+		// Set Debug
+		this.isDebug = isDebug;
 	}
 
 	// ___________________________________________________ Application Container
@@ -31,7 +34,11 @@ export default class ApplicationConfiguration {
 
 	// ________________________________________________________________ Is Debug
 
-	static isDebug() {
+	static set isDebug(value) {
+		this.#isDebug = value;
+	}
+
+	static get isDebug() {
 		return this.#isDebug;
 	}
 }
