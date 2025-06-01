@@ -13,9 +13,9 @@ export default class ShapeGlyph_3 extends Shape {
 	/* eslint-disable */
     #positionGridGlyphs = [
                                vec2.fromValues(1, 0), vec2.fromValues(2, 0),
-        vec2.fromValues(0, 1),                                            vec2.fromValues(3, 1),
-                                                   vec2.fromValues(2, 2), vec2.fromValues(3, 2),
-        vec2.fromValues(0, 3),                                            vec2.fromValues(3, 3),
+        vec2.fromValues(0, 1),                                               vec2.fromValues(3, 1),
+                                                      vec2.fromValues(2, 2),
+        vec2.fromValues(0, 3),                                               vec2.fromValues(3, 3),
                                vec2.fromValues(1, 4), vec2.fromValues(2, 4),
     ];
     /* eslint-enable */

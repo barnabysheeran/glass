@@ -45,10 +45,10 @@ export default class ViewTextTest {
 
 		// Mixed line
 		this.addTextLine(
-			'HELLO 2023',
+			'HELLO WORLD',
 			10,
-			40,
-			FillType.PassThrough,
+			39,
+			FillType.Random,
 			FillStrategyType.PassThrough,
 		);
 	}
