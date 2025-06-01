@@ -1,73 +1,74 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+import { vec2 } from 'gl-matrix';
 
+import Shape from '../Shape.js';
+import FillType from '../fill/FillType.js';
+import FillStrategyType from '../fill/FillStrategyType.js';
+import Fill from '../fill/Fill.js';
+import FillStrategy from '../fill/FillStrategy.js';
 
+export default class ShapeGlyph_E extends Shape {
+	#LOG_LEVEL = 6;
 
+	/* eslint-disable */
+    #positionGridGlyphs = [
+        vec2.fromValues(0, 0), vec2.fromValues(1, 0), vec2.fromValues(2, 0), vec2.fromValues(3, 0),
+        vec2.fromValues(0, 1),
+        vec2.fromValues(0, 2), vec2.fromValues(1, 2), vec2.fromValues(2, 2),
+        vec2.fromValues(0, 3),
+        vec2.fromValues(0, 4), vec2.fromValues(1, 4), vec2.fromValues(2, 4), vec2.fromValues(3, 4)
+    ];
+    /* eslint-enable */
 
+	#glyphWidth = 4;
+	#glyphHeight = 5;
 
+	// _________________________________________________________________________
 
-namespace UnityTest.UserInterface.DotMatrix.Shapes.Glyphs
-{
-    export default class ShapeGlyph_E : Shape
-    {
-        private Vector2Int[] #positionGridGlyphs = new Vector2Int[]
-        {
-            new Vector2Int(0, 0), new Vector2Int(1, 0), new Vector2Int(2, 0), new Vector2Int(3, 0),
-            new Vector2Int(0, 1),
-            new Vector2Int(0, 2), new Vector2Int(1, 2), new Vector2Int(2, 2),
-            new Vector2Int(0, 3),
-            new Vector2Int(0, 4), new Vector2Int(1, 4), new Vector2Int(2, 4), new Vector2Int(3, 4)
-        };
+	constructor(
+		dotManager,
+		gridX,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		super(dotManager);
 
-        private int #glyphWidth = 4;
-        private int #glyphHeight = 5;
+		ApplicationLogger.log(`ShapeGlyph_E`, this.#LOG_LEVEL);
 
-        // _____________________________________________________________________
+		// Store Initial Position Grids
+		for (let x = 0; x < this.#glyphWidth; x += 1) {
+			for (let y = 0; y < this.#glyphHeight; y += 1) {
+				if (this.getIsFilled(x, y)) {
+					this.positionGrids.push([gridX + x, gridY + y]);
+				}
+			}
+		}
 
-        ShapeGlyph_E(DotManager dotManager,
-                                   int gridX, int gridY,
-                                   FillType fillType = FillType.PassThrough,
-                                   FillStrategyType fillStrategyType = FillStrategyType.PassThrough)
-            : base(dotManager)
-        {
-            // Store Initial Position Grids
-            for (int x = 0; x < #glyphWidth; x++)
-            {
-                for (int y = 0; y < #glyphHeight; y++)
-                {
-                    if (getIsFilled(x, y))
-                    {
-                        #positionGrids.Add(new Vector2Int(
-                            gridX + x,
-                            gridY + y
-                        ));
-                    }
-                }
-            }
+		// Fill Type
+		Fill.apply(fillType, this.positionGrids);
 
-            // Fill Type
-            Fill.Apply(fillType, #positionGrids);
+		// Fill Strategy Type
+		FillStrategy.apply(fillStrategyType, this.positionGrids);
+	}
 
-            // Fill Strategy Type
-            FillStrategy.Apply(fillStrategyType, #positionGrids);
-        }
+	// _________________________________________________________________________
 
-        // _____________________________________________________________________
+	getIsFilled(x, y) {
+		let isFilled = false;
 
-        private bool getIsFilled(int x, int y)
-        {
-            bool isFilled = false;
+		for (let i = 0; i < this.#positionGridGlyphs.length; i += 1) {
+			if (
+				this.#positionGridGlyphs[i][0] === x &&
+				this.#positionGridGlyphs[i][1] === y
+			) {
+				console.log(`getIsFilled: x: ${x}, y: ${y}`);
 
-            for (int i = 0; i < #positionGridGlyphs.Length; i++)
-            {
-                if (#positionGridGlyphs[i].x == x && #positionGridGlyphs[i].y == y)
-                {
-                    Debug.Log("getIsFilled: x: " + x + ", y: " + y);
+				isFilled = true;
+				break;
+			}
+		}
 
-                    isFilled = true;
-                    break;
-                }
-            }
-
-            return isFilled;
-        }
-    }
+		return isFilled;
+	}
 }

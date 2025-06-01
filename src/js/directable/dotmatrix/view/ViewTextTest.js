@@ -1,97 +1,98 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
+import FillType from '../shape/fill/FillType.js';
+import FillStrategyType from '../shape/fill/FillStrategyType.js';
+
 export default class ViewTextTest {
 	#SHAPE_MANAGER;
 
 	#LOG_LEVEL = 5;
 
-	// _____________________________________________________________________
+	// _________________________________________________________________________
 
-	ViewTextTest(shapeManager) {
+	constructor(shapeManager) {
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
 		this.#SHAPE_MANAGER = shapeManager;
 
-		// TODO Add Text Glyphs
-
 		// Alphabet
-		// this.#SHAPE_MANAGER.AddShapeGlyph_A(
-		// 	10,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.Reverse,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_A(
+			10,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_B(
-		// 	15,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.Random,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_B(
+			15,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_C(
-		// 	20,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_C(
+			20,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_D(
-		// 	25,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_D(
+			25,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_E(
-		// 	30,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_E(
+			30,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_F(
-		// 	35,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_F(
+			35,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_G(
-		// 	40,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_G(
+			40,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_H(
-		// 	45,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_H(
+			45,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_I(
-		// 	50,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_I(
+			50,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_J(
-		// 	55,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_J(
+			52,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// this.#SHAPE_MANAGER.AddShapeGlyph_K(
-		// 	60,
-		// 	10,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
+		this.#SHAPE_MANAGER.addShapeGlyph_K(
+			57,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
 		// Numbers
 
