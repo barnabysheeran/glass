@@ -88,6 +88,17 @@ export default class ShapeManager {
 		}
 	}
 
+	// __________________________________________________________________ Redraw
+
+	redraw() {
+		ApplicationLogger.log('ShapeManager redraw', this.#LOG_LEVEL);
+
+		// Redraw All Shapes
+		for (let i = 0; i < this.#SHAPES.length; i += 1) {
+			this.#SHAPES[i].redraw();
+		}
+	}
+
 	// _________________________________________________________ Line Horizontal
 
 	addShapeLineHorizontal(

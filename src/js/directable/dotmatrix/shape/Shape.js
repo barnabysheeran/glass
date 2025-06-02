@@ -64,4 +64,19 @@ export default class Shape {
 			return;
 		}
 	}
+
+	// _________________________________________________________________ Restart
+
+	redraw() {
+		ApplicationLogger.log('Shape redraw', this.#LOG_LEVEL);
+
+		// Reset Index
+		this.#positionGridsIndex = 0;
+
+		// Reset Complete
+		this.#isComplete = false;
+
+		// // Clear Dots
+		// this.#dotManager.clearDots();
+	}
 }

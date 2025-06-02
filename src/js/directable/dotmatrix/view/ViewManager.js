@@ -7,6 +7,7 @@ import ShapeManager from '../shape/ShapeManager.js';
 
 import ViewTest from './ViewTest.js';
 import ViewTextTest from './ViewTextTest.js';
+import ApplicationDispatcher from '../../../application/ApplicationDispatcher.js';
 
 export default class ViewManager {
 	#DOT_MANAGER;
@@ -54,6 +55,9 @@ export default class ViewManager {
 			'ViewManager setSize ' + width + ' ' + height,
 			this.#LOG_LEVEL,
 		);
+
+		// Redraw Shapes
+		this.#SHAPE_MANAGER.redraw();
 
 		// Grid Data
 		GridData.setSize(width, height);
