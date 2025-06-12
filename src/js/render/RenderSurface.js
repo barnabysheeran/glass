@@ -59,18 +59,9 @@ export default class RenderSurface {
 
 		// Create Texture
 		this.#TEXTURE = this.#GL.createTexture();
-		this.#GL.bindTexture(this.#GL.TEXTURE_2D, this.#TEXTURE);
-		this.#GL.texImage2D(
-			this.#GL.TEXTURE_2D,
-			0,
-			this.#GL.RGBA,
-			this.#width,
-			this.#height,
-			0,
-			this.#GL.RGBA,
-			this.#GL.UNSIGNED_BYTE,
-			null,
-		);
+
+		// Clear texture to transparent black (0,0,0,0)
+		this.#clearTexture();
 
 		// Set Texture Parameters
 		this.#GL.texParameteri(
@@ -359,27 +350,12 @@ export default class RenderSurface {
 		// Get WebGL Context
 		const GL = this.#GL;
 
-		// Recreate Texture
+		// Recreate Texture and clear to transparent black
 		if (this.#TEXTURE) {
 			GL.deleteTexture(this.#TEXTURE);
 		}
 		this.#TEXTURE = GL.createTexture();
-		GL.bindTexture(GL.TEXTURE_2D, this.#TEXTURE);
-		GL.texImage2D(
-			GL.TEXTURE_2D,
-			0,
-			GL.RGBA,
-			this.#width,
-			this.#height,
-			0,
-			GL.RGBA,
-			GL.UNSIGNED_BYTE,
-			null,
-		);
-		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MIN_FILTER, GL.NEAREST);
-		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MAG_FILTER, GL.NEAREST);
-		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_S, GL.CLAMP_TO_EDGE);
-		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_T, GL.CLAMP_TO_EDGE);
+		this.#clearTexture();
 
 		// Recreate Framebuffer
 		if (this.#FRAMEBUFFER) {
@@ -406,6 +382,24 @@ export default class RenderSurface {
 		// Unbind
 		GL.bindTexture(GL.TEXTURE_2D, null);
 		GL.bindFramebuffer(GL.FRAMEBUFFER, null);
+	}
+
+	// ___________________________________________________________ Clear Texture
+
+	static #clearTexture() {
+		const emptyData = new Uint8Array(this.#width * this.#height * 4).fill(0);
+		this.#GL.bindTexture(this.#GL.TEXTURE_2D, this.#TEXTURE);
+		this.#GL.texImage2D(
+			this.#GL.TEXTURE_2D,
+			0,
+			this.#GL.RGBA,
+			this.#width,
+			this.#height,
+			0,
+			this.#GL.RGBA,
+			this.#GL.UNSIGNED_BYTE,
+			emptyData,
+		);
 	}
 
 	// _________________________________________________________________ Destroy
