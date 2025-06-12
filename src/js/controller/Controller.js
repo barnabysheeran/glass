@@ -10,8 +10,6 @@ export default class Controller {
 	// _________________________________________________________________________
 
 	constructor() {
-		console.log('Controller');
-
 		// Initialise Overlay
 		// Overlay.initialise();
 		// Initialise View
