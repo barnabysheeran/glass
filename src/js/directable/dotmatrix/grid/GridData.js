@@ -34,20 +34,20 @@ export default class GridData {
 		return this.#gridHeight;
 	}
 
-	// ________________________________________________________________ Max Grid
+	// ________________________________________________________________ Grid Max
 
 	static getGridMax() {
-		return vec2.fromValues(
-			(this.#resolutionWidth / this.#gridWidth) * 2,
-			(this.#resolutionHeight / this.#gridHeight) * 2 - 1,
-		);
+		let x = this.#resolutionWidth / this.#gridWidth;
+		let y = this.#resolutionHeight / this.#gridHeight - 1;
+
+		return vec2.fromValues(Math.floor(x), Math.floor(y));
 	}
 
 	static getGridMaxHalf() {
-		return vec2.fromValues(
-			this.#resolutionWidth / this.#gridWidth,
-			this.#resolutionHeight / this.#gridHeight - 1,
-		);
+		let x = this.#resolutionWidth / this.#gridWidth;
+		let y = this.#resolutionHeight / this.#gridHeight - 1;
+
+		return vec2.fromValues(Math.floor(x / 2), Math.floor(y / 2));
 	}
 
 	// ____________________________________________________________________ Size

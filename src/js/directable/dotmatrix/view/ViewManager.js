@@ -35,8 +35,8 @@ export default class ViewManager {
 		const VIEW_TEST = new ViewTest(this.#SHAPE_MANAGER);
 		this.#VIEWS.push(VIEW_TEST);
 
-		const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
-		this.#VIEWS.push(VIEW_TEXT_TEST);
+		// const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
+		// this.#VIEWS.push(VIEW_TEXT_TEST);
 	}
 
 	// ____________________________________________________________________ Tick
