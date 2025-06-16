@@ -1,9 +1,20 @@
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-import ViewManager from './view/ViewManager.js';
+import GridData from './grid/GridData.js';
+
+import DotManager from './dot/DotManager.js';
+import ShapeManager from './shape/ShapeManager.js';
+
+// import ViewManager from './view/ViewManager.js';
+
+import ViewTest from './view/ViewTest.js';
 
 export default class DirectableDotMatrix {
-	#VIEW_MANAGER;
+	#DOT_MANAGER;
+	#SHAPE_MANAGER;
+	// #VIEW_MANAGER;
+
+	#VIEWS = [];
 
 	#LOG_LEVEL = 3;
 
@@ -13,16 +24,36 @@ export default class DirectableDotMatrix {
 		ApplicationLogger.log('DirectableDotMatrix', this.#LOG_LEVEL);
 
 		// Create View Manager
-		this.#VIEW_MANAGER = new ViewManager(width, height);
+		// this.#VIEW_MANAGER = new ViewManager(width, height);
+
+		// Initialize Grid Data
+		GridData.initialize(width, height);
+
+		// Create Dot Manager
+		this.#DOT_MANAGER = new DotManager();
+
+		// Create Shape Manager
+		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
+
+		// Dev - Create View Test
+		const VIEW_TEST = new ViewTest(this.#SHAPE_MANAGER);
+		this.#VIEWS.push(VIEW_TEST);
+
+		// const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
+		// this.#VIEWS.push(VIEW_TEXT_TEST);
 	}
 
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
 		// ApplicationLogger.log('DirectableDotMatrix tick', this.#LOG_LEVEL);
-
 		// View Manager
-		this.#VIEW_MANAGER.tick(frameDeltaMS);
+		// this.#VIEW_MANAGER.tick(frameDeltaMS);
+
+		// Tick Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].tick();
+		}
 	}
 
 	// ____________________________________________________________________ Size
@@ -33,7 +64,13 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
+		// Grid Data
+		GridData.setSize(width, height);
+
+		// Redraw Shapes
+		this.#SHAPE_MANAGER.redraw();
+
 		// View Manager
-		this.#VIEW_MANAGER.setSize(width, height);
+		// this.#VIEW_MANAGER.setSize(width, height);
 	}
 }
