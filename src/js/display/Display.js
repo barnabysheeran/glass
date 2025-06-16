@@ -7,7 +7,7 @@ import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 export default class Display {
 	static #APPLICATION_CONTAINER;
 
-	static #displayFormat = DisplayFormats.SQUARE; // Set initial scale mode
+	static #displayFormat = DisplayFormats.FILL; // Set initial scale mode
 
 	static #width = -1;
 	static #height = -1;
