@@ -5,6 +5,8 @@ export default class ComponentManager {
 
 	#COMPONENTS = [];
 
+	#LOG_LEVEL = 4;
+
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {
