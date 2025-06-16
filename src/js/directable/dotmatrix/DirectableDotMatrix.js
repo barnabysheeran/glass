@@ -45,7 +45,10 @@ export default class DirectableDotMatrix {
 
 	tick(frameDeltaMS) {
 		// Tick Component Manager
-		this.#COMPONENT_MANAGER.tick(frameDeltaMS);
+		// this.#COMPONENT_MANAGER.tick(frameDeltaMS);
+
+		// Tick Shape Manager
+		this.#SHAPE_MANAGER.tick(frameDeltaMS);
 	}
 
 	// ____________________________________________________________________ Size

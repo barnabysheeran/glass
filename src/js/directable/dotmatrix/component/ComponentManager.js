@@ -20,12 +20,12 @@ export default class ComponentManager {
 
 	// ____________________________________________________________________ Tick
 
-	tick(frameDeltaMS) {
-		// Tick Components
-		for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
-			this.#COMPONENTS[i].tick(frameDeltaMS);
-		}
-	}
+	// tick(frameDeltaMS) {
+	// 	// Tick Components
+	// 	for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
+	// 		this.#COMPONENTS[i].tick(frameDeltaMS);
+	// 	}
+	// }
 
 	// __________________________________________________________________ Redraw
 
