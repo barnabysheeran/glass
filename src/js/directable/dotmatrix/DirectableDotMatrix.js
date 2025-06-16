@@ -12,7 +12,6 @@ import ViewTest from './view/ViewTest.js';
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
-	// #VIEW_MANAGER;
 
 	#VIEWS = [];
 
@@ -22,9 +21,6 @@ export default class DirectableDotMatrix {
 
 	constructor(width, height) {
 		ApplicationLogger.log('DirectableDotMatrix', this.#LOG_LEVEL);
-
-		// Create View Manager
-		// this.#VIEW_MANAGER = new ViewManager(width, height);
 
 		// Initialize Grid Data
 		GridData.initialize(width, height);
@@ -46,10 +42,6 @@ export default class DirectableDotMatrix {
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		// ApplicationLogger.log('DirectableDotMatrix tick', this.#LOG_LEVEL);
-		// View Manager
-		// this.#VIEW_MANAGER.tick(frameDeltaMS);
-
 		// Tick Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].tick();
@@ -69,8 +61,5 @@ export default class DirectableDotMatrix {
 
 		// Redraw Shapes
 		this.#SHAPE_MANAGER.redraw();
-
-		// View Manager
-		// this.#VIEW_MANAGER.setSize(width, height);
 	}
 }
