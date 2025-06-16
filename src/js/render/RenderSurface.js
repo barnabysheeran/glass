@@ -57,41 +57,28 @@ export default class RenderSurface {
 			return;
 		}
 
+		const GL = this.#GL;
+
 		// Create Texture
 		this.#TEXTURE = this.#GL.createTexture();
+		GL.bindTexture(GL.TEXTURE_2D, this.#TEXTURE);
+
+		// Set Texture Parameters (NEAREST, CLAMP_TO_EDGE, etc.)
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MIN_FILTER, GL.NEAREST);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MAG_FILTER, GL.NEAREST);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_S, GL.CLAMP_TO_EDGE);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_T, GL.CLAMP_TO_EDGE);
 
 		// Clear texture to transparent black (0,0,0,0)
 		this.#clearTexture();
 
-		// Set Texture Parameters
-		this.#GL.texParameteri(
-			this.#GL.TEXTURE_2D,
-			this.#GL.TEXTURE_MIN_FILTER,
-			this.#GL.NEAREST,
-		);
-		this.#GL.texParameteri(
-			this.#GL.TEXTURE_2D,
-			this.#GL.TEXTURE_MAG_FILTER,
-			this.#GL.NEAREST,
-		);
-		this.#GL.texParameteri(
-			this.#GL.TEXTURE_2D,
-			this.#GL.TEXTURE_WRAP_S,
-			this.#GL.CLAMP_TO_EDGE,
-		);
-		this.#GL.texParameteri(
-			this.#GL.TEXTURE_2D,
-			this.#GL.TEXTURE_WRAP_T,
-			this.#GL.CLAMP_TO_EDGE,
-		);
-
 		// Create Framebuffer
-		this.#FRAMEBUFFER = this.#GL.createFramebuffer();
-		this.#GL.bindFramebuffer(this.#GL.FRAMEBUFFER, this.#FRAMEBUFFER);
+		this.#FRAMEBUFFER = GL.createFramebuffer();
+		GL.bindFramebuffer(GL.FRAMEBUFFER, this.#FRAMEBUFFER);
 		this.#GL.framebufferTexture2D(
-			this.#GL.FRAMEBUFFER,
-			this.#GL.COLOR_ATTACHMENT0,
-			this.#GL.TEXTURE_2D,
+			GL.FRAMEBUFFER,
+			GL.COLOR_ATTACHMENT0,
+			GL.TEXTURE_2D,
 			this.#TEXTURE,
 			0,
 		);
@@ -105,8 +92,8 @@ export default class RenderSurface {
 		}
 
 		// Unbind
-		this.#GL.bindTexture(this.#GL.TEXTURE_2D, null);
-		this.#GL.bindFramebuffer(this.#GL.FRAMEBUFFER, null);
+		GL.bindTexture(GL.TEXTURE_2D, null);
+		GL.bindFramebuffer(GL.FRAMEBUFFER, null);
 
 		this.#initDisplayResources();
 	}
@@ -355,6 +342,13 @@ export default class RenderSurface {
 			GL.deleteTexture(this.#TEXTURE);
 		}
 		this.#TEXTURE = GL.createTexture();
+		GL.bindTexture(GL.TEXTURE_2D, this.#TEXTURE);
+
+		// Set Texture Parameters (NEAREST, CLAMP_TO_EDGE, etc.)
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MIN_FILTER, GL.NEAREST);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_MAG_FILTER, GL.NEAREST);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_S, GL.CLAMP_TO_EDGE);
+		GL.texParameteri(GL.TEXTURE_2D, GL.TEXTURE_WRAP_T, GL.CLAMP_TO_EDGE);
 		this.#clearTexture();
 
 		// Recreate Framebuffer
