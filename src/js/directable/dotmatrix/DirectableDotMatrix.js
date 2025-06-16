@@ -4,12 +4,14 @@ import GridData from './grid/GridData.js';
 
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
+import ComponentManager from './component/ComponentManager.js';
 
 import ViewTest from './view/ViewTest.js';
 
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
+	#COMPONENT_MANAGER;
 
 	#VIEWS = [];
 
@@ -29,8 +31,11 @@ export default class DirectableDotMatrix {
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
+		// Create Component Manager
+		this.#COMPONENT_MANAGER = new ComponentManager(this.#SHAPE_MANAGER);
+
 		// Dev - Create View Test
-		const VIEW_TEST = new ViewTest(this.#SHAPE_MANAGER);
+		const VIEW_TEST = new ViewTest(this.#COMPONENT_MANAGER);
 		this.#VIEWS.push(VIEW_TEST);
 
 		// const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
@@ -40,10 +45,8 @@ export default class DirectableDotMatrix {
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		// Tick Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].tick();
-		}
+		// Tick Component Manager
+		this.#COMPONENT_MANAGER.tick(frameDeltaMS);
 	}
 
 	// ____________________________________________________________________ Size

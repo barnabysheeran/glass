@@ -6,17 +6,17 @@ import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
 export default class ViewTest {
-	#SHAPE_MANAGER;
+	#COMPONENT_MANAGER;
 
 	#LOG_LEVEL = 5;
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager) {
+	constructor(componentManager) {
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
-		this.#SHAPE_MANAGER = shapeManager;
+		this.#COMPONENT_MANAGER = componentManager;
 
 		// Horizontal
 
@@ -96,19 +96,19 @@ export default class ViewTest {
 		console.log('GRID_MAX_HALF', GRID_MAX_HALF[0], GRID_MAX_HALF[1]);
 		console.log('LINE_WIDTH', LINE_WIDTH);
 
-		this.#SHAPE_MANAGER.addShapeLineHorizontal(
-			1,
-			1,
-			LINE_WIDTH,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// this.#COMPONENT_MANAGER.addShapeLineHorizontal(
+		// 	1,
+		// 	1,
+		// 	LINE_WIDTH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 	}
 
 	// ____________________________________________________________________ tick
 
 	tick() {
-		// Shape Manager
-		this.#SHAPE_MANAGER.tick();
+		// Component Manager
+		this.#COMPONENT_MANAGER.tick();
 	}
 }

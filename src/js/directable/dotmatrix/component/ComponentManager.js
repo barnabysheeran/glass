@@ -1,5 +1,11 @@
 export default class ComponentManager {
+	#SHAPE_MANAGER;
+
 	// _________________________________________________________________________
 
-	constructor() {}
+	constructor(shapeManager) {}
+
+	// ____________________________________________________________________ Tick
+
+	tick(frameDeltaMS) {}
 }
