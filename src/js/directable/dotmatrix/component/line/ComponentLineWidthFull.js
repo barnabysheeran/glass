@@ -19,9 +19,9 @@ export default class ComponentLineWidthFull extends Component {
 		const LINE_WIDTH = GRID_MAX[0] - 2;
 
 		this.#SHAPE_LINE_HORIZONTAL_TOP = this.SHAPE_MANAGER.addShapeLineHorizontal(
-			10,
-			10,
-			100, // LINE_WIDTH,
+			1,
+			gridY,
+			LINE_WIDTH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
