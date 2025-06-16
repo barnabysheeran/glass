@@ -13,8 +13,6 @@ export default class ComponentLineWidthFull extends Component {
 	constructor(shapeManager, gridY) {
 		super(shapeManager);
 
-		console.log('ComponentLineWidthFull');
-
 		const GRID_MAX = GridData.getGridMax();
 		const LINE_WIDTH = GRID_MAX[0] - 2;
 
@@ -25,5 +23,7 @@ export default class ComponentLineWidthFull extends Component {
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
+
+		// TODO Resize
 	}
 }
