@@ -1,3 +1,5 @@
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
+
 import ComponentLineWidthFull from './line/ComponentLineWidthFull.js';
 
 export default class ComponentManager {
@@ -10,6 +12,8 @@ export default class ComponentManager {
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {
+		ApplicationLogger.log('ComponentManager', this.#LOG_LEVEL);
+
 		// Store
 		this.#SHAPE_MANAGER = shapeManager;
 	}
@@ -36,7 +40,10 @@ export default class ComponentManager {
 
 	addComponentLineWidthFull(gridY) {
 		// Create Component
-		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(gridY);
+		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(
+			this.#SHAPE_MANAGER,
+			gridY,
+		);
 
 		// Store
 		this.#COMPONENTS.push(COMPONENT_LINE_WIDTH_FULL);

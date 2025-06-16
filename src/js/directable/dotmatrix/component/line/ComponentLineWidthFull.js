@@ -1,4 +1,7 @@
-import GridData from '../../../data/GridData.js';
+import GridData from '../../grid/GridData.js';
+
+import FillType from '../../shape/fill/FillType.js';
+import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
@@ -10,5 +13,13 @@ export default class ComponentLineWidthFull extends Component {
 
 		const GRID_MAX = GridData.getGridMax();
 		const LINE_WIDTH = GRID_MAX[0] - 2;
+
+		this.SHAPE_MANAGER.addShapeLineHorizontal(
+			10,
+			10,
+			LINE_WIDTH,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 	}
 }
