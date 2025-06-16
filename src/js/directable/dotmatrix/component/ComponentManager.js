@@ -32,9 +32,9 @@ export default class ComponentManager {
 
 	// _________________________________________________________ Line Width Full
 
-	addComponentLineWidthFull() {
+	addComponentLineWidthFull(gridY) {
 		// Create Component
-		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull();
+		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(gridY);
 
 		// Store
 		this.#COMPONENTS.push(COMPONENT_LINE_WIDTH_FULL);

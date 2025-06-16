@@ -87,14 +87,14 @@ export default class ViewTest {
 
 		// --------------
 
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_HALF = GridData.getGridMaxHalf();
+		// const GRID_MAX = GridData.getGridMax();
+		// const GRID_MAX_HALF = GridData.getGridMaxHalf();
 
-		const LINE_WIDTH = GRID_MAX[0] - 2;
+		// const LINE_WIDTH = GRID_MAX[0] - 2;
 
-		console.log('GRID_MAX', GRID_MAX[0], GRID_MAX[1]);
-		console.log('GRID_MAX_HALF', GRID_MAX_HALF[0], GRID_MAX_HALF[1]);
-		console.log('LINE_WIDTH', LINE_WIDTH);
+		// console.log('GRID_MAX', GRID_MAX[0], GRID_MAX[1]);
+		// console.log('GRID_MAX_HALF', GRID_MAX_HALF[0], GRID_MAX_HALF[1]);
+		// console.log('LINE_WIDTH', LINE_WIDTH);
 
 		// this.#COMPONENT_MANAGER.addShapeLineHorizontal(
 		// 	1,
@@ -103,6 +103,10 @@ export default class ViewTest {
 		// 	FillType.PassThrough,
 		// 	FillStrategyType.PassThrough,
 		// );
+
+		// --------------
+
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(10);
 	}
 
 	// ____________________________________________________________________ tick
