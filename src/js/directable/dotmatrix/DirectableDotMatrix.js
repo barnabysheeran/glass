@@ -35,8 +35,7 @@ export default class DirectableDotMatrix {
 		this.#COMPONENT_MANAGER = new ComponentManager(this.#SHAPE_MANAGER);
 
 		// Dev - Create View Test
-		const VIEW_TEST = new ViewTest(this.#COMPONENT_MANAGER);
-		this.#VIEWS.push(VIEW_TEST);
+		this.#VIEWS.push(new ViewTest(this.#COMPONENT_MANAGER));
 
 		// const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
 		// this.#VIEWS.push(VIEW_TEXT_TEST);
@@ -61,6 +60,6 @@ export default class DirectableDotMatrix {
 		GridData.setSize(width, height);
 
 		// Redraw Shapes
-		this.#SHAPE_MANAGER.redraw();
+		this.#COMPONENT_MANAGER.redraw();
 	}
 }

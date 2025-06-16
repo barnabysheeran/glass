@@ -1,5 +1,9 @@
 import Component from '../Component.js';
 
-export default class ComponentLineFullWidth extends Component {
+export default class ComponentLineWidthFull extends Component {
 	// _________________________________________________________________________
+
+	constructor() {
+		super();
+	}
 }
