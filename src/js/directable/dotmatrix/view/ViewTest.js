@@ -96,10 +96,6 @@ export default class ViewTest {
 		console.log('GRID_MAX_HALF', GRID_MAX_HALF[0], GRID_MAX_HALF[1]);
 		console.log('LINE_WIDTH', LINE_WIDTH);
 
-		// let blockWidth = gridMaxHalf.x;
-		// let blockHeight = gridMaxHalf.y;
-		// let lineWidth = gridMaxHalf.x - 2;
-
 		this.#SHAPE_MANAGER.addShapeLineHorizontal(
 			1,
 			1,
@@ -107,70 +103,6 @@ export default class ViewTest {
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
-
-		// Top Left
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	gridMaxHalf.y - 1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-
-		// Top Right
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	gridMaxHalf.x + 1,
-		// 	1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	gridMaxHalf.x + 1,
-		// 	gridMaxHalf.y - 1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-
-		// Bottom Left
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	gridMaxHalf.y + 2,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	1,
-		// 	gridMax.y - 1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-
-		// Bottom Right
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	gridMaxHalf.x + 1,
-		// 	gridMaxHalf.y + 2,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-		// this.#SHAPE_MANAGER.addShapeLineHorizontal(
-		// 	gridMaxHalf.x + 1,
-		// 	gridMax.y - 1,
-		// 	lineWidth,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
 	}
 
 	// ____________________________________________________________________ tick
