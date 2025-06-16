@@ -5,8 +5,6 @@ import GridData from './grid/GridData.js';
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
 
-// import ViewManager from './view/ViewManager.js';
-
 import ViewTest from './view/ViewTest.js';
 
 export default class DirectableDotMatrix {
