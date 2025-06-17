@@ -7,7 +7,7 @@ import RenderSurface from '../render/RenderSurface.js';
 import Display from '../display/Display.js';
 
 export default class Controller {
-	#FRAMERATE_FPS = 20;
+	#FRAMERATE_FPS = 60;
 	#FRAMERATE_MS = 1000 / this.#FRAMERATE_FPS;
 
 	#frameRateDelayMS = 0;
