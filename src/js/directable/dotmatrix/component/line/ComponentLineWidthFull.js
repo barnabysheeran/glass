@@ -27,5 +27,8 @@ export default class ComponentLineWidthFull extends Component {
 
 	// __________________________________________________________________ Redraw
 
-	redraw() {}
+	redraw() {
+		// Simple Redraw of Existing Shape
+		this.#SHAPE_LINE_HORIZONTAL_TOP.redraw();
+	}
 }

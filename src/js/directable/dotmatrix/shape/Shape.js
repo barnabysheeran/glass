@@ -37,14 +37,6 @@ export default class Shape {
 		// Clear Current Dot
 		this.#dotManager.clearDot(dotIndex);
 
-		// if (dotIndex == -1)
-		// {
-		//     Debug.Log("ShapeLineHorizontal. No more free Dots");
-		//     break;
-		// }
-
-		// TODO -1 Off Grid ?
-
 		// Position
 		this.#dotManager.setDotPosition(
 			dotIndex,
