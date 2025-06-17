@@ -23,7 +23,9 @@ export default class ComponentLineWidthFull extends Component {
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
-
-		// TODO Resize
 	}
+
+	// __________________________________________________________________ Redraw
+
+	redraw() {}
 }
