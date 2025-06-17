@@ -19,17 +19,9 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
-			6,
-			FillType.Random,
-			FillStrategyType.Random,
-		);
-
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
-			11,
-			FillType.PassThrough,
-			FillStrategyType.Reverse,
-		);
+		for (let i = 0; i < 50; i++) {
+			this.#COMPONENT_MANAGER.addComponentLineWidthFull(10 + 2 * i);
+		}
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
