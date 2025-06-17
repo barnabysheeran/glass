@@ -2,7 +2,7 @@ import { Vector2 } from 'three';
 
 import UIGridCell from './UIGridCell';
 
-export default class UIGridController {
+export default class GridController {
 	static #HOLDER;
 
 	static #CELL_WIDTH_PX = 18;

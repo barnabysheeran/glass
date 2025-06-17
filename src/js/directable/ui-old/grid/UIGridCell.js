@@ -34,7 +34,7 @@ export default class UIGridCell {
 		this.#POSITION_PX.set(positionXPx, positionYPx);
 	}
 
-	// ____________________________________________________________________ Empty
+	// ___________________________________________________________________ Empty
 
 	setEmpty() {
 		this.#isEmpty = true;
