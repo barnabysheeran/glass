@@ -10,6 +10,8 @@ export default class Dot {
 
 	#LOG_LEVEL = -1; // 6;
 
+	// TODO Rename / Combine with UI Old block component blockfill
+
 	// TODO Optimisation. Create Re-Useable Grid Sized Pixel Data Array
 
 	// _________________________________________________________________________
@@ -42,8 +44,8 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
-		const GRID_WIDTH = GridData.getGridWidth();
-		const GRID_HEIGHT = GridData.getGridHeight();
+		const GRID_WIDTH = GridData.getGridCellWidthPx();
+		const GRID_HEIGHT = GridData.getGridCellHeightPx();
 
 		// Create data array for white with alpha 1
 		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);
@@ -74,8 +76,8 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
-		const GRID_WIDTH = GridData.getGridWidth();
-		const GRID_HEIGHT = GridData.getGridHeight();
+		const GRID_WIDTH = GridData.getGridCellWidthPx();
+		const GRID_HEIGHT = GridData.getGridCellHeightPx();
 
 		// Create data array for white with alpha 0
 		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);

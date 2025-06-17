@@ -1,8 +1,8 @@
 import { vec2 } from 'gl-matrix';
 
 export default class GridData {
-	static #gridWidthPx = 8;
-	static #gridHeight = 8;
+	static #gridCellWidthPx = 8;
+	static #gridCellHeightPx = 8;
 
 	static #resolutionWidth = 0;
 	static #resolutionHeight = 0;
@@ -17,35 +17,36 @@ export default class GridData {
 	// ____________________________________________________________________ Grid
 
 	static getGridPixelPosition(positionGrid) {
-		let x = positionGrid[0] * this.#gridWidthPx;
-		let y = positionGrid[1] * this.#gridHeight;
+		let x = positionGrid[0] * this.#gridCellWidthPx;
+		let y = positionGrid[1] * this.#gridCellHeightPx;
 
 		return vec2.fromValues(x, y);
 	}
 
-	// TODO Add PX
-	static getGridWidth() {
-		return this.#gridWidthPx;
+	static getGridCellWidthPx() {
+		return this.#gridCellWidthPx;
 	}
 
-	static getGridHeight() {
-		return this.#gridHeight;
+	static getGridCellHeightPx() {
+		return this.#gridCellHeightPx;
 	}
 
 	// ________________________________________________________________ Grid Max
 
 	static getGridMax() {
-		let x = this.#resolutionWidth / this.#gridWidthPx;
-		let y = this.#resolutionHeight / this.#gridHeight - 1;
+		let x = this.#resolutionWidth / this.#gridCellWidthPx;
+		let y = this.#resolutionHeight / this.#gridCellHeightPx;
 
-		return vec2.fromValues(Math.floor(x), Math.floor(y));
+		// Return the maximum 0-based index for x and y
+		return vec2.fromValues(Math.floor(x) - 1, Math.floor(y) - 1);
 	}
 
 	static getGridMaxHalf() {
-		let x = this.#resolutionWidth / this.#gridWidthPx;
-		let y = this.#resolutionHeight / this.#gridHeight - 1;
+		const max = this.getGridMax();
+		const x = max[0] / 2;
+		const y = max[1] / 2;
 
-		return vec2.fromValues(Math.floor(x / 2), Math.floor(y / 2));
+		return vec2.fromValues(Math.floor(x), Math.floor(y));
 	}
 
 	// ____________________________________________________________________ Size
