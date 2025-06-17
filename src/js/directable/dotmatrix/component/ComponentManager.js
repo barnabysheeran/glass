@@ -50,6 +50,8 @@ export default class ComponentManager {
 		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(
 			this.#SHAPE_MANAGER,
 			gridY,
+			fillType,
+			fillStrategyType,
 		);
 
 		// Store

@@ -1,7 +1,5 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import GridData from '../grid/GridData.js';
-
 import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
@@ -21,9 +19,17 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(10);
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+			6,
+			FillType.Random,
+			FillStrategyType.Random,
+		);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(100);
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+			11,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+		);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',

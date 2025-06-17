@@ -10,7 +10,12 @@ export default class ComponentLineWidthFull extends Component {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, gridY) {
+	constructor(
+		shapeManager,
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
 		super(shapeManager);
 
 		const GRID_MAX = GridData.getGridMax();
@@ -20,8 +25,8 @@ export default class ComponentLineWidthFull extends Component {
 			1,
 			gridY,
 			LINE_WIDTH,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
+			fillType,
+			fillStrategyType,
 		);
 	}
 
