@@ -20,6 +20,20 @@ export default class ViewTest {
 
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
+
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(10);
+
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(100);
+
+		this.#COMPONENT_MANAGER.addComponentTextBox(
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+			20,
+			20,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 	}
 
 	// ____________________________________________________________________ tick

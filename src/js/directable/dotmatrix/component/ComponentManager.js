@@ -1,5 +1,8 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
+import FillType from '../shape/fill/FillType.js';
+import FillStrategyType from '../shape/fill/FillStrategyType.js';
+
 import ComponentLineWidthFull from './line/ComponentLineWidthFull.js';
 
 export default class ComponentManager {
@@ -38,7 +41,11 @@ export default class ComponentManager {
 
 	// _________________________________________________________ Line Width Full
 
-	addComponentLineWidthFull(gridY) {
+	addComponentLineWidthFull(
+		gridY,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
 		// Create Component
 		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(
 			this.#SHAPE_MANAGER,
@@ -47,5 +54,19 @@ export default class ComponentManager {
 
 		// Store
 		this.#COMPONENTS.push(COMPONENT_LINE_WIDTH_FULL);
+	}
+
+	// ________________________________________________________________ Text Box
+
+	addComponentTextBox(
+		text,
+		gridX,
+		gridY,
+		gridWidth,
+		gridHeight,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+	) {
+		//
 	}
 }
