@@ -62,9 +62,63 @@ export default class GridData {
 		return undefined;
 	}
 
+	// __________________________________________________________________ Random
+
+	static getRandomGridCell() {
+		const x = Math.floor(Math.random() * this.#gridWidthInCells);
+		const y = Math.floor(Math.random() * this.#gridHeightInCells);
+
+		return vec2.fromValues(x, y);
+	}
+
+	static getRandomEmptyGridCell() {
+		const randomIndexes = this.#generateRandomOrderCellIndexes();
+
+		for (const index of randomIndexes) {
+			if (this.#occupied[index] === 0) {
+				const x = index % this.#gridWidthInCells;
+				const y = Math.floor(index / this.#gridWidthInCells);
+				return vec2.fromValues(x, y);
+			}
+		}
+
+		return undefined;
+	}
+
+	static getRandomEmptyRectangle(rectangleWidthCells, rectangleHeightCells) {
+		const randomIndexes = this.#generateRandomOrderCellIndexes();
+
+		for (const index of randomIndexes) {
+			if (
+				this.isRectangleEmpty(index, rectangleWidthCells, rectangleHeightCells)
+			) {
+				const x = index % this.#gridWidthInCells;
+				const y = Math.floor(index / this.#gridWidthInCells);
+				return vec2.fromValues(x, y);
+			}
+		}
+
+		return undefined;
+	}
+
+	// ____________________________________________________________________ Util
+
+	static #generateRandomOrderCellIndexes() {
+		const totalCells = this.#gridWidthInCells * this.#gridHeightInCells;
+		const indexes = Array.from({ length: totalCells }, (_, i) => i);
+
+		// Fisher-Yates shuffle
+		for (let i = indexes.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[indexes[i], indexes[j]] = [indexes[j], indexes[i]];
+		}
+
+		return indexes;
+	}
+
 	// ________________________________________________________________ Occupied
 
-	static setOccupied(x, y, isOccupied) {
+	static setCellOccupied(x, y, isOccupied) {
 		const intX = Math.floor(x);
 		const intY = Math.floor(y);
 		if (
@@ -78,7 +132,7 @@ export default class GridData {
 		}
 	}
 
-	static isOccupied(x, y) {
+	static isCellOccupied(x, y) {
 		const intX = Math.floor(x);
 		const intY = Math.floor(y);
 		if (
@@ -91,6 +145,30 @@ export default class GridData {
 			return this.#occupied[index] === 1;
 		}
 		return false; // Default to not occupied if out of bounds
+	}
+
+	static isRectangleEmpty(gridCellIndex, gridWidth, gridHeight) {
+		const startX = gridCellIndex % this.#gridWidthInCells;
+		const startY = Math.floor(gridCellIndex / this.#gridWidthInCells);
+
+		// Check if the rectangle fits within the grid boundaries
+		if (startX + gridWidth > this.#gridWidthInCells) {
+			return false;
+		}
+		if (startY + gridHeight > this.#gridHeightInCells) {
+			return false;
+		}
+
+		// Check if all cells in the rectangle are empty
+		for (let y = 0; y < gridHeight; y++) {
+			for (let x = 0; x < gridWidth; x++) {
+				if (this.isOccupied(startX + x, startY + y)) {
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 
 	// __________________________________________________ Access Grid Cell Width
