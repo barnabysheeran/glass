@@ -16,24 +16,37 @@ export default class ComponentLineWidthFull extends Component {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
-		super(shapeManager);
+		super(shapeManager, 1, gridY, fillType, fillStrategyType);
 
+		// Create Shape
+		this.#createShape();
+	}
+
+	// ____________________________________________________________ Create Shape
+
+	#createShape() {
+		// Create Shape
 		const GRID_MAX = GridData.getGridMax();
 		const LINE_WIDTH = GRID_MAX[0] - 2;
 
 		this.#SHAPE_LINE_HORIZONTAL_TOP = this.SHAPE_MANAGER.addShapeLineHorizontal(
-			1,
-			gridY,
+			this.GRID_X,
+			this.GRID_Y,
 			LINE_WIDTH,
-			fillType,
-			fillStrategyType,
+			this.FILL_TYPE,
+			this.FILL_STRATEGY_TYPE,
 		);
 	}
 
 	// __________________________________________________________________ Redraw
 
 	redraw() {
-		// Simple Redraw of Existing Shape
-		this.#SHAPE_LINE_HORIZONTAL_TOP.redraw();
+		// Remove Existing Shape
+		if (this.#SHAPE_LINE_HORIZONTAL_TOP) {
+			this.SHAPE_MANAGER.removeShape(this.#SHAPE_LINE_HORIZONTAL_TOP);
+		}
+
+		// Create Shape
+		this.#createShape();
 	}
 }

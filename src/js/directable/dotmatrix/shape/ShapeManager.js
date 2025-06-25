@@ -101,6 +101,25 @@ export default class ShapeManager {
 		}
 	}
 
+	removeShape(shape) {
+		ApplicationLogger.log('ShapeManager removeShape', this.#LOG_LEVEL);
+
+		// Find Index
+		const index = this.#SHAPES.indexOf(shape);
+
+		if (index !== -1) {
+			// Remove Shape
+			this.#SHAPES.splice(index, 1);
+
+			ApplicationLogger.log(
+				` - Removed Shape at index ${index}`,
+				this.#LOG_LEVEL,
+			);
+		} else {
+			ApplicationLogger.log(` - Shape not found`, this.#LOG_LEVEL);
+		}
+	}
+
 	// _________________________________________________________ Line Horizontal
 
 	addShapeLineHorizontal(
