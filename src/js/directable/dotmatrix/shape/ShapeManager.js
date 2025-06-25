@@ -90,6 +90,8 @@ export default class ShapeManager {
 
 	// __________________________________________________________________ Redraw
 
+	// TODO Should this be here or replaced by Component Manager
+
 	redraw() {
 		ApplicationLogger.log('ShapeManager redraw', this.#LOG_LEVEL);
 
