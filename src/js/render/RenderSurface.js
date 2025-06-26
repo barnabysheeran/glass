@@ -279,14 +279,15 @@ export default class RenderSurface {
 			x + width > this.#width ||
 			y + height > this.#height
 		) {
-			ApplicationLogger.warn(
-				'RenderSurface setTextureData called with out-of-bounds coordinates.',
+			ApplicationLogger.log(
+				`RenderSurface setTextureData out-of-bounds ${x} ${y} ${width} ${height}`,
+
 				this.#LOG_LEVEL,
 			);
 			return;
 		}
 		if (!data || data.byteLength !== width * height * 4) {
-			ApplicationLogger.warn(
+			ApplicationLogger.log(
 				'RenderSurface setTextureData called with invalid data size.',
 				this.#LOG_LEVEL,
 			);
