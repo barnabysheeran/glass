@@ -1,15 +1,23 @@
+import ApplicationLogger from './ApplicationLogger.js';
+
 export default class ApplicationConfiguration {
 	static #applicationContainer;
 	static #assetPath;
-	static #isDebug;
+	static #isDebug = false;
+
+	static #LOG_LEVEL = 1;
 
 	// _________________________________________________________________________
 
-	static initialise(creationParameters) {
+	static initialise(creationParameters, isDebug) {
+		ApplicationLogger.log('ApplicationConfiguration', this.#LOG_LEVEL);
+
 		// Store
 		this.#applicationContainer = creationParameters.applicationContainer;
 		this.#assetPath = creationParameters.assetPath;
-		this.#isDebug = creationParameters.isDebug;
+
+		// Set Debug
+		this.isDebug = isDebug;
 	}
 
 	// ___________________________________________________ Application Container
@@ -26,7 +34,11 @@ export default class ApplicationConfiguration {
 
 	// ________________________________________________________________ Is Debug
 
-	static isDebug() {
+	static set isDebug(value) {
+		this.#isDebug = value;
+	}
+
+	static get isDebug() {
 		return this.#isDebug;
 	}
 }

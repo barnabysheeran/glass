@@ -15,17 +15,19 @@ export default class Application {
 	// _________________________________________________________________________
 
 	constructor(creationParameters) {
-		// Always Log
-		ApplicationLogger.log(
-			'Application ' + APPLICATION_VERSION,
-			this.#LOG_LEVEL,
-		);
+		// TODO Manually Set isDebug
+		const IS_DEBUG = true;
 
-		// Initialise Application Configuration
-		ApplicationConfiguration.initialise(creationParameters);
+		// Order Important
+
+		// Always Log Version
+		ApplicationLogger.log('Glass ' + APPLICATION_VERSION, this.#LOG_LEVEL);
 
 		// Initialise Application Logger
-		ApplicationLogger.initialise(creationParameters);
+		ApplicationLogger.initialise(IS_DEBUG);
+
+		// Initialise Application Configuration
+		ApplicationConfiguration.initialise(creationParameters, IS_DEBUG);
 
 		// Create Controller
 		this.#CONTROLLER = new Controller();

@@ -2,7 +2,7 @@
 
 import { overlayCreateLabel, overlayCreateButton } from '../OverlayUtil.js';
 
-import DisplayFormats from '../../enum/DisplayFormats.js';
+import DisplayFormats from '../../display/DisplayFormats.js';
 
 export default class OverlayDisplayFormat {
 	#HOLDER;

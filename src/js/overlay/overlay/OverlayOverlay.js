@@ -1,5 +1,3 @@
-// import ApplicationLogger from '../../application/ApplicationLogger';
-
 import { overlayCreateButton } from '../OverlayUtil.js';
 
 export default class OverlayOverlay {
@@ -8,8 +6,6 @@ export default class OverlayOverlay {
 	#BUTTON_SHOW_HIDE;
 
 	constructor(container) {
-		// ApplicationLogger.log('OverlayOverlay', 1);
-
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'overlay-holder-overlay';

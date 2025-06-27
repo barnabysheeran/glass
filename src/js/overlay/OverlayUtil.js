@@ -1,8 +1,6 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
-// ______________________________________________________________________ Styles
-
 // ______________________________________________________________________ Holder
 
 export function overlayCreateHolder() {

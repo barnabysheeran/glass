@@ -2,12 +2,14 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
+import OverlayFPS from './fps/OverlayFPS.js';
 import OverlayOverlay from './overlay/OverlayOverlay.js';
 import OverlayDisplayFormat from './displayFormat/OverlayDisplayFormat.js';
 
 export default class Overlay {
 	static #HOLDER;
 
+	static #OVERLAY_FPS;
 	static #OVERLAY_OVERLAY;
 	static #OVERLAY_FORMAT;
 
@@ -18,7 +20,7 @@ export default class Overlay {
 	// ______________________________________________________________ Initialise
 
 	static initialise() {
-		ApplicationLogger.log('Overlay. initialise', this.#LOG_LEVEL);
+		ApplicationLogger.log('Overlay initialise', this.#LOG_LEVEL);
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
@@ -29,6 +31,8 @@ export default class Overlay {
 		);
 
 		// Create Overlays
+		this.#OVERLAY_FPS = new OverlayFPS(this.#HOLDER);
+
 		this.#OVERLAY_OVERLAY = new OverlayOverlay(this.#HOLDER);
 		this.#OVERLAY_FORMAT = new OverlayDisplayFormat(this.#HOLDER);
 
@@ -37,12 +41,21 @@ export default class Overlay {
 			'overlay-toggle-visibility',
 			this.#toggleVisibility.bind(this),
 		);
+
+		// Start Hidden
+		this.#hide();
+	}
+
+	// ____________________________________________________________________ Tick
+
+	static tick(frameDeltaMS) {
+		this.#OVERLAY_FPS.tick(frameDeltaMS);
 	}
 
 	// ______________________________________________________________ Visibility
 
 	static #toggleVisibility() {
-		ApplicationLogger.log('Overlay. toggleVisibility', this.#LOG_LEVEL);
+		ApplicationLogger.log('Overlay toggleVisibility', this.#LOG_LEVEL);
 
 		if (this.#isShown === true) {
 			this.#hide();
