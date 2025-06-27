@@ -1,8 +1,6 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -24,20 +22,18 @@ export default {
 
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: 'application.min.js',
-		libraryTarget: 'umd',
+		filename: 'application.js',
+		clean: true,
+		library: {
+			name: 'Application',
+			type: 'umd',
+		},
 		globalObject: 'this',
-		library: 'Application',
 	},
 
 	devServer: {
 		open: true,
 		hot: true,
-	},
-
-	optimization: {
-		minimize: true,
-		minimizer: [new TerserPlugin({ extractComments: false, parallel: true })],
 	},
 
 	module: {
@@ -52,12 +48,9 @@ export default {
 			{
 				test: /\.(svg|png|gif|jpg|ico)$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'file-loader',
-					options: {
-						name: '[name].[ext]',
-						context: '',
-					},
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/[name][ext]',
 				},
 			},
 
@@ -74,8 +67,6 @@ export default {
 	},
 
 	plugins: [
-		new CleanWebpackPlugin(),
-
 		new webpack.DefinePlugin({
 			APPLICATION_VERSION: JSON.stringify(applicationVersion),
 		}),
@@ -90,6 +81,6 @@ export default {
 			patterns: [{ from: './src/asset', to: './asset' }],
 		}),
 
-		new MiniCssExtractPlugin({ filename: './bb-application.css' }),
+		new MiniCssExtractPlugin({ filename: './application.css' }),
 	],
 };

@@ -1,8 +1,8 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -26,15 +26,36 @@ export default {
 
 	output: {
 		path: path.resolve(__dirname, `../dist`),
-		filename: 'application.min.[contenthash].js',
-		libraryTarget: 'umd',
+		filename: 'application.[contenthash].js',
+		clean: true,
+		library: {
+			name: 'Application',
+			type: 'umd',
+		},
 		globalObject: 'this',
-		library: 'Application',
 	},
 
 	optimization: {
 		minimize: true,
-		minimizer: [new TerserPlugin({ extractComments: false, parallel: true })],
+		minimizer: [
+			new TerserPlugin({
+				extractComments: false,
+				parallel: true,
+				terserOptions: {
+					compress: {
+						drop_console: true,
+						drop_debugger: true,
+						pure_funcs: ['console.log'],
+					},
+					mangle: {
+						properties: false,
+					},
+				},
+			}),
+			new CssMinimizerPlugin(),
+		],
+		usedExports: true,
+		sideEffects: false,
 	},
 
 	module: {
@@ -49,12 +70,9 @@ export default {
 			{
 				test: /\.(svg|png|gif|jpg|ico)$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'file-loader',
-					options: {
-						name: '[name].[ext]',
-						context: '', // Consider setting a proper context or outputPath for assets
-					},
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/[name].[hash][ext]',
 				},
 			},
 
@@ -71,8 +89,6 @@ export default {
 	},
 
 	plugins: [
-		new CleanWebpackPlugin(),
-
 		new webpack.DefinePlugin({
 			APPLICATION_VERSION: JSON.stringify(applicationVersion),
 		}),
@@ -90,7 +106,7 @@ export default {
 		}),
 
 		new MiniCssExtractPlugin({
-			filename: './bb-application.[contenthash].css',
+			filename: './application.[contenthash].css',
 		}),
 	],
 };
