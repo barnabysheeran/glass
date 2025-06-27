@@ -55,7 +55,6 @@ export default {
 			new CssMinimizerPlugin(),
 		],
 		usedExports: true,
-		sideEffects: false,
 	},
 
 	module: {
@@ -112,7 +111,7 @@ export default {
 		new HtmlWebpackPlugin({
 			template: 'src/html/index.html',
 			filename: './index.html',
-			inject: 'head',
+			inject: 'body', // Change from 'head' to 'body'
 			minify: true,
 			hash: false,
 		}),

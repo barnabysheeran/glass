@@ -69,10 +69,7 @@ export default {
 						loader: 'postcss-loader',
 						options: {
 							postcssOptions: {
-								plugins: [
-									'postcss-preset-env', // Modern CSS features
-									'postcss-nested', // Nested CSS like Sass
-								],
+								plugins: ['postcss-preset-env', 'postcss-nested'],
 							},
 						},
 					},
@@ -89,7 +86,7 @@ export default {
 		new HtmlWebpackPlugin({
 			template: 'src/html/index.html',
 			filename: './index.html',
-			inject: 'head',
+			inject: 'body', // Change from 'head' to 'body' for better CSS injection
 		}),
 
 		new CopyWebpackPlugin({
