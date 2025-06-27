@@ -81,8 +81,24 @@ export default {
 				exclude: /node_modules/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					{ loader: 'css-loader', options: { importLoaders: 1 } },
-					'postcss-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							sourceMap: false, // Disable source maps in production
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									'postcss-preset-env', // Modern CSS features
+									'postcss-nested', // Nested CSS like Sass
+								],
+							},
+						},
+					},
 				],
 			},
 		],
@@ -96,9 +112,9 @@ export default {
 		new HtmlWebpackPlugin({
 			template: 'src/html/index.html',
 			filename: './index.html',
-			inject: true,
+			inject: 'head',
 			minify: true,
-			hash: true,
+			hash: false,
 		}),
 
 		new CopyWebpackPlugin({

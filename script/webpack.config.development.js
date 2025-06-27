@@ -1,6 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -58,9 +57,25 @@ export default {
 				test: /\.css$/,
 				exclude: /node_modules/,
 				use: [
-					MiniCssExtractPlugin.loader,
-					{ loader: 'css-loader', options: { importLoaders: 1 } },
-					'postcss-loader',
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									'postcss-preset-env', // Modern CSS features
+									'postcss-nested', // Nested CSS like Sass
+								],
+							},
+						},
+					},
 				],
 			},
 		],
@@ -74,13 +89,14 @@ export default {
 		new HtmlWebpackPlugin({
 			template: 'src/html/index.html',
 			filename: './index.html',
-			inject: true,
+			inject: 'head',
 		}),
 
 		new CopyWebpackPlugin({
 			patterns: [{ from: './src/asset', to: './asset' }],
 		}),
 
-		new MiniCssExtractPlugin({ filename: './application.css' }),
+		// Remove MiniCssExtractPlugin from development
+		// new MiniCssExtractPlugin({ filename: './application.css' }),
 	],
 };
