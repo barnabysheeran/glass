@@ -12,7 +12,6 @@ import MaterialLightDiffuse from '../../Material/MaterialLightDiffuse';
 import EnvironmentSpherical from '../../Environment/EnvironmentSpherical';
 
 export default class SceneExampleA extends Scene {
-	/* eslint-disable-next-line no-useless-constructor */
 	constructor(cameraController) {
 		super(cameraController);
 	}

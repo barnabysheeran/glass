@@ -10,7 +10,6 @@ import MaterialLightDiffuse from '../../Material/MaterialLightDiffuse';
 import TextureConstant from '../../Texture/TextureConstant';
 
 export default class SceneExampleB extends Scene {
-	/* eslint-disable-next-line no-useless-constructor */
 	constructor(cameraController) {
 		super(cameraController);
 	}
@@ -115,7 +114,6 @@ export default class SceneExampleB extends Scene {
 
 	// ______________________________________________________________ Background
 
-	/* eslint-disable-next-line class-methods-use-this */
 	getBackground() {
 		// rayDirectionNormalized
 

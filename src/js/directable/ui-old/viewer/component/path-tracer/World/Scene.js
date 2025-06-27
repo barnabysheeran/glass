@@ -33,7 +33,6 @@ export default class Scene {
 
 	// ____________________________________________________________________ Init
 
-	/* eslint-disable-next-line class-methods-use-this */
 	init() {}
 
 	// ___________________________________________________________________ Reset
@@ -118,7 +117,6 @@ export default class Scene {
 
 	// _______________________________________________________________ Animation
 
-	/* eslint-disable-next-line class-methods-use-this */
 	setAnimationTime() {
 		// time
 	}
@@ -129,7 +127,6 @@ export default class Scene {
 
 	// ______________________________________________________________ Background
 
-	/* eslint-disable-next-line class-methods-use-this */
 	getBackground() {
 		// rayDirectionNormalized
 

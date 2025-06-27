@@ -210,7 +210,6 @@ export default class Block {
 		});
 	}
 
-	/* eslint-disable-next-line class-methods-use-this */
 	onHolderClick() {
 		// Stub
 	}

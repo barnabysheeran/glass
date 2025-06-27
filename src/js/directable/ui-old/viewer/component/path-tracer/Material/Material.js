@@ -5,7 +5,6 @@ export default class Material {
 		this.EMITTED_BASE = vec3.fromValues(0.0, 0.0, 0.0);
 	}
 
-	/* eslint-disable-next-line class-methods-use-this */
 	scatter() {
 		// rayIn, hitRecord, attenuation, scattered
 	}

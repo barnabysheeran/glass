@@ -134,7 +134,6 @@ export default class HitableBox extends Hitable {
 
 	// _____________________________________________________________________ Hit
 
-	/* eslint-disable-next-line class-methods-use-this */
 	didHit() {
 		// ray, tMin, tMax, hitRecord
 		// TODO BB hit for Constant Medium

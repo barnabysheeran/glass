@@ -11,7 +11,6 @@ import MaterialDielectric from '../../Material/MaterialDielectric';
 import EnvironmentSpherical from '../../Environment/EnvironmentSpherical';
 
 export default class SceneExampleB extends Scene {
-	/* eslint-disable-next-line no-useless-constructor */
 	constructor(cameraController) {
 		super(cameraController);
 	}

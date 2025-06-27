@@ -9,7 +9,6 @@ export default class MaterialLightDiffuse extends Material {
 
 	// _________________________________________________________________ Scatter
 
-	/* eslint-disable-next-line class-methods-use-this */
 	scatter() {
 		// rayIn, hitRecord, attenuation, scattered
 

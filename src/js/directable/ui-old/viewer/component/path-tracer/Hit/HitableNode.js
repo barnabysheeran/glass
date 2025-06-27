@@ -181,7 +181,6 @@ export default class HitableNode extends Hitable {
 
 	// ____________________________________________________________________ Sort
 
-	/* eslint-disable-next-line class-methods-use-this */
 	compareX(a, b) {
 		const BB_A = a.boundingBox;
 		const BB_B = b.boundingBox;
@@ -193,7 +192,6 @@ export default class HitableNode extends Hitable {
 		return 1;
 	}
 
-	/* eslint-disable-next-line class-methods-use-this */
 	compareY(a, b) {
 		const BB_A = a.boundingBox;
 		const BB_B = b.boundingBox;
@@ -205,7 +203,6 @@ export default class HitableNode extends Hitable {
 		return 1;
 	}
 
-	/* eslint-disable-next-line class-methods-use-this */
 	compareZ(a, b) {
 		const BB_A = a.boundingBox;
 		const BB_B = b.boundingBox;

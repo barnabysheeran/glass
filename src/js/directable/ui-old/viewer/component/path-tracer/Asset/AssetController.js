@@ -49,7 +49,6 @@ export default class AssetController {
 		}
 	}
 
-	/* eslint-disable-next-line class-methods-use-this */
 	static #onAllItemsLoaded() {
 		// ApplicationLogger.log('AssetController. onAllItemsLoaded', 1);
 

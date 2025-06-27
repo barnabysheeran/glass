@@ -39,7 +39,6 @@ export default class UIController {
 
 	// ____________________________________________________________________ Tick
 
-	/* eslint-disable-next-line class-methods-use-this */
 	tick(frameDeltaMS) {
 		// Tick
 		UIBlockController.tick(frameDeltaMS);
@@ -48,7 +47,6 @@ export default class UIController {
 
 	// ____________________________________________________________________ Size
 
-	/* eslint-disable-next-line class-methods-use-this */
 	setSize(widthPx, heightPx) {
 		ApplicationLogger.log(
 			`UIController setSize ${widthPx} ${heightPx}`,

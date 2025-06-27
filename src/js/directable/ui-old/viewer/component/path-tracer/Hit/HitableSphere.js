@@ -125,7 +125,6 @@ export default class HitableSphere extends Hitable {
 
 	// ______________________________________________________________________ UV
 
-	/* eslint-disable-next-line class-methods-use-this */
 	generateUV(position) {
 		const { PI } = Math;
 		const PHI = Math.atan2(position[2], position[0]);
