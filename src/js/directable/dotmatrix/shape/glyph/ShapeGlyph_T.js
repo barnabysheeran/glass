@@ -62,8 +62,6 @@ export default class ShapeGlyph_T extends Shape {
 				this.#positionGridGlyphs[i][0] === x &&
 				this.#positionGridGlyphs[i][1] === y
 			) {
-				
-
 				isFilled = true;
 				break;
 			}

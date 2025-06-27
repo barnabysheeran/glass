@@ -35,7 +35,7 @@ export default class ViewRhythmEnvelope {
 		durationDecayMS,
 		durationSustainMS,
 		levelSustain,
-		durationReleaseMS
+		durationReleaseMS,
 	) {
 		ApplicationLogger.log(`ViewRhythmEnvelope. ${bpm}bpm`, 2);
 
