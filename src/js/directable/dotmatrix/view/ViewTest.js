@@ -19,9 +19,9 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		for (let i = 0; i < 50; i++) {
-			this.#COMPONENT_MANAGER.addComponentLineWidthFull(10 + 2 * i);
-		}
+		// for (let i = 0; i < 50; i++) {
+		// 	this.#COMPONENT_MANAGER.addComponentLineWidthFull(10 + 2 * i);
+		// }
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
