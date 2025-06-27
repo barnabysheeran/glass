@@ -1,5 +1,7 @@
 import FillStrategyType from './FillStrategyType.js';
 
+// TODO Add get random fill strategy type
+
 export default class FillStrategy {
 	static apply(fillStrategyType, positionGrids) {
 		switch (fillStrategyType) {

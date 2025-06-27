@@ -4,6 +4,7 @@ import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
 import ComponentLineWidthFull from './line/ComponentLineWidthFull.js';
+import ComponentTextBox from './textbox/ComponentTextBox.js';
 
 export default class ComponentManager {
 	#SHAPE_MANAGER;
@@ -69,6 +70,19 @@ export default class ComponentManager {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
-		//
+		// Create Component
+		const COMPONENT_TEXT_BOX = new ComponentTextBox(
+			this.#SHAPE_MANAGER,
+			text,
+			gridX,
+			gridY,
+			gridWidth,
+			gridHeight,
+			fillType,
+			fillStrategyType,
+		);
+
+		// Store
+		this.#COMPONENTS.push(COMPONENT_TEXT_BOX);
 	}
 }

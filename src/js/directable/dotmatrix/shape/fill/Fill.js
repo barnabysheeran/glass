@@ -1,5 +1,7 @@
 import FillType from './FillType.js';
 
+// TODO Add get random fill type
+
 export default class Fill {
 	static apply(fillType, positionGrids) {
 		switch (fillType) {

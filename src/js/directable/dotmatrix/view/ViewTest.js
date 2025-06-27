@@ -19,14 +19,10 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		// for (let i = 0; i < 50; i++) {
-		// 	this.#COMPONENT_MANAGER.addComponentLineWidthFull(10 + 2 * i);
-		// }
-
 		this.#COMPONENT_MANAGER.addComponentTextBox(
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-			20,
-			20,
+			'ABCD EF  GHIJKLMNOPQRSTUVWXYZ0123456789',
+			1,
+			5,
 			100,
 			50,
 			FillType.PassThrough,
