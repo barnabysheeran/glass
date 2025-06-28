@@ -1,6 +1,6 @@
-import DevelopmentGuides from './guide/DevelopmentGuides';
+import DevelopmentGuides from './guide/DevelopmentGuides.js';
 
-export default class UIDevelopmentController {
+export default class Development {
 	static #DEVELOPMENT_GUIDES;
 
 	// _________________________________________________________________________

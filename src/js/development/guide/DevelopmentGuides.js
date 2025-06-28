@@ -1,4 +1,4 @@
-import ApplicationConfiguration from '../../../application/ApplicationConfiguration';
+import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
 
 export default class DevelopmentGuides {
 	#GUIDE_HOLDER;
