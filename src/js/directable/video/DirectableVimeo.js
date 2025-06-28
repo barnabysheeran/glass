@@ -13,11 +13,10 @@ export default class DirectableVimeo {
 	// _________________________________________________________________________
 
 	constructor() {
+		ApplicationLogger.log('DirectableVimeo');
+
 		// Create Vimeo Player
 		this.#createPlayer();
-
-		const appContainer = ApplicationConfiguration.getApplicationContainer();
-		this.setSize(appContainer.clientWidth, appContainer.clientHeight);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -41,7 +40,8 @@ export default class DirectableVimeo {
 			loop: true,
 			background: true,
 			dnt: true, // Do Not Track
-			responsive: true,
+			responsive: false,
+			width: 640,
 		};
 
 		// Create Player
@@ -67,50 +67,46 @@ export default class DirectableVimeo {
 			console.error('Error getting video dimensions:', error);
 		}
 
-		const appContainer = ApplicationConfiguration.getApplicationContainer();
-		this.setSize(appContainer.clientWidth, appContainer.clientHeight);
+		// const appContainer = ApplicationConfiguration.getApplicationContainer();
+		// this.setSize(appContainer.clientWidth, appContainer.clientHeight);
 	}
 
 	// ____________________________________________________________________ Play
 
 	#onPlay() {
-		console.log('Video is playing');
+		ApplicationLogger.log('DirectableVimeo onPlay', this.#LOG_LEVEL);
 	}
 
 	// ____________________________________________________________________ Size
 
+	// TODO
+
 	setSize(width, height) {
-		if (!this.#HOLDER) {
-			return;
-		}
-
-		this.#HOLDER.style.width = `${width}px`;
-		this.#HOLDER.style.height = `${height}px`;
-
-		const iframe = this.#HOLDER.querySelector('iframe');
-		if (!iframe) {
-			return;
-		}
-
-		const containerAspectRatio = width / height;
-		let newVideoWidth = width;
-		let newVideoHeight = height;
-
-		if (containerAspectRatio > this.#videoAspectRatio) {
-			// Container is wider than the video, scale by width
-			newVideoWidth = width;
-			newVideoHeight = width / this.#videoAspectRatio;
-		} else {
-			// Container is taller than the video, scale by height
-			newVideoHeight = height;
-			newVideoWidth = height * this.#videoAspectRatio;
-		}
-
-		iframe.style.width = `${newVideoWidth}px`;
-		iframe.style.height = `${newVideoHeight}px`;
-
-		// Center the video
-		iframe.style.left = `${(width - newVideoWidth) / 2}px`;
-		iframe.style.top = `${(height - newVideoHeight) / 2}px`;
+		// if (!this.#HOLDER) {
+		// 	return;
+		// }
+		// this.#HOLDER.style.width = `${width}px`;
+		// this.#HOLDER.style.height = `${height}px`;
+		// const iframe = this.#HOLDER.querySelector('iframe');
+		// if (!iframe) {
+		// 	return;
+		// }
+		// const containerAspectRatio = width / height;
+		// let newVideoWidth = width;
+		// let newVideoHeight = height;
+		// if (containerAspectRatio > this.#videoAspectRatio) {
+		// 	// Container is wider than the video, scale by width
+		// 	newVideoWidth = width;
+		// 	newVideoHeight = width / this.#videoAspectRatio;
+		// } else {
+		// 	// Container is taller than the video, scale by height
+		// 	newVideoHeight = height;
+		// 	newVideoWidth = height * this.#videoAspectRatio;
+		// }
+		// iframe.style.width = `${newVideoWidth}px`;
+		// iframe.style.height = `${newVideoHeight}px`;
+		// // Center the video
+		// iframe.style.left = `${(width - newVideoWidth) / 2}px`;
+		// iframe.style.top = `${(height - newVideoHeight) / 2}px`;
 	}
 }
