@@ -317,6 +317,7 @@ export default class RenderSurface {
 	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {
+		// Width Height Changed ?
 		if (width === this.#width && height === this.#height) {
 			return; // No change
 		}
