@@ -8,11 +8,16 @@ export default class DirectableVimeo {
 	#PLAYER;
 	#videoAspectRatio = 16 / 9; // Default aspect ratio
 
+	#LOG_LEVEL = 1;
+
 	// _________________________________________________________________________
 
 	constructor() {
 		// Create Vimeo Player
 		this.#createPlayer();
+
+		const appContainer = ApplicationConfiguration.getApplicationContainer();
+		this.setSize(appContainer.clientWidth, appContainer.clientHeight);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -61,6 +66,9 @@ export default class DirectableVimeo {
 		} catch (error) {
 			console.error('Error getting video dimensions:', error);
 		}
+
+		const appContainer = ApplicationConfiguration.getApplicationContainer();
+		this.setSize(appContainer.clientWidth, appContainer.clientHeight);
 	}
 
 	// ____________________________________________________________________ Play
