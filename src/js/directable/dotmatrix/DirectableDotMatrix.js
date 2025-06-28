@@ -1,6 +1,6 @@
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-import GridData from './grid/GridData.js';
+import GridData from '../../grid/GridData.js';
 
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
