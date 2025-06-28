@@ -1,4 +1,4 @@
-export default class ImageWrapper {
+export default class DirectableImageWrapper {
 	#IMAGE_URL;
 	#CALLBACK_ON_LOADED;
 

@@ -1,10 +1,10 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import Overlay from '../overlay/Overlay.js';
 import Director from '../director/Director.js';
 import RenderSurface from '../render/RenderSurface.js';
 import Display from '../display/Display.js';
+import Development from '../development/Development.js';
 
 export default class Controller {
 	#FRAMERATE_FPS = 60;
@@ -35,7 +35,7 @@ export default class Controller {
 
 		// Initialise Overlay ?
 		if (ApplicationConfiguration.isDebug === true) {
-			Overlay.initialise();
+			Development.initialise();
 		}
 	}
 
@@ -67,11 +67,6 @@ export default class Controller {
 
 		// Tick Render Surface
 		RenderSurface.tick(frameDeltaMS);
-
-		// Tick Overlay ?
-		if (ApplicationConfiguration.isDebug === true) {
-			Overlay.tick(frameDeltaMS);
-		}
 	}
 
 	// _________________________________________________________________ Display

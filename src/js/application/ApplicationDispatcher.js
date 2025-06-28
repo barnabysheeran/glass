@@ -6,9 +6,6 @@ export default class ApplicationDispatcher {
 	static #VALID_EVENT_NAMES = [
 		// Overlay
 		'overlay-toggle-visibility',
-
-		// Display
-		'display-format-change',
 	];
 
 	// ________________________________________________________________ Dispatch

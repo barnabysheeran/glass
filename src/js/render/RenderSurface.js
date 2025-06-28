@@ -26,10 +26,6 @@ export default class RenderSurface {
 	static initialise() {
 		ApplicationLogger.log(`RenderSurface`, this.#LOG_LEVEL);
 
-		// Get Application Container
-		const APPLICATION_CONTAINER =
-			ApplicationConfiguration.getApplicationContainer();
-
 		// Get Initial Display Dimensions
 		this.#width = Display.getWidth();
 		this.#height = Display.getHeight();
@@ -45,7 +41,9 @@ export default class RenderSurface {
 		this.#CANVAS.className = 'render-surface';
 		this.#CANVAS.width = this.#width;
 		this.#CANVAS.height = this.#height;
-		APPLICATION_CONTAINER.appendChild(this.#CANVAS);
+
+		// Append Canvas to Display Holder
+		Display.getDisplayHolder().appendChild(this.#CANVAS);
 
 		// Get WebGL2 Context
 		this.#GL = this.#CANVAS.getContext('webgl2');
@@ -317,6 +315,7 @@ export default class RenderSurface {
 	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {
+		// Width Height Changed ?
 		if (width === this.#width && height === this.#height) {
 			return; // No change
 		}
