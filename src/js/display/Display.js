@@ -36,7 +36,7 @@ export default class Display {
 		// Assume No Change
 		let didResizeThisFrame = false;
 
-		// Get Rectangle
+		// Get Application Rectangle
 		const APPLICATION_RECTANGLE =
 			this.#APPLICATION_CONTAINER.getBoundingClientRect();
 
