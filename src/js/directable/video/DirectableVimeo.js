@@ -1,16 +1,17 @@
 import player from '@vimeo/player';
 
 import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 export default class DirectableVimeo {
 	#HOLDER;
 	#PLAYER;
+	#videoAspectRatio = 16 / 9; // Default aspect ratio
 
 	// _________________________________________________________________________
 
 	constructor() {
-		// Create Vimeo player
-		this.player = null;
+		// Create Vimeo Player
 		this.#createPlayer();
 	}
 
@@ -23,6 +24,8 @@ export default class DirectableVimeo {
 	#createPlayer() {
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
+		this.#HOLDER.id = 'vimeo-holder';
+		this.#HOLDER.className = 'vimeo-holder';
 		ApplicationConfiguration.getApplicationContainer().appendChild(
 			this.#HOLDER,
 		);
@@ -30,22 +33,76 @@ export default class DirectableVimeo {
 		// Create a Vimeo Player Instance
 		const OPTIONS = {
 			id: 12021447,
-			width: 640,
 			loop: true,
 			background: true,
+			dnt: true, // Do Not Track
+			responsive: true,
 		};
 
+		// Create Player
 		this.#PLAYER = new player(this.#HOLDER, OPTIONS);
 
-		// Add event listeners if needed
-		this.#PLAYER.on('play', () => {
-			console.log('Video is playing');
-		});
+		this.#PLAYER.ready().then(this.#onReady.bind(this));
+
+		// Add event listeners
+		this.#PLAYER.on('play', this.#onPlay.bind(this));
+	}
+
+	// ___________________________________________________________________ Ready
+
+	async #onReady() {
+		try {
+			const videoWidth = await this.#PLAYER.getVideoWidth();
+			const videoHeight = await this.#PLAYER.getVideoHeight();
+
+			if (videoWidth && videoHeight) {
+				this.#videoAspectRatio = videoWidth / videoHeight;
+			}
+		} catch (error) {
+			console.error('Error getting video dimensions:', error);
+		}
+	}
+
+	// ____________________________________________________________________ Play
+
+	#onPlay() {
+		console.log('Video is playing');
 	}
 
 	// ____________________________________________________________________ Size
 
 	setSize(width, height) {
-		// Set size logic for Vimeo if needed
+		if (!this.#HOLDER) {
+			return;
+		}
+
+		this.#HOLDER.style.width = `${width}px`;
+		this.#HOLDER.style.height = `${height}px`;
+
+		const iframe = this.#HOLDER.querySelector('iframe');
+		if (!iframe) {
+			return;
+		}
+
+		const containerAspectRatio = width / height;
+		let newVideoWidth = width;
+		let newVideoHeight = height;
+
+		if (containerAspectRatio > this.#videoAspectRatio) {
+			// Container is wider than the video, scale by width
+			newVideoWidth = width;
+			newVideoHeight = width / this.#videoAspectRatio;
+		} else {
+			// Container is taller than the video, scale by height
+			newVideoHeight = height;
+			newVideoWidth = height * this.#videoAspectRatio;
+		}
+
+		iframe.style.width = `${newVideoWidth}px`;
+		iframe.style.height = `${newVideoHeight}px`;
+
+		// Center the video
+		iframe.style.left = `${(width - newVideoWidth) / 2}px`;
+		iframe.style.top = `${(height - newVideoHeight) / 2}px`;
 	}
 }
