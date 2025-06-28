@@ -4,7 +4,7 @@ import ApplicationLogger from '../../../../application/ApplicationLogger';
 import IMAGE_SEQUENCE_DATA from './image-sequence-data.json';
 import ImageSequenceImage from './ImageSequenceImage';
 
-export default class ViewImageSequencer {
+export default class DirectableImageSequencer {
 	#HOLDER;
 	#DATA_SEQUENCE_ARRAY;
 
@@ -23,6 +23,8 @@ export default class ViewImageSequencer {
 	#BPM = 50;
 	#BPM_DELAY_MS = (60 / this.#BPM) * 1000;
 	#bpmDelayMS = 0;
+
+	// TODO Remove Local Data etc
 
 	// _________________________________________________________________________
 
