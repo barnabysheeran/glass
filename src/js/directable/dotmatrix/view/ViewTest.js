@@ -28,6 +28,16 @@ export default class ViewTest {
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
+
+		this.#COMPONENT_MANAGER.addComponentTextBox(
+			'AAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+			0,
+			15,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 	}
 
 	// ____________________________________________________________________ tick

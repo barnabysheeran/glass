@@ -27,7 +27,7 @@ export default class ComponentLineWidthFull extends Component {
 	#createShape() {
 		// Create Shape
 		const GRID_MAX = GridData.getGridMax();
-		const LINE_WIDTH = GRID_MAX[0] - 2;
+		const LINE_WIDTH = GRID_MAX[0] - 1;
 
 		this.#SHAPE_LINE_WIDTH_FULL = this.SHAPE_MANAGER.addShapeLineHorizontal(
 			this.GRID_X,

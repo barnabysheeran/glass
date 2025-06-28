@@ -1,5 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
+import GridData from '../grid/GridData.js';
 
 export default class Display {
 	static #APPLICATION_CONTAINER;
@@ -57,6 +58,12 @@ export default class Display {
 			width = APPLICATION_WIDTH;
 			height = APPLICATION_HEIGHT;
 		}
+
+		// Get Grid Cell Width
+		const GRID_CELL_WIDTH_PX = GridData.getGridCellWidthPx();
+
+		// Round Width Down to Nearest Grid Cell Width
+		width = Math.floor(width / GRID_CELL_WIDTH_PX) * GRID_CELL_WIDTH_PX;
 
 		// Int
 		width = Math.floor(width);

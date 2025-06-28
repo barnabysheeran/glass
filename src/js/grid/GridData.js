@@ -1,8 +1,8 @@
 import { vec2 } from 'gl-matrix';
 
 export default class GridData {
-	static #gridCellWidthPx = 8;
-	static #gridCellHeightPx = 8;
+	static #gridCellWidthPx = 4;
+	static #gridCellHeightPx = 4;
 
 	static #resolutionWidth = 0;
 	static #resolutionHeight = 0;
