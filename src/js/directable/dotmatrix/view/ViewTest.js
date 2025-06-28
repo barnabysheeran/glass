@@ -20,9 +20,9 @@ export default class ViewTest {
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
-			'ABCD EF  GHIJKLMNOPQRSTUVWXYZ0123456789',
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
 			1,
-			5,
+			6,
 			100,
 			50,
 			FillType.PassThrough,
@@ -31,7 +31,7 @@ export default class ViewTest {
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'AAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-			0,
+			1,
 			15,
 			100,
 			50,
