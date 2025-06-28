@@ -1,6 +1,6 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 import RenderSurface from '../../../render/RenderSurface.js';
-import GridData from '../grid/GridData.js';
+import GridData from '../../../grid/GridData.js';
 
 export default class Dot {
 	#dotIndex = 0;

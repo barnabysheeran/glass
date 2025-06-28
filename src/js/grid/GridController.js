@@ -2,6 +2,8 @@ import { Vector2 } from 'three';
 
 import UIGridCell from './UIGridCell';
 
+// TODO Move Content to GridData
+
 export default class GridController {
 	static #HOLDER;
 
