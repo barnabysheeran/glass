@@ -1,5 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
+
 import GridData from '../grid/GridData.js';
 
 export default class Display {

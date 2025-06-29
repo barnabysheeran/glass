@@ -31,8 +31,12 @@ export default class Controller {
 		// Initialise GridData
 		GridData.initialize(Display.getWidth(), Display.getHeight());
 
+		// TODO Video Layer
+
 		// Initialise Render Surface
 		RenderSurface.initialise();
+
+		// TODO Interaction Layer HTML
 
 		// Initialise Director
 		Director.initialise();
