@@ -9,7 +9,7 @@ export default class DotManager {
 	#dotPoolSize = 10240;
 	#dotPoolIndex = 0;
 
-	#LOG_LEVEL = -1; // 5;
+	#LOG_LEVEL = 4;
 
 	// TODO Optimisation. Flatten Dot Class into Fast Arrays
 
@@ -44,19 +44,10 @@ export default class DotManager {
 	// ________________________________________________________________ Position
 
 	setDotPosition(dotIndex, positionGrid) {
-		ApplicationLogger.log(
-			`DotManager setDotPosition dotIndex ${dotIndex} positionGrid ${positionGrid}`,
-			this.#LOG_LEVEL,
-		);
-
-		// TODO Check
-		if (positionGrid === undefined) {
-			ApplicationLogger.warn(
-				`DotManager setDotPosition positionGrid is undefined for dotIndex ${dotIndex}`,
-				this.#LOG_LEVEL,
-			);
-			return;
-		}
+		// ApplicationLogger.log(
+		// 	`DotManager setDotPosition dotIndex ${dotIndex} positionGrid ${positionGrid}`,
+		// 	this.#LOG_LEVEL,
+		// );
 
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];

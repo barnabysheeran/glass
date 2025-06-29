@@ -18,7 +18,7 @@ export default class Director {
 	// _________________________________________________________________________
 
 	static initialise() {
-		ApplicationLogger.log(`Director initialise`, this.#LOG_LEVEL);
+		ApplicationLogger.log(`Director`, this.#LOG_LEVEL);
 
 		// Get Initial Display Dimensions
 		const WIDTH = Display.getWidth();

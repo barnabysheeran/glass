@@ -54,7 +54,7 @@ export default class ShapeManager {
 	#SHAPES = [];
 	#SHAPE_MAX = 100;
 
-	#LOG_LEVEL = -1; // 5;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 

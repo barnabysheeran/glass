@@ -6,7 +6,7 @@ import FillStrategyType from '../shape/fill/FillStrategyType.js';
 export default class ViewTest {
 	#COMPONENT_MANAGER;
 
-	#LOG_LEVEL = 5;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 

@@ -5,7 +5,7 @@ export default class ApplicationConfiguration {
 	static #assetPath;
 	static #isDebug = false;
 
-	static #LOG_LEVEL = 1;
+	static #LOG_LEVEL = -1;
 
 	// _________________________________________________________________________
 
