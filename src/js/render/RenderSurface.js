@@ -29,11 +29,6 @@ export default class RenderSurface {
 		this.#width = Display.getWidth();
 		this.#height = Display.getHeight();
 
-		ApplicationLogger.log(
-			` - Initialising at ${this.#width} ${this.#height}`,
-			this.#LOG_LEVEL,
-		);
-
 		// Create Canvas
 		this.#CANVAS = document.createElement('canvas');
 		this.#CANVAS.className = 'render-surface';

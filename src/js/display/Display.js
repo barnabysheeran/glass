@@ -30,6 +30,11 @@ export default class Display {
 
 		// Set Initial
 		this.tick();
+
+		ApplicationLogger.log(
+			` - Initialising at ${this.#width} ${this.#height}`,
+			this.#LOG_LEVEL,
+		);
 	}
 
 	// __________________________________________________________________ Resize
