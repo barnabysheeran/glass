@@ -14,7 +14,7 @@ export default class Display {
 	// _________________________________________________________________________
 
 	static initialise() {
-		ApplicationLogger.log('Display initialise', this.#LOG_LEVEL);
+		ApplicationLogger.log('Display', this.#LOG_LEVEL);
 
 		// Store Application Container
 		this.#APPLICATION_CONTAINER =
