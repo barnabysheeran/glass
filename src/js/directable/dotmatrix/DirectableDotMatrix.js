@@ -19,11 +19,8 @@ export default class DirectableDotMatrix {
 
 	// _________________________________________________________________________
 
-	constructor(width, height) {
+	constructor() {
 		ApplicationLogger.log('DirectableDotMatrix', this.#LOG_LEVEL);
-
-		// Initialize Grid Data
-		GridData.initialize(width, height);
 
 		// Create Dot Manager
 		this.#DOT_MANAGER = new DotManager();
