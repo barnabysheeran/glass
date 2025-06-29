@@ -1,5 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
+
 import GridData from '../grid/GridData.js';
 
 export default class Display {
@@ -29,6 +30,11 @@ export default class Display {
 
 		// Set Initial
 		this.tick();
+
+		ApplicationLogger.log(
+			` - Initialising at ${this.#width} ${this.#height}`,
+			this.#LOG_LEVEL,
+		);
 	}
 
 	// __________________________________________________________________ Resize

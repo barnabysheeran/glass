@@ -1,10 +1,13 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import Director from '../director/Director.js';
-import GridData from '../grid/GridData.js';
-import RenderSurface from '../render/RenderSurface.js';
 import Display from '../display/Display.js';
+import GridData from '../grid/GridData.js';
+import VideoSurface from '../video/VideoSurface.js';
+import RenderSurface from '../render/RenderSurface.js';
+import Interactive from '../interactive/Interactive.js';
+import Director from '../director/Director.js';
+
 import Development from '../development/Development.js';
 
 export default class Controller {
@@ -25,16 +28,11 @@ export default class Controller {
 
 		// Order Important
 
-		// Initialise Display
 		Display.initialise();
-
-		// Initialise GridData
 		GridData.initialize(Display.getWidth(), Display.getHeight());
-
-		// Initialise Render Surface
+		VideoSurface.initialise();
 		RenderSurface.initialise();
-
-		// Initialise Director
+		Interactive.initialise();
 		Director.initialise();
 
 		// Initialise Overlay ?

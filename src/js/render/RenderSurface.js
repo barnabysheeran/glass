@@ -1,4 +1,3 @@
-import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Display from '../display/Display.js';
@@ -30,14 +29,8 @@ export default class RenderSurface {
 		this.#width = Display.getWidth();
 		this.#height = Display.getHeight();
 
-		ApplicationLogger.log(
-			` - Initialising at ${this.#width} ${this.#height}`,
-			this.#LOG_LEVEL,
-		);
-
 		// Create Canvas
 		this.#CANVAS = document.createElement('canvas');
-		this.#CANVAS.id = 'render-surface';
 		this.#CANVAS.className = 'render-surface';
 		this.#CANVAS.width = this.#width;
 		this.#CANVAS.height = this.#height;
