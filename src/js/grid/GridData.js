@@ -1,4 +1,5 @@
 import { vec2 } from 'gl-matrix';
+import ApplicationLogger from '../application/ApplicationLogger.js';
 
 export default class GridData {
 	static #gridCellWidthPx = 3;
@@ -13,9 +14,13 @@ export default class GridData {
 	static #gridWidthInCells = 0;
 	static #gridHeightInCells = 0;
 
+	static #LOG_LEVEL = 2;
+
 	// ______________________________________________________________ Initialize
 
 	static initialize(width, height) {
+		ApplicationLogger.log('GridData', this.#LOG_LEVEL);
+
 		// Set Initial Size
 		this.setSize(width, height);
 	}
