@@ -57,7 +57,7 @@ export default class ViewTest {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				200 + 30 + i,
+				200 + 30 * i,
 			);
 		}
 	}
