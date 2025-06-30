@@ -61,7 +61,7 @@ export default class ComponentTextBox extends Component {
 					this.GRID_Y,
 					this.FILL_TYPE,
 					this.FILL_STRATEGY_TYPE,
-					this.DELAY + i * 5, // Delay for each glyph
+					this.DELAY + i * 2, // Delay for each glyph
 				);
 				// TODO Hardcoded Delay Increment
 

@@ -52,6 +52,11 @@ export default class DirectableDotMatrix {
 
 		// Tick Shape Manager
 		this.#SHAPE_MANAGER.tick(frameDeltaMS);
+
+		// Tick Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].tick(frameDeltaMS);
+		}
 	}
 
 	// ____________________________________________________________________ Size

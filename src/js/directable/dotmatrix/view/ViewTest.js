@@ -26,7 +26,7 @@ export default class ViewTest {
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-			10,
+			0,
 			16,
 			100,
 			50,
@@ -37,7 +37,7 @@ export default class ViewTest {
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'0123456789',
-			10,
+			0,
 			22,
 			100,
 			50,
@@ -48,10 +48,10 @@ export default class ViewTest {
 
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(40);
 
-		for (let i = 0; i < 30; i++) {
+		for (let i = 0; i < 20; i++) {
 			this.#COMPONENT_MANAGER.addComponentTextBox(
 				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-				10,
+				0,
 				48 + i * 6,
 				100,
 				50,
@@ -66,6 +66,14 @@ export default class ViewTest {
 
 	tick() {
 		// Component Manager
-		this.#COMPONENT_MANAGER.tick();
+		// this.#COMPONENT_MANAGER.tick();
+		// console.log('ViewTest tick');
+		//
+		// const R = Math.random();
+		// if (R < 0.01) {
+		// 	this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+		// 		Math.floor(Math.random() * 100),
+		// 	);
+		// }
 	}
 }
