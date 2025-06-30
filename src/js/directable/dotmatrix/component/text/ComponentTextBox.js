@@ -43,18 +43,19 @@ export default class ComponentTextBox extends Component {
 
 		// Add Letter Shapes through Text
 		for (let i = 0; i < this.TEXT.length; i += 1) {
+			// Get Glyph Name
 			const GLYPH_NAME = this.TEXT[i].toUpperCase();
-			const METHOD_NAME = `addShapeGlyph_${GLYPH_NAME}`;
-
 			// TODO Hardcoded Grid Spacing
 			const GRID_SPACING_X = 1;
 
-			let glyph;
-
-			// Check if method exists before calling
-			if (typeof this.SHAPE_MANAGER[METHOD_NAME] === 'function') {
-				// Create Glyph Shape
-				glyph = this.SHAPE_MANAGER[METHOD_NAME](
+			if (GLYPH_NAME === ' ') {
+				// Space
+				// TODO Hard Coded Grid Space Width
+				currentGridX += 3;
+			} else {
+				// Create Shape Glyph
+				const SHAPE_GLYPH = this.SHAPE_MANAGER.addShapeGlyph(
+					GLYPH_NAME,
 					currentGridX,
 					this.GRID_Y,
 					this.FILL_TYPE,
@@ -62,18 +63,10 @@ export default class ComponentTextBox extends Component {
 				);
 
 				// Store
-				if (glyph !== undefined) {
-					this.#SHAPES_GLYPH.push(glyph);
-				}
+				this.#SHAPES_GLYPH.push(SHAPE_GLYPH);
 
 				// Increment Current Grid X Position
-				currentGridX += glyph.getGlyphWidth() + GRID_SPACING_X;
-			}
-
-			if (GLYPH_NAME === ' ') {
-				// Space character - just advance the position by 3 units
-				// TODO Hard Coded Grid Space Width
-				currentGridX += 3;
+				currentGridX += SHAPE_GLYPH.getGlyphWidth() + GRID_SPACING_X;
 			}
 		}
 	}
