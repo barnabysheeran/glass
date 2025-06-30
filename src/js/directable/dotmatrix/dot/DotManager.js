@@ -6,7 +6,7 @@ import Dot from './Dot.js';
 
 export default class DotManager {
 	#DOTS = [];
-	#dotPoolSize = 1000;
+	#dotPoolSize = 1024;
 	#dotPoolIndex = 0;
 
 	#LOG_LEVEL = 4;
@@ -38,7 +38,10 @@ export default class DotManager {
 
 		// Recycle from Start of Pool
 		if (this.#dotPoolIndex >= this.#dotPoolSize) {
-			console.log(`DotManager Reached end of dot pool. Resetting index to 0.`);
+			ApplicationLogger.log(
+				`DotManager Reached end of dot pool`,
+				this.#LOG_LEVEL,
+			);
 
 			this.#dotPoolIndex = 0;
 		}

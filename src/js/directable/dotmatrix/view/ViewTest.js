@@ -19,8 +19,6 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(3);
-
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			10,
@@ -45,7 +43,7 @@ export default class ViewTest {
 
 		for (let i = 0; i < 7; i++) {
 			this.#COMPONENT_MANAGER.addComponentTextBox(
-				'XIXIXIXIXIXIX',
+				'XIXIXIXIXIXIXXIXIXIXIXIXIXXIXIXIXIXIXIX',
 				10,
 				48 + i * 6,
 				100,

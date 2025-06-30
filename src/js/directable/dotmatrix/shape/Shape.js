@@ -26,11 +26,6 @@ export default class Shape {
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		// ApplicationLogger.log(
-		// 	`Shape tick positionGridsIndex ${this.#positionGridsIndex}`,
-		// 	this.#LOG_LEVEL,
-		// );
-
 		// Complete ?
 		if (this.#isComplete) {
 			return;
@@ -72,11 +67,6 @@ export default class Shape {
 
 		// Reset Complete
 		this.#isComplete = false;
-
-		// TODO Clear Dots ?
-
-		// // Clear Dots
-		// this.#dotManager.clearDots();
 	}
 
 	// __________________________________________________________________ Access
