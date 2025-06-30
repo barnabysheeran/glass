@@ -24,8 +24,9 @@ export default class ComponentTextBox extends Component {
 		gridHeight,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay,
 	) {
-		super(shapeManager, gridX, gridY, fillType, fillStrategyType);
+		super(shapeManager, gridX, gridY, fillType, fillStrategyType, delay);
 
 		// Store
 		this.TEXT = text;
@@ -60,7 +61,9 @@ export default class ComponentTextBox extends Component {
 					this.GRID_Y,
 					this.FILL_TYPE,
 					this.FILL_STRATEGY_TYPE,
+					this.DELAY + i * 5, // Delay for each glyph
 				);
+				// TODO Hardcoded Delay Increment
 
 				// Store
 				this.#SHAPES.push(SHAPE);

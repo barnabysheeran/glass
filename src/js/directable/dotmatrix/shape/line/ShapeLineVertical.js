@@ -11,7 +11,7 @@ import FillStrategy from '../fill/FillStrategy.js';
 export default class ShapeLineVertical extends Shape {
 	#LOG_LEVEL = -1; // 6;
 
-	// _____________________________________________________________________
+	// _________________________________________________________________________
 
 	constructor(
 		dotManager,
@@ -20,8 +20,9 @@ export default class ShapeLineVertical extends Shape {
 		gridLength,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
-		super(dotManager);
+		super(dotManager, delay);
 
 		ApplicationLogger.log(`ShapeLineVertical`, this.#LOG_LEVEL);
 

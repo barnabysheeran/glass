@@ -90,11 +90,8 @@ export default class ShapeManager {
 	#DOT_MANAGER;
 
 	#SHAPES = [];
-	#SHAPE_MAX = 1024;
 
 	#LOG_LEVEL = -1; // 4;
-
-	// TODO Do we need shape max ?
 
 	// _________________________________________________________________________
 
@@ -116,36 +113,6 @@ export default class ShapeManager {
 		}
 	}
 
-	// ____________________________________________________________________ List
-
-	#ensureSpaceInList() {
-		ApplicationLogger.log('ShapeManager ensureSpaceInList');
-
-		// Ensure Space in List Removing Oldest
-		while (this.#SHAPES.length >= this.#SHAPE_MAX) {
-			// TODO End Shape At 0 ?
-			this.#SHAPES.shift();
-		}
-	}
-
-	// _____________________________________________________________________ Add
-
-	#addShape(shape) {
-		ApplicationLogger.log(
-			`ShapeManager addShape ${shape.getShapeId()}`,
-			this.#LOG_LEVEL,
-		);
-
-		// Ensure space in list
-		this.#ensureSpaceInList();
-
-		// Add to list
-		this.#SHAPES.push(shape);
-
-		// Return the shape
-		return shape;
-	}
-
 	// __________________________________________________________________ Remove
 
 	removeShape(shapeId) {
@@ -157,8 +124,6 @@ export default class ShapeManager {
 		// Find Index by ID
 		for (let i = 0; i < this.#SHAPES.length; i += 1) {
 			if (this.#SHAPES[i].getShapeId() === shapeId) {
-				// TODO Tell the Shape to Undraw here on in a new method
-
 				// Remove Shape
 				this.#SHAPES.splice(i, 1);
 
@@ -190,19 +155,24 @@ export default class ShapeManager {
 		length,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
-		const shape = new ShapeLineHorizontal(
+		const SHAPE = new ShapeLineHorizontal(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,
 			length,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
+		// Store
+		this.#SHAPES.push(SHAPE);
+
 		// Add and return
-		return this.#addShape(shape);
+		return SHAPE;
 	}
 
 	// ___________________________________________________________ Line Vertical
@@ -213,19 +183,24 @@ export default class ShapeManager {
 		length,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
-		const shape = new ShapeLineVertical(
+		const SHAPE = new ShapeLineVertical(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,
 			length,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
+		// Store
+		this.#SHAPES.push(SHAPE);
+
 		// Add and return
-		return this.#addShape(shape);
+		return SHAPE;
 	}
 
 	// _______________________________________________________________ Rectangle
@@ -237,9 +212,10 @@ export default class ShapeManager {
 		gridHeight,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
-		const shape = new ShapeRectangle(
+		const SHAPE = new ShapeRectangle(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,
@@ -247,10 +223,14 @@ export default class ShapeManager {
 			gridHeight,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
+		// Store
+		this.#SHAPES.push(SHAPE);
+
 		// Add and return
-		return this.#addShape(shape);
+		return SHAPE;
 	}
 
 	// ___________________________________________________________________ Glyph
@@ -261,6 +241,7 @@ export default class ShapeManager {
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		const upperChar = character.toUpperCase();
 		const ShapeClass = GLYPH_MAP[upperChar];
@@ -279,15 +260,19 @@ export default class ShapeManager {
 		);
 
 		// Create Shape
-		const shape = new ShapeClass(
+		const SHAPE = new ShapeClass(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
+		// Store
+		this.#SHAPES.push(SHAPE);
+
 		// Add and return
-		return this.#addShape(shape);
+		return SHAPE;
 	}
 }

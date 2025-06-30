@@ -31,8 +31,9 @@ export default class ShapeGlyph_Q extends Shape {
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
-		super(dotManager);
+		super(dotManager, delay);
 
 		ApplicationLogger.log(`ShapeGlyph_Q`, this.#LOG_LEVEL);
 
