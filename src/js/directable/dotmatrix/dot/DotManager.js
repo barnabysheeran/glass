@@ -44,11 +44,6 @@ export default class DotManager {
 	// ________________________________________________________________ Position
 
 	setDotPosition(dotIndex, positionGrid) {
-		// ApplicationLogger.log(
-		// 	`DotManager setDotPosition dotIndex ${dotIndex} positionGrid ${positionGrid}`,
-		// 	this.#LOG_LEVEL,
-		// );
-
 		// Get Dot
 		const DOT = this.#DOTS[dotIndex];
 
