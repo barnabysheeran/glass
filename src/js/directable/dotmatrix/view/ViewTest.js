@@ -19,10 +19,12 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(3);
+
 		this.#COMPONENT_MANAGER.addComponentTextBox(
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-			1,
-			6,
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			10,
+			16,
 			100,
 			50,
 			FillType.PassThrough,
@@ -30,14 +32,28 @@ export default class ViewTest {
 		);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
-			'AAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-			1,
-			15,
+			'0123456789',
+			10,
+			22,
 			100,
 			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
+
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(40);
+
+		// for (let i = 0; i < 10; i++) {
+		// 	this.#COMPONENT_MANAGER.addComponentTextBox(
+		// 		'XXXXXXXXXXXXXXXXXXXXX',
+		// 		1,
+		// 		24 + i * 7,
+		// 		100,
+		// 		50,
+		// 		FillType.PassThrough,
+		// 		FillStrategyType.PassThrough,
+		// 	);
+		// }
 	}
 
 	// ____________________________________________________________________ tick

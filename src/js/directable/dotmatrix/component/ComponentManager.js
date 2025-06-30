@@ -4,7 +4,7 @@ import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
 import ComponentLineWidthFull from './line/ComponentLineWidthFull.js';
-import ComponentTextBox from './textbox/ComponentTextBox.js';
+import ComponentTextBox from './text/ComponentTextBox.js';
 
 export default class ComponentManager {
 	#SHAPE_MANAGER;

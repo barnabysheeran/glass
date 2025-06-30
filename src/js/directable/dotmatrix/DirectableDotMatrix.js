@@ -17,6 +17,12 @@ export default class DirectableDotMatrix {
 
 	#LOG_LEVEL = 3;
 
+	/*
+	
+	  Views create Components, which create Shapes, which create Dots
+
+	*/
+
 	// _________________________________________________________________________
 
 	constructor() {

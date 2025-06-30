@@ -1,6 +1,8 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 export default class Shape {
+	#SHAPE_ID;
+
 	#positionGridsIndex = 0;
 	positionGrids = [];
 
@@ -13,6 +15,9 @@ export default class Shape {
 
 	constructor(dotManager) {
 		ApplicationLogger.log('Shape', this.#LOG_LEVEL);
+
+		// Generate Unique ID
+		this.#SHAPE_ID = crypto.randomUUID();
 
 		// Store
 		this.#dotManager = dotManager;
@@ -68,7 +73,20 @@ export default class Shape {
 		// Reset Complete
 		this.#isComplete = false;
 
+		// TODO Clear Dots ?
+
 		// // Clear Dots
 		// this.#dotManager.clearDots();
+	}
+
+	// __________________________________________________________________ Access
+
+	getShapeId() {
+		ApplicationLogger.log(
+			`Shape getShapeId ${this.#SHAPE_ID}`,
+			this.#LOG_LEVEL,
+		);
+
+		return this.#SHAPE_ID;
 	}
 }

@@ -5,7 +5,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
-export default class ComponentTextBox extends Component {
+export default class ComponentTextButton extends Component {
 	#SHAPES_GLYPH = [];
 
 	// Unique Parameters
@@ -83,7 +83,7 @@ export default class ComponentTextBox extends Component {
 	redraw() {
 		// Remove Existing Shape
 		for (let i = 0; i < this.#SHAPES_GLYPH.length; i += 1) {
-			this.SHAPE_MANAGER.removeShape(this.#SHAPES_GLYPH[i]);
+			this.SHAPE_MANAGER.removeShape(this.#SHAPES_GLYPH[i].getShapeId());
 		}
 
 		// Create Shape
