@@ -2,6 +2,26 @@ import ApplicationLogger from '../../../application/ApplicationLogger.js';
 import RenderSurface from '../../../render/RenderSurface.js';
 import GridData from '../../../grid/GridData.js';
 
+// Texture Data
+const GRID_WIDTH = GridData.getGridCellWidthPx();
+const GRID_HEIGHT = GridData.getGridCellHeightPx();
+const PIXEL_COUNT = GRID_WIDTH * GRID_HEIGHT;
+
+// Filled
+const FILLED_DATA = new Uint8Array(PIXEL_COUNT * 4);
+
+for (let i = 0; i < PIXEL_COUNT; i++) {
+	FILLED_DATA[i * 4 + 0] = 255; // R
+	FILLED_DATA[i * 4 + 1] = 255; // G
+	FILLED_DATA[i * 4 + 2] = 255; // B
+	FILLED_DATA[i * 4 + 3] = 255; // A
+}
+
+// Cleared
+const CLEARED_DATA = new Uint8Array(PIXEL_COUNT * 4); // Initializes to all 0s
+
+// _____________________________________________________________________________
+
 export default class Dot {
 	#dotIndex = 0;
 
@@ -11,8 +31,6 @@ export default class Dot {
 	#LOG_LEVEL = -1; // 6;
 
 	// TODO Rename / Combine with UI Old block component blockfill
-
-	// TODO Optimisation. Create Re-Useable Grid Sized Pixel Data Array
 
 	// _________________________________________________________________________
 
@@ -44,27 +62,13 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
-		const GRID_WIDTH = GridData.getGridCellWidthPx();
-		const GRID_HEIGHT = GridData.getGridCellHeightPx();
-
-		// Create data array for white with alpha 1
-		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);
-
-		for (let i = 0; i < GRID_WIDTH * GRID_HEIGHT; i++) {
-			// Set all RGBA values to 255, 255, 255, 255 (white, fully opaque)
-			data[i * 4 + 0] = 255; // R
-			data[i * 4 + 1] = 255; // G
-			data[i * 4 + 2] = 255; // B
-			data[i * 4 + 3] = 255; // A
-		}
-
 		// Set the data to the texture at the dot's position
 		RenderSurface.setTextureData(
 			this.#positionPixelsX,
 			this.#positionPixelsY,
 			GRID_WIDTH,
 			GRID_HEIGHT,
-			data,
+			FILLED_DATA,
 		);
 	}
 
@@ -76,26 +80,13 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
-		const GRID_WIDTH = GridData.getGridCellWidthPx();
-		const GRID_HEIGHT = GridData.getGridCellHeightPx();
-
-		// Create data array for white with alpha 0
-		const data = new Uint8Array(GRID_WIDTH * GRID_HEIGHT * 4);
-		for (let i = 0; i < GRID_WIDTH * GRID_HEIGHT; i++) {
-			// Set all RGBA values to 255, 255, 255, 0 (white, fully transparent)
-			data[i * 4 + 0] = 0; // R
-			data[i * 4 + 1] = 0; // G
-			data[i * 4 + 2] = 0; // B
-			data[i * 4 + 3] = 0; // A
-		}
-
 		// Set the data to the texture at the dot's position
 		RenderSurface.setTextureData(
 			this.#positionPixelsX,
 			this.#positionPixelsY,
 			GRID_WIDTH,
 			GRID_HEIGHT,
-			data,
+			CLEARED_DATA,
 		);
 	}
 }

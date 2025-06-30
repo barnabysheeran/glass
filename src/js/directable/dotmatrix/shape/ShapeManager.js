@@ -90,9 +90,11 @@ export default class ShapeManager {
 	#DOT_MANAGER;
 
 	#SHAPES = [];
-	#SHAPE_MAX = 100;
+	#SHAPE_MAX = 1024;
 
-	#LOG_LEVEL = 4;
+	#LOG_LEVEL = -1; // 4;
+
+	// TODO Do we need shape max ?
 
 	// _________________________________________________________________________
 
@@ -126,7 +128,7 @@ export default class ShapeManager {
 		}
 	}
 
-	// ____________________________________________________________ Add
+	// _____________________________________________________________________ Add
 
 	#addShape(shape) {
 		ApplicationLogger.log(
@@ -144,7 +146,7 @@ export default class ShapeManager {
 		return shape;
 	}
 
-	// ____________________________________________________________ Remove
+	// __________________________________________________________________ Remove
 
 	removeShape(shapeId) {
 		ApplicationLogger.log(

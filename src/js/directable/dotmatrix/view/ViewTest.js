@@ -19,8 +19,6 @@ export default class ViewTest {
 		// Create Components
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(3);
-
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			10,
@@ -43,17 +41,17 @@ export default class ViewTest {
 
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(40);
 
-		// for (let i = 0; i < 10; i++) {
-		// 	this.#COMPONENT_MANAGER.addComponentTextBox(
-		// 		'XXXXXXXXXXXXXXXXXXXXX',
-		// 		1,
-		// 		24 + i * 7,
-		// 		100,
-		// 		50,
-		// 		FillType.PassThrough,
-		// 		FillStrategyType.PassThrough,
-		// 	);
-		// }
+		for (let i = 0; i < 7; i++) {
+			this.#COMPONENT_MANAGER.addComponentTextBox(
+				'XIXIXIXIXIXIXXIXIXIXIXIXIXXIXIXIXIXIXIX',
+				10,
+				48 + i * 6,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+			);
+		}
 	}
 
 	// ____________________________________________________________________ tick
