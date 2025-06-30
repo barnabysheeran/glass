@@ -152,8 +152,6 @@ export default class ShapeManager {
 			this.#LOG_LEVEL,
 		);
 
-		console.log(' - before total shapes', this.#SHAPES.length);
-
 		// Find Index by ID
 		for (let i = 0; i < this.#SHAPES.length; i += 1) {
 			if (this.#SHAPES[i].getShapeId() === shapeId) {
@@ -164,11 +162,9 @@ export default class ShapeManager {
 
 				ApplicationLogger.log(` - removed ${shapeId}`, this.#LOG_LEVEL);
 
-				// return true;
+				return true;
 			}
 		}
-
-		console.log(' - after total shapes', this.#SHAPES.length);
 	}
 
 	// __________________________________________________________________ Redraw
