@@ -21,8 +21,9 @@ export default class ShapeRectangle extends Shape {
 		gridHeight,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
-		super(dotManager);
+		super(dotManager, delay);
 
 		ApplicationLogger.log(`ShapeRectangle`, this.#LOG_LEVEL);
 

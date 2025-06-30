@@ -22,15 +22,6 @@ export default class ComponentManager {
 		this.#SHAPE_MANAGER = shapeManager;
 	}
 
-	// ____________________________________________________________________ Tick
-
-	// tick(frameDeltaMS) {
-	// 	// Tick Components
-	// 	for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
-	// 		this.#COMPONENTS[i].tick(frameDeltaMS);
-	// 	}
-	// }
-
 	// __________________________________________________________________ Redraw
 
 	redraw() {
@@ -46,6 +37,7 @@ export default class ComponentManager {
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay,
 	) {
 		// Create Component
 		const COMPONENT_LINE_WIDTH_FULL = new ComponentLineWidthFull(
@@ -53,6 +45,7 @@ export default class ComponentManager {
 			gridY,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store
@@ -69,6 +62,7 @@ export default class ComponentManager {
 		gridHeight,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay,
 	) {
 		// Create Component
 		const COMPONENT_TEXT_BOX = new ComponentTextBox(
@@ -80,6 +74,7 @@ export default class ComponentManager {
 			gridHeight,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store

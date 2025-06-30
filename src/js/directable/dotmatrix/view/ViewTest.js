@@ -17,7 +17,12 @@ export default class ViewTest {
 		this.#COMPONENT_MANAGER = componentManager;
 
 		// Create Components
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+			1,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			120,
+		);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -27,6 +32,7 @@ export default class ViewTest {
 			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			150,
 		);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
@@ -37,6 +43,7 @@ export default class ViewTest {
 			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			200,
 		);
 
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(40);
@@ -50,6 +57,7 @@ export default class ViewTest {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
+				200 + 30 + i,
 			);
 		}
 	}

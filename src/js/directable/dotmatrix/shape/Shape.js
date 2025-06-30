@@ -9,12 +9,17 @@ export default class Shape {
 	#dotManager;
 	#isComplete = false;
 
+	#delay = 0;
+
 	#LOG_LEVEL = -1; // 7;
 
 	// _________________________________________________________________________
 
-	constructor(dotManager) {
+	constructor(dotManager, delay = 0) {
 		ApplicationLogger.log('Shape', this.#LOG_LEVEL);
+
+		// Store Delay
+		this.#delay = delay;
 
 		// Generate Unique ID
 		this.#SHAPE_ID = crypto.randomUUID();
@@ -28,6 +33,15 @@ export default class Shape {
 	tick() {
 		// Complete ?
 		if (this.#isComplete) {
+			return;
+		}
+
+		// Delay
+		if (this.#delay > 0) {
+			this.#delay -= 1;
+
+			ApplicationLogger.log(`Shape delay ${this.#delay}`, this.#LOG_LEVEL);
+
 			return;
 		}
 

@@ -155,6 +155,7 @@ export default class ShapeManager {
 		length,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeLineHorizontal(
@@ -164,6 +165,7 @@ export default class ShapeManager {
 			length,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store
@@ -181,6 +183,7 @@ export default class ShapeManager {
 		length,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeLineVertical(
@@ -190,6 +193,7 @@ export default class ShapeManager {
 			length,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store
@@ -208,6 +212,7 @@ export default class ShapeManager {
 		gridHeight,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeRectangle(
@@ -218,6 +223,7 @@ export default class ShapeManager {
 			gridHeight,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store
@@ -235,6 +241,7 @@ export default class ShapeManager {
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		delay = 0,
 	) {
 		const upperChar = character.toUpperCase();
 		const ShapeClass = GLYPH_MAP[upperChar];
@@ -259,6 +266,7 @@ export default class ShapeManager {
 			gridY,
 			fillType,
 			fillStrategyType,
+			delay,
 		);
 
 		// Store
