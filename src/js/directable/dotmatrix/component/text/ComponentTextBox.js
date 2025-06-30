@@ -6,7 +6,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 import Component from '../Component.js';
 
 export default class ComponentTextBox extends Component {
-	#SHAPES_GLYPH = [];
+	#SHAPES = [];
 
 	// Unique Parameters
 	TEXT;
@@ -54,7 +54,7 @@ export default class ComponentTextBox extends Component {
 				currentGridX += 3;
 			} else {
 				// Create Shape Glyph
-				const SHAPE_GLYPH = this.SHAPE_MANAGER.addShapeGlyph(
+				const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 					GLYPH_NAME,
 					currentGridX,
 					this.GRID_Y,
@@ -63,10 +63,10 @@ export default class ComponentTextBox extends Component {
 				);
 
 				// Store
-				this.#SHAPES_GLYPH.push(SHAPE_GLYPH);
+				this.#SHAPES.push(SHAPE);
 
 				// Increment Current Grid X Position
-				currentGridX += SHAPE_GLYPH.getGlyphWidth() + GRID_SPACING_X;
+				currentGridX += SHAPE.getGlyphWidth() + GRID_SPACING_X;
 			}
 		}
 	}
@@ -74,10 +74,13 @@ export default class ComponentTextBox extends Component {
 	// __________________________________________________________________ Redraw
 
 	redraw() {
-		// Remove Existing Shape
-		for (let i = 0; i < this.#SHAPES_GLYPH.length; i += 1) {
-			this.SHAPE_MANAGER.removeShape(this.#SHAPES_GLYPH[i]);
+		// Remove Existing Shapes
+		for (let i = 0; i < this.#SHAPES.length; i += 1) {
+			this.SHAPE_MANAGER.removeShape(this.#SHAPES[i].getShapeId());
 		}
+
+		// Clear Glyphs
+		this.#SHAPES = [];
 
 		// Create Shape
 		this.#createShape();

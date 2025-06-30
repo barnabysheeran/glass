@@ -106,8 +106,8 @@
 </g>
 <g id="clust20" class="cluster">
 <title>cluster_src/js/directable/dotmatrix/component/menu</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M596.12,-440C596.12,-440 712.88,-440 712.88,-440 718.88,-440 724.88,-446 724.88,-452 724.88,-452 724.88,-481 724.88,-481 724.88,-487 718.88,-493 712.88,-493 712.88,-493 596.12,-493 596.12,-493 590.12,-493 584.12,-487 584.12,-481 584.12,-481 584.12,-452 584.12,-452 584.12,-446 590.12,-440 596.12,-440"/>
-<text text-anchor="middle" x="654.5" y="-480.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">menu</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M596.12,-411C596.12,-411 712.88,-411 712.88,-411 718.88,-411 724.88,-417 724.88,-423 724.88,-423 724.88,-452 724.88,-452 724.88,-458 718.88,-464 712.88,-464 712.88,-464 596.12,-464 596.12,-464 590.12,-464 584.12,-458 584.12,-452 584.12,-452 584.12,-423 584.12,-423 584.12,-417 590.12,-411 596.12,-411"/>
+<text text-anchor="middle" x="654.5" y="-451.45" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">menu</text>
 </g>
 <g id="clust21" class="cluster">
 <title>cluster_src/js/directable/dotmatrix/component/text</title>
@@ -360,7 +360,7 @@
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="742.09,-115.04 747.99,-112.67 741.89,-110.85 742.09,-115.04"/>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge122" class="edge">
+<g id="edge123" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M357.06,-1811.51C357.86,-1687.67 367.3,-392.06 412.25,-327 491.36,-212.5 688.29,-234.65 769.25,-249.45"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="768.82,-251.51 775.11,-250.56 769.6,-247.38 768.82,-251.51"/>
@@ -369,16 +369,16 @@
 <g id="node25" class="node">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js</title>
 <g id="a_node25"><a xlink:href="src/js/directable/dotmatrix/DirectableDotMatrix.js" xlink:title="DirectableDotMatrix.js">
-<path fill="#ffffcc" stroke="black" d="M543.46,-864.25C543.46,-864.25 449.79,-864.25 449.79,-864.25 446.71,-864.25 443.62,-861.17 443.62,-858.08 443.62,-858.08 443.62,-851.92 443.62,-851.92 443.62,-848.83 446.71,-845.75 449.79,-845.75 449.79,-845.75 543.46,-845.75 543.46,-845.75 546.54,-845.75 549.62,-848.83 549.62,-851.92 549.62,-851.92 549.62,-858.08 549.62,-858.08 549.62,-861.17 546.54,-864.25 543.46,-864.25"/>
-<text text-anchor="start" x="451.62" y="-851.7" font-family="Helvetica,sans-Serif" font-size="9.00">DirectableDotMatrix.js</text>
+<path fill="#ffffcc" stroke="black" d="M543.46,-844.25C543.46,-844.25 449.79,-844.25 449.79,-844.25 446.71,-844.25 443.62,-841.17 443.62,-838.08 443.62,-838.08 443.62,-831.92 443.62,-831.92 443.62,-828.83 446.71,-825.75 449.79,-825.75 449.79,-825.75 543.46,-825.75 543.46,-825.75 546.54,-825.75 549.62,-828.83 549.62,-831.92 549.62,-831.92 549.62,-838.08 549.62,-838.08 549.62,-841.17 546.54,-844.25 543.46,-844.25"/>
+<text text-anchor="start" x="451.62" y="-831.7" font-family="Helvetica,sans-Serif" font-size="9.00">DirectableDotMatrix.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrix.js -->
-<g id="edge118" class="edge">
+<g id="edge119" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrix.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M358.37,-1811.44C371.51,-1719.86 475.02,-998.59 492.97,-873.47"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="495.04,-873.87 493.81,-867.64 490.88,-873.28 495.04,-873.87"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M358.33,-1811.56C371.29,-1719.36 475.19,-980.32 493.03,-853.49"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="495.1,-853.79 493.86,-847.56 490.94,-853.21 495.1,-853.79"/>
 </g>
 <!-- src/js/directable/title/DirectableTitle.js -->
 <g id="node80" class="node">
@@ -390,7 +390,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/title/DirectableTitle.js -->
-<g id="edge119" class="edge">
+<g id="edge120" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/title/DirectableTitle.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M357.2,-1830.32C358.87,-1903.75 371.36,-2387.57 412.25,-2436 420.65,-2445.94 432.96,-2451.67 445.55,-2454.9"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="445.01,-2456.93 451.31,-2456.13 445.88,-2452.82 445.01,-2456.93"/>
@@ -405,7 +405,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableVimeo.js -->
-<g id="edge120" class="edge">
+<g id="edge121" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableVimeo.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M357.13,-1830.73C358.25,-1909.68 367.45,-2443.51 412.25,-2497 419.68,-2505.87 430.22,-2511.39 441.32,-2514.77"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="440.61,-2516.76 446.95,-2516.21 441.66,-2512.69 440.61,-2516.76"/>
@@ -420,31 +420,31 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableYoutube.js -->
-<g id="edge121" class="edge">
+<g id="edge122" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableYoutube.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M357.05,-1830.52C357.59,-1911.19 363.08,-2478.97 412.25,-2534 418.79,-2541.32 427.57,-2545.91 436.99,-2548.71"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="436.5,-2550.75 442.82,-2550.09 437.47,-2546.66 436.5,-2550.75"/>
 </g>
 <!-- src/js/display/Display.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge123" class="edge">
+<g id="edge124" class="edge">
 <title>src/js/display/Display.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M833.63,-254.9C851.5,-253.5 875.32,-251.64 895.31,-250.07"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="895.36,-252.17 901.18,-249.61 895.04,-247.99 895.36,-252.17"/>
 </g>
 <!-- src/js/interactive/Interactive.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge125" class="edge">
+<g id="edge126" class="edge">
 <title>src/js/interactive/Interactive.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M389.98,-232.62C454.67,-226.7 602.6,-216.64 725.25,-234 740.23,-236.12 756.35,-240.38 770.13,-244.66"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="769.14,-246.55 775.5,-246.39 770.43,-242.55 769.14,-246.55"/>
 </g>
 <!-- src/js/render/RenderSurface.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge126" class="edge">
+<g id="edge127" class="edge">
 <title>src/js/render/RenderSurface.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.3,-271.98C720.78,-268.82 748.01,-264.99 769.31,-262"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="769.4,-264.11 775.05,-261.19 768.82,-259.95 769.4,-264.11"/>
 </g>
 <!-- src/js/video/VideoSurface.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge127" class="edge">
+<g id="edge128" class="edge">
 <title>src/js/video/VideoSurface.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M396.52,-168.91C488.42,-178.07 709.9,-200.57 725.25,-206 748.26,-214.15 771.4,-230.03 786.76,-241.92"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="785.26,-243.41 791.26,-245.5 787.87,-240.12 785.26,-243.41"/>
@@ -629,23 +629,23 @@
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge22" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M498.19,-845.44C502.6,-772.18 532.56,-301.66 576.12,-258 662.74,-171.2 828.26,-211.47 899.96,-234.65"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899,-236.54 905.36,-236.43 900.32,-232.55 899,-236.54"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M497.43,-825.68C496.18,-757.98 492.03,-341.9 576.12,-258 662.93,-171.4 828.35,-211.56 899.99,-234.68"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899.02,-236.57 905.38,-236.46 900.34,-232.58 899.02,-236.57"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/ComponentManager.js -->
 <g id="node26" class="node">
 <title>src/js/directable/dotmatrix/component/ComponentManager.js</title>
 <g id="a_node26"><a xlink:href="src/js/directable/dotmatrix/component/ComponentManager.js" xlink:title="ComponentManager.js">
-<path fill="#ffffcc" stroke="black" d="M702.83,-535.25C702.83,-535.25 606.17,-535.25 606.17,-535.25 603.08,-535.25 600,-532.17 600,-529.08 600,-529.08 600,-522.92 600,-522.92 600,-519.83 603.08,-516.75 606.17,-516.75 606.17,-516.75 702.83,-516.75 702.83,-516.75 705.92,-516.75 709,-519.83 709,-522.92 709,-522.92 709,-529.08 709,-529.08 709,-532.17 705.92,-535.25 702.83,-535.25"/>
-<text text-anchor="start" x="608" y="-522.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentManager.js</text>
+<path fill="#ffffcc" stroke="black" d="M702.83,-494.25C702.83,-494.25 606.17,-494.25 606.17,-494.25 603.08,-494.25 600,-491.17 600,-488.08 600,-488.08 600,-481.92 600,-481.92 600,-478.83 603.08,-475.75 606.17,-475.75 606.17,-475.75 702.83,-475.75 702.83,-475.75 705.92,-475.75 709,-478.83 709,-481.92 709,-481.92 709,-488.08 709,-488.08 709,-491.17 705.92,-494.25 702.83,-494.25"/>
+<text text-anchor="start" x="608" y="-481.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentManager.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/component/ComponentManager.js -->
 <g id="edge23" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/component/ComponentManager.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M498.23,-845.44C500.98,-808.45 515,-672.45 576.12,-584 589.12,-565.2 610.18,-549.99 627.05,-539.87"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="627.7,-541.92 631.84,-537.1 625.59,-538.29 627.7,-541.92"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M499.33,-825.41C505.69,-791.08 530.09,-671.73 576.12,-584 593.1,-551.66 620.97,-519.27 638.22,-500.73"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="639.38,-502.56 641.98,-496.76 636.33,-499.68 639.38,-502.56"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/DotManager.js -->
 <g id="node27" class="node">
@@ -659,8 +659,8 @@
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/dot/DotManager.js -->
 <g id="edge24" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/dot/DotManager.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M497.49,-845.25C497.2,-797.62 500.4,-585.7 576.12,-437 590.08,-409.59 616.06,-384.93 634.04,-369.98"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="635.04,-371.87 638.38,-366.46 632.4,-368.61 635.04,-371.87"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M498.4,-825.3C503.06,-768.68 528.81,-480.85 576.12,-408 587.33,-390.75 606.32,-377.62 622.68,-368.74"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="623.4,-370.73 627.76,-366.11 621.47,-367 623.4,-370.73"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js -->
 <g id="node28" class="node">
@@ -674,8 +674,8 @@
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/shape/ShapeManager.js -->
 <g id="edge25" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/shape/ShapeManager.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M502.12,-864.52C523.72,-910.25 616.94,-1107.6 645.29,-1167.62"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="643.23,-1168.18 647.69,-1172.7 647.03,-1166.38 643.23,-1168.18"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M501.96,-844.73C523.33,-892.71 617.62,-1104.43 645.63,-1167.32"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="643.67,-1168.09 648.03,-1172.72 647.51,-1166.38 643.67,-1168.09"/>
 </g>
 <!-- src/js/directable/dotmatrix/view/ViewTest.js -->
 <g id="node29" class="node">
@@ -689,8 +689,8 @@
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/view/ViewTest.js -->
 <g id="edge26" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/view/ViewTest.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M497.68,-864.61C498.32,-965.58 505.82,-1829.74 576.12,-1916 585.48,-1927.48 600.35,-1933.22 614.57,-1936.01"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="614.04,-1938.05 620.29,-1936.92 614.7,-1933.9 614.04,-1938.05"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M497.66,-844.48C498.16,-945.84 504.49,-1827.98 576.12,-1916 585.47,-1927.48 600.34,-1933.23 614.56,-1936.02"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="614.03,-1938.06 620.29,-1936.92 614.69,-1933.91 614.03,-1938.06"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js -->
 <g id="node31" class="node">
@@ -704,11 +704,26 @@
 <!-- src/js/directable/dotmatrix/component/ComponentManager.js&#45;&gt;src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js -->
 <g id="edge27" class="edge">
 <title>src/js/directable/dotmatrix/component/ComponentManager.js&#45;&gt;src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M694.62,-516.32C705.89,-511.81 717.27,-505.31 725.25,-496 734.51,-485.2 724.62,-476.31 733.25,-465 742.39,-453.02 756.11,-443.96 769.1,-437.45"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="769.77,-439.46 774.31,-435.01 767.99,-435.65 769.77,-439.46"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M699.92,-475.26C708.45,-472.91 717.22,-470.15 725.25,-467 745.18,-459.18 766.45,-447.51 781.99,-438.29"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="782.91,-440.19 786.96,-435.3 780.74,-436.59 782.91,-440.19"/>
+</g>
+<!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js -->
+<g id="node32" class="node">
+<title>src/js/directable/dotmatrix/component/text/ComponentTextBox.js</title>
+<g id="a_node32"><a xlink:href="src/js/directable/dotmatrix/component/text/ComponentTextBox.js" xlink:title="ComponentTextBox.js">
+<path fill="#ffffcc" stroke="black" d="M852.33,-494.25C852.33,-494.25 759.42,-494.25 759.42,-494.25 756.33,-494.25 753.25,-491.17 753.25,-488.08 753.25,-488.08 753.25,-481.92 753.25,-481.92 753.25,-478.83 756.33,-475.75 759.42,-475.75 759.42,-475.75 852.33,-475.75 852.33,-475.75 855.42,-475.75 858.5,-478.83 858.5,-481.92 858.5,-481.92 858.5,-488.08 858.5,-488.08 858.5,-491.17 855.42,-494.25 852.33,-494.25"/>
+<text text-anchor="start" x="761.25" y="-481.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentTextBox.js</text>
+</a>
+</g>
+</g>
+<!-- src/js/directable/dotmatrix/component/ComponentManager.js&#45;&gt;src/js/directable/dotmatrix/component/text/ComponentTextBox.js -->
+<g id="edge28" class="edge">
+<title>src/js/directable/dotmatrix/component/ComponentManager.js&#45;&gt;src/js/directable/dotmatrix/component/text/ComponentTextBox.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M709.43,-485C720.75,-485 732.76,-485 744.31,-485"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="744,-487.1 750,-485 744,-482.9 744,-487.1"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge36" class="edge">
+<g id="edge37" class="edge">
 <title>src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M692.51,-347.37C752.45,-334.69 865.4,-309.38 878.5,-296 889.06,-285.22 876.29,-274.11 886.5,-263 889.25,-260.01 892.57,-257.58 896.17,-255.6"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="896.98,-257.54 901.61,-253.18 895.27,-253.7 896.98,-257.54"/>
@@ -723,7 +738,7 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/directable/dotmatrix/dot/Dot.js -->
-<g id="edge37" class="edge">
+<g id="edge38" class="edge">
 <title>src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/directable/dotmatrix/dot/Dot.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M692.42,-355C716.07,-355 746.56,-355 769.83,-355"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="769.66,-357.1 775.66,-355 769.66,-352.9 769.66,-357.1"/>
@@ -732,541 +747,541 @@
 <g id="node37" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js</title>
 <g id="a_node37"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js" xlink:title="ShapeGlyph_0.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1117.25C842.96,-1117.25 768.79,-1117.25 768.79,-1117.25 765.71,-1117.25 762.62,-1114.17 762.62,-1111.08 762.62,-1111.08 762.62,-1104.92 762.62,-1104.92 762.62,-1101.83 765.71,-1098.75 768.79,-1098.75 768.79,-1098.75 842.96,-1098.75 842.96,-1098.75 846.04,-1098.75 849.12,-1101.83 849.12,-1104.92 849.12,-1104.92 849.12,-1111.08 849.12,-1111.08 849.12,-1114.17 846.04,-1117.25 842.96,-1117.25"/>
-<text text-anchor="start" x="770.62" y="-1104.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_0.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-869.25C842.96,-869.25 768.79,-869.25 768.79,-869.25 765.71,-869.25 762.62,-866.17 762.62,-863.08 762.62,-863.08 762.62,-856.92 762.62,-856.92 762.62,-853.83 765.71,-850.75 768.79,-850.75 768.79,-850.75 842.96,-850.75 842.96,-850.75 846.04,-850.75 849.12,-853.83 849.12,-856.92 849.12,-856.92 849.12,-863.08 849.12,-863.08 849.12,-866.17 846.04,-869.25 842.96,-869.25"/>
+<text text-anchor="start" x="770.62" y="-856.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_0.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js -->
-<g id="edge38" class="edge">
+<g id="edge39" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M664.61,-1175.56C678.24,-1162.01 705.34,-1137.22 733.25,-1124 739.71,-1120.94 746.77,-1118.45 753.86,-1116.44"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.96,-1118.58 759.24,-1115.04 752.91,-1114.52 753.96,-1118.58"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.57,-1175.38C662.04,-1127.96 688.36,-919.7 733.25,-876 739.02,-870.39 746.3,-866.57 753.99,-864"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.3,-866.09 759.54,-862.48 753.19,-862.04 754.3,-866.09"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js -->
 <g id="node38" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js</title>
 <g id="a_node38"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js" xlink:title="ShapeGlyph_1.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1148.25C842.96,-1148.25 768.79,-1148.25 768.79,-1148.25 765.71,-1148.25 762.62,-1145.17 762.62,-1142.08 762.62,-1142.08 762.62,-1135.92 762.62,-1135.92 762.62,-1132.83 765.71,-1129.75 768.79,-1129.75 768.79,-1129.75 842.96,-1129.75 842.96,-1129.75 846.04,-1129.75 849.12,-1132.83 849.12,-1135.92 849.12,-1135.92 849.12,-1142.08 849.12,-1142.08 849.12,-1145.17 846.04,-1148.25 842.96,-1148.25"/>
-<text text-anchor="start" x="770.62" y="-1135.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_1.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-900.25C842.96,-900.25 768.79,-900.25 768.79,-900.25 765.71,-900.25 762.62,-897.17 762.62,-894.08 762.62,-894.08 762.62,-887.92 762.62,-887.92 762.62,-884.83 765.71,-881.75 768.79,-881.75 768.79,-881.75 842.96,-881.75 842.96,-881.75 846.04,-881.75 849.12,-884.83 849.12,-887.92 849.12,-887.92 849.12,-894.08 849.12,-894.08 849.12,-897.17 846.04,-900.25 842.96,-900.25"/>
+<text text-anchor="start" x="770.62" y="-887.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_1.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js -->
-<g id="edge39" class="edge">
+<g id="edge40" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M677.98,-1175.3C693.35,-1168.93 714.28,-1160.74 733.25,-1155 739.77,-1153.03 746.68,-1151.18 753.55,-1149.49"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.89,-1151.57 759.24,-1148.14 752.92,-1147.49 753.89,-1151.57"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M654.97,-1175.38C653.34,-1135.71 652.71,-983.39 733.25,-907 739.02,-901.53 746.24,-897.77 753.85,-895.22"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.08,-897.34 759.3,-893.71 752.95,-893.29 754.08,-897.34"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js -->
 <g id="node39" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js</title>
 <g id="a_node39"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js" xlink:title="ShapeGlyph_2.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1179.25C842.96,-1179.25 768.79,-1179.25 768.79,-1179.25 765.71,-1179.25 762.62,-1176.17 762.62,-1173.08 762.62,-1173.08 762.62,-1166.92 762.62,-1166.92 762.62,-1163.83 765.71,-1160.75 768.79,-1160.75 768.79,-1160.75 842.96,-1160.75 842.96,-1160.75 846.04,-1160.75 849.12,-1163.83 849.12,-1166.92 849.12,-1166.92 849.12,-1173.08 849.12,-1173.08 849.12,-1176.17 846.04,-1179.25 842.96,-1179.25"/>
-<text text-anchor="start" x="770.62" y="-1166.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_2.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-931.25C842.96,-931.25 768.79,-931.25 768.79,-931.25 765.71,-931.25 762.62,-928.17 762.62,-925.08 762.62,-925.08 762.62,-918.92 762.62,-918.92 762.62,-915.83 765.71,-912.75 768.79,-912.75 768.79,-912.75 842.96,-912.75 842.96,-912.75 846.04,-912.75 849.12,-915.83 849.12,-918.92 849.12,-918.92 849.12,-925.08 849.12,-925.08 849.12,-928.17 846.04,-931.25 842.96,-931.25"/>
+<text text-anchor="start" x="770.62" y="-918.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_2.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js -->
-<g id="edge40" class="edge">
+<g id="edge41" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.71,-1180.66C715.88,-1178.94 735.78,-1176.94 753.68,-1175.14"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.51,-1177.27 759.27,-1174.58 753.09,-1173.09 753.51,-1177.27"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.36,-1175.44C655.36,-1138.62 660.57,-1004.74 733.25,-938 739.11,-932.62 746.37,-928.91 754,-926.38"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.23,-928.5 759.45,-924.88 753.11,-924.45 754.23,-928.5"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js -->
 <g id="node40" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js</title>
 <g id="a_node40"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js" xlink:title="ShapeGlyph_3.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1210.25C842.96,-1210.25 768.79,-1210.25 768.79,-1210.25 765.71,-1210.25 762.62,-1207.17 762.62,-1204.08 762.62,-1204.08 762.62,-1197.92 762.62,-1197.92 762.62,-1194.83 765.71,-1191.75 768.79,-1191.75 768.79,-1191.75 842.96,-1191.75 842.96,-1191.75 846.04,-1191.75 849.12,-1194.83 849.12,-1197.92 849.12,-1197.92 849.12,-1204.08 849.12,-1204.08 849.12,-1207.17 846.04,-1210.25 842.96,-1210.25"/>
-<text text-anchor="start" x="770.62" y="-1197.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_3.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-962.25C842.96,-962.25 768.79,-962.25 768.79,-962.25 765.71,-962.25 762.62,-959.17 762.62,-956.08 762.62,-956.08 762.62,-949.92 762.62,-949.92 762.62,-946.83 765.71,-943.75 768.79,-943.75 768.79,-943.75 842.96,-943.75 842.96,-943.75 846.04,-943.75 849.12,-946.83 849.12,-949.92 849.12,-949.92 849.12,-956.08 849.12,-956.08 849.12,-959.17 846.04,-962.25 842.96,-962.25"/>
+<text text-anchor="start" x="770.62" y="-949.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_3.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js -->
-<g id="edge41" class="edge">
+<g id="edge42" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.71,-1189.63C715.88,-1191.47 735.78,-1193.6 753.68,-1195.52"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.08,-1197.56 759.27,-1196.12 753.53,-1193.39 753.08,-1197.56"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.85,-1175.47C657.62,-1141.63 668.37,-1026.19 733.25,-969 739.15,-963.8 746.36,-960.18 753.91,-957.68"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.06,-959.82 759.28,-956.19 752.94,-955.77 754.06,-959.82"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js -->
 <g id="node41" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js</title>
 <g id="a_node41"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js" xlink:title="ShapeGlyph_4.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1241.25C842.96,-1241.25 768.79,-1241.25 768.79,-1241.25 765.71,-1241.25 762.62,-1238.17 762.62,-1235.08 762.62,-1235.08 762.62,-1228.92 762.62,-1228.92 762.62,-1225.83 765.71,-1222.75 768.79,-1222.75 768.79,-1222.75 842.96,-1222.75 842.96,-1222.75 846.04,-1222.75 849.12,-1225.83 849.12,-1228.92 849.12,-1228.92 849.12,-1235.08 849.12,-1235.08 849.12,-1238.17 846.04,-1241.25 842.96,-1241.25"/>
-<text text-anchor="start" x="770.62" y="-1228.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_4.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-993.25C842.96,-993.25 768.79,-993.25 768.79,-993.25 765.71,-993.25 762.62,-990.17 762.62,-987.08 762.62,-987.08 762.62,-980.92 762.62,-980.92 762.62,-977.83 765.71,-974.75 768.79,-974.75 768.79,-974.75 842.96,-974.75 842.96,-974.75 846.04,-974.75 849.12,-977.83 849.12,-980.92 849.12,-980.92 849.12,-987.08 849.12,-987.08 849.12,-990.17 846.04,-993.25 842.96,-993.25"/>
+<text text-anchor="start" x="770.62" y="-980.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_4.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js -->
-<g id="edge42" class="edge">
+<g id="edge43" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M676.95,-1194.63C692.38,-1201.29 713.81,-1210 733.25,-1216 739.76,-1218.01 746.67,-1219.88 753.53,-1221.57"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.89,-1223.58 759.22,-1222.93 753.87,-1219.5 752.89,-1223.58"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.47,-1175.56C660.15,-1144.97 676.05,-1047.82 733.25,-1000 739.28,-994.96 746.56,-991.42 754.14,-988.95"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.3,-991.08 759.52,-987.47 753.18,-987.03 754.3,-991.08"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js -->
 <g id="node42" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js</title>
 <g id="a_node42"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js" xlink:title="ShapeGlyph_5.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1272.25C842.96,-1272.25 768.79,-1272.25 768.79,-1272.25 765.71,-1272.25 762.62,-1269.17 762.62,-1266.08 762.62,-1266.08 762.62,-1259.92 762.62,-1259.92 762.62,-1256.83 765.71,-1253.75 768.79,-1253.75 768.79,-1253.75 842.96,-1253.75 842.96,-1253.75 846.04,-1253.75 849.12,-1256.83 849.12,-1259.92 849.12,-1259.92 849.12,-1266.08 849.12,-1266.08 849.12,-1269.17 846.04,-1272.25 842.96,-1272.25"/>
-<text text-anchor="start" x="770.62" y="-1259.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_5.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1024.25C842.96,-1024.25 768.79,-1024.25 768.79,-1024.25 765.71,-1024.25 762.62,-1021.17 762.62,-1018.08 762.62,-1018.08 762.62,-1011.92 762.62,-1011.92 762.62,-1008.83 765.71,-1005.75 768.79,-1005.75 768.79,-1005.75 842.96,-1005.75 842.96,-1005.75 846.04,-1005.75 849.12,-1008.83 849.12,-1011.92 849.12,-1011.92 849.12,-1018.08 849.12,-1018.08 849.12,-1021.17 846.04,-1024.25 842.96,-1024.25"/>
+<text text-anchor="start" x="770.62" y="-1011.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_5.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js -->
-<g id="edge43" class="edge">
+<g id="edge44" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M664.58,-1194.6C678.17,-1208.38 705.22,-1233.58 733.25,-1247 739.69,-1250.08 746.75,-1252.59 753.84,-1254.61"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.88,-1256.53 759.22,-1256.01 753.94,-1252.47 752.88,-1256.53"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M657.32,-1175.61C663.1,-1148.51 683.62,-1069.64 733.25,-1031 739.25,-1026.33 746.34,-1022.97 753.69,-1020.56"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.25,-1022.58 759.47,-1018.95 753.13,-1018.53 754.25,-1022.58"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js -->
 <g id="node43" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js</title>
 <g id="a_node43"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js" xlink:title="ShapeGlyph_6.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1303.25C842.96,-1303.25 768.79,-1303.25 768.79,-1303.25 765.71,-1303.25 762.62,-1300.17 762.62,-1297.08 762.62,-1297.08 762.62,-1290.92 762.62,-1290.92 762.62,-1287.83 765.71,-1284.75 768.79,-1284.75 768.79,-1284.75 842.96,-1284.75 842.96,-1284.75 846.04,-1284.75 849.12,-1287.83 849.12,-1290.92 849.12,-1290.92 849.12,-1297.08 849.12,-1297.08 849.12,-1300.17 846.04,-1303.25 842.96,-1303.25"/>
-<text text-anchor="start" x="770.62" y="-1290.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_6.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1055.25C842.96,-1055.25 768.79,-1055.25 768.79,-1055.25 765.71,-1055.25 762.62,-1052.17 762.62,-1049.08 762.62,-1049.08 762.62,-1042.92 762.62,-1042.92 762.62,-1039.83 765.71,-1036.75 768.79,-1036.75 768.79,-1036.75 842.96,-1036.75 842.96,-1036.75 846.04,-1036.75 849.12,-1039.83 849.12,-1042.92 849.12,-1042.92 849.12,-1049.08 849.12,-1049.08 849.12,-1052.17 846.04,-1055.25 842.96,-1055.25"/>
+<text text-anchor="start" x="770.62" y="-1042.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_6.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js -->
-<g id="edge44" class="edge">
+<g id="edge45" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M660.67,-1194.69C671.44,-1213.87 698.2,-1256.65 733.25,-1278 739.51,-1281.81 746.57,-1284.72 753.75,-1286.93"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.94,-1288.89 759.28,-1288.44 754.05,-1284.84 752.94,-1288.89"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M658.6,-1175.51C666.76,-1152.16 691.11,-1091.67 733.25,-1062 739.39,-1057.68 746.5,-1054.5 753.81,-1052.16"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.28,-1054.21 759.51,-1050.59 753.17,-1050.16 754.28,-1054.21"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js -->
 <g id="node44" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js</title>
 <g id="a_node44"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js" xlink:title="ShapeGlyph_7.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1334.25C842.96,-1334.25 768.79,-1334.25 768.79,-1334.25 765.71,-1334.25 762.62,-1331.17 762.62,-1328.08 762.62,-1328.08 762.62,-1321.92 762.62,-1321.92 762.62,-1318.83 765.71,-1315.75 768.79,-1315.75 768.79,-1315.75 842.96,-1315.75 842.96,-1315.75 846.04,-1315.75 849.12,-1318.83 849.12,-1321.92 849.12,-1321.92 849.12,-1328.08 849.12,-1328.08 849.12,-1331.17 846.04,-1334.25 842.96,-1334.25"/>
-<text text-anchor="start" x="770.62" y="-1321.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_7.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1086.25C842.96,-1086.25 768.79,-1086.25 768.79,-1086.25 765.71,-1086.25 762.62,-1083.17 762.62,-1080.08 762.62,-1080.08 762.62,-1073.92 762.62,-1073.92 762.62,-1070.83 765.71,-1067.75 768.79,-1067.75 768.79,-1067.75 842.96,-1067.75 842.96,-1067.75 846.04,-1067.75 849.12,-1070.83 849.12,-1073.92 849.12,-1073.92 849.12,-1080.08 849.12,-1080.08 849.12,-1083.17 846.04,-1086.25 842.96,-1086.25"/>
+<text text-anchor="start" x="770.62" y="-1073.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_7.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js -->
-<g id="edge45" class="edge">
+<g id="edge46" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M658.58,-1194.57C666.68,-1218.1 690.92,-1279.08 733.25,-1309 739.38,-1313.33 746.49,-1316.52 753.79,-1318.86"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.15,-1320.86 759.49,-1320.43 754.27,-1316.81 753.15,-1320.86"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M660.7,-1175.42C671.51,-1156.45 698.37,-1114.12 733.25,-1093 739.52,-1089.21 746.58,-1086.31 753.77,-1084.1"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.06,-1086.19 759.3,-1082.6 752.96,-1082.14 754.06,-1086.19"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js -->
 <g id="node45" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js</title>
 <g id="a_node45"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js" xlink:title="ShapeGlyph_8.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1365.25C842.96,-1365.25 768.79,-1365.25 768.79,-1365.25 765.71,-1365.25 762.62,-1362.17 762.62,-1359.08 762.62,-1359.08 762.62,-1352.92 762.62,-1352.92 762.62,-1349.83 765.71,-1346.75 768.79,-1346.75 768.79,-1346.75 842.96,-1346.75 842.96,-1346.75 846.04,-1346.75 849.12,-1349.83 849.12,-1352.92 849.12,-1352.92 849.12,-1359.08 849.12,-1359.08 849.12,-1362.17 846.04,-1365.25 842.96,-1365.25"/>
-<text text-anchor="start" x="770.62" y="-1352.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_8.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1117.25C842.96,-1117.25 768.79,-1117.25 768.79,-1117.25 765.71,-1117.25 762.62,-1114.17 762.62,-1111.08 762.62,-1111.08 762.62,-1104.92 762.62,-1104.92 762.62,-1101.83 765.71,-1098.75 768.79,-1098.75 768.79,-1098.75 842.96,-1098.75 842.96,-1098.75 846.04,-1098.75 849.12,-1101.83 849.12,-1104.92 849.12,-1104.92 849.12,-1111.08 849.12,-1111.08 849.12,-1114.17 846.04,-1117.25 842.96,-1117.25"/>
+<text text-anchor="start" x="770.62" y="-1104.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_8.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js -->
-<g id="edge46" class="edge">
+<g id="edge47" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M657.3,-1194.45C663.02,-1221.72 683.42,-1301.1 733.25,-1340 739.24,-1344.68 746.33,-1348.04 753.68,-1350.46"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.12,-1352.48 759.46,-1352.06 754.24,-1348.43 753.12,-1352.48"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M664.61,-1175.56C678.24,-1162.01 705.34,-1137.22 733.25,-1124 739.71,-1120.94 746.77,-1118.45 753.86,-1116.44"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.96,-1118.58 759.24,-1115.04 752.91,-1114.52 753.96,-1118.58"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js -->
 <g id="node46" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js</title>
 <g id="a_node46"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js" xlink:title="ShapeGlyph_9.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1396.25C842.96,-1396.25 768.79,-1396.25 768.79,-1396.25 765.71,-1396.25 762.62,-1393.17 762.62,-1390.08 762.62,-1390.08 762.62,-1383.92 762.62,-1383.92 762.62,-1380.83 765.71,-1377.75 768.79,-1377.75 768.79,-1377.75 842.96,-1377.75 842.96,-1377.75 846.04,-1377.75 849.12,-1380.83 849.12,-1383.92 849.12,-1383.92 849.12,-1390.08 849.12,-1390.08 849.12,-1393.17 846.04,-1396.25 842.96,-1396.25"/>
-<text text-anchor="start" x="770.62" y="-1383.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_9.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1148.25C842.96,-1148.25 768.79,-1148.25 768.79,-1148.25 765.71,-1148.25 762.62,-1145.17 762.62,-1142.08 762.62,-1142.08 762.62,-1135.92 762.62,-1135.92 762.62,-1132.83 765.71,-1129.75 768.79,-1129.75 768.79,-1129.75 842.96,-1129.75 842.96,-1129.75 846.04,-1129.75 849.12,-1132.83 849.12,-1135.92 849.12,-1135.92 849.12,-1142.08 849.12,-1142.08 849.12,-1145.17 846.04,-1148.25 842.96,-1148.25"/>
+<text text-anchor="start" x="770.62" y="-1135.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_9.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js -->
-<g id="edge47" class="edge">
+<g id="edge48" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.46,-1194.49C660.08,-1225.24 675.84,-1322.9 733.25,-1371 739.28,-1376.05 746.56,-1379.59 754.14,-1382.06"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.17,-1383.98 759.52,-1383.54 754.29,-1379.93 753.17,-1383.98"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M677.98,-1175.3C693.35,-1168.93 714.28,-1160.74 733.25,-1155 739.77,-1153.03 746.68,-1151.18 753.55,-1149.49"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.89,-1151.57 759.24,-1148.14 752.92,-1147.49 753.89,-1151.57"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js -->
 <g id="node47" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js</title>
 <g id="a_node47"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js" xlink:title="ShapeGlyph_A.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-1427.25C843.33,-1427.25 768.42,-1427.25 768.42,-1427.25 765.33,-1427.25 762.25,-1424.17 762.25,-1421.08 762.25,-1421.08 762.25,-1414.92 762.25,-1414.92 762.25,-1411.83 765.33,-1408.75 768.42,-1408.75 768.42,-1408.75 843.33,-1408.75 843.33,-1408.75 846.42,-1408.75 849.5,-1411.83 849.5,-1414.92 849.5,-1414.92 849.5,-1421.08 849.5,-1421.08 849.5,-1424.17 846.42,-1427.25 843.33,-1427.25"/>
-<text text-anchor="start" x="770.25" y="-1414.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_A.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-1179.25C843.33,-1179.25 768.42,-1179.25 768.42,-1179.25 765.33,-1179.25 762.25,-1176.17 762.25,-1173.08 762.25,-1173.08 762.25,-1166.92 762.25,-1166.92 762.25,-1163.83 765.33,-1160.75 768.42,-1160.75 768.42,-1160.75 843.33,-1160.75 843.33,-1160.75 846.42,-1160.75 849.5,-1163.83 849.5,-1166.92 849.5,-1166.92 849.5,-1173.08 849.5,-1173.08 849.5,-1176.17 846.42,-1179.25 843.33,-1179.25"/>
+<text text-anchor="start" x="770.25" y="-1166.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_A.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js -->
-<g id="edge48" class="edge">
+<g id="edge49" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.83,-1194.57C657.55,-1228.57 668.15,-1344.53 733.25,-1402 738.95,-1407.03 745.88,-1410.59 753.16,-1413.08"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.56,-1415.09 758.91,-1414.72 753.71,-1411.05 752.56,-1415.09"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.71,-1180.66C715.74,-1178.95 735.44,-1176.97 753.22,-1175.19"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.99,-1177.32 758.75,-1174.63 752.57,-1173.14 752.99,-1177.32"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js -->
 <g id="node48" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js</title>
 <g id="a_node48"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js" xlink:title="ShapeGlyph_B.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-1458.25C843.33,-1458.25 768.42,-1458.25 768.42,-1458.25 765.33,-1458.25 762.25,-1455.17 762.25,-1452.08 762.25,-1452.08 762.25,-1445.92 762.25,-1445.92 762.25,-1442.83 765.33,-1439.75 768.42,-1439.75 768.42,-1439.75 843.33,-1439.75 843.33,-1439.75 846.42,-1439.75 849.5,-1442.83 849.5,-1445.92 849.5,-1445.92 849.5,-1452.08 849.5,-1452.08 849.5,-1455.17 846.42,-1458.25 843.33,-1458.25"/>
-<text text-anchor="start" x="770.25" y="-1445.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_B.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-1210.25C843.33,-1210.25 768.42,-1210.25 768.42,-1210.25 765.33,-1210.25 762.25,-1207.17 762.25,-1204.08 762.25,-1204.08 762.25,-1197.92 762.25,-1197.92 762.25,-1194.83 765.33,-1191.75 768.42,-1191.75 768.42,-1191.75 843.33,-1191.75 843.33,-1191.75 846.42,-1191.75 849.5,-1194.83 849.5,-1197.92 849.5,-1197.92 849.5,-1204.08 849.5,-1204.08 849.5,-1207.17 846.42,-1210.25 843.33,-1210.25"/>
+<text text-anchor="start" x="770.25" y="-1197.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_B.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js -->
-<g id="edge49" class="edge">
+<g id="edge50" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.34,-1194.6C655.3,-1231.56 660.34,-1365.97 733.25,-1433 739.04,-1438.32 746.19,-1442 753.72,-1444.53"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.74,-1446.44 759.08,-1446.03 753.87,-1442.39 752.74,-1446.44"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M698.71,-1189.63C715.74,-1191.45 735.44,-1193.56 753.22,-1195.47"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.57,-1197.51 758.76,-1196.06 753.01,-1193.33 752.57,-1197.51"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js -->
 <g id="node49" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js</title>
 <g id="a_node49"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js" xlink:title="ShapeGlyph_C.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-1489.25C843.71,-1489.25 768.04,-1489.25 768.04,-1489.25 764.96,-1489.25 761.88,-1486.17 761.88,-1483.08 761.88,-1483.08 761.88,-1476.92 761.88,-1476.92 761.88,-1473.83 764.96,-1470.75 768.04,-1470.75 768.04,-1470.75 843.71,-1470.75 843.71,-1470.75 846.79,-1470.75 849.88,-1473.83 849.88,-1476.92 849.88,-1476.92 849.88,-1483.08 849.88,-1483.08 849.88,-1486.17 846.79,-1489.25 843.71,-1489.25"/>
-<text text-anchor="start" x="769.88" y="-1476.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_C.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1241.25C843.71,-1241.25 768.04,-1241.25 768.04,-1241.25 764.96,-1241.25 761.88,-1238.17 761.88,-1235.08 761.88,-1235.08 761.88,-1228.92 761.88,-1228.92 761.88,-1225.83 764.96,-1222.75 768.04,-1222.75 768.04,-1222.75 843.71,-1222.75 843.71,-1222.75 846.79,-1222.75 849.88,-1225.83 849.88,-1228.92 849.88,-1228.92 849.88,-1235.08 849.88,-1235.08 849.88,-1238.17 846.79,-1241.25 843.71,-1241.25"/>
+<text text-anchor="start" x="769.88" y="-1228.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_C.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js -->
-<g id="edge50" class="edge">
+<g id="edge51" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M654.95,-1194.66C653.27,-1234.46 652.47,-1387.32 733.25,-1464 738.76,-1469.23 745.6,-1472.9 752.83,-1475.44"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.21,-1477.44 758.55,-1477.09 753.37,-1473.41 752.21,-1477.44"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M676.95,-1194.63C692.38,-1201.29 713.81,-1210 733.25,-1216 739.58,-1217.96 746.3,-1219.78 752.99,-1221.44"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.14,-1223.4 758.46,-1222.75 753.11,-1219.31 752.14,-1223.4"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js -->
 <g id="node50" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js</title>
 <g id="a_node50"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js" xlink:title="ShapeGlyph_D.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-1520.25C843.71,-1520.25 768.04,-1520.25 768.04,-1520.25 764.96,-1520.25 761.88,-1517.17 761.88,-1514.08 761.88,-1514.08 761.88,-1507.92 761.88,-1507.92 761.88,-1504.83 764.96,-1501.75 768.04,-1501.75 768.04,-1501.75 843.71,-1501.75 843.71,-1501.75 846.79,-1501.75 849.88,-1504.83 849.88,-1507.92 849.88,-1507.92 849.88,-1514.08 849.88,-1514.08 849.88,-1517.17 846.79,-1520.25 843.71,-1520.25"/>
-<text text-anchor="start" x="769.88" y="-1507.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_D.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1272.25C843.71,-1272.25 768.04,-1272.25 768.04,-1272.25 764.96,-1272.25 761.88,-1269.17 761.88,-1266.08 761.88,-1266.08 761.88,-1259.92 761.88,-1259.92 761.88,-1256.83 764.96,-1253.75 768.04,-1253.75 768.04,-1253.75 843.71,-1253.75 843.71,-1253.75 846.79,-1253.75 849.88,-1256.83 849.88,-1259.92 849.88,-1259.92 849.88,-1266.08 849.88,-1266.08 849.88,-1269.17 846.79,-1272.25 843.71,-1272.25"/>
+<text text-anchor="start" x="769.88" y="-1259.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_D.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js -->
-<g id="edge51" class="edge">
+<g id="edge52" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.57,-1194.65C662.01,-1242.22 688.24,-1451.15 733.25,-1495 738.88,-1500.49 745.95,-1504.26 753.45,-1506.82"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.45,-1508.72 758.79,-1508.33 753.59,-1504.68 752.45,-1508.72"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M664.58,-1194.6C678.17,-1208.38 705.22,-1233.58 733.25,-1247 739.39,-1249.94 746.09,-1252.35 752.84,-1254.32"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.13,-1256.31 758.47,-1255.82 753.21,-1252.25 752.13,-1256.31"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js -->
 <g id="node51" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js</title>
 <g id="a_node51"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js" xlink:title="ShapeGlyph_E.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-1551.25C843.33,-1551.25 768.42,-1551.25 768.42,-1551.25 765.33,-1551.25 762.25,-1548.17 762.25,-1545.08 762.25,-1545.08 762.25,-1538.92 762.25,-1538.92 762.25,-1535.83 765.33,-1532.75 768.42,-1532.75 768.42,-1532.75 843.33,-1532.75 843.33,-1532.75 846.42,-1532.75 849.5,-1535.83 849.5,-1538.92 849.5,-1538.92 849.5,-1545.08 849.5,-1545.08 849.5,-1548.17 846.42,-1551.25 843.33,-1551.25"/>
-<text text-anchor="start" x="770.25" y="-1538.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_E.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-1303.25C843.33,-1303.25 768.42,-1303.25 768.42,-1303.25 765.33,-1303.25 762.25,-1300.17 762.25,-1297.08 762.25,-1297.08 762.25,-1290.92 762.25,-1290.92 762.25,-1287.83 765.33,-1284.75 768.42,-1284.75 768.42,-1284.75 843.33,-1284.75 843.33,-1284.75 846.42,-1284.75 849.5,-1287.83 849.5,-1290.92 849.5,-1290.92 849.5,-1297.08 849.5,-1297.08 849.5,-1300.17 846.42,-1303.25 843.33,-1303.25"/>
+<text text-anchor="start" x="770.25" y="-1290.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_E.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js -->
-<g id="edge52" class="edge">
+<g id="edge53" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.33,-1194.59C660.85,-1244.83 684.2,-1477.16 733.25,-1526 738.89,-1531.61 746.03,-1535.44 753.62,-1538.02"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.71,-1539.94 759.05,-1539.53 753.84,-1535.9 752.71,-1539.94"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M660.67,-1194.69C671.44,-1213.87 698.2,-1256.65 733.25,-1278 739.43,-1281.76 746.39,-1284.65 753.48,-1286.85"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.57,-1288.78 758.91,-1288.34 753.68,-1284.73 752.57,-1288.78"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js -->
 <g id="node52" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js</title>
 <g id="a_node52"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js" xlink:title="ShapeGlyph_F.js">
-<path fill="#ffffcc" stroke="black" d="M842.58,-1582.25C842.58,-1582.25 769.17,-1582.25 769.17,-1582.25 766.08,-1582.25 763,-1579.17 763,-1576.08 763,-1576.08 763,-1569.92 763,-1569.92 763,-1566.83 766.08,-1563.75 769.17,-1563.75 769.17,-1563.75 842.58,-1563.75 842.58,-1563.75 845.67,-1563.75 848.75,-1566.83 848.75,-1569.92 848.75,-1569.92 848.75,-1576.08 848.75,-1576.08 848.75,-1579.17 845.67,-1582.25 842.58,-1582.25"/>
-<text text-anchor="start" x="771" y="-1569.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_F.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.58,-1334.25C842.58,-1334.25 769.17,-1334.25 769.17,-1334.25 766.08,-1334.25 763,-1331.17 763,-1328.08 763,-1328.08 763,-1321.92 763,-1321.92 763,-1318.83 766.08,-1315.75 769.17,-1315.75 769.17,-1315.75 842.58,-1315.75 842.58,-1315.75 845.67,-1315.75 848.75,-1318.83 848.75,-1321.92 848.75,-1321.92 848.75,-1328.08 848.75,-1328.08 848.75,-1331.17 845.67,-1334.25 842.58,-1334.25"/>
+<text text-anchor="start" x="771" y="-1321.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_F.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js -->
-<g id="edge53" class="edge">
+<g id="edge54" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.14,-1194.75C659.85,-1247.99 680.2,-1503.22 733.25,-1557 738.97,-1562.8 746.29,-1566.69 754.06,-1569.28"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.36,-1571.27 759.7,-1570.81 754.46,-1567.21 753.36,-1571.27"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M658.58,-1194.57C666.68,-1218.1 690.92,-1279.08 733.25,-1309 739.59,-1313.48 746.97,-1316.74 754.54,-1319.1"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.52,-1321 759.86,-1320.53 754.62,-1316.94 753.52,-1321"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js -->
 <g id="node53" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js</title>
 <g id="a_node53"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js" xlink:title="ShapeGlyph_G.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-1613.25C843.71,-1613.25 768.04,-1613.25 768.04,-1613.25 764.96,-1613.25 761.88,-1610.17 761.88,-1607.08 761.88,-1607.08 761.88,-1600.92 761.88,-1600.92 761.88,-1597.83 764.96,-1594.75 768.04,-1594.75 768.04,-1594.75 843.71,-1594.75 843.71,-1594.75 846.79,-1594.75 849.88,-1597.83 849.88,-1600.92 849.88,-1600.92 849.88,-1607.08 849.88,-1607.08 849.88,-1610.17 846.79,-1613.25 843.71,-1613.25"/>
-<text text-anchor="start" x="769.88" y="-1600.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_G.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1365.25C843.71,-1365.25 768.04,-1365.25 768.04,-1365.25 764.96,-1365.25 761.88,-1362.17 761.88,-1359.08 761.88,-1359.08 761.88,-1352.92 761.88,-1352.92 761.88,-1349.83 764.96,-1346.75 768.04,-1346.75 768.04,-1346.75 843.71,-1346.75 843.71,-1346.75 846.79,-1346.75 849.88,-1349.83 849.88,-1352.92 849.88,-1352.92 849.88,-1359.08 849.88,-1359.08 849.88,-1362.17 846.79,-1365.25 843.71,-1365.25"/>
+<text text-anchor="start" x="769.88" y="-1352.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_G.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js -->
-<g id="edge54" class="edge">
+<g id="edge55" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.96,-1194.45C658.82,-1249.55 676.03,-1529.09 733.25,-1588 738.73,-1593.64 745.72,-1597.49 753.19,-1600.08"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.17,-1601.98 758.51,-1601.6 753.32,-1597.94 752.17,-1601.98"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M657.3,-1194.45C663.02,-1221.72 683.42,-1301.1 733.25,-1340 739.1,-1344.56 745.99,-1347.88 753.15,-1350.28"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.37,-1352.24 758.72,-1351.87 753.52,-1348.2 752.37,-1352.24"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js -->
 <g id="node54" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js</title>
 <g id="a_node54"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js" xlink:title="ShapeGlyph_H.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-1644.25C843.71,-1644.25 768.04,-1644.25 768.04,-1644.25 764.96,-1644.25 761.88,-1641.17 761.88,-1638.08 761.88,-1638.08 761.88,-1631.92 761.88,-1631.92 761.88,-1628.83 764.96,-1625.75 768.04,-1625.75 768.04,-1625.75 843.71,-1625.75 843.71,-1625.75 846.79,-1625.75 849.88,-1628.83 849.88,-1631.92 849.88,-1631.92 849.88,-1638.08 849.88,-1638.08 849.88,-1641.17 846.79,-1644.25 843.71,-1644.25"/>
-<text text-anchor="start" x="769.88" y="-1631.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_H.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1396.25C843.71,-1396.25 768.04,-1396.25 768.04,-1396.25 764.96,-1396.25 761.88,-1393.17 761.88,-1390.08 761.88,-1390.08 761.88,-1383.92 761.88,-1383.92 761.88,-1380.83 764.96,-1377.75 768.04,-1377.75 768.04,-1377.75 843.71,-1377.75 843.71,-1377.75 846.79,-1377.75 849.88,-1380.83 849.88,-1383.92 849.88,-1383.92 849.88,-1390.08 849.88,-1390.08 849.88,-1393.17 846.79,-1396.25 843.71,-1396.25"/>
+<text text-anchor="start" x="769.88" y="-1383.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_H.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js -->
-<g id="edge55" class="edge">
+<g id="edge56" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.82,-1194.41C657.94,-1251.85 671.94,-1555.03 733.25,-1619 738.75,-1624.74 745.83,-1628.64 753.39,-1631.24"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.47,-1633.16 758.81,-1632.77 753.61,-1629.12 752.47,-1633.16"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.46,-1194.49C660.08,-1225.24 675.84,-1322.9 733.25,-1371 739.01,-1375.82 745.91,-1379.27 753.12,-1381.73"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.43,-1383.71 758.78,-1383.34 753.58,-1379.67 752.43,-1383.71"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js -->
 <g id="node55" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js</title>
 <g id="a_node55"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js" xlink:title="ShapeGlyph_I.js">
-<path fill="#ffffcc" stroke="black" d="M841.46,-1675.25C841.46,-1675.25 770.29,-1675.25 770.29,-1675.25 767.21,-1675.25 764.12,-1672.17 764.12,-1669.08 764.12,-1669.08 764.12,-1662.92 764.12,-1662.92 764.12,-1659.83 767.21,-1656.75 770.29,-1656.75 770.29,-1656.75 841.46,-1656.75 841.46,-1656.75 844.54,-1656.75 847.62,-1659.83 847.62,-1662.92 847.62,-1662.92 847.62,-1669.08 847.62,-1669.08 847.62,-1672.17 844.54,-1675.25 841.46,-1675.25"/>
-<text text-anchor="start" x="772.12" y="-1662.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_I.js</text>
+<path fill="#ffffcc" stroke="black" d="M841.46,-1427.25C841.46,-1427.25 770.29,-1427.25 770.29,-1427.25 767.21,-1427.25 764.12,-1424.17 764.12,-1421.08 764.12,-1421.08 764.12,-1414.92 764.12,-1414.92 764.12,-1411.83 767.21,-1408.75 770.29,-1408.75 770.29,-1408.75 841.46,-1408.75 841.46,-1408.75 844.54,-1408.75 847.62,-1411.83 847.62,-1414.92 847.62,-1414.92 847.62,-1421.08 847.62,-1421.08 847.62,-1424.17 844.54,-1427.25 841.46,-1427.25"/>
+<text text-anchor="start" x="772.12" y="-1414.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_I.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js -->
-<g id="edge56" class="edge">
+<g id="edge57" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.7,-1194.68C657.15,-1255.18 667.95,-1581.07 733.25,-1650 739.17,-1656.25 746.95,-1660.31 755.2,-1662.91"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.64,-1664.94 760.97,-1664.37 755.67,-1660.86 754.64,-1664.94"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.83,-1194.57C657.55,-1228.57 668.15,-1344.53 733.25,-1402 739.42,-1407.45 747.04,-1411.17 754.99,-1413.68"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.42,-1415.7 760.75,-1415.19 755.48,-1411.64 754.42,-1415.7"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js -->
 <g id="node56" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js</title>
 <g id="a_node56"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js" xlink:title="ShapeGlyph_J.js">
-<path fill="#ffffcc" stroke="black" d="M842.58,-1706.25C842.58,-1706.25 769.17,-1706.25 769.17,-1706.25 766.08,-1706.25 763,-1703.17 763,-1700.08 763,-1700.08 763,-1693.92 763,-1693.92 763,-1690.83 766.08,-1687.75 769.17,-1687.75 769.17,-1687.75 842.58,-1687.75 842.58,-1687.75 845.67,-1687.75 848.75,-1690.83 848.75,-1693.92 848.75,-1693.92 848.75,-1700.08 848.75,-1700.08 848.75,-1703.17 845.67,-1706.25 842.58,-1706.25"/>
-<text text-anchor="start" x="771" y="-1693.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_J.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.58,-1458.25C842.58,-1458.25 769.17,-1458.25 769.17,-1458.25 766.08,-1458.25 763,-1455.17 763,-1452.08 763,-1452.08 763,-1445.92 763,-1445.92 763,-1442.83 766.08,-1439.75 769.17,-1439.75 769.17,-1439.75 842.58,-1439.75 842.58,-1439.75 845.67,-1439.75 848.75,-1442.83 848.75,-1445.92 848.75,-1445.92 848.75,-1452.08 848.75,-1452.08 848.75,-1455.17 845.67,-1458.25 842.58,-1458.25"/>
+<text text-anchor="start" x="771" y="-1445.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_J.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js -->
-<g id="edge57" class="edge">
+<g id="edge58" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.59,-1194.5C656.36,-1256.81 663.79,-1606.93 733.25,-1681 738.88,-1687.01 746.24,-1691 754.08,-1693.61"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.47,-1695.62 759.81,-1695.15 754.56,-1691.57 753.47,-1695.62"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.34,-1194.6C655.3,-1231.56 660.34,-1365.97 733.25,-1433 739.17,-1438.45 746.53,-1442.18 754.26,-1444.71"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.48,-1446.68 759.82,-1446.22 754.58,-1442.62 753.48,-1446.68"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js -->
 <g id="node57" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js</title>
 <g id="a_node57"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js" xlink:title="ShapeGlyph_K.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-621.25C843.33,-621.25 768.42,-621.25 768.42,-621.25 765.33,-621.25 762.25,-618.17 762.25,-615.08 762.25,-615.08 762.25,-608.92 762.25,-608.92 762.25,-605.83 765.33,-602.75 768.42,-602.75 768.42,-602.75 843.33,-602.75 843.33,-602.75 846.42,-602.75 849.5,-605.83 849.5,-608.92 849.5,-608.92 849.5,-615.08 849.5,-615.08 849.5,-618.17 846.42,-621.25 843.33,-621.25"/>
-<text text-anchor="start" x="770.25" y="-608.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_K.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-1489.25C843.33,-1489.25 768.42,-1489.25 768.42,-1489.25 765.33,-1489.25 762.25,-1486.17 762.25,-1483.08 762.25,-1483.08 762.25,-1476.92 762.25,-1476.92 762.25,-1473.83 765.33,-1470.75 768.42,-1470.75 768.42,-1470.75 843.33,-1470.75 843.33,-1470.75 846.42,-1470.75 849.5,-1473.83 849.5,-1476.92 849.5,-1476.92 849.5,-1483.08 849.5,-1483.08 849.5,-1486.17 846.42,-1489.25 843.33,-1489.25"/>
+<text text-anchor="start" x="770.25" y="-1476.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_K.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js -->
-<g id="edge58" class="edge">
+<g id="edge59" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.41,-1175.65C654.98,-1109.51 655.65,-712.17 733.25,-628 738.7,-622.08 745.83,-618.11 753.46,-615.49"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.76,-617.58 758.98,-613.95 752.64,-613.54 753.76,-617.58"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M654.95,-1194.66C653.27,-1234.46 652.47,-1387.32 733.25,-1464 738.95,-1469.41 746.06,-1473.14 753.57,-1475.69"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.58,-1477.59 758.92,-1477.2 753.71,-1473.55 752.58,-1477.59"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js -->
 <g id="node58" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js</title>
 <g id="a_node58"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js" xlink:title="ShapeGlyph_L.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-652.25C842.96,-652.25 768.79,-652.25 768.79,-652.25 765.71,-652.25 762.62,-649.17 762.62,-646.08 762.62,-646.08 762.62,-639.92 762.62,-639.92 762.62,-636.83 765.71,-633.75 768.79,-633.75 768.79,-633.75 842.96,-633.75 842.96,-633.75 846.04,-633.75 849.12,-636.83 849.12,-639.92 849.12,-639.92 849.12,-646.08 849.12,-646.08 849.12,-649.17 846.04,-652.25 842.96,-652.25"/>
-<text text-anchor="start" x="770.62" y="-639.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_L.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-1520.25C842.96,-1520.25 768.79,-1520.25 768.79,-1520.25 765.71,-1520.25 762.62,-1517.17 762.62,-1514.08 762.62,-1514.08 762.62,-1507.92 762.62,-1507.92 762.62,-1504.83 765.71,-1501.75 768.79,-1501.75 768.79,-1501.75 842.96,-1501.75 842.96,-1501.75 846.04,-1501.75 849.12,-1504.83 849.12,-1507.92 849.12,-1507.92 849.12,-1514.08 849.12,-1514.08 849.12,-1517.17 846.04,-1520.25 842.96,-1520.25"/>
+<text text-anchor="start" x="770.62" y="-1507.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_L.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js -->
-<g id="edge59" class="edge">
+<g id="edge60" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.5,-1175.35C655.67,-1110.48 659.88,-737.94 733.25,-659 738.79,-653.04 746.03,-649.05 753.77,-646.43"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.16,-648.51 759.39,-644.9 753.05,-644.45 754.16,-648.51"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.57,-1194.65C662.01,-1242.22 688.24,-1451.15 733.25,-1495 739.01,-1500.62 746.29,-1504.43 753.99,-1507"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.19,-1508.96 759.53,-1508.52 754.3,-1504.91 753.19,-1508.96"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js -->
 <g id="node59" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js</title>
 <g id="a_node59"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js" xlink:title="ShapeGlyph_M.js">
-<path fill="#ffffcc" stroke="black" d="M844.08,-683.25C844.08,-683.25 767.67,-683.25 767.67,-683.25 764.58,-683.25 761.5,-680.17 761.5,-677.08 761.5,-677.08 761.5,-670.92 761.5,-670.92 761.5,-667.83 764.58,-664.75 767.67,-664.75 767.67,-664.75 844.08,-664.75 844.08,-664.75 847.17,-664.75 850.25,-667.83 850.25,-670.92 850.25,-670.92 850.25,-677.08 850.25,-677.08 850.25,-680.17 847.17,-683.25 844.08,-683.25"/>
-<text text-anchor="start" x="769.5" y="-670.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_M.js</text>
+<path fill="#ffffcc" stroke="black" d="M844.08,-1551.25C844.08,-1551.25 767.67,-1551.25 767.67,-1551.25 764.58,-1551.25 761.5,-1548.17 761.5,-1545.08 761.5,-1545.08 761.5,-1538.92 761.5,-1538.92 761.5,-1535.83 764.58,-1532.75 767.67,-1532.75 767.67,-1532.75 844.08,-1532.75 844.08,-1532.75 847.17,-1532.75 850.25,-1535.83 850.25,-1538.92 850.25,-1538.92 850.25,-1545.08 850.25,-1545.08 850.25,-1548.17 847.17,-1551.25 844.08,-1551.25"/>
+<text text-anchor="start" x="769.5" y="-1538.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_M.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js -->
-<g id="edge60" class="edge">
+<g id="edge61" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.59,-1175.52C656.38,-1113.33 663.92,-763.92 733.25,-690 738.63,-684.27 745.57,-680.37 753.02,-677.75"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.14,-679.9 758.33,-676.23 751.98,-675.86 753.14,-679.9"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.33,-1194.59C660.85,-1244.83 684.2,-1477.16 733.25,-1526 738.64,-1531.36 745.4,-1535.1 752.61,-1537.67"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="751.97,-1539.67 758.32,-1539.33 753.14,-1535.63 751.97,-1539.67"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js -->
 <g id="node60" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js</title>
 <g id="a_node60"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js" xlink:title="ShapeGlyph_N.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-714.25C843.71,-714.25 768.04,-714.25 768.04,-714.25 764.96,-714.25 761.88,-711.17 761.88,-708.08 761.88,-708.08 761.88,-701.92 761.88,-701.92 761.88,-698.83 764.96,-695.75 768.04,-695.75 768.04,-695.75 843.71,-695.75 843.71,-695.75 846.79,-695.75 849.88,-698.83 849.88,-701.92 849.88,-701.92 849.88,-708.08 849.88,-708.08 849.88,-711.17 846.79,-714.25 843.71,-714.25"/>
-<text text-anchor="start" x="769.88" y="-701.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_N.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1582.25C843.71,-1582.25 768.04,-1582.25 768.04,-1582.25 764.96,-1582.25 761.88,-1579.17 761.88,-1576.08 761.88,-1576.08 761.88,-1569.92 761.88,-1569.92 761.88,-1566.83 764.96,-1563.75 768.04,-1563.75 768.04,-1563.75 843.71,-1563.75 843.71,-1563.75 846.79,-1563.75 849.88,-1566.83 849.88,-1569.92 849.88,-1569.92 849.88,-1576.08 849.88,-1576.08 849.88,-1579.17 846.79,-1582.25 843.71,-1582.25"/>
+<text text-anchor="start" x="769.88" y="-1569.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_N.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js -->
-<g id="edge61" class="edge">
+<g id="edge62" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.7,-1175.34C657.18,-1114.97 668.08,-789.77 733.25,-721 738.72,-715.23 745.78,-711.32 753.33,-708.71"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.55,-710.83 758.75,-707.18 752.41,-706.79 753.55,-710.83"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.14,-1194.75C659.85,-1247.99 680.2,-1503.22 733.25,-1557 738.77,-1562.6 745.79,-1566.42 753.26,-1569.01"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.25,-1570.9 758.59,-1570.53 753.4,-1566.87 752.25,-1570.9"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js -->
 <g id="node61" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js</title>
 <g id="a_node61"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js" xlink:title="ShapeGlyph_O.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-745.25C843.71,-745.25 768.04,-745.25 768.04,-745.25 764.96,-745.25 761.88,-742.17 761.88,-739.08 761.88,-739.08 761.88,-732.92 761.88,-732.92 761.88,-729.83 764.96,-726.75 768.04,-726.75 768.04,-726.75 843.71,-726.75 843.71,-726.75 846.79,-726.75 849.88,-729.83 849.88,-732.92 849.88,-732.92 849.88,-739.08 849.88,-739.08 849.88,-742.17 846.79,-745.25 843.71,-745.25"/>
-<text text-anchor="start" x="769.88" y="-732.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_O.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1613.25C843.71,-1613.25 768.04,-1613.25 768.04,-1613.25 764.96,-1613.25 761.88,-1610.17 761.88,-1607.08 761.88,-1607.08 761.88,-1600.92 761.88,-1600.92 761.88,-1597.83 764.96,-1594.75 768.04,-1594.75 768.04,-1594.75 843.71,-1594.75 843.71,-1594.75 846.79,-1594.75 849.88,-1597.83 849.88,-1600.92 849.88,-1600.92 849.88,-1607.08 849.88,-1607.08 849.88,-1610.17 846.79,-1613.25 843.71,-1613.25"/>
+<text text-anchor="start" x="769.88" y="-1600.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_O.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js -->
-<g id="edge62" class="edge">
+<g id="edge63" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.82,-1175.61C657.96,-1118.3 672.07,-815.81 733.25,-752 738.75,-746.26 745.83,-742.37 753.39,-739.76"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.61,-741.88 758.81,-738.24 752.47,-737.84 753.61,-741.88"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.96,-1194.45C658.82,-1249.55 676.03,-1529.09 733.25,-1588 738.73,-1593.64 745.72,-1597.49 753.19,-1600.08"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.17,-1601.98 758.51,-1601.6 753.32,-1597.94 752.17,-1601.98"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js -->
 <g id="node62" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js</title>
 <g id="a_node62"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js" xlink:title="ShapeGlyph_P.js">
-<path fill="#ffffcc" stroke="black" d="M842.58,-776.25C842.58,-776.25 769.17,-776.25 769.17,-776.25 766.08,-776.25 763,-773.17 763,-770.08 763,-770.08 763,-763.92 763,-763.92 763,-760.83 766.08,-757.75 769.17,-757.75 769.17,-757.75 842.58,-757.75 842.58,-757.75 845.67,-757.75 848.75,-760.83 848.75,-763.92 848.75,-763.92 848.75,-770.08 848.75,-770.08 848.75,-773.17 845.67,-776.25 842.58,-776.25"/>
-<text text-anchor="start" x="771" y="-763.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_P.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.58,-1644.25C842.58,-1644.25 769.17,-1644.25 769.17,-1644.25 766.08,-1644.25 763,-1641.17 763,-1638.08 763,-1638.08 763,-1631.92 763,-1631.92 763,-1628.83 766.08,-1625.75 769.17,-1625.75 769.17,-1625.75 842.58,-1625.75 842.58,-1625.75 845.67,-1625.75 848.75,-1628.83 848.75,-1631.92 848.75,-1631.92 848.75,-1638.08 848.75,-1638.08 848.75,-1641.17 845.67,-1644.25 842.58,-1644.25"/>
+<text text-anchor="start" x="771" y="-1631.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_P.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js -->
-<g id="edge63" class="edge">
+<g id="edge64" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.96,-1175.58C658.84,-1120.61 676.16,-841.76 733.25,-783 738.92,-777.16 746.23,-773.24 753.99,-770.64"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.38,-772.71 759.62,-769.11 753.28,-768.66 754.38,-772.71"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.82,-1194.41C657.94,-1251.85 671.94,-1555.03 733.25,-1619 738.95,-1624.94 746.33,-1628.91 754.19,-1631.51"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.58,-1633.52 759.92,-1633.05 754.67,-1629.47 753.58,-1633.52"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js -->
 <g id="node63" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js</title>
 <g id="a_node63"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js" xlink:title="ShapeGlyph_Q.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-807.25C843.71,-807.25 768.04,-807.25 768.04,-807.25 764.96,-807.25 761.88,-804.17 761.88,-801.08 761.88,-801.08 761.88,-794.92 761.88,-794.92 761.88,-791.83 764.96,-788.75 768.04,-788.75 768.04,-788.75 843.71,-788.75 843.71,-788.75 846.79,-788.75 849.88,-791.83 849.88,-794.92 849.88,-794.92 849.88,-801.08 849.88,-801.08 849.88,-804.17 846.79,-807.25 843.71,-807.25"/>
-<text text-anchor="start" x="769.88" y="-794.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Q.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1675.25C843.71,-1675.25 768.04,-1675.25 768.04,-1675.25 764.96,-1675.25 761.88,-1672.17 761.88,-1669.08 761.88,-1669.08 761.88,-1662.92 761.88,-1662.92 761.88,-1659.83 764.96,-1656.75 768.04,-1656.75 768.04,-1656.75 843.71,-1656.75 843.71,-1656.75 846.79,-1656.75 849.88,-1659.83 849.88,-1662.92 849.88,-1662.92 849.88,-1669.08 849.88,-1669.08 849.88,-1672.17 846.79,-1675.25 843.71,-1675.25"/>
+<text text-anchor="start" x="769.88" y="-1662.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Q.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js -->
-<g id="edge64" class="edge">
+<g id="edge65" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.15,-1175.28C659.87,-1122.18 680.32,-867.63 733.25,-814 738.77,-808.41 745.79,-804.58 753.26,-801.99"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.4,-804.14 758.59,-800.47 752.25,-800.1 753.4,-804.14"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.7,-1194.68C657.15,-1255.18 667.95,-1581.07 733.25,-1650 738.72,-1655.77 745.78,-1659.68 753.33,-1662.29"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.41,-1664.22 758.75,-1663.82 753.55,-1660.17 752.41,-1664.22"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js -->
 <g id="node64" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js</title>
 <g id="a_node64"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js" xlink:title="ShapeGlyph_R.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-838.25C843.71,-838.25 768.04,-838.25 768.04,-838.25 764.96,-838.25 761.88,-835.17 761.88,-832.08 761.88,-832.08 761.88,-825.92 761.88,-825.92 761.88,-822.83 764.96,-819.75 768.04,-819.75 768.04,-819.75 843.71,-819.75 843.71,-819.75 846.79,-819.75 849.88,-822.83 849.88,-825.92 849.88,-825.92 849.88,-832.08 849.88,-832.08 849.88,-835.17 846.79,-838.25 843.71,-838.25"/>
-<text text-anchor="start" x="769.88" y="-825.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_R.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-1706.25C843.71,-1706.25 768.04,-1706.25 768.04,-1706.25 764.96,-1706.25 761.88,-1703.17 761.88,-1700.08 761.88,-1700.08 761.88,-1693.92 761.88,-1693.92 761.88,-1690.83 764.96,-1687.75 768.04,-1687.75 768.04,-1687.75 843.71,-1687.75 843.71,-1687.75 846.79,-1687.75 849.88,-1690.83 849.88,-1693.92 849.88,-1693.92 849.88,-1700.08 849.88,-1700.08 849.88,-1703.17 846.79,-1706.25 843.71,-1706.25"/>
+<text text-anchor="start" x="769.88" y="-1693.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_R.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js -->
-<g id="edge65" class="edge">
+<g id="edge66" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.33,-1175.43C660.87,-1125.34 684.32,-893.69 733.25,-845 738.82,-839.46 745.87,-835.66 753.35,-833.08"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.49,-835.22 758.69,-831.57 752.34,-831.18 753.49,-835.22"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.59,-1194.5C656.36,-1256.81 663.79,-1606.93 733.25,-1681 738.69,-1686.8 745.74,-1690.73 753.28,-1693.34"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.35,-1695.26 758.7,-1694.87 753.49,-1691.22 752.35,-1695.26"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js -->
 <g id="node65" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js</title>
 <g id="a_node65"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js" xlink:title="ShapeGlyph_S.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-869.25C843.33,-869.25 768.42,-869.25 768.42,-869.25 765.33,-869.25 762.25,-866.17 762.25,-863.08 762.25,-863.08 762.25,-856.92 762.25,-856.92 762.25,-853.83 765.33,-850.75 768.42,-850.75 768.42,-850.75 843.33,-850.75 843.33,-850.75 846.42,-850.75 849.5,-853.83 849.5,-856.92 849.5,-856.92 849.5,-863.08 849.5,-863.08 849.5,-866.17 846.42,-869.25 843.33,-869.25"/>
-<text text-anchor="start" x="770.25" y="-856.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_S.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-621.25C843.33,-621.25 768.42,-621.25 768.42,-621.25 765.33,-621.25 762.25,-618.17 762.25,-615.08 762.25,-615.08 762.25,-608.92 762.25,-608.92 762.25,-605.83 765.33,-602.75 768.42,-602.75 768.42,-602.75 843.33,-602.75 843.33,-602.75 846.42,-602.75 849.5,-605.83 849.5,-608.92 849.5,-608.92 849.5,-615.08 849.5,-615.08 849.5,-618.17 846.42,-621.25 843.33,-621.25"/>
+<text text-anchor="start" x="770.25" y="-608.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_S.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js -->
-<g id="edge66" class="edge">
+<g id="edge67" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.57,-1175.38C662.04,-1127.96 688.36,-919.7 733.25,-876 738.95,-870.45 746.13,-866.66 753.72,-864.09"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.95,-866.21 759.17,-862.58 752.82,-862.16 753.95,-866.21"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.41,-1175.65C654.98,-1109.51 655.65,-712.17 733.25,-628 738.7,-622.08 745.83,-618.11 753.46,-615.49"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.76,-617.58 758.98,-613.95 752.64,-613.54 753.76,-617.58"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js -->
 <g id="node66" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js</title>
 <g id="a_node66"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js" xlink:title="ShapeGlyph_T.js">
-<path fill="#ffffcc" stroke="black" d="M842.58,-900.25C842.58,-900.25 769.17,-900.25 769.17,-900.25 766.08,-900.25 763,-897.17 763,-894.08 763,-894.08 763,-887.92 763,-887.92 763,-884.83 766.08,-881.75 769.17,-881.75 769.17,-881.75 842.58,-881.75 842.58,-881.75 845.67,-881.75 848.75,-884.83 848.75,-887.92 848.75,-887.92 848.75,-894.08 848.75,-894.08 848.75,-897.17 845.67,-900.25 842.58,-900.25"/>
-<text text-anchor="start" x="771" y="-887.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_T.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.58,-652.25C842.58,-652.25 769.17,-652.25 769.17,-652.25 766.08,-652.25 763,-649.17 763,-646.08 763,-646.08 763,-639.92 763,-639.92 763,-636.83 766.08,-633.75 769.17,-633.75 769.17,-633.75 842.58,-633.75 842.58,-633.75 845.67,-633.75 848.75,-636.83 848.75,-639.92 848.75,-639.92 848.75,-646.08 848.75,-646.08 848.75,-649.17 845.67,-652.25 842.58,-652.25"/>
+<text text-anchor="start" x="771" y="-639.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_T.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js -->
-<g id="edge67" class="edge">
+<g id="edge68" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M654.97,-1175.38C653.34,-1135.71 652.71,-983.39 733.25,-907 739.09,-901.46 746.41,-897.68 754.12,-895.13"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.43,-897.22 759.67,-893.62 753.33,-893.17 754.43,-897.22"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.5,-1175.35C655.67,-1110.48 659.88,-737.94 733.25,-659 738.86,-652.97 746.2,-648.96 754.04,-646.34"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.51,-648.39 759.76,-644.8 753.42,-644.34 754.51,-648.39"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js -->
 <g id="node67" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js</title>
 <g id="a_node67"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js" xlink:title="ShapeGlyph_U.js">
-<path fill="#ffffcc" stroke="black" d="M843.71,-931.25C843.71,-931.25 768.04,-931.25 768.04,-931.25 764.96,-931.25 761.88,-928.17 761.88,-925.08 761.88,-925.08 761.88,-918.92 761.88,-918.92 761.88,-915.83 764.96,-912.75 768.04,-912.75 768.04,-912.75 843.71,-912.75 843.71,-912.75 846.79,-912.75 849.88,-915.83 849.88,-918.92 849.88,-918.92 849.88,-925.08 849.88,-925.08 849.88,-928.17 846.79,-931.25 843.71,-931.25"/>
-<text text-anchor="start" x="769.88" y="-918.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_U.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.71,-683.25C843.71,-683.25 768.04,-683.25 768.04,-683.25 764.96,-683.25 761.88,-680.17 761.88,-677.08 761.88,-677.08 761.88,-670.92 761.88,-670.92 761.88,-667.83 764.96,-664.75 768.04,-664.75 768.04,-664.75 843.71,-664.75 843.71,-664.75 846.79,-664.75 849.88,-667.83 849.88,-670.92 849.88,-670.92 849.88,-677.08 849.88,-677.08 849.88,-680.17 846.79,-683.25 843.71,-683.25"/>
+<text text-anchor="start" x="769.88" y="-670.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_U.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js -->
-<g id="edge68" class="edge">
+<g id="edge69" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.36,-1175.44C655.36,-1138.62 660.57,-1004.74 733.25,-938 738.85,-932.86 745.73,-929.25 752.99,-926.73"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.53,-928.75 758.72,-925.08 752.37,-924.72 753.53,-928.75"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.59,-1175.52C656.38,-1113.33 663.92,-763.92 733.25,-690 738.69,-684.2 745.74,-680.28 753.28,-677.66"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.5,-679.78 758.7,-676.13 752.35,-675.74 753.5,-679.78"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js -->
 <g id="node68" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js</title>
 <g id="a_node68"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js" xlink:title="ShapeGlyph_V.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-962.25C842.96,-962.25 768.79,-962.25 768.79,-962.25 765.71,-962.25 762.62,-959.17 762.62,-956.08 762.62,-956.08 762.62,-949.92 762.62,-949.92 762.62,-946.83 765.71,-943.75 768.79,-943.75 768.79,-943.75 842.96,-943.75 842.96,-943.75 846.04,-943.75 849.12,-946.83 849.12,-949.92 849.12,-949.92 849.12,-956.08 849.12,-956.08 849.12,-959.17 846.04,-962.25 842.96,-962.25"/>
-<text text-anchor="start" x="770.62" y="-949.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_V.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-714.25C842.96,-714.25 768.79,-714.25 768.79,-714.25 765.71,-714.25 762.62,-711.17 762.62,-708.08 762.62,-708.08 762.62,-701.92 762.62,-701.92 762.62,-698.83 765.71,-695.75 768.79,-695.75 768.79,-695.75 842.96,-695.75 842.96,-695.75 846.04,-695.75 849.12,-698.83 849.12,-701.92 849.12,-701.92 849.12,-708.08 849.12,-708.08 849.12,-711.17 846.04,-714.25 842.96,-714.25"/>
+<text text-anchor="start" x="770.62" y="-701.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_V.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js -->
-<g id="edge69" class="edge">
+<g id="edge70" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.85,-1175.47C657.62,-1141.63 668.37,-1026.19 733.25,-969 739.15,-963.8 746.36,-960.18 753.91,-957.68"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.06,-959.82 759.28,-956.19 752.94,-955.77 754.06,-959.82"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.7,-1175.34C657.18,-1114.97 668.08,-789.77 733.25,-721 738.85,-715.09 746.12,-711.14 753.87,-708.53"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.26,-710.6 759.49,-706.99 753.15,-706.54 754.26,-710.6"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js -->
 <g id="node69" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js</title>
 <g id="a_node69"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js" xlink:title="ShapeGlyph_W.js">
-<path fill="#ffffcc" stroke="black" d="M844.46,-993.25C844.46,-993.25 767.29,-993.25 767.29,-993.25 764.21,-993.25 761.12,-990.17 761.12,-987.08 761.12,-987.08 761.12,-980.92 761.12,-980.92 761.12,-977.83 764.21,-974.75 767.29,-974.75 767.29,-974.75 844.46,-974.75 844.46,-974.75 847.54,-974.75 850.62,-977.83 850.62,-980.92 850.62,-980.92 850.62,-987.08 850.62,-987.08 850.62,-990.17 847.54,-993.25 844.46,-993.25"/>
-<text text-anchor="start" x="769.12" y="-980.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_W.js</text>
+<path fill="#ffffcc" stroke="black" d="M844.46,-745.25C844.46,-745.25 767.29,-745.25 767.29,-745.25 764.21,-745.25 761.12,-742.17 761.12,-739.08 761.12,-739.08 761.12,-732.92 761.12,-732.92 761.12,-729.83 764.21,-726.75 767.29,-726.75 767.29,-726.75 844.46,-726.75 844.46,-726.75 847.54,-726.75 850.62,-729.83 850.62,-732.92 850.62,-732.92 850.62,-739.08 850.62,-739.08 850.62,-742.17 847.54,-745.25 844.46,-745.25"/>
+<text text-anchor="start" x="769.12" y="-732.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_W.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js -->
-<g id="edge70" class="edge">
+<g id="edge71" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.47,-1175.56C660.15,-1144.97 676.05,-1047.82 733.25,-1000 738.87,-995.3 745.58,-991.91 752.6,-989.46"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.88,-991.57 758.05,-987.87 751.7,-987.54 752.88,-991.57"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.82,-1175.61C657.96,-1118.3 672.07,-815.81 733.25,-752 738.51,-746.51 745.21,-742.71 752.39,-740.12"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="752.92,-742.15 758.08,-738.44 751.73,-738.12 752.92,-742.15"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js -->
 <g id="node70" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js</title>
 <g id="a_node70"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js" xlink:title="ShapeGlyph_X.js">
-<path fill="#ffffcc" stroke="black" d="M843.33,-1024.25C843.33,-1024.25 768.42,-1024.25 768.42,-1024.25 765.33,-1024.25 762.25,-1021.17 762.25,-1018.08 762.25,-1018.08 762.25,-1011.92 762.25,-1011.92 762.25,-1008.83 765.33,-1005.75 768.42,-1005.75 768.42,-1005.75 843.33,-1005.75 843.33,-1005.75 846.42,-1005.75 849.5,-1008.83 849.5,-1011.92 849.5,-1011.92 849.5,-1018.08 849.5,-1018.08 849.5,-1021.17 846.42,-1024.25 843.33,-1024.25"/>
-<text text-anchor="start" x="770.25" y="-1011.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_X.js</text>
+<path fill="#ffffcc" stroke="black" d="M843.33,-776.25C843.33,-776.25 768.42,-776.25 768.42,-776.25 765.33,-776.25 762.25,-773.17 762.25,-770.08 762.25,-770.08 762.25,-763.92 762.25,-763.92 762.25,-760.83 765.33,-757.75 768.42,-757.75 768.42,-757.75 843.33,-757.75 843.33,-757.75 846.42,-757.75 849.5,-760.83 849.5,-763.92 849.5,-763.92 849.5,-770.08 849.5,-770.08 849.5,-773.17 846.42,-776.25 843.33,-776.25"/>
+<text text-anchor="start" x="770.25" y="-763.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_X.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js -->
-<g id="edge71" class="edge">
+<g id="edge72" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M657.32,-1175.61C663.1,-1148.51 683.62,-1069.64 733.25,-1031 739.18,-1026.39 746.17,-1023.05 753.42,-1020.65"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.89,-1022.7 759.1,-1019.05 752.76,-1018.65 753.89,-1022.7"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.96,-1175.58C658.84,-1120.61 676.16,-841.76 733.25,-783 738.79,-777.3 745.89,-773.42 753.46,-770.83"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="753.67,-772.95 758.88,-769.3 752.54,-768.9 753.67,-772.95"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js -->
 <g id="node71" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js</title>
 <g id="a_node71"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js" xlink:title="ShapeGlyph_Y.js">
-<path fill="#ffffcc" stroke="black" d="M842.58,-1055.25C842.58,-1055.25 769.17,-1055.25 769.17,-1055.25 766.08,-1055.25 763,-1052.17 763,-1049.08 763,-1049.08 763,-1042.92 763,-1042.92 763,-1039.83 766.08,-1036.75 769.17,-1036.75 769.17,-1036.75 842.58,-1036.75 842.58,-1036.75 845.67,-1036.75 848.75,-1039.83 848.75,-1042.92 848.75,-1042.92 848.75,-1049.08 848.75,-1049.08 848.75,-1052.17 845.67,-1055.25 842.58,-1055.25"/>
-<text text-anchor="start" x="771" y="-1042.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Y.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.58,-807.25C842.58,-807.25 769.17,-807.25 769.17,-807.25 766.08,-807.25 763,-804.17 763,-801.08 763,-801.08 763,-794.92 763,-794.92 763,-791.83 766.08,-788.75 769.17,-788.75 769.17,-788.75 842.58,-788.75 842.58,-788.75 845.67,-788.75 848.75,-791.83 848.75,-794.92 848.75,-794.92 848.75,-801.08 848.75,-801.08 848.75,-804.17 845.67,-807.25 842.58,-807.25"/>
+<text text-anchor="start" x="771" y="-794.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Y.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js -->
-<g id="edge72" class="edge">
+<g id="edge73" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M658.6,-1175.51C666.76,-1152.16 691.11,-1091.67 733.25,-1062 739.6,-1057.53 746.99,-1054.28 754.56,-1051.92"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.63,-1054.08 759.88,-1050.49 753.54,-1050.02 754.63,-1054.08"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.15,-1175.28C659.87,-1122.18 680.32,-867.63 733.25,-814 738.97,-808.21 746.29,-804.31 754.07,-801.72"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.46,-803.79 759.7,-800.19 753.36,-799.73 754.46,-803.79"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js -->
 <g id="node72" class="node">
 <title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js</title>
 <g id="a_node72"><a xlink:href="src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js" xlink:title="ShapeGlyph_Z.js">
-<path fill="#ffffcc" stroke="black" d="M842.96,-1086.25C842.96,-1086.25 768.79,-1086.25 768.79,-1086.25 765.71,-1086.25 762.62,-1083.17 762.62,-1080.08 762.62,-1080.08 762.62,-1073.92 762.62,-1073.92 762.62,-1070.83 765.71,-1067.75 768.79,-1067.75 768.79,-1067.75 842.96,-1067.75 842.96,-1067.75 846.04,-1067.75 849.12,-1070.83 849.12,-1073.92 849.12,-1073.92 849.12,-1080.08 849.12,-1080.08 849.12,-1083.17 846.04,-1086.25 842.96,-1086.25"/>
-<text text-anchor="start" x="770.62" y="-1073.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Z.js</text>
+<path fill="#ffffcc" stroke="black" d="M842.96,-838.25C842.96,-838.25 768.79,-838.25 768.79,-838.25 765.71,-838.25 762.62,-835.17 762.62,-832.08 762.62,-832.08 762.62,-825.92 762.62,-825.92 762.62,-822.83 765.71,-819.75 768.79,-819.75 768.79,-819.75 842.96,-819.75 842.96,-819.75 846.04,-819.75 849.12,-822.83 849.12,-825.92 849.12,-825.92 849.12,-832.08 849.12,-832.08 849.12,-835.17 846.04,-838.25 842.96,-838.25"/>
+<text text-anchor="start" x="770.62" y="-825.7" font-family="Helvetica,sans-Serif" font-size="9.00">ShapeGlyph_Z.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js -->
-<g id="edge73" class="edge">
+<g id="edge74" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M660.7,-1175.42C671.51,-1156.45 698.37,-1114.12 733.25,-1093 739.52,-1089.21 746.58,-1086.31 753.77,-1084.1"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.06,-1086.19 759.3,-1082.6 752.96,-1082.14 754.06,-1086.19"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M656.33,-1175.43C660.87,-1125.34 684.32,-893.69 733.25,-845 738.95,-839.32 746.2,-835.48 753.89,-832.9"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="754.2,-834.99 759.43,-831.37 753.08,-830.94 754.2,-834.99"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js -->
 <g id="node73" class="node">
@@ -1278,7 +1293,7 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js -->
-<g id="edge74" class="edge">
+<g id="edge75" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.5,-1194.6C655.68,-1260.86 659.87,-1650.02 733.25,-1736 735.84,-1739.03 738.83,-1741.65 742.1,-1743.92"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="740.78,-1745.58 747.02,-1746.8 742.9,-1741.96 740.78,-1745.58"/>
@@ -1293,7 +1308,7 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/line/ShapeLineVertical.js -->
-<g id="edge75" class="edge">
+<g id="edge76" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/line/ShapeLineVertical.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.33,-1194.42C654.33,-1262.87 651.56,-1683.75 733.25,-1773 737.24,-1777.36 742.13,-1780.66 747.47,-1783.15"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="746.38,-1784.98 752.73,-1785.16 747.88,-1781.06 746.38,-1784.98"/>
@@ -1308,7 +1323,7 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/primative/ShapeRectangle.js -->
-<g id="edge76" class="edge">
+<g id="edge77" class="edge">
 <title>src/js/directable/dotmatrix/shape/ShapeManager.js&#45;&gt;src/js/directable/dotmatrix/shape/primative/ShapeRectangle.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M655.29,-1194.3C653.87,-1265.64 648.12,-1726.22 733.25,-1828 737.93,-1833.59 743.99,-1837.79 750.61,-1840.94"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="749.43,-1842.73 755.78,-1843.03 751.01,-1838.83 749.43,-1842.73"/>
@@ -1323,46 +1338,37 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge28" class="edge">
+<g id="edge29" class="edge">
 <title>src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.8,-414.39C861.5,-409.94 871.79,-403.45 878.5,-394 895.39,-370.22 868.73,-286.13 886.5,-263 889.11,-259.61 892.46,-256.93 896.17,-254.81"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="896.82,-256.82 901.44,-252.45 895.1,-252.99 896.82,-256.82"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js -->
-<g id="edge29" class="edge">
+<g id="edge30" class="edge">
 <title>src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M827.1,-433.67C848.47,-443.88 882.35,-460.08 906.34,-471.54"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="905.32,-473.38 911.64,-474.07 907.13,-469.59 905.32,-473.38"/>
 </g>
-<!-- src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js -->
-<g id="node32" class="node">
-<title>src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js</title>
-<g id="a_node32"><a xlink:href="src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js" xlink:title="ComponentProjectMenu.js">
-<path fill="#ccffcc" stroke="black" d="M710.71,-466.25C710.71,-466.25 598.29,-466.25 598.29,-466.25 595.21,-466.25 592.12,-463.17 592.12,-460.08 592.12,-460.08 592.12,-453.92 592.12,-453.92 592.12,-450.83 595.21,-447.75 598.29,-447.75 598.29,-447.75 710.71,-447.75 710.71,-447.75 713.79,-447.75 716.88,-450.83 716.88,-453.92 716.88,-453.92 716.88,-460.08 716.88,-460.08 716.88,-463.17 713.79,-466.25 710.71,-466.25"/>
-<text text-anchor="start" x="600.12" y="-453.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentProjectMenu.js</text>
-</a>
-</g>
-</g>
-<!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js -->
-<g id="node33" class="node">
-<title>src/js/directable/dotmatrix/component/text/ComponentTextBox.js</title>
-<g id="a_node33"><a xlink:href="src/js/directable/dotmatrix/component/text/ComponentTextBox.js" xlink:title="ComponentTextBox.js">
-<path fill="#ffffcc" stroke="black" d="M852.33,-494.25C852.33,-494.25 759.42,-494.25 759.42,-494.25 756.33,-494.25 753.25,-491.17 753.25,-488.08 753.25,-488.08 753.25,-481.92 753.25,-481.92 753.25,-478.83 756.33,-475.75 759.42,-475.75 759.42,-475.75 852.33,-475.75 852.33,-475.75 855.42,-475.75 858.5,-478.83 858.5,-481.92 858.5,-481.92 858.5,-488.08 858.5,-488.08 858.5,-491.17 855.42,-494.25 852.33,-494.25"/>
-<text text-anchor="start" x="761.25" y="-481.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentTextBox.js</text>
-</a>
-</g>
-</g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge30" class="edge">
+<g id="edge31" class="edge">
 <title>src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M858.74,-477.57C866.4,-474.27 873.42,-469.6 878.5,-463 892.07,-445.38 873.14,-280.78 886.5,-263 889.13,-259.5 892.56,-256.75 896.38,-254.6"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="897.2,-256.53 901.85,-252.19 895.51,-252.69 897.2,-256.53"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js -->
-<g id="edge31" class="edge">
+<g id="edge32" class="edge">
 <title>src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M858.78,-485C869.04,-485 879.71,-485 889.7,-485"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="889.63,-487.1 895.63,-485 889.63,-482.9 889.63,-487.1"/>
+</g>
+<!-- src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js -->
+<g id="node33" class="node">
+<title>src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js</title>
+<g id="a_node33"><a xlink:href="src/js/directable/dotmatrix/component/menu/ComponentProjectMenu.js" xlink:title="ComponentProjectMenu.js">
+<path fill="#ccffcc" stroke="black" d="M710.71,-437.25C710.71,-437.25 598.29,-437.25 598.29,-437.25 595.21,-437.25 592.12,-434.17 592.12,-431.08 592.12,-431.08 592.12,-424.92 592.12,-424.92 592.12,-421.83 595.21,-418.75 598.29,-418.75 598.29,-418.75 710.71,-418.75 710.71,-418.75 713.79,-418.75 716.88,-421.83 716.88,-424.92 716.88,-424.92 716.88,-431.08 716.88,-431.08 716.88,-434.17 713.79,-437.25 710.71,-437.25"/>
+<text text-anchor="start" x="600.12" y="-424.7" font-family="Helvetica,sans-Serif" font-size="9.00">ComponentProjectMenu.js</text>
+</a>
+</g>
 </g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextButton.js -->
 <g id="node34" class="node">
@@ -1374,25 +1380,25 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextButton.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge32" class="edge">
+<g id="edge33" class="edge">
 <title>src/js/directable/dotmatrix/component/text/ComponentTextButton.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M864.16,-510.8C869.64,-508.21 874.6,-504.71 878.5,-500 895.32,-479.72 870.74,-284.11 886.5,-263 889.12,-259.49 892.54,-256.74 896.35,-254.59"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="897.18,-256.52 901.82,-252.18 895.48,-252.68 897.18,-256.52"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextButton.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js -->
-<g id="edge33" class="edge">
+<g id="edge34" class="edge">
 <title>src/js/directable/dotmatrix/component/text/ComponentTextButton.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M851.65,-506.3C860.56,-504.29 869.84,-502.13 878.5,-500 882.34,-499.06 886.33,-498.05 890.32,-497.02"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="890.81,-499.06 896.08,-495.51 889.74,-495 890.81,-499.06"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge34" class="edge">
+<g id="edge35" class="edge">
 <title>src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/grid/GridData.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M833.05,-351.14C848.71,-347.41 867.61,-340.14 878.5,-326 895.72,-303.64 868.58,-284.81 886.5,-263 889.21,-259.7 892.63,-257.07 896.39,-254.98"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="897.05,-256.99 901.69,-252.64 895.35,-253.15 897.05,-256.99"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/render/RenderSurface.js -->
-<g id="edge35" class="edge">
+<g id="edge36" class="edge">
 <title>src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/render/RenderSurface.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M786.02,-345.28C759.73,-331.73 711.92,-307.08 682.04,-291.68"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="683.1,-289.87 676.81,-288.98 681.18,-293.6 683.1,-289.87"/>
@@ -1407,235 +1413,235 @@
 </g>
 </g>
 <!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge77" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.43,-1112.27C859.53,-1114.66 869.87,-1118.34 878.5,-1124 900.94,-1138.73 917.45,-1165.77 926.52,-1183.56"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="924.53,-1184.27 929.04,-1188.74 928.3,-1182.43 924.53,-1184.27"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
 <g id="edge78" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.27,-1145.04C859.17,-1147.38 869.45,-1150.59 878.5,-1155 893.9,-1162.51 908.76,-1175.05 919.3,-1185.14"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="917.67,-1186.48 923.41,-1189.21 920.62,-1183.49 917.67,-1186.48"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge79" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.36,-1179.18C858.96,-1181.34 869.1,-1183.69 878.5,-1186 885.3,-1187.67 892.55,-1189.54 899.49,-1191.38"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="898.8,-1193.37 905.14,-1192.89 899.89,-1189.31 898.8,-1193.37"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge80" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.37,-1201C865.62,-1201 883.94,-1201 899.42,-1201"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899.14,-1203.1 905.14,-1201 899.14,-1198.9 899.14,-1203.1"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge81" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.36,-1222.82C858.96,-1220.66 869.1,-1218.31 878.5,-1216 885.3,-1214.33 892.55,-1212.46 899.49,-1210.62"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899.89,-1212.69 905.14,-1209.11 898.8,-1208.63 899.89,-1212.69"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge82" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.27,-1256.96C859.17,-1254.62 869.45,-1251.41 878.5,-1247 893.9,-1239.49 908.76,-1226.95 919.3,-1216.86"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="920.62,-1218.51 923.41,-1212.79 917.67,-1215.52 920.62,-1218.51"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge83" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.43,-1289.73C859.53,-1287.34 869.87,-1283.66 878.5,-1278 900.94,-1263.27 917.45,-1236.23 926.52,-1218.44"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="928.3,-1219.57 929.04,-1213.26 924.53,-1217.73 928.3,-1219.57"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge84" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.31,-1321.79C859.65,-1319.4 870.12,-1315.45 878.5,-1309 908.05,-1286.25 923.48,-1243.51 930.21,-1219.17"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.21,-1219.81 931.68,-1213.47 928.14,-1218.76 932.21,-1219.81"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge85" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.38,-1353.42C859.82,-1351.03 870.34,-1346.93 878.5,-1340 915.55,-1308.55 928.35,-1249 932.56,-1219.09"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="934.6,-1219.72 933.26,-1213.5 930.43,-1219.19 934.6,-1219.72"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge86" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.31,-1384.85C859.88,-1382.48 870.47,-1378.27 878.5,-1371 923.12,-1330.57 932.28,-1253.94 934.09,-1219.08"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.18,-1219.52 934.31,-1213.44 931.98,-1219.36 936.18,-1219.52"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge87" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.91,-1416.02C860.36,-1413.62 870.74,-1409.37 878.5,-1402 930.57,-1352.57 935.58,-1259.19 935.19,-1219.55"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="937.29,-1219.67 935.06,-1213.72 933.09,-1219.76 937.29,-1219.67"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge88" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.72,-1447.28C860.29,-1444.91 870.78,-1440.59 878.5,-1433 909.18,-1402.84 926.94,-1268.91 932.55,-1219.44"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="934.63,-1219.69 933.2,-1213.49 930.46,-1219.23 934.63,-1219.69"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge89" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.23,-1478.34C860.67,-1475.94 870.97,-1471.61 878.5,-1464 913.13,-1429.02 928.71,-1273.21 933.12,-1219.37"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.2,-1219.72 933.58,-1213.58 931.01,-1219.39 935.2,-1219.72"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge90" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.34,-1509.45C860.78,-1507.05 871.05,-1502.69 878.5,-1495 917.04,-1455.23 930.22,-1277.84 933.56,-1219.6"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.65,-1219.86 933.88,-1213.76 931.45,-1219.63 935.65,-1219.86"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge91" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.69,-1540.7C860.38,-1538.35 870.94,-1533.94 878.5,-1526 921.13,-1481.23 931.69,-1280.73 933.95,-1219.09"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.03,-1219.53 934.14,-1213.46 931.84,-1219.38 936.03,-1219.53"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge92" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.02,-1571.94C859.97,-1569.62 870.83,-1565.18 878.5,-1557 925.02,-1507.42 932.91,-1285.42 934.24,-1219.51"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.33,-1219.7 934.34,-1213.66 932.13,-1219.63 936.33,-1219.7"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge93" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.2,-1602.75C860.77,-1600.38 871.14,-1595.94 878.5,-1588 928.97,-1533.54 934.08,-1289.6 934.49,-1219.74"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.59,-1219.78 934.52,-1213.77 932.39,-1219.76 936.59,-1219.78"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge94" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.26,-1633.81C860.83,-1631.43 871.18,-1626.98 878.5,-1619 933.09,-1559.47 935.18,-1292.09 934.71,-1219.33"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.82,-1219.41 934.66,-1213.42 932.62,-1219.44 936.82,-1219.41"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge95" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M848.07,-1665.32C859.4,-1663.08 870.7,-1658.58 878.5,-1650 937.02,-1585.59 936.19,-1296.37 934.91,-1219.7"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="937.01,-1219.69 934.8,-1213.73 932.81,-1219.77 937.01,-1219.69"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge96" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.23,-1696.13C860.18,-1693.82 870.99,-1689.33 878.5,-1681 910.01,-1646.04 929.3,-1303.62 933.59,-1219.56"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.68,-1219.75 933.89,-1213.65 931.49,-1219.54 935.68,-1219.75"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge97" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.7,-612.86C860.53,-615.19 871.16,-619.7 878.5,-628 916.12,-670.53 931.07,-1088.97 933.96,-1182.52"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.86,-1182.45 934.14,-1188.39 936.06,-1182.33 931.86,-1182.45"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge98" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.3,-643.8C860.26,-646.11 871.05,-650.62 878.5,-659 914.1,-699.03 930.54,-1092.54 933.86,-1182.67"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.75,-1182.55 934.07,-1188.47 935.95,-1182.4 931.75,-1182.55"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge99" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.39,-675.08C860.95,-677.46 871.28,-681.93 878.5,-690 912.07,-727.5 929.96,-1095.65 933.74,-1182.64"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.64,-1182.69 933.99,-1188.59 935.83,-1182.51 931.64,-1182.69"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge100" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.35,-706.11C860.92,-708.49 871.25,-712.96 878.5,-721 910.01,-755.96 929.3,-1098.38 933.59,-1182.44"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.49,-1182.46 933.89,-1188.35 935.68,-1182.25 931.49,-1182.46"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge101" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.31,-737.15C860.87,-739.53 871.22,-743.98 878.5,-752 937.02,-816.41 936.19,-1105.63 934.91,-1182.3"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.81,-1182.23 934.8,-1188.27 937.01,-1182.31 932.81,-1182.23"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge102" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.14,-767.95C860.09,-770.26 870.92,-774.74 878.5,-783 933.09,-842.53 935.18,-1109.91 934.71,-1182.67"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.62,-1182.56 934.66,-1188.58 936.82,-1182.59 932.62,-1182.56"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge103" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.2,-799.25C860.77,-801.62 871.14,-806.06 878.5,-814 928.97,-868.46 934.08,-1112.4 934.49,-1182.26"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.39,-1182.24 934.52,-1188.23 936.59,-1182.22 932.39,-1182.24"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge104" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.14,-830.31C860.7,-832.68 871.09,-837.1 878.5,-845 925.02,-894.58 932.91,-1116.58 934.24,-1182.49"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.13,-1182.37 934.34,-1188.34 936.33,-1182.3 932.13,-1182.37"/>
-</g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge105" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.69,-861.3C860.38,-863.65 870.94,-868.06 878.5,-876 921.13,-920.77 931.69,-1121.27 933.95,-1182.91"/>
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_0.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.31,-861.22C860.14,-863.55 870.86,-867.97 878.5,-876 921.13,-920.77 931.69,-1121.27 933.95,-1182.91"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.84,-1182.62 934.14,-1188.54 936.03,-1182.47 931.84,-1182.62"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge106" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.22,-892.3C860.04,-894.64 870.79,-899.04 878.5,-907 917.04,-946.77 930.22,-1124.16 933.56,-1182.4"/>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge79" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_1.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.59,-892.39C860.29,-894.74 870.88,-899.13 878.5,-907 917.04,-946.77 930.22,-1124.16 933.56,-1182.4"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.45,-1182.37 933.88,-1188.24 935.65,-1182.14 931.45,-1182.37"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge107" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.23,-923.66C860.67,-926.06 870.97,-930.39 878.5,-938 913.13,-972.98 928.71,-1128.79 933.12,-1182.63"/>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge80" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_2.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.48,-923.49C860.18,-925.85 870.79,-930.21 878.5,-938 913.13,-972.98 928.71,-1128.79 933.12,-1182.63"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.01,-1182.61 933.58,-1188.42 935.2,-1182.28 931.01,-1182.61"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge108" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge81" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_3.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.34,-954.63C860.04,-956.99 870.69,-961.32 878.5,-969 909.18,-999.16 926.94,-1133.09 932.55,-1182.56"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="930.46,-1182.77 933.2,-1188.51 934.63,-1182.31 930.46,-1182.77"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge109" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M851.03,-986.25C861.1,-988.68 871.02,-992.89 878.5,-1000 930.57,-1049.43 935.58,-1142.81 935.19,-1182.45"/>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge82" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_4.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.54,-985.9C860.11,-988.27 870.65,-992.54 878.5,-1000 930.57,-1049.43 935.58,-1142.81 935.19,-1182.45"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="933.09,-1182.24 935.06,-1188.28 937.29,-1182.33 933.09,-1182.24"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge110" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.69,-1017.23C860.13,-1019.62 870.57,-1023.81 878.5,-1031 923.12,-1071.43 932.28,-1148.06 934.09,-1182.92"/>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge83" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_5.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.31,-1017.15C859.88,-1019.52 870.47,-1023.73 878.5,-1031 923.12,-1071.43 932.28,-1148.06 934.09,-1182.92"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.98,-1182.64 934.31,-1188.56 936.18,-1182.48 931.98,-1182.64"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge111" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849,-1048.5C859.57,-1050.87 870.24,-1054.99 878.5,-1062 915.55,-1093.45 928.35,-1153 932.56,-1182.91"/>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge84" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_6.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.38,-1048.58C859.82,-1050.97 870.34,-1055.07 878.5,-1062 915.55,-1093.45 928.35,-1153 932.56,-1182.91"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="930.43,-1182.81 933.26,-1188.5 934.6,-1182.28 930.43,-1182.81"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge112" class="edge">
-<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge85" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_7.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.31,-1080.21C859.65,-1082.6 870.12,-1086.55 878.5,-1093 908.05,-1115.75 923.48,-1158.49 930.21,-1182.83"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="928.14,-1183.24 931.68,-1188.53 932.21,-1182.19 928.14,-1183.24"/>
 </g>
-<!-- src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge86" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_8.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.43,-1112.27C859.53,-1114.66 869.87,-1118.34 878.5,-1124 900.94,-1138.73 917.45,-1165.77 926.52,-1183.56"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="924.53,-1184.27 929.04,-1188.74 928.3,-1182.43 924.53,-1184.27"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge87" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_9.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.27,-1145.04C859.17,-1147.38 869.45,-1150.59 878.5,-1155 893.9,-1162.51 908.76,-1175.05 919.3,-1185.14"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="917.67,-1186.48 923.41,-1189.21 920.62,-1183.49 917.67,-1186.48"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge88" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_A.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.74,-1179.27C859.23,-1181.4 869.22,-1183.72 878.5,-1186 885.3,-1187.67 892.55,-1189.54 899.49,-1191.38"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="898.8,-1193.37 905.14,-1192.89 899.89,-1189.31 898.8,-1193.37"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge89" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_B.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.73,-1201C865.95,-1201 884.21,-1201 899.61,-1201"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899.29,-1203.1 905.29,-1201 899.29,-1198.9 899.29,-1203.1"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge90" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_C.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.12,-1222.65C859.5,-1220.53 869.34,-1218.25 878.5,-1216 885.3,-1214.33 892.55,-1212.46 899.49,-1210.62"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="899.89,-1212.69 905.14,-1209.11 898.8,-1208.63 899.89,-1212.69"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge91" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_D.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.02,-1256.78C859.69,-1254.46 869.68,-1251.3 878.5,-1247 893.9,-1239.49 908.76,-1226.95 919.3,-1216.86"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="920.62,-1218.51 923.41,-1212.79 917.67,-1215.52 920.62,-1218.51"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge92" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_E.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.8,-1289.64C859.79,-1287.25 869.98,-1283.59 878.5,-1278 900.94,-1263.27 917.45,-1236.23 926.52,-1218.44"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="928.3,-1219.57 929.04,-1213.26 924.53,-1217.73 928.3,-1219.57"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge93" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_F.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M848.94,-1321.88C859.39,-1319.5 870.02,-1315.53 878.5,-1309 908.05,-1286.25 923.48,-1243.51 930.21,-1219.17"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.21,-1219.81 931.68,-1213.47 928.14,-1218.76 932.21,-1219.81"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge94" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_G.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.12,-1353.24C860.32,-1350.83 870.53,-1346.76 878.5,-1340 915.55,-1308.55 928.35,-1249 932.56,-1219.09"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="934.6,-1219.72 933.26,-1213.5 930.43,-1219.19 934.6,-1219.72"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge95" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_H.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.06,-1384.68C860.38,-1382.28 870.66,-1378.1 878.5,-1371 923.12,-1330.57 932.28,-1253.94 934.09,-1219.08"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.18,-1219.52 934.31,-1213.44 931.98,-1219.36 936.18,-1219.52"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge96" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_I.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M848.05,-1416.42C859.11,-1414.12 870.28,-1409.81 878.5,-1402 930.57,-1352.57 935.58,-1259.19 935.19,-1219.55"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="937.29,-1219.67 935.06,-1213.72 933.09,-1219.76 937.29,-1219.67"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge97" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_J.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M848.97,-1447.45C859.79,-1445.11 870.6,-1440.77 878.5,-1433 909.18,-1402.84 926.94,-1268.91 932.55,-1219.44"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="934.63,-1219.69 933.2,-1213.49 930.46,-1219.23 934.63,-1219.69"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge98" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_K.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.86,-1478.42C860.42,-1476.05 870.88,-1471.7 878.5,-1464 913.13,-1429.02 928.71,-1273.21 933.12,-1219.37"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.2,-1219.72 933.58,-1213.58 931.01,-1219.39 935.2,-1219.72"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge99" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_L.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.59,-1509.61C860.29,-1507.26 870.88,-1502.87 878.5,-1495 917.04,-1455.23 930.22,-1277.84 933.56,-1219.6"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.65,-1219.86 933.88,-1213.76 931.45,-1219.63 935.65,-1219.86"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge100" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_M.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.43,-1540.54C860.87,-1538.14 871.12,-1533.75 878.5,-1526 921.13,-1481.23 931.69,-1280.73 933.95,-1219.09"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.03,-1219.53 934.14,-1213.46 931.84,-1219.38 936.03,-1219.53"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge101" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_N.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.14,-1571.69C860.7,-1569.32 871.09,-1564.9 878.5,-1557 925.02,-1507.42 932.91,-1285.42 934.24,-1219.51"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.33,-1219.7 934.34,-1213.66 932.13,-1219.63 936.33,-1219.7"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge102" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_O.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.2,-1602.75C860.77,-1600.38 871.14,-1595.94 878.5,-1588 928.97,-1533.54 934.08,-1289.6 934.49,-1219.74"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.59,-1219.78 934.52,-1213.77 932.39,-1219.76 936.59,-1219.78"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge103" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_P.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.14,-1634.05C860.09,-1631.74 870.92,-1627.26 878.5,-1619 933.09,-1559.47 935.18,-1292.09 934.71,-1219.33"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.82,-1219.41 934.66,-1213.42 932.62,-1219.44 936.82,-1219.41"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge104" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Q.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.31,-1664.85C860.87,-1662.47 871.22,-1658.02 878.5,-1650 937.02,-1585.59 936.19,-1296.37 934.91,-1219.7"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="937.01,-1219.69 934.8,-1213.73 932.81,-1219.77 937.01,-1219.69"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge105" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_R.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.35,-1695.89C860.92,-1693.51 871.25,-1689.04 878.5,-1681 910.01,-1646.04 929.3,-1303.62 933.59,-1219.56"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.68,-1219.75 933.89,-1213.65 931.49,-1219.54 935.68,-1219.75"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge106" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_S.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.7,-612.86C860.53,-615.19 871.16,-619.7 878.5,-628 916.12,-670.53 931.07,-1088.97 933.96,-1182.52"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.86,-1182.45 934.14,-1188.39 936.06,-1182.33 931.86,-1182.45"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge107" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_T.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M848.93,-643.73C860.01,-646.01 870.96,-650.53 878.5,-659 914.1,-699.03 930.54,-1092.54 933.86,-1182.67"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.75,-1182.55 934.07,-1188.47 935.95,-1182.4 931.75,-1182.55"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge108" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_U.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M850.01,-674.99C860.71,-677.35 871.19,-681.84 878.5,-690 912.07,-727.5 929.96,-1095.65 933.74,-1182.64"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.64,-1182.69 933.99,-1188.59 935.83,-1182.51 931.64,-1182.69"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge109" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_V.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.6,-705.95C860.43,-708.28 871.08,-712.77 878.5,-721 910.01,-755.96 929.3,-1098.38 933.59,-1182.44"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="931.49,-1182.46 933.89,-1188.35 935.68,-1182.25 931.49,-1182.46"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge110" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_W.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M851.05,-737.32C861.36,-739.74 871.39,-744.17 878.5,-752 937.02,-816.41 936.19,-1105.63 934.91,-1182.3"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.81,-1182.23 934.8,-1188.27 937.01,-1182.31 932.81,-1182.23"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge111" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_X.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.88,-768.11C860.58,-770.47 871.09,-774.92 878.5,-783 933.09,-842.53 935.18,-1109.91 934.71,-1182.67"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.62,-1182.56 934.66,-1188.58 936.82,-1182.59 932.62,-1182.56"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge112" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Y.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.08,-799C860.03,-801.32 870.88,-805.78 878.5,-814 928.97,-868.46 934.08,-1112.4 934.49,-1182.26"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.39,-1182.24 934.52,-1188.23 936.59,-1182.22 932.39,-1182.24"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
 <g id="edge113" class="edge">
+<title>src/js/directable/dotmatrix/shape/glyph/ShapeGlyph_Z.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M849.39,-830.14C860.21,-832.48 870.92,-836.92 878.5,-845 925.02,-894.58 932.91,-1116.58 934.24,-1182.49"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="932.13,-1182.37 934.34,-1188.34 936.33,-1182.3 932.13,-1182.37"/>
+</g>
+<!-- src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
+<g id="edge114" class="edge">
 <title>src/js/directable/dotmatrix/shape/line/ShapeLineHorizontal.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M862.3,-1748.48C868.48,-1745.39 874.12,-1741.32 878.5,-1736 912.07,-1695.21 930.05,-1308.54 933.77,-1219.31"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="935.86,-1219.46 934.01,-1213.38 931.67,-1219.29 935.86,-1219.46"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/line/ShapeLineVertical.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge114" class="edge">
+<g id="edge115" class="edge">
 <title>src/js/directable/dotmatrix/shape/line/ShapeLineVertical.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M856.37,-1786.4C864.79,-1783.78 872.67,-1779.58 878.5,-1773 916.06,-1730.55 931.06,-1312.83 933.96,-1219.45"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.05,-1219.66 934.14,-1213.6 931.86,-1219.53 936.05,-1219.66"/>
 </g>
 <!-- src/js/directable/dotmatrix/shape/primative/ShapeRectangle.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js -->
-<g id="edge115" class="edge">
+<g id="edge116" class="edge">
 <title>src/js/directable/dotmatrix/shape/primative/ShapeRectangle.js&#45;&gt;src/js/directable/dotmatrix/shape/Shape.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M853.34,-1844.32C862.97,-1841.01 872.11,-1835.88 878.5,-1828 917.83,-1779.46 931.58,-1317.45 934.07,-1219.28"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="936.16,-1219.56 934.21,-1213.51 931.96,-1219.46 936.16,-1219.56"/>
@@ -1659,7 +1665,7 @@
 </g>
 </g>
 <!-- src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/image&#45;sequence&#45;data.json -->
-<g id="edge116" class="edge">
+<g id="edge117" class="edge">
 <title>src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/image&#45;sequence&#45;data.json</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M565.09,-2313.51C570.81,-2312.96 576.61,-2312.4 582.36,-2311.85"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="582.55,-2313.94 588.33,-2311.27 582.15,-2309.76 582.55,-2313.94"/>
@@ -1674,7 +1680,7 @@
 </g>
 </g>
 <!-- src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/ImageSequenceImage.js -->
-<g id="edge117" class="edge">
+<g id="edge118" class="edge">
 <title>src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/ImageSequenceImage.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M565.09,-2326.92C572.15,-2327.65 579.32,-2328.39 586.37,-2329.11"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="586.03,-2331.19 592.22,-2329.71 586.46,-2327.01 586.03,-2331.19"/>
@@ -1707,7 +1713,7 @@
 </g>
 </g>
 <!-- src/js/index.js&#45;&gt;src/js/application/Application.js -->
-<g id="edge124" class="edge">
+<g id="edge125" class="edge">
 <title>src/js/index.js&#45;&gt;src/js/application/Application.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M101.59,-210C108.42,-210 115.95,-210 123.39,-210"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="123.01,-212.1 129.01,-210 123.01,-207.9 123.01,-212.1"/>

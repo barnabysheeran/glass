@@ -126,6 +126,51 @@ export default class ShapeManager {
 		}
 	}
 
+	// ____________________________________________________________ Add
+
+	#addShape(shape) {
+		ApplicationLogger.log(
+			`ShapeManager addShape ${shape.getShapeId()}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Ensure space in list
+		this.#ensureSpaceInList();
+
+		// Add to list
+		this.#SHAPES.push(shape);
+
+		// Return the shape
+		return shape;
+	}
+
+	// ____________________________________________________________ Remove
+
+	removeShape(shapeId) {
+		ApplicationLogger.log(
+			`ShapeManager removeShape ${shapeId}`,
+			this.#LOG_LEVEL,
+		);
+
+		console.log(' - before total shapes', this.#SHAPES.length);
+
+		// Find Index by ID
+		for (let i = 0; i < this.#SHAPES.length; i += 1) {
+			if (this.#SHAPES[i].getShapeId() === shapeId) {
+				// TODO Tell the Shape to Undraw here on in a new method
+
+				// Remove Shape
+				this.#SHAPES.splice(i, 1);
+
+				ApplicationLogger.log(` - removed ${shapeId}`, this.#LOG_LEVEL);
+
+				// return true;
+			}
+		}
+
+		console.log(' - after total shapes', this.#SHAPES.length);
+	}
+
 	// __________________________________________________________________ Redraw
 
 	// TODO Should this be here or replaced by Component Manager
@@ -139,25 +184,6 @@ export default class ShapeManager {
 		}
 	}
 
-	removeShape(shape) {
-		ApplicationLogger.log('ShapeManager removeShape', this.#LOG_LEVEL);
-
-		// Find Index
-		const index = this.#SHAPES.indexOf(shape);
-
-		if (index !== -1) {
-			// Remove Shape
-			this.#SHAPES.splice(index, 1);
-
-			ApplicationLogger.log(
-				` - Removed Shape at index ${index}`,
-				this.#LOG_LEVEL,
-			);
-		} else {
-			ApplicationLogger.log(` - Shape not found`, this.#LOG_LEVEL);
-		}
-	}
-
 	// _________________________________________________________ Line Horizontal
 
 	addShapeLineHorizontal(
@@ -167,14 +193,6 @@ export default class ShapeManager {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
-		ApplicationLogger.log(
-			`ShapeManager addShapeLineHorizontal`,
-			this.#LOG_LEVEL,
-		);
-
-		// Ensure Space in List
-		this.#ensureSpaceInList();
-
 		// Create Shape
 		const shape = new ShapeLineHorizontal(
 			this.#DOT_MANAGER,
@@ -185,11 +203,8 @@ export default class ShapeManager {
 			fillStrategyType,
 		);
 
-		// Store
-		this.#SHAPES.push(shape);
-
-		// Return
-		return shape;
+		// Add and return
+		return this.#addShape(shape);
 	}
 
 	// ___________________________________________________________ Line Vertical
@@ -201,11 +216,6 @@ export default class ShapeManager {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
-		ApplicationLogger.log(`ShapeManager addShapeLineVertical`, this.#LOG_LEVEL);
-
-		// Ensure Space in List
-		this.#ensureSpaceInList();
-
 		// Create Shape
 		const shape = new ShapeLineVertical(
 			this.#DOT_MANAGER,
@@ -216,11 +226,8 @@ export default class ShapeManager {
 			fillStrategyType,
 		);
 
-		// Add
-		this.#SHAPES.push(shape);
-
-		// Return
-		return shape;
+		// Add and return
+		return this.#addShape(shape);
 	}
 
 	// _______________________________________________________________ Rectangle
@@ -233,9 +240,6 @@ export default class ShapeManager {
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 	) {
-		// Ensure Space in List
-		this.#ensureSpaceInList();
-
 		// Create Shape
 		const shape = new ShapeRectangle(
 			this.#DOT_MANAGER,
@@ -247,11 +251,8 @@ export default class ShapeManager {
 			fillStrategyType,
 		);
 
-		// Add
-		this.#SHAPES.push(shape);
-
-		// Return
-		return shape;
+		// Add and return
+		return this.#addShape(shape);
 	}
 
 	// ___________________________________________________________________ Glyph
@@ -279,9 +280,6 @@ export default class ShapeManager {
 			this.#LOG_LEVEL,
 		);
 
-		// Ensure Space in List
-		this.#ensureSpaceInList();
-
 		// Create Shape
 		const shape = new ShapeClass(
 			this.#DOT_MANAGER,
@@ -291,10 +289,7 @@ export default class ShapeManager {
 			fillStrategyType,
 		);
 
-		// Add
-		this.#SHAPES.push(shape);
-
-		// Return
-		return shape;
+		// Add and return
+		return this.#addShape(shape);
 	}
 }

@@ -20,7 +20,7 @@ export default class ViewTest {
 		// this.#COMPONENT_MANAGER.addComponentLineWidthFull(1);
 
 		this.#COMPONENT_MANAGER.addComponentTextBox(
-			'A',
+			'AA',
 			10,
 			10,
 			100,
