@@ -6,6 +6,8 @@ import FillStrategyType from '../shape/fill/FillStrategyType.js';
 export default class ViewTest {
 	#COMPONENT_MANAGER;
 
+	#LINE_HEIGHT = 6;
+
 	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
@@ -27,7 +29,7 @@ export default class ViewTest {
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			16,
+			this.#LINE_HEIGHT,
 			100,
 			50,
 			FillType.PassThrough,
@@ -38,7 +40,7 @@ export default class ViewTest {
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'0123456789',
 			0,
-			22,
+			this.#LINE_HEIGHT * 2,
 			100,
 			50,
 			FillType.PassThrough,
@@ -46,13 +48,11 @@ export default class ViewTest {
 			200,
 		);
 
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(40);
-
-		for (let i = 0; i < 20; i++) {
+		for (let i = 0; i < 40; i++) {
 			this.#COMPONENT_MANAGER.addComponentTextBox(
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 				0,
-				48 + i * 6,
+				this.#LINE_HEIGHT * (i + 6),
 				100,
 				50,
 				FillType.PassThrough,
@@ -69,11 +69,20 @@ export default class ViewTest {
 		// this.#COMPONENT_MANAGER.tick();
 		// console.log('ViewTest tick');
 		//
-		// const R = Math.random();
-		// if (R < 0.01) {
-		// 	this.#COMPONENT_MANAGER.addComponentLineWidthFull(
-		// 		Math.floor(Math.random() * 100),
-		// 	);
-		// }
+		const R_1 = Math.random();
+
+		if (R_1 < 0.01) {
+			// const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
+			// this.#COMPONENT_MANAGER.addComponentTextBox(
+			// 	'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			// 	0,
+			// 	GRID_Y,
+			// 	100,
+			// 	50,
+			// 	FillType.PassThrough,
+			// 	FillStrategyType.PassThrough,
+			// 	0,
+			// );
+		}
 	}
 }

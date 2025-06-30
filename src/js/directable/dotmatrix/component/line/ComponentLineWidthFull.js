@@ -17,7 +17,7 @@ export default class ComponentLineWidthFull extends Component {
 		fillStrategyType = FillStrategyType.PassThrough,
 		delay,
 	) {
-		super(shapeManager, 1, gridY, fillType, fillStrategyType, delay);
+		super(shapeManager, 0, gridY, fillType, fillStrategyType, delay);
 
 		// Create Shape
 		this.#createShape();
@@ -28,7 +28,7 @@ export default class ComponentLineWidthFull extends Component {
 	#createShape() {
 		// Create Shape
 		const GRID_MAX = GridData.getGridMax();
-		const LINE_WIDTH = GRID_MAX[0] - 1;
+		const LINE_WIDTH = GRID_MAX[0];
 
 		this.#SHAPE = this.SHAPE_MANAGER.addShapeLineHorizontal(
 			this.GRID_X,
