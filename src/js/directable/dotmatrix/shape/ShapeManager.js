@@ -104,14 +104,14 @@ export default class ShapeManager {
 
 	// __________________________________________________________________ Update
 
-	tick() {
-		ApplicationLogger.log('ShapeManager tick');
+	// tick() {
+	// 	ApplicationLogger.log('ShapeManager tick');
 
-		// Update All Shapes
-		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.#SHAPES[i].tick();
-		}
-	}
+	// 	// Update All Shapes
+	// 	for (let i = 0; i < this.#SHAPES.length; i += 1) {
+	// 		this.#SHAPES[i].tick();
+	// 	}
+	// }
 
 	// ___________________________________________________________________ Reset
 

@@ -2,14 +2,12 @@ import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
-import ComponentManager from './component/ComponentManager.js';
 
 import DotMatrixViewTest from './view/DotMatrixViewTest.js';
 
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
-	#COMPONENT_MANAGER;
 
 	#VIEWS = [];
 
@@ -17,7 +15,7 @@ export default class DirectableDotMatrix {
 
 	/*
 	
-	  Views create Components, which create Shapes, which create Dots
+	    Views create Components, which create Shapes, which create Dots
 
 	*/
 
@@ -32,11 +30,8 @@ export default class DirectableDotMatrix {
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
-		// Create Component Manager
-		this.#COMPONENT_MANAGER = new ComponentManager(this.#SHAPE_MANAGER);
-
 		// Create Views
-		this.#VIEWS.push(new DotMatrixViewTest(this.#COMPONENT_MANAGER));
+		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER));
 	}
 
 	// ____________________________________________________________________ Tick
@@ -44,13 +39,15 @@ export default class DirectableDotMatrix {
 	tick(frameDeltaMS) {
 		// Order Important
 
+		console.log('DirectableDotMatrix tick');
+
 		// Tick Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].tick(frameDeltaMS);
 		}
 
 		// Tick Shape Manager
-		this.#SHAPE_MANAGER.tick();
+		// this.#SHAPE_MANAGER.tick();
 	}
 
 	// ____________________________________________________________________ Size
@@ -65,9 +62,6 @@ export default class DirectableDotMatrix {
 
 		// Reset Current View
 		this.#VIEWS[0].reset();
-
-		// Reset Component Manager
-		this.#COMPONENT_MANAGER.reset();
 
 		// Reset Shape Manager
 		this.#SHAPE_MANAGER.reset();

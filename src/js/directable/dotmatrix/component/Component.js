@@ -21,5 +21,7 @@ export default class Component {
 		this.DELAY = delay;
 	}
 
-	//
+	// ____________________________________________________________________ Tick
+
+	tick() {} // Stub
 }
