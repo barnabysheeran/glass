@@ -14,12 +14,21 @@ export default class ComponentLineWidthFull extends Component {
 
 	constructor(
 		shapeManager,
+		dotManager,
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 		delay,
 	) {
-		super(shapeManager, 0, gridY, fillType, fillStrategyType, delay);
+		super(
+			shapeManager,
+			dotManager,
+			0,
+			gridY,
+			fillType,
+			fillStrategyType,
+			delay,
+		);
 
 		// Create Shape
 		this.#createShape();
@@ -33,6 +42,7 @@ export default class ComponentLineWidthFull extends Component {
 		const LINE_WIDTH = GRID_MAX[0];
 
 		this.#SHAPE = new ShapeLineHorizontal(
+			this.DOT_MANAGER,
 			this.GRID_X,
 			this.GRID_Y,
 			LINE_WIDTH,

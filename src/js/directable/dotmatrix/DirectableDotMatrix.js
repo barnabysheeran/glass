@@ -13,11 +13,7 @@ export default class DirectableDotMatrix {
 
 	#LOG_LEVEL = 3;
 
-	/*
-	
-	    Views create Components, which create Shapes, which create Dots
-
-	*/
+	// Views create Components, which create Shapes, which create Dots
 
 	// _________________________________________________________________________
 
@@ -31,28 +27,21 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
 		// Create Views
-		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER));
+		this.#VIEWS.push(
+			new DotMatrixViewTest(this.#DOT_MANAGER, this.#SHAPE_MANAGER),
+		);
 	}
 
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
-		// Order Important
-
-		console.log('DirectableDotMatrix tick');
-
 		// Tick Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].tick(frameDeltaMS);
 		}
-
-		// Tick Shape Manager
-		// this.#SHAPE_MANAGER.tick();
 	}
 
 	// ____________________________________________________________________ Size
-
-	// TODO Rename to reset ?
 
 	setSize(width, height) {
 		ApplicationLogger.log(

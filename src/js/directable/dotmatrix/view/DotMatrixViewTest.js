@@ -9,6 +9,7 @@ import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js'
 import ComponentTextBox from '../component/text/ComponentTextBox.js';
 
 export default class ViewTest {
+	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 
 	#LINE_HEIGHT = 6;
@@ -19,10 +20,11 @@ export default class ViewTest {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager) {
+	constructor(dotManager, shapeManager) {
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
+		this.#DOT_MANAGER = dotManager;
 		this.#SHAPE_MANAGER = shapeManager;
 
 		// Initial Draw
@@ -39,32 +41,29 @@ export default class ViewTest {
 
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
 
-		// // Create Components Line Top
-		// this.COMPONENT_MANAGER.addComponentLineWidthFull(
-		// 	this.#LINE_HEIGHT,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	1,
-		// );
-
+		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.#SHAPE_MANAGER,
+			this.#DOT_MANAGER,
 			this.#LINE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			1,
 		);
 
-		// Store
 		this.#COMPONENTS.push(LINE_TOP);
 
-		// // Line Bottom
-		// this.COMPONENT_MANAGER.addComponentLineWidthFull(
-		// 	this.#LINE_HEIGHT * LINE_HEIGHT_MAX,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	1,
-		// );
+		// Create Component Line Bottom
+		const LINE_BOTTOM = new ComponentLineWidthFull(
+			this.#SHAPE_MANAGER,
+			this.#DOT_MANAGER,
+			this.#LINE_HEIGHT * LINE_HEIGHT_MAX,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			1,
+		);
+
+		this.#COMPONENTS.push(LINE_BOTTOM);
 
 		// // Add Dummy Text
 		// this.COMPONENT_MANAGER.addComponentTextBox(

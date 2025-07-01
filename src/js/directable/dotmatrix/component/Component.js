@@ -1,5 +1,6 @@
 export default class Component {
 	SHAPE_MANAGER;
+	DOT_MANAGER;
 
 	GRID_X = 0;
 	GRID_Y = 0;
@@ -11,9 +12,18 @@ export default class Component {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, gridX, gridY, fillType, fillStrategyType, delay) {
+	constructor(
+		shapeManager,
+		dotManager,
+		gridX,
+		gridY,
+		fillType,
+		fillStrategyType,
+		delay,
+	) {
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
+		this.DOT_MANAGER = dotManager;
 		this.GRID_X = gridX;
 		this.GRID_Y = gridY;
 		this.FILL_TYPE = fillType;
