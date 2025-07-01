@@ -22,17 +22,6 @@ export default class ComponentManager {
 		this.#SHAPE_MANAGER = shapeManager;
 	}
 
-	// __________________________________________________________________ Redraw
-
-	// TODO Tidy
-
-	// redraw() {
-	// 	// Redraw Components
-	// 	for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
-	// 		this.#COMPONENTS[i].redraw();
-	// 	}
-	// }
-
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
