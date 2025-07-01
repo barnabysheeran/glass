@@ -1,5 +1,7 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
+import GridData from '../../../grid/GridData.js';
+
 import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
@@ -18,18 +20,41 @@ export default class ViewTest {
 		// Store
 		this.#COMPONENT_MANAGER = componentManager;
 
-		// Create Components
+		// Initial Draw
+		this.#draw();
+	}
+
+	// ____________________________________________________________________ Draw
+
+	#draw() {
+		// Get Grid Size
+		const GRID_MAX = GridData.getGridMax();
+		const GRID_MAX_WIDTH = GRID_MAX[0];
+		const GRID_MAX_HEIGHT = GRID_MAX[1];
+
+		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
+
+		// Create Components Line Top
 		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
-			1,
+			this.#LINE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			120,
+			1,
 		);
 
+		// Line Bottom
+		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+			this.#LINE_HEIGHT * LINE_HEIGHT_MAX,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			1,
+		);
+
+		// Add Dummy Text
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			this.#LINE_HEIGHT,
+			this.#LINE_HEIGHT * 2,
 			100,
 			50,
 			FillType.PassThrough,
@@ -40,7 +65,7 @@ export default class ViewTest {
 		this.#COMPONENT_MANAGER.addComponentTextBox(
 			'0123456789',
 			0,
-			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,
@@ -48,73 +73,27 @@ export default class ViewTest {
 			200,
 		);
 
-		for (let i = 0; i < 40; i++) {
+		// Add Dummy Text with Line Height
+		const BLOCK_GRID_TOP = 10;
+		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 10;
+
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
 			this.#COMPONENT_MANAGER.addComponentTextBox(
 				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 				0,
-				this.#LINE_HEIGHT * (i + 6),
+				this.#LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				200 + 30 * i,
+				30 * i,
 			);
 		}
+
+		// Add Rectangle
 	}
 
 	// ____________________________________________________________________ tick
 
-	tick() {
-		// Component Manager
-		// this.#COMPONENT_MANAGER.tick();
-		// console.log('ViewTest tick');
-		//
-		const R_1 = Math.random();
-
-		if (R_1 < 0.01) {
-			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
-			this.#COMPONENT_MANAGER.addComponentTextBox(
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-				0,
-				GRID_Y,
-				100,
-				50,
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				0,
-			);
-		}
-
-		const R_2 = Math.random();
-
-		if (R_2 < 0.01) {
-			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
-			this.#COMPONENT_MANAGER.addComponentTextBox(
-				'IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII',
-				0,
-				GRID_Y,
-				100,
-				50,
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				0,
-			);
-		}
-
-		const R_3 = Math.random();
-
-		if (R_3 < 0.01) {
-			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
-			this.#COMPONENT_MANAGER.addComponentTextBox(
-				'01010101010101010101010101010101010101010101010101010101010101010101010101010101',
-				0,
-				GRID_Y,
-				100,
-				50,
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				0,
-			);
-		}
-	}
+	tick() {}
 }
