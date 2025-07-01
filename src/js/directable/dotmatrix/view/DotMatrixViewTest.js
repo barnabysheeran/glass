@@ -2,12 +2,12 @@ import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 import GridData from '../../../grid/GridData.js';
 
+import DotMatrixView from './DotMatrixView.js';
+
 import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
-export default class ViewTest {
-	#COMPONENT_MANAGER;
-
+export default class ViewTest extends DotMatrixView {
 	#LINE_HEIGHT = 6;
 
 	#LOG_LEVEL = 4;
@@ -15,18 +15,19 @@ export default class ViewTest {
 	// _________________________________________________________________________
 
 	constructor(componentManager) {
+		super(componentManager);
+
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
-		// Store
-		this.#COMPONENT_MANAGER = componentManager;
-
 		// Initial Draw
-		this.#draw();
+		this.start();
 	}
 
 	// ____________________________________________________________________ Draw
 
-	#draw() {
+	start() {
+		// Not calling Super
+
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
 		const GRID_MAX_WIDTH = GRID_MAX[0];
@@ -35,7 +36,7 @@ export default class ViewTest {
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
 
 		// Create Components Line Top
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+		this.COMPONENT_MANAGER.addComponentLineWidthFull(
 			this.#LINE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -43,7 +44,7 @@ export default class ViewTest {
 		);
 
 		// Line Bottom
-		this.#COMPONENT_MANAGER.addComponentLineWidthFull(
+		this.COMPONENT_MANAGER.addComponentLineWidthFull(
 			this.#LINE_HEIGHT * LINE_HEIGHT_MAX,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -51,7 +52,7 @@ export default class ViewTest {
 		);
 
 		// Add Dummy Text
-		this.#COMPONENT_MANAGER.addComponentTextBox(
+		this.COMPONENT_MANAGER.addComponentTextBox(
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
 			this.#LINE_HEIGHT * 2,
@@ -62,7 +63,7 @@ export default class ViewTest {
 			150,
 		);
 
-		this.#COMPONENT_MANAGER.addComponentTextBox(
+		this.COMPONENT_MANAGER.addComponentTextBox(
 			'0123456789',
 			0,
 			this.#LINE_HEIGHT * 3,
@@ -78,7 +79,7 @@ export default class ViewTest {
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 10;
 
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
-			this.#COMPONENT_MANAGER.addComponentTextBox(
+			this.COMPONENT_MANAGER.addComponentTextBox(
 				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 				0,
 				this.#LINE_HEIGHT * i,

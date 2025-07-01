@@ -24,11 +24,33 @@ export default class ComponentManager {
 
 	// __________________________________________________________________ Redraw
 
-	redraw() {
-		// Redraw Components
+	// TODO Tidy
+
+	// redraw() {
+	// 	// Redraw Components
+	// 	for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
+	// 		this.#COMPONENTS[i].redraw();
+	// 	}
+	// }
+
+	// ____________________________________________________________________ Tick
+
+	tick(frameDeltaMS) {
+		ApplicationLogger.log('ComponentManager tick', this.#LOG_LEVEL);
+
+		// Tick Components
 		for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
-			this.#COMPONENTS[i].redraw();
+			this.#COMPONENTS[i].tick(frameDeltaMS);
 		}
+	}
+
+	// ___________________________________________________________________ Clear
+
+	reset() {
+		ApplicationLogger.log('ComponentManager clear', this.#LOG_LEVEL);
+
+		// Clear Components Array
+		this.#COMPONENTS = [];
 	}
 
 	// _________________________________________________________ Line Width Full

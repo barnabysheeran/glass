@@ -25,6 +25,15 @@ export default class DotManager {
 		}
 	}
 
+	// ___________________________________________________________________ Reset
+
+	reset() {
+		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
+
+		// Reset Dot Pool Index
+		this.#dotPoolIndex = 0;
+	}
+
 	// ________________________________________________________________ Dot Pool
 
 	getNextFreeDotIndex() {

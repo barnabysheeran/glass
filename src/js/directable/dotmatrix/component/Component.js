@@ -21,9 +21,5 @@ export default class Component {
 		this.DELAY = delay;
 	}
 
-	// __________________________________________________________________ Redraw
-
-	redraw() {
-		// Stub Method
-	}
+	//
 }

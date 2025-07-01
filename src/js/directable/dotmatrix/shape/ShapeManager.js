@@ -113,6 +113,15 @@ export default class ShapeManager {
 		}
 	}
 
+	// ___________________________________________________________________ Reset
+
+	reset() {
+		ApplicationLogger.log('ShapeManager reset', this.#LOG_LEVEL);
+
+		// Clear Shapes Array
+		this.#SHAPES = [];
+	}
+
 	// __________________________________________________________________ Remove
 
 	removeShape(shapeId) {

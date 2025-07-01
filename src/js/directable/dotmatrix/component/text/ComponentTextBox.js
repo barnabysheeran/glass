@@ -1,5 +1,3 @@
-import GridData from '../../../../grid/GridData.js';
-
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
@@ -72,20 +70,5 @@ export default class ComponentTextBox extends Component {
 				currentGridX += SHAPE.getGlyphWidth() + GRID_SPACING_X;
 			}
 		}
-	}
-
-	// __________________________________________________________________ Redraw
-
-	redraw() {
-		// Remove Existing Shapes
-		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.SHAPE_MANAGER.removeShape(this.#SHAPES[i].getShapeId());
-		}
-
-		// Clear Glyphs
-		this.#SHAPES = [];
-
-		// Create Shape
-		this.#createShape();
 	}
 }

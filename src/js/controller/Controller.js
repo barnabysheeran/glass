@@ -82,6 +82,9 @@ export default class Controller {
 			this.#LOG_LEVEL,
 		);
 
+		// Grid Data
+		GridData.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+
 		// Director
 		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
