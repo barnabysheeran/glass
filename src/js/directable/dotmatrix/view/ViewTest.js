@@ -72,17 +72,49 @@ export default class ViewTest {
 		const R_1 = Math.random();
 
 		if (R_1 < 0.01) {
-			// const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
-			// this.#COMPONENT_MANAGER.addComponentTextBox(
-			// 	'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-			// 	0,
-			// 	GRID_Y,
-			// 	100,
-			// 	50,
-			// 	FillType.PassThrough,
-			// 	FillStrategyType.PassThrough,
-			// 	0,
-			// );
+			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
+			this.#COMPONENT_MANAGER.addComponentTextBox(
+				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+				0,
+				GRID_Y,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				0,
+			);
+		}
+
+		const R_2 = Math.random();
+
+		if (R_2 < 0.01) {
+			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
+			this.#COMPONENT_MANAGER.addComponentTextBox(
+				'IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII',
+				0,
+				GRID_Y,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				0,
+			);
+		}
+
+		const R_3 = Math.random();
+
+		if (R_3 < 0.01) {
+			const GRID_Y = Math.floor(Math.random() * 50) * this.#LINE_HEIGHT;
+			this.#COMPONENT_MANAGER.addComponentTextBox(
+				'01010101010101010101010101010101010101010101010101010101010101010101010101010101',
+				0,
+				GRID_Y,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				0,
+			);
 		}
 	}
 }
