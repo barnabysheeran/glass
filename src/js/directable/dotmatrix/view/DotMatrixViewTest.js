@@ -36,7 +36,7 @@ export default class ViewTest {
 	start() {
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
+		// const GRID_MAX_WIDTH = GRID_MAX[0];
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
 
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
@@ -64,6 +64,22 @@ export default class ViewTest {
 		);
 
 		this.#COMPONENTS.push(LINE_BOTTOM);
+
+		// Create Component ABC
+		const COMPONENT_ABC = new ComponentTextBox(
+			this.#SHAPE_MANAGER,
+			this.#DOT_MANAGER,
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			0,
+			this.#LINE_HEIGHT * 2,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			150,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_ABC);
 
 		// // Add Dummy Text
 		// this.COMPONENT_MANAGER.addComponentTextBox(

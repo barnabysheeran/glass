@@ -15,6 +15,7 @@ export default class ComponentTextBox extends Component {
 
 	constructor(
 		shapeManager,
+		dotManager,
 		text,
 		gridX,
 		gridY,
@@ -24,7 +25,15 @@ export default class ComponentTextBox extends Component {
 		fillStrategyType = FillStrategyType.PassThrough,
 		delay,
 	) {
-		super(shapeManager, gridX, gridY, fillType, fillStrategyType, delay);
+		super(
+			shapeManager,
+			dotManager,
+			gridX,
+			gridY,
+			fillType,
+			fillStrategyType,
+			delay,
+		);
 
 		// Store
 		this.TEXT = text;
@@ -52,19 +61,22 @@ export default class ComponentTextBox extends Component {
 				// TODO Hard Coded Grid Space Width
 				currentGridX += 3;
 			} else {
-				// Create Shape Glyph
-				const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-					GLYPH_NAME,
-					currentGridX,
-					this.GRID_Y,
-					this.FILL_TYPE,
-					this.FILL_STRATEGY_TYPE,
-					this.DELAY + i * 2, // Delay for each glyph
-				);
 				// TODO Hardcoded Delay Increment
 
+				const SHAPE_GLYPH = new 
+
+				// Create Shape Glyph
+				// const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
+				// 	GLYPH_NAME,
+				// 	currentGridX,
+				// 	this.GRID_Y,
+				// 	this.FILL_TYPE,
+				// 	this.FILL_STRATEGY_TYPE,
+				// 	this.DELAY + i * 2, // Delay for each glyph
+				// );
+
 				// Store
-				this.#SHAPES.push(SHAPE);
+				// this.#SHAPES.push(SHAPE);
 
 				// Increment Current Grid X Position
 				currentGridX += SHAPE.getGlyphWidth() + GRID_SPACING_X;
