@@ -176,8 +176,8 @@
 </g>
 <g id="clust34" class="cluster">
 <title>cluster_src/js/grid</title>
-<path fill="#ffffff" stroke="black" stroke-width="2" d="M739.75,-475.06C739.75,-475.06 813.75,-475.06 813.75,-475.06 819.75,-475.06 825.75,-481.06 825.75,-487.06 825.75,-487.06 825.75,-547.06 825.75,-547.06 825.75,-553.06 819.75,-559.06 813.75,-559.06 813.75,-559.06 739.75,-559.06 739.75,-559.06 733.75,-559.06 727.75,-553.06 727.75,-547.06 727.75,-547.06 727.75,-487.06 727.75,-487.06 727.75,-481.06 733.75,-475.06 739.75,-475.06"/>
-<text text-anchor="middle" x="776.75" y="-546.51" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">grid</text>
+<path fill="#ffffff" stroke="black" stroke-width="2" d="M739.75,-512.06C739.75,-512.06 813.75,-512.06 813.75,-512.06 819.75,-512.06 825.75,-518.06 825.75,-524.06 825.75,-524.06 825.75,-584.06 825.75,-584.06 825.75,-590.06 819.75,-596.06 813.75,-596.06 813.75,-596.06 739.75,-596.06 739.75,-596.06 733.75,-596.06 727.75,-590.06 727.75,-584.06 727.75,-584.06 727.75,-524.06 727.75,-524.06 727.75,-518.06 733.75,-512.06 739.75,-512.06"/>
+<text text-anchor="middle" x="776.75" y="-583.51" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">grid</text>
 </g>
 <g id="clust35" class="cluster">
 <title>cluster_src/js/interactive</title>
@@ -309,16 +309,16 @@
 <g id="node10" class="node">
 <title>src/js/grid/GridData.js</title>
 <g id="a_node10"><a xlink:href="src/js/grid/GridData.js" xlink:title="GridData.js">
-<path fill="#ffffcc" stroke="black" d="M801.46,-501.31C801.46,-501.31 752.04,-501.31 752.04,-501.31 748.96,-501.31 745.88,-498.22 745.88,-495.14 745.88,-495.14 745.88,-488.97 745.88,-488.97 745.88,-485.89 748.96,-482.81 752.04,-482.81 752.04,-482.81 801.46,-482.81 801.46,-482.81 804.54,-482.81 807.62,-485.89 807.62,-488.97 807.62,-488.97 807.62,-495.14 807.62,-495.14 807.62,-498.22 804.54,-501.31 801.46,-501.31"/>
-<text text-anchor="start" x="753.88" y="-488.76" font-family="Helvetica,sans-Serif" font-size="9.00">GridData.js</text>
+<path fill="#ffffcc" stroke="black" d="M801.46,-538.31C801.46,-538.31 752.04,-538.31 752.04,-538.31 748.96,-538.31 745.88,-535.22 745.88,-532.14 745.88,-532.14 745.88,-525.97 745.88,-525.97 745.88,-522.89 748.96,-519.81 752.04,-519.81 752.04,-519.81 801.46,-519.81 801.46,-519.81 804.54,-519.81 807.62,-522.89 807.62,-525.97 807.62,-525.97 807.62,-532.14 807.62,-532.14 807.62,-535.22 804.54,-538.31 801.46,-538.31"/>
+<text text-anchor="start" x="753.88" y="-525.76" font-family="Helvetica,sans-Serif" font-size="9.00">GridData.js</text>
 </a>
 </g>
 </g>
 <!-- src/js/controller/Controller.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge11" class="edge">
 <title>src/js/controller/Controller.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M214.48,-324.51C227.72,-297.98 264.47,-220.78 280.12,-152.06 282.65,-140.97 279.78,-57.78 288.12,-50.06 379,33.97 455.94,-2.42 566.5,-58.06 661.57,-105.9 672.75,-146.57 719.75,-242.06 759.3,-322.4 771.28,-430.98 774.59,-473.71"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="772.48,-473.59 775,-479.43 776.66,-473.29 772.48,-473.59"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M214.48,-324.51C227.72,-297.98 264.47,-220.78 280.12,-152.06 282.65,-140.97 279.78,-57.78 288.12,-50.06 379,33.97 455.94,-2.42 566.5,-58.06 661.57,-105.9 674.07,-145.93 719.75,-242.06 764.4,-336.02 773.45,-463.45 775.28,-510.56"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="773.18,-510.4 775.48,-516.33 777.38,-510.27 773.18,-510.4"/>
 </g>
 <!-- src/js/interactive/Interactive.js -->
 <g id="node11" class="node">
@@ -438,13 +438,13 @@
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="435.94,-152.53 441.43,-149.33 435.15,-148.4 435.94,-152.53"/>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge349" class="edge">
+<g id="edge350" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M75.4,-1235.55C77.59,-1160.64 93.19,-666.7 124.25,-609.06 167.96,-527.94 201.6,-513.76 288.12,-482.06 346.26,-460.76 504.99,-477.14 566.5,-470.06 574.8,-469.1 583.53,-467.78 592.05,-466.32"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="592.3,-468.41 597.84,-465.29 591.56,-464.27 592.3,-468.41"/>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge354" class="edge">
+<g id="edge355" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M75.09,-1235.58C74.81,-1142.72 74.13,-397.24 124.25,-314.06 168.05,-241.37 206.32,-238.65 288.12,-216.06 346.33,-199.98 364.74,-204.42 424,-216.06 439.43,-219.09 455.74,-225.5 468.83,-231.52"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="467.87,-233.39 474.19,-234.08 469.68,-229.6 467.87,-233.39"/>
@@ -459,7 +459,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrix.js -->
-<g id="edge350" class="edge">
+<g id="edge351" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrix.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M102.58,-1245.06C115.32,-1245.06 131.01,-1245.06 146.34,-1245.06"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="146.27,-1247.16 152.27,-1245.06 146.27,-1242.96 146.27,-1247.16"/>
@@ -474,7 +474,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/title/DirectableTitle.js -->
-<g id="edge351" class="edge">
+<g id="edge352" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/title/DirectableTitle.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M75.09,-1254.47C74.67,-1382.89 71.28,-2783.43 124.25,-2850.06 132.43,-2860.34 144.79,-2866.16 157.52,-2869.37"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="157.07,-2871.42 163.37,-2870.58 157.92,-2867.3 157.07,-2871.42"/>
@@ -489,7 +489,7 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableVimeo.js -->
-<g id="edge352" class="edge">
+<g id="edge353" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableVimeo.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M75.11,-1254.69C74.94,-1380.4 74.36,-2695.42 124.25,-2758.06 131.46,-2767.11 141.92,-2772.7 153,-2776.1"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="152.29,-2778.08 158.63,-2777.53 153.33,-2774.01 152.29,-2778.08"/>
@@ -504,67 +504,67 @@
 </g>
 </g>
 <!-- src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableYoutube.js -->
-<g id="edge353" class="edge">
+<g id="edge354" class="edge">
 <title>src/js/director/Director.js&#45;&gt;src/js/directable/video/DirectableYoutube.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M75.09,-1254.54C74.63,-1381.11 70.95,-2732.59 124.25,-2795.06 130.76,-2802.69 139.7,-2807.39 149.33,-2810.19"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="148.64,-2812.18 154.96,-2811.49 149.59,-2808.09 148.64,-2812.18"/>
 </g>
 <!-- src/js/display/Display.js&#45;&gt;src/js/application/ApplicationConfiguration.js -->
-<g id="edge355" class="edge">
+<g id="edge356" class="edge">
 <title>src/js/display/Display.js&#45;&gt;src/js/application/ApplicationConfiguration.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M483.91,-254.71C467.14,-269.02 437.8,-297.68 428,-330.06 424.75,-340.8 424.75,-420.32 428,-431.06 429,-434.37 430.58,-437.24 432.6,-439.74"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="430.8,-440.94 436.64,-443.45 433.64,-437.85 430.8,-440.94"/>
 </g>
 <!-- src/js/display/Display.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge356" class="edge">
+<g id="edge357" class="edge">
 <title>src/js/display/Display.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M520.69,-254.66C535.41,-261.6 553.86,-272.18 566.5,-286.06 608.26,-331.88 632.05,-403.48 641.42,-436.83"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="639.39,-437.36 642.99,-442.6 643.44,-436.26 639.39,-437.36"/>
 </g>
 <!-- src/js/display/Display.js&#45;&gt;src/js/grid/GridData.js -->
-<g id="edge357" class="edge">
+<g id="edge358" class="edge">
 <title>src/js/display/Display.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M523.99,-243.67C570.4,-242.83 665.56,-248.08 719.75,-300.06 768.98,-347.27 775.63,-435.08 776.06,-473.39"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="773.96,-473.37 776.06,-479.38 778.16,-473.38 773.96,-473.37"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M523.86,-243.44C570.5,-242.18 666.58,-246.76 719.75,-300.06 749.7,-330.08 767.86,-461.55 773.69,-510.56"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="771.59,-510.72 774.37,-516.44 775.77,-510.24 771.59,-510.72"/>
 </g>
 <!-- src/js/grid/GridData.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge358" class="edge">
+<g id="edge359" class="edge">
 <title>src/js/grid/GridData.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M745.49,-483.29C729,-478.5 708.33,-472.51 690.28,-467.28"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="690.91,-465.28 684.56,-465.62 689.74,-469.31 690.91,-465.28"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M759.06,-519.38C736.99,-506.58 697.92,-483.93 672.53,-469.21"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="673.67,-467.44 667.43,-466.25 671.57,-471.08 673.67,-467.44"/>
 </g>
 <!-- src/js/interactive/Interactive.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge360" class="edge">
+<g id="edge361" class="edge">
 <title>src/js/interactive/Interactive.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M387.16,-305.05C431.37,-297.49 510.8,-290.63 566.5,-324.06 609.12,-349.64 631.94,-407.63 641.16,-437.12"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="639.1,-437.56 642.82,-442.71 643.12,-436.36 639.1,-437.56"/>
 </g>
 <!-- src/js/interactive/Interactive.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge361" class="edge">
+<g id="edge362" class="edge">
 <title>src/js/interactive/Interactive.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M387.21,-303.58C399.06,-300.03 412.37,-295.46 424,-290.06 442.09,-281.65 461.1,-269.39 474.9,-259.79"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="475.83,-261.7 479.51,-256.52 473.4,-258.27 475.83,-261.7"/>
 </g>
 <!-- src/js/render/RenderSurface.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge362" class="edge">
+<g id="edge363" class="edge">
 <title>src/js/render/RenderSurface.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M515.59,-353.78C529.94,-361.57 550.05,-373.14 566.5,-385.06 589.76,-401.92 614.26,-424.24 629.84,-439.1"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="628.37,-440.6 634.15,-443.25 631.29,-437.58 628.37,-440.6"/>
 </g>
 <!-- src/js/render/RenderSurface.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge363" class="edge">
+<g id="edge364" class="edge">
 <title>src/js/render/RenderSurface.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M496,-334.64C496,-310.91 496,-287.19 496,-263.47"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="498.1,-263.75 496,-257.75 493.9,-263.75 498.1,-263.75"/>
 </g>
 <!-- src/js/video/VideoSurface.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge364" class="edge">
+<g id="edge365" class="edge">
 <title>src/js/video/VideoSurface.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M372.54,-260.75C387.94,-268.45 410.8,-278.75 432,-284.06 461.11,-291.34 541.7,-279.17 566.5,-296.06 615.72,-329.57 635.97,-402.83 642.97,-436.93"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="640.84,-436.98 644.03,-442.47 644.96,-436.18 640.84,-436.98"/>
 </g>
 <!-- src/js/video/VideoSurface.js&#45;&gt;src/js/display/Display.js -->
-<g id="edge365" class="edge">
+<g id="edge366" class="edge">
 <title>src/js/video/VideoSurface.js&#45;&gt;src/js/display/Display.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M393.83,-249.37C414.42,-248.49 439.39,-247.43 459.37,-246.58"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="459.24,-248.68 465.14,-246.33 459.06,-244.49 459.24,-248.68"/>
@@ -773,8 +773,8 @@
 <!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge33" class="edge">
 <title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M212.17,-1235.44C222.99,-1194.03 265.31,-1026.6 280.12,-886.06 281.57,-872.38 279.8,-402 288.12,-391.06 326.24,-340.96 379.45,-395.53 424,-351.06 432.86,-342.22 421.97,-331.55 432,-324.06 479.9,-288.29 507.99,-311.83 566.5,-324.06 639.26,-339.27 664.77,-341.03 719.75,-391.06 745.18,-414.2 761.67,-451.66 769.79,-473.87"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="767.79,-474.54 771.76,-479.52 771.76,-473.16 767.79,-474.54"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M212.17,-1235.44C222.99,-1194.03 265.31,-1026.6 280.12,-886.06 281.57,-872.38 279.8,-402 288.12,-391.06 326.24,-340.96 379.45,-395.53 424,-351.06 432.86,-342.22 421.97,-331.55 432,-324.06 479.9,-288.29 507.99,-311.83 566.5,-324.06 639.26,-339.27 667.89,-337.8 719.75,-391.06 752.97,-425.18 767.38,-481.63 772.84,-510.62"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="770.74,-510.8 773.85,-516.35 774.88,-510.08 770.74,-510.8"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/ComponentManager.js -->
 <g id="node30" class="node">
@@ -911,8 +911,8 @@
 <!-- src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge58" class="edge">
 <title>src/js/directable/dotmatrix/dot/DotManager.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M366.1,-906.43C382.61,-892.19 411.89,-863.75 424,-832.06 432.53,-809.73 417.22,-635.85 432,-617.06 470.39,-568.23 508.04,-600.07 566.5,-579.06 640.19,-552.57 654.69,-536.25 727.75,-508.06 730.75,-506.9 733.88,-505.74 737.04,-504.61"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="737.55,-506.66 742.52,-502.7 736.17,-502.69 737.55,-506.66"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M366.1,-906.43C382.61,-892.19 411.89,-863.75 424,-832.06 432.53,-809.73 416.99,-635.67 432,-617.06 436.88,-611.01 647.71,-559.81 736.73,-538.4"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="737.17,-540.46 742.51,-537.01 736.19,-536.37 737.17,-540.46"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/Dot.js -->
 <g id="node40" class="node">
@@ -1538,14 +1538,20 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M616.08,-2334.52C597.36,-2332.24 576.08,-2325.49 570.5,-2307.06 567.15,-2295.99 568.25,-652.41 570.5,-641.06 583.45,-575.64 619.71,-504.34 637.3,-472.32"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="638.98,-473.62 640.07,-467.35 635.31,-471.57 638.98,-473.62"/>
 </g>
-<!-- src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/dotmatrix/shape/fill/FillStrategyType.js -->
+<!-- src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge340" class="edge">
+<title>src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/grid/GridData.js</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M678.31,-2333.82C693.3,-2331.49 710.21,-2325.9 719.75,-2313.06 734.39,-2293.34 713.35,-564.95 727.75,-545.06 730.32,-541.51 733.71,-538.74 737.5,-536.57"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.32,-538.51 742.96,-534.15 736.62,-534.67 738.32,-538.51"/>
+</g>
+<!-- src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/dotmatrix/shape/fill/FillStrategyType.js -->
+<g id="edge341" class="edge">
 <title>src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/dotmatrix/shape/fill/FillStrategyType.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M678.2,-2333.73C693.16,-2331.38 710.08,-2325.8 719.75,-2313.06 740.71,-2285.43 707.11,-2028.93 727.75,-2001.06 727.87,-2000.9 727.99,-2000.74 728.11,-2000.59"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="729.37,-2002.28 732.3,-1996.64 726.49,-1999.23 729.37,-2002.28"/>
 </g>
 <!-- src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/dotmatrix/shape/fill/FillType.js -->
-<g id="edge341" class="edge">
+<g id="edge342" class="edge">
 <title>src/js/directable/dotmatrix/view/ViewTest.js&#45;&gt;src/js/directable/dotmatrix/shape/fill/FillType.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M678.48,-2332.88C692.96,-2330.26 709.35,-2324.69 719.75,-2313.06 757.11,-2271.28 771.11,-2092.39 774.73,-2034.33"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="776.81,-2034.65 775.07,-2028.54 772.62,-2034.4 776.81,-2034.65"/>
@@ -1562,8 +1568,8 @@
 <!-- src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge43" class="edge">
 <title>src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M675.29,-2410.34C691.33,-2403.03 710.29,-2391.29 719.75,-2374.06 732.22,-2351.34 712.55,-529.05 727.75,-508.06 730.32,-504.51 733.71,-501.74 737.5,-499.57"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.32,-501.51 742.96,-497.15 736.62,-497.67 738.32,-501.51"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M675.29,-2410.34C691.33,-2403.03 710.29,-2391.29 719.75,-2374.06 731.98,-2351.79 712.85,-565.63 727.75,-545.06 730.32,-541.51 733.71,-538.74 737.5,-536.57"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.32,-538.51 742.96,-534.15 736.62,-534.67 738.32,-538.51"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/line/ComponentLineWidthFull.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js -->
 <g id="edge46" class="edge">
@@ -1586,8 +1592,8 @@
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge47" class="edge">
 <title>src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M700.19,-2473.78C707.83,-2470.46 714.79,-2465.74 719.75,-2459.06 735.9,-2437.3 711.86,-530.01 727.75,-508.06 730.32,-504.51 733.71,-501.74 737.5,-499.57"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.32,-501.5 742.95,-497.15 736.62,-497.67 738.32,-501.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M700.19,-2473.78C707.83,-2470.46 714.79,-2465.74 719.75,-2459.06 735.59,-2437.71 712.16,-566.59 727.75,-545.06 730.32,-541.51 733.71,-538.74 737.5,-536.57"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.32,-538.51 742.95,-534.15 736.62,-534.67 738.32,-538.51"/>
 </g>
 <!-- src/js/directable/dotmatrix/component/text/ComponentTextBox.js&#45;&gt;src/js/directable/dotmatrix/component/Component.js -->
 <g id="edge50" class="edge">
@@ -1643,8 +1649,8 @@
 <!-- src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/grid/GridData.js -->
 <g id="edge55" class="edge">
 <title>src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/grid/GridData.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M516.23,-906.38C532.85,-896.85 555.84,-880.59 566.5,-859.06 577.55,-836.74 559.18,-654.69 574.5,-635.06 615.83,-582.07 676.89,-644.82 719.75,-593.06 731.85,-578.44 715.95,-522.91 727.75,-508.06 730.41,-504.71 733.8,-502.06 737.53,-499.95"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.19,-501.96 742.81,-497.6 736.48,-498.12 738.19,-501.96"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M516.23,-906.38C532.85,-896.85 555.84,-880.59 566.5,-859.06 577.55,-836.74 559.18,-654.69 574.5,-635.06 615.83,-582.07 675.07,-643.26 719.75,-593.06 734.13,-576.9 713.7,-561.5 727.75,-545.06 730.53,-541.81 733.99,-539.21 737.76,-537.15"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="738.43,-539.15 743.08,-534.81 736.74,-535.3 738.43,-539.15"/>
 </g>
 <!-- src/js/directable/dotmatrix/dot/Dot.js&#45;&gt;src/js/render/RenderSurface.js -->
 <g id="edge56" class="edge">
@@ -3120,7 +3126,7 @@
 </g>
 </g>
 <!-- src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/image&#45;sequence&#45;data.json -->
-<g id="edge342" class="edge">
+<g id="edge343" class="edge">
 <title>src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/image&#45;sequence&#45;data.json</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M277.18,-2634.95C278.53,-2634.81 279.88,-2634.67 281.23,-2634.53"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="281.37,-2636.62 287.12,-2633.91 280.93,-2632.45 281.37,-2636.62"/>
@@ -3135,7 +3141,7 @@
 </g>
 </g>
 <!-- src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/ImageSequenceImage.js -->
-<g id="edge343" class="edge">
+<g id="edge344" class="edge">
 <title>src/js/directable/image&#45;sequencer/DirectableImageSequencer.js&#45;&gt;src/js/directable/image&#45;sequencer/ImageSequenceImage.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M277.18,-2649.64C279.81,-2649.93 282.45,-2650.23 285.08,-2650.52"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="284.78,-2652.6 290.97,-2651.18 285.24,-2648.43 284.78,-2652.6"/>
@@ -3150,31 +3156,31 @@
 </g>
 </g>
 <!-- src/js/directable/title/DirectableTitle.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge344" class="edge">
+<g id="edge345" class="edge">
 <title>src/js/directable/title/DirectableTitle.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M251.1,-2868.12C262.28,-2864.94 273.19,-2859.44 280.12,-2850.06 298.48,-2825.2 271.68,-651.22 288.12,-625.06 323.85,-568.22 368.05,-596.16 424,-559.06 427.94,-556.45 427.75,-554.12 432,-552.06 486.71,-525.54 518.77,-564.73 566.5,-527.06 573.37,-521.63 569.05,-515.91 574.5,-509.06 587.37,-492.86 606.17,-478.93 621.28,-469.28"/>
-<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="622.22,-471.17 626.22,-466.23 620.01,-467.6 622.22,-471.17"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M251.1,-2868.12C262.28,-2864.94 273.19,-2859.44 280.12,-2850.06 298.48,-2825.2 271.68,-651.22 288.12,-625.06 323.85,-568.22 368.05,-596.16 424,-559.06 427.94,-556.45 427.75,-554.12 432,-552.06 486.71,-525.54 512,-554.02 566.5,-527.06 593.83,-513.53 618.75,-487.88 633.18,-471.13"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="634.5,-472.83 636.75,-466.88 631.29,-470.13 634.5,-472.83"/>
 </g>
 <!-- src/js/directable/video/DirectableVimeo.js&#45;&gt;src/js/application/ApplicationConfiguration.js -->
-<g id="edge345" class="edge">
+<g id="edge346" class="edge">
 <title>src/js/directable/video/DirectableVimeo.js&#45;&gt;src/js/application/ApplicationConfiguration.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M255.5,-2774.74C265.09,-2771.42 274.11,-2766.21 280.12,-2758.06 298.51,-2733.15 270.25,-554.34 288.12,-529.06 306.26,-503.41 386.68,-480.14 441.74,-466.8"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="442.05,-468.88 447.4,-465.45 441.08,-464.8 442.05,-468.88"/>
 </g>
 <!-- src/js/directable/video/DirectableVimeo.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge346" class="edge">
+<g id="edge347" class="edge">
 <title>src/js/directable/video/DirectableVimeo.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M255.5,-2774.74C265.09,-2771.42 274.11,-2766.21 280.12,-2758.06 298.28,-2733.46 268.8,-580.74 288.12,-557.06 368.03,-459.15 448.01,-543 566.5,-499.06 587.05,-491.44 608.73,-479.14 624.26,-469.49"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="625.29,-471.32 629.23,-466.34 623.04,-467.77 625.29,-471.32"/>
 </g>
 <!-- src/js/directable/video/DirectableYoutube.js&#45;&gt;src/js/application/ApplicationConfiguration.js -->
-<g id="edge347" class="edge">
+<g id="edge348" class="edge">
 <title>src/js/directable/video/DirectableYoutube.js&#45;&gt;src/js/application/ApplicationConfiguration.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M259.21,-2808.62C267.31,-2805.97 274.79,-2801.72 280.12,-2795.06 299.56,-2770.8 270.46,-582.63 288.12,-557.06 324.87,-503.85 366.93,-535.46 424,-505.06 442.86,-495.01 462.6,-480.76 476.47,-470.04"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="477.72,-471.73 481.14,-466.37 475.13,-468.42 477.72,-471.73"/>
 </g>
 <!-- src/js/directable/video/DirectableYoutube.js&#45;&gt;src/js/application/ApplicationLogger.js -->
-<g id="edge348" class="edge">
+<g id="edge349" class="edge">
 <title>src/js/directable/video/DirectableYoutube.js&#45;&gt;src/js/application/ApplicationLogger.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M259.21,-2808.62C267.31,-2805.97 274.79,-2801.72 280.12,-2795.06 299.44,-2770.95 268.72,-595.09 288.12,-571.06 298.07,-558.74 551.98,-516.37 566.5,-510.06 589.54,-500.04 612.83,-482.96 628.22,-470.49"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="629.49,-472.16 632.77,-466.72 626.81,-468.93 629.49,-472.16"/>
@@ -3183,8 +3189,8 @@
 <g id="node90" class="node">
 <title>src/js/grid/GridController.js</title>
 <g id="a_node90"><a xlink:href="src/js/grid/GridController.js" xlink:title="GridController.js">
-<path fill="#ffffcc" stroke="black" d="M811.58,-532.31C811.58,-532.31 741.92,-532.31 741.92,-532.31 738.83,-532.31 735.75,-529.22 735.75,-526.14 735.75,-526.14 735.75,-519.97 735.75,-519.97 735.75,-516.89 738.83,-513.81 741.92,-513.81 741.92,-513.81 811.58,-513.81 811.58,-513.81 814.67,-513.81 817.75,-516.89 817.75,-519.97 817.75,-519.97 817.75,-526.14 817.75,-526.14 817.75,-529.22 814.67,-532.31 811.58,-532.31"/>
-<text text-anchor="start" x="743.75" y="-519.76" font-family="Helvetica,sans-Serif" font-size="9.00">GridController.js</text>
+<path fill="#ffffcc" stroke="black" d="M811.58,-569.31C811.58,-569.31 741.92,-569.31 741.92,-569.31 738.83,-569.31 735.75,-566.22 735.75,-563.14 735.75,-563.14 735.75,-556.97 735.75,-556.97 735.75,-553.89 738.83,-550.81 741.92,-550.81 741.92,-550.81 811.58,-550.81 811.58,-550.81 814.67,-550.81 817.75,-553.89 817.75,-556.97 817.75,-556.97 817.75,-563.14 817.75,-563.14 817.75,-566.22 814.67,-569.31 811.58,-569.31"/>
+<text text-anchor="start" x="743.75" y="-556.76" font-family="Helvetica,sans-Serif" font-size="9.00">GridController.js</text>
 </a>
 </g>
 </g>
@@ -3198,7 +3204,7 @@
 </g>
 </g>
 <!-- src/js/index.js&#45;&gt;src/js/application/Application.js -->
-<g id="edge359" class="edge">
+<g id="edge360" class="edge">
 <title>src/js/index.js&#45;&gt;src/js/application/Application.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M236.12,-452.06C256.48,-452.06 285.03,-452.06 308.73,-452.06"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="308.52,-454.16 314.52,-452.06 308.52,-449.96 308.52,-454.16"/>
