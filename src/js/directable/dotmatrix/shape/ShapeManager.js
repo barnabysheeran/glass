@@ -147,14 +147,14 @@ export default class ShapeManager {
 
 	// TODO Should this be here or replaced by Component Manager
 
-	redraw() {
-		ApplicationLogger.log('ShapeManager redraw', this.#LOG_LEVEL);
+	// redraw() {
+	// 	ApplicationLogger.log('ShapeManager redraw', this.#LOG_LEVEL);
 
-		// Redraw All Shapes
-		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.#SHAPES[i].redraw();
-		}
-	}
+	// 	// Redraw All Shapes
+	// 	for (let i = 0; i < this.#SHAPES.length; i += 1) {
+	// 		this.#SHAPES[i].redraw();
+	// 	}
+	// }
 
 	// _________________________________________________________ Line Horizontal
 

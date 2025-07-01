@@ -61,9 +61,18 @@ export default class ComponentTextBox extends Component {
 				// TODO Hard Coded Grid Space Width
 				currentGridX += 3;
 			} else {
+				const CLASS_NAME = `ShapeGlyph_${GLYPH_NAME}`;
+
 				// TODO Hardcoded Delay Increment
 
-				const SHAPE_GLYPH = new 
+				const SHAPE_GLYPH = new CLASS_NAME(
+					this.DOT_MANAGER,
+					currentGridX,
+					this.GRID_Y,
+					this.FILL_TYPE,
+					this.FILL_STRATEGY_TYPE,
+					this.DELAY + i * 2, // Delay for each glyph
+				);
 
 				// Create Shape Glyph
 				// const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
@@ -76,10 +85,10 @@ export default class ComponentTextBox extends Component {
 				// );
 
 				// Store
-				// this.#SHAPES.push(SHAPE);
+				this.#SHAPES.push(SHAPE_GLYPH);
 
 				// Increment Current Grid X Position
-				currentGridX += SHAPE.getGlyphWidth() + GRID_SPACING_X;
+				currentGridX += SHAPE_GLYPH.getGlyphWidth() + GRID_SPACING_X;
 			}
 		}
 	}
