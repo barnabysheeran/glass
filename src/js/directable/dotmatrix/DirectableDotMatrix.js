@@ -37,9 +37,6 @@ export default class DirectableDotMatrix {
 
 		// Create Views
 		this.#VIEWS.push(new DotMatrixViewTest(this.#COMPONENT_MANAGER));
-
-		// const VIEW_TEXT_TEST = new ViewTextTest(this.#SHAPE_MANAGER);
-		// this.#VIEWS.push(VIEW_TEXT_TEST);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -58,7 +55,7 @@ export default class DirectableDotMatrix {
 
 	// ____________________________________________________________________ Size
 
-	// TODO Rename
+	// TODO Rename to reset ?
 
 	setSize(width, height) {
 		ApplicationLogger.log(
