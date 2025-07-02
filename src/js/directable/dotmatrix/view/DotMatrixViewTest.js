@@ -36,8 +36,10 @@ export default class ViewTest {
 	start() {
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
-		// const GRID_MAX_WIDTH = GRID_MAX[0];
+		const GRID_MAX_WIDTH = GRID_MAX[0];
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
+
+		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
 
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
 
@@ -57,12 +59,12 @@ export default class ViewTest {
 			this.#SHAPE_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			150,
+			GRID_MAX_WIDTH,
 		);
 
 		this.#COMPONENTS.push(COMPONENT_ABC);
@@ -72,17 +74,17 @@ export default class ViewTest {
 			this.#SHAPE_MANAGER,
 			'0123456789',
 			0,
-			this.#LINE_HEIGHT * 3,
+			this.#LINE_HEIGHT * 4,
 			100,
 			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			150,
+			GRID_MAX_WIDTH,
 		);
 
 		this.#COMPONENTS.push(COMPONENT_0001);
 
-		const RECTANGLE_GRID_Y = this.#LINE_HEIGHT * 5;
+		const RECTANGLE_GRID_Y = this.#LINE_HEIGHT * 7;
 		const RECTANGLE_WIDTH = this.#LINE_HEIGHT * 1;
 		const RECTANGLE_HEIGHT = this.#LINE_HEIGHT * 1;
 
@@ -94,8 +96,8 @@ export default class ViewTest {
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
 			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			200,
+			FillStrategyType.Reverse,
+			GRID_MAX_WIDTH_THIRD,
 		);
 
 		this.#COMPONENTS.push(COMPONENT_RECTANGLE_A);
@@ -109,7 +111,7 @@ export default class ViewTest {
 			RECTANGLE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.Random,
-			300,
+			GRID_MAX_WIDTH - GRID_MAX_WIDTH_THIRD,
 		);
 
 		this.#COMPONENTS.push(COMPONENT_RECTANGLE_B);
@@ -122,8 +124,8 @@ export default class ViewTest {
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
 			FillType.PassThrough,
-			FillStrategyType.Reverse,
-			400,
+			FillStrategyType.PassThrough,
+			GRID_MAX_WIDTH,
 		);
 
 		this.#COMPONENTS.push(COMPONENT_RECTANGLE_C);
@@ -133,11 +135,11 @@ export default class ViewTest {
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 2;
 		const BLOCK_DELAY_PER_LINE = 5;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 2) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'X',
+				'XI',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
@@ -151,29 +153,11 @@ export default class ViewTest {
 			this.#COMPONENTS.push(COMPONENT);
 		}
 
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
+		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 2) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'I',
-				0,
-				this.#LINE_HEIGHT * i,
-				100,
-				50,
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				BLOCK_DELAY_PER_LINE * i,
-			);
-
-			// Store
-			this.#COMPONENTS.push(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.#SHAPE_MANAGER,
-				'Z',
+				'IX',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
