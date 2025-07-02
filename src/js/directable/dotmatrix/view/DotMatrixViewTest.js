@@ -132,7 +132,7 @@ export default class ViewTest {
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 2;
+		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
 		const BLOCK_DELAY_PER_LINE = 5;
 
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 2) {
