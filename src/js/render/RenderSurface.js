@@ -18,6 +18,9 @@ export default class RenderSurface {
 	static #width;
 	static #height;
 
+	static #DELAY_SHOW = 1;
+	static #delayShowCurrent = this.#DELAY_SHOW;
+
 	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
@@ -218,6 +221,12 @@ export default class RenderSurface {
 	// ____________________________________________________________________ Tick
 
 	static tick() {
+		// Avoid Initial Frames to Avoid Flicker
+		if (this.#delayShowCurrent > 0) {
+			this.#delayShowCurrent--;
+			return;
+		}
+
 		const GL = this.#GL;
 
 		GL.bindFramebuffer(GL.FRAMEBUFFER, null);
