@@ -7,6 +7,7 @@ import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
 import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphBoxWidthFull from '../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class ViewTest {
 	#SHAPE_MANAGER;
@@ -83,11 +84,30 @@ export default class ViewTest {
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
+
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 2) {
 			// Create Component
-			const COMPONENT = new ComponentGlyphBox(
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+				'X',
+				0,
+				this.#LINE_HEIGHT * i,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				30 * i,
+			);
+
+			// Store
+			this.#COMPONENTS.push(COMPONENT);
+		}
+
+		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 2) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.#SHAPE_MANAGER,
+				'I',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
