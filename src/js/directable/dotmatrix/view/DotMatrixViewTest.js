@@ -9,7 +9,6 @@ import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js'
 import ComponentTextBox from '../component/text/ComponentTextBox.js';
 
 export default class ViewTest {
-	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 
 	#LINE_HEIGHT = 6;
@@ -20,11 +19,10 @@ export default class ViewTest {
 
 	// _________________________________________________________________________
 
-	constructor(dotManager, shapeManager) {
+	constructor( shapeManager) {
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
-		this.#DOT_MANAGER = dotManager;
 		this.#SHAPE_MANAGER = shapeManager;
 
 		// Initial Draw

@@ -27,9 +27,7 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
 		// Create Views
-		this.#VIEWS.push(
-			new DotMatrixViewTest(this.#DOT_MANAGER, this.#SHAPE_MANAGER),
-		);
+		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER));
 	}
 
 	// ____________________________________________________________________ Tick
