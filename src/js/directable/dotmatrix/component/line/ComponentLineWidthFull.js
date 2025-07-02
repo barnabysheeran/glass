@@ -5,8 +5,6 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
-import ShapeLineHorizontal from '../../shape/line/ShapeLineHorizontal.js';
-
 export default class ComponentLineWidthFull extends Component {
 	#SHAPE;
 
@@ -14,21 +12,12 @@ export default class ComponentLineWidthFull extends Component {
 
 	constructor(
 		shapeManager,
-		dotManager,
 		gridY,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 		delay,
 	) {
-		super(
-			shapeManager,
-			dotManager,
-			0,
-			gridY,
-			fillType,
-			fillStrategyType,
-			delay,
-		);
+		super(shapeManager, 0, gridY, fillType, fillStrategyType, delay);
 
 		// Create Shape
 		this.#createShape();
@@ -41,8 +30,7 @@ export default class ComponentLineWidthFull extends Component {
 		const GRID_MAX = GridData.getGridMax();
 		const LINE_WIDTH = GRID_MAX[0];
 
-		this.#SHAPE = new ShapeLineHorizontal(
-			this.DOT_MANAGER,
+		this.#SHAPE = this.SHAPE_MANAGER.addShapeLineHorizontal(
 			this.GRID_X,
 			this.GRID_Y,
 			LINE_WIDTH,
@@ -57,16 +45,4 @@ export default class ComponentLineWidthFull extends Component {
 	tick() {
 		this.#SHAPE.tick();
 	}
-
-	// __________________________________________________________________ Redraw
-
-	// redraw() {
-	// 	// Remove Existing Shape
-	// 	if (this.#SHAPE) {
-	// 		this.SHAPE_MANAGER.removeShape(this.#SHAPE.getShapeId());
-	// 	}
-
-	// 	// Create Shape
-	// 	this.#createShape();
-	// }
 }

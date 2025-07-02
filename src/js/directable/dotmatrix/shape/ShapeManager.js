@@ -102,17 +102,6 @@ export default class ShapeManager {
 		this.#DOT_MANAGER = dotManager;
 	}
 
-	// __________________________________________________________________ Update
-
-	// tick() {
-	// 	ApplicationLogger.log('ShapeManager tick');
-
-	// 	// Update All Shapes
-	// 	for (let i = 0; i < this.#SHAPES.length; i += 1) {
-	// 		this.#SHAPES[i].tick();
-	// 	}
-	// }
-
 	// ___________________________________________________________________ Reset
 
 	reset() {
@@ -143,19 +132,6 @@ export default class ShapeManager {
 		}
 	}
 
-	// __________________________________________________________________ Redraw
-
-	// TODO Should this be here or replaced by Component Manager
-
-	// redraw() {
-	// 	ApplicationLogger.log('ShapeManager redraw', this.#LOG_LEVEL);
-
-	// 	// Redraw All Shapes
-	// 	for (let i = 0; i < this.#SHAPES.length; i += 1) {
-	// 		this.#SHAPES[i].redraw();
-	// 	}
-	// }
-
 	// _________________________________________________________ Line Horizontal
 
 	addShapeLineHorizontal(
@@ -180,7 +156,7 @@ export default class ShapeManager {
 		// Store
 		this.#SHAPES.push(SHAPE);
 
-		// Add and return
+		// Return
 		return SHAPE;
 	}
 
@@ -208,7 +184,7 @@ export default class ShapeManager {
 		// Store
 		this.#SHAPES.push(SHAPE);
 
-		// Add and return
+		// Return
 		return SHAPE;
 	}
 
@@ -238,7 +214,7 @@ export default class ShapeManager {
 		// Store
 		this.#SHAPES.push(SHAPE);
 
-		// Add and return
+		// Return
 		return SHAPE;
 	}
 
@@ -281,7 +257,7 @@ export default class ShapeManager {
 		// Store
 		this.#SHAPES.push(SHAPE);
 
-		// Add and return
+		// Return
 		return SHAPE;
 	}
 }

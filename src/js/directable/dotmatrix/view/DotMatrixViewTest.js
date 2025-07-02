@@ -19,7 +19,7 @@ export default class ViewTest {
 
 	// _________________________________________________________________________
 
-	constructor( shapeManager) {
+	constructor(shapeManager) {
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
@@ -42,7 +42,6 @@ export default class ViewTest {
 		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.#SHAPE_MANAGER,
-			this.#DOT_MANAGER,
 			this.#LINE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -51,25 +50,12 @@ export default class ViewTest {
 
 		this.#COMPONENTS.push(LINE_TOP);
 
-		// Create Component Line Bottom
-		const LINE_BOTTOM = new ComponentLineWidthFull(
-			this.#SHAPE_MANAGER,
-			this.#DOT_MANAGER,
-			this.#LINE_HEIGHT * LINE_HEIGHT_MAX,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			1,
-		);
-
-		this.#COMPONENTS.push(LINE_BOTTOM);
-
 		// Create Component ABC
 		const COMPONENT_ABC = new ComponentTextBox(
 			this.#SHAPE_MANAGER,
-			this.#DOT_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,
@@ -79,48 +65,52 @@ export default class ViewTest {
 
 		this.#COMPONENTS.push(COMPONENT_ABC);
 
-		// // Add Dummy Text
-		// this.COMPONENT_MANAGER.addComponentTextBox(
-		// 	'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		// 	0,
-		// 	this.#LINE_HEIGHT * 2,
-		// 	100,
-		// 	50,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	150,
-		// );
+		// Add Component 0001
+		const COMPONENT_0001 = new ComponentTextBox(
+			this.#SHAPE_MANAGER,
+			'0123456789',
+			0,
+			this.#LINE_HEIGHT * 4,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			150,
+		);
 
-		// this.COMPONENT_MANAGER.addComponentTextBox(
-		// 	'0123456789',
-		// 	0,
-		// 	this.#LINE_HEIGHT * 3,
-		// 	100,
-		// 	50,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	200,
-		// );
+		this.#COMPONENTS.push(COMPONENT_0001);
 
 		// Add Dummy Text with Line Height
-		// const BLOCK_GRID_TOP = 10;
-		// const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 10;
-		// for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
-		// 	// Create Component
-		// 	const COMPONENT = new ComponentTextBox(
-		// 		'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-		// 		0,
-		// 		this.#LINE_HEIGHT * i,
-		// 		100,
-		// 		50,
-		// 		FillType.PassThrough,
-		// 		FillStrategyType.PassThrough,
-		// 		30 * i,
-		// 	);
+		const BLOCK_GRID_TOP = 10;
+		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
+			// Create Component
+			const COMPONENT = new ComponentTextBox(
+				this.#SHAPE_MANAGER,
+				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+				0,
+				this.#LINE_HEIGHT * i,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				30 * i,
+			);
 
-		// 	// Store
-		// 	this.#COMPONENTS.push(COMPONENT);
-		// }
+			// Store
+			this.#COMPONENTS.push(COMPONENT);
+		}
+
+		// Create Component Line Bottom
+		const LINE_BOTTOM = new ComponentLineWidthFull(
+			this.#SHAPE_MANAGER,
+			this.#LINE_HEIGHT * (LINE_HEIGHT_MAX - 7),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			120,
+		);
+
+		this.#COMPONENTS.push(LINE_BOTTOM);
 
 		// TODO Add Rectangle
 	}
