@@ -232,7 +232,7 @@ export default class ShapeManager {
 		const ShapeClass = GLYPH_MAP[upperChar];
 
 		if (!ShapeClass) {
-			ApplicationLogger.log(
+			ApplicationLogger.warn(
 				`ShapeManager addShapeGlyph Unknown character '${character}'`,
 				this.#LOG_LEVEL,
 			);
