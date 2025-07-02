@@ -6,7 +6,7 @@ import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
 import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js';
-import ComponentTextBox from '../component/text/ComponentTextBox.js';
+import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
 
 export default class ViewTest {
 	#SHAPE_MANAGER;
@@ -51,7 +51,7 @@ export default class ViewTest {
 		this.#COMPONENTS.push(LINE_TOP);
 
 		// Create Component ABC
-		const COMPONENT_ABC = new ComponentTextBox(
+		const COMPONENT_ABC = new ComponentGlyphBox(
 			this.#SHAPE_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
@@ -66,7 +66,7 @@ export default class ViewTest {
 		this.#COMPONENTS.push(COMPONENT_ABC);
 
 		// Add Component 0001
-		const COMPONENT_0001 = new ComponentTextBox(
+		const COMPONENT_0001 = new ComponentGlyphBox(
 			this.#SHAPE_MANAGER,
 			'0123456789',
 			0,
@@ -85,7 +85,7 @@ export default class ViewTest {
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i++) {
 			// Create Component
-			const COMPONENT = new ComponentTextBox(
+			const COMPONENT = new ComponentGlyphBox(
 				this.#SHAPE_MANAGER,
 				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 				0,

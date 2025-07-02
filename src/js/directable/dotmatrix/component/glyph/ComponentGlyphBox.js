@@ -3,7 +3,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
-export default class ComponentTextBox extends Component {
+export default class ComponentGlyphBox extends Component {
 	#SHAPES = [];
 
 	// Unique Parameters
