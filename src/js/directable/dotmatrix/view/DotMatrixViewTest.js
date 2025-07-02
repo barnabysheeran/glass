@@ -13,7 +13,7 @@ import ComponentRectangle from '../component/primative/ComponentRectangle.js';
 export default class ViewTest {
 	#SHAPE_MANAGER;
 
-	#LINE_HEIGHT = 6;
+	#LINE_HEIGHT = 7;
 
 	#COMPONENTS = [];
 
@@ -57,7 +57,7 @@ export default class ViewTest {
 			this.#SHAPE_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			this.#LINE_HEIGHT * 3,
+			this.#LINE_HEIGHT * 2,
 			100,
 			50,
 			FillType.PassThrough,
@@ -72,7 +72,7 @@ export default class ViewTest {
 			this.#SHAPE_MANAGER,
 			'0123456789',
 			0,
-			this.#LINE_HEIGHT * 4,
+			this.#LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,
@@ -81,6 +81,52 @@ export default class ViewTest {
 		);
 
 		this.#COMPONENTS.push(COMPONENT_0001);
+
+		const RECTANGLE_GRID_Y = this.#LINE_HEIGHT * 5;
+		const RECTANGLE_WIDTH = this.#LINE_HEIGHT * 1;
+		const RECTANGLE_HEIGHT = this.#LINE_HEIGHT * 1;
+
+		// Create Component Rectangle A
+		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			0,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			200,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_A);
+
+		// Create Component Rectangle B
+		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			RECTANGLE_WIDTH + 2,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+			300,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_B);
+
+		// Create Component Rectangle C
+		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			RECTANGLE_WIDTH * 2 + 4,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+			400,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_C);
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
@@ -132,48 +178,6 @@ export default class ViewTest {
 		);
 
 		this.#COMPONENTS.push(LINE_BOTTOM);
-
-		// Create Component Rectangle A
-		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
-			this.#SHAPE_MANAGER,
-			0,
-			this.#LINE_HEIGHT * 6,
-			this.#LINE_HEIGHT * 2,
-			this.#LINE_HEIGHT * 2,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			200,
-		);
-
-		this.#COMPONENTS.push(COMPONENT_RECTANGLE_A);
-
-		// Create Component Rectangle B
-		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
-			this.#SHAPE_MANAGER,
-			this.#LINE_HEIGHT * 3,
-			this.#LINE_HEIGHT * 6,
-			this.#LINE_HEIGHT * 2,
-			this.#LINE_HEIGHT * 2,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			300,
-		);
-
-		this.#COMPONENTS.push(COMPONENT_RECTANGLE_B);
-
-		// Create Component Rectangle C
-		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
-			this.#SHAPE_MANAGER,
-			this.#LINE_HEIGHT * 6,
-			this.#LINE_HEIGHT * 6,
-			this.#LINE_HEIGHT * 2,
-			this.#LINE_HEIGHT * 2,
-			FillType.PassThrough,
-			FillStrategyType.Reverse,
-			400,
-		);
-
-		this.#COMPONENTS.push(COMPONENT_RECTANGLE_C);
 	}
 
 	// ____________________________________________________________________ tick
