@@ -130,9 +130,10 @@ export default class ViewTest {
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
+		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 2;
+		const BLOCK_DELAY_PER_LINE = 5;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 2) {
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
@@ -143,14 +144,14 @@ export default class ViewTest {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				30 * i,
+				BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
 			this.#COMPONENTS.push(COMPONENT);
 		}
 
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 2) {
+		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
@@ -161,7 +162,25 @@ export default class ViewTest {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				30 * i,
+				BLOCK_DELAY_PER_LINE * i,
+			);
+
+			// Store
+			this.#COMPONENTS.push(COMPONENT);
+		}
+
+		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.#SHAPE_MANAGER,
+				'Z',
+				0,
+				this.#LINE_HEIGHT * i,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
@@ -171,10 +190,10 @@ export default class ViewTest {
 		// Create Component Line Bottom
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.#SHAPE_MANAGER,
-			this.#LINE_HEIGHT * (LINE_HEIGHT_MAX - 7),
+			this.#LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			120,
+			1,
 		);
 
 		this.#COMPONENTS.push(LINE_BOTTOM);
