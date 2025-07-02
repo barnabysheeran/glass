@@ -8,6 +8,7 @@ import FillStrategyType from '../shape/fill/FillStrategyType.js';
 import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../component/glyph/ComponentGlyphBoxWidthFull.js';
+import ComponentRectangle from '../component/primative/ComponentRectangle.js';
 
 export default class ViewTest {
 	#SHAPE_MANAGER;
@@ -132,7 +133,47 @@ export default class ViewTest {
 
 		this.#COMPONENTS.push(LINE_BOTTOM);
 
-		// TODO Add Rectangle
+		// Create Component Rectangle A
+		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			0,
+			this.#LINE_HEIGHT * 6,
+			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 2,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			200,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_A);
+
+		// Create Component Rectangle B
+		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			this.#LINE_HEIGHT * 3,
+			this.#LINE_HEIGHT * 6,
+			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 2,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+			300,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_B);
+
+		// Create Component Rectangle C
+		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
+			this.#SHAPE_MANAGER,
+			this.#LINE_HEIGHT * 6,
+			this.#LINE_HEIGHT * 6,
+			this.#LINE_HEIGHT * 2,
+			this.#LINE_HEIGHT * 2,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+			400,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_RECTANGLE_C);
 	}
 
 	// ____________________________________________________________________ tick
