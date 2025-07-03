@@ -45,4 +45,10 @@ export default class ComponentLineWidthFull extends Component {
 	tick() {
 		this.#SHAPE.tick();
 	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		this.#SHAPE = null;
+	}
 }

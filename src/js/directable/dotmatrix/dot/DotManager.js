@@ -20,18 +20,8 @@ export default class DotManager {
 
 		// Create Dot Pool
 		for (let i = 0; i < this.#dotPoolSize; i += 1) {
-			const dot = new Dot(i);
-			this.#DOTS.push(dot);
+			this.#DOTS.push(new Dot(i));
 		}
-	}
-
-	// ___________________________________________________________________ Reset
-
-	reset() {
-		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
-
-		// Reset Dot Pool Index
-		this.#dotPoolIndex = 0;
 	}
 
 	// ________________________________________________________________ Dot Pool
@@ -39,8 +29,6 @@ export default class DotManager {
 	getNextFreeDotIndex() {
 		// Store Index for Return
 		let index = this.#dotPoolIndex;
-
-		// console.log('DotManager index ' + index);
 
 		// Next
 		this.#dotPoolIndex += 1;
@@ -56,6 +44,20 @@ export default class DotManager {
 		}
 
 		return index;
+	}
+
+	// ___________________________________________________________________ Reset
+
+	reset() {
+		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
+
+		// Reset Dots
+		for (let i = 0; i < this.#DOTS.length; i += 1) {
+			this.#DOTS[i].reset();
+		}
+
+		// Reset Dot Pool Index
+		this.#dotPoolIndex = 0;
 	}
 
 	// ________________________________________________________________ Position

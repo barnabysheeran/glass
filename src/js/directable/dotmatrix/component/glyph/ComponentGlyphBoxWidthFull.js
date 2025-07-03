@@ -117,4 +117,11 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 			this.#SHAPES[i].tick();
 		}
 	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		// Clear Shapes
+		this.#SHAPES = [];
+	}
 }

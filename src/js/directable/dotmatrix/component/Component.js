@@ -24,4 +24,6 @@ export default class Component {
 	// ____________________________________________________________________ Tick
 
 	tick() {} // Stub
+
+	destroy() {} // Stub
 }

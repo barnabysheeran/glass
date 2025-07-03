@@ -30,8 +30,6 @@ export default class Dot {
 
 	#LOG_LEVEL = -1; // 6;
 
-	// TODO Rename / Combine with UI Old block component blockfill
-
 	// _________________________________________________________________________
 
 	constructor(dotIndex) {
@@ -88,5 +86,18 @@ export default class Dot {
 			GRID_HEIGHT,
 			CLEARED_DATA,
 		);
+	}
+
+	// ____________________________________________________________________ Reset
+
+	reset() {
+		ApplicationLogger.log(`Dot ${this.#dotIndex} reset`, this.#LOG_LEVEL);
+
+		// Reset Position
+		this.#positionPixelsX = 0;
+		this.#positionPixelsY = 0;
+
+		// Clear Dot
+		this.clear();
 	}
 }

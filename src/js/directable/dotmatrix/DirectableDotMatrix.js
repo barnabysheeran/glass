@@ -48,6 +48,7 @@ export default class DirectableDotMatrix {
 		);
 
 		// Reset Current View
+		this.#VIEWS[0].stop();
 		this.#VIEWS[0].reset();
 
 		// Reset Shape Manager

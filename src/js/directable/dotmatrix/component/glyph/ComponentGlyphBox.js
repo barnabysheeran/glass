@@ -78,4 +78,11 @@ export default class ComponentGlyphBox extends Component {
 			this.#SHAPES[i].tick();
 		}
 	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		// Clear Shapes
+		this.#SHAPES = [];
+	}
 }

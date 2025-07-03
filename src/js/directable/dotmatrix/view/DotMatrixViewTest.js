@@ -2,6 +2,8 @@ import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 import GridData from '../../../grid/GridData.js';
 
+import DotMatrixView from './DotMatrixView.js';
+
 import FillType from '../shape/fill/FillType.js';
 import FillStrategyType from '../shape/fill/FillStrategyType.js';
 
@@ -10,7 +12,7 @@ import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../component/primative/ComponentRectangle.js';
 
-export default class ViewTest {
+export default class DotMatrixViewTest extends DotMatrixView {
 	#SHAPE_MANAGER;
 
 	#LINE_HEIGHT = 7;
@@ -22,6 +24,8 @@ export default class ViewTest {
 	// _________________________________________________________________________
 
 	constructor(shapeManager) {
+		super();
+
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 
 		// Store
@@ -217,7 +221,7 @@ export default class ViewTest {
 		this.#COMPONENTS.push(LINE_BOTTOM);
 	}
 
-	// ____________________________________________________________________ tick
+	// ____________________________________________________________________ Tick
 
 	tick() {
 		// Tick Components
@@ -226,5 +230,15 @@ export default class ViewTest {
 		}
 	}
 
-	reset() {}
+	// ___________________________________________________________________ Reset
+
+	reset() {
+		// Destroy Components
+		for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
+			this.#COMPONENTS[i].destroy();
+		}
+
+		// Reset Components
+		this.#COMPONENTS = [];
+	}
 }

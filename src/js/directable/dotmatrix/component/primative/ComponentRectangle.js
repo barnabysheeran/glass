@@ -53,4 +53,11 @@ export default class ComponentRectangle extends Component {
 	tick() {
 		this.#SHAPE.tick();
 	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		// Clear Shapes
+		this.#SHAPE = null;
+	}
 }
