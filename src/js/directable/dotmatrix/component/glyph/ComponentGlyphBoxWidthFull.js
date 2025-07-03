@@ -61,11 +61,12 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 			// Get Text Character at Current Index
 			const TEXT_CHAR = this.TEXT[textIndex];
 
-			console.log(`TEXT_CHAR: ${TEXT_CHAR} at index ${textIndex}`);
-			console.log(this.SHAPE_MANAGER);
-
 			// Get Glyph Width
 			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphData(TEXT_CHAR).width;
+
+			if (currentWidth + GLYPH_WIDTH > GRID_MAX_WIDTH) {
+				break;
+			}
 
 			// Add Character to Text Pattern
 			TEXT_PATTERN += TEXT_CHAR;
@@ -90,8 +91,6 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 			// Get Glyph Name
 			const GLYPH_NAME = TEXT_PATTERN[i].toUpperCase();
 
-			//
-
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 				GLYPH_NAME,
@@ -101,8 +100,6 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 				this.FILL_STRATEGY_TYPE,
 				this.DELAY + i * GLYPH_DELAY,
 			);
-
-			console.log('SHAPE', SHAPE);
 
 			// Store
 			this.#SHAPES.push(SHAPE);

@@ -151,11 +151,11 @@ export default class ViewTest {
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
 		const BLOCK_DELAY_PER_LINE = 5;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 2) {
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'XI',
+				'X',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
@@ -169,11 +169,29 @@ export default class ViewTest {
 			this.#COMPONENTS.push(COMPONENT);
 		}
 
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 2) {
+		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'IX',
+				'I',
+				0,
+				this.#LINE_HEIGHT * i,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				BLOCK_DELAY_PER_LINE * i,
+			);
+
+			// Store
+			this.#COMPONENTS.push(COMPONENT);
+		}
+
+		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.#SHAPE_MANAGER,
+				'/',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
