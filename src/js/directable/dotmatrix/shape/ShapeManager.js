@@ -7,8 +7,8 @@ import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
 import ShapeLineVertical from './line/ShapeLineVertical.js';
 import ShapeRectangle from './primative/ShapeRectangle.js';
 
+import SHAPE_GLYPH_DATA from './glyph/ShapeGlyphData.js';
 import ShapeGlyph from './glyph/ShapeGlyph.js';
-import GLYPH_DATA from './glyph/GlyphData.js';
 
 export default class ShapeManager {
 	#DOT_MANAGER;
@@ -153,7 +153,7 @@ export default class ShapeManager {
 		delay = 0,
 	) {
 		const upperChar = character.toUpperCase();
-		const glyphData = GLYPH_DATA[upperChar];
+		const glyphData = SHAPE_GLYPH_DATA[upperChar];
 
 		if (!glyphData) {
 			ApplicationLogger.warn(

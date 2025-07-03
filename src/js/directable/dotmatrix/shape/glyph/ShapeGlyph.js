@@ -1,6 +1,7 @@
 import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
 import Shape from '../Shape.js';
+
 import FillType from '../fill/FillType.js';
 import FillStrategyType from '../fill/FillStrategyType.js';
 import Fill from '../fill/Fill.js';

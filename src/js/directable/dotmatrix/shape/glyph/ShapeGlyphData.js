@@ -1,4 +1,4 @@
-const GLYPH_DATA = {
+const SHAPE_GLYPH_DATA = {
 	A: {
 		width: 4,
 		height: 5,
@@ -397,4 +397,4 @@ const GLYPH_DATA = {
 	},
 };
 
-export default GLYPH_DATA;
+export default SHAPE_GLYPH_DATA;
