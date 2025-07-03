@@ -185,4 +185,19 @@ export default class ShapeManager {
 		// Return
 		return SHAPE;
 	}
+
+	getShapeGlyphData(character) {
+		const upperChar = character.toUpperCase();
+		const glyphData = SHAPE_GLYPH_DATA[upperChar];
+
+		if (!glyphData) {
+			ApplicationLogger.warn(
+				`ShapeManager getShapeGlyphData Unknown character '${character}'`,
+				this.#LOG_LEVEL,
+			);
+			return null;
+		}
+
+		return glyphData;
+	}
 }

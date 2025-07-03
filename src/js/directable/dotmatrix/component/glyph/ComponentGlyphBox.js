@@ -3,6 +3,8 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
+import ComponentGlyphConstants from './ComponentGlyphConstants.js';
+
 export default class ComponentGlyphBox extends Component {
 	#SHAPES = [];
 
@@ -38,38 +40,33 @@ export default class ComponentGlyphBox extends Component {
 	// ____________________________________________________________ Create Shape
 
 	#createShape() {
+		// Get Constants
+		const GLYPH_SPACING_X = ComponentGlyphConstants.GLYPH_SPACING_X;
+		const GLYPH_DELAY = ComponentGlyphConstants.GLYPH_DELAY;
+
+		// Start at Grid X Position
 		let currentGridX = this.GRID_X;
 
 		// Add Letter Shapes through Text
 		for (let i = 0; i < this.TEXT.length; i += 1) {
 			// Get Glyph Name
 			const GLYPH_NAME = this.TEXT[i].toUpperCase();
-			// TODO Hardcoded Grid Spacing
-			const GRID_SPACING_X = 1;
 
-			if (GLYPH_NAME === ' ') {
-				// Space
-				// TODO Hard Coded Grid Space Width
-				currentGridX += 3;
-			} else {
-				// TODO Hardcoded Delay Increment
+			// Create Shape Glyph
+			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
+				GLYPH_NAME,
+				currentGridX,
+				this.GRID_Y,
+				this.FILL_TYPE,
+				this.FILL_STRATEGY_TYPE,
+				this.DELAY + i * GLYPH_DELAY,
+			);
 
-				// Create Shape Glyph
-				const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-					GLYPH_NAME,
-					currentGridX,
-					this.GRID_Y,
-					this.FILL_TYPE,
-					this.FILL_STRATEGY_TYPE,
-					this.DELAY + i * 2, // Delay for each glyph
-				);
+			// Store
+			this.#SHAPES.push(SHAPE);
 
-				// Store
-				this.#SHAPES.push(SHAPE);
-
-				// Increment Current Grid X Position
-				currentGridX += SHAPE.getGlyphWidth() + GRID_SPACING_X;
-			}
+			// Increment Current Grid X Position
+			currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
 		}
 	}
 

@@ -84,6 +84,22 @@ export default class ViewTest {
 
 		this.#COMPONENTS.push(COMPONENT_0001);
 
+		// Add Component Special Chars
+		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
+			this.#SHAPE_MANAGER,
+			`/`,
+			0,
+			this.#LINE_HEIGHT * 5,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			GRID_MAX_WIDTH,
+		);
+
+		this.#COMPONENTS.push(COMPONENT_SPECIAL_CHARS);
+
+		// Rectangles
 		const RECTANGLE_GRID_Y = this.#LINE_HEIGHT * 7;
 		const RECTANGLE_WIDTH = this.#LINE_HEIGHT * 1;
 		const RECTANGLE_HEIGHT = this.#LINE_HEIGHT * 1;
