@@ -159,7 +159,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'IXX',
+				'I',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
