@@ -47,6 +47,8 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
+		// Set Size requires a full Reset Redraw
+
 		// Reset Current View
 		this.#VIEWS[0].stop();
 		this.#VIEWS[0].reset();
