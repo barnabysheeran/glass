@@ -1,5 +1,8 @@
 import { vec2 } from 'gl-matrix';
+
 import ApplicationLogger from '../application/ApplicationLogger.js';
+
+// TODO Remove vec2 ?
 
 export default class GridData {
 	static #gridCellWidthPx = 3;
