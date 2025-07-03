@@ -155,7 +155,7 @@ export default class ViewTest {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'X',
+				'IXX',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
@@ -180,7 +180,7 @@ export default class ViewTest {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				BLOCK_DELAY_PER_LINE * i,
+				120 + BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
@@ -191,14 +191,14 @@ export default class ViewTest {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.#SHAPE_MANAGER,
-				'/',
+				'I',
 				0,
 				this.#LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				BLOCK_DELAY_PER_LINE * i,
+				240 + BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
