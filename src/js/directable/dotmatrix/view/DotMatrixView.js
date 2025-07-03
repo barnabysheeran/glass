@@ -1,7 +1,16 @@
 export default class DotMatrixView {
+	SHAPE_MANAGER;
+	COMPONENTS = [];
+
+	VIEW_ID = '';
+
 	// _________________________________________________________________________
 
-	constructor() {}
+	constructor(shapeManager, viewId) {
+		// Store
+		this.SHAPE_MANAGER = shapeManager;
+		this.VIEW_ID = viewId;
+	}
 
 	// ___________________________________________________________________ Start
 
@@ -9,5 +18,30 @@ export default class DotMatrixView {
 
 	stop() {} // Stub
 
-	reset() {} // Stub
+	// __________________________________________________________________ Access
+
+	getViewId() {
+		return this.VIEW_ID;
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick() {
+		// Tick Components
+		for (let i = 0; i < this.COMPONENTS.length; i += 1) {
+			this.COMPONENTS[i].tick();
+		}
+	}
+
+	// ___________________________________________________________________ Reset
+
+	reset() {
+		// Destroy Components
+		for (let i = 0; i < this.COMPONENTS.length; i += 1) {
+			this.COMPONENTS[i].destroy();
+		}
+
+		// Reset Components
+		this.COMPONENTS = [];
+	}
 }
