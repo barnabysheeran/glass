@@ -1,7 +1,7 @@
 {
     "projects": [
         {
-            "name": "Test Youtube",
+            "name": "TestYoutube",
             "name-short": "Youtube",
             "media": [
                 {
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "name": "Test Vimeo",
+            "name": "TestVimeo",
             "media": [
                 {
                     "type": "vimeo",
