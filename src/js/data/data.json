@@ -2,6 +2,7 @@
     "projects": [
         {
             "name": "Test Youtube",
+            "name-short": "Youtube",
             "media": [
                 {
                     "type": "youtube",

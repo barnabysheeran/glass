@@ -21,13 +21,10 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager) {
-		super(shapeManager, 'test');
+	constructor(shapeManager, viewId) {
+		super(shapeManager, viewId);
 
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
-
-		// Initial Draw
-		this.start();
 	}
 
 	// ___________________________________________________________________ Start
@@ -35,11 +32,11 @@ export default class DotMatrixViewTest extends DotMatrixView {
 	start() {
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
-		const GRID_MAX_HEIGHT = GRID_MAX[1];
 
+		const GRID_MAX_WIDTH = GRID_MAX[0];
 		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
 
+		const GRID_MAX_HEIGHT = GRID_MAX[1];
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
 
 		// Create Component Line Top

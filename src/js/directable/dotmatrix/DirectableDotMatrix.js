@@ -12,6 +12,8 @@ export default class DirectableDotMatrix {
 
 	#VIEWS = [];
 
+	#viewIdCurrent = 'test';
+
 	#LOG_LEVEL = 3;
 
 	// Views create Components, which create Shapes, which create Dots
@@ -28,8 +30,14 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
 		// Create Views
-		this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER));
-		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER));
+		this.#VIEWS.push(
+			new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'project-menu'),
+		);
+
+		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
+
+		// Start Initial View
+		this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -51,9 +59,11 @@ export default class DirectableDotMatrix {
 
 		// Set Size requires a full Reset Redraw
 
-		// Reset Current View
-		this.#VIEWS[0].stop();
-		this.#VIEWS[0].reset();
+		// Reset Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].stop();
+			this.#VIEWS[i].reset();
+		}
 
 		// Reset Shape Manager
 		this.#SHAPE_MANAGER.reset();
@@ -61,7 +71,19 @@ export default class DirectableDotMatrix {
 		// Reset Dot Manager
 		this.#DOT_MANAGER.reset();
 
-		// Re-Draw Current View
-		this.#VIEWS[0].start();
+		// Start Initial View
+		this.#getViewById(this.#viewIdCurrent).start();
+	}
+
+	// ____________________________________________________________________ Util
+
+	#getViewById(viewId) {
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			if (this.#VIEWS[i].getViewId() === viewId) {
+				return this.#VIEWS[i];
+			}
+		}
+
+		return null;
 	}
 }

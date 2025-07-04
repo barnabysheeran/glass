@@ -2,7 +2,7 @@ export default class DotMatrixView {
 	SHAPE_MANAGER;
 	COMPONENTS = [];
 
-	VIEW_ID = '';
+	#VIEW_ID = '';
 
 	// _________________________________________________________________________
 
@@ -17,12 +17,6 @@ export default class DotMatrixView {
 	start() {} // Stub
 
 	stop() {} // Stub
-
-	// __________________________________________________________________ Access
-
-	getViewId() {
-		return this.VIEW_ID;
-	}
 
 	// ____________________________________________________________________ Tick
 
@@ -43,5 +37,11 @@ export default class DotMatrixView {
 
 		// Reset Components
 		this.COMPONENTS = [];
+	}
+
+	// __________________________________________________________________ Access
+
+	getViewId() {
+		return this.VIEW_ID;
 	}
 }
