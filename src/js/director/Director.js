@@ -26,7 +26,7 @@ export default class Director {
 
 		// Create Directable Title
 		this.#DIRECTABLE_TITLE = new DirectableTitle();
-		this.#DIRECTABLE_TITLE.setText('&nbsp;');
+		this.#DIRECTABLE_TITLE.setText('Barnaby Sheeran');
 
 		// Create Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(WIDTH, HEIGHT);

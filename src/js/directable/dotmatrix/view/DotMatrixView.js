@@ -9,7 +9,7 @@ export default class DotMatrixView {
 	constructor(shapeManager, viewId) {
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
-		this.VIEW_ID = viewId;
+		this.#VIEW_ID = viewId;
 	}
 
 	// ___________________________________________________________________ Start
@@ -39,9 +39,16 @@ export default class DotMatrixView {
 		this.COMPONENTS = [];
 	}
 
+	// ____________________________________________________________________ Delay
+
+	getDelayFromGridY(gridY) {
+		// TODO Hardcoded delay
+		return gridY * 50;
+	}
+
 	// __________________________________________________________________ Access
 
 	getViewId() {
-		return this.VIEW_ID;
+		return this.#VIEW_ID;
 	}
 }
