@@ -24,7 +24,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 	constructor(shapeManager, viewId) {
 		super(shapeManager, viewId);
 
-		ApplicationLogger.log('Project Menu', this.#LOG_LEVEL);
+		ApplicationLogger.log('Project View Project', this.#LOG_LEVEL);
 	}
 
 	// ______________________________________________________________ Project Id

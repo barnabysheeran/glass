@@ -24,7 +24,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 	constructor(shapeManager, viewId) {
 		super(shapeManager, viewId);
 
-		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
+		ApplicationLogger.log('View Holding', this.#LOG_LEVEL);
 	}
 
 	// ___________________________________________________________________ Start

@@ -13,8 +13,6 @@ export default class DirectableDotMatrix {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 
-	#VIEW_HEADER;
-
 	#VIEWS = [];
 
 	#viewIdCurrent = 'menu';
@@ -43,10 +41,6 @@ export default class DirectableDotMatrix {
 		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 
 		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
-
-		// Create Views
-		// this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
-		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 
 		// Start Initial View
 		this.#getViewById('header').start();

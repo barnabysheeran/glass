@@ -22,7 +22,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	constructor(shapeManager, viewId) {
 		super(shapeManager, viewId);
 
-		ApplicationLogger.log('Project Menu', this.#LOG_LEVEL);
+		ApplicationLogger.log('View Header', this.#LOG_LEVEL);
 	}
 
 	// ___________________________________________________________________ Start
@@ -33,7 +33,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'MENU',
 			8,
-			this.#LINE_HEIGHT * 5,
+			this.#LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,

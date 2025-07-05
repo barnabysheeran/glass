@@ -1,25 +1,5 @@
 {
     "projects": [
-        {
-            "name": "TestYoutube",
-            "name-short": "Youtube",
-            "media": [
-                {
-                    "type": "youtube",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
-            ]
-        },
-
-        {
-            "name": "TestVimeo",
-            "media": [
-                {
-                    "type": "vimeo",
-                    "vimeo-id": "12021447"
-                }
-            ]
-        },
 
         {
             "name": "BattleBuilder",
@@ -31,7 +11,17 @@
             ]
         },
 
+        {
+            "name": "Hotsteppa",
+            "media": [
                 {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
             "name": "Pikcells/Onfigr",
             "media": [
                 {
