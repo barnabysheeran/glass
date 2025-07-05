@@ -39,7 +39,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				PROJECT_DATA_ITEM['name'],
 				8,
-				20 + this.#LINE_HEIGHT * i,
+				this.#LINE_HEIGHT * (10 + i),
 				100,
 				50,
 				FillType.PassThrough,
