@@ -31,8 +31,8 @@ export default class ShapeGlyph extends Shape {
 
 		// Get Glyph Data
 		this.#positionGridGlyphs = glyphData.points;
-		this.#glyphWidth = glyphData.width;
-		this.#glyphHeight = glyphData.height;
+		this.#glyphWidth = this.#positionGridGlyphs[0].length;
+		this.#glyphHeight = this.#positionGridGlyphs.length;
 
 		// Store Initial Position Grids
 		for (let y = 0; y < this.#glyphHeight; y += 1) {

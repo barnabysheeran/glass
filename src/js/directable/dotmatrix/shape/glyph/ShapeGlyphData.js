@@ -1,7 +1,5 @@
 const SHAPE_GLYPH_DATA = {
 	A: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -11,8 +9,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	B: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -22,8 +18,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	C: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -33,8 +27,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	D: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -44,8 +36,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	E: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 1],
 			[1, 0, 0, 0],
@@ -55,8 +45,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	F: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 1],
 			[1, 0, 0, 0],
@@ -66,8 +54,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	G: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 0],
@@ -77,8 +63,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	H: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 0, 1],
 			[1, 0, 0, 1],
@@ -88,13 +72,9 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	I: {
-		width: 1,
-		height: 5,
 		points: [[1], [1], [1], [1], [1]],
 	},
 	J: {
-		width: 3,
-		height: 5,
 		points: [
 			[0, 0, 1],
 			[0, 0, 1],
@@ -104,8 +84,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	K: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 0, 1],
 			[1, 0, 1, 0],
@@ -115,8 +93,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	L: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 0, 0],
 			[1, 0, 0, 0],
@@ -126,8 +102,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	M: {
-		width: 5,
-		height: 5,
 		points: [
 			[1, 0, 0, 0, 1],
 			[1, 1, 0, 1, 1],
@@ -137,8 +111,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	N: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 0, 1],
 			[1, 1, 0, 1],
@@ -148,8 +120,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	O: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -159,8 +129,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	P: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -170,8 +138,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	Q: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -181,8 +147,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	R: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -192,8 +156,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	S: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 1],
 			[1, 0, 0, 0],
@@ -203,8 +165,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	T: {
-		width: 3,
-		height: 5,
 		points: [
 			[1, 1, 1],
 			[0, 1, 0],
@@ -214,8 +174,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	U: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 0, 1],
 			[1, 0, 0, 1],
@@ -225,8 +183,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	V: {
-		width: 5,
-		height: 5,
 		points: [
 			[1, 0, 0, 0, 1],
 			[1, 0, 0, 0, 1],
@@ -236,8 +192,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	W: {
-		width: 5,
-		height: 5,
 		points: [
 			[1, 0, 0, 0, 1],
 			[1, 0, 0, 0, 1],
@@ -247,8 +201,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	X: {
-		width: 5,
-		height: 5,
 		points: [
 			[1, 0, 0, 0, 1],
 			[0, 1, 0, 1, 0],
@@ -258,8 +210,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	Y: {
-		width: 5,
-		height: 5,
 		points: [
 			[1, 0, 0, 0, 1],
 			[0, 1, 0, 1, 0],
@@ -269,8 +219,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	Z: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 1],
 			[0, 0, 1, 0],
@@ -280,8 +228,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	' ': {
-		width: 3,
-		height: 5,
 		points: [
 			[0, 0, 0],
 			[0, 0, 0],
@@ -291,8 +237,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	0: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -302,8 +246,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	1: {
-		width: 3,
-		height: 5,
 		points: [
 			[0, 1, 0],
 			[1, 1, 0],
@@ -313,8 +255,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	2: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[0, 0, 0, 1],
@@ -324,8 +264,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	3: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 0],
 			[0, 0, 0, 1],
@@ -335,8 +273,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	4: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 0, 1, 0],
 			[1, 0, 1, 0],
@@ -346,8 +282,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	5: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 1],
 			[1, 0, 0, 0],
@@ -357,8 +291,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	6: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 0],
@@ -368,8 +300,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	7: {
-		width: 4,
-		height: 5,
 		points: [
 			[1, 1, 1, 1],
 			[0, 0, 0, 1],
@@ -379,8 +309,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	8: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -390,8 +318,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	9: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 1, 1, 0],
 			[1, 0, 0, 1],
@@ -401,8 +327,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	'/': {
-		width: 3,
-		height: 5,
 		points: [
 			[0, 0, 1],
 			[0, 0, 1],
@@ -412,8 +336,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	'-': {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 0, 0, 0],
 			[0, 0, 0, 0],
@@ -423,8 +345,6 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	_: {
-		width: 4,
-		height: 5,
 		points: [
 			[0, 0, 0, 0],
 			[0, 0, 0, 0],
@@ -434,24 +354,16 @@ const SHAPE_GLYPH_DATA = {
 		],
 	},
 	':': {
-		width: 1,
-		height: 5,
-		points: [[0], [1], [0], [1], [0]],
+		points: [[0], [0], [1], [0], [1]],
 	},
 	';': {
-		width: 2,
-		height: 5,
-		points: [[0], [1], [0], [1], [1]],
+		points: [[0], [0], [1], [0], [1], [1]],
 	},
 	'.': {
-		width: 1,
-		height: 5,
 		points: [[0], [0], [0], [0], [1]],
 	},
 	',': {
-		width: 2,
-		height: 5,
-		points: [[0], [0], [0], [1], [1]],
+		points: [[0], [0], [0], [0], [1], [1]],
 	},
 };
 
