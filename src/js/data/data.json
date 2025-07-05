@@ -10,6 +10,7 @@
                 }
             ]
         },
+
         {
             "name": "TestVimeo",
             "media": [
@@ -19,11 +20,102 @@
                 }
             ]
         },
+
         {
             "name": "BattleBuilder",
             "media": [
                 {
-                    "type": "youtube",
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+                {
+            "name": "Pikcells/Onfigr",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "THE-SCIENCE-MUSEUM_SUN",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+        
+        {
+            "name": "Goodwood_Festival-of-Speed",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "postMATTER_Exhibition",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "Ferrari_Flagship-Store_Milan",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "HONDA_The-Other-Side",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "GOOGLE_ABBEY-ROAD",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "ADIDAS_Flash",
+            "media": [
+                {
+                    "type": "image",
+                    "youtube-id": "BCFOZRAqOJQ"
+                }
+            ]
+        },
+
+        {
+            "name": "Greenpeace_Love-Letters-to-the-Future",
+            "media": [
+                {
+                    "type": "image",
                     "youtube-id": "BCFOZRAqOJQ"
                 }
             ]

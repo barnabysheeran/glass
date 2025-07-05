@@ -83,7 +83,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Add Component Special Chars
 		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			`/`,
+			`-_/:;,.`,
 			0,
 			this.#LINE_HEIGHT * 5,
 			100,

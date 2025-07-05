@@ -38,11 +38,11 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
-			const COMPONENT_ABC = new ComponentGlyphBox(
+			const COMPONENT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
 				PROJECT_DATA_ITEM['name'],
-				0,
-				5 + this.#LINE_HEIGHT * i,
+				8,
+				20 + this.#LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -50,7 +50,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				10 * i,
 			);
 
-			this.COMPONENTS.push(COMPONENT_ABC);
+			this.COMPONENTS.push(COMPONENT);
 		}
 	}
 }

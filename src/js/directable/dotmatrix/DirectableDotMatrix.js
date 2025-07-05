@@ -30,9 +30,7 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
 		// Create Views
-		this.#VIEWS.push(
-			new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu-project'),
-		);
+		this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
 
 		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 
