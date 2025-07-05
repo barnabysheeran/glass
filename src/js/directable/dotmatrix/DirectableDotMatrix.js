@@ -7,6 +7,7 @@ import DotMatrixViewHeader from './view/DotMatrixViewHeader.js';
 import DotMatrixViewProjectMenu from './view/DotMatrixViewProjectMenu.js';
 import DotMatrixViewProject from './view/DotMatrixViewProject.js';
 import DotMatrixViewTest from './view/DotMatrixViewTest.js';
+import DotMatrixViewHolding from './view/DotMatrixViewHolding.js';
 
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
@@ -16,7 +17,7 @@ export default class DirectableDotMatrix {
 
 	#VIEWS = [];
 
-	#viewIdCurrent = 'project';
+	#viewIdCurrent = 'menu';
 
 	#LOG_LEVEL = 3;
 
@@ -40,6 +41,12 @@ export default class DirectableDotMatrix {
 		this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
 		this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
 		this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
+
+		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
+
+		// Create Views
+		// this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
+		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 
 		// Start Initial View
 		this.#getViewById('header').start();
