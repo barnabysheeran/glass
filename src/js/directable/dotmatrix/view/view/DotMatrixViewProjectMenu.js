@@ -30,6 +30,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
+		ApplicationLogger.log('Project Menu start', this.#LOG_LEVEL);
+
+		// Get Line Height
 		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
 
 		// Get Grid Size
@@ -67,11 +70,15 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 			this.COMPONENTS.push(COMPONENT);
 
+			// Get Component Details
+			const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
+			const GRID_WIDTH = COMPONENT.getGridWidth();
+
 			// Create Interactive Block
 			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-				GRID_X * GridData.getGridCellWidthPx(),
+				GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
 				GRID_Y * GridData.getGridCellHeightPx(),
-				100,
+				GRID_WIDTH * GridData.getGridCellWidthPx(),
 				LINE_HEIGHT * GridData.getGridCellHeightPx(),
 				this.onButtonMenuClick.bind(this),
 				this.onButtonMenuOver.bind(this),
