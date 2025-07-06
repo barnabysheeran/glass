@@ -5,7 +5,7 @@ import Display from '../display/Display.js';
 import GridData from '../grid/GridData.js';
 import VideoSurface from '../video/VideoSurface.js';
 import RenderSurface from '../render/RenderSurface.js';
-import Interactive from '../interactive/Interactive.js';
+import InteractiveSurface from '../interactive/InteractiveSurface.js';
 import Director from '../director/Director.js';
 
 import Development from '../development/Development.js';
@@ -32,7 +32,7 @@ export default class Controller {
 		GridData.initialize(Display.getWidth(), Display.getHeight());
 		VideoSurface.initialise();
 		RenderSurface.initialise();
-		Interactive.initialise();
+		InteractiveSurface.initialise();
 		Director.initialise();
 
 		// Initialise Overlay ?

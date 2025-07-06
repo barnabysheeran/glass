@@ -1,7 +1,8 @@
 import player from '@vimeo/player';
 
-import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../../application/ApplicationLogger.js';
+
+import VideoSurface from '../../video/VideoSurface.js';
 
 export default class DirectableVimeo {
 	#HOLDER;
@@ -30,9 +31,7 @@ export default class DirectableVimeo {
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'vimeo-holder';
 		this.#HOLDER.className = 'vimeo-holder';
-		ApplicationConfiguration.getApplicationContainer().appendChild(
-			this.#HOLDER,
-		);
+		VideoSurface.getContainer().appendChild(this.#HOLDER);
 
 		// Create a Vimeo Player Instance
 		const OPTIONS = {

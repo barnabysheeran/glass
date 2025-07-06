@@ -2,7 +2,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Display from '../display/Display.js';
 
-export default class Interactive {
+export default class InteractiveSurface {
 	static #HOLDER;
 
 	static #ELEMENTS = [];
@@ -16,7 +16,7 @@ export default class Interactive {
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
-		this.#HOLDER.classList.add('interactive');
+		this.#HOLDER.classList.add('interactive-surface');
 
 		// Append Holder to Display Holder
 		Display.getDisplayHolder().appendChild(this.#HOLDER);
