@@ -51,7 +51,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const COMPONENT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
 				text,
-				8,
+				this.#LINE_HEIGHT * 2,
 				this.#LINE_HEIGHT * (7 + i * 2),
 				100,
 				50,
