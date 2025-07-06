@@ -17,22 +17,18 @@ export default class Director {
 
 	// _________________________________________________________________________
 
-	static initialise() {
+	static initialise(width, height) {
 		ApplicationLogger.log(`Director`, this.#LOG_LEVEL);
-
-		// Get Initial Display Dimensions
-		const WIDTH = Display.getWidth();
-		const HEIGHT = Display.getHeight();
 
 		// Create Directable Title
 		this.#DIRECTABLE_TITLE = new DirectableTitle();
 		this.#DIRECTABLE_TITLE.setText('Barnaby Sheeran');
 
 		// Create Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(WIDTH, HEIGHT);
+		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(width, height);
 
 		// Create Directable Vimeo
-		this.#DIRECTABLE_VIMEO = new DirectableVimeo();
+		this.#DIRECTABLE_VIMEO = new DirectableVimeo(width, height);
 
 		// Create Directable Youtube
 		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();

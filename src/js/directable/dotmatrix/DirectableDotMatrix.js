@@ -15,7 +15,7 @@ export default class DirectableDotMatrix {
 
 	#VIEWS = [];
 
-	#viewIdCurrent = 'menu';
+	#viewIdCurrent = 'holding';
 
 	#LOG_LEVEL = 3;
 
@@ -35,15 +35,15 @@ export default class DirectableDotMatrix {
 		// Create View Header
 
 		// Create Views
-		this.#VIEWS.push(new DotMatrixViewHeader(this.#SHAPE_MANAGER, 'header'));
-		this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
-		this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
+		// this.#VIEWS.push(new DotMatrixViewHeader(this.#SHAPE_MANAGER, 'header'));
+		// this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
+		// this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
 		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 
-		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
+		this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
 
 		// Start Initial View
-		this.#getViewById('header').start();
+		// this.#getViewById('header').start();
 		this.#getViewById(this.#viewIdCurrent).start();
 	}
 
@@ -79,7 +79,7 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.reset();
 
 		// Start Current View
-		this.#getViewById('header').start();
+		// this.#getViewById('header').start();
 		this.#getViewById(this.#viewIdCurrent).start();
 	}
 

@@ -7,17 +7,22 @@ import VideoSurface from '../../video/VideoSurface.js';
 export default class DirectableVimeo {
 	#HOLDER;
 	#PLAYER;
-	#videoAspectRatio = 16 / 9; // Default aspect ratio
+
+	#width;
+	#height;
 
 	#LOG_LEVEL = 1;
 
 	// _________________________________________________________________________
 
-	constructor() {
+	constructor(width, height) {
 		ApplicationLogger.log('DirectableVimeo');
 
 		// Create Vimeo Player
 		this.#createPlayer();
+
+		// Set Initial Size
+		this.setSize(width, height);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -55,19 +60,10 @@ export default class DirectableVimeo {
 	// ___________________________________________________________________ Ready
 
 	async #onReady() {
-		try {
-			const videoWidth = await this.#PLAYER.getVideoWidth();
-			const videoHeight = await this.#PLAYER.getVideoHeight();
+		ApplicationLogger.log('DirectableVimeo onReady', this.#LOG_LEVEL);
 
-			if (videoWidth && videoHeight) {
-				this.#videoAspectRatio = videoWidth / videoHeight;
-			}
-		} catch (error) {
-			console.error('Error getting video dimensions:', error);
-		}
-
-		// const appContainer = ApplicationConfiguration.getApplicationContainer();
-		// this.setSize(appContainer.clientWidth, appContainer.clientHeight);
+		// Set Size
+		this.setSize(this.#width, this.#height);
 	}
 
 	// ____________________________________________________________________ Play
@@ -78,12 +74,20 @@ export default class DirectableVimeo {
 
 	// ____________________________________________________________________ Size
 
+	// TODO Tidy
+
 	setSize(width, height) {
 		console.log('DirectableVimeo setSize', width, height);
 
+		// Store
+		this.#width = width;
+		this.#height = height;
+
+		// Size Holder
 		this.#HOLDER.style.width = width + 'px';
 		this.#HOLDER.style.height = height + 'px';
 
+		// Iframe ?
 		const iframe = this.#HOLDER.querySelector('iframe');
 
 		if (!iframe) {

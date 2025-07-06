@@ -37,7 +37,7 @@ export default class Controller {
 		RenderSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		InteractiveSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-		Director.initialise();
+		Director.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
 		// Development ?
 		if (ApplicationConfiguration.isDebug === true) {
