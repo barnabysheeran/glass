@@ -71,7 +71,6 @@ export default class DirectableDotMatrix {
 
 		// Reset Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].stop();
 			this.#VIEWS[i].reset();
 		}
 

@@ -18,8 +18,6 @@ export default class DotMatrixView {
 
 	start() {} // Stub
 
-	stop() {} // Stub
-
 	// ____________________________________________________________________ Tick
 
 	tick() {
