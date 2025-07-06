@@ -45,7 +45,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
 			// Grid X Y
-			const GRID_X = this.#LINE_HEIGHT * 2;
+			const GRID_X = 0;
 			const GRID_Y = this.#LINE_HEIGHT * (7 + i * 2);
 
 			// Text
@@ -85,20 +85,14 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// _____________________________________________________________ Button Menu
 
 	onButtonMenuClick() {
-		ApplicationLogger.log('View Header Button Menu Click', this.#LOG_LEVEL);
-
 		// TODO Implement
 	}
 
 	onButtonMenuOver() {
-		ApplicationLogger.log('View Header Button Menu Over', this.#LOG_LEVEL);
-
 		// TODO Implement
 	}
 
 	onButtonMenuOut() {
-		ApplicationLogger.log('View Header Button Menu Out', this.#LOG_LEVEL);
-
 		// TODO Implement
 	}
 }

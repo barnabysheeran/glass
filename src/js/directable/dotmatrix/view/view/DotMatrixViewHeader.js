@@ -23,13 +23,15 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	constructor(shapeManager, viewId) {
 		super(shapeManager, viewId);
 
-		ApplicationLogger.log('View Header', this.#LOG_LEVEL);
+		ApplicationLogger.log('ViewHeader', this.#LOG_LEVEL);
 	}
 
 	// ___________________________________________________________________ Start
 
 	start() {
-		const GRID_X = this.#LINE_HEIGHT * 2;
+		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
+
+		const GRID_X = 0;
 		const GRID_Y = this.#LINE_HEIGHT * 3;
 
 		// Create Glyph Line
@@ -37,7 +39,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'MENU',
 			GRID_X,
-			GRID_X,
+			GRID_Y,
 			100,
 			50,
 			FillType.PassThrough,
@@ -61,24 +63,67 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.INTERACTIVE_BLOCKS.push(this.#INTERACTIVE_BLOCK);
 	}
 
-	// _____________________________________________________________ Button Menu
+	// ________________________________________________________________ Rollover
+
+	#drawRollover() {
+		ApplicationLogger.log('ViewHeader drawRollover', this.#LOG_LEVEL);
+
+		const GRID_X = 0;
+		const GRID_Y = this.#LINE_HEIGHT * 3;
+
+		// Create Glyph Line
+		const COMPONENT = new ComponentGlyphLineCentered(
+			this.SHAPE_MANAGER,
+			'- OVER -',
+			GRID_X,
+			GRID_Y,
+			100,
+			50,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			this.getDelayFromGridY(3),
+		);
+
+		this.COMPONENTS.push(COMPONENT);
+
+		// Create Interactive Block
+		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			GRID_X * GridData.getGridCellWidthPx(),
+			GRID_Y * GridData.getGridCellHeightPx(),
+			100,
+			this.#LINE_HEIGHT * GridData.getGridCellHeightPx(),
+			this.onButtonMenuClick.bind(this),
+			this.onButtonMenuOver.bind(this),
+			this.onButtonMenuOut.bind(this),
+		);
+
+		this.INTERACTIVE_BLOCKS.push(this.#INTERACTIVE_BLOCK);
+	}
+
+	// _________________________________________________ Interaction Button Menu
 
 	onButtonMenuClick() {
-		ApplicationLogger.log('View Header Button Menu Click', this.#LOG_LEVEL);
+		ApplicationLogger.log('ViewHeader Button Menu Click', this.#LOG_LEVEL);
 
 		// TODO Implement
 	}
 
 	onButtonMenuOver() {
-		ApplicationLogger.log('View Header Button Menu Over', this.#LOG_LEVEL);
+		ApplicationLogger.log('ViewHeader Button Menu Over', this.#LOG_LEVEL);
 
-		// TODO Implement
+		// Draw Rollover
+		this.reset();
+		this.#drawRollover();
 	}
 
 	onButtonMenuOut() {
-		ApplicationLogger.log('View Header Button Menu Out', this.#LOG_LEVEL);
+		ApplicationLogger.log('ViewHeader Button Menu Out', this.#LOG_LEVEL);
 
 		// TODO Implement
+
+		// Draw
+		this.reset();
+		this.start();
 	}
 
 	// ___________________________________________________________________ Reset
