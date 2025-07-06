@@ -13,8 +13,6 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
-	#LINE_HEIGHT = 7;
-
 	COMPONENTS = [];
 
 	#LOG_LEVEL = 4;
@@ -30,6 +28,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
+		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
 
@@ -37,12 +37,12 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
 
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
-		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
+		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / LINE_HEIGHT);
 
 		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			this.#LINE_HEIGHT * 4,
+			LINE_HEIGHT * 4,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			1,
@@ -61,7 +61,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -79,7 +79,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -97,7 +97,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'.',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -112,7 +112,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Create Component Line Bottom
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			this.#LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
+			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
@@ -126,7 +126,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'.,',
 			0,
-			this.#LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
+			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
 			100,
 			50,
 			FillType.PassThrough,

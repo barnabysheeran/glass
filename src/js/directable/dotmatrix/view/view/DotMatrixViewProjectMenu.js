@@ -6,6 +6,7 @@ import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import DotMatrixView from '../DotMatrixView.js';
+import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -13,9 +14,6 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	// TODO Constants
-	#LINE_HEIGHT = 7;
-
 	// TODO Calc Pixels
 	#BLOCK_WIDTH_MOBILE = 130;
 
@@ -32,6 +30,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
+		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
 		const GRID_MAX_WIDTH = GRID_MAX[0];
@@ -46,7 +46,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 			// Grid X Y
 			const GRID_X = 0;
-			const GRID_Y = this.#LINE_HEIGHT * (7 + i * 2);
+			const GRID_Y = LINE_HEIGHT * (7 + i * 2);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
@@ -72,7 +72,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				GRID_X * GridData.getGridCellWidthPx(),
 				GRID_Y * GridData.getGridCellHeightPx(),
 				100,
-				this.#LINE_HEIGHT * GridData.getGridCellHeightPx(),
+				LINE_HEIGHT * GridData.getGridCellHeightPx(),
 				this.onButtonMenuClick.bind(this),
 				this.onButtonMenuOver.bind(this),
 				this.onButtonMenuOut.bind(this),

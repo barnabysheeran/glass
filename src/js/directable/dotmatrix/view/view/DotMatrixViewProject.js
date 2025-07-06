@@ -5,6 +5,7 @@ import DataController from '../../../../data/DataController.js';
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';
+import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -12,9 +13,6 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
 export default class DotMatrixViewProject extends DotMatrixView {
-	// TODO Constants
-	#LINE_HEIGHT = 7;
-
 	#projectId = 0;
 
 	#LOG_LEVEL = 4;
@@ -36,6 +34,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
+		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjects();
 		const PROJECT_DATA_ITEM = PROJECT_DATA[this.#projectId];
@@ -45,7 +45,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			PROJECT_DATA_ITEM['name'],
 			8,
-			this.#LINE_HEIGHT * 10,
+			LINE_HEIGHT * 10,
 			100,
 			50,
 			FillType.PassThrough,
@@ -60,7 +60,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			PROJECT_DATA_ITEM['name-short'],
 			8,
-			this.#LINE_HEIGHT * 11,
+			LINE_HEIGHT * 11,
 			100,
 			50,
 			FillType.PassThrough,

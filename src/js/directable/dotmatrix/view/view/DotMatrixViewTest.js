@@ -3,6 +3,7 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';
+import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -13,8 +14,6 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	#LINE_HEIGHT = 7;
-
 	COMPONENTS = [];
 
 	#LOG_LEVEL = 4;
@@ -30,6 +29,8 @@ export default class DotMatrixViewTest extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
+		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
 
@@ -37,12 +38,12 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
 
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
-		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / this.#LINE_HEIGHT);
+		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / LINE_HEIGHT);
 
 		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			this.#LINE_HEIGHT,
+			LINE_HEIGHT,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			1,
@@ -55,7 +56,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			this.#LINE_HEIGHT * 3,
+			LINE_HEIGHT * 3,
 			100,
 			50,
 			FillType.PassThrough,
@@ -70,7 +71,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'0123456789',
 			0,
-			this.#LINE_HEIGHT * 4,
+			LINE_HEIGHT * 4,
 			100,
 			50,
 			FillType.PassThrough,
@@ -85,7 +86,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			`-_/:;,.`,
 			0,
-			this.#LINE_HEIGHT * 5,
+			LINE_HEIGHT * 5,
 			100,
 			50,
 			FillType.PassThrough,
@@ -96,9 +97,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		this.COMPONENTS.push(COMPONENT_SPECIAL_CHARS);
 
 		// Rectangles
-		const RECTANGLE_GRID_Y = this.#LINE_HEIGHT * 7;
-		const RECTANGLE_WIDTH = this.#LINE_HEIGHT * 1;
-		const RECTANGLE_HEIGHT = this.#LINE_HEIGHT * 1;
+		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
+		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
+		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
 
 		// Create Component Rectangle A
 		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
@@ -153,7 +154,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -171,7 +172,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -189,7 +190,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				this.#LINE_HEIGHT * i,
+				LINE_HEIGHT * i,
 				100,
 				50,
 				FillType.PassThrough,
@@ -204,7 +205,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Create Component Line Bottom
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			this.#LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
+			LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			1,
