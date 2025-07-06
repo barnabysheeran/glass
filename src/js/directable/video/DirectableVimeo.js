@@ -45,7 +45,7 @@ export default class DirectableVimeo {
 			background: true,
 			dnt: true, // Do Not Track
 			responsive: false,
-			width: 640,
+			width: this.#width,
 		};
 
 		// Create Player
