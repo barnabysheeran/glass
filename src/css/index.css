@@ -38,13 +38,13 @@
 
 /* __________________________________________________________________ Display */
 
-.application .display .video {
+.application .display .video-surface {
 	position: absolute;
 
 	z-index: 100;
 }
 
-.application .display .video .vimeo {
+.application .display .video-surface .vimeo {
 	width: 100%;
 	height: 100%;
 }
@@ -59,7 +59,7 @@
 
 /* ______________________________________________________________ Interactive */
 
-.application .display .interactive {
+.application .display .interactive-surface {
 	position: absolute;
 
 	z-index: 300;
@@ -72,7 +72,7 @@
 
 /* ______________________________________________________________ Development */
 
-.application .display .development {
+.application .display .development-surface {
 	position: absolute;
 
 	z-index: 400;

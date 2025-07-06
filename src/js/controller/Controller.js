@@ -27,17 +27,21 @@ export default class Controller {
 		);
 
 		// Order Important
-
 		Display.initialise();
-		GridData.initialize(Display.getWidth(), Display.getHeight());
-		VideoSurface.initialise();
-		RenderSurface.initialise();
-		InteractiveSurface.initialise();
+
+		const DISPLAY_WIDTH = Display.getWidth();
+		const DISPLAY_HEIGHT = Display.getHeight();
+
+		GridData.initialize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		VideoSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		RenderSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		InteractiveSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+
 		Director.initialise();
 
-		// Initialise Overlay ?
+		// Development ?
 		if (ApplicationConfiguration.isDebug === true) {
-			Development.initialise();
+			Development.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		}
 	}
 
@@ -58,7 +62,7 @@ export default class Controller {
 			const IS_DISPLAY_UPDATED = Display.tick();
 
 			if (IS_DISPLAY_UPDATED) {
-				this.#displayUpdated();
+				this.#onDisplayUpdated();
 			}
 
 			// Tick Director
@@ -73,22 +77,25 @@ export default class Controller {
 
 	// _________________________________________________________________ Display
 
-	#displayUpdated() {
+	#onDisplayUpdated() {
 		const DISPLAY_WIDTH = Display.getWidth();
 		const DISPLAY_HEIGHT = Display.getHeight();
 
 		ApplicationLogger.log(
-			`Controller displayUpdated ${DISPLAY_WIDTH} ${DISPLAY_HEIGHT}`,
+			`Controller onDisplayUpdated ${DISPLAY_WIDTH} ${DISPLAY_HEIGHT}`,
 			this.#LOG_LEVEL,
 		);
 
-		// Grid Data
+		// Set Sizes
 		GridData.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
-
-		// Director
+		VideoSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		RenderSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		InteractiveSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
-		// Render Surface
-		RenderSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		// Development ?
+		if (ApplicationConfiguration.isDebug === true) {
+			Development.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		}
 	}
 }

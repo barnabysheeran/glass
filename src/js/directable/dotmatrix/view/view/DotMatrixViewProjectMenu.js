@@ -33,10 +33,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	start() {
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
-
 		const GRID_MAX_WIDTH = GRID_MAX[0];
-
-		console.log('GRID_MAX_WIDTH', GRID_MAX_WIDTH);
 
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjects();

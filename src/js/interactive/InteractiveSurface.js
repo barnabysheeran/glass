@@ -3,7 +3,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 import Display from '../display/Display.js';
 
 export default class InteractiveSurface {
-	static #HOLDER;
+	static #CONTAINER;
 
 	static #ELEMENTS = [];
 
@@ -11,15 +11,18 @@ export default class InteractiveSurface {
 
 	// _________________________________________________________________________
 
-	static initialise() {
+	static initialise(width, height) {
 		ApplicationLogger.log('Interactive', this.#LOG_LEVEL);
 
 		// Create Holder
-		this.#HOLDER = document.createElement('div');
-		this.#HOLDER.classList.add('interactive-surface');
+		this.#CONTAINER = document.createElement('div');
+		this.#CONTAINER.classList.add('interactive-surface');
 
 		// Append Holder to Display Holder
-		Display.getDisplayHolder().appendChild(this.#HOLDER);
+		Display.getDisplayHolder().appendChild(this.#CONTAINER);
+
+		// Set Initial Size
+		this.setSize(width, height);
 	}
 
 	// _______________________________________________________________ Add Block
@@ -32,7 +35,7 @@ export default class InteractiveSurface {
 		ELEMENT.style.top = `${y}px`;
 		ELEMENT.style.width = `${width}px`;
 		ELEMENT.style.height = `${height}px`;
-		this.#HOLDER.appendChild(ELEMENT);
+		this.#CONTAINER.appendChild(ELEMENT);
 
 		// Store
 		this.#ELEMENTS.push(ELEMENT);
@@ -43,12 +46,19 @@ export default class InteractiveSurface {
 	// ___________________________________________________________________ Clear
 
 	static clear() {
-		ApplicationLogger.log('Interactive.clear', this.#LOG_LEVEL);
+		ApplicationLogger.log('Interactive clear', this.#LOG_LEVEL);
 
 		// Clear Blocks
 		this.#ELEMENTS = [];
 
 		// Clear Holder
-		this.#HOLDER.innerHTML = '';
+		this.#CONTAINER.innerHTML = '';
+	}
+
+	// ____________________________________________________________________ Size
+
+	static setSize(width, height) {
+		this.#CONTAINER.style.width = `${width}px`;
+		this.#CONTAINER.style.height = `${height}px`;
 	}
 }

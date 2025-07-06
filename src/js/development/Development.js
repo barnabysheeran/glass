@@ -6,7 +6,7 @@ import DevelopmentGuides from './guide/DevelopmentGuides.js';
 import DevelopmentGrid from './grid/DevelopmentGrid.js';
 
 export default class Development {
-	static #DEVELOPMENT_HOLDER;
+	static #CONTAINER;
 
 	static #DEVELOPMENT_GUIDES;
 	static #DEVELOPMENT_GRID;
@@ -15,22 +15,25 @@ export default class Development {
 
 	// _________________________________________________________________________
 
-	static initialise() {
+	static initialise(width, height) {
 		ApplicationLogger.log('Development', this.#LOG_LEVEL);
 
 		// Create Development Container on Display Container
 		const DISPLAY_HOLDER = Display.getDisplayHolder();
 
 		// Create Development Container
-		this.#DEVELOPMENT_HOLDER = document.createElement('div');
-		this.#DEVELOPMENT_HOLDER.className = 'development';
-		DISPLAY_HOLDER.appendChild(this.#DEVELOPMENT_HOLDER);
+		this.#CONTAINER = document.createElement('div');
+		this.#CONTAINER.className = 'development-surface';
+		DISPLAY_HOLDER.appendChild(this.#CONTAINER);
 
 		// Create Development Guides
-		this.#DEVELOPMENT_GUIDES = new DevelopmentGuides(this.#DEVELOPMENT_HOLDER);
+		this.#DEVELOPMENT_GUIDES = new DevelopmentGuides(this.#CONTAINER);
 
 		// Create Development Grid
-		this.#DEVELOPMENT_GRID = new DevelopmentGrid(this.#DEVELOPMENT_HOLDER);
+		this.#DEVELOPMENT_GRID = new DevelopmentGrid(this.#CONTAINER);
+
+		// Set Initial Size
+		this.setSize(width, height);
 
 		// Add Keyboard Event Listener
 		window.addEventListener('keyup', this.#onKeyUp.bind(this));
@@ -60,5 +63,14 @@ export default class Development {
 
 	static #toggleGridShowHide() {
 		this.#DEVELOPMENT_GRID.toggleShowHide();
+	}
+
+	// ____________________________________________________________________ Size
+
+	static setSize(width, height) {
+		console.log('Development setSize', width, height);
+
+		this.#CONTAINER.style.width = `${width}px`;
+		this.#CONTAINER.style.height = `${height}px`;
 	}
 }
