@@ -186,7 +186,7 @@ export default class ShapeManager {
 		return SHAPE;
 	}
 
-	getShapeGlyphData(character) {
+	#getShapeGlyphData(character) {
 		const upperChar = character.toUpperCase();
 		const glyphData = SHAPE_GLYPH_DATA[upperChar];
 
@@ -199,5 +199,25 @@ export default class ShapeManager {
 		}
 
 		return glyphData;
+	}
+
+	getShapeGlyphWidth(character) {
+		const glyphData = this.#getShapeGlyphData(character);
+
+		if (!glyphData) {
+			return 0;
+		}
+
+		return glyphData.points[0].length;
+	}
+
+	getShapeGlyphHeight(character) {
+		const glyphData = this.#getShapeGlyphData(character);
+
+		if (!glyphData) {
+			return 0;
+		}
+
+		return glyphData.points.length;
 	}
 }

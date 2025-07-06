@@ -62,8 +62,7 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 			const TEXT_CHAR = this.TEXT[textIndex];
 
 			// Get Glyph Width
-			const GLYPH_SHAPE_DATA = this.SHAPE_MANAGER.getShapeGlyphData(TEXT_CHAR);
-			const GLYPH_WIDTH = GLYPH_SHAPE_DATA.points[0].length;
+			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(TEXT_CHAR);
 
 			if (currentWidth + GLYPH_WIDTH > GRID_MAX_WIDTH) {
 				break;

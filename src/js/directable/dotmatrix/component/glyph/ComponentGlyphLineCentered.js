@@ -43,47 +43,30 @@ export default class ComponentGlyphLineCentered extends Component {
 		const GRID_MAX = GridData.getGridMax();
 		const GRID_MAX_WIDTH = GRID_MAX[0];
 
-		// Build Text Pattern
-		let TEXT_PATTERN = '';
+		// Start at Grid X Position
+		let currentGridX = 0;
 
-		// Add Characters to Text Pattern Stopping Before Grid Width
-		let textIndex = 0;
-		let currentWidth = 0;
-
-		while (currentWidth < GRID_MAX_WIDTH) {
-			// Get Text Character at Current Index
-			const TEXT_CHAR = this.TEXT[textIndex];
+		// Calculate Total Width of Text
+		for (let i = 0; i < this.TEXT.length; i += 1) {
+			// Get Glyph Name
+			const GLYPH_NAME = this.TEXT[i].toUpperCase();
 
 			// Get Glyph Width
-			const GLYPH_SHAPE_DATA = this.SHAPE_MANAGER.getShapeGlyphData(TEXT_CHAR);
-			const GLYPH_WIDTH = GLYPH_SHAPE_DATA.points[0].length;
+			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(GLYPH_NAME);
 
-			if (currentWidth + GLYPH_WIDTH > GRID_MAX_WIDTH) {
-				break;
-			}
-
-			// Add Character to Text Pattern
-			TEXT_PATTERN += TEXT_CHAR;
-
-			// Increment current width by Glyph Width and Spacing
-			currentWidth += GLYPH_WIDTH + GLYPH_SPACING_X;
-
-			// Next Text Index
-			textIndex += 1;
-
-			// If Text Index Exceeds Text Length, Reset to Start
-			if (textIndex >= this.TEXT.length) {
-				textIndex = 0;
-			}
+			// Increment Current Grid X Position
+			currentGridX += GLYPH_WIDTH + GLYPH_SPACING_X;
 		}
 
-		// Start at Grid X Position
-		let currentGridX = this.GRID_X;
+		// Center Glyphs
+		currentGridX = Math.floor(
+			(GRID_MAX_WIDTH - currentGridX + GLYPH_SPACING_X) / 2,
+		);
 
 		// Add Letter Shapes through Text
-		for (let i = 0; i < TEXT_PATTERN.length; i += 1) {
+		for (let i = 0; i < this.TEXT.length; i += 1) {
 			// Get Glyph Name
-			const GLYPH_NAME = TEXT_PATTERN[i].toUpperCase();
+			const GLYPH_NAME = this.TEXT[i].toUpperCase();
 
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
