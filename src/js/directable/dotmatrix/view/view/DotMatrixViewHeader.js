@@ -1,8 +1,7 @@
 import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
-import DataController from '../../../../data/DataController.js';
-
 import GridData from '../../../../grid/GridData.js';
+import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import DotMatrixView from '../DotMatrixView.js';
 
@@ -10,7 +9,6 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
-import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	// TODO Constants
@@ -31,16 +29,16 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
-		const X = this.#LINE_HEIGHT * 2;
-		const Y = this.#LINE_HEIGHT * 3;
+		const GRID_X = this.#LINE_HEIGHT * 2;
+		const GRID_Y = this.#LINE_HEIGHT * 3;
 
-		// Create Glyph Box
+		// Create Glyph Box Component
 		// TODO Use Line
 		const COMPONENT = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			'MENU',
-			X,
-			Y,
+			GRID_X,
+			GRID_X,
 			100,
 			50,
 			FillType.PassThrough,
@@ -52,14 +50,16 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Create Interactive Block
 		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-			X,
-			Y,
+			GRID_X * GridData.getGridCellWidthPx(),
+			GRID_X * GridData.getGridCellHeightPx(),
 			100,
-			50,
+			this.#LINE_HEIGHT * GridData.getGridCellHeightPx(),
 			this.onButtonMenuClick.bind(this),
 			this.onButtonMenuOver.bind(this),
 			this.onButtonMenuOut.bind(this),
 		);
+
+		this.INTERACTIVE_BLOCKS.push(this.#INTERACTIVE_BLOCK);
 	}
 
 	// _____________________________________________________________ Button Menu

@@ -3,6 +3,7 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import DataController from '../../../../data/DataController.js';
 
 import GridData from '../../../../grid/GridData.js';
+import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import DotMatrixView from '../DotMatrixView.js';
 
@@ -40,19 +41,26 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 		// Draw
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
+			// Get Project Data Item
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
+			// XY
+			const X = this.#LINE_HEIGHT * 2;
+			const Y = this.#LINE_HEIGHT * (7 + i * 2);
+
+			// Text
 			let text = PROJECT_DATA_ITEM['name'];
 
 			if (GRID_MAX_WIDTH < this.#BLOCK_WIDTH_MOBILE) {
 				text = PROJECT_DATA_ITEM['name-short'];
 			}
 
+			// Create Glyph Box Component
 			const COMPONENT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
 				text,
-				this.#LINE_HEIGHT * 2,
-				this.#LINE_HEIGHT * (7 + i * 2),
+				X,
+				Y,
 				100,
 				50,
 				FillType.PassThrough,
@@ -61,6 +69,39 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			);
 
 			this.COMPONENTS.push(COMPONENT);
+
+			// Create Interactive Block
+			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+				X * GridData.getGridCellWidthPx(),
+				Y * GridData.getGridCellHeightPx(),
+				100,
+				this.#LINE_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+			);
+
+			this.INTERACTIVE_BLOCKS.push(INTERACTIVE_BLOCK);
 		}
+	}
+
+	// _____________________________________________________________ Button Menu
+
+	onButtonMenuClick() {
+		ApplicationLogger.log('View Header Button Menu Click', this.#LOG_LEVEL);
+
+		// TODO Implement
+	}
+
+	onButtonMenuOver() {
+		ApplicationLogger.log('View Header Button Menu Over', this.#LOG_LEVEL);
+
+		// TODO Implement
+	}
+
+	onButtonMenuOut() {
+		ApplicationLogger.log('View Header Button Menu Out', this.#LOG_LEVEL);
+
+		// TODO Implement
 	}
 }
