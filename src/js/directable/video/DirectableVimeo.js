@@ -78,33 +78,37 @@ export default class DirectableVimeo {
 
 	// ____________________________________________________________________ Size
 
-	// TODO
-
 	setSize(width, height) {
-		// if (!this.#HOLDER) {
-		// 	return;
-		// }
-		// this.#HOLDER.style.width = `${width}px`;
-		// this.#HOLDER.style.height = `${height}px`;
-		// const iframe = this.#HOLDER.querySelector('iframe');
-		// if (!iframe) {
-		// 	return;
-		// }
+		console.log('DirectableVimeo setSize', width, height);
+
+		this.#HOLDER.style.width = width + 'px';
+		this.#HOLDER.style.height = height + 'px';
+
+		const iframe = this.#HOLDER.querySelector('iframe');
+
+		if (!iframe) {
+			console.log('DirectableVimeo setSize: No iframe found');
+
+			return;
+		}
+
 		// const containerAspectRatio = width / height;
 		// let newVideoWidth = width;
 		// let newVideoHeight = height;
+
 		// if (containerAspectRatio > this.#videoAspectRatio) {
-		// 	// Container is wider than the video, scale by width
+		// 	// Container is wider than the video, scale by width to cover
 		// 	newVideoWidth = width;
 		// 	newVideoHeight = width / this.#videoAspectRatio;
 		// } else {
-		// 	// Container is taller than the video, scale by height
+		// 	// Container is taller than the video, scale by height to cover
 		// 	newVideoHeight = height;
 		// 	newVideoWidth = height * this.#videoAspectRatio;
 		// }
-		// iframe.style.width = `${newVideoWidth}px`;
-		// iframe.style.height = `${newVideoHeight}px`;
-		// // Center the video
+		iframe.style.width = `${width}px`;
+		iframe.style.height = `${height}px`;
+
+		// Center the video
 		// iframe.style.left = `${(width - newVideoWidth) / 2}px`;
 		// iframe.style.top = `${(height - newVideoHeight) / 2}px`;
 	}
