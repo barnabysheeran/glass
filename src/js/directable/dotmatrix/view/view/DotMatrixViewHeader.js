@@ -89,5 +89,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	onButtonMenuOut() {
 		ApplicationLogger.log('ViewHeader Button Menu Out', this.#LOG_LEVEL);
+
+		// TODO Implement
 	}
 }
