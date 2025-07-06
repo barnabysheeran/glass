@@ -10,7 +10,7 @@ import DotMatrixView from '../DotMatrixView.js';
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
-import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Constants
@@ -44,9 +44,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			// Get Project Data Item
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
-			// XY
-			const X = this.#LINE_HEIGHT * 2;
-			const Y = this.#LINE_HEIGHT * (7 + i * 2);
+			// Grid X Y
+			const GRID_X = this.#LINE_HEIGHT * 2;
+			const GRID_Y = this.#LINE_HEIGHT * (7 + i * 2);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
@@ -55,14 +55,11 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				text = PROJECT_DATA_ITEM['name-short'];
 			}
 
-			// Create Glyph Box Component
-			const COMPONENT = new ComponentGlyphBox(
+			// Create Glyph Line
+			const COMPONENT = new ComponentGlyphLineCentered(
 				this.SHAPE_MANAGER,
 				text,
-				X,
-				Y,
-				100,
-				50,
+				GRID_Y,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				this.getDelayFromGridY(i + 7),
@@ -72,8 +69,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 			// Create Interactive Block
 			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-				X * GridData.getGridCellWidthPx(),
-				Y * GridData.getGridCellHeightPx(),
+				GRID_X * GridData.getGridCellWidthPx(),
+				GRID_Y * GridData.getGridCellHeightPx(),
 				100,
 				this.#LINE_HEIGHT * GridData.getGridCellHeightPx(),
 				this.onButtonMenuClick.bind(this),

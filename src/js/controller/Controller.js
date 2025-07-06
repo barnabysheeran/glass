@@ -40,7 +40,7 @@ export default class Controller {
 		Director.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
 		// Development ?
-		if (ApplicationConfiguration.isDebug === true) {
+		if (ApplicationConfiguration.isDevelopment === true) {
 			Development.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		}
 	}
@@ -94,7 +94,7 @@ export default class Controller {
 		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
 		// Development ?
-		if (ApplicationConfiguration.isDebug === true) {
+		if (ApplicationConfiguration.isDevelopment === true) {
 			Development.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		}
 	}

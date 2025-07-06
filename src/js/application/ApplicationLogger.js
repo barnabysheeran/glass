@@ -7,8 +7,8 @@ export default class ApplicationLogger {
 
 	// _________________________________________________________________________
 
-	static initialise(isDebug) {
-		this.#isActive = isDebug;
+	static initialise(isDevelopment) {
+		this.#isActive = isDevelopment;
 	}
 
 	// _____________________________________________________________________ Log

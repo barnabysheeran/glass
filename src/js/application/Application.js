@@ -15,7 +15,7 @@ export default class Application {
 	// _________________________________________________________________________
 
 	constructor(creationParameters) {
-		// TODO Manually Set isDebug
+		// TODO Manually Set isDevelopment
 		const IS_DEBUG = true;
 
 		// Order Important

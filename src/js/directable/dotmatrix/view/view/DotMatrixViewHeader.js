@@ -8,7 +8,7 @@ import DotMatrixView from '../DotMatrixView.js';
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
-import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	// TODO Constants
@@ -32,9 +32,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		const GRID_X = this.#LINE_HEIGHT * 2;
 		const GRID_Y = this.#LINE_HEIGHT * 3;
 
-		// Create Glyph Box Component
-		// TODO Use Line
-		const COMPONENT = new ComponentGlyphBox(
+		// Create Glyph Line
+		const COMPONENT = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
 			'MENU',
 			GRID_X,
