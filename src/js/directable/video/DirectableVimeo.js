@@ -16,7 +16,7 @@ export default class DirectableVimeo {
 	// _________________________________________________________________________
 
 	constructor(width, height) {
-		ApplicationLogger.log('DirectableVimeo');
+		ApplicationLogger.log('DirectableVimeo', this.#LOG_LEVEL);
 
 		// Create Vimeo Player
 		this.#createPlayer();
@@ -32,6 +32,8 @@ export default class DirectableVimeo {
 	// __________________________________________________________________ Player
 
 	#createPlayer() {
+		ApplicationLogger.log('DirectableVimeo createPlayer', this.#LOG_LEVEL);
+
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'vimeo-holder';
@@ -74,10 +76,8 @@ export default class DirectableVimeo {
 
 	// ____________________________________________________________________ Size
 
-	// TODO Tidy
-
 	setSize(width, height) {
-		console.log('DirectableVimeo setSize', width, height);
+		ApplicationLogger.log('DirectableVimeo setSize', width, height);
 
 		// Store
 		this.#width = width;
@@ -87,33 +87,16 @@ export default class DirectableVimeo {
 		this.#HOLDER.style.width = width + 'px';
 		this.#HOLDER.style.height = height + 'px';
 
-		// Iframe ?
+		// Size Iframe ?
 		const iframe = this.#HOLDER.querySelector('iframe');
 
 		if (!iframe) {
-			console.log('DirectableVimeo setSize: No iframe found');
+			ApplicationLogger.log(' - No iframe');
 
 			return;
 		}
 
-		// const containerAspectRatio = width / height;
-		// let newVideoWidth = width;
-		// let newVideoHeight = height;
-
-		// if (containerAspectRatio > this.#videoAspectRatio) {
-		// 	// Container is wider than the video, scale by width to cover
-		// 	newVideoWidth = width;
-		// 	newVideoHeight = width / this.#videoAspectRatio;
-		// } else {
-		// 	// Container is taller than the video, scale by height to cover
-		// 	newVideoHeight = height;
-		// 	newVideoWidth = height * this.#videoAspectRatio;
-		// }
 		iframe.style.width = `${width}px`;
 		iframe.style.height = `${height}px`;
-
-		// Center the video
-		// iframe.style.left = `${(width - newVideoWidth) / 2}px`;
-		// iframe.style.top = `${(height - newVideoHeight) / 2}px`;
 	}
 }
