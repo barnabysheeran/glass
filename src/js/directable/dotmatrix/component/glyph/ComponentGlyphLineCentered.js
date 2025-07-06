@@ -44,7 +44,7 @@ export default class ComponentGlyphLineCentered extends Component {
 		const GRID_MAX_WIDTH = GRID_MAX[0];
 
 		// Start at Grid X Position
-		let currentGridX = 0;
+		let gridX = 0;
 
 		// Calculate Total Width of Text
 		for (let i = 0; i < this.TEXT.length; i += 1) {
@@ -55,13 +55,14 @@ export default class ComponentGlyphLineCentered extends Component {
 			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(GLYPH_NAME);
 
 			// Increment Current Grid X Position
-			currentGridX += GLYPH_WIDTH + GLYPH_SPACING_X;
+			gridX += GLYPH_WIDTH + GLYPH_SPACING_X;
 		}
 
+		// Remove Last Glyph Spacing
+		gridX -= GLYPH_SPACING_X;
+
 		// Center Glyphs
-		currentGridX = Math.floor(
-			(GRID_MAX_WIDTH - currentGridX + GLYPH_SPACING_X) / 2,
-		);
+		gridX = Math.floor((GRID_MAX_WIDTH - gridX + GLYPH_SPACING_X) / 2);
 
 		// Add Letter Shapes through Text
 		for (let i = 0; i < this.TEXT.length; i += 1) {
@@ -71,7 +72,7 @@ export default class ComponentGlyphLineCentered extends Component {
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 				GLYPH_NAME,
-				currentGridX,
+				gridX,
 				this.GRID_Y,
 				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
@@ -82,7 +83,7 @@ export default class ComponentGlyphLineCentered extends Component {
 			this.#SHAPES.push(SHAPE);
 
 			// Increment Current Grid X Position
-			currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
+			gridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
 		}
 	}
 
