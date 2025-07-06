@@ -43,7 +43,7 @@ export default class DotMatrixView {
 
 	getDelayFromGridY(gridY) {
 		// TODO Hardcoded delay
-		return gridY * 50;
+		return gridY * 10;
 	}
 
 	// __________________________________________________________________ Access

@@ -1,15 +1,15 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
-import DataController from '../../../data/DataController.js';
+import DataController from '../../../../data/DataController.js';
 
-import GridData from '../../../grid/GridData.js';
+import GridData from '../../../../grid/GridData.js';
 
-import DotMatrixView from './DotMatrixView.js';
+import DotMatrixView from '../DotMatrixView.js';
 
-import FillType from '../shape/fill/FillType.js';
-import FillStrategyType from '../shape/fill/FillStrategyType.js';
+import FillType from '../../shape/fill/FillType.js';
+import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
-import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Constants
@@ -44,7 +44,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				50,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				10 * i,
+				this.getDelayFromGridY(i + 7),
 			);
 
 			this.COMPONENTS.push(COMPONENT);

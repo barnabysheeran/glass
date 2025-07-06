@@ -1,16 +1,16 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
-import GridData from '../../../grid/GridData.js';
+import GridData from '../../../../grid/GridData.js';
 
-import DotMatrixView from './DotMatrixView.js';
+import DotMatrixView from '../DotMatrixView.js';
 
-import FillType from '../shape/fill/FillType.js';
-import FillStrategyType from '../shape/fill/FillStrategyType.js';
+import FillType from '../../shape/fill/FillType.js';
+import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
-import ComponentLineWidthFull from '../component/line/ComponentLineWidthFull.js';
-import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
-import ComponentGlyphBoxWidthFull from '../component/glyph/ComponentGlyphBoxWidthFull.js';
-import ComponentRectangle from '../component/primative/ComponentRectangle.js';
+import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
+import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
+import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewHolding extends DotMatrixView {
 	#LINE_HEIGHT = 7;
