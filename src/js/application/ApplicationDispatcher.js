@@ -1,11 +1,12 @@
-import ApplicationEvent from './ApplicationEvent.js';
+import ApplicationDispatcherEvent from './ApplicationDispatcherEvent.js';
 
 export default class ApplicationDispatcher {
 	static #EVENTS = [];
 
 	static #VALID_EVENT_NAMES = [
-		// Overlay
-		'overlay-toggle-visibility',
+		// View
+		'view-header-menu-active',
+		'view-header-menu-inactive',
 	];
 
 	// ________________________________________________________________ Dispatch
@@ -50,7 +51,7 @@ export default class ApplicationDispatcher {
 				throw new Error(`${eventName} is an invalid event name`);
 			}
 
-			this.#EVENTS[eventName] = new ApplicationEvent(eventName);
+			this.#EVENTS[eventName] = new ApplicationDispatcherEvent(eventName);
 		}
 
 		return this.#EVENTS[eventName];

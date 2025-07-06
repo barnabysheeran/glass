@@ -10,9 +10,12 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
+import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#INTERACTIVE_BLOCK;
+
+	#isActive = false;
 
 	#LOG_LEVEL = 4;
 
@@ -68,7 +71,14 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	onButtonMenuClick() {
 		ApplicationLogger.log('ViewHeader Button Menu Click', this.#LOG_LEVEL);
 
-		// TODO Implement
+		// Toggle Active State
+		this.#isActive = !this.#isActive;
+
+		if (this.#isActive === true) {
+			ApplicationDispatcher.dispatch('view-header-menu-active');
+		} else {
+			ApplicationDispatcher.dispatch('view-header-menu-inactive');
+		}
 	}
 
 	onButtonMenuOver() {
@@ -79,9 +89,5 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	onButtonMenuOut() {
 		ApplicationLogger.log('ViewHeader Button Menu Out', this.#LOG_LEVEL);
-
-		// TODO Implement
 	}
-
-	// ___________________________________________________________________ Reset
 }

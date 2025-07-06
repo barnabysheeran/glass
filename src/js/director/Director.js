@@ -6,6 +6,7 @@ import DirectableTitle from '../directable/title/DirectableTitle.js';
 import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
 import DirectableVimeo from '../directable/video/DirectableVimeo.js';
 import DirectableYoutube from '../directable/video/DirectableYoutube.js';
+import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
@@ -32,6 +33,16 @@ export default class Director {
 
 		// Create Directable Youtube
 		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();
+
+		// Application Dispatcher Events
+		ApplicationDispatcher.on(
+			'view-header-menu-active',
+			this.#onViewHeaderMenuActive.bind(this),
+		);
+		ApplicationDispatcher.on(
+			'view-header-menu-inactive',
+			this.#onViewHeaderMenuInactive.bind(this),
+		);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -49,6 +60,21 @@ export default class Director {
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.tick(frameDeltaMS);
 	}
+
+	// _______________________________________________________________ On Events
+
+	static #onViewHeaderMenuActive() {
+		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
+	}
+
+	static #onViewHeaderMenuInactive() {
+		ApplicationLogger.log(
+			`Director: View Header Menu Inactive`,
+			this.#LOG_LEVEL,
+		);
+	}
+
+	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {
 		// Dot Matrix

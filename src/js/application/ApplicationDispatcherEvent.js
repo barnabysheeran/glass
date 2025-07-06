@@ -1,4 +1,4 @@
-export default class ApplicationEvent {
+export default class ApplicationDispatcherEvent {
 	#CALLBACKS = [];
 
 	#EVENT_NAME;

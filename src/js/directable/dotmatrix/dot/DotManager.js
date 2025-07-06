@@ -51,11 +51,10 @@ export default class DotManager {
 	reset() {
 		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
 
-		// TODO Tidy
 		// Reset Dots
-		// for (let i = 0; i < this.#DOTS.length; i += 1) {
-		// 	this.#DOTS[i].reset();
-		// }
+		for (let i = 0; i < this.#DOTS.length; i += 1) {
+			this.#DOTS[i].reset();
+		}
 
 		// Reset Dot Pool Index
 		this.#dotPoolIndex = 0;
