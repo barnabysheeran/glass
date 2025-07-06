@@ -32,19 +32,17 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	start() {
 		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
 
+		// Get Line Height
 		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
 
-		const GRID_X = 0;
+		// Constant Position
 		const GRID_Y = LINE_HEIGHT * 3;
 
-		// Create Glyph Line
+		// Create Glyph Line Centered Component
 		const COMPONENT = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
 			'MENU',
-			GRID_X,
 			GRID_Y,
-			100,
-			50,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			this.getDelayFromGridY(3),
@@ -52,11 +50,15 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		this.COMPONENTS.push(COMPONENT);
 
+		// Get Component Details
+		const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
+		const GRID_WIDTH = COMPONENT.getGridWidth();
+
 		// Create Interactive Block
 		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-			GRID_X * GridData.getGridCellWidthPx(),
-			GRID_X * GridData.getGridCellHeightPx(),
-			100,
+			GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
+			GRID_Y * GridData.getGridCellHeightPx(),
+			GRID_WIDTH * GridData.getGridCellWidthPx(),
 			LINE_HEIGHT * GridData.getGridCellHeightPx(),
 			this.onButtonMenuClick.bind(this),
 			this.onButtonMenuOver.bind(this),

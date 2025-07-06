@@ -13,6 +13,9 @@ export default class ComponentGlyphLineCentered extends Component {
 	// Unique Parameters
 	TEXT;
 
+	gridXCentered = 0;
+	gridWidth = 0;
+
 	// _________________________________________________________________________
 
 	constructor(
@@ -64,6 +67,9 @@ export default class ComponentGlyphLineCentered extends Component {
 		// Center Glyphs
 		gridX = Math.floor((GRID_MAX_WIDTH - gridX + GLYPH_SPACING_X) / 2);
 
+		// Store Grid X Centered Start
+		this.gridXCenteredStart = gridX;
+
 		// Add Letter Shapes through Text
 		for (let i = 0; i < this.TEXT.length; i += 1) {
 			// Get Glyph Name
@@ -85,6 +91,12 @@ export default class ComponentGlyphLineCentered extends Component {
 			// Increment Current Grid X Position
 			gridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
 		}
+
+		// Remove Last Glyph Spacing
+		gridX -= GLYPH_SPACING_X;
+
+		// Store Grid Width
+		this.gridWidth = gridX - this.gridXCenteredStart;
 	}
 
 	// ____________________________________________________________________ Tick
@@ -94,6 +106,16 @@ export default class ComponentGlyphLineCentered extends Component {
 		for (let i = 0; i < this.#SHAPES.length; i += 1) {
 			this.#SHAPES[i].tick();
 		}
+	}
+
+	// __________________________________________________________________ Access
+
+	getGridXCenteredStart() {
+		return this.gridXCenteredStart;
+	}
+
+	getGridWidth() {
+		return this.gridWidth;
 	}
 
 	// _________________________________________________________________ Destroy
