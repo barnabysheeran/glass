@@ -68,8 +68,6 @@ export default class Development {
 	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {
-		console.log('Development setSize', width, height);
-
 		this.#CONTAINER.style.width = `${width}px`;
 		this.#CONTAINER.style.height = `${height}px`;
 	}

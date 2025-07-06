@@ -32,7 +32,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(WIDTH, HEIGHT);
 
 		// Create Directable Vimeo
-		// this.#DIRECTABLE_VIMEO = new DirectableVimeo();
+		this.#DIRECTABLE_VIMEO = new DirectableVimeo();
 
 		// Create Directable Youtube
 		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();
@@ -48,7 +48,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
 
 		// Vimeo
-		// this.#DIRECTABLE_VIMEO.tick(frameDeltaMS);
+		this.#DIRECTABLE_VIMEO.tick(frameDeltaMS);
 
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.tick(frameDeltaMS);
@@ -59,7 +59,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX.setSize(width, height);
 
 		// Vimeo
-		// this.#DIRECTABLE_VIMEO.setSize(width, height);
+		this.#DIRECTABLE_VIMEO.setSize(width, height);
 
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.setSize(width, height);

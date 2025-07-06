@@ -10,10 +10,13 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
+import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	// TODO Constants
 	#LINE_HEIGHT = 7;
+
+	#INTERACTIVE_BLOCK;
 
 	#LOG_LEVEL = 4;
 
@@ -28,12 +31,16 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
-		// Draw
+		const X = this.#LINE_HEIGHT * 2;
+		const Y = this.#LINE_HEIGHT * 3;
+
+		// Create Glyph Box
+		// TODO Use Line
 		const COMPONENT = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			'MENU',
-			8,
-			this.#LINE_HEIGHT * 3,
+			X,
+			Y,
 			100,
 			50,
 			FillType.PassThrough,
@@ -42,5 +49,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		);
 
 		this.COMPONENTS.push(COMPONENT);
+
+		// Create Interactive Block
+		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(X, Y, 100, 50);
 	}
+
+	// ___________________________________________________________________ Reset
 }

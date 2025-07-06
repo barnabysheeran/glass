@@ -1,6 +1,8 @@
 export default class DotMatrixView {
 	SHAPE_MANAGER;
+
 	COMPONENTS = [];
+	INTERACTIVE_BLOCKS = [];
 
 	#VIEW_ID = '';
 
@@ -39,7 +41,7 @@ export default class DotMatrixView {
 		this.COMPONENTS = [];
 	}
 
-	// ____________________________________________________________________ Delay
+	// ___________________________________________________________________ Delay
 
 	getDelayFromGridY(gridY) {
 		// TODO Hardcoded delay
