@@ -51,7 +51,35 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.COMPONENTS.push(COMPONENT);
 
 		// Create Interactive Block
-		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(X, Y, 100, 50);
+		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			X,
+			Y,
+			100,
+			50,
+			this.onButtonMenuClick.bind(this),
+			this.onButtonMenuOver.bind(this),
+			this.onButtonMenuOut.bind(this),
+		);
+	}
+
+	// _____________________________________________________________ Button Menu
+
+	onButtonMenuClick() {
+		ApplicationLogger.log('View Header Button Menu Click', this.#LOG_LEVEL);
+
+		// TODO Implement
+	}
+
+	onButtonMenuOver() {
+		ApplicationLogger.log('View Header Button Menu Over', this.#LOG_LEVEL);
+
+		// TODO Implement
+	}
+
+	onButtonMenuOut() {
+		ApplicationLogger.log('View Header Button Menu Out', this.#LOG_LEVEL);
+
+		// TODO Implement
 	}
 
 	// ___________________________________________________________________ Reset

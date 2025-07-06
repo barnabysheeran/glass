@@ -27,7 +27,15 @@ export default class InteractiveSurface {
 
 	// _______________________________________________________________ Add Block
 
-	static createBlock(x, y, width, height) {
+	static createBlock(
+		x,
+		y,
+		width,
+		height,
+		callbackClick,
+		callbackRollOver,
+		callbackRollOut,
+	) {
 		// Create Element
 		const ELEMENT = document.createElement('div');
 		ELEMENT.classList.add('interactive-block');
@@ -36,6 +44,19 @@ export default class InteractiveSurface {
 		ELEMENT.style.width = `${width}px`;
 		ELEMENT.style.height = `${height}px`;
 		this.#CONTAINER.appendChild(ELEMENT);
+
+		// Add Event Listeners
+		if (callbackClick) {
+			ELEMENT.addEventListener('click', callbackClick);
+		}
+
+		if (callbackRollOver) {
+			ELEMENT.addEventListener('mouseover', callbackRollOver);
+		}
+
+		if (callbackRollOut) {
+			ELEMENT.addEventListener('mouseout', callbackRollOut);
+		}
 
 		// Store
 		this.#ELEMENTS.push(ELEMENT);
