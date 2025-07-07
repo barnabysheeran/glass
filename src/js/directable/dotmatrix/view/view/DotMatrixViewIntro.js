@@ -3,6 +3,7 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';
+import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';

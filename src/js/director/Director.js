@@ -39,9 +39,15 @@ export default class Director {
 			'view-header-menu-active',
 			this.#onViewHeaderMenuActive.bind(this),
 		);
+
 		ApplicationDispatcher.on(
 			'view-header-menu-inactive',
 			this.#onViewHeaderMenuInactive.bind(this),
+		);
+
+		ApplicationDispatcher.on(
+			'view-project-menu-select',
+			this.#onViewProjectMenuSelect.bind(this),
 		);
 	}
 
@@ -65,6 +71,8 @@ export default class Director {
 
 	static #onViewHeaderMenuActive() {
 		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
+
+		// TODO Implement
 	}
 
 	static #onViewHeaderMenuInactive() {
@@ -72,6 +80,17 @@ export default class Director {
 			`Director: View Header Menu Inactive`,
 			this.#LOG_LEVEL,
 		);
+
+		// TODO Implement
+	}
+
+	static #onViewProjectMenuSelect(data) {
+		ApplicationLogger.log(
+			`Director: View Project Menu Select`,
+			this.#LOG_LEVEL,
+		);
+
+		console.log(' - data', data);
 	}
 
 	// ____________________________________________________________________ Size

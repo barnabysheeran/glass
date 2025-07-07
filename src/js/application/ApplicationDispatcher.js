@@ -7,6 +7,8 @@ export default class ApplicationDispatcher {
 		// View
 		'view-header-menu-active',
 		'view-header-menu-inactive',
+
+		'view-project-menu-select', // { projectId: string }
 	];
 
 	// ________________________________________________________________ Dispatch

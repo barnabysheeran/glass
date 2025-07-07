@@ -16,7 +16,7 @@ export default class DirectableDotMatrix {
 
 	#VIEWS = [];
 
-	#viewIdCurrent = 'menu';
+	#viewIdCurrent = 'intro';
 
 	#LOG_LEVEL = 3;
 
