@@ -119,16 +119,9 @@ export default class DirectableDotMatrix {
 		this.#viewIdCurrent = 'intro';
 	}
 
-	// ____________________________________________________________________ Size
+	// ___________________________________________________________________ Reset
 
-	setSize(width, height) {
-		ApplicationLogger.log(
-			'DirectableDotMatrix setSize ' + width + ' ' + height,
-			this.#LOG_LEVEL,
-		);
-
-		// Set Size requires a full Reset Redraw
-
+	reset() {
 		// Reset Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();

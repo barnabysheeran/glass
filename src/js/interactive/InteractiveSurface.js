@@ -7,6 +7,8 @@ export default class InteractiveSurface {
 
 	static #ELEMENTS = new Map();
 
+	static #PIXEL_BORDER = 0;
+
 	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
@@ -39,6 +41,12 @@ export default class InteractiveSurface {
 	) {
 		// Create UUID
 		const uuid = crypto.randomUUID();
+
+		// Add Pixel Border
+		x -= this.#PIXEL_BORDER;
+		y -= this.#PIXEL_BORDER;
+		width += this.#PIXEL_BORDER * 2;
+		height += this.#PIXEL_BORDER * 2;
 
 		// Create Element
 		const ELEMENT = document.createElement('div');
