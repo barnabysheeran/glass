@@ -2,8 +2,6 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
 import DataController from '../../../../data/DataController.js';
 
-import GridData from '../../../../grid/GridData.js';
-
 import DotMatrixView from '../DotMatrixView.js';
 import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
 

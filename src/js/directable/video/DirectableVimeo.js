@@ -27,7 +27,9 @@ export default class DirectableVimeo {
 
 	// ____________________________________________________________________ Tick
 
-	tick(frameDeltaMS) {}
+	tick() {
+		// frameDeltaMS
+	}
 
 	// __________________________________________________________________ Player
 

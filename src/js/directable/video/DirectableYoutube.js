@@ -22,7 +22,9 @@ export default class DirectableYoutube {
 
 	// ____________________________________________________________________ Tick
 
-	tick(frameDeltaMS) {}
+	tick() {
+		// frameDeltaMS
+	}
 
 	// __________________________________________________________________ Player
 

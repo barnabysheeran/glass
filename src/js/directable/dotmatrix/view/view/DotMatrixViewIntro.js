@@ -9,9 +9,7 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
-import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
-import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
 	COMPONENTS = [];
@@ -34,9 +32,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
 
-		const GRID_MAX_WIDTH = GRID_MAX[0];
-		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
-
+		// const GRID_MAX_WIDTH = GRID_MAX[0];
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
 		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / LINE_HEIGHT);
 

@@ -1,18 +1,16 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-import Display from '../display/Display.js';
-
 import DirectableTitle from '../directable/title/DirectableTitle.js';
 import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
-import DirectableVimeo from '../directable/video/DirectableVimeo.js';
-import DirectableYoutube from '../directable/video/DirectableYoutube.js';
+// import DirectableVimeo from '../directable/video/DirectableVimeo.js';
+// import DirectableYoutube from '../directable/video/DirectableYoutube.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
 	static #DIRECTABLE_DOT_MATRIX;
-	static #DIRECTABLE_VIMEO;
-	static #DIRECTABLE_YOUTUBE;
+	// static #DIRECTABLE_VIMEO;
+	// static #DIRECTABLE_YOUTUBE;
 
 	static #LOG_LEVEL = 2;
 
@@ -100,7 +98,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX.setSize(width, height);
 
 		// Vimeo
-		this.#DIRECTABLE_VIMEO.setSize(width, height);
+		// this.#DIRECTABLE_VIMEO.setSize(width, height);
 
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.setSize(width, height);
