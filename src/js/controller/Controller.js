@@ -92,6 +92,8 @@ export default class Controller {
 		RenderSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		InteractiveSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
+		Director.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+
 		// Development ?
 		if (ApplicationConfiguration.isDevelopment === true) {
 			Development.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);

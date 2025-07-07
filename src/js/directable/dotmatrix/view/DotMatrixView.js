@@ -1,8 +1,10 @@
+import InteractiveSurface from '../../../interactive/InteractiveSurface.js';
+
 export default class DotMatrixView {
 	SHAPE_MANAGER;
 
 	COMPONENTS = [];
-	INTERACTIVE_BLOCKS = [];
+	INTERACTIVE_BLOCK_IDS = [];
 
 	#VIEW_ID = '';
 
@@ -37,6 +39,14 @@ export default class DotMatrixView {
 
 		// Reset Components
 		this.COMPONENTS = [];
+
+		// Destroy Interactive Blocks
+		for (let i = 0; i < this.INTERACTIVE_BLOCK_IDS.length; i += 1) {
+			InteractiveSurface.removeBlock(this.INTERACTIVE_BLOCK_IDS[i]);
+		}
+
+		// Reset Interactive Block Ids
+		this.INTERACTIVE_BLOCK_IDS = [];
 	}
 
 	// ___________________________________________________________________ Delay

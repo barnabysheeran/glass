@@ -65,7 +65,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.onButtonMenuOut.bind(this),
 		);
 
-		this.INTERACTIVE_BLOCKS.push(this.#INTERACTIVE_BLOCK);
+		this.INTERACTIVE_BLOCK_IDS.push(this.#INTERACTIVE_BLOCK);
 	}
 
 	// _________________________________________________ Interaction Button Menu

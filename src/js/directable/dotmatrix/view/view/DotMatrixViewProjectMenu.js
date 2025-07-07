@@ -86,7 +86,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				{ projectId: PROJECT_DATA_ITEM['id'] },
 			);
 
-			this.INTERACTIVE_BLOCKS.push(INTERACTIVE_BLOCK);
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 		}
 	}
 

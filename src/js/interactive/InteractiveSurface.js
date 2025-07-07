@@ -5,7 +5,7 @@ import Display from '../display/Display.js';
 export default class InteractiveSurface {
 	static #CONTAINER;
 
-	static #ELEMENTS = [];
+	static #ELEMENTS = new Map();
 
 	static #LOG_LEVEL = 2;
 
@@ -37,8 +37,12 @@ export default class InteractiveSurface {
 		callbackRollOut,
 		clickData = {},
 	) {
+		// Create UUID
+		const uuid = crypto.randomUUID();
+
 		// Create Element
 		const ELEMENT = document.createElement('div');
+		ELEMENT.id = uuid;
 		ELEMENT.classList.add('interactive-block');
 		ELEMENT.style.left = `${x}px`;
 		ELEMENT.style.top = `${y}px`;
@@ -75,9 +79,21 @@ export default class InteractiveSurface {
 		}
 
 		// Store
-		this.#ELEMENTS.push(ELEMENT);
+		this.#ELEMENTS.set(uuid, ELEMENT);
 
-		// TODO Return element or add listeners here
+		// Return uuid
+		return uuid;
+	}
+
+	// ____________________________________________________________ Remove Block
+
+	static removeBlock(uuid) {
+		const element = this.#ELEMENTS.get(uuid);
+
+		if (element) {
+			element.remove();
+			this.#ELEMENTS.delete(uuid);
+		}
 	}
 
 	// ___________________________________________________________________ Clear
@@ -86,7 +102,7 @@ export default class InteractiveSurface {
 		ApplicationLogger.log('Interactive clear', this.#LOG_LEVEL);
 
 		// Clear Blocks
-		this.#ELEMENTS = [];
+		this.#ELEMENTS.clear();
 
 		// Clear Holder
 		this.#CONTAINER.innerHTML = '';
