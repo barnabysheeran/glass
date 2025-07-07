@@ -35,8 +35,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
 
 		// Get Project Data
-		const PROJECT_DATA = DataController.getProjects();
-		const PROJECT_DATA_ITEM = PROJECT_DATA[this.#projectId];
+		const PROJECT_DATA_ITEM = DataController.getProjectById(this.#projectId);
 
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(

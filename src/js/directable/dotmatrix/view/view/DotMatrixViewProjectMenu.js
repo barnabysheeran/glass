@@ -12,6 +12,7 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
+import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Calc Pixels
@@ -47,8 +48,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			// Get Project Data Item
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
-			// Grid X Y
-			const GRID_X = 0;
+			// Grid Y
 			const GRID_Y = LINE_HEIGHT * (7 + i * 2);
 
 			// Text
@@ -83,6 +83,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.onButtonMenuClick.bind(this),
 				this.onButtonMenuOver.bind(this),
 				this.onButtonMenuOut.bind(this),
+				{ projectId: PROJECT_DATA_ITEM['id'] },
 			);
 
 			this.INTERACTIVE_BLOCKS.push(INTERACTIVE_BLOCK);
@@ -91,8 +92,14 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	// _____________________________________________________________ Button Menu
 
-	onButtonMenuClick() {
+	onButtonMenuClick(clickData) {
 		// TODO Implement
+
+		ApplicationDispatcher.dispatch('view-project-menu-select', {
+			projectId: clickData.projectId,
+		});
+
+		console.log('Project Menu Button Clicked ' + clickData.projectId);
 	}
 
 	onButtonMenuOver() {

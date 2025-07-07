@@ -58,6 +58,57 @@ export default class DirectableDotMatrix {
 		}
 	}
 
+	// ____________________________________________________________________ View
+
+	showProject(projectId) {
+		ApplicationLogger.log(
+			'DirectableDotMatrix showProject ' + projectId,
+			this.#LOG_LEVEL,
+		);
+
+		// Reset Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].reset();
+		}
+
+		// Show Project View
+		this.#getViewById('project').setProjectId(projectId);
+		this.#getViewById('project').start();
+
+		this.#viewIdCurrent = 'project';
+	}
+
+	setMenuActive() {
+		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
+
+		// Reset Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].reset();
+		}
+
+		// Show Menu View
+		this.#getViewById('menu').start();
+
+		this.#viewIdCurrent = 'menu';
+	}
+
+	setMenuInactive() {
+		ApplicationLogger.log(
+			'DirectableDotMatrix setMenuInactive',
+			this.#LOG_LEVEL,
+		);
+
+		// Reset Views
+		for (let i = 0; i < this.#VIEWS.length; i += 1) {
+			this.#VIEWS[i].reset();
+		}
+
+		// Show Intro View
+		this.#getViewById('intro').start();
+
+		this.#viewIdCurrent = 'intro';
+	}
+
 	// ____________________________________________________________________ Size
 
 	setSize(width, height) {

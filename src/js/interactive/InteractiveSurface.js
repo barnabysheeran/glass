@@ -35,6 +35,7 @@ export default class InteractiveSurface {
 		callbackClick,
 		callbackRollOver,
 		callbackRollOut,
+		clickData = {},
 	) {
 		// Create Element
 		const ELEMENT = document.createElement('div');
@@ -48,9 +49,21 @@ export default class InteractiveSurface {
 		// DEV
 		ELEMENT.style.border = '1px solid #00f';
 
+		// Set Click Data
+		if (Object.keys(clickData).length > 0) {
+			ELEMENT.dataset.clickData = JSON.stringify(clickData);
+		}
+
 		// Add Event Listeners
 		if (callbackClick) {
-			ELEMENT.addEventListener('click', callbackClick);
+			ELEMENT.addEventListener('click', (event) => {
+				// Get Click Data
+				const clickDataString = event.currentTarget.dataset.clickData;
+				const clickData = clickDataString ? JSON.parse(clickDataString) : {};
+
+				// Call Callback
+				callbackClick(clickData);
+			});
 		}
 
 		if (callbackRollOver) {

@@ -8,4 +8,14 @@ export default class DataController {
 	static getProjects() {
 		return DataController.#DATA_PROJECTS;
 	}
+
+	static getProjectById(projectId) {
+		for (let i = 0; i < DataController.#DATA_PROJECTS.length; i += 1) {
+			const project = DataController.#DATA_PROJECTS[i];
+			if (project.id === projectId) {
+				return project;
+			}
+		}
+		return undefined;
+	}
 }

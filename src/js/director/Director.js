@@ -70,7 +70,8 @@ export default class Director {
 	static #onViewHeaderMenuActive() {
 		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
 
-		// TODO Implement
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.setMenuActive();
 	}
 
 	static #onViewHeaderMenuInactive() {
@@ -79,7 +80,8 @@ export default class Director {
 			this.#LOG_LEVEL,
 		);
 
-		// TODO Implement
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.setMenuInactive();
 	}
 
 	static #onViewProjectMenuSelect(data) {
@@ -88,7 +90,8 @@ export default class Director {
 			this.#LOG_LEVEL,
 		);
 
-		console.log(' - data', data);
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.showProject(data.projectId);
 	}
 
 	// ____________________________________________________________________ Size
