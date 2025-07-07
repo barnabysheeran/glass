@@ -73,13 +73,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	onButtonMenuClick() {
 		ApplicationLogger.log('ViewHeader Button Menu Click', this.#LOG_LEVEL);
 
-		// Toggle Active State
-		this.#isActive = !this.#isActive;
-
 		if (this.#isActive === true) {
-			ApplicationDispatcher.dispatch('view-header-menu-active');
-		} else {
 			ApplicationDispatcher.dispatch('view-header-menu-inactive');
+		} else {
+			ApplicationDispatcher.dispatch('view-header-menu-active');
 		}
 	}
 
@@ -93,5 +90,11 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		ApplicationLogger.log('ViewHeader Button Menu Out', this.#LOG_LEVEL);
 
 		// TODO Implement
+	}
+
+	// __________________________________________________________________ Active
+
+	setIsActive(isActive) {
+		this.#isActive = isActive;
 	}
 }

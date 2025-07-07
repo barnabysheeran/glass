@@ -69,6 +69,10 @@ export default class DirectableDotMatrix {
 			this.#VIEWS[i].reset();
 		}
 
+		// Set Menu Inactive
+		this.#getViewById('header').setIsActive(false);
+		this.#getViewById('header').start();
+
 		// Show Project View
 		this.#getViewById('project').setProjectId(projectId);
 		this.#getViewById('project').start();
@@ -83,6 +87,10 @@ export default class DirectableDotMatrix {
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();
 		}
+
+		// Set Menu Active
+		this.#getViewById('header').setIsActive(true);
+		this.#getViewById('header').start();
 
 		// Show Menu View
 		this.#getViewById('menu').start();
@@ -100,6 +108,10 @@ export default class DirectableDotMatrix {
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();
 		}
+
+		// Set Menu Inactive
+		this.#getViewById('header').setIsActive(false);
+		this.#getViewById('header').start();
 
 		// Show Intro View
 		this.#getViewById('intro').start();
