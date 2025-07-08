@@ -94,13 +94,11 @@ export default class DotManager {
 		// Create new dots for the entire grid
 		for (let y = 0; y < GRID_MAX_WIDTH; y++) {
 			for (let x = 0; x < GRID_MAX_HEIGHT; x++) {
+				// TODO Create Dot with Position
+
 				const dot = new Dot();
 				const positionGrid = [x, y];
 				const positionPx = GridData.getGridPixelPosition(positionGrid);
-
-				console.log(
-					` - Dot ${this.#DOTS.length} at Grid ${positionGrid.x},${positionGrid.y} -> Pixel ${positionPx.x},${positionPx.y}`,
-				);
 
 				dot.setPosition(positionPx);
 				this.#DOTS.push(dot);
