@@ -83,6 +83,8 @@ export default class Shape {
 		this.#isComplete = false;
 	}
 
+	undraw() {}
+
 	// __________________________________________________________________ Access
 
 	getShapeId() {

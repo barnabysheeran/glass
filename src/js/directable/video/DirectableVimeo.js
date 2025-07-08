@@ -46,7 +46,8 @@ export default class DirectableVimeo {
 		const OPTIONS = {
 			id: 12021447,
 			loop: true,
-			background: true,
+			// background: true,
+			controls: false,
 			dnt: true, // Do Not Track
 			responsive: false,
 			width: this.#width,
@@ -59,11 +60,24 @@ export default class DirectableVimeo {
 
 		// Add event listeners
 		this.#PLAYER.on('play', this.#onPlay.bind(this));
+		this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
+	}
+
+	// __________________________________________________________________ Loaded
+
+	#onLoaded(data) {
+		ApplicationLogger.log(
+			`DirectableVimeo onLoaded: video ${data.id} has loaded.`,
+			this.#LOG_LEVEL,
+		);
+
+		// Play Video
+		this.#playVideo();
 	}
 
 	// ___________________________________________________________________ Ready
 
-	async #onReady() {
+	#onReady() {
 		ApplicationLogger.log('DirectableVimeo onReady', this.#LOG_LEVEL);
 
 		// Set Size
@@ -71,6 +85,20 @@ export default class DirectableVimeo {
 	}
 
 	// ____________________________________________________________________ Play
+
+	async #playVideo() {
+		// Play Video
+		try {
+			await this.#PLAYER.play();
+			ApplicationLogger.log(' - Video started playing', this.#LOG_LEVEL);
+		} catch (error) {
+			ApplicationLogger.error(
+				' - Error starting video',
+				error,
+				this.#LOG_LEVEL,
+			);
+		}
+	}
 
 	#onPlay() {
 		ApplicationLogger.log('DirectableVimeo onPlay', this.#LOG_LEVEL);

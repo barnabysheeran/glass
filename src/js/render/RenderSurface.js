@@ -398,6 +398,14 @@ export default class RenderSurface {
 		);
 	}
 
+	// ___________________________________________________________________ Clear
+
+	static reset() {
+		ApplicationLogger.log('RenderSurface Resetting texture.', this.#LOG_LEVEL);
+
+		this.#clearTexture();
+	}
+
 	// _________________________________________________________________ Destroy
 
 	static destroy() {

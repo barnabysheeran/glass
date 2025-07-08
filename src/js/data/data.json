@@ -6,10 +6,7 @@
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
 
@@ -18,10 +15,7 @@
             "name": "Hotsteppa",
             "name-short": "Hotsteppa",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+ 
             ]
         },
 
@@ -30,10 +24,7 @@
             "name": "Pikcells/Onfigr",
             "name-short": "Pikcells/Onfigr",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
 
@@ -42,10 +33,7 @@
             "name": "THE-SCIENCE-MUSEUM_SUN",
             "name-short": "SCIENCE-MUSEUM",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
         
@@ -54,10 +42,7 @@
             "name": "Goodwood_Festival-of-Speed",
             "name-short": "Goodwood",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
 
@@ -66,10 +51,7 @@
             "name": "postMATTER_Exhibition",
             "name-short": "postMATTER",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+  
             ]
         },
 
@@ -78,10 +60,7 @@
             "name": "Ferrari_Flagship-Store_Milan",
             "name-short": "Ferrari",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+ 
             ]
         },
 
@@ -90,10 +69,7 @@
             "name": "HONDA_The-Other-Side",
             "name-short": "HONDA",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+ 
             ]
         },
 
@@ -102,10 +78,7 @@
             "name": "GOOGLE_ABBEY-ROAD",
             "name-short": "GOOGLE",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
 
@@ -114,10 +87,7 @@
             "name": "ADIDAS_Flash",
             "name-short": "ADIDAS",
             "media": [
-                {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
-                }
+
             ]
         },
 
@@ -127,10 +97,13 @@
             "name-short": "Greenpeace",
             "media": [
                 {
-                    "type": "image",
-                    "youtube-id": "BCFOZRAqOJQ"
+                    "type": "vimeo",
+                    "vimeo-id": "148119789",
+                    "aspect-ratio": "4:3"
                 }
-            ]
+            ],
+            "credit-text": "Credit Text",
+            "credit-link": "https://alexandrajugovic.com/loveletters"
         }
     ]
 }
