@@ -5,7 +5,6 @@ import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js'
 import DirectableVimeo from '../directable/video/DirectableVimeo.js';
 // import DirectableYoutube from '../directable/video/DirectableYoutube.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
-import RenderSurface from '../render/RenderSurface.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
@@ -17,7 +16,7 @@ export default class Director {
 
 	// _________________________________________________________________________
 
-	static initialise(width, height) {
+	static initialise(displayWidthPx, displayHeightPx) {
 		ApplicationLogger.log(`Director`, this.#LOG_LEVEL);
 
 		// Create Directable Title
@@ -25,10 +24,16 @@ export default class Director {
 		this.#DIRECTABLE_TITLE.setText('Barnaby Sheeran');
 
 		// Create Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(width, height);
+		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(
+			displayWidthPx,
+			displayHeightPx,
+		);
 
 		// Create Directable Vimeo
-		this.#DIRECTABLE_VIMEO = new DirectableVimeo(width, height);
+		this.#DIRECTABLE_VIMEO = new DirectableVimeo(
+			displayWidthPx,
+			displayHeightPx,
+		);
 
 		// Create Directable Youtube
 		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();
@@ -72,11 +77,6 @@ export default class Director {
 		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
 
 		// Dot Matrix
-		// TODO
-		this.#DIRECTABLE_DOT_MATRIX.reset();
-		RenderSurface.reset();
-
-		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.setMenuActive();
 	}
 
@@ -87,11 +87,6 @@ export default class Director {
 		);
 
 		// Dot Matrix
-		// TODO
-		this.#DIRECTABLE_DOT_MATRIX.reset();
-		RenderSurface.reset();
-
-		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.setMenuInactive();
 	}
 
@@ -100,11 +95,6 @@ export default class Director {
 			`Director: View Project Menu Select`,
 			this.#LOG_LEVEL,
 		);
-
-		// Dot Matrix
-		// TODO
-		this.#DIRECTABLE_DOT_MATRIX.reset();
-		RenderSurface.reset();
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.showProject(data.projectId);

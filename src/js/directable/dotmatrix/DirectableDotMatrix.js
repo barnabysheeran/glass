@@ -24,11 +24,14 @@ export default class DirectableDotMatrix {
 
 	// _________________________________________________________________________
 
-	constructor() {
-		ApplicationLogger.log('DirectableDotMatrix', this.#LOG_LEVEL);
+	constructor(displayWidthPx, displayHeightPx) {
+		ApplicationLogger.log(
+			'DirectableDotMatrix ' + displayHeightPx + ' ' + displayHeightPx,
+			this.#LOG_LEVEL,
+		);
 
 		// Create Dot Manager
-		this.#DOT_MANAGER = new DotManager();
+		this.#DOT_MANAGER = new DotManager(displayWidthPx, displayHeightPx);
 
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
@@ -121,7 +124,7 @@ export default class DirectableDotMatrix {
 
 	// ___________________________________________________________________ Reset
 
-	reset() {
+	setSize(width, height) {
 		// Reset Views
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();
@@ -131,7 +134,7 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER.reset();
 
 		// Reset Dot Manager
-		this.#DOT_MANAGER.reset();
+		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
 		this.#getViewById('header').start();
