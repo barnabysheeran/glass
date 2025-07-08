@@ -71,6 +71,9 @@ export default class Director {
 		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
 
 		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.reset();
+
+		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.setMenuActive();
 	}
 
@@ -81,6 +84,9 @@ export default class Director {
 		);
 
 		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.reset();
+
+		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.setMenuInactive();
 	}
 
@@ -89,6 +95,9 @@ export default class Director {
 			`Director: View Project Menu Select`,
 			this.#LOG_LEVEL,
 		);
+
+		// Dot Matrix
+		this.#DIRECTABLE_DOT_MATRIX.reset();
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.showProject(data.projectId);
