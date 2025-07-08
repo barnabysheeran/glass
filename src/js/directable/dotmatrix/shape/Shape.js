@@ -46,19 +46,29 @@ export default class Shape {
 		}
 
 		// Get Dot Index
-		let dotIndex = this.#dotManager.getNextFreeDotIndex();
+		// let dotIndex = this.#dotManager.getNextFreeDotIndex();
 
 		// Clear Current Dot
-		this.#dotManager.clearDot(dotIndex);
+		// this.#dotManager.clearDot(dotIndex);
 
 		// Position
-		this.#dotManager.setDotPosition(
-			dotIndex,
-			this.positionGrids[this.#positionGridsIndex],
+		// this.#dotManager.setDotPosition(
+		// 	dotIndex,
+		// 	this.positionGrids[this.#positionGridsIndex],
+		// );
+
+		const POSITION_GRID = this.positionGrids[this.#positionGridsIndex];
+
+		// Get Dot Index
+		let DOT_INDEX = this.#dotManager.getDotIndexAtGrid(
+			POSITION_GRID[0],
+			POSITION_GRID[1],
 		);
 
-		// Fill Dot
-		this.#dotManager.fillDot(dotIndex);
+		// Fill Dot ?
+		if (DOT_INDEX > -1) {
+			this.#dotManager.fillDot(DOT_INDEX);
+		}
 
 		// Increment Index
 		this.#positionGridsIndex += 1;

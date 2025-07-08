@@ -7,80 +7,72 @@ import Dot from './Dot.js';
 export default class DotManager {
 	#DOTS = [];
 
-	// #dotPoolSize = 1024 * 100;
-	// #dotPoolIndex = 0;
-
 	#displayWidthPx = 0;
 	#displayHeightPx = 0;
 
 	#LOG_LEVEL = 4;
-
-	// TODO Optimisation. Flatten Dot Class into Fast Arrays
 
 	// _________________________________________________________________________
 
 	constructor(displayWidthPx, displayHeightPx) {
 		ApplicationLogger.log('DotManager', this.#LOG_LEVEL);
 
-		// Create Dot Pool
+		// Create Dots
 		this.setSize(displayWidthPx, displayHeightPx);
 	}
 
 	// ________________________________________________________________ Dot Pool
 
-	getNextFreeDotIndex() {
-		return 0;
+	getDotIndexAtGrid(positionGridX, positionGridY) {
+		console.log(
+			`DotManager getDotIndexAtGrid ${positionGridX} ${positionGridY}`,
+		);
 
-		// // Store Index for Return
-		// let index = this.#dotPoolIndex;
+		// Get Grid Max
+		const GRID_MAX = GridData.getGridMax();
+		const GRID_MAX_WIDTH = GRID_MAX[0];
+		// const GRID_MAX_HEIGHT = GRID_MAX[1];
 
-		// // Next
-		// this.#dotPoolIndex += 1;
+		// Check bounds
+		if (
+			positionGridX < 0 ||
+			positionGridX >= GRID_MAX_WIDTH ||
+			positionGridY < 0
+		) {
+			return -1;
+		}
 
-		// // Recycle from Start of Pool
-		// if (this.#dotPoolIndex >= this.#dotPoolSize) {
-		// 	ApplicationLogger.log(
-		// 		`DotManager Reached end of dot pool`,
-		// 		this.#LOG_LEVEL,
-		// 	);
+		const index = positionGridY * GRID_MAX_WIDTH + positionGridX;
 
-		// 	this.#dotPoolIndex = 0;
-		// }
+		if (index >= this.#DOTS.length) {
+			return -1;
+		}
 
-		// return index;
+		// console.log(` - Dot Index: ${index}`);
+
+		return index;
+	}
+
+	// ____________________________________________________________________ Fill
+
+	fillDot(dotIndex) {
+		console.log(`DotManager fillDot ${dotIndex}`);
+
+		this.#DOTS[dotIndex].fill();
+	}
+
+	// ___________________________________________________________________ Clear
+
+	clearDot(dotIndex) {
+		this.#DOTS[dotIndex].clear();
 	}
 
 	// ___________________________________________________________________ Reset
 
 	reset() {
 		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
-	}
 
-	// ________________________________________________________________ Position
-
-	setDotPosition(dotIndex, positionGrid) {
-		// // Get Dot
-		// const DOT = this.#DOTS[dotIndex];
-		// // Set Position
-		// DOT.setPosition(GridData.getGridPixelPosition(positionGrid));
-	}
-
-	// ____________________________________________________________________ Fill
-
-	fillDot(dotIndex) {
-		// // Get Dot
-		// const DOT = this.#DOTS[dotIndex];
-		// // Fill
-		// DOT.fill();
-	}
-
-	// ___________________________________________________________________ Clear
-
-	clearDot(dotIndex) {
-		// // Get Dot
-		// const DOT = this.#DOTS[dotIndex];
-		// // Clear
-		// DOT.clear();
+		// TODO
 	}
 
 	// ____________________________________________________________________ Size
@@ -91,37 +83,32 @@ export default class DotManager {
 			this.#LOG_LEVEL,
 		);
 
-		// Get Grid Size
-		const GRID_CELL_WIDTH_PX = GridData.getGridCellWidthPx();
-		const GRID_CELL_HEIGHT_PX = GridData.getGridCellHeightPx();
-
-		// Store Display Size
-		this.#displayWidthPx = displayWidthPx;
-		this.#displayHeightPx = displayHeightPx;
-
-		// Calculate grid dimensions
-		const gridWidth = Math.floor(this.#displayWidthPx / GRID_CELL_WIDTH_PX);
-		const gridHeight = Math.floor(this.#displayHeightPx / GRID_CELL_HEIGHT_PX);
+		// Get Grid Max
+		const GRID_MAX = GridData.getGridMax();
+		const GRID_MAX_WIDTH = GRID_MAX[0];
+		const GRID_MAX_HEIGHT = GRID_MAX[1];
 
 		// Clear existing dots
 		this.#DOTS = [];
 
-		ApplicationLogger.log(
-			` - Creating ${gridWidth * gridHeight} Dots in a ${gridWidth}x${gridHeight} grid`,
-			this.#LOG_LEVEL,
-		);
-
 		// Create new dots for the entire grid
-		for (let y = 0; y < gridHeight; y++) {
-			const row = [];
-			for (let x = 0; x < gridWidth; x++) {
+		for (let y = 0; y < GRID_MAX_WIDTH; y++) {
+			for (let x = 0; x < GRID_MAX_HEIGHT; x++) {
 				const dot = new Dot();
-				const positionGrid = { x, y };
+				const positionGrid = [x, y];
 				const positionPx = GridData.getGridPixelPosition(positionGrid);
+
+				console.log(
+					` - Dot ${this.#DOTS.length} at Grid ${positionGrid.x},${positionGrid.y} -> Pixel ${positionPx.x},${positionPx.y}`,
+				);
+
 				dot.setPosition(positionPx);
-				row.push(dot);
+				this.#DOTS.push(dot);
 			}
-			this.#DOTS.push(row);
 		}
+
+		// Store Display Size
+		this.#displayWidthPx = displayWidthPx;
+		this.#displayHeightPx = displayHeightPx;
 	}
 }
