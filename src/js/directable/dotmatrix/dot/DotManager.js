@@ -88,6 +88,8 @@ export default class DotManager {
 		const GRID_MAX_WIDTH = GRID_MAX[0];
 		const GRID_MAX_HEIGHT = GRID_MAX[1];
 
+		// TODO Keep existing dots on resize
+
 		// Clear existing dots
 		this.#DOTS = [];
 

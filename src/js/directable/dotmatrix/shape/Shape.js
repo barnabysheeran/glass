@@ -45,18 +45,7 @@ export default class Shape {
 			return;
 		}
 
-		// Get Dot Index
-		// let dotIndex = this.#dotManager.getNextFreeDotIndex();
-
-		// Clear Current Dot
-		// this.#dotManager.clearDot(dotIndex);
-
-		// Position
-		// this.#dotManager.setDotPosition(
-		// 	dotIndex,
-		// 	this.positionGrids[this.#positionGridsIndex],
-		// );
-
+		// Get Position Grid
 		const POSITION_GRID = this.positionGrids[this.#positionGridsIndex];
 
 		// Get Dot Index
@@ -65,7 +54,7 @@ export default class Shape {
 			POSITION_GRID[1],
 		);
 
-		// Fill Dot ?
+		// Fill Dot
 		if (DOT_INDEX > -1) {
 			this.#dotManager.fillDot(DOT_INDEX);
 		}
