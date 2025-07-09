@@ -76,7 +76,7 @@ export default class Dot {
 			FILLED_DATA,
 		);
 
-		// Mark as filled
+		// Filled
 		this.#isFilled = true;
 	}
 
@@ -102,7 +102,7 @@ export default class Dot {
 			CLEARED_DATA,
 		);
 
-		// Mark as cleared
+		// Not Filled
 		this.#isFilled = false;
 	}
 }
