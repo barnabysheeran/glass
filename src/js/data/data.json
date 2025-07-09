@@ -102,8 +102,10 @@
                     "aspect-ratio": "4:3"
                 }
             ],
-            "credit-text": "Credit Text",
-            "credit-link": "https://alexandrajugovic.com/loveletters"
+            "credit": {
+                "text": "CreditText",
+                "url": "https://alexandrajugovic.com/loveletters"
+            }
         }
     ]
 }

@@ -66,5 +66,22 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		);
 
 		this.COMPONENTS.push(COMPONENT_NAME_SHORT);
+
+		// Add Credit ?
+		if (PROJECT_DATA_ITEM['credit']) {
+			const COMPONENT_CREDIT = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				PROJECT_DATA_ITEM['credit']['text'],
+				8,
+				LINE_HEIGHT * 12,
+				100,
+				50,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				this.getDelayFromGridY(12),
+			);
+
+			this.COMPONENTS.push(COMPONENT_CREDIT);
+		}
 	}
 }
