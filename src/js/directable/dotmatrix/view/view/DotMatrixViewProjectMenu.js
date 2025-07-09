@@ -16,6 +16,7 @@ import ApplicationDispatcher from '../../../../application/ApplicationDispatcher
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Calc Pixels
+	// TODO Constants
 	#BLOCK_WIDTH_MOBILE = 130;
 
 	#LOG_LEVEL = 4;
@@ -34,6 +35,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		ApplicationLogger.log('Project Menu start', this.#LOG_LEVEL);
 
 		// Get Line Height
+		const CHARACTER_HEIGHT = DotMatrixViewConstants.getCharacterHeight();
 		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
 
 		// Get Grid Size
@@ -79,7 +81,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
 				GRID_Y * GridData.getGridCellHeightPx(),
 				GRID_WIDTH * GridData.getGridCellWidthPx(),
-				LINE_HEIGHT * GridData.getGridCellHeightPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
 				this.onButtonMenuClick.bind(this),
 				this.onButtonMenuOver.bind(this),
 				this.onButtonMenuOut.bind(this),
@@ -93,13 +95,10 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// _____________________________________________________________ Button Menu
 
 	onButtonMenuClick(clickData) {
-		// TODO Implement
-
+		// Dispatch Event
 		ApplicationDispatcher.dispatch('view-project-menu-select', {
 			projectId: clickData.projectId,
 		});
-
-		console.log('Project Menu Button Clicked ' + clickData.projectId);
 	}
 
 	onButtonMenuOver() {

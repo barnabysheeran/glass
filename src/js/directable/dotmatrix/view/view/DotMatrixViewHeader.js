@@ -33,6 +33,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
 
 		// Get Line Height
+		const CHARACTER_HEIGHT = DotMatrixViewConstants.getCharacterHeight();
 		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
 
 		// Constant Position
@@ -59,7 +60,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
 			GRID_Y * GridData.getGridCellHeightPx(),
 			GRID_WIDTH * GridData.getGridCellWidthPx(),
-			LINE_HEIGHT * GridData.getGridCellHeightPx(),
+			CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
 			this.onButtonMenuClick.bind(this),
 			this.onButtonMenuOver.bind(this),
 			this.onButtonMenuOut.bind(this),

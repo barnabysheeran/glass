@@ -7,7 +7,7 @@ export default class InteractiveSurface {
 
 	static #ELEMENTS = new Map();
 
-	static #PIXEL_BORDER = 0;
+	static #PIXEL_BORDER = 5;
 
 	static #LOG_LEVEL = 2;
 

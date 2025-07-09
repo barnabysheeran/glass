@@ -88,7 +88,11 @@
             "name-short": "ADIDAS",
             "media": [
 
-            ]
+            ],
+            "credit": {
+                "text": "Hi-ReS!",
+                "url": "https://alexandrajugovic.com/loveletters"
+            }
         },
 
         {
@@ -103,7 +107,7 @@
                 }
             ],
             "credit": {
-                "text": "CreditText",
+                "text": "Hi-ReS!",
                 "url": "https://alexandrajugovic.com/loveletters"
             }
         }

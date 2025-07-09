@@ -4,6 +4,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 import Component from '../Component.js';
 
 import ComponentGlyphConstants from './ComponentGlyphConstants.js';
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
 export default class ComponentGlyphBox extends Component {
 	#SHAPES = [];
@@ -12,6 +13,8 @@ export default class ComponentGlyphBox extends Component {
 	TEXT;
 	GRID_WIDTH;
 	GRID_HEIGHT;
+
+	#LOG_LEVEL = 3;
 
 	// _________________________________________________________________________
 
@@ -62,11 +65,18 @@ export default class ComponentGlyphBox extends Component {
 				this.DELAY + i * GLYPH_DELAY,
 			);
 
-			// Store
-			this.#SHAPES.push(SHAPE);
+			if (SHAPE) {
+				// Store
+				this.#SHAPES.push(SHAPE);
 
-			// Increment Current Grid X Position
-			currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
+				// Increment Current Grid X Position
+				currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
+			} else {
+				ApplicationLogger.warn(
+					`ComponentGlyphBox Glyph '${GLYPH_NAME}' not found`,
+					this.#LOG_LEVEL,
+				);
+			}
 		}
 	}
 
