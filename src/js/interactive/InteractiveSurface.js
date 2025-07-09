@@ -58,9 +58,6 @@ export default class InteractiveSurface {
 		ELEMENT.style.height = `${height}px`;
 		this.#CONTAINER.appendChild(ELEMENT);
 
-		// DEV
-		ELEMENT.style.border = '1px solid #00f';
-
 		// Set Click Data
 		if (Object.keys(clickData).length > 0) {
 			ELEMENT.dataset.clickData = JSON.stringify(clickData);
