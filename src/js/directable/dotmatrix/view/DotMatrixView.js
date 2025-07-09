@@ -25,7 +25,7 @@ export default class DotMatrixView {
 	tick() {
 		// Tick Components
 		for (let i = 0; i < this.COMPONENTS.length; i += 1) {
-			this.COMPONENTS[i].tick();
+			const IS_COMPLETE = this.COMPONENTS[i].tick();
 		}
 	}
 

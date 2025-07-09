@@ -8,8 +8,6 @@ import Component from '../Component.js';
 import ComponentGlyphConstants from './ComponentGlyphConstants.js';
 
 export default class ComponentGlyphLineCentered extends Component {
-	#SHAPES = [];
-
 	// Unique Parameters
 	TEXT;
 
@@ -86,7 +84,7 @@ export default class ComponentGlyphLineCentered extends Component {
 			);
 
 			// Store
-			this.#SHAPES.push(SHAPE);
+			this.SHAPES.push(SHAPE);
 
 			// Increment Current Grid X Position
 			gridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
@@ -99,15 +97,6 @@ export default class ComponentGlyphLineCentered extends Component {
 		this.gridWidth = gridX - this.gridXCenteredStart;
 	}
 
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		// Tick Shapes
-		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.#SHAPES[i].tick();
-		}
-	}
-
 	// __________________________________________________________________ Access
 
 	getGridXCenteredStart() {
@@ -116,12 +105,5 @@ export default class ComponentGlyphLineCentered extends Component {
 
 	getGridWidth() {
 		return this.gridWidth;
-	}
-
-	// _________________________________________________________________ Destroy
-
-	destroy() {
-		// Clear Shapes
-		this.#SHAPES = [];
 	}
 }

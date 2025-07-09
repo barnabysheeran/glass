@@ -1,4 +1,5 @@
 import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 
 import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
@@ -10,7 +11,7 @@ import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
+import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#INTERACTIVE_BLOCK;
@@ -67,6 +68,16 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		);
 
 		this.INTERACTIVE_BLOCK_IDS.push(this.#INTERACTIVE_BLOCK);
+
+		// Test Button
+		const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
+			this.SHAPE_MANAGER,
+			'TEST',
+			10,
+			10,
+		);
+
+		this.COMPONENTS.push(COMPONENT_BUTTON_TEST);
 	}
 
 	// _________________________________________________ Interaction Button Menu

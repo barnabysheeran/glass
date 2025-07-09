@@ -7,8 +7,6 @@ import ComponentGlyphConstants from './ComponentGlyphConstants.js';
 import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 
 export default class ComponentGlyphBox extends Component {
-	#SHAPES = [];
-
 	// Unique Parameters
 	TEXT;
 	GRID_WIDTH;
@@ -67,7 +65,7 @@ export default class ComponentGlyphBox extends Component {
 
 			if (SHAPE) {
 				// Store
-				this.#SHAPES.push(SHAPE);
+				this.SHAPES.push(SHAPE);
 
 				// Increment Current Grid X Position
 				currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
@@ -78,21 +76,5 @@ export default class ComponentGlyphBox extends Component {
 				);
 			}
 		}
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		// Tick Shapes
-		for (let i = 0; i < this.#SHAPES.length; i += 1) {
-			this.#SHAPES[i].tick();
-		}
-	}
-
-	// _________________________________________________________________ Destroy
-
-	destroy() {
-		// Clear Shapes
-		this.#SHAPES = [];
 	}
 }

@@ -1,5 +1,6 @@
 export default class Component {
 	SHAPE_MANAGER;
+	SHAPES = [];
 
 	GRID_X = 0;
 	GRID_Y = 0;
@@ -23,7 +24,17 @@ export default class Component {
 
 	// ____________________________________________________________________ Tick
 
-	tick() {} // Stub
+	tick() {
+		// Tick Shapes
+		for (let i = 0; i < this.SHAPES.length; i += 1) {
+			this.SHAPES[i].tick();
+		}
 
-	destroy() {} // Stub
+		return false; // Stub, should return true if complete
+	} // Stub
+
+	destroy() {
+		// Clear Shapes
+		this.SHAPES = [];
+	} // Stub
 }
