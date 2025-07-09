@@ -2,14 +2,14 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import DirectableTitle from '../directable/title/DirectableTitle.js';
 import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
-import DirectableVimeo from '../directable/video/DirectableVimeo.js';
+// import DirectableVimeo from '../directable/video/DirectableVimeo.js';
 // import DirectableYoutube from '../directable/video/DirectableYoutube.js';
 import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
 	static #DIRECTABLE_DOT_MATRIX;
-	static #DIRECTABLE_VIMEO;
+	// static #DIRECTABLE_VIMEO;
 	// static #DIRECTABLE_YOUTUBE;
 
 	static #LOG_LEVEL = 2;
@@ -30,10 +30,10 @@ export default class Director {
 		);
 
 		// Create Directable Vimeo
-		this.#DIRECTABLE_VIMEO = new DirectableVimeo(
-			displayWidthPx,
-			displayHeightPx,
-		);
+		// this.#DIRECTABLE_VIMEO = new DirectableVimeo(
+		// 	displayWidthPx,
+		// 	displayHeightPx,
+		// );
 
 		// Create Directable Youtube
 		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();
@@ -65,7 +65,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
 
 		// Vimeo
-		this.#DIRECTABLE_VIMEO.tick(frameDeltaMS);
+		// this.#DIRECTABLE_VIMEO.tick(frameDeltaMS);
 
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.tick(frameDeltaMS);
@@ -107,7 +107,7 @@ export default class Director {
 		this.#DIRECTABLE_DOT_MATRIX.setSize(width, height);
 
 		// Vimeo
-		this.#DIRECTABLE_VIMEO.setSize(width, height);
+		// this.#DIRECTABLE_VIMEO.setSize(width, height);
 
 		// Youtube
 		// this.#DIRECTABLE_YOUTUBE.setSize(width, height);

@@ -3,7 +3,7 @@ import ApplicationLogger from '../../../application/ApplicationLogger.js';
 export default class ComponentManager {
 	#COMPONENTS = [];
 
-	#LOG_LEVEL = -1; // 4;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
@@ -29,7 +29,7 @@ export default class ComponentManager {
 		}
 	}
 
-	// ______________________________________________________________ Add Component
+	// ___________________________________________________________ Add Component
 
 	addComponent(component) {
 		// Store Component
