@@ -28,6 +28,8 @@ export default class Dot {
 	#positionPixelsX = 0;
 	#positionPixelsY = 0;
 
+	#isFilled = false;
+
 	#LOG_LEVEL = -1; // 6;
 
 	// _________________________________________________________________________
@@ -60,6 +62,11 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
+		// If already filled, nothing to do
+		if (this.#isFilled === true) {
+			return;
+		}
+
 		// Set the data to the texture at the dot's position
 		RenderSurface.setTextureData(
 			this.#positionPixelsX,
@@ -68,6 +75,9 @@ export default class Dot {
 			GRID_HEIGHT,
 			FILLED_DATA,
 		);
+
+		// Mark as filled
+		this.#isFilled = true;
 	}
 
 	// ___________________________________________________________________ Clear
@@ -78,6 +88,11 @@ export default class Dot {
 			this.#LOG_LEVEL,
 		);
 
+		// If not filled, nothing to clear
+		if (this.#isFilled === false) {
+			return;
+		}
+
 		// Set the data to the texture at the dot's position
 		RenderSurface.setTextureData(
 			this.#positionPixelsX,
@@ -86,18 +101,8 @@ export default class Dot {
 			GRID_HEIGHT,
 			CLEARED_DATA,
 		);
-	}
 
-	// ____________________________________________________________________ Reset
-
-	reset() {
-		ApplicationLogger.log(`Dot ${this.#dotIndex} reset`, this.#LOG_LEVEL);
-
-		// Reset Position
-		this.#positionPixelsX = 0;
-		this.#positionPixelsY = 0;
-
-		// Clear Dot
-		this.clear();
+		// Mark as cleared
+		this.#isFilled = false;
 	}
 }

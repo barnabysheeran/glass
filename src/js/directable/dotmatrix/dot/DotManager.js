@@ -24,10 +24,6 @@ export default class DotManager {
 	// ________________________________________________________________ Dot Pool
 
 	getDotIndexAtGrid(positionGridX, positionGridY) {
-		console.log(
-			`DotManager getDotIndexAtGrid ${positionGridX} ${positionGridY}`,
-		);
-
 		// Get Grid Max
 		const GRID_MAX = GridData.getGridMax();
 		const GRID_MAX_WIDTH = GRID_MAX[0];
@@ -48,16 +44,12 @@ export default class DotManager {
 			return -1;
 		}
 
-		// console.log(` - Dot Index: ${index}`);
-
 		return index;
 	}
 
 	// ____________________________________________________________________ Fill
 
 	fillDot(dotIndex) {
-		console.log(`DotManager fillDot ${dotIndex}`);
-
 		this.#DOTS[dotIndex].fill();
 	}
 
@@ -72,7 +64,10 @@ export default class DotManager {
 	reset() {
 		ApplicationLogger.log('DotManager reset', this.#LOG_LEVEL);
 
-		// TODO
+		// Clear Dots
+		for (let i = 0; i < this.#DOTS.length; i++) {
+			this.#DOTS[i].clear();
+		}
 	}
 
 	// ____________________________________________________________________ Size

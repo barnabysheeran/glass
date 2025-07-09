@@ -72,6 +72,9 @@ export default class DirectableDotMatrix {
 			this.#VIEWS[i].reset();
 		}
 
+		// Dot Manager
+		this.#DOT_MANAGER.reset();
+
 		// Set Menu Inactive
 		this.#getViewById('header').setIsActive(false);
 		this.#getViewById('header').start();
@@ -90,6 +93,9 @@ export default class DirectableDotMatrix {
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();
 		}
+
+		// Dot Manager
+		this.#DOT_MANAGER.reset();
 
 		// Set Menu Active
 		this.#getViewById('header').setIsActive(true);
@@ -111,6 +117,9 @@ export default class DirectableDotMatrix {
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].reset();
 		}
+
+		// Dot Manager
+		this.#DOT_MANAGER.reset();
 
 		// Set Menu Inactive
 		this.#getViewById('header').setIsActive(false);
@@ -134,6 +143,7 @@ export default class DirectableDotMatrix {
 		this.#SHAPE_MANAGER.reset();
 
 		// Reset Dot Manager
+		this.#DOT_MANAGER.reset();
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
