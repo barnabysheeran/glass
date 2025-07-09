@@ -3,7 +3,8 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';
-import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
+
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -29,7 +30,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
-		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();

@@ -3,7 +3,8 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import DataController from '../../../../data/DataController.js';
 
 import DotMatrixView from '../DotMatrixView.js';
-import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
+
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -32,7 +33,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
 	start() {
-		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data
 		const PROJECT_DATA_ITEM = DataController.getProjectById(this.#projectId);

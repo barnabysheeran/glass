@@ -1,10 +1,11 @@
+import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
-import ComponentGlyphConstants from './ComponentGlyphConstants.js';
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 export default class ComponentGlyphBox extends Component {
 	// Unique Parameters
@@ -42,8 +43,8 @@ export default class ComponentGlyphBox extends Component {
 
 	#createShape() {
 		// Get Constants
-		const GLYPH_SPACING_X = ComponentGlyphConstants.GLYPH_SPACING_X;
-		const GLYPH_DELAY = ComponentGlyphConstants.GLYPH_DELAY;
+		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
+		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
 
 		// Start at Grid X Position
 		let currentGridX = this.GRID_X;

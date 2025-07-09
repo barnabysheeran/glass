@@ -5,7 +5,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 
 import Component from '../Component.js';
 
-import ComponentGlyphConstants from './ComponentGlyphConstants.js';
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 export default class ComponentGlyphBoxWidthFull extends Component {
 	// Unique Parameters
@@ -41,8 +41,8 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 
 	#createShape() {
 		// Get Constants
-		const GLYPH_SPACING_X = ComponentGlyphConstants.GLYPH_SPACING_X;
-		const GLYPH_DELAY = ComponentGlyphConstants.GLYPH_DELAY;
+		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
+		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
 
 		// Get Grid Data
 		const GRID_MAX = GridData.getGridMax();

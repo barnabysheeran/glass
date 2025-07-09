@@ -5,7 +5,8 @@ import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import DotMatrixView from '../DotMatrixView.js';
-import DotMatrixViewConstants from '../DotMatrixViewConstants.js';
+
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 import FillType from '../../shape/fill/FillType.js';
 import FillStrategyType from '../../shape/fill/FillStrategyType.js';
@@ -34,8 +35,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
 
 		// Get Line Height
-		const CHARACTER_HEIGHT = DotMatrixViewConstants.getCharacterHeight();
-		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Constant Position
 		const GRID_Y = LINE_HEIGHT * 3;

@@ -6,7 +6,7 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import Component from '../Component.js';
 
-import DotMatrixViewConstants from '../../view/DotMatrixViewConstants.js';
+import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
@@ -33,8 +33,8 @@ export default class ComponentGlyphButton extends Component {
 		this.TEXT = text;
 
 		// Get Line Height
-		const CHARACTER_HEIGHT = DotMatrixViewConstants.getCharacterHeight();
-		const LINE_HEIGHT = DotMatrixViewConstants.getLineHeight();
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Constant Position
 		const GRID_Y = LINE_HEIGHT * 3;
