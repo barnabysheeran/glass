@@ -31,10 +31,10 @@ export default class Component {
 		}
 
 		return false; // Stub, should return true if complete
-	} // Stub
+	}
 
 	destroy() {
 		// Clear Shapes
 		this.SHAPES = [];
-	} // Stub
+	}
 }
