@@ -2,6 +2,7 @@ import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
+import ComponentManager from './component/ComponentManager.js';
 
 import DotMatrixViewHeader from './view/view/DotMatrixViewHeader.js';
 import DotMatrixViewProjectMenu from './view/view/DotMatrixViewProjectMenu.js';
@@ -13,7 +14,9 @@ import DotMatrixViewIntro from './view/view/DotMatrixViewIntro.js';
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
+	#COMPONENT_MANAGER;
 
+	#VIEW_HEADER;
 	#VIEWS = [];
 
 	#viewIdCurrent = 'intro';
@@ -36,18 +39,27 @@ export default class DirectableDotMatrix {
 		// Create Shape Manager
 		this.#SHAPE_MANAGER = new ShapeManager(this.#DOT_MANAGER);
 
+		// Create Component Manager
+		this.#COMPONENT_MANAGER = new ComponentManager();
+
+		// Create View Header
+		this.#VIEW_HEADER = new DotMatrixViewHeader(
+			this.#SHAPE_MANAGER,
+			this.#COMPONENT_MANAGER,
+			'header',
+		);
+
 		// Create Views
-		this.#VIEWS.push(new DotMatrixViewHeader(this.#SHAPE_MANAGER, 'header'));
-		this.#VIEWS.push(new DotMatrixViewIntro(this.#SHAPE_MANAGER, 'intro'));
-		this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
-		this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
+		// this.#VIEWS.push(new DotMatrixViewIntro(this.#SHAPE_MANAGER, 'intro'));
+		// this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
+		// this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
 
 		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
 
 		// Start Initial View
-		this.#getViewById('header').start();
-		this.#getViewById(this.#viewIdCurrent).start();
+		this.#VIEW_HEADER.start();
+		// this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -57,6 +69,9 @@ export default class DirectableDotMatrix {
 		for (let i = 0; i < this.#VIEWS.length; i += 1) {
 			this.#VIEWS[i].tick(frameDeltaMS);
 		}
+
+		// Component Manager
+		this.#COMPONENT_MANAGER.tick();
 	}
 
 	// ____________________________________________________________________ View
@@ -68,43 +83,43 @@ export default class DirectableDotMatrix {
 		);
 
 		// Reset Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].reset();
-		}
+		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
+		// 	this.#VIEWS[i].reset();
+		// }
 
 		// Dot Manager
-		this.#DOT_MANAGER.reset();
+		// this.#DOT_MANAGER.reset();
 
-		// Set Menu Inactive
-		this.#getViewById('header').setIsActive(false);
-		this.#getViewById('header').start();
+		// // Set Menu Inactive
+		// this.#VIEW_HEADER.setIsActive(false);
+		// this.#VIEW_HEADER.start();
 
-		// Show Project View
-		this.#getViewById('project').setProjectId(projectId);
-		this.#getViewById('project').start();
+		// // Show Project View
+		// this.#getViewById('project').setProjectId(projectId);
+		// this.#getViewById('project').start();
 
-		this.#viewIdCurrent = 'project';
+		// this.#viewIdCurrent = 'project';
 	}
 
 	setMenuActive() {
 		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
 
 		// Reset Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].reset();
-		}
+		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
+		// 	this.#VIEWS[i].reset();
+		// }
 
 		// Dot Manager
-		this.#DOT_MANAGER.reset();
+		// this.#DOT_MANAGER.reset();
 
 		// Set Menu Active
-		this.#getViewById('header').setIsActive(true);
-		this.#getViewById('header').start();
+		// this.#VIEW_HEADER.setIsActive(true);
+		// this.#VIEW_HEADER.start();
 
 		// Show Menu View
-		this.#getViewById('menu').start();
+		// this.#getViewById('menu').start();
 
-		this.#viewIdCurrent = 'menu';
+		// this.#viewIdCurrent = 'menu';
 	}
 
 	setMenuInactive() {
@@ -119,16 +134,15 @@ export default class DirectableDotMatrix {
 		}
 
 		// Dot Manager
-		this.#DOT_MANAGER.reset();
+		// this.#DOT_MANAGER.reset();
 
 		// Set Menu Inactive
-		this.#getViewById('header').setIsActive(false);
-		this.#getViewById('header').start();
+		// this.#VIEW_HEADER.setIsActive(false);
 
 		// Show Intro View
-		this.#getViewById('intro').start();
+		// this.#getViewById('intro').start();
 
-		this.#viewIdCurrent = 'intro';
+		// this.#viewIdCurrent = 'intro';
 	}
 
 	// ___________________________________________________________________ Reset
@@ -139,6 +153,9 @@ export default class DirectableDotMatrix {
 			this.#VIEWS[i].reset();
 		}
 
+		// Reset Component Manager
+		this.#COMPONENT_MANAGER.reset();
+
 		// Reset Shape Manager
 		this.#SHAPE_MANAGER.reset();
 
@@ -147,8 +164,8 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		this.#getViewById('header').start();
-		this.#getViewById(this.#viewIdCurrent).start();
+		// this.#VIEW_HEADER.start();
+		// this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Util

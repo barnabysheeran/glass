@@ -23,8 +23,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, viewId) {
-		super(shapeManager, viewId);
+	constructor(shapeManager, componentManager, viewId) {
+		super(shapeManager, componentManager, viewId);
 
 		ApplicationLogger.log('ViewHeader', this.#LOG_LEVEL);
 	}
@@ -51,7 +51,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.getDelayFromGridY(3),
 		);
 
-		this.COMPONENTS.push(COMPONENT);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT);
 
 		// Get Component Details
 		const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
@@ -71,14 +71,14 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.INTERACTIVE_BLOCK_IDS.push(this.#INTERACTIVE_BLOCK);
 
 		// Test Button
-		const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
-			this.SHAPE_MANAGER,
-			'TEST',
-			10,
-			10,
-		);
+		// const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
+		// 	this.SHAPE_MANAGER,
+		// 	'TEST',
+		// 	10,
+		// 	10,
+		// );
 
-		this.COMPONENTS.push(COMPONENT_BUTTON_TEST);
+		// this.COMPONENTS.push(COMPONENT_BUTTON_TEST);
 	}
 
 	// _________________________________________________ Interaction Button Menu
