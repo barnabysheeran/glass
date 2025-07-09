@@ -50,16 +50,36 @@ export default class DirectableDotMatrix {
 		);
 
 		// Create Views
-		// this.#VIEWS.push(new DotMatrixViewIntro(this.#SHAPE_MANAGER, 'intro'));
-		// this.#VIEWS.push(new DotMatrixViewProjectMenu(this.#SHAPE_MANAGER, 'menu'));
-		// this.#VIEWS.push(new DotMatrixViewProject(this.#SHAPE_MANAGER, 'project'));
+		this.#VIEWS.push(
+			new DotMatrixViewIntro(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				'intro',
+			),
+		);
+
+		this.#VIEWS.push(
+			new DotMatrixViewProjectMenu(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				'menu',
+			),
+		);
+
+		this.#VIEWS.push(
+			new DotMatrixViewProject(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				'project',
+			),
+		);
 
 		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
 		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
 
 		// Start Initial View
 		this.#VIEW_HEADER.start();
-		// this.#getViewById(this.#viewIdCurrent).start();
+		this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -164,7 +184,7 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		// this.#VIEW_HEADER.start();
+		this.#VIEW_HEADER.start();
 		// this.#getViewById(this.#viewIdCurrent).start();
 	}
 
