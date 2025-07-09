@@ -12,15 +12,16 @@ export default class ComponentManager {
 	// ____________________________________________________________________ Tick
 
 	tick() {
+		console.log(
+			'ComponentManager tick ' + this.#COMPONENTS.length + ' components',
+		);
+
 		// Tick Components
 		for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
 			const IS_COMPLETE = this.#COMPONENTS[i].tick();
 
 			if (IS_COMPLETE) {
-				ApplicationLogger.log(
-					`ComponentManager tick - Component ${this.#COMPONENTS[i].getComponentId()} complete`,
-					this.#LOG_LEVEL,
-				);
+				console.log('ComponentManager tick - Component complete');
 
 				// Remove Component
 				this.#COMPONENTS.splice(i, 1);

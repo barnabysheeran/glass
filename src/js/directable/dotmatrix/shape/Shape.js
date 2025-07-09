@@ -33,16 +33,13 @@ export default class Shape {
 	tick() {
 		// Complete ?
 		if (this.#isComplete) {
-			return;
+			return true;
 		}
 
 		// Delay
 		if (this.#delay > 0) {
 			this.#delay -= 1;
-
-			ApplicationLogger.log(`Shape delay ${this.#delay}`, this.#LOG_LEVEL);
-
-			return;
+			return false;
 		}
 
 		// Get Position Grid
@@ -65,9 +62,9 @@ export default class Shape {
 		// Check Complete
 		if (this.#positionGridsIndex >= this.positionGrids.length) {
 			this.#isComplete = true;
-
-			return;
 		}
+
+		return false;
 	}
 
 	// _________________________________________________________________ Restart
