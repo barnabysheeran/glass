@@ -41,6 +41,8 @@ export default class Dot {
 		this.#dotIndex = dotIndex;
 	}
 
+	// __________________________________________________________________ Delays
+
 	// ________________________________________________________________ Position
 
 	setPosition(positionGrid) {
