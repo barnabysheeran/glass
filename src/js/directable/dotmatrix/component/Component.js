@@ -25,26 +25,18 @@ export default class Component {
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		console.log(`Component tick - ${this.constructor.name} started`);
-
 		let isComplete = true;
 
 		// Tick Shapes
 		for (let i = 0; i < this.SHAPES.length; i += 1) {
 			const IS_SHAPE_COMPLETE = this.SHAPES[i].tick();
 
-			console.log(' - Component tick - Shape complete:', IS_SHAPE_COMPLETE);
-
 			if (IS_SHAPE_COMPLETE === false) {
 				isComplete = false;
 			}
 		}
 
-		console.log(
-			`Component tick - ${this.constructor.name} complete: ${isComplete}`,
-		);
-
-		return isComplete; // Stub, should return true if complete
+		return isComplete;
 	}
 
 	destroy() {
