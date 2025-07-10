@@ -22,11 +22,11 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		gridY,
 		gridWidth,
 		gridHeight,
+		delay,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay,
 	) {
-		super(shapeManager, gridX, gridY, fillType, fillStrategyType, delay);
+		super(shapeManager, gridX, gridY, delay, fillType, fillStrategyType);
 
 		// Store
 		this.TEXT = text;

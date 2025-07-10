@@ -19,9 +19,9 @@ export default class ShapeRectangle extends Shape {
 		gridY,
 		gridWidth,
 		gridHeight,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		super(dotManager, delay);
 

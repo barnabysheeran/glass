@@ -50,9 +50,9 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				this.getDelayFromGridY(i),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				this.getDelayFromGridY(i),
 			);
 
 			// Store
@@ -68,9 +68,9 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				this.getDelayFromGridY(i),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				this.getDelayFromGridY(i),
 			);
 
 			// Store
@@ -86,9 +86,9 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				this.getDelayFromGridY(i),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				this.getDelayFromGridY(i),
 			);
 
 			// Store
@@ -99,9 +99,9 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
+			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
 		);
 
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
@@ -115,9 +115,9 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
 			100,
 			50,
+			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
 		);
 
 		// Store

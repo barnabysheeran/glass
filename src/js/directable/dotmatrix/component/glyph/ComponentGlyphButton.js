@@ -23,11 +23,11 @@ export default class ComponentGlyphButton extends Component {
 		text,
 		gridX,
 		gridY,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
-		super(shapeManager, gridX, gridY, fillType, fillStrategyType, delay);
+		super(shapeManager, gridX, gridY, delay, fillType, fillStrategyType);
 
 		// Store
 		this.TEXT = text;

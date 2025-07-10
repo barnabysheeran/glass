@@ -47,9 +47,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 3,
 			100,
 			50,
+			GRID_MAX_WIDTH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			GRID_MAX_WIDTH,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
@@ -62,9 +62,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 4,
 			100,
 			50,
+			GRID_MAX_WIDTH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			GRID_MAX_WIDTH,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
@@ -77,9 +77,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 5,
 			100,
 			50,
+			GRID_MAX_WIDTH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			GRID_MAX_WIDTH,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
@@ -96,9 +96,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
+			GRID_MAX_WIDTH_THIRD,
 			FillType.PassThrough,
 			FillStrategyType.Reverse,
-			GRID_MAX_WIDTH_THIRD,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
@@ -110,9 +110,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
+			GRID_MAX_WIDTH - GRID_MAX_WIDTH_THIRD,
 			FillType.PassThrough,
 			FillStrategyType.Random,
-			GRID_MAX_WIDTH - GRID_MAX_WIDTH_THIRD,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
@@ -124,9 +124,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
+			GRID_MAX_WIDTH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			GRID_MAX_WIDTH,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
@@ -145,9 +145,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				BLOCK_DELAY_PER_LINE * i,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
@@ -163,9 +163,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				120 + BLOCK_DELAY_PER_LINE * i,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				120 + BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
@@ -181,9 +181,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				LINE_HEIGHT * i,
 				100,
 				50,
+				240 + BLOCK_DELAY_PER_LINE * i,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				240 + BLOCK_DELAY_PER_LINE * i,
 			);
 
 			// Store
@@ -194,9 +194,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			1,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);

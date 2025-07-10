@@ -18,9 +18,9 @@ export default class ShapeLineHorizontal extends Shape {
 		gridX,
 		gridY,
 		gridLength,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		super(dotManager, delay);
 

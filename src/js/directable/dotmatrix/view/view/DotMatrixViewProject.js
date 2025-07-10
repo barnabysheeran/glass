@@ -40,9 +40,9 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			LINE_HEIGHT * 10,
 			100,
 			50,
+			this.getDelayFromGridY(10),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.getDelayFromGridY(10),
 		);
 
 		// Store
@@ -56,9 +56,9 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			LINE_HEIGHT * 11,
 			100,
 			50,
+			this.getDelayFromGridY(11),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.getDelayFromGridY(11),
 		);
 
 		// Store
@@ -73,9 +73,9 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				LINE_HEIGHT * 12,
 				100,
 				50,
+				this.getDelayFromGridY(12),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				this.getDelayFromGridY(12),
 			);
 
 			// Store

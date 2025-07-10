@@ -4,7 +4,6 @@ import FillType from './fill/FillType.js';
 import FillStrategyType from './fill/FillStrategyType.js';
 
 import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
-import ShapeLineVertical from './line/ShapeLineVertical.js';
 import ShapeRectangle from './primative/ShapeRectangle.js';
 
 import SHAPE_GLYPH_DATA from './glyph/ShapeGlyphData.js';
@@ -68,34 +67,6 @@ export default class ShapeManager {
 	) {
 		// Create Shape
 		const SHAPE = new ShapeLineHorizontal(
-			this.#DOT_MANAGER,
-			gridX,
-			gridY,
-			length,
-			fillType,
-			fillStrategyType,
-			delay,
-		);
-
-		// Store
-		this.#SHAPES.push(SHAPE);
-
-		// Return
-		return SHAPE;
-	}
-
-	// ___________________________________________________________ Line Vertical
-
-	addShapeLineVertical(
-		gridX,
-		gridY,
-		length,
-		fillType = FillType.PassThrough,
-		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
-	) {
-		// Create Shape
-		const SHAPE = new ShapeLineVertical(
 			this.#DOT_MANAGER,
 			gridX,
 			gridY,

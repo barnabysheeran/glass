@@ -50,9 +50,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				text,
 				GRID_Y,
+				this.getDelayFromGridY(i + 7),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
-				this.getDelayFromGridY(i + 7),
 			);
 
 			// Store

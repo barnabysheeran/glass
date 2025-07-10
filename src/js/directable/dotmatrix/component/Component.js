@@ -12,14 +12,14 @@ export default class Component {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, gridX, gridY, fillType, fillStrategyType, delay) {
+	constructor(shapeManager, gridX, gridY, delay, fillType, fillStrategyType) {
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
 		this.GRID_X = gridX;
 		this.GRID_Y = gridY;
+		this.DELAY = delay;
 		this.FILL_TYPE = fillType;
 		this.FILL_STRATEGY_TYPE = fillStrategyType;
-		this.DELAY = delay;
 	}
 
 	// ____________________________________________________________________ Tick
@@ -38,6 +38,8 @@ export default class Component {
 
 		return isComplete;
 	}
+
+	// _________________________________________________________________ Destroy
 
 	destroy() {
 		// Clear Shapes

@@ -21,9 +21,9 @@ export default class ShapeGlyph extends Shape {
 		gridX,
 		gridY,
 		glyphData,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		super(dotManager, delay);
 

@@ -33,9 +33,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'MENU',
 			GRID_Y,
+			this.getDelayFromGridY(3),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.getDelayFromGridY(3),
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT);
