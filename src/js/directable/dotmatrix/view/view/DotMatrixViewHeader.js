@@ -19,21 +19,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#isActive = false;
 
-	#LOG_LEVEL = 4;
-
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId) {
-		super(shapeManager, componentManager, viewId);
-
-		ApplicationLogger.log('ViewHeader', this.#LOG_LEVEL);
-	}
-
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {
-		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
-
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -84,8 +72,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	// _________________________________________________ Interaction Button Menu
 
 	onButtonMenuClick() {
-		ApplicationLogger.log('ViewHeader Button Menu Click', this.#LOG_LEVEL);
-
 		if (this.#isActive === true) {
 			ApplicationDispatcher.dispatch('view-header-menu-inactive');
 		} else {
@@ -94,14 +80,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOver() {
-		ApplicationLogger.log('ViewHeader Button Menu Over', this.#LOG_LEVEL);
-
 		// TODO Implement
 	}
 
 	onButtonMenuOut() {
-		ApplicationLogger.log('ViewHeader Button Menu Out', this.#LOG_LEVEL);
-
 		// TODO Implement
 	}
 

@@ -30,4 +30,12 @@ export default class DirectableDotMatrixConstants {
 	static getGlyphDelay() {
 		return this.#GLYPH_DELAY;
 	}
+
+	// _________________________________________________________________________
+
+	static BLOCK_WIDTH_MOBILE = 130;
+
+	static getBlockWidthMobile() {
+		return this.BLOCK_WIDTH_MOBILE;
+	}
 }

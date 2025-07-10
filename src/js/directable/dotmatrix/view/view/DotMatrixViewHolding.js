@@ -13,17 +13,7 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewHolding extends DotMatrixView {
-	#LOG_LEVEL = 4;
-
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId) {
-		super(shapeManager, componentManager, viewId);
-
-		ApplicationLogger.log('View Holding', this.#LOG_LEVEL);
-	}
-
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();

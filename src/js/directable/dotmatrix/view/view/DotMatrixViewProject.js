@@ -14,23 +14,13 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 export default class DotMatrixViewProject extends DotMatrixView {
 	#projectId = 0;
 
-	#LOG_LEVEL = 4;
-
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId) {
-		super(shapeManager, componentManager, viewId);
-
-		ApplicationLogger.log('Project View Project', this.#LOG_LEVEL);
-	}
-
 	// ______________________________________________________________ Project Id
 
 	setProjectId(projectId) {
 		this.#projectId = projectId;
 	}
 
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -41,10 +31,6 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		console.log('Project Data Item', PROJECT_DATA_ITEM);
 
 		if (!PROJECT_DATA_ITEM) {
-			ApplicationLogger.warn(
-				'Project Data Item not found for ID: ' + this.#projectId,
-				this.#LOG_LEVEL,
-			);
 			return;
 		}
 

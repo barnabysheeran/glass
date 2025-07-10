@@ -15,17 +15,7 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	#LOG_LEVEL = 4;
-
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId) {
-		super(shapeManager, componentManager, viewId);
-
-		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
-	}
-
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();

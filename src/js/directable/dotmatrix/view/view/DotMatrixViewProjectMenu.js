@@ -16,28 +16,14 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	// TODO Calc Pixels
-	// TODO Constants
-	#BLOCK_WIDTH_MOBILE = 130;
-
-	#LOG_LEVEL = 4;
-
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId) {
-		super(shapeManager, componentManager, viewId);
-
-		ApplicationLogger.log('Project Menu', this.#LOG_LEVEL);
-	}
-
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {
-		ApplicationLogger.log('Project Menu start', this.#LOG_LEVEL);
-
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const BLOCK_WIDTH_MOBILE =
+			DirectableDotMatrixConstants.getBlockWidthMobile();
 
 		// Get Grid Size
 		const GRID_MAX = GridData.getGridMax();
@@ -57,7 +43,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
 
-			if (GRID_MAX_WIDTH < this.#BLOCK_WIDTH_MOBILE) {
+			if (GRID_MAX_WIDTH < BLOCK_WIDTH_MOBILE) {
 				text = PROJECT_DATA_ITEM['name-short'];
 			}
 
