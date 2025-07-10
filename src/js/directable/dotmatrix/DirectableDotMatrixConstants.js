@@ -1,9 +1,5 @@
 export default class DirectableDotMatrixConstants {
-	static #LINE_HEIGHT = 7;
-
-	static getLineHeight() {
-		return this.#LINE_HEIGHT;
-	}
+	// ___________________________________________________________________ Glyph
 
 	static #CHARACTER_HEIGHT = 5;
 
@@ -11,11 +7,23 @@ export default class DirectableDotMatrixConstants {
 		return this.#CHARACTER_HEIGHT;
 	}
 
+	// _________________________________________________________________________
+
+	static #LINE_HEIGHT = 7;
+
+	static getLineHeight() {
+		return this.#LINE_HEIGHT;
+	}
+
+	// _________________________________________________________________________
+
 	static #GLYPH_SPACING_X = 1;
 
 	static getGlyphSpacingX() {
 		return this.#GLYPH_SPACING_X;
 	}
+
+	// _________________________________________________________________________
 
 	static #GLYPH_DELAY = 2;
 

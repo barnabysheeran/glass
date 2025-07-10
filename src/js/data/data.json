@@ -6,8 +6,10 @@
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
             "media": [
-
-            ]
+            ],
+            "technology": {
+                "text": "Javascript, WebGL, Three.js, Shopify"
+            }
         },
 
         {
@@ -16,7 +18,10 @@
             "name-short": "Hotsteppa",
             "media": [
  
-            ]
+            ],
+            "technology": {
+                "text": "Unity"
+            }
         },
 
         {
@@ -25,7 +30,10 @@
             "name-short": "Pikcells/Onfigr",
             "media": [
 
-            ]
+            ],
+            "technology": {
+                "text": "Javascript, WebGL, Three.js, Unity, Unreal Engine"
+            }
         },
 
         {
@@ -34,7 +42,10 @@
             "name-short": "SCIENCE-MUSEUM",
             "media": [
 
-            ]
+            ],
+            "technology": {
+                "text": "Unity"
+            }
         },
         
         {
@@ -43,7 +54,10 @@
             "name-short": "Goodwood",
             "media": [
 
-            ]
+            ],
+            "technology": {
+                "text": "Unity"
+            }
         },
 
         {
@@ -52,7 +66,10 @@
             "name-short": "postMATTER",
             "media": [
   
-            ]
+            ],
+            "technology": {
+                "text": "C++, Cinder, Kinect, Leap Motion"
+            }
         },
 
         {
@@ -61,7 +78,10 @@
             "name-short": "Ferrari",
             "media": [
  
-            ]
+            ],
+            "technology": {
+                "text": "Unity, Kinect"
+            }
         },
 
         {
@@ -70,7 +90,8 @@
             "name-short": "HONDA",
             "media": [
  
-            ]
+            ],
+            "text": "JavaScript, WebGL"
         },
 
         {
@@ -78,8 +99,14 @@
             "name": "GOOGLE_ABBEY-ROAD",
             "name-short": "GOOGLE",
             "media": [
-
-            ]
+            ],
+            "credit": {
+                "text": "Stink Studios",
+                "url": ""
+            },
+            "technology": {
+                "text": "JavaScript, WebGL"
+            }
         },
 
         {
@@ -87,11 +114,10 @@
             "name": "ADIDAS_Flash",
             "name-short": "ADIDAS",
             "media": [
-
             ],
-            "credit": {
-                "text": "Hi-ReS!",
-                "url": "https://alexandrajugovic.com/loveletters"
+
+            "technology": {
+                "text": "Flash"
             }
         },
 
@@ -109,6 +135,9 @@
             "credit": {
                 "text": "Hi-ReS!",
                 "url": "https://alexandrajugovic.com/loveletters"
+            },
+            "technology": {
+                "text": "Flash ( :"
             }
         }
     ]
