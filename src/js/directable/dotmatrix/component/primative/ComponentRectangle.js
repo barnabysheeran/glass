@@ -42,9 +42,9 @@ export default class ComponentRectangle extends Component {
 			this.GRID_Y,
 			this.GRID_WIDTH,
 			this.GRID_HEIGHT,
+			this.DELAY,
 			this.FILL_TYPE,
 			this.FILL_STRATEGY_TYPE,
-			this.DELAY,
 		);
 	}
 

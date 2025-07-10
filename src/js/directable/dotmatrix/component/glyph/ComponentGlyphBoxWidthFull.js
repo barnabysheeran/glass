@@ -94,9 +94,9 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 				GLYPH_NAME,
 				currentGridX,
 				this.GRID_Y,
+				this.DELAY + i * GLYPH_DELAY,
 				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
-				this.DELAY + i * GLYPH_DELAY,
 			);
 
 			// Store

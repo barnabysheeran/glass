@@ -60,8 +60,8 @@ export default class ComponentGlyphBox extends Component {
 				currentGridX,
 				this.GRID_Y,
 				this.FILL_TYPE,
-				this.FILL_STRATEGY_TYPE,
 				this.DELAY + i * GLYPH_DELAY,
+				this.FILL_STRATEGY_TYPE,
 			);
 
 			if (SHAPE) {

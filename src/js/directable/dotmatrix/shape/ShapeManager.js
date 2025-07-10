@@ -61,9 +61,9 @@ export default class ShapeManager {
 		gridX,
 		gridY,
 		length,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeLineHorizontal(
@@ -90,9 +90,9 @@ export default class ShapeManager {
 		gridY,
 		gridWidth,
 		gridHeight,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeRectangle(
@@ -101,9 +101,9 @@ export default class ShapeManager {
 			gridY,
 			gridWidth,
 			gridHeight,
+			delay,
 			fillType,
 			fillStrategyType,
-			delay,
 		);
 
 		// Store
@@ -119,9 +119,9 @@ export default class ShapeManager {
 		character,
 		gridX,
 		gridY,
+		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
-		delay = 0,
 	) {
 		const upperChar = character.toUpperCase();
 		const glyphData = SHAPE_GLYPH_DATA[upperChar];
