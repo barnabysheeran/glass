@@ -1,3 +1,4 @@
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
 import InteractiveSurface from '../../../interactive/InteractiveSurface.js';
 
 export default class DotMatrixView {
@@ -8,9 +9,16 @@ export default class DotMatrixView {
 
 	#VIEW_ID = '';
 
+	#LOG_LEVEL = 4;
+
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager, viewId) {
+		ApplicationLogger.log(
+			`DotMatrixView: Initializing with viewId: ${viewId}`,
+			this.#LOG_LEVEL,
+		);
+
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
 		this.COMPONENT_MANAGER = componentManager;
