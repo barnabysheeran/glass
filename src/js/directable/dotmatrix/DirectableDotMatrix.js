@@ -8,10 +8,19 @@ import DotMatrixViewHeader from './view/view/DotMatrixViewHeader.js';
 import DotMatrixViewProjectMenu from './view/view/DotMatrixViewProjectMenu.js';
 import DotMatrixViewProject from './view/view/DotMatrixViewProject.js';
 import DotMatrixViewIntro from './view/view/DotMatrixViewIntro.js';
-// import DotMatrixViewTest from './view/view/DotMatrixViewTest.js';
-// import DotMatrixViewHolding from './view/view/DotMatrixViewHolding.js';
+import DotMatrixViewTest from './view/view/DotMatrixViewTest.js';
+import DotMatrixViewHolding from './view/view/DotMatrixViewHolding.js';
 
 export default class DirectableDotMatrix {
+	#VIEW_IDS = Object.freeze({
+		TEST: 'test',
+		HOLDING: 'holding',
+		HEADER: 'header',
+		INTRO: 'intro',
+		MENU: 'menu',
+		PROJECT: 'project',
+	});
+
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 	#COMPONENT_MANAGER;
@@ -19,7 +28,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = 'intro';
+	#viewIdCurrent = this.#VIEW_IDS.TEST;
 
 	#LOG_LEVEL = 3;
 
@@ -46,7 +55,7 @@ export default class DirectableDotMatrix {
 		this.#VIEW_HEADER = new DotMatrixViewHeader(
 			this.#SHAPE_MANAGER,
 			this.#COMPONENT_MANAGER,
-			'header',
+			this.#VIEW_IDS.HEADER,
 		);
 
 		// Create Views
@@ -54,7 +63,7 @@ export default class DirectableDotMatrix {
 			new DotMatrixViewIntro(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
-				'intro',
+				this.#VIEW_IDS.INTRO,
 			),
 		);
 
@@ -62,7 +71,7 @@ export default class DirectableDotMatrix {
 			new DotMatrixViewProjectMenu(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
-				'menu',
+				this.#VIEW_IDS.MENU,
 			),
 		);
 
@@ -70,16 +79,34 @@ export default class DirectableDotMatrix {
 			new DotMatrixViewProject(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
-				'project',
+				this.#VIEW_IDS.PROJECT,
 			),
 		);
 
-		// this.#VIEWS.push(new DotMatrixViewTest(this.#SHAPE_MANAGER, 'test'));
-		// this.#VIEWS.push(new DotMatrixViewHolding(this.#SHAPE_MANAGER, 'holding'));
+		this.#VIEWS.push(
+			new DotMatrixViewTest(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				this.#VIEW_IDS.TEST,
+			),
+		);
+
+		this.#VIEWS.push(
+			new DotMatrixViewHolding(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				this.#VIEW_IDS.HOLDING,
+			),
+		);
 
 		// Start Initial View
 		this.#VIEW_HEADER.start();
 		this.#getViewById(this.#viewIdCurrent).start();
+	}
+
+	// Getter for view IDs
+	getViewIds() {
+		return this.#VIEW_IDS;
 	}
 
 	// ____________________________________________________________________ Tick
@@ -102,44 +129,20 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
-		// Reset Views
-		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
-		// 	this.#VIEWS[i].reset();
-		// }
-
-		// Dot Manager
-		// this.#DOT_MANAGER.reset();
-
-		// // Set Menu Inactive
-		// this.#VIEW_HEADER.setIsActive(false);
-		// this.#VIEW_HEADER.start();
-
 		// Show Project View
-		this.#getViewById('project').setProjectId(projectId);
-		this.#getViewById('project').start();
+		this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
+		this.#getViewById(this.#VIEW_IDS.PROJECT).start();
 
-		this.#viewIdCurrent = 'project';
+		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
 	}
 
 	setMenuActive() {
 		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
 
-		// Reset Views
-		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
-		// 	this.#VIEWS[i].reset();
-		// }
-
-		// Dot Manager
-		// this.#DOT_MANAGER.reset();
-
-		// Set Menu Active
-		// this.#VIEW_HEADER.setIsActive(true);
-		// this.#VIEW_HEADER.start();
-
 		// Show Menu View
-		this.#getViewById('menu').start();
+		this.#getViewById(this.#VIEW_IDS.MENU).start();
 
-		this.#viewIdCurrent = 'menu';
+		this.#viewIdCurrent = this.#VIEW_IDS.MENU;
 	}
 
 	setMenuInactive() {
@@ -153,16 +156,10 @@ export default class DirectableDotMatrix {
 			this.#VIEWS[i].reset();
 		}
 
-		// Dot Manager
-		// this.#DOT_MANAGER.reset();
-
-		// Set Menu Inactive
-		// this.#VIEW_HEADER.setIsActive(false);
-
 		// Show Intro View
-		this.#getViewById('intro').start();
+		this.#getViewById(this.#VIEW_IDS.INTRO).start();
 
-		this.#viewIdCurrent = 'intro';
+		this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
 	}
 
 	// ___________________________________________________________________ Reset

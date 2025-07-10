@@ -15,14 +15,12 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	COMPONENTS = [];
-
 	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, viewId) {
-		super(shapeManager, viewId);
+	constructor(shapeManager, componentManager, viewId) {
+		super(shapeManager, componentManager, viewId);
 
 		ApplicationLogger.log('ViewTest', this.#LOG_LEVEL);
 	}
@@ -50,7 +48,8 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			1,
 		);
 
-		this.COMPONENTS.push(LINE_TOP);
+		// Store
+		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
 		// Create Component ABC
 		const COMPONENT_ABC = new ComponentGlyphBox(
@@ -65,7 +64,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH,
 		);
 
-		this.COMPONENTS.push(COMPONENT_ABC);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
 
 		// Add Component 0001
 		const COMPONENT_0001 = new ComponentGlyphBox(
@@ -80,7 +79,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH,
 		);
 
-		this.COMPONENTS.push(COMPONENT_0001);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
 
 		// Add Component Special Chars
 		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
@@ -95,7 +94,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH,
 		);
 
-		this.COMPONENTS.push(COMPONENT_SPECIAL_CHARS);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
 
 		// Rectangles
 		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
@@ -114,7 +113,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH_THIRD,
 		);
 
-		this.COMPONENTS.push(COMPONENT_RECTANGLE_A);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
 
 		// Create Component Rectangle B
 		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
@@ -128,7 +127,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH - GRID_MAX_WIDTH_THIRD,
 		);
 
-		this.COMPONENTS.push(COMPONENT_RECTANGLE_B);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
 
 		// Create Component Rectangle C
 		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
@@ -142,7 +141,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			GRID_MAX_WIDTH,
 		);
 
-		this.COMPONENTS.push(COMPONENT_RECTANGLE_C);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
@@ -164,7 +163,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
@@ -182,7 +181,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
@@ -200,7 +199,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		// Create Component Line Bottom
@@ -212,6 +211,6 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			1,
 		);
 
-		this.COMPONENTS.push(LINE_BOTTOM);
+		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 	}
 }
