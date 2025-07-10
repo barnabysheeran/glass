@@ -18,8 +18,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, viewId) {
-		super(shapeManager, viewId);
+	constructor(shapeManager, componentManager, viewId) {
+		super(shapeManager, componentManager, viewId);
 
 		ApplicationLogger.log('Project View Project', this.#LOG_LEVEL);
 	}
@@ -38,6 +38,16 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		// Get Project Data
 		const PROJECT_DATA_ITEM = DataController.getProjectById(this.#projectId);
 
+		console.log('Project Data Item', PROJECT_DATA_ITEM);
+
+		if (!PROJECT_DATA_ITEM) {
+			ApplicationLogger.warn(
+				'Project Data Item not found for ID: ' + this.#projectId,
+				this.#LOG_LEVEL,
+			);
+			return;
+		}
+
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
@@ -51,7 +61,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			this.getDelayFromGridY(10),
 		);
 
-		this.COMPONENTS.push(COMPONENT_NAME);
+		// Store
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
 		// Add Component Name Short
 		const COMPONENT_NAME_SHORT = new ComponentGlyphBox(
@@ -66,7 +77,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			this.getDelayFromGridY(11),
 		);
 
-		this.COMPONENTS.push(COMPONENT_NAME_SHORT);
+		// Store
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
 
 		// Add Credit ?
 		if (PROJECT_DATA_ITEM['credit']) {
@@ -82,7 +94,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				this.getDelayFromGridY(12),
 			);
 
-			this.COMPONENTS.push(COMPONENT_CREDIT);
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
 		}
 	}
 }

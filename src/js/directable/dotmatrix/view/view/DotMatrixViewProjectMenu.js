@@ -24,8 +24,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, viewId) {
-		super(shapeManager, viewId);
+	constructor(shapeManager, componentManager, viewId) {
+		super(shapeManager, componentManager, viewId);
 
 		ApplicationLogger.log('Project Menu', this.#LOG_LEVEL);
 	}
@@ -71,7 +71,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.getDelayFromGridY(i + 7),
 			);
 
-			this.COMPONENTS.push(COMPONENT);
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 
 			// Get Component Details
 			const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();

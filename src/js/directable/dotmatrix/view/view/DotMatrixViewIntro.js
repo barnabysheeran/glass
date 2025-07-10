@@ -13,8 +13,6 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
-	COMPONENTS = [];
-
 	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
@@ -46,7 +44,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			1,
 		);
 
-		this.COMPONENTS.push(LINE_TOP);
+		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 5;
@@ -107,16 +105,16 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
-		// // Create Component Line Bottom
-		// const LINE_BOTTOM = new ComponentLineWidthFull(
-		// 	this.SHAPE_MANAGER,
-		// 	LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
-		// );
+		// Create Component Line Bottom
+		const LINE_BOTTOM = new ComponentLineWidthFull(
+			this.SHAPE_MANAGER,
+			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
+		);
 
-		// this.COMPONENTS.push(LINE_BOTTOM);
+		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 
 		// Create Component Dot
 

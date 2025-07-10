@@ -13,14 +13,12 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewHolding extends DotMatrixView {
-	COMPONENTS = [];
-
 	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, viewId) {
-		super(shapeManager, viewId);
+	constructor(shapeManager, componentManager, viewId) {
+		super(shapeManager, componentManager, viewId);
 
 		ApplicationLogger.log('View Holding', this.#LOG_LEVEL);
 	}
@@ -48,7 +46,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			1,
 		);
 
-		this.COMPONENTS.push(LINE_TOP);
+		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 5;
@@ -70,7 +68,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
@@ -88,7 +86,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
@@ -106,7 +104,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			);
 
 			// Store
-			this.COMPONENTS.push(COMPONENT);
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 
 		// Create Component Line Bottom
@@ -118,7 +116,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
 		);
 
-		this.COMPONENTS.push(LINE_BOTTOM);
+		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 
 		// Create Component Dot
 
@@ -135,6 +133,6 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 		);
 
 		// Store
-		this.COMPONENTS.push(COMPONENT_DOT);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_DOT);
 	}
 }
