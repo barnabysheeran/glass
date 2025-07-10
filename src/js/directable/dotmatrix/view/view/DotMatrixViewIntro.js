@@ -1,5 +1,3 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
-
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';

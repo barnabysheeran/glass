@@ -1,5 +1,3 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
-
 import DataController from '../../../../data/DataController.js';
 
 import DotMatrixView from '../DotMatrixView.js';

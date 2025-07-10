@@ -1,5 +1,3 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
-
 import DataController from '../../../../data/DataController.js';
 
 import GridData from '../../../../grid/GridData.js';

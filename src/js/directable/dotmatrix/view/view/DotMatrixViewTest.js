@@ -1,5 +1,3 @@
-import ApplicationLogger from '../../../../application/ApplicationLogger.js';
-
 import GridData from '../../../../grid/GridData.js';
 
 import DotMatrixView from '../DotMatrixView.js';
@@ -203,4 +201,8 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 	}
+
+	// __________________________________________________________________ Undraw
+
+	undraw() {}
 }
