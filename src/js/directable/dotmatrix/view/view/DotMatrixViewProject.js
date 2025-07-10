@@ -32,7 +32,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start() {
+	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data

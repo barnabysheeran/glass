@@ -100,8 +100,8 @@ export default class DirectableDotMatrix {
 		);
 
 		// Start Initial View
-		this.#VIEW_HEADER.start();
-		this.#getViewById(this.#viewIdCurrent).start();
+		this.#VIEW_HEADER.draw();
+		this.#getViewById(this.#viewIdCurrent).draw();
 	}
 
 	// Getter for view IDs
@@ -129,10 +129,14 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
-		// Show Project View
-		this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
-		this.#getViewById(this.#VIEW_IDS.PROJECT).start();
+		// Undraw Current View
+		this.#getViewById(this.#viewIdCurrent).undraw();
 
+		// Draw Project View
+		this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
+		this.#getViewById(this.#VIEW_IDS.PROJECT).draw();
+
+		// Store
 		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
 	}
 
@@ -140,8 +144,9 @@ export default class DirectableDotMatrix {
 		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
 
 		// Show Menu View
-		this.#getViewById(this.#VIEW_IDS.MENU).start();
+		this.#getViewById(this.#VIEW_IDS.MENU).draw();
 
+		// Store
 		this.#viewIdCurrent = this.#VIEW_IDS.MENU;
 	}
 
@@ -157,7 +162,7 @@ export default class DirectableDotMatrix {
 		}
 
 		// Show Intro View
-		this.#getViewById(this.#VIEW_IDS.INTRO).start();
+		this.#getViewById(this.#VIEW_IDS.INTRO).draw();
 
 		this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
 	}
@@ -182,7 +187,7 @@ export default class DirectableDotMatrix {
 
 		// Start Current View
 		this.#VIEW_HEADER.start();
-		// this.#getViewById(this.#viewIdCurrent).start();
+		this.#getViewById(this.#viewIdCurrent).draw();
 	}
 
 	// ____________________________________________________________________ Util

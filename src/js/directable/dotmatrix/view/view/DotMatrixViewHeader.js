@@ -31,7 +31,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start() {
+	draw() {
 		ApplicationLogger.log('ViewHeader start', this.#LOG_LEVEL);
 
 		// Get Line Height

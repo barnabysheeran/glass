@@ -32,7 +32,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start() {
+	draw() {
 		ApplicationLogger.log('Project Menu start', this.#LOG_LEVEL);
 
 		// Get Line Height

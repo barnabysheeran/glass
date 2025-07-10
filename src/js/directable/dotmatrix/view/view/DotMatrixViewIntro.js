@@ -25,7 +25,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start() {
+	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Grid Size
