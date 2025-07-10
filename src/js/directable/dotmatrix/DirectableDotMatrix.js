@@ -19,7 +19,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = 'menu';
+	#viewIdCurrent = 'intro';
 
 	#LOG_LEVEL = 3;
 
@@ -114,11 +114,11 @@ export default class DirectableDotMatrix {
 		// this.#VIEW_HEADER.setIsActive(false);
 		// this.#VIEW_HEADER.start();
 
-		// // Show Project View
-		// this.#getViewById('project').setProjectId(projectId);
-		// this.#getViewById('project').start();
+		// Show Project View
+		this.#getViewById('project').setProjectId(projectId);
+		this.#getViewById('project').start();
 
-		// this.#viewIdCurrent = 'project';
+		this.#viewIdCurrent = 'project';
 	}
 
 	setMenuActive() {
@@ -137,9 +137,9 @@ export default class DirectableDotMatrix {
 		// this.#VIEW_HEADER.start();
 
 		// Show Menu View
-		// this.#getViewById('menu').start();
+		this.#getViewById('menu').start();
 
-		// this.#viewIdCurrent = 'menu';
+		this.#viewIdCurrent = 'menu';
 	}
 
 	setMenuInactive() {
@@ -160,9 +160,9 @@ export default class DirectableDotMatrix {
 		// this.#VIEW_HEADER.setIsActive(false);
 
 		// Show Intro View
-		// this.#getViewById('intro').start();
+		this.#getViewById('intro').start();
 
-		// this.#viewIdCurrent = 'intro';
+		this.#viewIdCurrent = 'intro';
 	}
 
 	// ___________________________________________________________________ Reset
