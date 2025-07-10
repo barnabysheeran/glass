@@ -71,9 +71,9 @@ export default class ShapeManager {
 			gridX,
 			gridY,
 			length,
+			delay,
 			fillType,
 			fillStrategyType,
-			delay,
 		);
 
 		// Store
@@ -145,9 +145,9 @@ export default class ShapeManager {
 			gridX,
 			gridY,
 			glyphData,
+			delay,
 			fillType,
 			fillStrategyType,
-			delay,
 		);
 
 		// Store
