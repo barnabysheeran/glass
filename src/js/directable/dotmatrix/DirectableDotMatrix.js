@@ -104,11 +104,6 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).draw();
 	}
 
-	// Getter for view IDs
-	getViewIds() {
-		return this.#VIEW_IDS;
-	}
-
 	// ____________________________________________________________________ Tick
 
 	tick(frameDeltaMS) {
@@ -186,7 +181,7 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		this.#VIEW_HEADER.start();
+		this.#VIEW_HEADER.draw();
 		this.#getViewById(this.#viewIdCurrent).draw();
 	}
 

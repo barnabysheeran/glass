@@ -31,9 +31,9 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			LINE_HEIGHT,
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			1,
 		);
 
 		// Store
