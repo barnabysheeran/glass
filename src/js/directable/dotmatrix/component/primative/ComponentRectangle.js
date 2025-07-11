@@ -4,10 +4,7 @@ import FillStrategyType from '../../shape/fill/FillStrategyType.js';
 import Component from '../Component.js';
 
 export default class ComponentRectangle extends Component {
-	#SHAPE;
-
 	// Unique Parameters
-
 	GRID_WIDTH;
 	GRID_HEIGHT;
 
@@ -37,7 +34,7 @@ export default class ComponentRectangle extends Component {
 
 	#createShape() {
 		// Create Shape
-		this.#SHAPE = this.SHAPE_MANAGER.addShapeRectangle(
+		const SHAPE = this.SHAPE_MANAGER.addShapeRectangle(
 			this.GRID_X,
 			this.GRID_Y,
 			this.GRID_WIDTH,
@@ -46,18 +43,8 @@ export default class ComponentRectangle extends Component {
 			this.FILL_TYPE,
 			this.FILL_STRATEGY_TYPE,
 		);
-	}
 
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		this.#SHAPE.tick();
-	}
-
-	// _________________________________________________________________ Destroy
-
-	destroy() {
-		// Clear Shapes
-		this.#SHAPE = null;
+		// Store
+		this.SHAPES.push(SHAPE);
 	}
 }

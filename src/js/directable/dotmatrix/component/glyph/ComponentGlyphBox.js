@@ -36,7 +36,7 @@ export default class ComponentGlyphBox extends Component {
 		this.GRID_HEIGHT = gridHeight;
 
 		// Create Shape
-		this.#createShape(text, gridWidth, gridHeight);
+		this.#createShape();
 	}
 
 	// ____________________________________________________________ Create Shape
@@ -59,8 +59,8 @@ export default class ComponentGlyphBox extends Component {
 				GLYPH_NAME,
 				currentGridX,
 				this.GRID_Y,
-				this.FILL_TYPE,
 				this.DELAY + i * GLYPH_DELAY,
+				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
 			);
 
