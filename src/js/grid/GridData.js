@@ -214,6 +214,11 @@ export default class GridData {
 		this.#resolutionWidth = width;
 		this.#resolutionHeight = height;
 
+		ApplicationLogger.log(
+			`GridData setSize ${width} ${height}`,
+			this.#LOG_LEVEL,
+		);
+
 		// Update grid dimensions
 		this.#gridWidthInCells = Math.floor(
 			this.#resolutionWidth / this.#gridCellWidthPx,

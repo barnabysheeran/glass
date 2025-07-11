@@ -25,12 +25,12 @@ export default class RenderSurface {
 
 	// _________________________________________________________________________
 
-	static initialise() {
-		ApplicationLogger.log(`RenderSurface`, this.#LOG_LEVEL);
+	static initialise(width, height) {
+		ApplicationLogger.log(`RenderSurface ${width} ${height}`, this.#LOG_LEVEL);
 
 		// Get Initial Display Dimensions
-		this.#width = Display.getWidth();
-		this.#height = Display.getHeight();
+		this.#width = width;
+		this.#height = height;
 
 		// Create Canvas
 		this.#CANVAS = document.createElement('canvas');
@@ -254,9 +254,9 @@ export default class RenderSurface {
 			x + width > this.#width ||
 			y + height > this.#height
 		) {
-			ApplicationLogger.warn(
-				'RenderSurface getTextureData called with out-of-bounds coordinates.',
-			);
+			// ApplicationLogger.warn(
+			// 	'RenderSurface getTextureData called with out-of-bounds coordinates.',
+			// );
 			return null;
 		}
 
@@ -279,11 +279,11 @@ export default class RenderSurface {
 			x + width > this.#width ||
 			y + height > this.#height
 		) {
-			ApplicationLogger.log(
-				`RenderSurface setTextureData out-of-bounds ${x} ${y} ${width} ${height}`,
+			// ApplicationLogger.log(
+			// 	`RenderSurface setTextureData out-of-bounds ${x} ${y} ${width} ${height}`,
+			// 	this.#LOG_LEVEL,
+			// );
 
-				this.#LOG_LEVEL,
-			);
 			return;
 		}
 		if (!data || data.byteLength !== width * height * 4) {

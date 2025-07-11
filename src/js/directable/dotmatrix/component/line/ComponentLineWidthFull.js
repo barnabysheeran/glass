@@ -17,10 +17,6 @@ export default class ComponentLineWidthFull extends Component {
 	) {
 		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType);
 
-		console.log(
-			`ComponentLineWidthFull gridY ${gridY} delay ${delay} fillType ${fillType} fillStrategyType ${fillStrategyType}`,
-		);
-
 		// Create Shape
 		this.#createShape();
 	}

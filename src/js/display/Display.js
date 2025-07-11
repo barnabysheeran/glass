@@ -30,11 +30,6 @@ export default class Display {
 
 		// Set Initial
 		this.tick();
-
-		ApplicationLogger.log(
-			` - Initialising at ${this.#width} ${this.#height}`,
-			this.#LOG_LEVEL,
-		);
 	}
 
 	// __________________________________________________________________ Resize
@@ -78,7 +73,7 @@ export default class Display {
 		// Changed Width Height ?
 		if (width !== this.#width || height !== this.#height) {
 			ApplicationLogger.log(
-				`Display. Resizing to ${width} ${height}`,
+				`Display - Resizing to ${width} ${height}`,
 				this.#LOG_LEVEL,
 			);
 

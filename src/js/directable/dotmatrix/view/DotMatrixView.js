@@ -14,10 +14,7 @@ export default class DotMatrixView {
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager, viewId) {
-		ApplicationLogger.log(
-			`DotMatrixView: Initializing with viewId: ${viewId}`,
-			this.#LOG_LEVEL,
-		);
+		ApplicationLogger.log(`DotMatrixView ${viewId}`, this.#LOG_LEVEL);
 
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
@@ -25,7 +22,7 @@ export default class DotMatrixView {
 		this.#VIEW_ID = viewId;
 	}
 
-	// ___________________________________________________________________ Start
+	// ____________________________________________________________________ Draw
 
 	draw() {} // Stub
 
