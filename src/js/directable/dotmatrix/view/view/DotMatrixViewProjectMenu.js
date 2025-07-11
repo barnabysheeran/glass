@@ -23,9 +23,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
 
-		// Get Grid Size
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjects();
@@ -41,7 +40,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
 
-			if (GRID_MAX_WIDTH < BLOCK_WIDTH_MOBILE) {
+			if (GRID_WIDTH_IN_CELLS < BLOCK_WIDTH_MOBILE) {
 				text = PROJECT_DATA_ITEM['name-short'];
 			}
 

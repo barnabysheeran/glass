@@ -41,8 +41,7 @@ export default class ComponentGlyphLineCentered extends Component {
 		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
 
 		// Get Grid Data
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Start at Grid X Position
 		let gridX = 0;
@@ -63,7 +62,7 @@ export default class ComponentGlyphLineCentered extends Component {
 		gridX -= GLYPH_SPACING_X;
 
 		// Center Glyphs
-		gridX = Math.floor((GRID_MAX_WIDTH - gridX + GLYPH_SPACING_X) / 2);
+		gridX = Math.floor((GRID_WIDTH_IN_CELLS - gridX + GLYPH_SPACING_X) / 2);
 
 		// Store Grid X Centered Start
 		this.gridXCenteredStart = gridX;

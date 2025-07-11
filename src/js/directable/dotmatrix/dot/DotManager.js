@@ -24,21 +24,19 @@ export default class DotManager {
 	// ________________________________________________________________ Dot Pool
 
 	getDotIndexAtGrid(positionGridX, positionGridY) {
-		// Get Grid Max
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
-		// const GRID_MAX_HEIGHT = GRID_MAX[1];
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Check bounds
 		if (
 			positionGridX < 0 ||
-			positionGridX >= GRID_MAX_WIDTH ||
+			positionGridX >= GRID_WIDTH_IN_CELLS ||
 			positionGridY < 0
 		) {
 			return -1;
 		}
 
-		const index = positionGridY * GRID_MAX_WIDTH + positionGridX;
+		const index = positionGridY * GRID_WIDTH_IN_CELLS + positionGridX;
 
 		if (index >= this.#DOTS.length) {
 			return -1;
@@ -78,10 +76,9 @@ export default class DotManager {
 			this.#LOG_LEVEL,
 		);
 
-		// Get Grid Max
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
-		const GRID_MAX_HEIGHT = GRID_MAX[1];
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
+		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
 		// TODO Keep existing dots on resize
 
@@ -89,8 +86,8 @@ export default class DotManager {
 		this.#DOTS = [];
 
 		// Create new dots for the entire grid
-		for (let y = 0; y < GRID_MAX_WIDTH; y++) {
-			for (let x = 0; x < GRID_MAX_HEIGHT; x++) {
+		for (let y = 0; y < GRID_WIDTH_IN_CELLS; y++) {
+			for (let x = 0; x < GRID_HEIGHT_IN_CELLS; x++) {
 				// TODO Create Dot with Position
 
 				const dot = new Dot();

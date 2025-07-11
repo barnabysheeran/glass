@@ -45,8 +45,7 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
 
 		// Get Grid Data
-		const GRID_MAX = GridData.getGridMax();
-		const GRID_MAX_WIDTH = GRID_MAX[0];
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Build Text Pattern
 		let TEXT_PATTERN = '';
@@ -55,14 +54,14 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		let textIndex = 0;
 		let currentWidth = 0;
 
-		while (currentWidth < GRID_MAX_WIDTH) {
+		while (currentWidth < GRID_WIDTH_IN_CELLS) {
 			// Get Text Character at Current Index
 			const TEXT_CHAR = this.TEXT[textIndex];
 
 			// Get Glyph Width
 			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(TEXT_CHAR);
 
-			if (currentWidth + GLYPH_WIDTH > GRID_MAX_WIDTH) {
+			if (currentWidth + GLYPH_WIDTH > GRID_WIDTH_IN_CELLS) {
 				break;
 			}
 

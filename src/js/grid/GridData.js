@@ -2,8 +2,6 @@ import { vec2 } from 'gl-matrix';
 
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
-// TODO Remove vec2 ?
-
 export default class GridData {
 	static #gridCellWidthPx = 3;
 	static #gridCellHeightPx = 3;
@@ -29,6 +27,8 @@ export default class GridData {
 	}
 
 	// ____________________________________________________________________ Grid
+
+	// TODO Remove vec2 usage
 
 	static getGridPixelPosition(positionGrid) {
 		let x = positionGrid[0] * this.#gridCellWidthPx;
@@ -191,20 +191,12 @@ export default class GridData {
 
 	// ________________________________________________________________ Grid Max
 
-	static getGridMax() {
-		// Return the maximum 0-based index for x and y
-		return vec2.fromValues(
-			this.#gridWidthInCells - 1,
-			this.#gridHeightInCells - 1,
-		);
+	static getGridWidthInCells() {
+		return this.#gridWidthInCells;
 	}
 
-	static getGridMaxHalf() {
-		const max = this.getGridMax();
-		const x = max[0] / 2;
-		const y = max[1] / 2;
-
-		return vec2.fromValues(Math.floor(x), Math.floor(y));
+	static getGridHeightInCells() {
+		return this.#gridHeightInCells;
 	}
 
 	// ____________________________________________________________________ Size
@@ -214,17 +206,18 @@ export default class GridData {
 		this.#resolutionWidth = width;
 		this.#resolutionHeight = height;
 
-		ApplicationLogger.log(
-			`GridData setSize ${width} ${height}`,
-			this.#LOG_LEVEL,
-		);
-
 		// Update grid dimensions
 		this.#gridWidthInCells = Math.floor(
 			this.#resolutionWidth / this.#gridCellWidthPx,
 		);
+
 		this.#gridHeightInCells = Math.floor(
 			this.#resolutionHeight / this.#gridCellHeightPx,
+		);
+
+		ApplicationLogger.log(
+			`GridData setSize ${width} ${height} px. grid ${this.#gridWidthInCells} ${this.#gridHeightInCells}`,
+			this.#LOG_LEVEL,
 		);
 
 		// Re-initialize the flat array

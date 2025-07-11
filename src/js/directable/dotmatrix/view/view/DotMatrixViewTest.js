@@ -18,14 +18,12 @@ export default class DotMatrixViewTest extends DotMatrixView {
 	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
-		// Get Grid Size
-		const GRID_MAX = GridData.getGridMax();
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
+		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
-		const GRID_MAX_WIDTH = GRID_MAX[0];
-		const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
-
-		const GRID_MAX_HEIGHT = GRID_MAX[1];
-		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / LINE_HEIGHT);
+		const GRID_WIDTH_IN_CELLS_THIRD = Math.floor(GRID_WIDTH_IN_CELLS / 3);
+		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
 		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
@@ -47,7 +45,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 3,
 			100,
 			50,
-			GRID_MAX_WIDTH,
+			GRID_WIDTH_IN_CELLS,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -62,7 +60,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 4,
 			100,
 			50,
-			GRID_MAX_WIDTH,
+			GRID_WIDTH_IN_CELLS,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -77,7 +75,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 5,
 			100,
 			50,
-			GRID_MAX_WIDTH,
+			GRID_WIDTH_IN_CELLS,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -96,7 +94,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
-			GRID_MAX_WIDTH_THIRD,
+			GRID_WIDTH_IN_CELLS_THIRD,
 			FillType.PassThrough,
 			FillStrategyType.Reverse,
 		);
@@ -110,7 +108,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
-			GRID_MAX_WIDTH - GRID_MAX_WIDTH_THIRD,
+			GRID_WIDTH_IN_CELLS - GRID_WIDTH_IN_CELLS_THIRD,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 		);
@@ -124,7 +122,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			RECTANGLE_GRID_Y,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
-			GRID_MAX_WIDTH,
+			GRID_WIDTH_IN_CELLS,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);

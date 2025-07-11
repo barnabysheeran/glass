@@ -16,14 +16,8 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 	draw() {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
-		// Get Grid Size
-		const GRID_MAX = GridData.getGridMax();
-
-		// const GRID_MAX_WIDTH = GRID_MAX[0];
-		// const GRID_MAX_WIDTH_THIRD = Math.floor(GRID_MAX_WIDTH / 3);
-
-		const GRID_MAX_HEIGHT = GRID_MAX[1];
-		const LINE_HEIGHT_MAX = Math.floor(GRID_MAX_HEIGHT / LINE_HEIGHT);
+		// Get Grid Data
+		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
 		// Create Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
@@ -38,8 +32,7 @@ export default class DotMatrixViewHolding extends DotMatrixView {
 
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 5;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
-		const BLOCK_DELAY_PER_LINE = 5;
+		const BLOCK_GRID_BOTTOM = GRID_HEIGHT_IN_CELLS - 8;
 
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
