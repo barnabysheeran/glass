@@ -77,6 +77,11 @@ export default class Display {
 
 		// Changed Width Height ?
 		if (width !== this.#width || height !== this.#height) {
+			ApplicationLogger.log(
+				`Display. Resizing to ${width} ${height}`,
+				this.#LOG_LEVEL,
+			);
+
 			// Store
 			this.#width = width;
 			this.#height = height;

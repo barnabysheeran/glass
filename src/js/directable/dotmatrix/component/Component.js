@@ -1,4 +1,4 @@
-import ApplicationLogger from '../../../application/ApplicationLogger.js';
+// import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
 export default class Component {
 	SHAPE_MANAGER;
@@ -12,7 +12,7 @@ export default class Component {
 
 	DELAY = 0;
 
-	#LOG_LEVEL = 4;
+	// #LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
@@ -25,12 +25,12 @@ export default class Component {
 		this.FILL_TYPE = fillType;
 		this.FILL_STRATEGY_TYPE = fillStrategyType;
 
-		ApplicationLogger.log(
-			`Component gridX ${gridX} gridY ${gridY}` +
-				` delay ${delay} ` +
-				` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}`,
-			this.#LOG_LEVEL,
-		);
+		// ApplicationLogger.log(
+		// 	`Component gridX ${gridX} gridY ${gridY}` +
+		// 		` delay ${delay}` +
+		// 		` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}`,
+		// 	this.#LOG_LEVEL,
+		// );
 	}
 
 	// ____________________________________________________________________ Tick
