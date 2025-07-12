@@ -27,7 +27,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const GRID_WIDTH_IN_CELLS_THIRD = Math.floor(GRID_WIDTH_IN_CELLS / 3);
 		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
-		// Create Component Line Top
+		// Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			LINE_HEIGHT,
@@ -131,7 +131,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
 
-		// Add Dummy Text with Line Height
+		// Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
 		const BLOCK_DELAY_PER_LINE = 5;
@@ -208,6 +208,74 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Get Line Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
+		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
+
+		const GRID_WIDTH_IN_CELLS_THIRD = Math.floor(GRID_WIDTH_IN_CELLS / 3);
+		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
+
+		// Component Line Top
+		const LINE_TOP = new ComponentLineWidthFull(
+			this.SHAPE_MANAGER,
+			LINE_HEIGHT,
+			1,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		// Store
+		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
+
+		// Create Component ABC
+		const COMPONENT_ABC = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			0,
+			LINE_HEIGHT * 3,
+			100,
+			50,
+			GRID_WIDTH_IN_CELLS,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
+
+		// Add Component 0001
+		const COMPONENT_0001 = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			'0123456789',
+			0,
+			LINE_HEIGHT * 4,
+			100,
+			50,
+			GRID_WIDTH_IN_CELLS,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
+
+		// Add Component Special Chars
+		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			`-_/:;,.`,
+			0,
+			LINE_HEIGHT * 5,
+			100,
+			50,
+			GRID_WIDTH_IN_CELLS,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
+
 		// Rectangles
 		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
 		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
@@ -257,6 +325,80 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
+
+		// Dummy Text with Line Height
+		const BLOCK_GRID_TOP = 10;
+		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
+		const BLOCK_DELAY_PER_LINE = 5;
+
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.SHAPE_MANAGER,
+				'X',
+				0,
+				LINE_HEIGHT * i,
+				100,
+				50,
+				BLOCK_DELAY_PER_LINE * i,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				DrawType.Clear,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
+		}
+
+		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.SHAPE_MANAGER,
+				'X',
+				0,
+				LINE_HEIGHT * i,
+				100,
+				50,
+				120 + BLOCK_DELAY_PER_LINE * i,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				DrawType.Clear,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
+		}
+
+		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
+			// Create Component
+			const COMPONENT = new ComponentGlyphBoxWidthFull(
+				this.SHAPE_MANAGER,
+				'o',
+				0,
+				LINE_HEIGHT * i,
+				100,
+				50,
+				240 + BLOCK_DELAY_PER_LINE * i,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				DrawType.Clear,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
+		}
+
+		// Create Component Line Bottom
+		const LINE_BOTTOM = new ComponentLineWidthFull(
+			this.SHAPE_MANAGER,
+			LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
+			1,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -266,7 +408,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		const RANDOM_DRAW = Math.random();
 
-		if (RANDOM_DRAW < 0.01) {
+		if (RANDOM_DRAW < 0.02) {
 			// Draw
 			this.draw();
 		}

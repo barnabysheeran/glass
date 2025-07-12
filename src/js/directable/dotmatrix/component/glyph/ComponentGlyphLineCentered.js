@@ -78,6 +78,7 @@ export default class ComponentGlyphLineCentered extends Component {
 				this.DELAY + i * GLYPH_DELAY,
 				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
+				this.DRAW_TYPE,
 			);
 
 			// Store
