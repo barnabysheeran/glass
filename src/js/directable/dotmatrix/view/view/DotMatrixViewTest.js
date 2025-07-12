@@ -14,6 +14,8 @@ import ComponentRectangle from '../../component/primative/ComponentRectangle.js'
 import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
+	#STRING_CHAR_TEST = `-_/:;,.'!"^<>`;
+
 	// ____________________________________________________________________ Draw
 
 	draw() {
@@ -72,7 +74,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Add Component Special Chars
 		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			`-_/:;,.`,
+			this.#STRING_CHAR_TEST,
 			0,
 			LINE_HEIGHT * 5,
 			100,
@@ -140,7 +142,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'I',
+				'HELLO',
 				0,
 				LINE_HEIGHT * i,
 				100,
@@ -158,7 +160,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'I',
+				`I'M`,
 				0,
 				LINE_HEIGHT * i,
 				100,
@@ -176,7 +178,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'I',
+				'BARNABY',
 				0,
 				LINE_HEIGHT * i,
 				100,
@@ -263,7 +265,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Add Component Special Chars
 		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			`-_/:;,.`,
+			this.#STRING_CHAR_TEST,
 			0,
 			LINE_HEIGHT * 5,
 			100,
@@ -335,7 +337,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'X',
+				'I',
 				0,
 				LINE_HEIGHT * i,
 				100,
@@ -354,7 +356,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'X',
+				'0',
 				0,
 				LINE_HEIGHT * i,
 				100,
@@ -373,7 +375,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			// Create Component
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'o',
+				'X',
 				0,
 				LINE_HEIGHT * i,
 				100,
