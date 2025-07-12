@@ -1,8 +1,8 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
-import DrawType from '../../shape/fill/DrawType.js';
+import FillType from '../fill/FillType.js';
+import FillStrategyType from '../fill/FillStrategyType.js';
+import DrawType from '../fill/DrawType.js';
 
 export default class Component {
 	SHAPE_MANAGER;
