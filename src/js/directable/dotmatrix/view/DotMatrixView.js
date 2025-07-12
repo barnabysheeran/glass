@@ -26,6 +26,8 @@ export default class DotMatrixView {
 
 	draw() {} // Stub
 
+	onDrawComplete() {} // Stub
+
 	// __________________________________________________________________ Undraw
 
 	undraw() {} // Stub
