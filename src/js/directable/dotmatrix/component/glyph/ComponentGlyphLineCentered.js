@@ -1,8 +1,5 @@
 import GridData from '../../../../grid/GridData.js';
 
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
-
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
