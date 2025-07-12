@@ -28,13 +28,12 @@ export default class GridData {
 
 	// ____________________________________________________________________ Grid
 
-	// TODO Remove vec2 usage
+	static getGridPixelPositionX(gridX) {
+		return gridX * this.#gridCellWidthPx;
+	}
 
-	static getGridPixelPosition(positionGrid) {
-		let x = positionGrid[0] * this.#gridCellWidthPx;
-		let y = positionGrid[1] * this.#gridCellHeightPx;
-
-		return vec2.fromValues(x, y);
+	static getGridPixelPositionY(gridY) {
+		return gridY * this.#gridCellHeightPx;
 	}
 
 	static #getIndex(x, y) {

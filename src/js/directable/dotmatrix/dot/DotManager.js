@@ -86,16 +86,16 @@ export default class DotManager {
 		this.#DOTS = [];
 
 		// Create new dots for the entire grid
-		for (let y = 0; y < GRID_WIDTH_IN_CELLS; y++) {
-			for (let x = 0; x < GRID_HEIGHT_IN_CELLS; x++) {
-				// TODO Create Dot with Position
+		for (let gridY = 0; gridY < GRID_HEIGHT_IN_CELLS; gridY++) {
+			for (let gridX = 0; gridX < GRID_WIDTH_IN_CELLS; gridX++) {
+				// Create Dot
+				const DOT = new Dot(
+					GridData.getGridPixelPositionX(gridX),
+					GridData.getGridPixelPositionY(gridY),
+				);
 
-				const dot = new Dot();
-				const positionGrid = [x, y];
-				const positionPx = GridData.getGridPixelPosition(positionGrid);
-
-				dot.setPosition(positionPx);
-				this.#DOTS.push(dot);
+				// Store Dot
+				this.#DOTS.push(DOT);
 			}
 		}
 

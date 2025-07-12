@@ -23,8 +23,6 @@ const CLEARED_DATA = new Uint8Array(PIXEL_COUNT * 4); // Initializes to all 0s
 // _____________________________________________________________________________
 
 export default class Dot {
-	#dotIndex = 0;
-
 	#positionPixelsX = 0;
 	#positionPixelsY = 0;
 
@@ -34,33 +32,19 @@ export default class Dot {
 
 	// _________________________________________________________________________
 
-	constructor(dotIndex) {
+	constructor(positionPixelsX, positionPixelsY) {
 		// ApplicationLogger.log(`Dot ${dotIndex}`, this.#LOG_LEVEL);
 
 		// Store
-		this.#dotIndex = dotIndex;
-	}
-
-	// __________________________________________________________________ Delays
-
-	// ________________________________________________________________ Position
-
-	setPosition(positionGrid) {
-		ApplicationLogger.log(
-			`Dot ${this.#dotIndex} setPosition ${positionGrid}`,
-			this.#LOG_LEVEL,
-		);
-
-		// Store
-		this.#positionPixelsX = positionGrid[0];
-		this.#positionPixelsY = positionGrid[1];
+		this.#positionPixelsX = positionPixelsX;
+		this.#positionPixelsY = positionPixelsY;
 	}
 
 	// ____________________________________________________________________ Fill
 
 	fill() {
 		ApplicationLogger.log(
-			`Dot ${this.#dotIndex} fill at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
+			`Dot fill at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -86,7 +70,7 @@ export default class Dot {
 
 	clear() {
 		ApplicationLogger.log(
-			`Dot ${this.#dotIndex} clear at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
+			`Dot clear at ${this.#positionPixelsX} ${this.#positionPixelsY}`,
 			this.#LOG_LEVEL,
 		);
 
