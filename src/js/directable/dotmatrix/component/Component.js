@@ -31,6 +31,14 @@ export default class Component {
 		fillStrategyType = FillStrategyType.PassThrough,
 		drawType = DrawType.Fill,
 	) {
+		ApplicationLogger.log(
+			`Component gridX ${gridX} gridY ${gridY}` +
+				` delay ${delay}` +
+				` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}` +
+				` drawType ${drawType}`,
+			this.#LOG_LEVEL,
+		);
+
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
 		this.GRID_X = gridX;
@@ -39,14 +47,6 @@ export default class Component {
 		this.FILL_TYPE = fillType;
 		this.FILL_STRATEGY_TYPE = fillStrategyType;
 		this.DRAW_TYPE = drawType;
-
-		ApplicationLogger.log(
-			`Component gridX ${gridX} gridY ${gridY}` +
-				` delay ${delay}` +
-				` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}` +
-				` drawType ${drawType}`,
-			this.#LOG_LEVEL,
-		);
 	}
 
 	// ____________________________________________________________________ Tick
