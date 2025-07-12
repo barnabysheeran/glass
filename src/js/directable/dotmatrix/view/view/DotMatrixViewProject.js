@@ -4,8 +4,8 @@ import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
+import FillType from '../../enum/FillType.js';
+import FillStrategyType from '../../enum/FillStrategyType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 

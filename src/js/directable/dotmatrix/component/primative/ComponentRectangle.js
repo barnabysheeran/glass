@@ -48,6 +48,7 @@ export default class ComponentRectangle extends Component {
 			this.DELAY,
 			this.FILL_TYPE,
 			this.FILL_STRATEGY_TYPE,
+			this.DRAW_TYPE,
 		);
 
 		// Store

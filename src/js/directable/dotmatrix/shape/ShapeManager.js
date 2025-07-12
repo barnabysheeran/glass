@@ -1,7 +1,8 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 
-import FillType from './fill/FillType.js';
-import FillStrategyType from './fill/FillStrategyType.js';
+import FillType from '../enum/FillType.js';
+import FillStrategyType from '../enum/FillStrategyType.js';
+import DrawType from '../enum/DrawType.js';
 
 import ShapeLineHorizontal from './line/ShapeLineHorizontal.js';
 import ShapeRectangle from './primative/ShapeRectangle.js';
@@ -64,6 +65,7 @@ export default class ShapeManager {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeLineHorizontal(
@@ -74,6 +76,7 @@ export default class ShapeManager {
 			delay,
 			fillType,
 			fillStrategyType,
+			drawType,
 		);
 
 		// Store
@@ -93,6 +96,7 @@ export default class ShapeManager {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
 		// Create Shape
 		const SHAPE = new ShapeRectangle(
@@ -104,6 +108,7 @@ export default class ShapeManager {
 			delay,
 			fillType,
 			fillStrategyType,
+			drawType,
 		);
 
 		// Store
@@ -122,6 +127,7 @@ export default class ShapeManager {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
 		const upperChar = character.toUpperCase();
 		const glyphData = SHAPE_GLYPH_DATA[upperChar];
@@ -148,6 +154,7 @@ export default class ShapeManager {
 			delay,
 			fillType,
 			fillStrategyType,
+			drawType,
 		);
 
 		// Store
