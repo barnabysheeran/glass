@@ -1,4 +1,5 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import DrawType from '../enum/DrawType.js';
 
 export default class Shape {
 	#SHAPE_ID;
@@ -10,22 +11,22 @@ export default class Shape {
 	#isComplete = false;
 
 	#delay = 0;
+	#drawType;
 
 	#LOG_LEVEL = -1; // 7;
 
 	// _________________________________________________________________________
 
-	constructor(dotManager, delay = 0) {
+	constructor(dotManager, delay, drawType) {
 		ApplicationLogger.log('Shape', this.#LOG_LEVEL);
 
 		// Store Delay
+		this.#dotManager = dotManager;
 		this.#delay = delay;
+		this.#drawType = drawType;
 
 		// Generate Unique ID
 		this.#SHAPE_ID = crypto.randomUUID();
-
-		// Store
-		this.#dotManager = dotManager;
 	}
 
 	// ____________________________________________________________________ Tick
@@ -53,7 +54,11 @@ export default class Shape {
 
 		// Fill Dot
 		if (DOT_INDEX > -1) {
-			this.#dotManager.fillDot(DOT_INDEX);
+			if (this.#drawType === DrawType.Fill) {
+				this.#dotManager.fillDot(DOT_INDEX);
+			} else if (this.#drawType === DrawType.Clear) {
+				this.#dotManager.clearDot(DOT_INDEX);
+			}
 		}
 
 		// Increment Index

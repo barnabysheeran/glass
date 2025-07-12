@@ -22,8 +22,9 @@ export default class ShapeRectangle extends Shape {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
-		super(dotManager, delay);
+		super(dotManager, delay, drawType);
 
 		ApplicationLogger.log(`ShapeRectangle`, this.#LOG_LEVEL);
 

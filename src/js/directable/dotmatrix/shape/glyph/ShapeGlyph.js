@@ -25,8 +25,9 @@ export default class ShapeGlyph extends Shape {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
-		super(dotManager, delay);
+		super(dotManager, delay, drawType);
 
 		ApplicationLogger.log(`ShapeGlyph`, this.#LOG_LEVEL);
 

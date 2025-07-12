@@ -11,11 +11,13 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
+import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		// Get Line Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Grid Data
@@ -202,5 +204,76 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	// __________________________________________________________________ Undraw
 
-	undraw() {}
+	undraw() {
+		// Get Line Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+
+		// Rectangles
+		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
+		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
+		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
+
+		// Create Component Rectangle A
+		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			0,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			1,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
+
+		// Create Component Rectangle B
+		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			RECTANGLE_WIDTH + 2,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			11,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
+
+		// Create Component Rectangle C
+		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			RECTANGLE_WIDTH * 2 + 4,
+			RECTANGLE_GRID_Y,
+			RECTANGLE_WIDTH,
+			RECTANGLE_HEIGHT,
+			21,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick() {
+		// Not calling super.tick
+
+		const RANDOM_DRAW = Math.random();
+
+		if (RANDOM_DRAW < 0.01) {
+			// Draw
+			this.draw();
+		}
+
+		if (RANDOM_DRAW > 0.99) {
+			// Undraw
+			this.undraw();
+		}
+	}
 }

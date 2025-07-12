@@ -21,8 +21,9 @@ export default class ShapeLineHorizontal extends Shape {
 		delay = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
 	) {
-		super(dotManager, delay);
+		super(dotManager, delay, drawType);
 
 		ApplicationLogger.log(`ShapeLineHorizontal`, this.#LOG_LEVEL);
 

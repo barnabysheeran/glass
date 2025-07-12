@@ -1,6 +1,6 @@
 const DrawType = {
-	Fill: 0,
-	Clear: 1,
+	Fill: 1,
+	Clear: 0,
 };
 
 export default DrawType;
