@@ -21,12 +21,13 @@ export default class ComponentGlyphLineCentered extends Component {
 		text,
 		gridY,
 		delay,
-		fillType = FillType.PassThrough,
-		fillStrategyType = FillStrategyType.PassThrough,
+		fillType,
+		fillStrategyType,
+		drawType,
 	) {
-		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType);
+		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType, drawType);
 
-		// Store
+		// Store Unique Parameters
 		this.TEXT = text;
 
 		// Create Shape

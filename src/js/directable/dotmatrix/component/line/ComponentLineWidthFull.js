@@ -12,10 +12,11 @@ export default class ComponentLineWidthFull extends Component {
 		shapeManager,
 		gridY,
 		delay,
-		fillType = FillType.PassThrough,
-		fillStrategyType = FillStrategyType.PassThrough,
+		fillType,
+		fillStrategyType,
+		drawType,
 	) {
-		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType);
+		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType, drawType);
 
 		// Create Shape
 		this.#createShape();

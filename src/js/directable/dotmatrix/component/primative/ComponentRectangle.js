@@ -1,6 +1,3 @@
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
-
 import Component from '../Component.js';
 
 export default class ComponentRectangle extends Component {
@@ -17,12 +14,21 @@ export default class ComponentRectangle extends Component {
 		gridWidth,
 		gridHeight,
 		delay,
-		fillType = FillType.PassThrough,
-		fillStrategyType = FillStrategyType.PassThrough,
+		fillType,
+		fillStrategyType,
+		drawType,
 	) {
-		super(shapeManager, gridX, gridY, delay, fillType, fillStrategyType);
+		super(
+			shapeManager,
+			gridX,
+			gridY,
+			delay,
+			fillType,
+			fillStrategyType,
+			drawType,
+		);
 
-		// Store
+		// Store Unique Parameters
 		this.GRID_WIDTH = gridWidth;
 		this.GRID_HEIGHT = gridHeight;
 

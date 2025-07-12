@@ -1,8 +1,5 @@
 import GridData from '../../../../grid/GridData.js';
 
-import FillType from '../../shape/fill/FillType.js';
-import FillStrategyType from '../../shape/fill/FillStrategyType.js';
-
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
@@ -23,12 +20,21 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		gridWidth,
 		gridHeight,
 		delay,
-		fillType = FillType.PassThrough,
-		fillStrategyType = FillStrategyType.PassThrough,
+		fillType,
+		fillStrategyType,
+		drawType,
 	) {
-		super(shapeManager, gridX, gridY, delay, fillType, fillStrategyType);
+		super(
+			shapeManager,
+			gridX,
+			gridY,
+			delay,
+			fillType,
+			fillStrategyType,
+			drawType,
+		);
 
-		// Store
+		// Store Unique Parameters
 		this.TEXT = text;
 		this.GRID_WIDTH = gridWidth;
 		this.GRID_HEIGHT = gridHeight;

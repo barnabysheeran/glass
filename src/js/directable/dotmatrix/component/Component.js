@@ -1,4 +1,8 @@
-// import ApplicationLogger from '../../../application/ApplicationLogger.js';
+import ApplicationLogger from '../../../application/ApplicationLogger.js';
+
+import FillType from '../../shape/fill/FillType.js';
+import FillStrategyType from '../../shape/fill/FillStrategyType.js';
+import DrawType from '../../shape/fill/DrawType.js';
 
 export default class Component {
 	SHAPE_MANAGER;
@@ -10,13 +14,23 @@ export default class Component {
 	FILL_TYPE;
 	FILL_STRATEGY_TYPE;
 
+	DRAW_TYPE;
+
 	DELAY = 0;
 
-	// #LOG_LEVEL = 4;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
-	constructor(shapeManager, gridX, gridY, delay, fillType, fillStrategyType) {
+	constructor(
+		shapeManager,
+		gridX,
+		gridY,
+		delay,
+		fillType = FillType.PassThrough,
+		fillStrategyType = FillStrategyType.PassThrough,
+		drawType = DrawType.Fill,
+	) {
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
 		this.GRID_X = gridX;
@@ -24,13 +38,15 @@ export default class Component {
 		this.DELAY = delay;
 		this.FILL_TYPE = fillType;
 		this.FILL_STRATEGY_TYPE = fillStrategyType;
+		this.DRAW_TYPE = drawType;
 
-		// ApplicationLogger.log(
-		// 	`Component gridX ${gridX} gridY ${gridY}` +
-		// 		` delay ${delay}` +
-		// 		` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}`,
-		// 	this.#LOG_LEVEL,
-		// );
+		ApplicationLogger.log(
+			`Component gridX ${gridX} gridY ${gridY}` +
+				` delay ${delay}` +
+				` fillType ${fillType} fillStrategyType ${this.FILL_STRATEGY_TYPE}` +
+				` drawType ${drawType}`,
+			this.#LOG_LEVEL,
+		);
 	}
 
 	// ____________________________________________________________________ Tick
