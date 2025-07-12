@@ -129,8 +129,7 @@ export default class ShapeManager {
 		fillStrategyType = FillStrategyType.PassThrough,
 		drawType = DrawType.Fill,
 	) {
-		const upperChar = character.toUpperCase();
-		const glyphData = SHAPE_GLYPH_DATA[upperChar];
+		const glyphData = this.#getShapeGlyphData(character);
 
 		if (!glyphData) {
 			ApplicationLogger.warn(
@@ -141,7 +140,7 @@ export default class ShapeManager {
 		}
 
 		ApplicationLogger.log(
-			`ShapeManager addShapeGlyph ${upperChar}`,
+			`ShapeManager addShapeGlyph ${character}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -165,8 +164,13 @@ export default class ShapeManager {
 	}
 
 	#getShapeGlyphData(character) {
+		// Try direct match first (for special chars and multi-char keys like 'heart')
+		let glyphData = SHAPE_GLYPH_DATA[character];
+		if (glyphData) return glyphData;
+
+		// Fallback to uppercase for standard alphabet
 		const upperChar = character.toUpperCase();
-		const glyphData = SHAPE_GLYPH_DATA[upperChar];
+		glyphData = SHAPE_GLYPH_DATA[upperChar];
 
 		if (!glyphData) {
 			ApplicationLogger.warn(

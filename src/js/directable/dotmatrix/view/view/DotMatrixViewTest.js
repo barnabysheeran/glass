@@ -14,7 +14,7 @@ import ComponentRectangle from '../../component/primative/ComponentRectangle.js'
 import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	#STRING_CHAR_TEST = `-_/:;,.'!"^<>`;
+	#STRING_CHAR_TEST = `-_/:;,.'!"^<> . . .`;
 
 	// ____________________________________________________________________ Draw
 
