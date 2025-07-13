@@ -23,19 +23,19 @@ export default class DirectableDotMatrixConstants {
 		return this.#GLYPH_SPACING_X;
 	}
 
-	// _________________________________________________________________________
+	// ___________________________________________________________________ Delay
 
-	static #GLYPH_DELAY = 2;
+	static #GLYPH_DELAY = 3;
 
 	static getGlyphDelay() {
 		return this.#GLYPH_DELAY;
 	}
 
-	// _________________________________________________________________________
+	// ______________________________________________________________ Responsive
 
-	static BLOCK_WIDTH_MOBILE = 130;
+	static #BLOCK_WIDTH_MOBILE = 130;
 
 	static getBlockWidthMobile() {
-		return this.BLOCK_WIDTH_MOBILE;
+		return this.#BLOCK_WIDTH_MOBILE;
 	}
 }

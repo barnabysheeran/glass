@@ -3,6 +3,7 @@ import GridData from '../../../../grid/GridData.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -49,7 +50,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 3,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS,
+			GRID_WIDTH_IN_CELLS_THIRD,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -64,7 +65,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * 4,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS,
+			GRID_WIDTH_IN_CELLS_THIRD * 2,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -136,18 +137,20 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
-		const BLOCK_DELAY_PER_LINE = 5;
+		// const BLOCK_DELAY_PER_LINE = 1;
 
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'HELLO',
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);
@@ -158,14 +161,16 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				`I'M`,
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				120 + BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);
@@ -176,14 +181,16 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'BARNABY',
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				240 + BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);
@@ -331,18 +338,19 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 10;
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
-		const BLOCK_DELAY_PER_LINE = 5;
 
 		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				DrawType.Clear,
@@ -354,14 +362,16 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'0',
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				120 + BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				DrawType.Clear,
@@ -373,14 +383,16 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
 			// Create Component
+			const Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'X',
 				0,
-				LINE_HEIGHT * i,
+				Y,
 				100,
 				50,
-				240 + BLOCK_DELAY_PER_LINE * i,
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				DrawType.Clear,
