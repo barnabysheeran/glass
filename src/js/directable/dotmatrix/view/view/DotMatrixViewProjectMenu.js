@@ -13,6 +13,7 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
+import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start
@@ -72,6 +73,73 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT);
+
+			// Get Component Details
+			const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
+			const GRID_WIDTH = COMPONENT.getGridWidth();
+
+			// Create Interactive Block
+			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+				GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
+				GRID_Y * GridData.getGridCellHeightPx(),
+				GRID_WIDTH * GridData.getGridCellWidthPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+				{ projectId: PROJECT_DATA_ITEM['id'] },
+			);
+
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+		}
+	}
+
+	// ____________________________________________________________________ Draw
+
+	undraw(delayFrames) {
+		super.undraw(delayFrames);
+
+		// Get Line Height
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const BLOCK_WIDTH_MOBILE =
+			DirectableDotMatrixConstants.getBlockWidthMobile();
+
+		// Get Grid Data
+		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
+
+		// Get Project Data
+		const PROJECT_DATA = DataController.getProjects();
+
+		// Draw
+		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
+			// Get Project Data Item
+			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
+
+			// Grid Y
+			const GRID_Y = LINE_HEIGHT * (7 + i * 2);
+
+			// Text
+			let text = PROJECT_DATA_ITEM['name'];
+
+			if (GRID_WIDTH_IN_CELLS < BLOCK_WIDTH_MOBILE) {
+				text = PROJECT_DATA_ITEM['name-short'];
+			}
+
+			// Create Glyph Line
+			const COMPONENT = new ComponentGlyphLineCentered(
+				this.SHAPE_MANAGER,
+				text,
+				GRID_Y,
+				delayFrames +
+					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				DrawType.Clear,
 			);
 
 			// Store
