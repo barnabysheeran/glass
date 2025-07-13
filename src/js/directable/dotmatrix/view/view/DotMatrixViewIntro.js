@@ -15,18 +15,18 @@ import DrawType from '../../enum/DrawType.js';
 export default class DotMatrixViewIntro extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames = 0) {
-		super.start(startDelayFrames);
+	start(delayFrames = 0) {
+		super.start(delayFrames);
 
 		// Start
-		this.draw(startDelayFrames);
+		this.draw(delayFrames);
 	}
 
-	stop(stopDelayFrames = 0) {
-		super.stop();
+	stop(delayFrames = 0) {
+		super.stop(delayFrames);
 
 		// Stop
-		this.undraw(stopDelayFrames);
+		this.undraw(delayFrames);
 	}
 
 	// ____________________________________________________________________ Draw

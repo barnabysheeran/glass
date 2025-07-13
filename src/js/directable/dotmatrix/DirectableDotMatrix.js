@@ -9,13 +9,11 @@ import DotMatrixViewProjectMenu from './view/view/DotMatrixViewProjectMenu.js';
 import DotMatrixViewProject from './view/view/DotMatrixViewProject.js';
 import DotMatrixViewIntro from './view/view/DotMatrixViewIntro.js';
 import DotMatrixViewTest from './view/view/DotMatrixViewTest.js';
-import DotMatrixViewHolding from './view/view/DotMatrixViewHolding.js';
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 
 export default class DirectableDotMatrix {
 	#VIEW_IDS = Object.freeze({
 		TEST: 'test',
-		HOLDING: 'holding',
 		HEADER: 'header',
 		INTRO: 'intro',
 		MENU: 'menu',
@@ -89,14 +87,6 @@ export default class DirectableDotMatrix {
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
 				this.#VIEW_IDS.TEST,
-			),
-		);
-
-		this.#VIEWS.push(
-			new DotMatrixViewHolding(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.HOLDING,
 			),
 		);
 

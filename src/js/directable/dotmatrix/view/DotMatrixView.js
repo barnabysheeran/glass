@@ -87,15 +87,6 @@ export default class DotMatrixView {
 		this.INTERACTIVE_BLOCK_IDS = [];
 	}
 
-	// ___________________________________________________________________ Delay
-
-	// TODO Remove in favour of DirectableDotMatrixDelays
-
-	getDelayFromGridY(gridY) {
-		// TODO Hardcoded delay
-		return gridY * 10;
-	}
-
 	// __________________________________________________________________ Access
 
 	getViewId() {

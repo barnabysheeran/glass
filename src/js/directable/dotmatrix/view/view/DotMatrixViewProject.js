@@ -3,6 +3,7 @@ import DataController from '../../../../data/DataController.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -14,12 +15,18 @@ export default class DotMatrixViewProject extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames) {
-		super.start(startDelayFrames);
+	start(delayFrames = 0) {
+		super.start(delayFrames);
+
+		// Start
+		this.draw(delayFrames);
 	}
 
-	stop() {
-		super.stop();
+	stop(delayFrames = 0) {
+		super.stop(delayFrames);
+
+		// Stop
+		this.undraw(delayFrames);
 	}
 
 	// ______________________________________________________________ Project Id
@@ -30,7 +37,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
+	draw(delayFrames) {
 		super.draw();
 
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -44,15 +51,22 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			return;
 		}
 
+		//
+		let gridX = 0;
+		let gridY = LINE_HEIGHT * 10;
+
+		// TODO Long or Short Name
+
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			PROJECT_DATA_ITEM['name'],
-			8,
-			LINE_HEIGHT * 10,
+			gridX,
+			gridY,
 			100,
 			50,
-			this.getDelayFromGridY(10),
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -60,15 +74,19 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
+		// Next
+		gridY += LINE_HEIGHT * 2;
+
 		// Add Component Name Short
 		const COMPONENT_NAME_SHORT = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			PROJECT_DATA_ITEM['name-short'],
-			8,
-			LINE_HEIGHT * 11,
+			gridX,
+			gridY,
 			100,
 			50,
-			this.getDelayFromGridY(11),
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -78,14 +96,19 @@ export default class DotMatrixViewProject extends DotMatrixView {
 
 		// Add Credit ?
 		if (PROJECT_DATA_ITEM['credit']) {
+			// Next
+			gridY += LINE_HEIGHT * 2;
+
+			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
 				PROJECT_DATA_ITEM['credit']['text'],
-				8,
-				LINE_HEIGHT * 12,
+				gridX,
+				gridY,
 				100,
 				50,
-				this.getDelayFromGridY(12),
+				delayFrames +
+					DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);

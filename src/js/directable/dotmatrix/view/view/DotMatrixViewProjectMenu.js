@@ -17,18 +17,18 @@ import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
-	start(delayFrames) {
+	start(delayFrames = 0) {
 		super.start(delayFrames);
 
-		// Draw
+		// Start
 		this.draw(delayFrames);
 	}
 
-	stop() {
-		super.stop();
+	stop(delayFrames = 0) {
+		super.stop(delayFrames);
 
-		// Undraw
-		this.undraw();
+		// Stop
+		this.undraw(delayFrames);
 	}
 
 	// ____________________________________________________________________ Draw

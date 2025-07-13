@@ -24,14 +24,14 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	start(delayFrames = 0) {
 		super.start(delayFrames);
 
-		// Draw
+		// Start
 		this.draw(delayFrames);
 	}
 
 	stop(delayFrames = 0) {
-		super.stop();
+		super.stop(delayFrames);
 
-		// Undraw
+		// Stop
 		this.undraw(delayFrames);
 	}
 
