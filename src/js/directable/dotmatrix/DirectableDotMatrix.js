@@ -10,6 +10,7 @@ import DotMatrixViewProject from './view/view/DotMatrixViewProject.js';
 import DotMatrixViewIntro from './view/view/DotMatrixViewIntro.js';
 import DotMatrixViewTest from './view/view/DotMatrixViewTest.js';
 import DotMatrixViewHolding from './view/view/DotMatrixViewHolding.js';
+import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 
 export default class DirectableDotMatrix {
 	#VIEW_IDS = Object.freeze({
@@ -28,7 +29,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = this.#VIEW_IDS.TEST;
+	#viewIdCurrent = this.#VIEW_IDS.INTRO;
 
 	#LOG_LEVEL = 3;
 
@@ -100,8 +101,8 @@ export default class DirectableDotMatrix {
 		);
 
 		// Start Initial View
-		this.#VIEW_HEADER.draw();
-		this.#getViewById(this.#viewIdCurrent).draw();
+		this.#VIEW_HEADER.start();
+		this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -124,12 +125,15 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
-		// Undraw Current View
-		this.#getViewById(this.#viewIdCurrent).undraw();
+		const DELAY_PAGE_TRANSITION =
+			DirectableDotMatrixDelays.getDelayPageTransition();
 
-		// Draw Project View
+		// Stop Current View
+		this.#getViewById(this.#viewIdCurrent).stop();
+
+		// Start Project View
 		this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
-		this.#getViewById(this.#VIEW_IDS.PROJECT).draw();
+		this.#getViewById(this.#VIEW_IDS.PROJECT).start(DELAY_PAGE_TRANSITION);
 
 		// Store
 		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
@@ -138,8 +142,14 @@ export default class DirectableDotMatrix {
 	setMenuActive() {
 		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
 
+		const DELAY_PAGE_TRANSITION =
+			DirectableDotMatrixDelays.getDelayPageTransition();
+
+		// Stop Current View
+		this.#getViewById(this.#viewIdCurrent).stop();
+
 		// Show Menu View
-		this.#getViewById(this.#VIEW_IDS.MENU).draw();
+		this.#getViewById(this.#VIEW_IDS.MENU).start(DELAY_PAGE_TRANSITION);
 
 		// Store
 		this.#viewIdCurrent = this.#VIEW_IDS.MENU;
@@ -151,18 +161,22 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
-		// Reset Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].reset();
-		}
+		const DELAY_PAGE_TRANSITION =
+			DirectableDotMatrixDelays.getDelayPageTransition();
+
+		// Stop Current View
+		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Intro View
-		this.#getViewById(this.#VIEW_IDS.INTRO).draw();
+		this.#getViewById(this.#VIEW_IDS.INTRO).start(DELAY_PAGE_TRANSITION);
 
+		// Store
 		this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
 	}
 
 	// ___________________________________________________________________ Reset
+
+	// Set Size Requires a Reset - Redraw Current View
 
 	setSize(width, height) {
 		// Reset Views
@@ -181,8 +195,8 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		this.#VIEW_HEADER.draw();
-		this.#getViewById(this.#viewIdCurrent).draw();
+		this.#VIEW_HEADER.start();
+		this.#getViewById(this.#viewIdCurrent).start();
 	}
 
 	// ____________________________________________________________________ Util

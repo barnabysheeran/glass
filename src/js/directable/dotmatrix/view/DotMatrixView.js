@@ -9,6 +9,8 @@ export default class DotMatrixView {
 
 	#VIEW_ID = '';
 
+	isActive = false;
+
 	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
@@ -22,15 +24,52 @@ export default class DotMatrixView {
 		this.#VIEW_ID = viewId;
 	}
 
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames = 0) {
+		ApplicationLogger.log(
+			`DotMatrixView start ${this.#VIEW_ID} delay ${startDelayFrames}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Active
+		this.isActive = true;
+	}
+
+	stop() {
+		ApplicationLogger.log(
+			`DotMatrixView stop ${this.#VIEW_ID}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Inactive
+		this.isActive = false;
+	}
+
 	// ____________________________________________________________________ Draw
 
-	draw() {} // Stub
+	draw() {
+		ApplicationLogger.log(
+			`DotMatrixView draw ${this.#VIEW_ID}`,
+			this.#LOG_LEVEL,
+		);
+	}
 
-	onDrawComplete() {} // Stub
+	onDrawComplete() {
+		ApplicationLogger.log(
+			`DotMatrixView onDrawComplete ${this.#VIEW_ID}`,
+			this.#LOG_LEVEL,
+		);
+	}
 
 	// __________________________________________________________________ Undraw
 
-	undraw() {} // Stub
+	undraw() {
+		ApplicationLogger.log(
+			`DotMatrixView undraw ${this.#VIEW_ID}`,
+			this.#LOG_LEVEL,
+		);
+	}
 
 	// ____________________________________________________________________ Tick
 

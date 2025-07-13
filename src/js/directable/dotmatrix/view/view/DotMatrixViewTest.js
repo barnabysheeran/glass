@@ -17,9 +17,21 @@ import DrawType from '../../enum/DrawType.js';
 export default class DotMatrixViewTest extends DotMatrixView {
 	#STRING_CHAR_TEST = `-_/:;,.'!"^<>`;
 
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames) {
+		super.start(startDelayFrames);
+	}
+
+	stop() {
+		super.stop();
+	}
+
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		super.draw();
+
 		// Get Line Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
@@ -419,6 +431,11 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	tick() {
 		// Not calling super.tick
+
+		// Active ?
+		if (this.isActive === false) {
+			return;
+		}
 
 		const RANDOM_DRAW = Math.random();
 

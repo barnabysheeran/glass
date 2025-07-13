@@ -25,6 +25,8 @@ export default class DirectableDotMatrixConstants {
 
 	// ___________________________________________________________________ Delay
 
+	// TODO Move to Delays
+
 	static #GLYPH_DELAY = 3;
 
 	static getGlyphDelay() {

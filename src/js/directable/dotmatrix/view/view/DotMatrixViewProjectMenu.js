@@ -14,9 +14,21 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames) {
+		super.start(startDelayFrames);
+	}
+
+	stop() {
+		super.stop();
+	}
+
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		super.draw();
+
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();

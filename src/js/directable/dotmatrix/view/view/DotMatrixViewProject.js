@@ -10,7 +10,17 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
 export default class DotMatrixViewProject extends DotMatrixView {
-	#projectId = 0;
+	#projectId;
+
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames) {
+		super.start(startDelayFrames);
+	}
+
+	stop() {
+		super.stop();
+	}
 
 	// ______________________________________________________________ Project Id
 
@@ -21,6 +31,8 @@ export default class DotMatrixViewProject extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		super.draw();
+
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data

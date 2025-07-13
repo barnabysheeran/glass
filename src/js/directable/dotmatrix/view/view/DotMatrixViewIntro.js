@@ -11,9 +11,21 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames) {
+		super.start(startDelayFrames);
+	}
+
+	stop() {
+		super.stop();
+	}
+
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		super.draw();
+
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Grid Data

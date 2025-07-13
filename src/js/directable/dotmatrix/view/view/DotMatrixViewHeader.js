@@ -15,11 +15,24 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#INTERACTIVE_BLOCK;
 
+	// TODO Remove isActive in favour of super.isActive
 	#isActive = false;
+
+	// ___________________________________________________________________ Start
+
+	start(startDelayFrames) {
+		super.start(startDelayFrames);
+	}
+
+	stop() {
+		super.stop();
+	}
 
 	// ____________________________________________________________________ Draw
 
 	draw() {
+		super.draw();
+
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
