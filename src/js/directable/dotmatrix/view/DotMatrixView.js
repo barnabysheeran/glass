@@ -89,6 +89,8 @@ export default class DotMatrixView {
 
 	// ___________________________________________________________________ Delay
 
+	// TODO Remove in favour of DirectableDotMatrixDelays
+
 	getDelayFromGridY(gridY) {
 		// TODO Hardcoded delay
 		return gridY * 10;
