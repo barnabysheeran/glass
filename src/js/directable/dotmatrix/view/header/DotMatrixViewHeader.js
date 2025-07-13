@@ -37,8 +37,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	// ____________________________________________________________________ Draw
 
-	draw(drawDelayFrames) {
-		super.draw();
+	draw(delayFrames) {
+		super.draw(delayFrames);
 
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
@@ -52,7 +52,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			'Menu',
 			GRID_Y,
-			drawDelayFrames +
+			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,

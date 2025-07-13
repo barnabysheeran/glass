@@ -127,12 +127,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Create Component Line Top
 		gridY = LINE_HEIGHT * 4;
 
-		console.log(
-			' - ' +
-				delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
-		);
-
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			gridY,

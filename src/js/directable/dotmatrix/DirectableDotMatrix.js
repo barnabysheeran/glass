@@ -77,7 +77,7 @@ export default class DirectableDotMatrix {
 			new DotMatrixViewProjectMenu(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.MENU,
+				this.#VIEW_IDS.PROJECT_MENU,
 			),
 		);
 
@@ -157,10 +157,10 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Menu View
-		this.#getViewById(this.#VIEW_IDS.MENU).start(DELAY_PAGE_TRANSITION);
+		this.#getViewById(this.#VIEW_IDS.PROJECT_MENU).start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		this.#viewIdCurrent = this.#VIEW_IDS.MENU;
+		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT_MENU;
 	}
 
 	setMenuInactive() {

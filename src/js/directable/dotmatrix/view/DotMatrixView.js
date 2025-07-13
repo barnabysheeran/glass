@@ -83,8 +83,18 @@ export default class DotMatrixView {
 	// ___________________________________________________________________ Reset
 
 	#clearInteractiveBlocks() {
+		ApplicationLogger.log(
+			`DotMatrixView clearInteractiveBlocks ${this.#VIEW_ID}`,
+			this.#LOG_LEVEL,
+		);
+
 		// Destroy Interactive Blocks
 		for (let i = 0; i < this.INTERACTIVE_BLOCK_IDS.length; i += 1) {
+			ApplicationLogger.log(
+				` - Removing Block ${this.INTERACTIVE_BLOCK_IDS[i]}`,
+				this.#LOG_LEVEL,
+			);
+
 			InteractiveSurface.removeBlock(this.INTERACTIVE_BLOCK_IDS[i]);
 		}
 

@@ -104,7 +104,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		super.undraw(delayFrames);
 
 		// Get Line Height
-		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
@@ -144,24 +143,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-
-			// Get Component Details
-			const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
-			const GRID_WIDTH = COMPONENT.getGridWidth();
-
-			// Create Interactive Block
-			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-				GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
-				GRID_Y * GridData.getGridCellHeightPx(),
-				GRID_WIDTH * GridData.getGridCellWidthPx(),
-				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-				this.onButtonMenuClick.bind(this),
-				this.onButtonMenuOver.bind(this),
-				this.onButtonMenuOut.bind(this),
-				{ projectId: PROJECT_DATA_ITEM['id'] },
-			);
-
-			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 		}
 	}
 
