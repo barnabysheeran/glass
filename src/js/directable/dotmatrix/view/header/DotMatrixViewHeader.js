@@ -6,12 +6,13 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
+import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#INTERACTIVE_BLOCK;
@@ -78,14 +79,18 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.INTERACTIVE_BLOCK_IDS.push(this.#INTERACTIVE_BLOCK);
 
 		// Test Button
-		// const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
-		// 	this.SHAPE_MANAGER,
-		// 	'TEST',
-		// 	10,
-		// 	10,
-		// );
+		let gridY = 10;
 
-		// this.COMPONENTS.push(COMPONENT_BUTTON_TEST);
+		const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
+			this.SHAPE_MANAGER,
+			'TEST',
+			2,
+			gridY,
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_BUTTON_TEST);
 	}
 
 	// _________________________________________________ Interaction Button Menu
@@ -93,8 +98,14 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	onButtonMenuClick() {
 		if (this.#isActive === true) {
 			ApplicationDispatcher.dispatch('view-header-menu-inactive');
+
+			// Inactive
+			this.#isActive = false;
 		} else {
 			ApplicationDispatcher.dispatch('view-header-menu-active');
+
+			// Active
+			this.#isActive = true;
 		}
 	}
 
