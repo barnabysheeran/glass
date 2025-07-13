@@ -3,6 +3,7 @@ import GridData from '../../../../grid/GridData.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -13,8 +14,11 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 export default class DotMatrixViewIntro extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames) {
+	start(startDelayFrames = 0) {
 		super.start(startDelayFrames);
+
+		// Start
+		this.draw(startDelayFrames);
 	}
 
 	stop() {
@@ -23,21 +27,31 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
-		super.draw();
+	draw(drawDelayFrames) {
+		super.draw(drawDelayFrames);
 
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Grid Data
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
-
 		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
+		let gridY;
+
 		// Create Component Line Top
+		gridY = LINE_HEIGHT * 4;
+
+		console.log(
+			' - ' +
+				drawDelayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
+		);
+
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			LINE_HEIGHT * 4,
-			1,
+			gridY,
+			drawDelayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -47,54 +61,18 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Add Dummy Text with Line Height
 		const BLOCK_GRID_TOP = 5;
 		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
-		// const BLOCK_DELAY_PER_LINE = 5;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
 			// Create Component
+			const GRID_Y = LINE_HEIGHT * i;
+
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
 				'I',
 				0,
-				LINE_HEIGHT * i,
-				100,
-				50,
-				this.getDelayFromGridY(i),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'I',
-				0,
-				LINE_HEIGHT * i,
-				100,
-				50,
-				this.getDelayFromGridY(i),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'.',
-				0,
-				LINE_HEIGHT * i,
-				100,
-				50,
-				this.getDelayFromGridY(i),
+				GRID_Y,
+				drawDelayFrames +
+					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);
@@ -104,10 +82,13 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 
 		// Create Component Line Bottom
+		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
+
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
-			this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
+			gridY,
+			drawDelayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -115,20 +96,20 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 
 		// Create Component Dot
+		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
 
-		// const COMPONENT_DOT = new ComponentGlyphBoxWidthFull(
-		// 	this.SHAPE_MANAGER,
-		// 	'.,',
-		// 	0,
-		// 	LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1),
-		// 	100,
-		// 	50,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	this.getDelayFromGridY(BLOCK_GRID_BOTTOM + 1),
-		// );
+		const COMPONENT_DOT = new ComponentGlyphBoxWidthFull(
+			this.SHAPE_MANAGER,
+			'.,',
+			0,
+			gridY,
+			drawDelayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
 
-		// // Store
-		// this.COMPONENTS.push(COMPONENT_DOT);
+		// Store
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_DOT);
 	}
 }

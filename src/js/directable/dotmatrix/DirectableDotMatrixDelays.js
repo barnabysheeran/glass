@@ -11,7 +11,9 @@ export default class DirectableDotMatrixDelays {
 
 	// TODO Transition Type
 
-	static getDelayFromGridPosition(gridPositionX, gridPositionY) {
-		return gridPositionX * 10 + gridPositionY * 5;
+	static getDelayFromGridPosition(gridX, gridY) {
+		const DELAY = gridX * 5 + gridY * 1;
+
+		return DELAY;
 	}
 }

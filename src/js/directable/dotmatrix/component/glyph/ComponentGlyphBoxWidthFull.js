@@ -7,8 +7,6 @@ import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js'
 export default class ComponentGlyphBoxWidthFull extends Component {
 	// Unique Parameters
 	TEXT;
-	GRID_WIDTH;
-	GRID_HEIGHT;
 
 	// _________________________________________________________________________
 
@@ -17,8 +15,6 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		text,
 		gridX,
 		gridY,
-		gridWidth,
-		gridHeight,
 		delay,
 		fillType,
 		fillStrategyType,
@@ -36,11 +32,9 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 
 		// Store Unique Parameters
 		this.TEXT = text;
-		this.GRID_WIDTH = gridWidth;
-		this.GRID_HEIGHT = gridHeight;
 
 		// Create Shape
-		this.#createShape(text, gridWidth, gridHeight);
+		this.#createShape();
 	}
 
 	// ____________________________________________________________ Create Shape
