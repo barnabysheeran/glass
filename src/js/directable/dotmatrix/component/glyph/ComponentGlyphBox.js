@@ -3,6 +3,7 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class ComponentGlyphBox extends Component {
 	// Unique Parameters
@@ -50,7 +51,7 @@ export default class ComponentGlyphBox extends Component {
 	#createShape() {
 		// Get Constants
 		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
-		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
+		const GLYPH_DELAY = DirectableDotMatrixDelays.getGlyphDelay();
 
 		// Start at Grid X Position
 		let currentGridX = this.GRID_X;

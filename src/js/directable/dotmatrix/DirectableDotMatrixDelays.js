@@ -16,4 +16,12 @@ export default class DirectableDotMatrixDelays {
 
 		return Math.floor(DELAY);
 	}
+
+	// ___________________________________________________________________ Glyph
+
+	static #GLYPH_DELAY = 1;
+
+	static getGlyphDelay() {
+		return this.#GLYPH_DELAY;
+	}
 }

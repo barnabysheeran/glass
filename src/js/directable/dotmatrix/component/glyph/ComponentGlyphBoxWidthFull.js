@@ -3,6 +3,7 @@ import GridData from '../../../../grid/GridData.js';
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class ComponentGlyphBoxWidthFull extends Component {
 	// Unique Parameters
@@ -42,7 +43,7 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 	#createShape() {
 		// Get Constants
 		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
-		const GLYPH_DELAY = DirectableDotMatrixConstants.getGlyphDelay();
+		const GLYPH_DELAY = DirectableDotMatrixDelays.getGlyphDelay();
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();

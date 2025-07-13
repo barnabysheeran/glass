@@ -23,16 +23,6 @@ export default class DirectableDotMatrixConstants {
 		return this.#GLYPH_SPACING_X;
 	}
 
-	// ___________________________________________________________________ Delay
-
-	// TODO Move to Delays
-
-	static #GLYPH_DELAY = 3;
-
-	static getGlyphDelay() {
-		return this.#GLYPH_DELAY;
-	}
-
 	// ______________________________________________________________ Responsive
 
 	static #BLOCK_WIDTH_MOBILE = 130;

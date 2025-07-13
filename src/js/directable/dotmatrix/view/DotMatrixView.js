@@ -26,9 +26,9 @@ export default class DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames = 0) {
+	start(delayFrames) {
 		ApplicationLogger.log(
-			`DotMatrixView start ${this.#VIEW_ID} delay ${startDelayFrames}`,
+			`DotMatrixView start ${this.#VIEW_ID} delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -36,9 +36,9 @@ export default class DotMatrixView {
 		this.isActive = true;
 	}
 
-	stop() {
+	stop(delayFrames) {
 		ApplicationLogger.log(
-			`DotMatrixView stop ${this.#VIEW_ID}`,
+			`DotMatrixView stop ${this.#VIEW_ID} delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -48,9 +48,9 @@ export default class DotMatrixView {
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
+	draw(delayFrames) {
 		ApplicationLogger.log(
-			`DotMatrixView draw ${this.#VIEW_ID}`,
+			`DotMatrixView draw ${this.#VIEW_ID} delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 	}
@@ -64,9 +64,9 @@ export default class DotMatrixView {
 
 	// __________________________________________________________________ Undraw
 
-	undraw() {
+	undraw(delayFrames) {
 		ApplicationLogger.log(
-			`DotMatrixView undraw ${this.#VIEW_ID}`,
+			`DotMatrixView undraw ${this.#VIEW_ID} delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 	}
