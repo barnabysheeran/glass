@@ -12,22 +12,29 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames) {
-		super.start(startDelayFrames);
+	start(delayFrames) {
+		super.start(delayFrames);
+
+		// Draw
+		this.draw(delayFrames);
 	}
 
 	stop() {
 		super.stop();
+
+		// Undraw
+		this.undraw();
 	}
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
-		super.draw();
+	draw(delayFrames) {
+		super.draw(delayFrames);
 
 		// Get Line Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
@@ -61,7 +68,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				text,
 				GRID_Y,
-				this.getDelayFromGridY(i + 7),
+				delayFrames +
+					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);

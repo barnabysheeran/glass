@@ -11,6 +11,7 @@ import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
+import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#INTERACTIVE_BLOCK;
@@ -20,17 +21,23 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start(startDelayFrames) {
-		super.start(startDelayFrames);
+	start(delayFrames = 0) {
+		super.start(delayFrames);
+
+		// Draw
+		this.draw(delayFrames);
 	}
 
-	stop() {
+	stop(delayFrames = 0) {
 		super.stop();
+
+		// Undraw
+		this.undraw(delayFrames);
 	}
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
+	draw(drawDelayFrames) {
 		super.draw();
 
 		// Get Line Height
@@ -38,14 +45,15 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Constant Position
-		const GRID_Y = LINE_HEIGHT * 3;
+		const GRID_Y = LINE_HEIGHT * 2;
 
 		// Create Glyph Line Centered Component
 		const COMPONENT = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
-			'MENU',
+			'PROJECT',
 			GRID_Y,
-			this.getDelayFromGridY(3),
+			drawDelayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
