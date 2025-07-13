@@ -7,10 +7,10 @@ import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
+import DrawType from '../../enum/DrawType.js';
 
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
-import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
 	// ___________________________________________________________________ Start
@@ -44,12 +44,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// Create Component Line Top
 		gridY = LINE_HEIGHT * 4;
-
-		console.log(
-			' - ' +
-				delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
-		);
 
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,

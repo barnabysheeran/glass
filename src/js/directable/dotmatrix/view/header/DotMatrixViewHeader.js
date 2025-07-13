@@ -50,7 +50,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Create Glyph Line Centered Component
 		const COMPONENT = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
-			'PROJECT',
+			'Menu',
 			GRID_Y,
 			drawDelayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),

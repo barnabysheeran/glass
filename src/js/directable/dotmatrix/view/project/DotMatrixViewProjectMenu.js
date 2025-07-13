@@ -9,11 +9,11 @@ import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js'
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
+import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 import ApplicationDispatcher from '../../../../application/ApplicationDispatcher.js';
 import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
-import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ___________________________________________________________________ Start

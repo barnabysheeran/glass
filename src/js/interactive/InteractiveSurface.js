@@ -7,7 +7,7 @@ export default class InteractiveSurface {
 
 	static #ELEMENTS = new Map();
 
-	static #PIXEL_BORDER = 5;
+	static #PIXEL_BORDER = 10;
 
 	static #LOG_LEVEL = 2;
 
@@ -57,6 +57,9 @@ export default class InteractiveSurface {
 		ELEMENT.style.width = `${width}px`;
 		ELEMENT.style.height = `${height}px`;
 		this.#CONTAINER.appendChild(ELEMENT);
+
+		// Development - Add Border
+		ELEMENT.style.border = `1px solid #00ff00`;
 
 		// Set Click Data
 		if (Object.keys(clickData).length > 0) {

@@ -2,7 +2,7 @@
     "projects": [
 
         {
-            "id": "battlebuilder",
+            "id": "BattleBuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
             "media": [
@@ -11,100 +11,7 @@
         },
 
         {
-            "id": "hotsteppa",
-            "name": "Hotsteppa",
-            "name-short": "Hotsteppa",
-            "media": [
- 
-            ],
-            "text-technology": "Unity"
-        },
-
-        {
-            "id": "pikcells-onfigr",
-            "name": "Pikcells/Onfigr",
-            "name-short": "Pikcells/Onfigr",
-            "media": [
-
-            ],
-            "text-technology": "Javascript, WebGL, Three.js, Unity, Unreal Engine"
-        },
-
-        {
-            "id": "science-museum",
-            "name": "THE-SCIENCE-MUSEUM_SUN",
-            "name-short": "SCIENCE-MUSEUM",
-            "media": [
-
-            ],
-            "text-technology": "Unity"
-        },
-        
-        {
-            "id": "goodwood",
-            "name": "Goodwood_Festival-of-Speed",
-            "name-short": "Goodwood",
-            "media": [
-
-            ],
-            "text-technology": "Unity"
-        },
-
-        {
-            "id": "postmatter",
-            "name": "postMATTER_Exhibition",
-            "name-short": "postMATTER",
-            "media": [
-  
-            ],
-            "text-technology": "C++, Cinder, Kinect, Leap Motion"
-        },
-
-        {
-            "id": "ferrari",
-            "name": "Ferrari_Flagship-Store_Milan",
-            "name-short": "Ferrari",
-            "media": [
- 
-            ],
-            "text-technology": "Unity, Kinect"
-        },
-
-        {
-            "id": "honda",
-            "name": "HONDA_The-Other-Side",
-            "name-short": "HONDA",
-            "media": [
- 
-            ],
-            "text": "JavaScript, WebGL"
-        },
-
-        {
-            "id": "google",
-            "name": "GOOGLE_ABBEY-ROAD",
-            "name-short": "GOOGLE",
-            "media": [
-            ],
-            "credit": {
-                "text": "Stink Studios",
-                "url": ""
-            },
-            "text-technology": "JavaScript, WebGL"
-        },
-
-        {
-            "id": "adidas",
-            "name": "ADIDAS_Flash",
-            "name-short": "ADIDAS",
-            "media": [
-            ],
-
-            "text-technology": "Flash"
-        },
-
-        {
-            "id": "greenpeace",
+            "id": "Greenpeace",
             "name": "Greenpeace_Love-Letters-to-the-Future",
             "name-short": "Greenpeace",
             "media": [

@@ -36,11 +36,16 @@ export default class DotMatrixView {
 		this.isActive = true;
 	}
 
+	// ____________________________________________________________________ Stop
+
 	stop(delayFrames) {
 		ApplicationLogger.log(
 			`DotMatrixView stop ${this.#VIEW_ID} delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
+
+		// Clear Interactive Blocks
+		this.#clearInteractiveBlocks();
 
 		// Inactive
 		this.isActive = false;
@@ -77,7 +82,7 @@ export default class DotMatrixView {
 
 	// ___________________________________________________________________ Reset
 
-	reset() {
+	#clearInteractiveBlocks() {
 		// Destroy Interactive Blocks
 		for (let i = 0; i < this.INTERACTIVE_BLOCK_IDS.length; i += 1) {
 			InteractiveSurface.removeBlock(this.INTERACTIVE_BLOCK_IDS[i]);

@@ -11,6 +11,7 @@ import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js
 import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
+import DataController from '../../data/DataController.js';
 
 export default class DirectableDotMatrix {
 	#VIEW_IDS = Object.freeze({
@@ -41,6 +42,11 @@ export default class DirectableDotMatrix {
 			'DirectableDotMatrix ' + displayHeightPx + ' ' + displayHeightPx,
 			this.#LOG_LEVEL,
 		);
+
+		// Get Project Data
+		const PROJECT_DATA = DataController.getProjects();
+
+		console.log('DirectableDotMatrix PROJECT_DATA', PROJECT_DATA);
 
 		// Create Dot Manager
 		this.#DOT_MANAGER = new DotManager(displayWidthPx, displayHeightPx);
@@ -74,6 +80,17 @@ export default class DirectableDotMatrix {
 				this.#VIEW_IDS.MENU,
 			),
 		);
+
+		// Create Project Views
+		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
+			const PROJECT = PROJECT_DATA[i];
+			const PROJECT_ID = PROJECT.id;
+
+			ApplicationLogger.log(
+				'DirectableDotMatrix create project view ' + PROJECT_ID,
+				this.#LOG_LEVEL,
+			);
+		}
 
 		this.#VIEWS.push(
 			new DotMatrixViewProject(
@@ -170,10 +187,9 @@ export default class DirectableDotMatrix {
 	// Set Size Requires a Reset - Redraw Current View
 
 	setSize(width, height) {
-		// Reset Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].reset();
-		}
+		// Stop
+		this.#VIEW_HEADER.stop();
+		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Reset Component Manager
 		this.#COMPONENT_MANAGER.reset();

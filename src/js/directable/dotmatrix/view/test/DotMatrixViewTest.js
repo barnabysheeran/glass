@@ -7,12 +7,12 @@ import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
+import DrawType from '../../enum/DrawType.js';
 
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
-import DrawType from '../../enum/DrawType.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
 	#STRING_CHAR_TEST = `-_/:;,.'!"^<>`;
