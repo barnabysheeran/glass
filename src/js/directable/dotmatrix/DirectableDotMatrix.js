@@ -4,20 +4,21 @@ import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
 import ComponentManager from './component/ComponentManager.js';
 
-import DotMatrixViewHeader from './view/view/DotMatrixViewHeader.js';
-import DotMatrixViewProjectMenu from './view/view/DotMatrixViewProjectMenu.js';
-import DotMatrixViewProject from './view/view/DotMatrixViewProject.js';
-import DotMatrixViewIntro from './view/view/DotMatrixViewIntro.js';
-import DotMatrixViewTest from './view/view/DotMatrixViewTest.js';
+import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
+import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
+import DotMatrixViewProject from './view/project/DotMatrixViewProject.js';
+import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
+import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
+
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 
 export default class DirectableDotMatrix {
 	#VIEW_IDS = Object.freeze({
-		TEST: 'test',
 		HEADER: 'header',
 		INTRO: 'intro',
-		MENU: 'menu',
 		PROJECT: 'project',
+		PROJECT_MENU: 'project-menu',
+		TEST: 'test',
 	});
 
 	#DOT_MANAGER;
