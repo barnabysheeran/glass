@@ -13,6 +13,8 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
+	#delayFramesReDraw = -1;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -27,6 +29,28 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// Stop
 		this.undraw(delayFrames);
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick() {
+		// Not calling super
+
+		// Active ?
+		if (this.isActive === false) {
+			return;
+		}
+
+		// Redraw ?
+		if (this.#delayFramesReDraw > 0) {
+			// Count Down
+			this.#delayFramesReDraw -= 1;
+
+			// Redraw
+			if (this.#delayFramesReDraw === 0) {
+				this.draw(0);
+			}
+		}
 	}
 
 	// ____________________________________________________________________ Draw
@@ -109,6 +133,17 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_DOT);
+	}
+
+	onDrawComplete() {
+		super.onDrawComplete();
+
+		// Undraw
+		this.undraw(0);
+
+		// ReDraw Delay
+		// TODO Hardcoded for now
+		this.#delayFramesReDraw = 10;
 	}
 
 	// __________________________________________________________________ Undraw

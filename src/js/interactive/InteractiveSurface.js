@@ -99,8 +99,6 @@ export default class InteractiveSurface {
 		const element = this.#ELEMENTS.get(uuid);
 
 		if (element) {
-			console.log('Removing Interactive Block', uuid);
-
 			element.remove();
 			this.#ELEMENTS.delete(uuid);
 		}

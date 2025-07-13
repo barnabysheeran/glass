@@ -39,4 +39,11 @@ export default class ComponentManager {
 		// Clear Components Array
 		this.#COMPONENTS = [];
 	}
+
+	// __________________________________________________________________ Access
+
+	getActiveComponentTotal() {
+		// Return Active Component Total
+		return this.#COMPONENTS.length;
+	}
 }

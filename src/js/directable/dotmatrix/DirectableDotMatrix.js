@@ -121,8 +121,18 @@ export default class DirectableDotMatrix {
 			this.#VIEWS[i].tick(frameDeltaMS);
 		}
 
-		// Component Manager
+		// Tick Component Manager
 		this.#COMPONENT_MANAGER.tick();
+
+		// Get Active Component Total
+		const ACTIVE_COMPONENT_TOTAL =
+			this.#COMPONENT_MANAGER.getActiveComponentTotal();
+
+		// Components Complete ?
+		if (ACTIVE_COMPONENT_TOTAL === 0) {
+			// View Draw Complete
+			this.#getViewById(this.#viewIdCurrent).onDrawComplete();
+		}
 	}
 
 	// ____________________________________________________________________ View
