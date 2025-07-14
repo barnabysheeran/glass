@@ -53,7 +53,6 @@ export default class ComponentGlyphBox extends Component {
 	#createShape() {
 		// Get Constants
 		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
-		const GLYPH_DELAY = DirectableDotMatrixDelays.getGlyphDelay();
 
 		// Start at Grid X Position
 		let currentGridX = this.GRID_X;
@@ -68,7 +67,7 @@ export default class ComponentGlyphBox extends Component {
 				GLYPH_NAME,
 				currentGridX,
 				this.GRID_Y,
-				this.DELAY + i * GLYPH_DELAY,
+				this.DELAY + i * this.DELAY_GLYPH,
 				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
 				this.DRAW_TYPE,

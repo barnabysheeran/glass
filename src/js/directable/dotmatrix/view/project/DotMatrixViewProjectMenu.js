@@ -25,6 +25,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#GRID_WIDTH_GLYPHS;
 
 	#DELAY_GLYPH = 1;
+	#DELAY_GLYPH_FAST = 0.1;
 
 	// ___________________________________________________________________ Start
 
@@ -274,7 +275,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH,
+			this.#DELAY_GLYPH_FAST,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -310,7 +311,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH,
+			this.#DELAY_GLYPH_FAST,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,

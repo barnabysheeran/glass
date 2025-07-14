@@ -45,7 +45,6 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 	#createShape() {
 		// Get Constants
 		const GLYPH_SPACING_X = DirectableDotMatrixConstants.getGlyphSpacingX();
-		const GLYPH_DELAY = DirectableDotMatrixDelays.getGlyphDelay();
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
@@ -96,7 +95,7 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 				GLYPH_NAME,
 				currentGridX,
 				this.GRID_Y,
-				this.DELAY + i * GLYPH_DELAY,
+				this.DELAY + i * this.DELAY_GLYPH,
 				this.FILL_TYPE,
 				this.FILL_STRATEGY_TYPE,
 				this.DRAW_TYPE,
