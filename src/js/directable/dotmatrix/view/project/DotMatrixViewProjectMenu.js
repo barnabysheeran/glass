@@ -39,9 +39,15 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	draw(delayFrames) {
 		super.draw(delayFrames);
 
-		// Get Line Height
+		// Get Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
+
+		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
+
+		// Get Width
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
 
@@ -57,7 +63,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
 			// Grid Y
-			const GRID_Y = LINE_HEIGHT * (7 + i * 2);
+			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * 2);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
@@ -105,8 +111,14 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	undraw(delayFrames) {
 		super.undraw(delayFrames);
 
-		// Get Line Height
+		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
+
+		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
+
+		// Get Width
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
 
@@ -122,7 +134,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
 			// Grid Y
-			const GRID_Y = LINE_HEIGHT * (7 + i * 2);
+			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * 2);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];

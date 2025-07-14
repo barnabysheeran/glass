@@ -22,6 +22,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	#gridY = 0;
 	#gridWidthGlyphs = 0;
 
+	#LINE_HEIGHT_ABOVE_HEADER = 2;
+
 	// TODO Remove isActive in favour of super.isActive
 	#isActive = false;
 
@@ -49,9 +51,12 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Get Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
 
 		// Constant Position
-		this.#gridY = LINE_HEIGHT * 2;
+		this.#gridY =
+			LINE_HEIGHT * (LINE_HEIGHT_HEADER - this.#LINE_HEIGHT_ABOVE_HEADER);
 
 		// Create Glyph Line Centered Component
 		const COMPONENT = new ComponentGlyphLineCentered(
@@ -84,6 +89,37 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 	}
 
+	// __________________________________________________________________ Undraw
+
+	undraw(delayFrames) {
+		super.undraw(delayFrames);
+
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
+
+		// Constant Position
+		const GRID_Y =
+			LINE_HEIGHT * (LINE_HEIGHT_HEADER - this.#LINE_HEIGHT_ABOVE_HEADER);
+
+		// Create Glyph Line Centered Component
+		const COMPONENT = new ComponentGlyphLineCentered(
+			this.SHAPE_MANAGER,
+			'Menu',
+			GRID_Y,
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT);
+	}
+
+	// _______________________________________________________________ Rectangle
+
 	#drawSurroundingRectangle(delayFrames) {
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -107,32 +143,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
-	}
-
-	// __________________________________________________________________ Undraw
-
-	undraw(delayFrames) {
-		super.undraw(delayFrames);
-
-		// Get Line Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Constant Position
-		const GRID_Y = LINE_HEIGHT * 2;
-
-		// Create Glyph Line Centered Component
-		const COMPONENT = new ComponentGlyphLineCentered(
-			this.SHAPE_MANAGER,
-			'Menu',
-			GRID_Y,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT);
 	}
 
 	#undrawSurroundingRectangle(delayFrames) {
@@ -161,7 +171,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 
-	// _________________________________________________ Interaction Button Menu
+	// _____________________________________________________________ Interaction
 
 	onButtonMenuClick() {
 		if (this.#isActive === true) {
@@ -169,17 +179,39 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			// Inactive
 			this.#isActive = false;
+
+			// Unsurround Button
+			this.#drawButtonUnsurrounded();
 		} else {
 			ApplicationDispatcher.dispatch('view-header-menu-active');
 
 			// Active
 			this.#isActive = true;
+
+			// Surround Button
+			this.#drawButtonSurrounded();
 		}
 	}
 
-	// TODO Hardcoded delay
-
 	onButtonMenuOver() {
+		if (this.#isActive === false) {
+			this.#drawButtonSurrounded();
+		} else {
+			this.#drawButtonUnsurrounded();
+		}
+	}
+
+	onButtonMenuOut() {
+		if (this.#isActive === false) {
+			this.#drawButtonUnsurrounded();
+		} else {
+			this.#drawButtonSurrounded();
+		}
+	}
+
+	// __________________________________________________________________ Button
+
+	#drawButtonSurrounded() {
 		// Draw Surrounding Rectangle
 		this.#drawSurroundingRectangle(0);
 
@@ -187,7 +219,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.undraw(this.#DELAY_ROLLOVER_REDRAW);
 	}
 
-	onButtonMenuOut() {
+	#drawButtonUnsurrounded() {
 		// Undraw Surrounding Rectangle
 		this.#undrawSurroundingRectangle(0);
 

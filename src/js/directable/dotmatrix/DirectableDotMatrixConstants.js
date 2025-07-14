@@ -1,4 +1,18 @@
 export default class DirectableDotMatrixConstants {
+	// __________________________________________________________________ Header
+
+	static #LINE_HEIGHT_HEADER = 6;
+
+	static getLineHeightHeader() {
+		return this.#LINE_HEIGHT_HEADER;
+	}
+
+	static #LINE_HEIGHT_FOOTER = 7;
+
+	static getLineHeightFooter() {
+		return this.#LINE_HEIGHT_FOOTER;
+	}
+
 	// ___________________________________________________________________ Glyph
 
 	static #CHARACTER_HEIGHT = 5;

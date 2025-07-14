@@ -58,17 +58,24 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	draw(delayFrames) {
 		super.draw(delayFrames);
 
+		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
+		const LINE_HEIGHT_FOOTER =
+			DirectableDotMatrixConstants.getLineHeightFooter();
 
 		// Get Grid Data
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
-		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
+		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
-		let gridY;
+		// Calculate
+		const LINE_HEIGHT_MAX = GRID_HEIGHT_IN_LINES - LINE_HEIGHT_FOOTER;
+
+		// Variable
+		let gridY = LINE_HEIGHT * LINE_HEIGHT_HEADER;
 
 		// Create Component Line Top
-		gridY = LINE_HEIGHT * 4;
-
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			gridY,
@@ -80,11 +87,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
-		// Add Dummy Text with Line Height
-		const BLOCK_GRID_TOP = 5;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
-
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
+		// Add Text with Line Height
+		for (let i = LINE_HEIGHT_HEADER + 1; i < LINE_HEIGHT_MAX; i += 1) {
 			// Create Component
 			const GRID_Y = LINE_HEIGHT * i;
 
@@ -104,7 +108,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 
 		// Create Component Line Bottom
-		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
+		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
 
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
@@ -118,7 +122,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 
 		// Create Component Dot
-		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
+		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
 
 		const COMPONENT_DOT = new ComponentGlyphBoxWidthFull(
 			this.SHAPE_MANAGER,
@@ -151,17 +155,24 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	undraw(delayFrames) {
 		super.undraw(delayFrames);
 
+		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT_HEADER =
+			DirectableDotMatrixConstants.getLineHeightHeader();
+		const LINE_HEIGHT_FOOTER =
+			DirectableDotMatrixConstants.getLineHeightFooter();
 
 		// Get Grid Data
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
-		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
+		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
-		let gridY;
+		// Calculate
+		const LINE_HEIGHT_MAX = GRID_HEIGHT_IN_LINES - LINE_HEIGHT_FOOTER;
+
+		// Variable
+		let gridY = LINE_HEIGHT * LINE_HEIGHT_HEADER;
 
 		// Create Component Line Top
-		gridY = LINE_HEIGHT * 4;
-
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			gridY,
@@ -174,11 +185,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
-		// Add Dummy Text with Line Height
-		const BLOCK_GRID_TOP = 5;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 8;
-
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
+		// Add Text with Line Height
+		for (let i = LINE_HEIGHT_HEADER + 1; i < LINE_HEIGHT_MAX; i += 1) {
 			// Create Component
 			const GRID_Y = LINE_HEIGHT * i;
 
@@ -199,7 +207,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 
 		// Create Component Line Bottom
-		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
+		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
 
 		const LINE_BOTTOM = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
@@ -214,7 +222,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 
 		// Create Component Dot
-		gridY = LINE_HEIGHT * (BLOCK_GRID_BOTTOM + 1);
+		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
 
 		const COMPONENT_DOT = new ComponentGlyphBoxWidthFull(
 			this.SHAPE_MANAGER,
