@@ -15,7 +15,7 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	#STRING_CHAR_TEST = `-_/:;,.'!"^<>`;
+	#STRING_CHAR_TEST = `- _ / : ; , . ' ! " ^ < > {heart}`;
 
 	// ___________________________________________________________________ Start
 

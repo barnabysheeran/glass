@@ -68,6 +68,17 @@ export default class Component {
 		return isComplete;
 	}
 
+	// _____________________________________________________________ Glyph Codes
+
+	parseTextToGlyphCodes(text) {
+		console.log(`ComponentGlyphBox parseTextToGlyphCodes`, text);
+
+		const GLYPH_CODES = [];
+
+		console.log(' - GlYPH_CODES', GLYPH_CODES);
+
+		return GLYPH_CODES
+
 	// _________________________________________________________________ Destroy
 
 	destroy() {

@@ -15,7 +15,7 @@ export default class ShapeManager {
 
 	#SHAPES = [];
 
-	#LOG_LEVEL = -1; // 4;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
@@ -121,7 +121,7 @@ export default class ShapeManager {
 	// ___________________________________________________________________ Glyph
 
 	addShapeGlyph(
-		character,
+		glyphCode,
 		gridX,
 		gridY,
 		delay = 0,
@@ -129,20 +129,20 @@ export default class ShapeManager {
 		fillStrategyType = FillStrategyType.PassThrough,
 		drawType = DrawType.Fill,
 	) {
-		const glyphData = this.#getShapeGlyphData(character);
+		const glyphData = this.#getShapeGlyphData(glyphCode);
 
 		if (!glyphData) {
 			ApplicationLogger.warn(
-				`ShapeManager addShapeGlyph Unknown character '${character}'`,
+				`ShapeManager addShapeGlyph Unknown character '${glyphCode}'`,
 				this.#LOG_LEVEL,
 			);
 			return null;
 		}
 
-		ApplicationLogger.log(
-			`ShapeManager addShapeGlyph ${character}`,
-			this.#LOG_LEVEL,
-		);
+		// ApplicationLogger.log(
+		// 	`ShapeManager addShapeGlyph ${glyphCode} at (${gridX}, ${gridY})`,
+		// 	this.#LOG_LEVEL,
+		// );
 
 		// Create Shape
 		const SHAPE = new ShapeGlyph(
