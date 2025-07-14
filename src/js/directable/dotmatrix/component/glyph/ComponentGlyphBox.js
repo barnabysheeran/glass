@@ -64,8 +64,6 @@ export default class ComponentGlyphBox extends Component {
 			// Get Glyph Code
 			const GLYPH_CODE = GLYPH_CODES[i];
 
-			console.log(`ComponentGlyphBox Glyph Code: ${GLYPH_CODE}`);
-
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 				GLYPH_CODE,
