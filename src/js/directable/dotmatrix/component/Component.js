@@ -26,7 +26,8 @@ export default class Component {
 		shapeManager,
 		gridX,
 		gridY,
-		delay,
+		delay = 0,
+		delayGlyph = 0,
 		fillType = FillType.PassThrough,
 		fillStrategyType = FillStrategyType.PassThrough,
 		drawType = DrawType.Fill,
@@ -44,6 +45,7 @@ export default class Component {
 		this.GRID_X = gridX;
 		this.GRID_Y = gridY;
 		this.DELAY = delay;
+		this.DELAY_GLYPH = delayGlyph;
 		this.FILL_TYPE = fillType;
 		this.FILL_STRATEGY_TYPE = fillStrategyType;
 		this.DRAW_TYPE = drawType;

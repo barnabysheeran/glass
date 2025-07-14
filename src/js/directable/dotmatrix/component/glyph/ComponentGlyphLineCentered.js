@@ -19,11 +19,21 @@ export default class ComponentGlyphLineCentered extends Component {
 		text,
 		gridY,
 		delay,
+		delayGlyph,
 		fillType,
 		fillStrategyType,
 		drawType,
 	) {
-		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType, drawType);
+		super(
+			shapeManager,
+			0,
+			gridY,
+			delay,
+			delayGlyph,
+			fillType,
+			fillStrategyType,
+			drawType,
+		);
 
 		// Store Unique Parameters
 		this.TEXT = text;

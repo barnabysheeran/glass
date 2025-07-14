@@ -24,6 +24,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#LINE_HEIGHT_ABOVE_HEADER = 2;
 
+	#DELAY_GLYPH = 1;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -65,6 +67,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.#gridY,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, this.#gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -112,6 +115,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_Y,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
@@ -209,6 +213,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -234,6 +239,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,

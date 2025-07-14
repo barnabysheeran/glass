@@ -14,6 +14,8 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 export default class DotMatrixViewProject extends DotMatrixView {
 	#projectId;
 
+	#DELAY_GLYPH = 1;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -68,6 +70,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			50,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -88,6 +91,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			50,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -110,6 +114,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				50,
 				delayFrames +
 					DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);
@@ -151,6 +156,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			50,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
@@ -172,6 +178,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			50,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
@@ -195,6 +202,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				50,
 				delayFrames +
 					DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				DrawType.Clear,

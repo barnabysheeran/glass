@@ -9,11 +9,21 @@ export default class ComponentLineWidthFull extends Component {
 		shapeManager,
 		gridY,
 		delay,
+		delayGlyph,
 		fillType,
 		fillStrategyType,
 		drawType,
 	) {
-		super(shapeManager, 0, gridY, delay, fillType, fillStrategyType, drawType);
+		super(
+			shapeManager,
+			0,
+			gridY,
+			delay,
+			delayGlyph,
+			fillType,
+			fillStrategyType,
+			drawType,
+		);
 
 		// Create Shape
 		this.#createShape();
