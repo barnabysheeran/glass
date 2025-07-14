@@ -120,59 +120,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT);
 	}
 
-	// _______________________________________________________________ Rectangle
-
-	#drawSurroundingRectangle(delayFrames) {
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Position and Size
-		const GRID_X = this.#gridXCenteredStart - 1;
-		const GRID_Y = this.#gridY - 1;
-		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
-		const GRID_HEIGHT = LINE_HEIGHT * 1;
-
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			GRID_X,
-			GRID_Y,
-			GRID_WIDTH,
-			GRID_HEIGHT,
-			delayFrames,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
-	}
-
-	#undrawSurroundingRectangle(delayFrames) {
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Position and Size
-		const GRID_X = this.#gridXCenteredStart - 1;
-		const GRID_Y = this.#gridY - 1;
-		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
-		const GRID_HEIGHT = LINE_HEIGHT * 1;
-
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			GRID_X,
-			GRID_Y,
-			GRID_WIDTH,
-			GRID_HEIGHT,
-			delayFrames,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
-	}
-
 	// _____________________________________________________________ Interaction
 
 	onButtonMenuClick() {
@@ -240,5 +187,58 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Draw
 		this.draw(this.#DELAY_ROLLOVER_REDRAW);
+	}
+
+	// _______________________________________________________________ Rectangle
+
+	#drawSurroundingRectangle(delayFrames) {
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+
+		// Position and Size
+		const GRID_X = this.#gridXCenteredStart - 1;
+		const GRID_Y = this.#gridY - 1;
+		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
+		const GRID_HEIGHT = LINE_HEIGHT * 1;
+
+		// Create Component Rectangle
+		const COMPONENT_RECTANGLE = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			GRID_X,
+			GRID_Y,
+			GRID_WIDTH,
+			GRID_HEIGHT,
+			delayFrames,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
+	}
+
+	#undrawSurroundingRectangle(delayFrames) {
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+
+		// Position and Size
+		const GRID_X = this.#gridXCenteredStart - 1;
+		const GRID_Y = this.#gridY - 1;
+		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
+		const GRID_HEIGHT = LINE_HEIGHT * 1;
+
+		// Create Component Rectangle
+		const COMPONENT_RECTANGLE = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			GRID_X,
+			GRID_Y,
+			GRID_WIDTH,
+			GRID_HEIGHT,
+			delayFrames,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 }
