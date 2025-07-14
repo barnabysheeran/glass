@@ -58,8 +58,8 @@ export default class InteractiveSurface {
 		ELEMENT.style.height = `${height}px`;
 		this.#CONTAINER.appendChild(ELEMENT);
 
-		// Development - Add Border
-		ELEMENT.style.border = `1px solid #00ff00`;
+		// Development - Add Visible Border
+		// ELEMENT.style.border = `1px solid #00ff00`;
 
 		// Set Click Data
 		if (Object.keys(clickData).length > 0) {

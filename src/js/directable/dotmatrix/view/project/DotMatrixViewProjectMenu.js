@@ -16,6 +16,8 @@ import ApplicationDispatcher from '../../../../application/ApplicationDispatcher
 import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
+	#DELAY_ROLLOVER_REDRAW = 140;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -149,17 +151,23 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// _____________________________________________________________ Button Menu
 
 	onButtonMenuClick(clickData) {
+		console.log('onButtonMenuClick', clickData);
+
 		// Dispatch Event
 		ApplicationDispatcher.dispatch('view-project-menu-select', {
 			projectId: clickData.projectId,
 		});
 	}
 
-	onButtonMenuOver() {
+	onButtonMenuOver(clickData) {
+		console.log('onButtonMenuOver', clickData);
+
 		// TODO Implement
 	}
 
-	onButtonMenuOut() {
+	onButtonMenuOut(clickData) {
+		console.log('onButtonMenuOut', clickData);
+
 		// TODO Implement
 	}
 }

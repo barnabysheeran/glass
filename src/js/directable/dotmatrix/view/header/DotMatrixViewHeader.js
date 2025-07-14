@@ -10,12 +10,17 @@ import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
+import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
+import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
-	#INTERACTIVE_BLOCK;
+	#DELAY_ROLLOVER_REDRAW = 140;
+
+	#gridXCenteredStart = 0;
+	#gridY = 0;
+	#gridWidthGlyphs = 0;
 
 	// TODO Remove isActive in favour of super.isActive
 	#isActive = false;
@@ -41,8 +46,75 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	draw(delayFrames) {
 		super.draw(delayFrames);
 
-		// Get Line Height
+		// Get Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+
+		// Constant Position
+		this.#gridY = LINE_HEIGHT * 2;
+
+		// Create Glyph Line Centered Component
+		const COMPONENT = new ComponentGlyphLineCentered(
+			this.SHAPE_MANAGER,
+			'Menu',
+			this.#gridY,
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(0, this.#gridY),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT);
+
+		// Get Component Details
+		this.#gridXCenteredStart = COMPONENT.getGridXCenteredStart();
+		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
+
+		// Create Interactive Block
+		const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
+			this.#gridY * GridData.getGridCellHeightPx(),
+			this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
+			CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+			this.onButtonMenuClick.bind(this),
+			this.onButtonMenuOver.bind(this),
+			this.onButtonMenuOut.bind(this),
+		);
+
+		this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+	}
+
+	#drawSurroundingRectangle(delayFrames) {
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+
+		// Position and Size
+		const GRID_X = this.#gridXCenteredStart - 1;
+		const GRID_Y = this.#gridY - 1;
+		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
+		const GRID_HEIGHT = LINE_HEIGHT * 1;
+
+		// Create Component Rectangle
+		const COMPONENT_RECTANGLE = new ComponentRectangle(
+			this.SHAPE_MANAGER,
+			GRID_X,
+			GRID_Y,
+			GRID_WIDTH,
+			GRID_HEIGHT,
+			delayFrames,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
+	}
+
+	// __________________________________________________________________ Undraw
+
+	undraw(delayFrames) {
+		super.undraw(delayFrames);
+
+		// Get Line Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Constant Position
@@ -57,40 +129,36 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			DrawType.Clear,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT);
+	}
 
-		// Get Component Details
-		const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
-		const GRID_WIDTH = COMPONENT.getGridWidth();
+	#undrawSurroundingRectangle(delayFrames) {
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
-		// Create Interactive Block
-		this.#INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-			GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
-			GRID_Y * GridData.getGridCellHeightPx(),
-			GRID_WIDTH * GridData.getGridCellWidthPx(),
-			CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-			this.onButtonMenuClick.bind(this),
-			this.onButtonMenuOver.bind(this),
-			this.onButtonMenuOut.bind(this),
-		);
+		// Position and Size
+		const GRID_X = this.#gridXCenteredStart - 1;
+		const GRID_Y = this.#gridY - 1;
+		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
+		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		this.INTERACTIVE_BLOCK_IDS.push(this.#INTERACTIVE_BLOCK);
-
-		// Test Button
-		let gridY = 10;
-
-		const COMPONENT_BUTTON_TEST = new ComponentGlyphButton(
+		// Create Component Rectangle
+		const COMPONENT_RECTANGLE = new ComponentRectangle(
 			this.SHAPE_MANAGER,
-			'TEST',
-			2,
-			gridY,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
+			GRID_X,
+			GRID_Y,
+			GRID_WIDTH,
+			GRID_HEIGHT,
+			delayFrames,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Clear,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_BUTTON_TEST);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 
 	// _________________________________________________ Interaction Button Menu
@@ -109,12 +177,22 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		}
 	}
 
+	// TODO Hardcoded delay
+
 	onButtonMenuOver() {
-		// TODO Implement
+		// Draw Surrounding Rectangle
+		this.#drawSurroundingRectangle(0);
+
+		// Draw
+		this.undraw(this.#DELAY_ROLLOVER_REDRAW);
 	}
 
 	onButtonMenuOut() {
-		// TODO Implement
+		// Undraw Surrounding Rectangle
+		this.#undrawSurroundingRectangle(0);
+
+		// Draw
+		this.draw(this.#DELAY_ROLLOVER_REDRAW);
 	}
 
 	// __________________________________________________________________ Active
