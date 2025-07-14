@@ -37,6 +37,11 @@ export default class Shape {
 			return true;
 		}
 
+		// Empty Position Grids ? (space or empty glyph)
+		if (this.positionGrids.length === 0) {
+			return false;
+		}
+
 		// Delay
 		if (this.#delay > 0) {
 			this.#delay -= 1;

@@ -57,14 +57,17 @@ export default class ComponentGlyphBox extends Component {
 		// Start at Grid X Position
 		let currentGridX = this.GRID_X;
 
-		// Add Letter Shapes through Text
-		for (let i = 0; i < this.TEXT.length; i += 1) {
-			// Get Glyph Name
-			const GLYPH_NAME = this.TEXT[i].toUpperCase();
+		// Parse Text to Glyph Codes
+		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+
+		// Add Glyph Shapes
+		for (let i = 0; i < GLYPH_CODES.length; i += 1) {
+			// Get Glyph Code
+			const GLYPH_CODE = GLYPH_CODES[i];
 
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-				GLYPH_NAME,
+				GLYPH_CODE,
 				currentGridX,
 				this.GRID_Y,
 				this.DELAY + i * this.DELAY_GLYPH,
@@ -81,10 +84,40 @@ export default class ComponentGlyphBox extends Component {
 				currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
 			} else {
 				ApplicationLogger.warn(
-					`ComponentGlyphBox Glyph '${GLYPH_NAME}' not found`,
+					`ComponentGlyphBox Glyph '${GLYPH_CODE}' not found`,
 					this.#LOG_LEVEL,
 				);
 			}
 		}
+
+		// // Add Letter Shapes through Text
+		// for (let i = 0; i < this.TEXT.length; i += 1) {
+		// 	// Get Glyph Name
+		// 	const GLYPH_NAME = this.TEXT[i].toUpperCase();
+
+		// 	// Create Shape Glyph
+		// 	const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
+		// 		GLYPH_NAME,
+		// 		currentGridX,
+		// 		this.GRID_Y,
+		// 		this.DELAY + i * this.DELAY_GLYPH,
+		// 		this.FILL_TYPE,
+		// 		this.FILL_STRATEGY_TYPE,
+		// 		this.DRAW_TYPE,
+		// 	);
+
+		// 	if (SHAPE) {
+		// 		// Store
+		// 		this.SHAPES.push(SHAPE);
+
+		// 		// Increment Current Grid X Position
+		// 		currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
+		// 	} else {
+		// 		ApplicationLogger.warn(
+		// 			`ComponentGlyphBox Glyph '${GLYPH_NAME}' not found`,
+		// 			this.#LOG_LEVEL,
+		// 		);
+		// 	}
+		// }
 	}
 }

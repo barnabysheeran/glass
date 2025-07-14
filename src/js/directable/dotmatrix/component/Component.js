@@ -70,14 +70,38 @@ export default class Component {
 
 	// _____________________________________________________________ Glyph Codes
 
+	// TODO Move
+
 	parseTextToGlyphCodes(text) {
-		console.log(`ComponentGlyphBox parseTextToGlyphCodes`, text);
-
 		const GLYPH_CODES = [];
+		let i = 0;
+		while (i < text.length) {
+			const char = text[i];
 
-		console.log(' - GlYPH_CODES', GLYPH_CODES);
+			if (char === '{') {
+				const endIndex = text.indexOf('}', i);
+				if (endIndex !== -1) {
+					const glyph = text.substring(i + 1, endIndex);
+					GLYPH_CODES.push(glyph);
+					i = endIndex + 1;
+				} else {
+					// Treat as a literal character if no closing brace is found
+					GLYPH_CODES.push(char);
+					i += 1;
+				}
+			} else if (char === ' ') {
+				GLYPH_CODES.push('space');
+				i += 1;
+			} else {
+				GLYPH_CODES.push(char);
+				i += 1;
+			}
+		}
 
-		return GLYPH_CODES
+		console.log(`Parsed Glyph Codes: ${GLYPH_CODES.join(', ')}`);
+
+		return GLYPH_CODES;
+	}
 
 	// _________________________________________________________________ Destroy
 
