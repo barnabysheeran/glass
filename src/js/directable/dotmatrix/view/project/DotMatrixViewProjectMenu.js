@@ -275,7 +275,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH_FAST,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -311,7 +310,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH_FAST,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,

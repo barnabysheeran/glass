@@ -213,7 +213,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -239,7 +238,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
