@@ -11,7 +11,7 @@ export default class DotMatrixView {
 
 	isActive = false;
 
-	#LOG_LEVEL = 4;
+	#LOG_LEVEL = -1;
 
 	// _________________________________________________________________________
 

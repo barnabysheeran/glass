@@ -24,9 +24,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#LINE_HEIGHT_ABOVE_HEADER = 2;
 
-	// TODO Remove isActive in favour of super.isActive
-	#isActive = false;
-
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -75,18 +72,20 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.#gridXCenteredStart = COMPONENT.getGridXCenteredStart();
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
 
-		// Create Interactive Block
-		const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-			this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
-			this.#gridY * GridData.getGridCellHeightPx(),
-			this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
-			CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-			this.onButtonMenuClick.bind(this),
-			this.onButtonMenuOver.bind(this),
-			this.onButtonMenuOut.bind(this),
-		);
+		// Create Interactive Block ?
+		if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
+			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+				this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
+				this.#gridY * GridData.getGridCellHeightPx(),
+				this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+			);
 
-		this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+		}
 	}
 
 	// __________________________________________________________________ Undraw
@@ -174,19 +173,28 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	// _____________________________________________________________ Interaction
 
 	onButtonMenuClick() {
-		if (this.#isActive === true) {
+		console.log(
+			'DotMatrixViewHeader onButtonMenuClick. active:',
+			this.isActive,
+		);
+
+		if (this.isActive === true) {
 			ApplicationDispatcher.dispatch('view-header-menu-inactive');
 
+			console.log(' - setting active to false');
+
 			// Inactive
-			this.#isActive = false;
+			this.isActive = false;
 
 			// Unsurround Button
 			this.#drawButtonUnsurrounded();
 		} else {
 			ApplicationDispatcher.dispatch('view-header-menu-active');
 
+			console.log(' - setting active to true');
+
 			// Active
-			this.#isActive = true;
+			this.isActive = true;
 
 			// Surround Button
 			this.#drawButtonSurrounded();
@@ -194,7 +202,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOver() {
-		if (this.#isActive === false) {
+		console.log('DotMatrixViewHeader onButtonMenuOver. active:', this.isActive);
+
+		if (this.isActive === false) {
 			this.#drawButtonSurrounded();
 		} else {
 			this.#drawButtonUnsurrounded();
@@ -202,7 +212,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOut() {
-		if (this.#isActive === false) {
+		console.log('DotMatrixViewHeader onButtonMenuOut. active:', this.isActive);
+
+		if (this.isActive === false) {
 			this.#drawButtonUnsurrounded();
 		} else {
 			this.#drawButtonSurrounded();
@@ -225,11 +237,5 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Draw
 		this.draw(this.#DELAY_ROLLOVER_REDRAW);
-	}
-
-	// __________________________________________________________________ Active
-
-	setIsActive(isActive) {
-		this.#isActive = isActive;
 	}
 }
