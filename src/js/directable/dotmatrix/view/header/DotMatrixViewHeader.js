@@ -31,6 +31,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Start
 		this.draw(delayFrames);
+
+		// // Header is Unique, isActive Tracks App State
+		this.isActive = false;
 	}
 
 	stop(delayFrames = 0) {

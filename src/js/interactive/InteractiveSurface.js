@@ -68,22 +68,21 @@ export default class InteractiveSurface {
 
 		// Add Event Listeners
 		if (callbackClick) {
-			ELEMENT.addEventListener('click', (event) => {
-				// Get Click Data
-				const clickDataString = event.currentTarget.dataset.clickData;
-				const clickData = clickDataString ? JSON.parse(clickDataString) : {};
-
-				// Call Callback
-				callbackClick(clickData);
-			});
+			ELEMENT.addEventListener('click', (event) =>
+				this.#onClick(event, callbackClick),
+			);
 		}
 
 		if (callbackRollOver) {
-			ELEMENT.addEventListener('mouseover', callbackRollOver);
+			ELEMENT.addEventListener('mouseover', (event) =>
+				this.#onRollOver(event, callbackRollOver),
+			);
 		}
 
 		if (callbackRollOut) {
-			ELEMENT.addEventListener('mouseout', callbackRollOut);
+			ELEMENT.addEventListener('mouseout', (event) =>
+				this.#onRollOut(event, callbackRollOut),
+			);
 		}
 
 		// Store
@@ -102,6 +101,26 @@ export default class InteractiveSurface {
 			element.remove();
 			this.#ELEMENTS.delete(uuid);
 		}
+	}
+
+	// __________________________________________________________ Event Handlers
+
+	static #onClick(event, callback) {
+		const clickDataString = event.currentTarget.dataset.clickData;
+		const clickData = clickDataString ? JSON.parse(clickDataString) : {};
+		callback(clickData);
+	}
+
+	static #onRollOver(event, callback) {
+		const clickDataString = event.currentTarget.dataset.clickData;
+		const clickData = clickDataString ? JSON.parse(clickDataString) : {};
+		callback(clickData);
+	}
+
+	static #onRollOut(event, callback) {
+		const clickDataString = event.currentTarget.dataset.clickData;
+		const clickData = clickDataString ? JSON.parse(clickDataString) : {};
+		callback(clickData);
 	}
 
 	// ___________________________________________________________________ Clear

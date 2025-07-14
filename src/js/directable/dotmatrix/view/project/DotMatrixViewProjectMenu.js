@@ -18,6 +18,10 @@ import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 140;
 
+	#GRID_X_CENTERED_STARTS;
+	#GRID_YS;
+	#GRID_WIDTH_GLYPHS;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -38,6 +42,11 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	draw(delayFrames) {
 		super.draw(delayFrames);
+
+		// Reset
+		this.#GRID_X_CENTERED_STARTS = [];
+		this.#GRID_YS = [];
+		this.#GRID_WIDTH_GLYPHS = [];
 
 		// Get Height
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
@@ -102,11 +111,17 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				{ projectId: PROJECT_DATA_ITEM['id'] },
 			);
 
+			// Store
 			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+
+			// Store Grid Data
+			this.#GRID_X_CENTERED_STARTS.push(GRID_X_CENTERED_START);
+			this.#GRID_YS.push(GRID_Y);
+			this.#GRID_WIDTH_GLYPHS.push(GRID_WIDTH);
 		}
 	}
 
-	// ____________________________________________________________________ Draw
+	// __________________________________________________________________ Undraw
 
 	undraw(delayFrames) {
 		super.undraw(delayFrames);
@@ -116,11 +131,11 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const LINE_HEIGHT_HEADER =
 			DirectableDotMatrixConstants.getLineHeightHeader();
 
-		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
-
 		// Get Width
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
+
+		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
@@ -160,7 +175,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		}
 	}
 
-	// _____________________________________________________________ Button Menu
+	// _____________________________________________________________ Interaction
 
 	onButtonMenuClick(clickData) {
 		console.log('onButtonMenuClick', clickData);
