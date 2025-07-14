@@ -271,7 +271,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			GRID_HEIGHT,
 			delayFrames,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);

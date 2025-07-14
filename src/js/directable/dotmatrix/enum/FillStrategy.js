@@ -1,5 +1,7 @@
 import FillStrategyType from './FillStrategyType.js';
 
+// Re-orders the position grids based on the FillStrategyType
+
 export default class FillStrategy {
 	static apply(fillStrategyType, positionGrids) {
 		switch (fillStrategyType) {
