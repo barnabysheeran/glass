@@ -3,7 +3,6 @@ import ApplicationLogger from '../../../../application/ApplicationLogger.js';
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class ComponentGlyphBox extends Component {
 	// Unique Parameters
@@ -64,6 +63,8 @@ export default class ComponentGlyphBox extends Component {
 		for (let i = 0; i < GLYPH_CODES.length; i += 1) {
 			// Get Glyph Code
 			const GLYPH_CODE = GLYPH_CODES[i];
+
+			console.log(`ComponentGlyphBox Glyph Code: ${GLYPH_CODE}`);
 
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(

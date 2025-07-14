@@ -4,7 +4,7 @@
         {
             "id": "battlebuilder",
             "name": "BattleBuilder",
-            "name short": "BattleBuilder",
+            "name-short": "BattleBuilder",
             "media": [
             ],
             "text technology": "Javascript, WebGL, Three.js, Shopify"
@@ -13,7 +13,7 @@
         {
             "id": "hotsteppa",
             "name": "Hotsteppa",
-            "name short": "Hotsteppa",
+            "name-short": "Hotsteppa",
             "media": [
  
             ],
@@ -23,7 +23,7 @@
         {
             "id": "pikcells onfigr",
             "name": "Pikcells/Onfigr",
-            "name short": "Pikcells/Onfigr",
+            "name-short": "Pikcells/Onfigr",
             "media": [
 
             ],
@@ -33,7 +33,7 @@
         {
             "id": "science museum",
             "name": "THE SCIENCE MUSEUM SUN",
-            "name short": "SCIENCE MUSEUM",
+            "name-short": "SCIENCE MUSEUM",
             "media": [
 
             ],
@@ -43,7 +43,7 @@
         {
             "id": "goodwood",
             "name": "Goodwood Festival of Speed",
-            "name short": "Goodwood",
+            "name-short": "Goodwood",
             "media": [
 
             ],
@@ -53,7 +53,7 @@
         {
             "id": "postmatter",
             "name": "postMATTER Exhibition",
-            "name short": "postMATTER",
+            "name-short": "postMATTER",
             "media": [
   
             ],
@@ -63,7 +63,7 @@
         {
             "id": "ferrari",
             "name": "Ferrari Flagship Store Milan",
-            "name short": "Ferrari",
+            "name-short": "Ferrari",
             "media": [
  
             ],
@@ -73,7 +73,7 @@
         {
             "id": "honda",
             "name": "HONDA The Other Side",
-            "name short": "HONDA",
+            "name-short": "HONDA",
             "media": [
  
             ],
@@ -83,7 +83,7 @@
         {
             "id": "google",
             "name": "GOOGLE ABBEY ROAD",
-            "name short": "GOOGLE",
+            "name-short": "GOOGLE",
             "media": [
             ],
             "credit": {
@@ -96,7 +96,7 @@
         {
             "id": "adidas",
             "name": "ADIDAS Flash",
-            "name short": "ADIDAS",
+            "name-short": "ADIDAS",
             "media": [
             ],
 
@@ -106,7 +106,7 @@
         {
             "id": "greenpeace",
             "name": "Greenpeace Love Letters to the Future",
-            "name short": "Greenpeace",
+            "name-short": "Greenpeace",
             "media": [
                 {
                     "type": "vimeo",

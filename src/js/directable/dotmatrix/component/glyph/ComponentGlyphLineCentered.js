@@ -51,16 +51,19 @@ export default class ComponentGlyphLineCentered extends Component {
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
+		// Parse Text to Glyph Codes
+		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+
 		// Start at Grid X Position
 		let gridX = 0;
 
 		// Calculate Total Width of Text
-		for (let i = 0; i < this.TEXT.length; i += 1) {
-			// Get Glyph Name
-			const GLYPH_NAME = this.TEXT[i].toUpperCase();
+		for (let i = 0; i < GLYPH_CODES.length; i += 1) {
+			// Get Glyph Code
+			const GLYPH_CODE = GLYPH_CODES[i];
 
 			// Get Glyph Width
-			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(GLYPH_NAME);
+			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(GLYPH_CODE);
 
 			// Increment Current Grid X Position
 			gridX += GLYPH_WIDTH + GLYPH_SPACING_X;
@@ -76,13 +79,13 @@ export default class ComponentGlyphLineCentered extends Component {
 		this.gridXCenteredStart = gridX;
 
 		// Add Letter Shapes through Text
-		for (let i = 0; i < this.TEXT.length; i += 1) {
+		for (let i = 0; i < GLYPH_CODES.length; i += 1) {
 			// Get Glyph Name
-			const GLYPH_NAME = this.TEXT[i].toUpperCase();
+			const GLYPH_CODE = GLYPH_CODES[i];
 
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-				GLYPH_NAME,
+				GLYPH_CODE,
 				gridX,
 				this.GRID_Y,
 				this.DELAY + i * this.DELAY_GLYPH,

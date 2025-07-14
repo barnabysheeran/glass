@@ -49,36 +49,38 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
-		// Build Text Pattern
-		let TEXT_PATTERN = '';
+		// Parse Text to Glyph Codes
+		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+		const GLYPH_CODES_DRAW = [];
 
 		// Add Characters to Text Pattern Stopping Before Grid Width
-		let textIndex = 0;
+		let glyphIndex = 0;
 		let currentWidth = 0;
 
 		while (currentWidth < GRID_WIDTH_IN_CELLS) {
 			// Get Text Character at Current Index
-			const TEXT_CHAR = this.TEXT[textIndex];
+			const GLYPH_CODE = GLYPH_CODES[glyphIndex];
 
 			// Get Glyph Width
-			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(TEXT_CHAR);
+			const GLYPH_WIDTH = this.SHAPE_MANAGER.getShapeGlyphWidth(GLYPH_CODE);
 
 			if (currentWidth + GLYPH_WIDTH > GRID_WIDTH_IN_CELLS) {
 				break;
 			}
 
 			// Add Character to Text Pattern
-			TEXT_PATTERN += TEXT_CHAR;
+			// TEXT_PATTERN += GLYPH_CODE;
+			GLYPH_CODES_DRAW.push(GLYPH_CODE);
 
 			// Increment current width by Glyph Width and Spacing
 			currentWidth += GLYPH_WIDTH + GLYPH_SPACING_X;
 
 			// Next Text Index
-			textIndex += 1;
+			glyphIndex += 1;
 
 			// If Text Index Exceeds Text Length, Reset to Start
-			if (textIndex >= this.TEXT.length) {
-				textIndex = 0;
+			if (glyphIndex >= GLYPH_CODES.length) {
+				glyphIndex = 0;
 			}
 		}
 
@@ -86,13 +88,13 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		let currentGridX = this.GRID_X;
 
 		// Add Letter Shapes through Text
-		for (let i = 0; i < TEXT_PATTERN.length; i += 1) {
+		for (let i = 0; i < GLYPH_CODES_DRAW.length; i += 1) {
 			// Get Glyph Name
-			const GLYPH_NAME = TEXT_PATTERN[i].toUpperCase();
+			const GLYPH_CODE = GLYPH_CODES_DRAW[i];
 
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-				GLYPH_NAME,
+				GLYPH_CODE,
 				currentGridX,
 				this.GRID_Y,
 				this.DELAY + i * this.DELAY_GLYPH,

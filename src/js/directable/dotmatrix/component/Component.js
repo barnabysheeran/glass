@@ -73,6 +73,8 @@ export default class Component {
 	// TODO Move
 
 	parseTextToGlyphCodes(text) {
+		console.log(`ComponentGlyphBox parseTextToGlyphCodes: ${text}`);
+
 		const GLYPH_CODES = [];
 		let i = 0;
 		while (i < text.length) {
@@ -97,8 +99,6 @@ export default class Component {
 				i += 1;
 			}
 		}
-
-		console.log(`Parsed Glyph Codes: ${GLYPH_CODES.join(', ')}`);
 
 		return GLYPH_CODES;
 	}

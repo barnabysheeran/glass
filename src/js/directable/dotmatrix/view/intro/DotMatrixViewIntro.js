@@ -16,6 +16,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	#delayFramesReDraw = -1;
 
 	#DELAY_GLYPH = 1;
+	#DELAY_FRAMES_REDRAW = 60;
 
 	// ___________________________________________________________________ Start
 
@@ -96,7 +97,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'I',
+				'{heart}',
 				0,
 				GRID_Y,
 				delayFrames +
@@ -149,9 +150,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Undraw
 		this.undraw(0);
 
-		// ReDraw Delay
-		// TODO Hardcoded for now
-		this.#delayFramesReDraw = 10;
+		// Redraw
+		this.#delayFramesReDraw = this.#DELAY_FRAMES_REDRAW;
 	}
 
 	// __________________________________________________________________ Undraw
@@ -196,7 +196,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'I',
+				'{heart}',
 				0,
 				GRID_Y,
 				delayFrames +
