@@ -16,8 +16,10 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
+import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
+
 export default class DotMatrixViewHeader extends DotMatrixView {
-	#DELAY_ROLLOVER_REDRAW = 140;
+	#DELAY_ROLLOVER_REDRAW = 6;
 
 	#gridXCenteredStart = 0;
 	#gridY = 0;
@@ -93,10 +95,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 		}
-
-		// Dev
-
-		// Create Component Glyph Button
 	}
 
 	// __________________________________________________________________ Undraw
@@ -210,19 +208,32 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
+		viewAddRectanglesBlock(
 			this.SHAPE_MANAGER,
+			this.COMPONENT_MANAGER,
 			GRID_X,
 			GRID_Y,
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			FillStrategyType.PassThrough,
+			DrawType.Fill,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
+		// Create Component Rectangle
+		// const COMPONENT_RECTANGLE = new ComponentRectangle(
+		// 	this.SHAPE_MANAGER,
+		// 	GRID_X,
+		// 	GRID_Y,
+		// 	GRID_WIDTH,
+		// 	GRID_HEIGHT,
+		// 	delayFrames,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
+
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 
 	#undrawSurroundingRectangle(delayFrames) {
@@ -235,19 +246,32 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
+		viewAddRectanglesBlock(
 			this.SHAPE_MANAGER,
+			this.COMPONENT_MANAGER,
 			GRID_X,
 			GRID_Y,
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			FillType.PassThrough,
+			FillStrategyType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
+		// // Create Component Rectangle
+		// const COMPONENT_RECTANGLE = new ComponentRectangle(
+		// 	this.SHAPE_MANAGER,
+		// 	GRID_X,
+		// 	GRID_Y,
+		// 	GRID_WIDTH,
+		// 	GRID_HEIGHT,
+		// 	delayFrames,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// 	DrawType.Clear,
+		// );
+
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 }

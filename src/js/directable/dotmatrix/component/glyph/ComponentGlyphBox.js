@@ -88,35 +88,5 @@ export default class ComponentGlyphBox extends Component {
 				);
 			}
 		}
-
-		// // Add Letter Shapes through Text
-		// for (let i = 0; i < this.TEXT.length; i += 1) {
-		// 	// Get Glyph Name
-		// 	const GLYPH_NAME = this.TEXT[i].toUpperCase();
-
-		// 	// Create Shape Glyph
-		// 	const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
-		// 		GLYPH_NAME,
-		// 		currentGridX,
-		// 		this.GRID_Y,
-		// 		this.DELAY + i * this.DELAY_GLYPH,
-		// 		this.FILL_TYPE,
-		// 		this.FILL_STRATEGY_TYPE,
-		// 		this.DRAW_TYPE,
-		// 	);
-
-		// 	if (SHAPE) {
-		// 		// Store
-		// 		this.SHAPES.push(SHAPE);
-
-		// 		// Increment Current Grid X Position
-		// 		currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
-		// 	} else {
-		// 		ApplicationLogger.warn(
-		// 			`ComponentGlyphBox Glyph '${GLYPH_NAME}' not found`,
-		// 			this.#LOG_LEVEL,
-		// 		);
-		// 	}
-		// }
 	}
 }
