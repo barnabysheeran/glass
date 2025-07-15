@@ -159,8 +159,6 @@ export default class ShapeManager {
 	}
 
 	#getShapeGlyphData(glyphCode) {
-		console.log(`ShapeManager getShapeGlyphData ${glyphCode}`, this.#LOG_LEVEL);
-
 		// Try direct match first (for special chars and multi-char keys like 'heart')
 		let glyphData = SHAPE_GLYPH_DATA[glyphCode];
 		if (glyphData) return glyphData;
