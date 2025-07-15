@@ -13,8 +13,6 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
-import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
@@ -216,24 +214,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			FillStrategyType.PassThrough,
+			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Fill,
 		);
-
-		// Create Component Rectangle
-		// const COMPONENT_RECTANGLE = new ComponentRectangle(
-		// 	this.SHAPE_MANAGER,
-		// 	GRID_X,
-		// 	GRID_Y,
-		// 	GRID_WIDTH,
-		// 	GRID_HEIGHT,
-		// 	delayFrames,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// );
-
-		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 
 	#undrawSurroundingRectangle(delayFrames) {
@@ -254,24 +238,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			GRID_WIDTH,
 			GRID_HEIGHT,
 			delayFrames,
-			FillStrategyType.PassThrough,
+			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
 		);
-
-		// // Create Component Rectangle
-		// const COMPONENT_RECTANGLE = new ComponentRectangle(
-		// 	this.SHAPE_MANAGER,
-		// 	GRID_X,
-		// 	GRID_Y,
-		// 	GRID_WIDTH,
-		// 	GRID_HEIGHT,
-		// 	delayFrames,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	DrawType.Clear,
-		// );
-
-		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 }

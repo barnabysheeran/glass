@@ -4,6 +4,8 @@ import DrawType from '../enum/DrawType.js';
 
 import ComponentRectangle from '../component/primative/ComponentRectangle.js';
 
+// TODO Move
+
 export function viewAddRectanglesBlock(
 	shapeManager,
 	componentManager,

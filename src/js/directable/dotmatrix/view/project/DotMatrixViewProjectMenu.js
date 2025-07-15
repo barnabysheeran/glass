@@ -16,8 +16,10 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
+import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
+
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	#DELAY_ROLLOVER_REDRAW = 140;
+	#DELAY_ROLLOVER_REDRAW = 6;
 
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;
@@ -193,8 +195,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// _____________________________________________________________ Interaction
 
 	onButtonMenuClick(clickData) {
-		console.log('onButtonMenuClick', clickData);
-
 		// Dispatch Event
 		ApplicationDispatcher.dispatch('view-project-menu-select', {
 			projectId: clickData.projectId,
@@ -202,14 +202,10 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	}
 
 	onButtonMenuOver(clickData) {
-		console.log('onButtonMenuOver', clickData);
-
 		this.#highlightProject(clickData.projectId);
 	}
 
 	onButtonMenuOut(clickData) {
-		console.log('onButtonMenuOut', clickData);
-
 		this.#lowlightProject(clickData.projectId);
 	}
 
@@ -218,31 +214,15 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#highlightProject(projectId) {
 		console.log('higlightButton', projectId);
 
-		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
-			if (this.#PROJECT_IDS[i] === projectId) {
-				// Selected Project
-
-				// Undraw Rectangle
-				this.#undrawSurroundingRectangle(this.#PROJECT_IDS[i], 0);
-			} else {
-				// Not Selected Project
-
-				// Draw Rectangle
-				this.#drawSurroundingRectangle(this.#PROJECT_IDS[i], 0);
-			}
-		}
+		// Draw Rectangle
+		this.#drawSurroundingRectangle(projectId, 0);
 	}
 
 	#lowlightProject(projectId) {
 		console.log('lowlightProject', projectId);
 
-		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
-			if (this.#PROJECT_IDS[i] === projectId) {
-				// Selected Project
-			} else {
-				// Not Selected Project
-			}
-		}
+		// Undraw Rectangle
+		this.#undrawSurroundingRectangle(projectId, 0);
 	}
 
 	// ______________________________________________________________ Rectangles
@@ -267,9 +247,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// const GRID_HEIGHT = LINE_HEIGHT * 1;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
+		viewAddRectanglesBlock(
 			this.SHAPE_MANAGER,
+			this.COMPONENT_MANAGER,
 			GRID_X,
 			GRID_Y,
 			GRID_WIDTH,
@@ -277,9 +257,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			delayFrames,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			DrawType.Fill,
 		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 
 	#undrawSurroundingRectangle(projectId, delayFrames) {
@@ -302,9 +281,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// const GRID_HEIGHT = LINE_HEIGHT * 1;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		// Create Component Rectangle
-		const COMPONENT_RECTANGLE = new ComponentRectangle(
+		viewAddRectanglesBlock(
 			this.SHAPE_MANAGER,
+			this.COMPONENT_MANAGER,
 			GRID_X,
 			GRID_Y,
 			GRID_WIDTH,
@@ -314,7 +293,5 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			FillStrategyType.PassThrough,
 			DrawType.Clear,
 		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE);
 	}
 }
