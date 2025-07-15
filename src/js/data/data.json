@@ -76,7 +76,7 @@
             "media": [
  
             ],
-            "text": "JavaScript, WebGL"
+            "technology": "JavaScript, WebGL"
         },
 
         {
@@ -117,7 +117,7 @@
                 "text": "Hi ReS!",
                 "url": "https://alexandrajugovic.com/loveletters"
             },
-            "technology": "Flash ( :"
+            "technology": "Flash (:"
         }
     ]
 }

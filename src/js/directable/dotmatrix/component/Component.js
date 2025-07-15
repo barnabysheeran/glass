@@ -70,13 +70,15 @@ export default class Component {
 
 	// _____________________________________________________________ Glyph Codes
 
-	// TODO Move
+	// TODO Move ?
+
+	// Non-Standard Glyphs are enclosed in curly braces {}, e.g. {heart}
 
 	parseTextToGlyphCodes(text) {
-		console.log(`ComponentGlyphBox parseTextToGlyphCodes: ${text}`);
-
 		const GLYPH_CODES = [];
+
 		let i = 0;
+
 		while (i < text.length) {
 			const char = text[i];
 
