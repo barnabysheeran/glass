@@ -31,7 +31,7 @@ export function viewAddRectanglesBlock(
 			gridY,
 			BLOCK_WIDTH,
 			gridHeight,
-			delayFrames,
+			delayFrames + w,
 			fillType,
 			fillStrategyType,
 			drawType,
