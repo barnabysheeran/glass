@@ -68,43 +68,6 @@ export default class Component {
 		return isComplete;
 	}
 
-	// _____________________________________________________________ Glyph Codes
-
-	// TODO Move ?
-
-	// Non-Standard Glyphs are enclosed in curly braces {}, e.g. {heart}
-
-	parseTextToGlyphCodes(text) {
-		const GLYPH_CODES = [];
-
-		let i = 0;
-
-		while (i < text.length) {
-			const char = text[i];
-
-			if (char === '{') {
-				const endIndex = text.indexOf('}', i);
-				if (endIndex !== -1) {
-					const glyph = text.substring(i + 1, endIndex);
-					GLYPH_CODES.push(glyph);
-					i = endIndex + 1;
-				} else {
-					// Treat as a literal character if no closing brace is found
-					GLYPH_CODES.push(char);
-					i += 1;
-				}
-			} else if (char === ' ') {
-				GLYPH_CODES.push('space');
-				i += 1;
-			} else {
-				GLYPH_CODES.push(char);
-				i += 1;
-			}
-		}
-
-		return GLYPH_CODES;
-	}
-
 	// _________________________________________________________________ Destroy
 
 	destroy() {

@@ -50,7 +50,7 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Parse Text to Glyph Codes
-		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+		const GLYPH_CODES = this.SHAPE_MANAGER.parseTextToGlyphCodes(this.TEXT);
 		const GLYPH_CODES_DRAW = [];
 
 		// Add Characters to Text Pattern Stopping Before Grid Width

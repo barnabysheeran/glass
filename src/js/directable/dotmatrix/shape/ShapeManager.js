@@ -133,16 +133,11 @@ export default class ShapeManager {
 
 		if (!glyphData) {
 			ApplicationLogger.warn(
-				`ShapeManager addShapeGlyph Unknown character '${glyphCode}'`,
+				`ShapeManager addShapeGlyph Unknown glyphCode '${glyphCode}'`,
 				this.#LOG_LEVEL,
 			);
 			return null;
 		}
-
-		// ApplicationLogger.log(
-		// 	`ShapeManager addShapeGlyph ${glyphCode} at (${gridX}, ${gridY})`,
-		// 	this.#LOG_LEVEL,
-		// );
 
 		// Create Shape
 		const SHAPE = new ShapeGlyph(
@@ -163,28 +158,30 @@ export default class ShapeManager {
 		return SHAPE;
 	}
 
-	#getShapeGlyphData(character) {
+	#getShapeGlyphData(glyphCode) {
+		console.log(`ShapeManager getShapeGlyphData ${glyphCode}`, this.#LOG_LEVEL);
+
 		// Try direct match first (for special chars and multi-char keys like 'heart')
-		let glyphData = SHAPE_GLYPH_DATA[character];
+		let glyphData = SHAPE_GLYPH_DATA[glyphCode];
 		if (glyphData) return glyphData;
 
 		// Fallback to uppercase for standard alphabet
-		const upperChar = character.toUpperCase();
+		const upperChar = glyphCode.toUpperCase();
 		glyphData = SHAPE_GLYPH_DATA[upperChar];
 
 		if (!glyphData) {
 			ApplicationLogger.warn(
-				`ShapeManager getShapeGlyphData Unknown character '${character}'`,
+				`ShapeManager getShapeGlyphData Unknown glyphCode '${glyphCode}'`,
 				this.#LOG_LEVEL,
 			);
-			return null;
+			return undefined;
 		}
 
 		return glyphData;
 	}
 
-	getShapeGlyphWidth(character) {
-		const glyphData = this.#getShapeGlyphData(character);
+	getShapeGlyphWidth(glyphCode) {
+		const glyphData = this.#getShapeGlyphData(glyphCode);
 
 		if (!glyphData) {
 			return 0;
@@ -193,13 +190,48 @@ export default class ShapeManager {
 		return glyphData.points[0].length;
 	}
 
-	getShapeGlyphHeight(character) {
-		const glyphData = this.#getShapeGlyphData(character);
+	getShapeGlyphHeight(glyphCode) {
+		const glyphData = this.#getShapeGlyphData(glyphCode);
 
 		if (!glyphData) {
 			return 0;
 		}
 
 		return glyphData.points.length;
+	}
+
+	// _____________________________________________________________ Glyph Codes
+
+	// Non-Standard Glyphs are enclosed in curly braces {}, e.g. {heart}
+
+	parseTextToGlyphCodes(text) {
+		const GLYPH_CODES = [];
+
+		let i = 0;
+
+		while (i < text.length) {
+			const char = text[i];
+
+			if (char === '{') {
+				const endIndex = text.indexOf('}', i);
+				if (endIndex !== -1) {
+					const glyph = text.substring(i + 1, endIndex);
+					GLYPH_CODES.push(glyph);
+					i = endIndex + 1;
+				} else {
+					// Treat as a literal character if no closing brace is found
+					GLYPH_CODES.push(char);
+					i += 1;
+				}
+			} else if (char === ' ') {
+				GLYPH_CODES.push('space');
+				i += 1;
+			} else {
+				GLYPH_CODES.push(char);
+				i += 1;
+			}
+		}
+
+		return GLYPH_CODES;
 	}
 }

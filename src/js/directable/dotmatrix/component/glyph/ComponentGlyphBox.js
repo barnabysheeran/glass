@@ -57,7 +57,7 @@ export default class ComponentGlyphBox extends Component {
 		let currentGridX = this.GRID_X;
 
 		// Parse Text to Glyph Codes
-		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+		const GLYPH_CODES = this.SHAPE_MANAGER.parseTextToGlyphCodes(this.TEXT);
 
 		// Add Glyph Shapes
 		for (let i = 0; i < GLYPH_CODES.length; i += 1) {

@@ -52,7 +52,7 @@ export default class ComponentGlyphLineCentered extends Component {
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 
 		// Parse Text to Glyph Codes
-		const GLYPH_CODES = this.parseTextToGlyphCodes(this.TEXT);
+		const GLYPH_CODES = this.SHAPE_MANAGER.parseTextToGlyphCodes(this.TEXT);
 
 		// Start at Grid X Position
 		let gridX = 0;
