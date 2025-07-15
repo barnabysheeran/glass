@@ -13,6 +13,7 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
+import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
@@ -92,6 +93,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 		}
+
+		// Dev
+
+		// Create Component Glyph Button
 	}
 
 	// __________________________________________________________________ Undraw
