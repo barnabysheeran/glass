@@ -86,7 +86,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Create Component abc
 		const COMPONENT_abc = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			'abcdefghijklmnopqrstuvwyxz',
+			'abcd efgh ijkl mnop qrst uvwy xz',
 			0,
 			LINE_HEIGHT * gridY,
 			100,
@@ -97,24 +97,6 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_abc);
-
-		// Next
-		gridY += 2;
-
-		// Create Component ABCabc
-		const COMPONENT_AaBbCc = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz',
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			GRID_WIDTH_IN_CELLS_THIRD,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_AaBbCc);
 
 		// Next
 		gridY += 2;
