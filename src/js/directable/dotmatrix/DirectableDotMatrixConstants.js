@@ -1,7 +1,7 @@
 export default class DirectableDotMatrixConstants {
 	// __________________________________________________________________ Header
 
-	static #LINE_HEIGHT_HEADER = 6;
+	static #LINE_HEIGHT_HEADER = 5;
 
 	static getLineHeightHeader() {
 		return this.#LINE_HEIGHT_HEADER;
