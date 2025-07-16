@@ -15,8 +15,10 @@ import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxW
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 export default class DotMatrixViewTest extends DotMatrixView {
-	#STRING_CHAR_TEST = `- _ / : ; , . ' ! " ^ < > {heart}`;
+	#STRING_CHAR_TEST_1 = `- _ / : ; , . ' ! "`;
+	#STRING_CHAR_TEST_2 = `^ < {heart} > ^`;
 
+	#STRING_CHAR_TEST_BB = '{wing-left} {skull} {wing-right}';
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -57,6 +59,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			DrawType.Fill,
 		);
 
 		// Store
@@ -73,7 +76,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS_THIRD,
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -91,7 +94,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS_THIRD,
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -109,7 +112,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS_THIRD * 2,
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -119,26 +122,61 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Next
 		gridY += 2;
 
-		// Add Component Special Chars
-		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
+		// Add Component Character Test 1
+		const COMPONENT_CHARACTER_TEST_1 = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			this.#STRING_CHAR_TEST,
+			this.#STRING_CHAR_TEST_1,
 			0,
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			GRID_WIDTH_IN_CELLS,
+			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_1);
+
+		// Next
+		gridY += 2;
+
+		// Add Component Character Test 2
+		const COMPONENT_CHARACTER_TEST_2 = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			this.#STRING_CHAR_TEST_2,
+			0,
+			LINE_HEIGHT * gridY,
+			100,
+			50,
+			1,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_2);
+
+		// Next
+		gridY += 2;
+
+		// Add Component Character Test BB
+		const COMPONENT_CHARACTER_TEST_BB = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			this.#STRING_CHAR_TEST_BB,
+			0,
+			LINE_HEIGHT * gridY,
+			100,
+			50,
+			1,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_BB);
 
 		// Next
 		gridY += 2;
 
 		// Rectangles
-		const RECTANGLE_GRID_Y = LINE_HEIGHT * gridY;
 		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
 		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
 
