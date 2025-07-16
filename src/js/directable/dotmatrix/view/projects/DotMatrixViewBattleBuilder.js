@@ -11,7 +11,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
-export default class DotMatrixViewProject extends DotMatrixView {
+export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 	#projectId;
 
 	#DELAY_GLYPH = 1;

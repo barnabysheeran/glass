@@ -6,7 +6,7 @@ import ComponentManager from './component/ComponentManager.js';
 
 import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
 import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
-import DotMatrixViewProject from './view/project/DotMatrixViewProject.js';
+import DotMatrixViewProject from './view/projects/DotMatrixViewProject.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
 
