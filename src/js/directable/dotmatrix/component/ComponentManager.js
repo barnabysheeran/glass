@@ -40,6 +40,13 @@ export default class ComponentManager {
 		this.#COMPONENTS = [];
 	}
 
+	stopUnstartedShapes() {
+		// Remove Components with > 0 Delay
+		for (let i = 0; i < this.#COMPONENTS.length; i += 1) {
+			this.#COMPONENTS[i].stopUnstartedShapes();
+		}
+	}
+
 	// __________________________________________________________________ Access
 
 	getActiveComponentTotal() {

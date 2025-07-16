@@ -77,19 +77,11 @@ export default class Shape {
 		return false;
 	}
 
-	// _________________________________________________________________ Restart
+	// ____________________________________________________________________ Stop
 
-	redraw() {
-		ApplicationLogger.log('Shape redraw', this.#LOG_LEVEL);
-
-		// Reset Index
-		this.#positionGridsIndex = 0;
-
-		// Reset Complete
-		this.#isComplete = false;
+	stop() {
+		this.#isComplete = true;
 	}
-
-	undraw() {}
 
 	// __________________________________________________________________ Access
 
@@ -100,5 +92,9 @@ export default class Shape {
 		);
 
 		return this.#SHAPE_ID;
+	}
+
+	getDelay() {
+		return this.#delay;
 	}
 }

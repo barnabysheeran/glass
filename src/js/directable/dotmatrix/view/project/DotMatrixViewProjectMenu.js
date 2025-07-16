@@ -18,7 +18,8 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	#DELAY_ROLLOVER_REDRAW = 30;
+	// TODO Tune with Menu Text
+	#DELAY_ROLLOVER_REDRAW = 20;
 
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;

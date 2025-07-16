@@ -68,6 +68,17 @@ export default class Component {
 		return isComplete;
 	}
 
+	// __________________________________________________________________ Stop
+
+	stopUnstartedShapes() {
+		for (let i = 0; i < this.SHAPES.length; i += 1) {
+			// Stop Shapes with > 0 Delay
+			if (this.SHAPES[i].getDelay() > 0) {
+				this.SHAPES[i].stop();
+			}
+		}
+	}
+
 	// _________________________________________________________________ Destroy
 
 	destroy() {
