@@ -68,8 +68,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			gridY,
 			100,
 			50,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -89,8 +88,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 			gridY,
 			100,
 			50,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -135,8 +133,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				gridY,
 				100,
 				50,
-				delayFrames +
-					DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
