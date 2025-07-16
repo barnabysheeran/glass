@@ -23,7 +23,7 @@ export default class DirectableDotMatrixConstants {
 
 	// _________________________________________________________________________
 
-	static #LINE_HEIGHT = 8;
+	static #LINE_HEIGHT = 7;
 
 	static getLineHeight() {
 		return this.#LINE_HEIGHT;
