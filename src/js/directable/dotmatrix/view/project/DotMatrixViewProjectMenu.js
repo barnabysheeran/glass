@@ -18,6 +18,8 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
+	#DELAY_ROLLOVER_REDRAW = 30;
+
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;
 	#GRID_YS;
@@ -26,7 +28,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#IS_OVERS;
 	#REQUIRES_UPDATES;
 
-	#DELAY_GLYPH = 1;
+	#DELAY_GLYPH = 5;
 
 	// ______________________________________________________________ Start Stop
 
@@ -136,8 +138,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				text,
 				GRID_Y,
-				delayFrames + DELAY_GLYPHS + GRID_WIDTH_IN_CELLS, // +
-				// DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
+				delayFrames + this.#DELAY_ROLLOVER_REDRAW,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
@@ -273,7 +274,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 		// Draw
 		this.undraw(0);
-		this.draw(0);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW);
 	}
 
 	onButtonMenuOut(clickData) {
@@ -292,7 +293,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 		// Draw
 		this.undraw(0);
-		this.draw(0);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW);
 	}
 
 	// ______________________________________________________________ Rectangles
