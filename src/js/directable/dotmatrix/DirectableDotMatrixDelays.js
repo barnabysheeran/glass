@@ -1,7 +1,7 @@
 export default class DirectableDotMatrixDelays {
 	// _________________________________________________________ Page Transition
 
-	static #DELAY_PAGE_TRANSITION = 120;
+	static #DELAY_PAGE_TRANSITION = 10;
 
 	static getDelayPageTransition() {
 		return this.#DELAY_PAGE_TRANSITION;

@@ -18,8 +18,6 @@ export function viewAddRectanglesBlock(
 	fillStrategyType = FillStrategyType.PassThrough,
 	drawType = DrawType.Fill,
 ) {
-	console.log('viewAddRectanglesBlockEasedOut called');
-
 	const BLOCK_WIDTH = 1;
 
 	// Create Component Rectangles

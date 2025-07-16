@@ -27,7 +27,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#DELAY_GLYPH = 1;
 
-	// ___________________________________________________________________ Start
+	// ______________________________________________________________ Start Stop
 
 	start(delayFrames = 0) {
 		super.start(delayFrames);
