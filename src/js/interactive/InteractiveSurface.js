@@ -59,7 +59,7 @@ export default class InteractiveSurface {
 		this.#CONTAINER.appendChild(ELEMENT);
 
 		// Development - Add Visible Border
-		// ELEMENT.style.border = `1px solid #00ff00`;
+		ELEMENT.style.border = `1px solid #00ff00`;
 
 		// Set Click Data
 		if (Object.keys(clickData).length > 0) {

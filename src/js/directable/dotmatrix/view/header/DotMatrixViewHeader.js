@@ -45,9 +45,10 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	stop(delayFrames = 0) {
+		// Super Removes Interactive Blocks
 		super.stop(delayFrames);
 
-		// Stop
+		// Undraw
 		this.undraw(delayFrames);
 	}
 
