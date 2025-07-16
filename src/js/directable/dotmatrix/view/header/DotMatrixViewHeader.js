@@ -15,12 +15,9 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
-import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
-
-	#COMPONENT_BUTTON;
 
 	#gridXCenteredStart = 0;
 	#gridY = 0;
@@ -40,8 +37,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Draw
 		this.draw(delayFrames);
 
-		// TODO Create Interactive Block
-		// this.createInteractiveBlock
+		// Create Interactive Block
+		this.#createInteractiveBlock();
 
 		// Header is Unique, isActive Tracks App State
 		this.isActive = false;
@@ -60,7 +57,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		super.draw(delayFrames);
 
 		// Get Height
-		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 		const LINE_HEIGHT_HEADER =
 			DirectableDotMatrixConstants.getLineHeightHeader();
@@ -83,43 +79,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT);
 
-		// Get Component Details
+		// Store Component Details
 		this.#gridXCenteredStart = COMPONENT.getGridXCenteredStart();
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
-
-		// Create Interactive Block ?
-		// if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
-		// 	const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-		// 		this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
-		// 		this.#gridY * GridData.getGridCellHeightPx(),
-		// 		this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
-		// 		CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-		// 		this.onButtonMenuClick.bind(this),
-		// 		this.onButtonMenuOver.bind(this),
-		// 		this.onButtonMenuOut.bind(this),
-		// 	);
-
-		// 	this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
-		// }
-
-		// Create Component Glyph Button
-		let gridX = 10;
-		let gridY = this.#gridY;
-
-		const COMPONENT_BUTTON = new ComponentGlyphButton(
-			this.SHAPE_MANAGER,
-			'Menu',
-			gridX,
-			gridY,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
-			this.#DELAY_GLYPH,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
-
-		// Add
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_BUTTON);
 	}
 
 	// __________________________________________________________________ Undraw
@@ -153,6 +115,25 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	// _____________________________________________________________ Interaction
+
+	#createInteractiveBlock() {
+		// Get Height
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+
+		// Create Interactive Block
+		const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
+			this.#gridY * GridData.getGridCellHeightPx(),
+			this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
+			CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+			this.onButtonMenuClick.bind(this),
+			this.onButtonMenuOver.bind(this),
+			this.onButtonMenuOut.bind(this),
+		);
+
+		// Store
+		this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+	}
 
 	onButtonMenuClick() {
 		console.log(

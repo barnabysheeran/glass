@@ -14,28 +14,31 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	#DELAY_ROLLOVER_REDRAW = 6;
-
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;
 	#GRID_YS;
 	#GRID_WIDTH_GLYPHS;
 
+	#IS_OVERS;
+
 	#DELAY_GLYPH = 1;
-	#DELAY_GLYPH_FAST = 0.1;
 
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
 		super.start(delayFrames);
 
-		// Start
+		// Order Important - Draw Stores Grid Position Information
+
+		// Draw
 		this.draw(delayFrames);
+
+		// Create Interactive Blocks
+		this.#createInteractiveBlocks();
 	}
 
 	stop(delayFrames = 0) {
@@ -51,13 +54,15 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		super.draw(delayFrames);
 
 		// Reset
+		this.#PROJECT_IDS = [];
+
 		this.#GRID_X_CENTERED_STARTS = [];
 		this.#GRID_YS = [];
 		this.#GRID_WIDTH_GLYPHS = [];
-		this.#PROJECT_IDS = [];
+
+		this.#IS_OVERS = [];
 
 		// Get Height
-		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 		const LINE_HEIGHT_HEADER =
 			DirectableDotMatrixConstants.getLineHeightHeader();
@@ -111,24 +116,25 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const GRID_WIDTH = COMPONENT.getGridWidth();
 
 			// Create Interactive Blocks
-			if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
-				const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-					GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
-					GRID_Y * GridData.getGridCellHeightPx(),
-					GRID_WIDTH * GridData.getGridCellWidthPx(),
-					CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-					this.onButtonMenuClick.bind(this),
-					this.onButtonMenuOver.bind(this),
-					this.onButtonMenuOut.bind(this),
-					{ projectId: PROJECT_DATA_ITEM['id'] },
-				);
+			// if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
+			// 	const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			// 		GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
+			// 		GRID_Y * GridData.getGridCellHeightPx(),
+			// 		GRID_WIDTH * GridData.getGridCellWidthPx(),
+			// 		CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+			// 		this.onButtonMenuClick.bind(this),
+			// 		this.onButtonMenuOver.bind(this),
+			// 		this.onButtonMenuOut.bind(this),
+			// 		{ projectId: PROJECT_DATA_ITEM['id'] },
+			// 	);
 
-				// Store
-				this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
-			}
+			// 	// Store
+			// 	this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+			// }
 
 			// Store Component Details
 			this.#PROJECT_IDS.push(PROJECT_DATA_ITEM['id']);
+
 			this.#GRID_X_CENTERED_STARTS.push(GRID_X_CENTERED_START);
 			this.#GRID_YS.push(GRID_Y);
 			this.#GRID_WIDTH_GLYPHS.push(GRID_WIDTH);
@@ -197,6 +203,30 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	}
 
 	// _____________________________________________________________ Interaction
+
+	#createInteractiveBlocks() {
+		// Get Height
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+
+		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
+			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+				this.#GRID_X_CENTERED_STARTS[i] * GridData.getGridCellWidthPx(),
+				this.#GRID_YS[i] * GridData.getGridCellHeightPx(),
+				this.#GRID_WIDTH_GLYPHS[i] * GridData.getGridCellWidthPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+				{ projectId: this.#PROJECT_IDS[i] },
+			);
+
+			// Store
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+
+			// Start Not Over
+			this.#IS_OVERS.push(false);
+		}
+	}
 
 	onButtonMenuClick(clickData) {
 		// Dispatch Event
