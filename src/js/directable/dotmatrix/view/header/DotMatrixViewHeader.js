@@ -15,6 +15,7 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
+import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
@@ -35,7 +36,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Start
 		this.draw(delayFrames);
 
-		// // Header is Unique, isActive Tracks App State
+		// TODO Create Interactive Block
+
+		// Header is Unique, isActive Tracks App State
 		this.isActive = false;
 	}
 
@@ -93,6 +96,28 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
 		}
+
+		// Create Component Glyph Button
+		let gridX = 10;
+		let gridY = this.#gridY;
+
+		const COMPONENT_BUTTON = new ComponentGlyphButton(
+			this.SHAPE_MANAGER,
+			'Menu',
+			gridX,
+			gridY,
+			delayFrames +
+				DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+			this.#DELAY_GLYPH,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+			this.onButtonMenuClick.bind(this),
+			this.onButtonMenuOver.bind(this),
+			this.onButtonMenuOut.bind(this),
+		);
+
+		// Add
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_BUTTON);
 	}
 
 	// __________________________________________________________________ Undraw

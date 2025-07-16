@@ -62,8 +62,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const LINE_HEIGHT_HEADER =
 			DirectableDotMatrixConstants.getLineHeightHeader();
 
-		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
-
 		// Get Width
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
@@ -74,13 +72,17 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjects();
 
+		// Calculate Line Distribution
+		const LINE_SPACING = 2;
+		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
+
 		// Draw
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
 			// Get Project Data Item
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
 			// Grid Y
-			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * 2);
+			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * LINE_SPACING);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
@@ -108,22 +110,24 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const GRID_X_CENTERED_START = COMPONENT.getGridXCenteredStart();
 			const GRID_WIDTH = COMPONENT.getGridWidth();
 
-			// Create Interactive Block
-			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-				GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
-				GRID_Y * GridData.getGridCellHeightPx(),
-				GRID_WIDTH * GridData.getGridCellWidthPx(),
-				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-				this.onButtonMenuClick.bind(this),
-				this.onButtonMenuOver.bind(this),
-				this.onButtonMenuOut.bind(this),
-				{ projectId: PROJECT_DATA_ITEM['id'] },
-			);
+			// Create Interactive Blocks
+			if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
+				const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+					GRID_X_CENTERED_START * GridData.getGridCellWidthPx(),
+					GRID_Y * GridData.getGridCellHeightPx(),
+					GRID_WIDTH * GridData.getGridCellWidthPx(),
+					CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+					this.onButtonMenuClick.bind(this),
+					this.onButtonMenuOver.bind(this),
+					this.onButtonMenuOut.bind(this),
+					{ projectId: PROJECT_DATA_ITEM['id'] },
+				);
 
-			// Store
-			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+				// Store
+				this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+			}
 
-			// Store Grid Data
+			// Store Component Details
 			this.#PROJECT_IDS.push(PROJECT_DATA_ITEM['id']);
 			this.#GRID_X_CENTERED_STARTS.push(GRID_X_CENTERED_START);
 			this.#GRID_YS.push(GRID_Y);
@@ -234,17 +238,12 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
-		// Position and Size
-		// const GRID_X = this.#gridXCenteredStart - 1;
+		// Position
 		const GRID_X = this.#GRID_X_CENTERED_STARTS[PROJECT_INDEX] - 1;
-
-		// const GRID_Y = this.#gridY - 1;
 		const GRID_Y = this.#GRID_YS[PROJECT_INDEX] - 1;
 
-		// const GRID_WIDTH = this.#gridWidthGlyphs + 2;
+		// Size
 		const GRID_WIDTH = this.#GRID_WIDTH_GLYPHS[PROJECT_INDEX] + 2;
-
-		// const GRID_HEIGHT = LINE_HEIGHT * 1;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
 		viewAddRectanglesBlock(

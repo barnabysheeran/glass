@@ -10,6 +10,10 @@ export default class ComponentGlyphButton extends Component {
 
 	#LOG_LEVEL = 3;
 
+	#CALLBACK_CLICK;
+	#CALLBACK_OVER;
+	#CALLBACK_OUT;
+
 	// _________________________________________________________________________
 
 	constructor(
@@ -82,5 +86,25 @@ export default class ComponentGlyphButton extends Component {
 				);
 			}
 		}
+	}
+
+	// _____________________________________________________________ Interaction
+
+	onButtonMenuClick() {
+		console.log(
+			'ComponentGlyphButton onButtonMenuClick. active:',
+			this.isActive,
+		);
+	}
+
+	onButtonMenuOver() {
+		console.log(
+			'ComponentGlyphButton onButtonMenuOver. active:',
+			this.isActive,
+		);
+	}
+
+	onButtonMenuOut() {
+		console.log('ComponentGlyphButton onButtonMenuOut. active:', this.isActive);
 	}
 }
