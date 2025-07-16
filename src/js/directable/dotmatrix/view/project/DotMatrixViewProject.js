@@ -99,6 +99,29 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
 
+		// Add Technology
+		if (PROJECT_DATA_ITEM['technology']) {
+			// Next
+			gridY += LINE_HEIGHT * 2;
+
+			// Create Component
+			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				PROJECT_DATA_ITEM['technology'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				this.#DELAY_GLYPH,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_TECHNOLOGY);
+		}
+
 		// Add Credit ?
 		if (PROJECT_DATA_ITEM['credit']) {
 			// Next
@@ -187,6 +210,30 @@ export default class DotMatrixViewProject extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
 
+		// Add Technology
+		if (PROJECT_DATA_ITEM['technology']) {
+			// Next
+			gridY += LINE_HEIGHT * 2;
+
+			// Create Component
+			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				PROJECT_DATA_ITEM['technology'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				this.#DELAY_GLYPH,
+				FillType.PassThrough,
+				FillStrategyType.PassThrough,
+				DrawType.Clear,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_TECHNOLOGY);
+		}
+
 		// Add Credit ?
 		if (PROJECT_DATA_ITEM['credit']) {
 			// Next
@@ -200,8 +247,7 @@ export default class DotMatrixViewProject extends DotMatrixView {
 				gridY,
 				100,
 				50,
-				delayFrames +
-					DirectableDotMatrixDelays.getDelayFromGridPosition(gridX, gridY),
+				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,

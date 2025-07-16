@@ -7,7 +7,6 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';

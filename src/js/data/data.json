@@ -5,8 +5,6 @@
             "id": "battlebuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
-            "media": [
-            ],
             "technology": "Javascript, WebGL, Three.js, Shopify"
         },
 
@@ -14,9 +12,6 @@
             "id": "hotsteppa",
             "name": "Hotsteppa",
             "name-short": "Hotsteppa",
-            "media": [
- 
-            ],
             "technology": "Unity"
         },
 
@@ -24,9 +19,6 @@
             "id": "pikcells onfigr",
             "name": "Pikcells/Onfigr",
             "name-short": "Pikcells/Onfigr",
-            "media": [
-
-            ],
             "technology": "Javascript, WebGL, Three.js, Unity, Unreal Engine"
         },
 
@@ -34,9 +26,6 @@
             "id": "science museum",
             "name": "THE SCIENCE MUSEUM - SUN",
             "name-short": "SCIENCE MUSEUM",
-            "media": [
-
-            ],
             "technology": "Unity"
         },
         
@@ -44,9 +33,6 @@
             "id": "goodwood",
             "name": "Goodwood Festival of Speed",
             "name-short": "Goodwood",
-            "media": [
-
-            ],
             "technology": "Unity"
         },
 
@@ -54,8 +40,6 @@
             "id": "postmatter",
             "name": "postMATTER Exhibition",
             "name-short": "postMATTER",
-            "media": [
-            ],
             "technology": "C++, Cinder, Kinect, Leap Motion"
         },
 
@@ -63,9 +47,6 @@
             "id": "ferrari",
             "name": "Ferrari - Flagship Store",
             "name-short": "Ferrari",
-            "media": [
- 
-            ],
             "technology": "Unity, Kinect"
         },
 
@@ -73,9 +54,6 @@
             "id": "honda",
             "name": "HONDA - The Other Side",
             "name-short": "HONDA",
-            "media": [
- 
-            ],
             "technology": "JavaScript, WebGL"
         },
 
@@ -83,8 +61,6 @@
             "id": "google",
             "name": "GOOGLE - ABBEY ROAD",
             "name-short": "GOOGLE",
-            "media": [
-            ],
             "credit": {
                 "text": "Stink Studios",
                 "url": ""
@@ -96,9 +72,6 @@
             "id": "adidas",
             "name": "ADIDAS - Flash",
             "name-short": "ADIDAS",
-            "media": [
-            ],
-
             "technology": "Flash"
         },
 
@@ -114,7 +87,7 @@
                 }
             ],
             "credit": {
-                "text": "Hi ReS!",
+                "text": "Hi-ReS!",
                 "url": "https://alexandrajugovic.com/loveletters"
             },
             "technology": "Flash (:"
