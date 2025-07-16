@@ -10,10 +10,6 @@ export default class ComponentGlyphButton extends Component {
 
 	#LOG_LEVEL = 3;
 
-	#CALLBACK_CLICK;
-	#CALLBACK_OVER;
-	#CALLBACK_OUT;
-
 	// _________________________________________________________________________
 
 	constructor(
@@ -81,7 +77,7 @@ export default class ComponentGlyphButton extends Component {
 				currentGridX += SHAPE.getGlyphWidth() + GLYPH_SPACING_X;
 			} else {
 				ApplicationLogger.warn(
-					`ComponentGlyphBox Glyph '${GLYPH_CODE}' not found`,
+					`ComponentGlyphButton Glyph '${GLYPH_CODE}' not found`,
 					this.#LOG_LEVEL,
 				);
 			}

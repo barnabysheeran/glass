@@ -20,6 +20,8 @@ import ComponentGlyphButton from '../../component/glyph/ComponentGlyphButton.js'
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
 
+	#COMPONENT_BUTTON;
+
 	#gridXCenteredStart = 0;
 	#gridY = 0;
 	#gridWidthGlyphs = 0;
@@ -33,10 +35,13 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	start(delayFrames = 0) {
 		super.start(delayFrames);
 
-		// Start
+		// Order Important - Draw Stores Grid Position Information
+
+		// Draw
 		this.draw(delayFrames);
 
 		// TODO Create Interactive Block
+		// this.createInteractiveBlock
 
 		// Header is Unique, isActive Tracks App State
 		this.isActive = false;
@@ -83,19 +88,19 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
 
 		// Create Interactive Block ?
-		if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
-			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
-				this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
-				this.#gridY * GridData.getGridCellHeightPx(),
-				this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
-				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-				this.onButtonMenuClick.bind(this),
-				this.onButtonMenuOver.bind(this),
-				this.onButtonMenuOut.bind(this),
-			);
+		// if (this.INTERACTIVE_BLOCK_IDS.length === 0) {
+		// 	const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+		// 		this.#gridXCenteredStart * GridData.getGridCellWidthPx(),
+		// 		this.#gridY * GridData.getGridCellHeightPx(),
+		// 		this.#gridWidthGlyphs * GridData.getGridCellWidthPx(),
+		// 		CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+		// 		this.onButtonMenuClick.bind(this),
+		// 		this.onButtonMenuOver.bind(this),
+		// 		this.onButtonMenuOut.bind(this),
+		// 	);
 
-			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
-		}
+		// 	this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+		// }
 
 		// Create Component Glyph Button
 		let gridX = 10;
@@ -111,9 +116,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			this.onButtonMenuClick.bind(this),
-			this.onButtonMenuOver.bind(this),
-			this.onButtonMenuOut.bind(this),
 		);
 
 		// Add
