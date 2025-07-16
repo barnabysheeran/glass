@@ -190,6 +190,9 @@ export default class DirectableDotMatrix {
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
+		// Stop Any Active Components
+		this.#COMPONENT_MANAGER.stopUnstartedShapes();
+
 		// Stop Current View
 		this.#getViewById(this.#viewIdCurrent).stop();
 

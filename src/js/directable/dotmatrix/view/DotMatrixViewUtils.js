@@ -18,9 +18,11 @@ export function viewAddRectanglesBlock(
 	fillStrategyType = FillStrategyType.PassThrough,
 	drawType = DrawType.Fill,
 ) {
-	const BLOCK_WIDTH = 1;
+	const BLOCK_WIDTH = 3;
 
 	// Create Component Rectangles
+	let i = 0;
+
 	for (let w = 0; w < gridWidth; w += BLOCK_WIDTH) {
 		// Create Component Rectangle
 		const COMPONENT_RECTANGLE = new ComponentRectangle(
@@ -29,12 +31,15 @@ export function viewAddRectanglesBlock(
 			gridY,
 			BLOCK_WIDTH,
 			gridHeight,
-			delayFrames + w,
+			delayFrames + i,
 			fillType,
 			fillStrategyType,
 			drawType,
 		);
 
 		componentManager.addComponent(COMPONENT_RECTANGLE);
+
+		// Increment
+		i++;
 	}
 }
