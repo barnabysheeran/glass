@@ -48,10 +48,12 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const GRID_WIDTH_IN_CELLS_THIRD = Math.floor(GRID_WIDTH_IN_CELLS / 3);
 		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
+		let gridY = 2;
+
 		// Component Line Top
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
-			LINE_HEIGHT,
+			LINE_HEIGHT * gridY,
 			1,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
@@ -60,12 +62,15 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
+		// Next
+		gridY += 2;
+
 		// Create Component ABC
 		const COMPONENT_ABC = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 			0,
-			LINE_HEIGHT * 3,
+			LINE_HEIGHT * gridY,
 			100,
 			50,
 			GRID_WIDTH_IN_CELLS_THIRD,
@@ -75,12 +80,51 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
 
+		// Next
+		gridY += 2;
+
+		// Create Component abc
+		const COMPONENT_abc = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			'abcdefghijklmnopqrstuvwyxz',
+			0,
+			LINE_HEIGHT * gridY,
+			100,
+			50,
+			GRID_WIDTH_IN_CELLS_THIRD,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_abc);
+
+		// Next
+		gridY += 2;
+
+		// Create Component ABCabc
+		const COMPONENT_AaBbCc = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz',
+			0,
+			LINE_HEIGHT * gridY,
+			100,
+			50,
+			GRID_WIDTH_IN_CELLS_THIRD,
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_AaBbCc);
+
+		// Next
+		gridY += 2;
+
 		// Add Component 0001
 		const COMPONENT_0001 = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			'0123456789',
 			0,
-			LINE_HEIGHT * 4,
+			LINE_HEIGHT * gridY,
 			100,
 			50,
 			GRID_WIDTH_IN_CELLS_THIRD * 2,
@@ -90,12 +134,15 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
 
+		// Next
+		gridY += 2;
+
 		// Add Component Special Chars
 		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			this.#STRING_CHAR_TEST,
 			0,
-			LINE_HEIGHT * 5,
+			LINE_HEIGHT * gridY,
 			100,
 			50,
 			GRID_WIDTH_IN_CELLS,
@@ -105,8 +152,11 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
 
+		// Next
+		gridY += 2;
+
 		// Rectangles
-		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
+		const RECTANGLE_GRID_Y = LINE_HEIGHT * gridY;
 		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
 		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
 
@@ -114,7 +164,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
 			this.SHAPE_MANAGER,
 			0,
-			RECTANGLE_GRID_Y,
+			LINE_HEIGHT * gridY,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
 			GRID_WIDTH_IN_CELLS_THIRD,
@@ -128,7 +178,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
 			this.SHAPE_MANAGER,
 			RECTANGLE_WIDTH + 2,
-			RECTANGLE_GRID_Y,
+			LINE_HEIGHT * gridY,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
 			GRID_WIDTH_IN_CELLS - GRID_WIDTH_IN_CELLS_THIRD,
@@ -142,7 +192,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
 			this.SHAPE_MANAGER,
 			RECTANGLE_WIDTH * 2 + 4,
-			RECTANGLE_GRID_Y,
+			LINE_HEIGHT * gridY,
 			RECTANGLE_WIDTH,
 			RECTANGLE_HEIGHT,
 			GRID_WIDTH_IN_CELLS,
@@ -152,12 +202,14 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
 
-		// Dummy Text with Line Height
-		const BLOCK_GRID_TOP = 10;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
-		// const BLOCK_DELAY_PER_LINE = 1;
+		// Next
+		gridY += 2;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
+		// Dummy Text with Line Height
+		const BLOCK_GRID_TOP = gridY;
+		const BLOCK_GRID_BOTTOM = gridY + 2;
+
+		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
 			// Create Component
 			const Y = LINE_HEIGHT * i;
 
@@ -165,49 +217,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				this.SHAPE_MANAGER,
 				'HELLO',
 				0,
-				Y,
-				100,
-				50,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
-
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				`I'M`,
-				0,
-				Y,
-				100,
-				50,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
-
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'BARNABY',
-				0,
-				Y,
-				100,
-				50,
+				LINE_HEIGHT * Y,
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
@@ -231,207 +241,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	// __________________________________________________________________ Undraw
 
-	undraw() {
-		// Get Line Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Get Grid Data
-		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
-		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
-
-		const GRID_WIDTH_IN_CELLS_THIRD = Math.floor(GRID_WIDTH_IN_CELLS / 3);
-		const LINE_HEIGHT_MAX = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
-
-		// Component Line Top
-		const LINE_TOP = new ComponentLineWidthFull(
-			this.SHAPE_MANAGER,
-			LINE_HEIGHT,
-			1,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
-
-		// Create Component ABC
-		const COMPONENT_ABC = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-			0,
-			LINE_HEIGHT * 3,
-			100,
-			50,
-			GRID_WIDTH_IN_CELLS,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
-
-		// Add Component 0001
-		const COMPONENT_0001 = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'0123456789',
-			0,
-			LINE_HEIGHT * 4,
-			100,
-			50,
-			GRID_WIDTH_IN_CELLS,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
-
-		// Add Component Special Chars
-		const COMPONENT_SPECIAL_CHARS = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			this.#STRING_CHAR_TEST,
-			0,
-			LINE_HEIGHT * 5,
-			100,
-			50,
-			GRID_WIDTH_IN_CELLS,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_SPECIAL_CHARS);
-
-		// Rectangles
-		const RECTANGLE_GRID_Y = LINE_HEIGHT * 7;
-		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
-		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
-
-		// Create Component Rectangle A
-		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			0,
-			RECTANGLE_GRID_Y,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			1,
-			FillType.PassThrough,
-			FillStrategyType.Reverse,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
-
-		// Create Component Rectangle B
-		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			RECTANGLE_WIDTH + 2,
-			RECTANGLE_GRID_Y,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			11,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
-
-		// Create Component Rectangle C
-		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			RECTANGLE_WIDTH * 2 + 4,
-			RECTANGLE_GRID_Y,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			21,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
-
-		// Dummy Text with Line Height
-		const BLOCK_GRID_TOP = 10;
-		const BLOCK_GRID_BOTTOM = LINE_HEIGHT_MAX - 3;
-
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
-
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'I',
-				0,
-				Y,
-				100,
-				50,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				DrawType.Clear,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 1; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
-
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'0',
-				0,
-				Y,
-				100,
-				50,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				DrawType.Clear,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		for (let i = BLOCK_GRID_TOP + 2; i < BLOCK_GRID_BOTTOM; i += 3) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
-
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'X',
-				0,
-				Y,
-				100,
-				50,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				DrawType.Clear,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
-
-		// Create Component Line Bottom
-		const LINE_BOTTOM = new ComponentLineWidthFull(
-			this.SHAPE_MANAGER,
-			LINE_HEIGHT * (LINE_HEIGHT_MAX - 2),
-			1,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
-	}
+	undraw() {}
 
 	// ____________________________________________________________________ Tick
 

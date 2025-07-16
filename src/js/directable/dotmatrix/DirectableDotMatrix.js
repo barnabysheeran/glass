@@ -29,7 +29,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = this.#VIEW_IDS.INTRO;
+	#viewIdCurrent = this.#VIEW_IDS.TEST;
 
 	#LOG_LEVEL = 3;
 
