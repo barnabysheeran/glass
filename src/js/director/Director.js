@@ -23,7 +23,7 @@ export default class Director {
 		this.#DIRECTABLE_TITLE = new DirectableTitle();
 		this.#DIRECTABLE_TITLE.setText('Barnaby Sheeran');
 
-		// Create Dot Matrix
+		// Create Directable Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX = new DirectableDotMatrix(
 			displayWidthPx,
 			displayHeightPx,
@@ -40,13 +40,13 @@ export default class Director {
 
 		// Application Dispatcher Events
 		ApplicationDispatcher.on(
-			'view-header-menu-active',
-			this.#onViewHeaderMenuActive.bind(this),
+			'project-menu-open',
+			this.#onProjectMenuOpen.bind(this),
 		);
 
 		ApplicationDispatcher.on(
-			'view-header-menu-inactive',
-			this.#onViewHeaderMenuInactive.bind(this),
+			'project-menu-close',
+			this.#onProjectMenuClose.bind(this),
 		);
 
 		ApplicationDispatcher.on(
@@ -73,21 +73,21 @@ export default class Director {
 
 	// _______________________________________________________________ On Events
 
-	static #onViewHeaderMenuActive() {
+	static #onProjectMenuOpen() {
 		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
 
 		// Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX.setMenuActive();
+		this.#DIRECTABLE_DOT_MATRIX.projectMenuOpen();
 	}
 
-	static #onViewHeaderMenuInactive() {
+	static #onProjectMenuClose() {
 		ApplicationLogger.log(
 			`Director: View Header Menu Inactive`,
 			this.#LOG_LEVEL,
 		);
 
 		// Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX.setMenuInactive();
+		this.#DIRECTABLE_DOT_MATRIX.projectMenuClose();
 	}
 
 	static #onViewProjectMenuSelect(data) {
@@ -97,7 +97,7 @@ export default class Director {
 		);
 
 		// Dot Matrix
-		this.#DIRECTABLE_DOT_MATRIX.showProject(data.projectId);
+		this.#DIRECTABLE_DOT_MATRIX.projectShow(data.projectId);
 	}
 
 	// ____________________________________________________________________ Size

@@ -153,9 +153,9 @@ export default class DirectableDotMatrix {
 
 	// ____________________________________________________________________ View
 
-	showProject(projectId) {
+	projectShow(projectId) {
 		ApplicationLogger.log(
-			'DirectableDotMatrix showProject ' + projectId,
+			'DirectableDotMatrix projectShow ' + projectId,
 			this.#LOG_LEVEL,
 		);
 
@@ -176,8 +176,11 @@ export default class DirectableDotMatrix {
 		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
 	}
 
-	setMenuActive() {
-		ApplicationLogger.log('DirectableDotMatrix setMenuActive', this.#LOG_LEVEL);
+	projectMenuOpen() {
+		ApplicationLogger.log(
+			'DirectableDotMatrix projectMenuOpen',
+			this.#LOG_LEVEL,
+		);
 
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
@@ -197,9 +200,9 @@ export default class DirectableDotMatrix {
 		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT_MENU;
 	}
 
-	setMenuInactive() {
+	projectMenuClose() {
 		ApplicationLogger.log(
-			'DirectableDotMatrix setMenuInactive',
+			'DirectableDotMatrix projectMenuShow',
 			this.#LOG_LEVEL,
 		);
 

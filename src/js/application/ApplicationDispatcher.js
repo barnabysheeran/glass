@@ -5,8 +5,8 @@ export default class ApplicationDispatcher {
 
 	static #VALID_EVENT_NAMES = [
 		// View
-		'view-header-menu-active',
-		'view-header-menu-inactive',
+		'project-menu-open',
+		'project-menu-close',
 
 		'view-project-menu-select', // { projectId: string }
 	];

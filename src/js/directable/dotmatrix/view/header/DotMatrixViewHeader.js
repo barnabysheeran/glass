@@ -143,7 +143,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		);
 
 		if (this.isActive === true) {
-			ApplicationDispatcher.dispatch('view-header-menu-inactive');
+			ApplicationDispatcher.dispatch('project-menu-close');
 
 			console.log(' - setting active to false');
 
@@ -153,7 +153,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			// Unsurround Button
 			this.#drawButtonUnsurrounded();
 		} else {
-			ApplicationDispatcher.dispatch('view-header-menu-active');
+			ApplicationDispatcher.dispatch('project-menu-open');
 
 			console.log(' - setting active to true');
 
