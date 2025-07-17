@@ -12,8 +12,6 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
 export default class DotMatrixViewGreenpeace extends DotMatrixView {
-	#projectId;
-
 	#DELAY_GLYPH = 1;
 
 	// _________________________________________________________________________
@@ -38,12 +36,6 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 		this.undraw(delayFrames);
 	}
 
-	// ______________________________________________________________ Project Id
-
-	setProjectId(projectId) {
-		this.#projectId = projectId;
-	}
-
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames) {
@@ -52,9 +44,9 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data
-		const PROJECT_DATA_ITEM = DataController.getProjectById(this.#projectId);
+		const PROJECT_DATA_ITEM = DataController.getProjectById(this.getViewId());
 
-		console.log('Project Data Item', PROJECT_DATA_ITEM);
+		console.log('GreenPeace Project Data Item', PROJECT_DATA_ITEM);
 
 		if (!PROJECT_DATA_ITEM) {
 			return;
@@ -158,7 +150,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data
-		const PROJECT_DATA_ITEM = DataController.getProjectById(this.#projectId);
+		const PROJECT_DATA_ITEM = DataController.getProjectById(this.getViewId());
 
 		console.log('Project Data Item', PROJECT_DATA_ITEM);
 
