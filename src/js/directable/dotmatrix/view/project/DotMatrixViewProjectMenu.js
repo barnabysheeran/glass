@@ -67,7 +67,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		}
 
 		// Draw
-		this.draw(delayFrames);
+		this.draw(delayFrames, DrawType.Fill);
 
 		// Create Interactive Blocks
 		this.#createInteractiveBlocks();
@@ -79,13 +79,17 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 		// Undraw Unsurrounding Rectangles
 		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
-			this.#undrawSurroundingRectangle(this.#PROJECT_IDS[i], delayFrames);
+			this.#drawSurroundingRectangle(
+				this.#PROJECT_IDS[i],
+				delayFrames,
+				DrawType.Clear,
+			);
 		}
 	}
 
 	// ____________________________________________________________________ Draw
 
-	draw(delayFrames) {
+	draw(delayFrames, drawType) {
 		super.draw(delayFrames);
 
 		// Get Height
@@ -164,73 +168,22 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			// Rectangle
 			if (this.#IS_OVERS[i] === true) {
 				// Is Over
-				this.#drawSurroundingRectangle(this.#PROJECT_IDS[i], delayFrames);
+				this.#drawSurroundingRectangle(
+					this.#PROJECT_IDS[i],
+					delayFrames,
+					DrawType.Fill,
+				);
 			} else {
 				// Is Not Over
-				this.#undrawSurroundingRectangle(this.#PROJECT_IDS[i], delayFrames);
+				this.#drawSurroundingRectangle(
+					this.#PROJECT_IDS[i],
+					delayFrames,
+					DrawType.Clear,
+				);
 			}
 
 			// Updated
 			this.#REQUIRES_UPDATES[i] = false;
-		}
-	}
-
-	// __________________________________________________________________ Undraw
-
-	undraw(delayFrames) {
-		super.undraw(delayFrames);
-
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getLineHeightHeader();
-
-		// Get Width
-		const BLOCK_WIDTH_MOBILE =
-			DirectableDotMatrixConstants.getBlockWidthMobile();
-
-		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
-
-		// Get Grid Data
-		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
-
-		// Get Project Data
-		const PROJECT_DATA = DataController.getProjects();
-
-		// Draw
-		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
-			// Requires Update ?
-			if (this.#REQUIRES_UPDATES[i] === false) {
-				continue;
-			}
-
-			// Get Project Data Item
-			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
-
-			// Grid Y
-			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * 2);
-
-			// Text
-			let text = PROJECT_DATA_ITEM['name'];
-
-			if (GRID_WIDTH_IN_CELLS < BLOCK_WIDTH_MOBILE) {
-				text = PROJECT_DATA_ITEM['name-short'];
-			}
-
-			// Create Glyph Line
-			const COMPONENT = new ComponentGlyphLineCentered(
-				this.SHAPE_MANAGER,
-				text,
-				GRID_Y,
-				delayFrames,
-				this.#DELAY_GLYPH,
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-				DrawType.Clear,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
 	}
 
@@ -279,8 +232,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		this.#REQUIRES_UPDATES[PROJECT_INDEX] = true;
 
 		// Draw
-		this.undraw(0);
-		this.draw(this.#DELAY_ROLLOVER_REDRAW);
+		this.draw(0, DrawType.Clear);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
 	onButtonMenuOut(clickData) {
@@ -298,13 +251,13 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		this.#REQUIRES_UPDATES[PROJECT_INDEX] = true;
 
 		// Draw
-		this.undraw(0);
-		this.draw(this.#DELAY_ROLLOVER_REDRAW);
+		this.draw(0, DrawType.Clear);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
 	// ______________________________________________________________ Rectangles
 
-	#drawSurroundingRectangle(projectId, delayFrames) {
+	#drawSurroundingRectangle(projectId, delayFrames, drawType) {
 		// Get Project Index
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(projectId);
 
@@ -329,36 +282,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			delayFrames,
 			FillType.PassThrough,
 			FillStrategyType.Reverse,
-			DrawType.Fill,
-		);
-	}
-
-	#undrawSurroundingRectangle(projectId, delayFrames) {
-		// Get Project Index
-		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(projectId);
-
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Position
-		const GRID_X = this.#GRID_X_CENTERED_STARTS[PROJECT_INDEX] - 1;
-		const GRID_Y = this.#GRID_YS[PROJECT_INDEX] - 1;
-
-		// Size
-		const GRID_WIDTH = this.#GRID_WIDTH_GLYPHS[PROJECT_INDEX] + 2;
-		const GRID_HEIGHT = LINE_HEIGHT * 1;
-
-		viewAddRectanglesBlock(
-			this.SHAPE_MANAGER,
-			this.COMPONENT_MANAGER,
-			GRID_X,
-			GRID_Y,
-			GRID_WIDTH,
-			GRID_HEIGHT,
-			delayFrames,
-			FillType.PassThrough,
-			FillStrategyType.Reverse,
-			DrawType.Clear,
+			drawType,
 		);
 	}
 }

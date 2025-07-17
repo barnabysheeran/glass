@@ -41,7 +41,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Order Important - Draw Stores Grid Position Information
 
 		// Draw
-		this.draw(delayFrames);
+		this.draw(delayFrames, DrawType.Fill);
 
 		// Create Interactive Block
 		this.#createInteractiveBlock();
@@ -55,12 +55,12 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		super.stop(delayFrames);
 
 		// Undraw
-		this.undraw(delayFrames);
+		this.draw(delayFrames, DrawType.Clear);
 	}
 
 	// ____________________________________________________________________ Draw
 
-	draw(delayFrames) {
+	draw(delayFrames, drawType) {
 		super.draw(delayFrames);
 
 		// Get Height
@@ -82,6 +82,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
+			drawType,
 		);
 
 		this.COMPONENT_MANAGER.addComponent(COMPONENT);
@@ -89,36 +90,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Store Component Details
 		this.#gridXCenteredStart = COMPONENT.getGridXCenteredStart();
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
-	}
-
-	// __________________________________________________________________ Undraw
-
-	undraw(delayFrames) {
-		super.undraw(delayFrames);
-
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getLineHeightHeader();
-
-		// Constant Position
-		const GRID_Y =
-			LINE_HEIGHT * (LINE_HEIGHT_HEADER - this.#LINE_HEIGHT_ABOVE_HEADER);
-
-		// Create Glyph Line Centered Component
-		const COMPONENT = new ComponentGlyphLineCentered(
-			this.SHAPE_MANAGER,
-			'Menu',
-			GRID_Y,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
-			this.#DELAY_GLYPH,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT);
 	}
 
 	// _____________________________________________________________ Interaction
@@ -155,9 +126,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			// Inactive
 			this.isActive = false;
-
-			// Unsurround Button
-			this.#drawButtonUnsurrounded();
 		} else {
 			ApplicationDispatcher.dispatch('project-menu-open');
 
@@ -165,9 +133,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			// Active
 			this.isActive = true;
-
-			// Surround Button
-			this.#drawButtonSurrounded();
 		}
 	}
 
@@ -195,23 +160,23 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#drawButtonSurrounded() {
 		// Draw Surrounding Rectangle
-		this.#drawSurroundingRectangle(0);
+		this.#drawSurroundingRectangle(0, DrawType.Fill);
 
 		// Draw
-		this.undraw(this.#DELAY_ROLLOVER_REDRAW);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Clear);
 	}
 
 	#drawButtonUnsurrounded() {
 		// Undraw Surrounding Rectangle
-		this.#undrawSurroundingRectangle(0);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Clear);
 
 		// Draw
-		this.draw(this.#DELAY_ROLLOVER_REDRAW);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
 	// _______________________________________________________________ Rectangle
 
-	#drawSurroundingRectangle(delayFrames) {
+	#drawSurroundingRectangle(delayFrames, drawType) {
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
@@ -231,31 +196,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			delayFrames,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
-			DrawType.Fill,
-		);
-	}
-
-	#undrawSurroundingRectangle(delayFrames) {
-		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
-
-		// Position and Size
-		const GRID_X = this.#gridXCenteredStart - 1;
-		const GRID_Y = this.#gridY - 1;
-		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
-		const GRID_HEIGHT = LINE_HEIGHT * 1;
-
-		viewAddRectanglesBlock(
-			this.SHAPE_MANAGER,
-			this.COMPONENT_MANAGER,
-			GRID_X,
-			GRID_Y,
-			GRID_WIDTH,
-			GRID_HEIGHT,
-			delayFrames,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			DrawType.Clear,
+			drawType,
 		);
 	}
 }
