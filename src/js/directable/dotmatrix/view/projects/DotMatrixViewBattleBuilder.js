@@ -19,7 +19,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'ProjectBattleBuilder');
+		super(shapeManager, componentManager, 'BattleBuilder');
 	}
 
 	// ___________________________________________________________________ Start

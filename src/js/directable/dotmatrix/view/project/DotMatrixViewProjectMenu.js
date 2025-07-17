@@ -33,7 +33,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'project-menu');
+		super(shapeManager, componentManager, 'ProjectMenu');
 	}
 
 	// ______________________________________________________________ Start Stop

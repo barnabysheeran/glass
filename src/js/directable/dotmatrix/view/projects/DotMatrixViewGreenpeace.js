@@ -19,7 +19,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'ProjectGreenpeace');
+		super(shapeManager, componentManager, 'Greenpeace');
 	}
 
 	// ___________________________________________________________________ Start

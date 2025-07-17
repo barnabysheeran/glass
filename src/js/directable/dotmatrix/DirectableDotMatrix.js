@@ -24,7 +24,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = 'Test';
+	#viewIdCurrent = 'Intro';
 
 	#LOG_LEVEL = 3;
 
@@ -127,10 +127,10 @@ export default class DirectableDotMatrix {
 			this.#COMPONENT_MANAGER.getActiveComponentTotal();
 
 		// Components Complete ?
-		if (ACTIVE_COMPONENT_TOTAL === 0) {
-			// View Draw Complete
-			this.#getViewById(this.#viewIdCurrent).onDrawComplete();
-		}
+		// if (ACTIVE_COMPONENT_TOTAL === 0) {
+		// 	// View Draw Complete
+		// 	this.#getViewById(this.#viewIdCurrent).onDrawComplete();
+		// }
 	}
 
 	// ____________________________________________________________________ View
@@ -144,18 +144,28 @@ export default class DirectableDotMatrix {
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
+		// Order Important
+
 		// Stop Any Active Components
 		this.#COMPONENT_MANAGER.stopUnstartedShapes();
 
 		// Stop Current View
 		this.#getViewById(this.#viewIdCurrent).stop();
 
-		// Start Project View
-		// this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
-		// this.#getViewById(this.#VIEW_IDS.PROJECT).start(DELAY_PAGE_TRANSITION);
+		// Show Project View
+		const PROJECT_VIEW = this.#getViewById(projectId);
+
+		if (PROJECT_VIEW) {
+			PROJECT_VIEW.start(DELAY_PAGE_TRANSITION);
+		} else {
+			ApplicationLogger.log(
+				'DirectableDotMatrix: No view found for project ' + projectId,
+				this.#LOG_LEVEL,
+			);
+		}
 
 		// Store
-		// this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
+		this.#viewIdCurrent = projectId;
 	}
 
 	projectMenuOpen() {
@@ -175,11 +185,11 @@ export default class DirectableDotMatrix {
 		// Stop Current View
 		this.#getViewById(this.#viewIdCurrent).stop();
 
-		// Show Menu View
-		// this.#getViewById(this.#VIEW_IDS.PROJECT_MENU).start(DELAY_PAGE_TRANSITION);
+		// Show Project Menu View
+		this.#getViewById('ProjectMenu').start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		// this.#viewIdCurrent = this.#VIEW_IDS.PROJECT_MENU;
+		this.#viewIdCurrent = 'ProjectMenu';
 	}
 
 	projectMenuClose() {
@@ -187,6 +197,8 @@ export default class DirectableDotMatrix {
 			'DirectableDotMatrix projectMenuShow',
 			this.#LOG_LEVEL,
 		);
+
+		// Order Important
 
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
@@ -198,10 +210,11 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Intro View
-		// this.#getViewById(this.#VIEW_IDS.INTRO).start(DELAY_PAGE_TRANSITION);
+		this.#getViewById('Intro').start(DELAY_PAGE_TRANSITION);
 
 		// Store
 		// this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
+		this.#viewIdCurrent = 'Intro';
 	}
 
 	// ___________________________________________________________________ Reset
