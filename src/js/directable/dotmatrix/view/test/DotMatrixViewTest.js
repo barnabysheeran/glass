@@ -89,7 +89,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Create Component abc
 		const COMPONENT_abc = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			'abcd efgh ijkl mnop qrst uvwy xz',
+			'abcd efgh ijkl mnop qrst uvwx yz',
 			0,
 			LINE_HEIGHT * gridY,
 			100,

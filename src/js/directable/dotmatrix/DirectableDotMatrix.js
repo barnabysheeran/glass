@@ -4,11 +4,15 @@ import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
 import ComponentManager from './component/ComponentManager.js';
 
+import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
+
 import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
 import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
-import DotMatrixViewProject from './view/projects/DotMatrixViewProject.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
-import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
+
+import DotMatrixViewBattleBuilder from './view/projects/DotMatrixViewBattleBuilder.js';
+
+import DotMatrixViewProject from './view/projects/DotMatrixViewProject.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 import DataController from '../../data/DataController.js';
@@ -17,8 +21,10 @@ export default class DirectableDotMatrix {
 	#VIEW_IDS = Object.freeze({
 		HEADER: 'header',
 		INTRO: 'intro',
-		PROJECT: 'project',
 		PROJECT_MENU: 'project-menu',
+		PROJECT: 'project',
+		PROJECT_BATTLE_BUILDER: 'project-BattleBuilder',
+
 		TEST: 'test',
 	});
 
@@ -90,15 +96,25 @@ export default class DirectableDotMatrix {
 				'DirectableDotMatrix create project view ' + PROJECT_ID,
 				this.#LOG_LEVEL,
 			);
+
+			//
+
+			this.#VIEWS.push(
+				new DotMatrixViewProject(
+					this.#SHAPE_MANAGER,
+					this.#COMPONENT_MANAGER,
+					this.#VIEW_IDS.PROJECT,
+				),
+			);
 		}
 
-		this.#VIEWS.push(
-			new DotMatrixViewProject(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.PROJECT,
-			),
-		);
+		// this.#VIEWS.push(
+		// 	new DotMatrixViewProject(
+		// 		this.#SHAPE_MANAGER,
+		// 		this.#COMPONENT_MANAGER,
+		// 		this.#VIEW_IDS.PROJECT,
+		// 	),
+		// );
 
 		this.#VIEWS.push(
 			new DotMatrixViewTest(
