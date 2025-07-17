@@ -12,8 +12,6 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewGreenpeace extends DotMatrixView {
-	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
-
 	#DELAY_GLYPH = 1;
 
 	// _________________________________________________________________________
@@ -43,10 +41,6 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames);
 
-		if (!drawType) {
-			console.warn('DotMatrixViewBattleBuilder draw. No Draw Type');
-		}
-
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data
@@ -69,24 +63,6 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 		let gridY = LINE_HEIGHT * 10;
 
 		// TODO Long or Short Name
-
-		// Add Component Winged Skull
-		const COMPONENT_WINGED_SKULL = new ComponentGlyphLineCentered(
-			this.SHAPE_MANAGER,
-			this.#STRING_WINGED_SKULL,
-			gridY,
-			delayFrames,
-			this.#DELAY_GLYPH,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_WINGED_SKULL);
-
-		// Next
-		gridY += LINE_HEIGHT * 2;
 
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(

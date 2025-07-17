@@ -44,10 +44,6 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames);
 
-		if (!drawType) {
-			console.warn('DotMatrixViewBattleBuilder draw. No Draw Type');
-		}
-
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
 		// Get Project Data
