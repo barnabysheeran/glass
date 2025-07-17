@@ -11,23 +11,12 @@ import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 
 import DotMatrixViewBattleBuilder from './view/projects/DotMatrixViewBattleBuilder.js';
-
-import DotMatrixViewProject from './view/projects/DotMatrixViewProject.js';
+import DotMatrixViewGreenpeace from './view/projects/DotMatrixViewGreenpeace.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 import DataController from '../../data/DataController.js';
 
 export default class DirectableDotMatrix {
-	#VIEW_IDS = Object.freeze({
-		HEADER: 'header',
-		INTRO: 'intro',
-		PROJECT_MENU: 'project-menu',
-		PROJECT: 'project',
-		PROJECT_BATTLE_BUILDER: 'project-BattleBuilder',
-
-		TEST: 'test',
-	});
-
 	#DOT_MANAGER;
 	#SHAPE_MANAGER;
 	#COMPONENT_MANAGER;
@@ -35,7 +24,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = this.#VIEW_IDS.TEST;
+	#viewIdCurrent = 'Test';
 
 	#LOG_LEVEL = 3;
 
@@ -67,27 +56,27 @@ export default class DirectableDotMatrix {
 		this.#VIEW_HEADER = new DotMatrixViewHeader(
 			this.#SHAPE_MANAGER,
 			this.#COMPONENT_MANAGER,
-			this.#VIEW_IDS.HEADER,
 		);
 
 		// Create Views
 		this.#VIEWS.push(
-			new DotMatrixViewIntro(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.INTRO,
-			),
+			new DotMatrixViewIntro(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
 		);
 
 		this.#VIEWS.push(
 			new DotMatrixViewProjectMenu(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.PROJECT_MENU,
 			),
 		);
 
 		// Create Project Views
+		const PROJECT_VIEW_CLASSES = {
+			BattleBuilder: DotMatrixViewBattleBuilder,
+			Greenpeace: DotMatrixViewGreenpeace,
+			// Add more project view classes as needed
+		};
+
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
 			const PROJECT = PROJECT_DATA[i];
 			const PROJECT_ID = PROJECT.id;
@@ -97,31 +86,24 @@ export default class DirectableDotMatrix {
 				this.#LOG_LEVEL,
 			);
 
-			//
+			// Get Project Class
+			const ProjectViewClass = PROJECT_VIEW_CLASSES[PROJECT_ID];
 
-			this.#VIEWS.push(
-				new DotMatrixViewProject(
-					this.#SHAPE_MANAGER,
-					this.#COMPONENT_MANAGER,
-					this.#VIEW_IDS.PROJECT,
-				),
-			);
+			if (ProjectViewClass) {
+				// Create Project View
+				this.#VIEWS.push(
+					new ProjectViewClass(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
+				);
+			} else {
+				ApplicationLogger.log(
+					'DirectableDotMatrix: No view class found for project ' + PROJECT_ID,
+					this.#LOG_LEVEL,
+				);
+			}
 		}
 
-		// this.#VIEWS.push(
-		// 	new DotMatrixViewProject(
-		// 		this.#SHAPE_MANAGER,
-		// 		this.#COMPONENT_MANAGER,
-		// 		this.#VIEW_IDS.PROJECT,
-		// 	),
-		// );
-
 		this.#VIEWS.push(
-			new DotMatrixViewTest(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				this.#VIEW_IDS.TEST,
-			),
+			new DotMatrixViewTest(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
 		);
 
 		// Start Initial View
@@ -169,11 +151,11 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Start Project View
-		this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
-		this.#getViewById(this.#VIEW_IDS.PROJECT).start(DELAY_PAGE_TRANSITION);
+		// this.#getViewById(this.#VIEW_IDS.PROJECT).setProjectId(projectId);
+		// this.#getViewById(this.#VIEW_IDS.PROJECT).start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
+		// this.#viewIdCurrent = this.#VIEW_IDS.PROJECT;
 	}
 
 	projectMenuOpen() {
@@ -194,10 +176,10 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Menu View
-		this.#getViewById(this.#VIEW_IDS.PROJECT_MENU).start(DELAY_PAGE_TRANSITION);
+		// this.#getViewById(this.#VIEW_IDS.PROJECT_MENU).start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		this.#viewIdCurrent = this.#VIEW_IDS.PROJECT_MENU;
+		// this.#viewIdCurrent = this.#VIEW_IDS.PROJECT_MENU;
 	}
 
 	projectMenuClose() {
@@ -216,10 +198,10 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Intro View
-		this.#getViewById(this.#VIEW_IDS.INTRO).start(DELAY_PAGE_TRANSITION);
+		// this.#getViewById(this.#VIEW_IDS.INTRO).start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
+		// this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
 	}
 
 	// ___________________________________________________________________ Reset

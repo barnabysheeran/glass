@@ -16,6 +16,12 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 
 	#DELAY_GLYPH = 1;
 
+	// _________________________________________________________________________
+
+	constructor(shapeManager, componentManager) {
+		super(shapeManager, componentManager, 'ProjectGreenpeace');
+	}
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {

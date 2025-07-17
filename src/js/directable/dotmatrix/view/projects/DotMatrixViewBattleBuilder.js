@@ -16,6 +16,12 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 
 	#DELAY_GLYPH = 1;
 
+	// _________________________________________________________________________
+
+	constructor(shapeManager, componentManager) {
+		super(shapeManager, componentManager, 'ProjectBattleBuilder');
+	}
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
