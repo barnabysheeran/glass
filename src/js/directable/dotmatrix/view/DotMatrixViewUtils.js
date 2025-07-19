@@ -24,7 +24,7 @@ export function viewAddRectanglesBlock(
 	let i = 0;
 
 	for (let w = 0; w < gridWidth; w += BLOCK_WIDTH) {
-		// Calculate actual width to avoid overlap
+		// Calculate Width to ensure it doesn't exceed gridWidth
 		const actualWidth = Math.min(BLOCK_WIDTH, gridWidth - w);
 
 		// Skip if width is 0 or negative
@@ -35,7 +35,7 @@ export function viewAddRectanglesBlock(
 			shapeManager,
 			gridX + w,
 			gridY,
-			actualWidth, // Use calculated width instead of fixed BLOCK_WIDTH
+			actualWidth,
 			gridHeight,
 			delayFrames + i,
 			fillType,
