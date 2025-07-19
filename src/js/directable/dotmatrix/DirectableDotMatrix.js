@@ -79,42 +79,37 @@ export default class DirectableDotMatrix {
 		);
 
 		// Create Project Views
-		const PROJECT_VIEW_CLASSES = {
-			battlebuilder: DotMatrixViewProject_battlebuilder,
-			greenpeace: DotMatrixViewProject_greenpeace,
-			postmatter: DotMatrixViewProject_postmatter,
-			// Add more project view classes as needed
-		};
+		const projectViewClasses = new Map([
+			['battlebuilder', DotMatrixViewProject_battlebuilder],
+			['greenpeace', DotMatrixViewProject_greenpeace],
+			['postmatter', DotMatrixViewProject_postmatter],
+		]);
 
-		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
-			const PROJECT = PROJECT_DATA[i];
-			const PROJECT_ID = PROJECT.id;
-
-			ApplicationLogger.log(
-				'DirectableDotMatrix create project view ' + PROJECT_ID,
-				this.#LOG_LEVEL,
-			);
-
-			// Get Project Class
-			const ProjectViewClass = PROJECT_VIEW_CLASSES[PROJECT_ID];
+		PROJECT_DATA.forEach((project) => {
+			const ProjectViewClass = projectViewClasses.get(project.id);
 
 			if (ProjectViewClass) {
-				// Create Project View
+				ApplicationLogger.log(
+					`DirectableDotMatrix - Creating Project View '${project.id}'`,
+					this.#LOG_LEVEL,
+				);
+
 				this.#VIEWS.push(
 					new ProjectViewClass(
 						this.#SHAPE_MANAGER,
 						this.#COMPONENT_MANAGER,
-						PROJECT_ID,
+						project.id,
 					),
 				);
 			} else {
 				ApplicationLogger.warn(
-					'DirectableDotMatrix. No view class found for project ' + PROJECT_ID,
+					`DirectableDotMatrix - No View Found for Project '${project.id}'`,
 					this.#LOG_LEVEL,
 				);
 			}
-		}
+		});
 
+		// Create Test View
 		this.#VIEWS.push(
 			new DotMatrixViewTest(
 				this.#SHAPE_MANAGER,
@@ -227,11 +222,10 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Intro View
-		this.#getViewById('Intro').start(DELAY_PAGE_TRANSITION);
+		this.#getViewById('intro').start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		// this.#viewIdCurrent = this.#VIEW_IDS.INTRO;
-		this.#viewIdCurrent = 'Intro';
+		this.#viewIdCurrent = 'intro';
 	}
 
 	// ___________________________________________________________________ Reset
