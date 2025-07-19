@@ -9,7 +9,6 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
-import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewpostMATTER extends DotMatrixView {
 	#DELAY_GLYPH = 1;
@@ -146,22 +145,6 @@ export default class DotMatrixViewpostMATTER extends DotMatrixView {
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
-		}
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		super.tick();
-
-		// Active ?
-		if (this.isActive !== true) {
-			return;
-		}
-
-		if (Math.random() < 0.01) {
-			this.draw(0, DrawType.Clear);
-			this.draw(7, DrawType.Fill);
 		}
 	}
 }

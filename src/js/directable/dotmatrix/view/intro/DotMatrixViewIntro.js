@@ -66,10 +66,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
 
-		console.log(
-			`DotMatrixViewIntro. delayFrames: ${delayFrames} drawType: ${drawType} #delayGlyph: ${this.#delayGlyph}`,
-		);
-
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 		const LINE_HEIGHT_HEADER =
