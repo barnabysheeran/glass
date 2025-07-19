@@ -25,7 +25,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#LINE_HEIGHT_ABOVE_HEADER = 2;
 
-	#DELAY_GLYPH = 1;
+	#DELAY_GLYPH_IN = 2;
+	#DELAY_GLYPH_OUT = 0;
+	#delayGlyph;
 
 	// ______________________________________________________________ Start Stop
 
@@ -34,11 +36,14 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Order Important - Draw Stores Grid Position Information
 
-		// Draw
-		this.draw(delayFrames, DrawType.Fill);
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
 		// Create Interactive Block
 		this.#createInteractiveBlock();
+
+		// Draw
+		this.#drawButtonUnsurrounded();
 
 		// Header is Unique, isActive Tracks App State
 		this.isActive = false;
@@ -47,6 +52,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	stop(delayFrames = 0) {
 		// Super Removes Interactive Blocks
 		super.stop(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
 		// Undraw
 		this.draw(delayFrames, DrawType.Clear);
@@ -73,7 +81,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			this.#gridY,
 			delayFrames +
 				DirectableDotMatrixDelays.getDelayFromGridPosition(0, this.#gridY),
-			this.#DELAY_GLYPH,
+			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			drawType,
@@ -116,17 +124,19 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		if (this.isActive === true) {
 			ApplicationDispatcher.dispatch('project-menu-close');
 
-			console.log(' - setting active to false');
-
 			// Inactive
 			this.isActive = false;
+
+			// Draw
+			this.#drawButtonUnsurrounded();
 		} else {
 			ApplicationDispatcher.dispatch('project-menu-open');
 
-			console.log(' - setting active to true');
-
 			// Active
 			this.isActive = true;
+
+			// Draw
+			this.#drawButtonSurrounded();
 		}
 	}
 
@@ -156,15 +166,15 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Draw Surrounding Rectangle
 		this.#drawSurroundingRectangle(0, DrawType.Fill);
 
-		// Draw
+		// Clear Draw
 		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Clear);
 	}
 
 	#drawButtonUnsurrounded() {
-		// Undraw Surrounding Rectangle
-		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Clear);
+		// Clear Surrounding Rectangle
+		this.draw(0, DrawType.Clear);
 
-		// Draw
+		// Fill Draw
 		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
