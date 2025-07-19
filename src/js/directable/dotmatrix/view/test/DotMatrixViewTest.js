@@ -20,12 +20,6 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	#STRING_CHAR_TEST_BB = '{wing-left} {skull} {wing-right}';
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'Test');
-	}
-
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {

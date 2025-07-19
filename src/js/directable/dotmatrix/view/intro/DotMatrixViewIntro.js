@@ -18,12 +18,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	#DELAY_GLYPH = 1;
 	#DELAY_FRAMES_REDRAW = 60;
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'Intro');
-	}
-
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {

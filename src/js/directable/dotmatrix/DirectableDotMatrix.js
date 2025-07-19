@@ -25,7 +25,7 @@ export default class DirectableDotMatrix {
 	#VIEW_HEADER;
 	#VIEWS = [];
 
-	#viewIdCurrent = 'Intro';
+	#viewIdCurrent = 'intro';
 
 	#LOG_LEVEL = 3;
 
@@ -57,24 +57,31 @@ export default class DirectableDotMatrix {
 		this.#VIEW_HEADER = new DotMatrixViewHeader(
 			this.#SHAPE_MANAGER,
 			this.#COMPONENT_MANAGER,
+			'header',
 		);
 
-		// Create Views
+		// Create View Intro
 		this.#VIEWS.push(
-			new DotMatrixViewIntro(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
+			new DotMatrixViewIntro(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				'intro',
+			),
 		);
 
+		// Create View Project Menu
 		this.#VIEWS.push(
 			new DotMatrixViewProjectMenu(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
+				'project-menu',
 			),
 		);
 
 		// Create Project Views
 		const PROJECT_VIEW_CLASSES = {
-			BattleBuilder: DotMatrixViewProject_battlebuilder,
-			Greenpeace: DotMatrixViewProject_greenpeace,
+			battlebuilder: DotMatrixViewProject_battlebuilder,
+			greenpeace: DotMatrixViewProject_greenpeace,
 			postmatter: DotMatrixViewProject_postmatter,
 			// Add more project view classes as needed
 		};
@@ -94,18 +101,26 @@ export default class DirectableDotMatrix {
 			if (ProjectViewClass) {
 				// Create Project View
 				this.#VIEWS.push(
-					new ProjectViewClass(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
+					new ProjectViewClass(
+						this.#SHAPE_MANAGER,
+						this.#COMPONENT_MANAGER,
+						PROJECT_ID,
+					),
 				);
 			} else {
-				ApplicationLogger.log(
-					'DirectableDotMatrix: No view class found for project ' + PROJECT_ID,
+				ApplicationLogger.warn(
+					'DirectableDotMatrix. No view class found for project ' + PROJECT_ID,
 					this.#LOG_LEVEL,
 				);
 			}
 		}
 
 		this.#VIEWS.push(
-			new DotMatrixViewTest(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER),
+			new DotMatrixViewTest(
+				this.#SHAPE_MANAGER,
+				this.#COMPONENT_MANAGER,
+				'test',
+			),
 		);
 
 		// Start Initial View
@@ -188,10 +203,10 @@ export default class DirectableDotMatrix {
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Show Project Menu View
-		this.#getViewById('ProjectMenu').start(DELAY_PAGE_TRANSITION);
+		this.#getViewById('project-menu').start(DELAY_PAGE_TRANSITION);
 
 		// Store
-		this.#viewIdCurrent = 'ProjectMenu';
+		this.#viewIdCurrent = 'project-menu';
 	}
 
 	projectMenuClose() {

@@ -30,12 +30,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	#DELAY_GLYPH = 5;
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'ProjectMenu');
-	}
-
 	// ______________________________________________________________ Start Stop
 
 	start(delayFrames = 0) {

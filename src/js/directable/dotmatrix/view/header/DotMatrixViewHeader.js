@@ -27,12 +27,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#DELAY_GLYPH = 1;
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'Header');
-	}
-
 	// ______________________________________________________________ Start Stop
 
 	start(delayFrames = 0) {

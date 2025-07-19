@@ -14,12 +14,6 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class DotMatrixViewGreenpeace extends DotMatrixView {
 	#DELAY_GLYPH = 1;
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager) {
-		super(shapeManager, componentManager, 'Greenpeace');
-	}
-
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
