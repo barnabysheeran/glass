@@ -13,15 +13,17 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
-	#delayFramesReDraw = -1;
-
-	#DELAY_GLYPH = 1;
-	#DELAY_FRAMES_REDRAW = 60;
+	#DELAY_GLYPH_IN = 2;
+	#DELAY_GLYPH_OUT = 0;
+	#delayGlyph;
 
 	// ___________________________________________________________________ Start
 
 	start(delayFrames) {
 		super.start(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
 		// Start
 		this.draw(delayFrames, DrawType.Fill);
@@ -29,6 +31,9 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 	stop(delayFrames) {
 		super.stop(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
 		// Stop
 		this.draw(delayFrames, DrawType.Clear);
@@ -60,6 +65,10 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
+
+		console.log(
+			`DotMatrixViewIntro. delayFrames: ${delayFrames} drawType: ${drawType} #delayGlyph: ${this.#delayGlyph}`,
+		);
 
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -103,7 +112,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				GRID_Y,
 				delayFrames +
 					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
-				this.#DELAY_GLYPH,
+				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				drawType,
@@ -127,25 +136,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		);
 
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
-
-		// Create Component Dot
-		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
-
-		const COMPONENT_DOT = new ComponentGlyphBoxWidthFull(
-			this.SHAPE_MANAGER,
-			'.,',
-			0,
-			gridY,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
-			this.#DELAY_GLYPH,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_DOT);
 	}
 
 	// onDrawComplete() {

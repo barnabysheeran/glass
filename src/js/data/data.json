@@ -5,10 +5,23 @@
             "id": "battlebuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
+            "media": [
+                {
+                    "type": "image",
+                    "url": "project/battlebuilder/1.jpg",
+                    "aspect": "4:3"
+                },
+                {
+                    "type": "image",
+                    "url": "project/battlebuilder/2.jpg",
+                    "aspect": "4:3"
+                }
+            ],
             "credit": {
                 "text": "BATTLEBUILDER.NET",
                 "url": "https://battlebuilder.net"
             },
+            "comment": "Comment Text",
             "technology": "Javascript, WebGL, Three.js, Shopify"
         },
 
@@ -27,7 +40,7 @@
                 {
                     "type": "vimeo",
                     "vimeo id": "148119789",
-                    "aspect ratio": "4:3"
+                    "aspect": "4:3"
                 }
             ],
             "credit": {

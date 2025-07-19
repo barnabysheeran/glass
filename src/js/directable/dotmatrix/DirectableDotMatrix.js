@@ -10,9 +10,9 @@ import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
 import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 
-import DotMatrixViewProject_battlebuilder from './view/projects/DotMatrixViewProject_battlebuilder.js';
-import DotMatrixViewProject_greenpeace from './view/projects/DotMatrixViewProject_greenpeace.js';
-import DotMatrixViewProject_postmatter from './view/projects/DotMatrixViewProject_postmatter.js';
+import DotMatrixViewProject_battlebuilder from './view/project/DotMatrixViewProject_battlebuilder.js';
+import DotMatrixViewProject_greenpeace from './view/project/DotMatrixViewProject_greenpeace.js';
+import DotMatrixViewProject_postmatter from './view/project/DotMatrixViewProject_postmatter.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 import DataController from '../../data/DataController.js';
@@ -119,8 +119,8 @@ export default class DirectableDotMatrix {
 		);
 
 		// Start Initial View
-		this.#VIEW_HEADER.start();
-		this.#getViewById(this.#viewIdCurrent).start();
+		this.#VIEW_HEADER.start(0);
+		this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -248,8 +248,8 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		this.#VIEW_HEADER.start();
-		this.#getViewById(this.#viewIdCurrent).start();
+		this.#VIEW_HEADER.start(0);
+		this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
 	// ____________________________________________________________________ Util

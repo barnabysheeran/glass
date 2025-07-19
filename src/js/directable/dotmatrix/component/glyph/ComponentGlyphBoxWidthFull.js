@@ -3,7 +3,6 @@ import GridData from '../../../../grid/GridData.js';
 import Component from '../Component.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 export default class ComponentGlyphBoxWidthFull extends Component {
 	// Unique Parameters
