@@ -14,12 +14,17 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
 
-	#DELAY_GLYPH = 1;
+	#DELAY_GLYPH_IN = 2;
+	#DELAY_GLYPH_OUT = 0;
+	#delayGlyph;
 
 	// ______________________________________________________________ Start Stop
 
 	start(delayFrames) {
 		super.start(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
 		// Start
 		this.draw(delayFrames, DrawType.Fill);
@@ -27,6 +32,9 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 
 	stop(delayFrames) {
 		super.stop(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
 		// Stop
 		this.draw(delayFrames, DrawType.Clear);
@@ -66,7 +74,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			this.#STRING_WINGED_SKULL,
 			gridY,
 			delayFrames,
-			this.#DELAY_GLYPH,
+			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -87,7 +95,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			100,
 			50,
 			delayFrames,
-			this.#DELAY_GLYPH,
+			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -108,7 +116,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			100,
 			50,
 			delayFrames,
-			this.#DELAY_GLYPH,
+			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -116,6 +124,30 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
+
+		// Add Comment
+		if (DATA_PROJECT['comment']) {
+			// Next
+			gridY += LINE_HEIGHT * 2;
+
+			// Create Component
+			const COMPONENT_COMMENT = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				DATA_PROJECT['comment'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				this.#delayGlyph,
+				FillType.PassThrough,
+				FillStrategyType.Random,
+				drawType,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_COMMENT);
+		}
 
 		// Add Technology
 		if (DATA_PROJECT['technology']) {
@@ -131,7 +163,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 				100,
 				50,
 				delayFrames,
-				this.#DELAY_GLYPH,
+				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.Random,
 				drawType,
@@ -155,7 +187,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 				100,
 				50,
 				delayFrames,
-				this.#DELAY_GLYPH,
+				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.Random,
 				drawType,
@@ -176,9 +208,9 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			return;
 		}
 
-		if (Math.random() < 0.01) {
+		if (Math.random() < 0.005) {
 			this.draw(0, DrawType.Clear);
-			this.draw(7, DrawType.Fill);
+			this.draw(10, DrawType.Fill);
 		}
 	}
 }
