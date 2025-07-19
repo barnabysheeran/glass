@@ -10,8 +10,9 @@ import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
 import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 
-import DotMatrixViewBattleBuilder from './view/projects/DotMatrixViewBattleBuilder.js';
-import DotMatrixViewGreenpeace from './view/projects/DotMatrixViewGreenpeace.js';
+import DotMatrixViewProject_battlebuilder from './view/projects/DotMatrixViewProject_battlebuilder.js';
+import DotMatrixViewProject_greenpeace from './view/projects/DotMatrixViewProject_greenpeace.js';
+import DotMatrixViewProject_postmatter from './view/projects/DotMatrixViewProject_postmatter.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 import DataController from '../../data/DataController.js';
@@ -72,8 +73,9 @@ export default class DirectableDotMatrix {
 
 		// Create Project Views
 		const PROJECT_VIEW_CLASSES = {
-			BattleBuilder: DotMatrixViewBattleBuilder,
-			Greenpeace: DotMatrixViewGreenpeace,
+			BattleBuilder: DotMatrixViewProject_battlebuilder,
+			Greenpeace: DotMatrixViewProject_greenpeace,
+			postmatter: DotMatrixViewProject_postmatter,
 			// Add more project view classes as needed
 		};
 

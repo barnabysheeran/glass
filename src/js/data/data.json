@@ -2,7 +2,7 @@
     "projects": [
 
         {
-            "id": "BattleBuilder",
+            "id": "battleBuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
             "credit": {
@@ -13,7 +13,14 @@
         },
 
         {
-            "id": "Greenpeace",
+            "id": "postmatter",
+            "name": "postMATTER Exhibition",
+            "name-short": "postMATTER",
+            "technology": "C++, Cinder, OpenGL, OpenCV"
+        },
+
+        {
+            "id": "greenpeace",
             "name": "Greenpeace - Love Letters",
             "name-short": "Greenpeace",
             "media": [
