@@ -39,11 +39,11 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
-		// Create Interactive Block
-		this.#createInteractiveBlock();
-
 		// Draw
 		this.#drawButtonUnsurrounded();
+
+		// Create Interactive Block - After Draw
+		this.#createInteractiveBlock();
 
 		// Header is Unique, isActive Tracks App State
 		this.isActive = false;
@@ -126,17 +126,11 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 			// Inactive
 			this.isActive = false;
-
-			// Draw
-			this.#drawButtonUnsurrounded();
 		} else {
 			ApplicationDispatcher.dispatch('project-menu-open');
 
 			// Active
 			this.isActive = true;
-
-			// Draw
-			this.#drawButtonSurrounded();
 		}
 	}
 

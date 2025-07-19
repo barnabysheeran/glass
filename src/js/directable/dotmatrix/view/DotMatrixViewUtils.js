@@ -24,12 +24,18 @@ export function viewAddRectanglesBlock(
 	let i = 0;
 
 	for (let w = 0; w < gridWidth; w += BLOCK_WIDTH) {
+		// Calculate actual width to avoid overlap
+		const actualWidth = Math.min(BLOCK_WIDTH, gridWidth - w);
+
+		// Skip if width is 0 or negative
+		if (actualWidth <= 0) break;
+
 		// Create Component Rectangle
 		const COMPONENT_RECTANGLE = new ComponentRectangle(
 			shapeManager,
 			gridX + w,
 			gridY,
-			BLOCK_WIDTH,
+			actualWidth, // Use calculated width instead of fixed BLOCK_WIDTH
 			gridHeight,
 			delayFrames + i,
 			fillType,
