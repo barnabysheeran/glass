@@ -12,8 +12,6 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewpostMATTER extends DotMatrixView {
-	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
-
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start
@@ -35,7 +33,7 @@ export default class DotMatrixViewpostMATTER extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 
@@ -59,21 +57,6 @@ export default class DotMatrixViewpostMATTER extends DotMatrixView {
 		let gridY = LINE_HEIGHT * 10;
 
 		// TODO Long or Short Name
-
-		// Add Component Winged Skull
-		const COMPONENT_WINGED_SKULL = new ComponentGlyphLineCentered(
-			this.SHAPE_MANAGER,
-			this.#STRING_WINGED_SKULL,
-			gridY,
-			delayFrames,
-			this.#DELAY_GLYPH,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_WINGED_SKULL);
 
 		// Next
 		gridY += LINE_HEIGHT * 2;

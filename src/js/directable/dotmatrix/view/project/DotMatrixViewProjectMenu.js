@@ -32,8 +32,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	// ______________________________________________________________ Start Stop
 
-	start(delayFrames = 0) {
-		super.start(delayFrames);
+	start(delayFrames, drawType) {
+		super.draw(delayFrames, drawType);
 
 		// Order Important - Draw Stores Grid Position Information
 
@@ -67,7 +67,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		this.#createInteractiveBlocks();
 	}
 
-	stop(delayFrames = 0) {
+	stop(delayFrames) {
 		// Super Removes Interactive Blocks
 		super.stop(delayFrames);
 
@@ -84,7 +84,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();

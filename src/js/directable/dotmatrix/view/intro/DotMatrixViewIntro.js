@@ -20,14 +20,14 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 	// ___________________________________________________________________ Start
 
-	start(delayFrames = 0) {
+	start(delayFrames) {
 		super.start(delayFrames);
 
 		// Start
 		this.draw(delayFrames, DrawType.Fill);
 	}
 
-	stop(delayFrames = 0) {
+	stop(delayFrames) {
 		super.stop(delayFrames);
 
 		// Stop
@@ -59,7 +59,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
@@ -148,18 +148,18 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_DOT);
 	}
 
-	onDrawComplete() {
-		super.onDrawComplete();
+	// onDrawComplete() {
+	// 	super.onDrawComplete();
 
-		// // Active ?
-		// if (this.isActive === false) {
-		// 	return;
-		// }
+	// 	// // Active ?
+	// 	// if (this.isActive === false) {
+	// 	// 	return;
+	// 	// }
 
-		// // Undraw
-		// this.draw(0, DrawType.Clear);
+	// 	// // Undraw
+	// 	// this.draw(0, DrawType.Clear);
 
-		// // Redraw
-		// this.#delayFramesReDraw = this.#DELAY_FRAMES_REDRAW;
-	}
+	// 	// // Redraw
+	// 	// this.#delayFramesReDraw = this.#DELAY_FRAMES_REDRAW;
+	// }
 }

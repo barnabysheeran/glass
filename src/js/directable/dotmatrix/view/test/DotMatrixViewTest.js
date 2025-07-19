@@ -38,8 +38,8 @@ export default class DotMatrixViewTest extends DotMatrixView {
 
 	// ____________________________________________________________________ Draw
 
-	draw() {
-		super.draw();
+	draw(delayFrames, drawType) {
+		super.draw(delayFrames, drawType);
 
 		// Get Line Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();

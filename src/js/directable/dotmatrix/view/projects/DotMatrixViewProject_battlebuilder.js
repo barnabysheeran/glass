@@ -16,16 +16,16 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 
 	#DELAY_GLYPH = 1;
 
-	// ___________________________________________________________________ Start
+	// ______________________________________________________________ Start Stop
 
-	start(delayFrames = 0) {
+	start(delayFrames) {
 		super.start(delayFrames);
 
 		// Start
 		this.draw(delayFrames, DrawType.Fill);
 	}
 
-	stop(delayFrames = 0) {
+	stop(delayFrames) {
 		super.stop(delayFrames);
 
 		// Stop
@@ -35,7 +35,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 

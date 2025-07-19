@@ -9,7 +9,6 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
-import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewGreenpeace extends DotMatrixView {
 	#DELAY_GLYPH = 1;
@@ -33,7 +32,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 

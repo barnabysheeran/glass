@@ -29,7 +29,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	// ______________________________________________________________ Start Stop
 
-	start(delayFrames = 0) {
+	start(delayFrames) {
 		super.start(delayFrames);
 
 		// Order Important - Draw Stores Grid Position Information
@@ -55,7 +55,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
-		super.draw(delayFrames);
+		super.draw(delayFrames, drawType);
 
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
