@@ -1,5 +1,6 @@
 import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
 import ApplicationLogger from '../application/ApplicationLogger.js';
+import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 import Display from '../display/Display.js';
 import GridData from '../grid/GridData.js';
@@ -43,6 +44,22 @@ export default class Controller {
 		if (ApplicationConfiguration.isDevelopment === true) {
 			Development.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		}
+
+		// Application Dispatcher Events
+		ApplicationDispatcher.on(
+			'project-menu-open',
+			this.#onProjectMenuOpen.bind(this),
+		);
+
+		ApplicationDispatcher.on(
+			'project-menu-close',
+			this.#onProjectMenuClose.bind(this),
+		);
+
+		ApplicationDispatcher.on(
+			'view-project-menu-select',
+			this.#onViewProjectMenuSelect.bind(this),
+		);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -71,8 +88,46 @@ export default class Controller {
 
 		// Tick at Max Frame Rate
 
+		// Media Surface
+		MediaSurface.tick(frameDeltaMS);
+
 		// Tick Render Surface
 		RenderSurface.tick(frameDeltaMS);
+	}
+
+	// _______________________________________________________________ On Events
+
+	#onProjectMenuOpen() {
+		ApplicationLogger.log(`Controller onProjectMenuOpen`, this.#LOG_LEVEL);
+
+		// Director
+		Director.onProjectMenuOpen();
+
+		// Media Surface
+		MediaSurface.clear();
+	}
+
+	#onProjectMenuClose() {
+		ApplicationLogger.log(`Controller onProjectMenuClose`, this.#LOG_LEVEL);
+
+		// Director
+		Director.onProjectMenuClose();
+
+		// Media Surface
+		MediaSurface.clear();
+	}
+
+	#onViewProjectMenuSelect(projectData) {
+		ApplicationLogger.log(
+			`Controller onViewProjectMenuSelect`,
+			this.#LOG_LEVEL,
+		);
+
+		// Director
+		Director.onViewProjectMenuSelect(projectData);
+
+		// Media Surface
+		MediaSurface.showProject(projectData);
 	}
 
 	// _________________________________________________________________ Display

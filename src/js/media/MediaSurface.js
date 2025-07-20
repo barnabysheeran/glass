@@ -1,4 +1,5 @@
 import ApplicationLogger from '../application/ApplicationLogger.js';
+import DataController from '../data/DataController.js';
 
 import Display from '../display/Display.js';
 
@@ -23,11 +24,69 @@ export default class MediaSurface {
 		this.setSize(width, height);
 	}
 
-	// __________________________________________________________________ Access
+	// ____________________________________________________________________ Tick
 
-	static getContainer() {
-		return this.#CONTAINER;
+	static tick(frameDeltaMS) {
+		// Currently no ticking required for MediaSurface
 	}
+
+	// ____________________________________________________________ Show Project
+
+	static showProject(data) {
+		ApplicationLogger.log(`MediaSurface showProject`, this.#LOG_LEVEL);
+
+		console.log(`MediaSurface showProject`, data);
+
+		// Clear Container
+		this.clear();
+
+		// Get Project Id
+		const projectId = data.projectId;
+
+		ApplicationLogger.log(
+			`MediaSurface showProject: Project ID: ${projectId}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Get Project Data
+		const PROJECT_DATA = DataController.getProjectById(projectId);
+
+		// Project Data has 'media' property
+		if (!PROJECT_DATA || !PROJECT_DATA.media) {
+			ApplicationLogger.warn(
+				`MediaSurface showProject: No media data`,
+				this.#LOG_LEVEL,
+			);
+			return;
+		}
+
+		// Through the media data
+		for (let i = 0; i < PROJECT_DATA.media.length; i++) {
+			const MEDIA_DATA = PROJECT_DATA.media[i];
+
+			switch (MEDIA_DATA.type) {
+				case 'vimeo':
+					// this.#createVimeoPlayer(MEDIA_DATA);
+					break;
+				case 'youtube':
+					// this.#createYouTubePlayer(MEDIA_DATA);
+					break;
+				case 'image':
+					// this.#createImage(MEDIA_DATA);
+					break;
+				default:
+					ApplicationLogger.warn(
+						`MediaSurface showProject: Unknown media type`,
+						this.#LOG_LEVEL,
+					);
+					break;
+			}
+		}
+	}
+
+	// ___________________________________________________________________ Clear
+
+	static clear() {}
 
 	// ____________________________________________________________________ Size
 

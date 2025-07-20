@@ -2,15 +2,10 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import DirectableTitle from '../directable/title/DirectableTitle.js';
 import DirectableDotMatrix from '../directable/dotmatrix/DirectableDotMatrix.js';
-// import DirectableVimeo from '../directable/video/DirectableVimeo.js';
-// import DirectableYoutube from '../directable/video/DirectableYoutube.js';
-import ApplicationDispatcher from '../application/ApplicationDispatcher.js';
 
 export default class Director {
 	static #DIRECTABLE_TITLE;
 	static #DIRECTABLE_DOT_MATRIX;
-	// static #DIRECTABLE_VIMEO;
-	// static #DIRECTABLE_YOUTUBE;
 
 	static #LOG_LEVEL = 2;
 
@@ -28,31 +23,6 @@ export default class Director {
 			displayWidthPx,
 			displayHeightPx,
 		);
-
-		// Create Directable Vimeo
-		// this.#DIRECTABLE_VIMEO = new DirectableVimeo(
-		// 	displayWidthPx,
-		// 	displayHeightPx,
-		// );
-
-		// Create Directable Youtube
-		// this.#DIRECTABLE_YOUTUBE = new DirectableYoutube();
-
-		// Application Dispatcher Events
-		ApplicationDispatcher.on(
-			'project-menu-open',
-			this.#onProjectMenuOpen.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'project-menu-close',
-			this.#onProjectMenuClose.bind(this),
-		);
-
-		ApplicationDispatcher.on(
-			'view-project-menu-select',
-			this.#onViewProjectMenuSelect.bind(this),
-		);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -63,38 +33,26 @@ export default class Director {
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.tick(frameDeltaMS);
-
-		// Vimeo
-		// this.#DIRECTABLE_VIMEO.tick(frameDeltaMS);
-
-		// Youtube
-		// this.#DIRECTABLE_YOUTUBE.tick(frameDeltaMS);
 	}
 
 	// _______________________________________________________________ On Events
 
-	static #onProjectMenuOpen() {
-		ApplicationLogger.log(`Director: View Header Menu Active`, this.#LOG_LEVEL);
+	static onProjectMenuOpen() {
+		ApplicationLogger.log(`Director onProjectMenuOpen`, this.#LOG_LEVEL);
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.projectMenuOpen();
 	}
 
-	static #onProjectMenuClose() {
-		ApplicationLogger.log(
-			`Director: View Header Menu Inactive`,
-			this.#LOG_LEVEL,
-		);
+	static onProjectMenuClose() {
+		ApplicationLogger.log(`Director onProjectMenuClose`, this.#LOG_LEVEL);
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.projectMenuClose();
 	}
 
-	static #onViewProjectMenuSelect(data) {
-		ApplicationLogger.log(
-			`Director: View Project Menu Select`,
-			this.#LOG_LEVEL,
-		);
+	static onViewProjectMenuSelect(data) {
+		ApplicationLogger.log(`Director onViewProjectMenuSelect`, this.#LOG_LEVEL);
 
 		// Dot Matrix
 		this.#DIRECTABLE_DOT_MATRIX.projectShow(data.projectId);
