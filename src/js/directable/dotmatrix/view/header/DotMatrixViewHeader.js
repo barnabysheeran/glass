@@ -116,11 +116,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuClick() {
-		console.log(
-			'DotMatrixViewHeader onButtonMenuClick. active:',
-			this.isActive,
-		);
-
 		if (this.isActive === true) {
 			ApplicationDispatcher.dispatch('project-menu-close');
 
@@ -135,8 +130,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOver() {
-		console.log('DotMatrixViewHeader onButtonMenuOver. active:', this.isActive);
-
 		if (this.isActive === false) {
 			this.#drawButtonSurrounded();
 		} else {
@@ -145,8 +138,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOut() {
-		console.log('DotMatrixViewHeader onButtonMenuOut. active:', this.isActive);
-
 		if (this.isActive === false) {
 			this.#drawButtonUnsurrounded();
 		} else {

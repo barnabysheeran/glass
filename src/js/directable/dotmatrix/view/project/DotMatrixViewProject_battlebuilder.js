@@ -60,8 +60,6 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			return;
 		}
 
-		console.log('BattleBuilder Project Data Item', DATA_PROJECT);
-
 		//
 		let gridX = 0;
 		let gridY = LINE_HEIGHT * 10;
