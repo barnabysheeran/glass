@@ -3,7 +3,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Display from '../display/Display.js';
 import GridData from '../grid/GridData.js';
-import VideoSurface from '../video/VideoSurface.js';
+import MediaSurface from '../media/MediaSurface.js';
 import RenderSurface from '../render/RenderSurface.js';
 import InteractiveSurface from '../interactive/InteractiveSurface.js';
 import Director from '../director/Director.js';
@@ -33,7 +33,7 @@ export default class Controller {
 		const DISPLAY_HEIGHT = Display.getHeight();
 
 		GridData.initialize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
-		VideoSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		MediaSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		RenderSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		InteractiveSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 
@@ -88,7 +88,7 @@ export default class Controller {
 
 		// Set Sizes
 		GridData.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
-		VideoSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+		MediaSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		RenderSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		InteractiveSurface.setSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 

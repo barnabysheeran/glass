@@ -2,7 +2,7 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 
 import Display from '../display/Display.js';
 
-export default class VideoSurface {
+export default class MediaSurface {
 	static #CONTAINER;
 
 	static #LOG_LEVEL = 2;
@@ -10,7 +10,7 @@ export default class VideoSurface {
 	// _________________________________________________________________________
 
 	static initialise(width, height) {
-		ApplicationLogger.log('VideoSurface', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurface', this.#LOG_LEVEL);
 
 		// Create Holder
 		this.#CONTAINER = document.createElement('div');
