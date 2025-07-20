@@ -3,8 +3,12 @@ import DataController from '../data/DataController.js';
 
 import Display from '../display/Display.js';
 
+import MediaSurfaceVimeo from './video/MediaSurfaceVimeo.js';
+
 export default class MediaSurface {
 	static #CONTAINER;
+
+	static #MEDIA_SURFACE_VIMEO;
 
 	static #LOG_LEVEL = 2;
 
@@ -19,6 +23,9 @@ export default class MediaSurface {
 
 		// Append Holder to Display Holder
 		Display.getDisplayHolder().appendChild(this.#CONTAINER);
+
+		// Create Vimeo Player
+		this.#MEDIA_SURFACE_VIMEO = new MediaSurfaceVimeo(this.#CONTAINER);
 
 		// Set Initial Size
 		this.setSize(width, height);
@@ -67,6 +74,9 @@ export default class MediaSurface {
 			switch (MEDIA_DATA.type) {
 				case 'vimeo':
 					// this.#createVimeoPlayer(MEDIA_DATA);
+
+					this.showVimeo(MEDIA_DATA.vimeoId);
+
 					break;
 				case 'youtube':
 					// this.#createYouTubePlayer(MEDIA_DATA);
@@ -82,6 +92,13 @@ export default class MediaSurface {
 					break;
 			}
 		}
+	}
+
+	// ___________________________________________________________________ Vimeo
+
+	static showVimeo(videoId) {
+		ApplicationLogger.log(`MediaSurface showVimeo ${videoId}`, this.#LOG_LEVEL);
+		this.#MEDIA_SURFACE_VIMEO.showVideo(videoId);
 	}
 
 	// ___________________________________________________________________ Clear
