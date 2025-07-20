@@ -166,7 +166,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#drawButtonUnsurrounded() {
 		// Clear Surrounding Rectangle
-		this.draw(0, DrawType.Clear);
+		this.#drawSurroundingRectangle(0, DrawType.Clear);
 
 		// Fill Draw
 		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);

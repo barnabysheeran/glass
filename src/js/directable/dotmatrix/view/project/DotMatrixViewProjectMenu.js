@@ -28,7 +28,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#IS_OVERS;
 	#REQUIRES_UPDATES;
 
-	#DELAY_GLYPH = 5;
+	#DELAY_GLYPH_IN = 4;
+	#DELAY_GLYPH_OUT = 0;
+	#delayGlyph = 5;
 
 	// ______________________________________________________________ Start Stop
 
@@ -60,6 +62,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			this.#REQUIRES_UPDATES[i] = true;
 		}
 
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_IN;
+
 		// Draw
 		this.draw(delayFrames, DrawType.Fill);
 
@@ -70,6 +75,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	stop(delayFrames) {
 		// Super Removes Interactive Blocks
 		super.stop(delayFrames);
+
+		// Set Delay Glyph
+		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
 		// Undraw Unsurrounding Rectangles
 		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
@@ -105,10 +113,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const LINE_SPACING = 2;
 		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
 
-		// Delay Glyphs
-		// TODO Hardcoded
-		const DELAY_GLYPHS = 10;
-
 		// Draw
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
 			// Requires Update ?
@@ -143,7 +147,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				text,
 				GRID_Y,
 				delayFrames + this.#DELAY_ROLLOVER_REDRAW,
-				this.#DELAY_GLYPH,
+				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 				drawType,

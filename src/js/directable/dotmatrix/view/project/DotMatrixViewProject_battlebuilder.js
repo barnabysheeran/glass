@@ -26,7 +26,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
-		// Start
+		// Draw
 		this.draw(delayFrames, DrawType.Fill);
 	}
 
@@ -36,7 +36,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
-		// Stop
+		// Draw
 		this.draw(delayFrames, DrawType.Clear);
 	}
 
