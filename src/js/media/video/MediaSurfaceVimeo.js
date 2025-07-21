@@ -11,6 +11,14 @@ export default class DirectableVimeo {
 	#width;
 	#height;
 
+	#opacity = 0;
+	#opacityTarget = 0;
+
+	#volume = 0;
+	#volumeTarget = 0;
+
+	#LERP = 0.05;
+
 	#LOG_LEVEL = 1;
 
 	// _________________________________________________________________________
@@ -41,6 +49,8 @@ export default class DirectableVimeo {
 			`DirectableVimeo showVideo ${videoId}`,
 			this.#LOG_LEVEL,
 		);
+
+		console.log(`DirectableVimeo showVideo ${videoId}`);
 	}
 
 	// __________________________________________________________________ Player

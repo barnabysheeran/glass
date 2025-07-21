@@ -34,7 +34,8 @@ export default class MediaSurface {
 	// ____________________________________________________________________ Tick
 
 	static tick(frameDeltaMS) {
-		// Currently no ticking required for MediaSurface
+		// Tick Vimeo Player
+		this.#MEDIA_SURFACE_VIMEO.tick(frameDeltaMS);
 	}
 
 	// ____________________________________________________________ Show Project
@@ -71,11 +72,13 @@ export default class MediaSurface {
 		for (let i = 0; i < PROJECT_DATA.media.length; i++) {
 			const MEDIA_DATA = PROJECT_DATA.media[i];
 
+			console.log(`MediaSurface showProject: Media Data`, MEDIA_DATA);
+
 			switch (MEDIA_DATA.type) {
 				case 'vimeo':
 					// this.#createVimeoPlayer(MEDIA_DATA);
 
-					this.showVimeo(MEDIA_DATA.vimeoId);
+					this.showVimeo(MEDIA_DATA['vimeo-id']);
 
 					break;
 				case 'youtube':
