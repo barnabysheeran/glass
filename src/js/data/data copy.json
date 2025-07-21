@@ -15,65 +15,17 @@
             "technology": "Unity"
         },
 
-        {
-            "id": "PikcellsOnfigr",
-            "name": "Pikcells / Onfigr",
-            "name-short": "Pikcells / Onfigr",
-            "technology": "Javascript, WebGL, Three js, Unity, & Unreal Engine"
-        },
 
-        {
-            "id": "science museum",
-            "name": "The Science Museum - Sun",
-            "name-short": "Science Museum",
-            "technology": "Unity"
-        },
+
+
         
-        {
-            "id": "Goodwood",
-            "name": "Goodwood Festival of Speed",
-            "name-short": "Goodwood",
-            "technology": "Unity"
-        },
 
-        {
-            "id": "postmatter",
-            "name": "postMATTER Exhibition",
-            "name-short": "postMATTER",
-            "technology": "C++, Cinder, Kinect, Leap Motion"
-        },
 
-        {
-            "id": "Ferrari",
-            "name": "Ferrari - Flagship Store",
-            "name-short": "Ferrari",
-            "technology": "Unity, Kinect"
-        },
+   
 
-        {
-            "id": "honda",
-            "name": "HONDA - The Other Side",
-            "name-short": "HONDA",
-            "technology": "JavaScript, WebGL"
-        },
 
-        {
-            "id": "google",
-            "name": "GOOGLE - ABBEY ROAD",
-            "name-short": "GOOGLE",
-            "credit": {
-                "text": "Stink Studios",
-                "url": ""
-            },
-            "technology": "JavaScript, WebGL"
-        },
 
-        {
-            "id": "adidas",
-            "name": "ADIDAS - Flash",
-            "name-short": "ADIDAS",
-            "technology": "Flash"
-        },
+
 
         {
             "id": "greenpeace",

@@ -1,20 +1,20 @@
 {
     "projects": [
 
+
         {
             "id": "battlebuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
+            "media-aspect": "4:3",
             "media": [
                 {
                     "type": "image",
-                    "url": "project/battlebuilder/1.jpg",
-                    "aspect": "4:3"
+                    "url": "project/battlebuilder/1.jpg"
                 },
                 {
                     "type": "image",
-                    "url": "project/battlebuilder/2.jpg",
-                    "aspect": "4:3"
+                    "url": "project/battlebuilder/2.jpg"
                 }
             ],
             "credit": {
@@ -25,22 +25,95 @@
             "technology": "Javascript, WebGL, Three.js & Shopify"
         },
 
+
+        {
+            "id": "pikcells-onfigr",
+            "name": "Pikcells / Onfigr",
+            "name-short": "Pikcells / Onfigr",
+            "technology": "Javascript, WebGL, Three js, Unity, & Unreal Engine"
+        },
+
+
+        {
+            "id": "hotsteppa",
+            "name": "Hotsteppa",
+            "name-short": "Hotsteppa",
+            "technology": "Unity"
+        },
+
+
+        {
+            "id": "science museum",
+            "name": "The Science Museum - Sun",
+            "name-short": "Science Museum",
+            "technology": "Unity"
+        },
+
+
+        {
+            "id": "Ferrari",
+            "name": "Ferrari - Flagship Store",
+            "name-short": "Ferrari",
+            "technology": "Unity, Kinect"
+        },
+
+
         {
             "id": "postmatter",
             "name": "postMATTER Exhibition",
             "name-short": "postMATTER",
-            "technology": "C++, Cinder, Kinect, & Leap Motion"
+            "media-aspect": "4:3",
+            "media": [
+                {
+                    "type": "vimeo",
+                    "vimeo-id": "89530267"
+                }
+            ],
+            "credit": {
+                "text": "{heart}",
+                "url": "https://www.remiparingaux.com/postmatter-exhibition"
+            },
+            "technology": "C++, Cinder, & Kinect"
         },
+
+
+        {
+            "id": "honda",
+            "name": "HONDA - The Other Side",
+            "name-short": "HONDA",
+            "technology": "JavaScript, WebGL"
+        },
+
+
+        {
+            "id": "google",
+            "name": "GOOGLE - ABBEY ROAD",
+            "name-short": "GOOGLE",
+            "credit": {
+                "text": "Stink Studios",
+                "url": ""
+            },
+            "technology": "JavaScript, WebGL"
+        },
+
+        
+        {
+            "id": "adidas",
+            "name": "ADIDAS - Flash",
+            "name-short": "ADIDAS",
+            "technology": "Flash"
+        },
+        
 
         {
             "id": "greenpeace",
             "name": "Greenpeace - Love Letters",
             "name-short": "Greenpeace",
+            "media-aspect": "4:3",
             "media": [
                 {
                     "type": "vimeo",
-                    "vimeo-id": "148119789",
-                    "aspect": "4:3"
+                    "vimeo-id": "148119789"
                 }
             ],
             "credit": {
