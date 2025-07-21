@@ -1,7 +1,6 @@
 {
     "projects": [
 
-
         {
             "id": "battlebuilder",
             "name": "BattleBuilder",
@@ -27,7 +26,7 @@
 
 
         {
-            "id": "pikcells-onfigr",
+            "id": "pikcellsonfigr",
             "name": "Pikcells / Onfigr",
             "name-short": "Pikcells / Onfigr",
             "technology": "Javascript, WebGL, Three js, Unity, & Unreal Engine"
@@ -43,7 +42,7 @@
 
 
         {
-            "id": "science museum",
+            "id": "sciencemuseum",
             "name": "The Science Museum - Sun",
             "name-short": "Science Museum",
             "technology": "Unity"
@@ -51,7 +50,7 @@
 
 
         {
-            "id": "Ferrari",
+            "id": "ferrari",
             "name": "Ferrari - Flagship Store",
             "name-short": "Ferrari",
             "technology": "Unity, Kinect"
@@ -96,12 +95,16 @@
             "technology": "JavaScript, WebGL"
         },
 
-        
+
         {
             "id": "adidas",
             "name": "ADIDAS - Flash",
             "name-short": "ADIDAS",
-            "technology": "Flash"
+            "technology": "Flash",
+            "credit": {
+                "text": "Hi-ReS!",
+                "url": ""
+            }
         },
         
 
