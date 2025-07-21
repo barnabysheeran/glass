@@ -18,55 +18,82 @@ export default class DirectableVimeo {
 	#volumeTarget = 0;
 
 	#LERP = 0.05;
+	#LERP_MARGIN = 0.01;
+
+	#isStopping = false;
 
 	#LOG_LEVEL = 1;
 
 	// _________________________________________________________________________
 
-	constructor(container) {
-		ApplicationLogger.log('DirectableVimeo', this.#LOG_LEVEL);
+	constructor(container, vimeoId) {
+		ApplicationLogger.log(`DirectableVimeo ${vimeoId}`, this.#LOG_LEVEL);
 
 		// Store
 		this.#CONTAINER = container;
 
-		// Create Vimeo Player
-		// this.#createPlayer();
-
-		// // Set Initial Size
-		// this.setSize(width, height);
+		// Create Player
+		this.#createPlayer(vimeoId);
 	}
 
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		// frameDeltaMS
-	}
+		// Lerp Opacity
+		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#LERP;
 
-	// ____________________________________________________________ Show Project
+		// Lerp Volume
+		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP;
 
-	showVideo(videoId) {
-		ApplicationLogger.log(
-			`DirectableVimeo showVideo ${videoId}`,
-			this.#LOG_LEVEL,
-		);
+		// Set Opacity
+		if (this.#HOLDER) {
+			this.#HOLDER.style.opacity = this.#opacity;
+		}
 
-		console.log(`DirectableVimeo showVideo ${videoId}`);
+		// Set Volume
+		if (this.#PLAYER) {
+			this.#PLAYER.setVolume(this.#volume).catch((error) => {
+				ApplicationLogger.error(
+					`DirectableVimeo setVolume error: ${error.message}`,
+					this.#LOG_LEVEL,
+				);
+			});
+		}
+
+		if (
+			this.#isStopping &&
+			this.#opacity <= this.#LERP_MARGIN &&
+			this.#volume <= this.#LERP_MARGIN
+		) {
+			this.#HOLDER.remove();
+
+			this.#HOLDER = null;
+			this.#PLAYER = null;
+
+			return true;
+		}
+
+		// Return Not Complete
+		return false;
 	}
 
 	// __________________________________________________________________ Player
 
-	#createPlayer() {
-		ApplicationLogger.log('DirectableVimeo createPlayer', this.#LOG_LEVEL);
+	#createPlayer(vimeoId) {
+		ApplicationLogger.log(
+			`DirectableVimeo createPlayer ${vimeoId}`,
+			this.#LOG_LEVEL,
+		);
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'vimeo-holder';
 		this.#HOLDER.className = 'vimeo-holder';
-		// MediaSurface.getContainer().appendChild(this.#HOLDER);
+		this.#CONTAINER.appendChild(this.#HOLDER);
 
 		// Create a Vimeo Player Instance
 		const OPTIONS = {
-			id: 12021447,
+			id: vimeoId,
 			loop: true,
 			// background: true,
 			controls: false,
@@ -95,6 +122,12 @@ export default class DirectableVimeo {
 
 		// Play Video
 		this.#playVideo();
+
+		// Set Opacity Target
+		this.#opacityTarget = 1;
+
+		// Set Volume Target
+		this.#volumeTarget = 1;
 	}
 
 	// ___________________________________________________________________ Ready
@@ -124,6 +157,31 @@ export default class DirectableVimeo {
 
 	#onPlay() {
 		ApplicationLogger.log('DirectableVimeo onPlay', this.#LOG_LEVEL);
+	}
+
+	// ____________________________________________________________________ Stop
+
+	stop() {
+		ApplicationLogger.log('DirectableVimeo stop', this.#LOG_LEVEL);
+
+		// Pause Video
+		if (this.#PLAYER) {
+			this.#PLAYER.pause().catch((error) => {
+				ApplicationLogger.error(
+					`DirectableVimeo pause error: ${error.message}`,
+					this.#LOG_LEVEL,
+				);
+			});
+		}
+
+		// Set Opacity Target
+		this.#opacityTarget = 0;
+
+		// Set Volume Target
+		this.#volumeTarget = 0;
+
+		// Set Stopping Flag
+		this.#isStopping = true;
 	}
 
 	// ____________________________________________________________________ Size

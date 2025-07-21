@@ -8,7 +8,7 @@ import MediaSurfaceVimeo from './video/MediaSurfaceVimeo.js';
 export default class MediaSurface {
 	static #CONTAINER;
 
-	static #MEDIA_SURFACE_VIMEO;
+	static #MEDIA_ITEMS = [];
 
 	static #LOG_LEVEL = 2;
 
@@ -24,9 +24,6 @@ export default class MediaSurface {
 		// Append Holder to Display Holder
 		Display.getDisplayHolder().appendChild(this.#CONTAINER);
 
-		// Create Vimeo Player
-		this.#MEDIA_SURFACE_VIMEO = new MediaSurfaceVimeo(this.#CONTAINER);
-
 		// Set Initial Size
 		this.setSize(width, height);
 	}
@@ -34,16 +31,23 @@ export default class MediaSurface {
 	// ____________________________________________________________________ Tick
 
 	static tick(frameDeltaMS) {
-		// Tick Vimeo Player
-		this.#MEDIA_SURFACE_VIMEO.tick(frameDeltaMS);
+		// Tick Media Items
+		for (let i = 0; i < this.#MEDIA_ITEMS.length; i++) {
+			// Tick Media Item
+			const IS_COMPLETE = this.#MEDIA_ITEMS[i].tick(frameDeltaMS);
+
+			// Remove if Complete
+			if (IS_COMPLETE) {
+				this.#MEDIA_ITEMS.splice(i, 1);
+				i--;
+			}
+		}
 	}
 
 	// ____________________________________________________________ Show Project
 
 	static showProject(data) {
 		ApplicationLogger.log(`MediaSurface showProject`, this.#LOG_LEVEL);
-
-		console.log(`MediaSurface showProject`, data);
 
 		// Clear Container
 		this.clear();
@@ -76,9 +80,7 @@ export default class MediaSurface {
 
 			switch (MEDIA_DATA.type) {
 				case 'vimeo':
-					// this.#createVimeoPlayer(MEDIA_DATA);
-
-					this.showVimeo(MEDIA_DATA['vimeo-id']);
+					this.#createVimeoPlayer(MEDIA_DATA['vimeo-id']);
 
 					break;
 				case 'youtube':
@@ -99,14 +101,29 @@ export default class MediaSurface {
 
 	// ___________________________________________________________________ Vimeo
 
-	static showVimeo(videoId) {
-		ApplicationLogger.log(`MediaSurface showVimeo ${videoId}`, this.#LOG_LEVEL);
-		this.#MEDIA_SURFACE_VIMEO.showVideo(videoId);
+	static #createVimeoPlayer(vimeoId) {
+		ApplicationLogger.log(
+			`MediaSurface createVimeoPlayer ${vimeoId}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Create Vimeo Player Instance
+		const VIMEO_PLAYER = new MediaSurfaceVimeo(this.#CONTAINER, vimeoId);
+
+		// Store
+		this.#MEDIA_ITEMS.push(VIMEO_PLAYER);
 	}
 
 	// ___________________________________________________________________ Clear
 
-	static clear() {}
+	static clear() {
+		ApplicationLogger.log('MediaSurface clear', this.#LOG_LEVEL);
+
+		// Stop Vimeo Player
+		for (let i = 0; i < this.#MEDIA_ITEMS.length; i++) {
+			this.#MEDIA_ITEMS[i].stop();
+		}
+	}
 
 	// ____________________________________________________________________ Size
 
