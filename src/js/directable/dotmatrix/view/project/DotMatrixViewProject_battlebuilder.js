@@ -206,6 +206,7 @@ export default class DotMatrixViewBattleBuilder extends DotMatrixView {
 			return;
 		}
 
+		// TODO Hardcoded Delay
 		if (Math.random() < 0.005) {
 			this.draw(0, DrawType.Clear);
 			this.draw(10, DrawType.Fill);

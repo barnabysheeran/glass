@@ -68,7 +68,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 
@@ -89,7 +89,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 
@@ -112,7 +112,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.Random,
+				FillStrategyType.PassThrough,
 				drawType,
 			);
 
@@ -136,7 +136,7 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.Random,
+				FillStrategyType.PassThrough,
 				drawType,
 			);
 
@@ -155,9 +155,9 @@ export default class DotMatrixViewGreenpeace extends DotMatrixView {
 			return;
 		}
 
-		if (Math.random() < 0.01) {
-			this.draw(0, DrawType.Clear);
-			this.draw(7, DrawType.Fill);
-		}
+		// if (Math.random() < 0.01) {
+		// 	this.draw(0, DrawType.Clear);
+		// 	this.draw(7, DrawType.Fill);
+		// }
 	}
 }

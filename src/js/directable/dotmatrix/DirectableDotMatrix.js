@@ -147,6 +147,24 @@ export default class DirectableDotMatrix {
 
 	// ____________________________________________________________________ View
 
+	#stopCurrentView() {
+		ApplicationLogger.log(
+			`DirectableDotMatrix stopCurrentView '${this.#viewIdCurrent}'`,
+			this.#LOG_LEVEL,
+		);
+
+		// Order Important
+
+		// Stop Any Active Components
+		this.#COMPONENT_MANAGER.reset();
+
+		// Stop any Active Shapes
+		this.#SHAPE_MANAGER.reset();
+
+		// Stop Current View
+		this.#getViewById(this.#viewIdCurrent).stop();
+	}
+
 	projectShow(projectId) {
 		ApplicationLogger.log(
 			'DirectableDotMatrix projectShow ' + projectId,
@@ -156,13 +174,8 @@ export default class DirectableDotMatrix {
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
-		// Order Important
-
-		// Stop Any Active Components
-		this.#COMPONENT_MANAGER.stopUnstartedShapes();
-
 		// Stop Current View
-		this.#getViewById(this.#viewIdCurrent).stop();
+		this.#stopCurrentView();
 
 		// Show Project View
 		const PROJECT_VIEW = this.#getViewById(projectId);
@@ -191,11 +204,8 @@ export default class DirectableDotMatrix {
 
 		// Order Important
 
-		// Stop Any Active Components
-		this.#COMPONENT_MANAGER.stopUnstartedShapes();
-
 		// Stop Current View
-		this.#getViewById(this.#viewIdCurrent).stop();
+		this.#stopCurrentView();
 
 		// Show Project Menu View
 		this.#getViewById('project-menu').start(DELAY_PAGE_TRANSITION);
@@ -210,16 +220,13 @@ export default class DirectableDotMatrix {
 			this.#LOG_LEVEL,
 		);
 
-		// Order Important
-
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
-		// Stop Any Active Components
-		this.#COMPONENT_MANAGER.stopUnstartedShapes();
+		// Order Important
 
 		// Stop Current View
-		this.#getViewById(this.#viewIdCurrent).stop();
+		this.#stopCurrentView();
 
 		// Show Intro View
 		this.#getViewById('intro').start(DELAY_PAGE_TRANSITION);
