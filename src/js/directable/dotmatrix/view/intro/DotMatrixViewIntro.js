@@ -49,6 +49,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			return;
 		}
 
+		// TODO
+
 		// Redraw ?
 		// if (this.#delayFramesReDraw > 0) {
 		// 	// Count Down
@@ -117,22 +119,9 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT);
 		}
-
-		// Create Component Line Bottom
-		gridY = LINE_HEIGHT * LINE_HEIGHT_MAX;
-
-		const LINE_BOTTOM = new ComponentLineWidthFull(
-			this.SHAPE_MANAGER,
-			gridY,
-			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			drawType,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 	}
+
+	// TODO
 
 	// onDrawComplete() {
 	// 	super.onDrawComplete();
