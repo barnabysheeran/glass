@@ -9,7 +9,6 @@ export default class Development {
 	static #CONTAINER;
 
 	static #DEVELOPMENT_GUIDES;
-	static #DEVELOPMENT_GRID;
 
 	static #LOG_LEVEL = 2;
 
@@ -29,9 +28,6 @@ export default class Development {
 		// Create Development Guides
 		this.#DEVELOPMENT_GUIDES = new DevelopmentGuides(this.#CONTAINER);
 
-		// Create Development Grid
-		this.#DEVELOPMENT_GRID = new DevelopmentGrid(this.#CONTAINER);
-
 		// Set Initial Size
 		this.setSize(width, height);
 
@@ -46,23 +42,12 @@ export default class Development {
 		if (event.keyCode === 49) {
 			this.#toggleGuidesShowHide();
 		}
-
-		// 2 - Development Grid Toggle
-		if (event.keyCode === 50) {
-			this.#toggleGridShowHide();
-		}
 	}
 
 	// ___________________________________________________________________ Guide
 
 	static #toggleGuidesShowHide() {
 		this.#DEVELOPMENT_GUIDES.toggleShowHide();
-	}
-
-	// ____________________________________________________________________ Grid
-
-	static #toggleGridShowHide() {
-		this.#DEVELOPMENT_GRID.toggleShowHide();
 	}
 
 	// ____________________________________________________________________ Size

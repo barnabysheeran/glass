@@ -1,3 +1,6 @@
+import GridData from '../../grid/GridData.js';
+import DirectableDotMatrixConstants from '../../directable/dotmatrix/DirectableDotMatrixConstants.js';
+
 export default class MediaSurfaceImage {
 	#IMAGE_URL;
 	#CALLBACK_ON_LOADED;
@@ -28,6 +31,17 @@ export default class MediaSurfaceImage {
 		// Create Image
 		this.#IMAGE = new Image();
 		this.#IMAGE.onload = this.#onImageLoaded.bind(this);
+
+		// Position Top from Grid
+		const GRID_CELL_HEIGHT_PX = GridData.getGridCellHeightPx();
+
+		const MEDIA_HEADER_HEIGHT_IN_GRID_CELLS =
+			DirectableDotMatrixConstants.getMediaHeaderHeightInGridCells();
+
+		const HOLDER_TOP_PX =
+			GRID_CELL_HEIGHT_PX * MEDIA_HEADER_HEIGHT_IN_GRID_CELLS;
+
+		this.#HOLDER.style.top = `${HOLDER_TOP_PX}px`;
 
 		// Initial Opacity
 		this.#HOLDER.style.opacity = 0;

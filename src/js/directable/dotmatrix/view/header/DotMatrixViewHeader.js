@@ -66,9 +66,9 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		super.draw(delayFrames, drawType);
 
 		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getLineHeightHeader();
+			DirectableDotMatrixConstants.getHeaderHeightInLines();
 
 		// Constant Position
 		this.#gridY =
@@ -167,7 +167,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 	#drawSurroundingRectangle(delayFrames, drawType) {
 		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 
 		// Position and Size
 		const GRID_X = this.#gridXCenteredStart - 1;

@@ -69,11 +69,11 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		super.draw(delayFrames, drawType);
 
 		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getLineHeightHeader();
+			DirectableDotMatrixConstants.getHeaderHeightInLines();
 		const LINE_HEIGHT_FOOTER =
-			DirectableDotMatrixConstants.getLineHeightFooter();
+			DirectableDotMatrixConstants.getFooterHeightInLines();
 
 		// Get Grid Data
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();

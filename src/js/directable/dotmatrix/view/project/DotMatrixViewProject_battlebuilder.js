@@ -45,7 +45,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
 
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 
 		// Get Project Data
 		const DATA_PROJECT = DataController.getProjectById(this.getViewId());

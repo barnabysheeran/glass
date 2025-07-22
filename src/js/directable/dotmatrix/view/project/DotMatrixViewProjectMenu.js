@@ -98,9 +98,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const PROJECT_DATA = DataController.getProjects();
 
 		// Get Line Heights
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getLineHeightHeader();
+			DirectableDotMatrixConstants.getHeaderHeightInLines();
 
 		// Get Width Mobile
 		const BLOCK_WIDTH_MOBILE =
@@ -264,7 +264,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(projectId);
 
 		// Get Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 
 		// Position
 		const GRID_X = this.#GRID_X_CENTERED_STARTS[PROJECT_INDEX] - 1;

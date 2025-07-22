@@ -1,16 +1,46 @@
 export default class DirectableDotMatrixConstants {
-	// __________________________________________________________________ Header
+	// ____________________________________________________________________ Line
 
-	static #LINE_HEIGHT_HEADER = 5;
+	static #LINE_HEIGHT_IN_GRID_CELLS = 7;
 
-	static getLineHeightHeader() {
-		return this.#LINE_HEIGHT_HEADER;
+	static getLineHeightInGridCells() {
+		return this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
-	static #LINE_HEIGHT_FOOTER = 7;
+	// __________________________________________________________________ Header
 
-	static getLineHeightFooter() {
-		return this.#LINE_HEIGHT_FOOTER;
+	static #HEADER_HEIGHT_IN_LINES = 5;
+
+	static getHeaderHeightInLines() {
+		return this.#HEADER_HEIGHT_IN_LINES;
+	}
+
+	static getHeaderHeightInGridCells() {
+		return this.#HEADER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
+	}
+
+	// ____________________________________________________________ Media Header
+
+	static #MEDIA_HEADER_HEIGHT_IN_LINES = 6;
+
+	static getMediaHeaderHeightInLines() {
+		return this.#MEDIA_HEADER_HEIGHT_IN_LINES;
+	}
+
+	static getMediaHeaderHeightInGridCells() {
+		return this.#MEDIA_HEADER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
+	}
+
+	// __________________________________________________________________ Footer
+
+	static #FOOTER_HEIGHT_IN_LINES = 7;
+
+	static getFooterHeightInLines() {
+		return this.#FOOTER_HEIGHT_IN_LINES;
+	}
+
+	static getFooterHeightInGridCells() {
+		return this.#FOOTER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
 	// ___________________________________________________________________ Glyph
@@ -19,14 +49,6 @@ export default class DirectableDotMatrixConstants {
 
 	static getCharacterHeight() {
 		return this.#CHARACTER_HEIGHT;
-	}
-
-	// _________________________________________________________________________
-
-	static #LINE_HEIGHT = 7;
-
-	static getLineHeight() {
-		return this.#LINE_HEIGHT;
 	}
 
 	// _________________________________________________________________________

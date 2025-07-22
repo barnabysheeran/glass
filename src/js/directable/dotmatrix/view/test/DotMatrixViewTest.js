@@ -42,7 +42,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		super.draw(delayFrames, drawType);
 
 		// Get Line Height
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
