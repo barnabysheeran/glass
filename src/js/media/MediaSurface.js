@@ -4,11 +4,12 @@ import DataController from '../data/DataController.js';
 import Display from '../display/Display.js';
 
 import MediaSurfaceVimeo from './video/MediaSurfaceVimeo.js';
+import MediaSurfaceImageGallery from './image/MediaSurfaceImageGallery.js';
 
 export default class MediaSurface {
 	static #CONTAINER;
 
-	static #mediaSurfaceVimeo;
+	static #MEDIA_ITEMS = [];
 
 	static #LOG_LEVEL = 2;
 
@@ -31,15 +32,15 @@ export default class MediaSurface {
 	// ____________________________________________________________________ Tick
 
 	static tick(frameDeltaMS) {
-
-		// Vimeo
-		if(this.#mediaSurfaceVimeo){
+		// Tick Media Items
+		for (let i = 0; i < this.#MEDIA_ITEMS.length; i++) {
 			// Tick Media Item
-			const IS_COMPLETE = this.#mediaSurfaceVimeo.tick(frameDeltaMS);
+			const IS_COMPLETE = this.#MEDIA_ITEMS[i].tick(frameDeltaMS);
 
 			// Remove if Complete
 			if (IS_COMPLETE) {
-				this.#mediaSurfaceVimeo = null;
+				this.#MEDIA_ITEMS.splice(i, 1);
+				i--; // Adjust index after removal
 			}
 		}
 	}
@@ -55,31 +56,26 @@ export default class MediaSurface {
 		// Get Project Id
 		const projectId = data.projectId;
 
-		ApplicationLogger.log(
-			`MediaSurface showProject: Project ID: ${projectId}`,
-			this.#LOG_LEVEL,
-		);
+		ApplicationLogger.log(` - Project ID: ${projectId}`, this.#LOG_LEVEL);
 
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjectById(projectId);
 
 		// Project Data has 'media' property
 		if (!PROJECT_DATA || !PROJECT_DATA.media) {
-			ApplicationLogger.warn(
-				`MediaSurface showProject: No media data`,
-				this.#LOG_LEVEL,
-			);
+			ApplicationLogger.warn(` - No media data`, this.#LOG_LEVEL);
 			return;
 		}
 
 		// Through the media data
+		const imageUrls = [];
+
 		for (let i = 0; i < PROJECT_DATA.media.length; i++) {
 			const MEDIA_DATA = PROJECT_DATA.media[i];
 
-			console.log(`MediaSurface showProject: Media Data`, MEDIA_DATA);
-
 			switch (MEDIA_DATA.type) {
 				case 'vimeo':
+					// Vimeo - Add Vimeo Player
 					this.#addVideoPlayer(MEDIA_DATA['vimeo-id']);
 
 					break;
@@ -87,7 +83,8 @@ export default class MediaSurface {
 					// this.#createYouTubePlayer(MEDIA_DATA);
 					break;
 				case 'image':
-					this.#addImage(MEDIA_DATA['url']);
+					// Image - Store URL
+					imageUrls.push(MEDIA_DATA['url']);
 					break;
 				default:
 					ApplicationLogger.warn(
@@ -96,6 +93,22 @@ export default class MediaSurface {
 					);
 					break;
 			}
+		}
+
+		// Create Image Gallery ?
+		if (imageUrls.length > 0) {
+			ApplicationLogger.log(
+				` - Creating Image Gallery with ${imageUrls.length} images`,
+				this.#LOG_LEVEL,
+			);
+
+			this.#addImageGallery(imageUrls);
+
+			// Create Image Gallery
+			// this.#mediaSurfaceImageGallery = new MediaSurfaceImage(
+			// 	this.#CONTAINER,
+			// 	imageUrls,
+			// );
 		}
 	}
 
@@ -108,19 +121,21 @@ export default class MediaSurface {
 		);
 
 		// Create Vimeo Player Instance
-		this.#mediaSurfaceVimeo = new MediaSurfaceVimeo(this.#CONTAINER, vimeoId);
+		this.#MEDIA_ITEMS.push(new MediaSurfaceVimeo(this.#CONTAINER, vimeoId));
 	}
 
 	// ___________________________________________________________________ Image
 
-	static #addImage(imageUrl) {
-		ApplicationLogger.log(`MediaSurface addImage ${imageUrl}`, this.#LOG_LEVEL);
+	static #addImageGallery(imageUrls) {
+		ApplicationLogger.log(
+			`MediaSurface addImage ${imageUrls}`,
+			this.#LOG_LEVEL,
+		);
 
-		// Create Image Instance
-		// const IMAGE = new MediaSurfaceImage(this.#CONTAINER, imageUrl);
-
-		// // Store
-		// this.#MEDIA_ITEMS.push(IMAGE);
+		// Create Image Gallery Instance
+		this.#MEDIA_ITEMS.push(
+			new MediaSurfaceImageGallery(this.#CONTAINER, imageUrls),
+		);
 	}
 
 	// ___________________________________________________________________ Clear
