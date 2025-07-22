@@ -1,4 +1,4 @@
-export default class DirectableImageWrapper {
+export default class MediaSurfaceImage {
 	#IMAGE_URL;
 	#CALLBACK_ON_LOADED;
 

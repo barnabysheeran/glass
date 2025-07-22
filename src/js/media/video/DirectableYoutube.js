@@ -1,7 +1,7 @@
 import YouTubePlayer from 'youtube-player';
 
-import ApplicationConfiguration from '../application/ApplicationConfiguration.js';
-import ApplicationLogger from '../application/ApplicationLogger.js';
+import ApplicationConfiguration from '../../application/ApplicationConfiguration.js';
+import ApplicationLogger from '../../application/ApplicationLogger.js';
 
 export default class DirectableYoutube {
 	#HOLDER;

@@ -112,7 +112,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 		// Calculate Line Distribution
 		const LINE_SPACING = 2;
-		const FREE_SPACE_PROPORTION = 0.25;
+		const FREE_SPACE_PROPORTION = 0.2;
 
 		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
