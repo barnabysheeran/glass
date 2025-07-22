@@ -94,24 +94,36 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
 
-		// Get Height
+		// Get Project Data
+		const PROJECT_DATA = DataController.getProjects();
+
+		// Get Line Heights
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeight();
 		const LINE_HEIGHT_HEADER =
 			DirectableDotMatrixConstants.getLineHeightHeader();
 
-		// Get Width
+		// Get Width Mobile
 		const BLOCK_WIDTH_MOBILE =
 			DirectableDotMatrixConstants.getBlockWidthMobile();
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
-
-		// Get Project Data
-		const PROJECT_DATA = DataController.getProjects();
+		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
 		// Calculate Line Distribution
 		const LINE_SPACING = 2;
-		const LINE_HEIGHT_MENU_START = LINE_HEIGHT_HEADER + 1;
+		const FREE_SPACE_PROPORTION = 0.25;
+
+		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
+
+		const MENU_HEIGHT_IN_LINES = PROJECT_DATA.length * LINE_SPACING;
+
+		const FREE_SPACE_IN_LINES =
+			GRID_HEIGHT_IN_LINES - LINE_HEIGHT_HEADER - MENU_HEIGHT_IN_LINES;
+
+		const LINE_HEIGHT_MENU_START =
+			LINE_HEIGHT_HEADER +
+			Math.floor(FREE_SPACE_IN_LINES * FREE_SPACE_PROPORTION);
 
 		// Draw
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
