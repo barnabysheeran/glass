@@ -5,9 +5,13 @@ export default class MediaSurfaceImage {
 	#HOLDER;
 	#IMAGE;
 
-	#OPACITY_LERP = 0.01;
+	#LERP = 0.015;
+	#LERP_MARGIN = 0.01;
+
 	#opacity = 0;
 	#opacityTarget = 0;
+
+	#isStopping = false;
 
 	// _________________________________________________________________ Opacity
 
@@ -48,8 +52,26 @@ export default class MediaSurfaceImage {
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#OPACITY_LERP;
+		// Lerp Opacity
+		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#LERP;
+
+		// Set Opacity
 		this.#HOLDER.style.opacity = this.#opacity;
+
+		// Stopping ?
+		if (this.#isStopping && this.#opacity <= this.#LERP_MARGIN) {
+			console.log('MediaSurfaceImage - Stopping and opacity is low enough');
+
+			// Complete
+			return true;
+		}
+
+		console.log(
+			`MediaSurfaceImage - Tick opacity: ${this.#opacity}, target: ${this.#opacityTarget}`,
+		);
+
+		// Return Not Complete
+		return false;
 	}
 
 	// ____________________________________________________________________ Show
@@ -60,5 +82,26 @@ export default class MediaSurfaceImage {
 
 	hide() {
 		this.#opacityTarget = 0;
+	}
+
+	// ____________________________________________________________________ Stop
+
+	stop() {
+		this.#isStopping = true;
+
+		this.hide();
+	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		// Remove Holder
+		if (this.#HOLDER && this.#HOLDER.parentNode) {
+			this.#HOLDER.parentNode.removeChild(this.#HOLDER);
+		}
+
+		// Clear References
+		this.#HOLDER = null;
+		this.#IMAGE = null;
 	}
 }

@@ -39,6 +39,8 @@ export default class MediaSurface {
 
 			// Remove if Complete
 			if (IS_COMPLETE) {
+				console.log(`MediaSurface - Removing media item at index ${i}`);
+
 				// Destroy Media Item
 				this.#MEDIA_ITEMS[i].destroy();
 

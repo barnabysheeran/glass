@@ -7,7 +7,14 @@ export default class MediaSurfaceImageGallery {
 	#IMAGES = [];
 	#imagesToLoad = 0;
 
-	#LOG_LEVEL = 2;
+	#indexImageCurrent = 0;
+
+	#DELAY_NEXT_IMAGE_MAX = 60 * 4; // Frames
+	#delayNextImage = -1;
+
+	#isStopping = false;
+
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
@@ -35,9 +42,37 @@ export default class MediaSurfaceImageGallery {
 	// ____________________________________________________________________ Tick
 
 	tick() {
+		// Delay ?
+		if (this.#delayNextImage > 0) {
+			// Decrement Delay
+			this.#delayNextImage -= 1;
+
+			if (this.#delayNextImage === 0) {
+				this.#showNextImage();
+
+				// Reset Delay
+				this.#delayNextImage = this.#DELAY_NEXT_IMAGE_MAX;
+			}
+		}
+
 		// Tick Images
+		let isComplete = true;
+
 		for (let i = 0; i < this.#IMAGES.length; i++) {
-			this.#IMAGES[i].tick();
+			const IS_IMAGE_COMPLETE = this.#IMAGES[i].tick();
+
+			if (IS_IMAGE_COMPLETE === false) {
+				isComplete = false;
+			}
+		}
+
+		if (this.#isStopping && isComplete === true) {
+			console.log(
+				`MediaSurfaceImageGallery - All images stopped`,
+				this.#LOG_LEVEL,
+			);
+
+			return true;
 		}
 
 		// Return Not Complete
@@ -62,13 +97,50 @@ export default class MediaSurfaceImageGallery {
 	}
 
 	#onAllImagesLoaded() {
-		// Show Image 0
-		this.#IMAGES[0].show();
+		// Start Showing Images
+		ApplicationLogger.log(
+			`MediaSurfaceImageGallery #onAllImagesLoaded`,
+			this.#LOG_LEVEL,
+		);
+
+		// Show First Image
+		this.#indexImageCurrent = 0;
+		this.#IMAGES[this.#indexImageCurrent].show();
+
+		// Start Delay
+		this.#delayNextImage = this.#DELAY_NEXT_IMAGE_MAX;
+	}
+
+	#showNextImage() {
+		// Hide Current Image
+		this.#IMAGES[this.#indexImageCurrent].hide();
+
+		// Increment Index
+		this.#indexImageCurrent += 1;
+
+		// Wrap Around
+		if (this.#indexImageCurrent >= this.#IMAGES.length) {
+			this.#indexImageCurrent = 0;
+		}
+
+		// Show Next Image
+		this.#IMAGES[this.#indexImageCurrent].show();
 	}
 
 	// ____________________________________________________________________ Stop
 
-	stop() {}
+	stop() {
+		// End Delay
+		this.#delayNextImage = -1;
+
+		// Stop All Images
+		for (let i = 0; i < this.#IMAGES.length; i++) {
+			this.#IMAGES[i].stop();
+		}
+
+		// Is Stopping
+		this.#isStopping = true;
+	}
 
 	// ____________________________________________________________________ Size
 
@@ -81,5 +153,11 @@ export default class MediaSurfaceImageGallery {
 
 	// _________________________________________________________________ Destroy
 
-	destroy() {}
+	destroy() {
+		ApplicationLogger.log('MediaSurfaceImageGallery destroy', this.#LOG_LEVEL);
+
+		for (let i = 0; i < this.#IMAGES.length; i++) {
+			this.#IMAGES[i].destroy();
+		}
+	}
 }

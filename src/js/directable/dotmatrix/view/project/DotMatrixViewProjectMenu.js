@@ -231,10 +231,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Get Project Index
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(clickData.projectId);
 
-		console.log(
-			`DotMatrixViewProjectMenu onButtonMenuOver projectId ${clickData.projectId} index ${PROJECT_INDEX}`,
-		);
-
 		// Is Over
 		this.#IS_OVERS[PROJECT_INDEX] = true;
 
@@ -249,10 +245,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	onButtonMenuOut(clickData) {
 		// Get Project Index
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(clickData.projectId);
-
-		console.log(
-			`DotMatrixViewProjectMenu onButtonMenuOut projectId ${clickData.projectId} index ${PROJECT_INDEX}`,
-		);
 
 		// Is Not Over
 		this.#IS_OVERS[PROJECT_INDEX] = false;
