@@ -1,4 +1,3 @@
-
 .application {
 	position: absolute;
 
@@ -38,15 +37,29 @@
 	margin-right: auto;
 }
 
-/* __________________________________________________________________ Display */
+/* ____________________________________________________________________ Media */
 
-.application .display .video-surface {
+.application .display .media-surface {
 	position: absolute;
 
 	z-index: 100;
 }
 
-.application .display .video-surface .vimeo {
+.application .display .media-surface .vimeo {
+	width: 100%;
+	height: 100%;
+}
+
+.application .display .media-surface .image {
+	position: absolute;
+
+	left: 0;
+	top: 0;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
 	width: 100%;
 	height: 100%;
 }

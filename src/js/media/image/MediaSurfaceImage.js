@@ -5,7 +5,7 @@ export default class MediaSurfaceImage {
 	#HOLDER;
 	#IMAGE;
 
-	#OPACITY_LERP = 0.001;
+	#OPACITY_LERP = 0.01;
 	#opacity = 0;
 	#opacityTarget = 0;
 
@@ -18,7 +18,7 @@ export default class MediaSurfaceImage {
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
-		this.#HOLDER.classList.add('image-wrapper');
+		this.#HOLDER.classList.add('image');
 		container.appendChild(this.#HOLDER);
 
 		// Create Image
@@ -27,9 +27,8 @@ export default class MediaSurfaceImage {
 
 		// Initial Opacity
 		this.#HOLDER.style.opacity = 0;
-	}
 
-	load() {
+		// Load
 		this.#IMAGE.src = this.#IMAGE_URL;
 	}
 
@@ -56,7 +55,7 @@ export default class MediaSurfaceImage {
 	// ____________________________________________________________________ Show
 
 	show() {
-		this.#opacityTarget = 0.6;
+		this.#opacityTarget = 1.0;
 	}
 
 	hide() {

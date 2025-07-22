@@ -20,7 +20,7 @@ export default class MediaSurface {
 
 		// Create Holder
 		this.#CONTAINER = document.createElement('div');
-		this.#CONTAINER.classList.add('video-surface');
+		this.#CONTAINER.classList.add('media-surface');
 
 		// Append Holder to Display Holder
 		Display.getDisplayHolder().appendChild(this.#CONTAINER);
