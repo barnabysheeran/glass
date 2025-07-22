@@ -33,20 +33,7 @@
         },
 
 
-        {
-            "id": "hotsteppa",
-            "name": "Hotsteppa",
-            "name-short": "Hotsteppa",
-            "technology": "Unity"
-        },
 
-
-        {
-            "id": "sciencemuseum",
-            "name": "The Science Museum - Sun",
-            "name-short": "Science Museum",
-            "technology": "Unity"
-        },
 
 
         {
@@ -96,17 +83,6 @@
         },
 
 
-        {
-            "id": "adidas",
-            "name": "ADIDAS - Flash",
-            "name-short": "ADIDAS",
-            "technology": "Flash",
-            "credit": {
-                "text": "Hi-ReS!",
-                "url": ""
-            }
-        },
-        
 
         {
             "id": "greenpeace",

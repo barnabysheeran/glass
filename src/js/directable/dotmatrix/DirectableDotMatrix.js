@@ -11,6 +11,10 @@ import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 
 import DotMatrixViewProject_battlebuilder from './view/project/DotMatrixViewProject_battlebuilder.js';
+import DotMatrixViewProject_pikcellsonfigr from './view/project/DotMatrixViewProject_pikcellsonfigr.js';
+import DotMatrixViewProject_ferrari from './view/project/DotMatrixViewProject_ferrari.js';
+import DotMatrixViewProject_honda from './view/project/DotMatrixViewProject_honda.js';
+import DotMatrixViewProject_google from './view/project/DotMatrixViewProject_google.js';
 import DotMatrixViewProject_greenpeace from './view/project/DotMatrixViewProject_greenpeace.js';
 import DotMatrixViewProject_postmatter from './view/project/DotMatrixViewProject_postmatter.js';
 
@@ -41,8 +45,6 @@ export default class DirectableDotMatrix {
 
 		// Get Project Data
 		const PROJECT_DATA = DataController.getProjects();
-
-		console.log('DirectableDotMatrix PROJECT_DATA', PROJECT_DATA);
 
 		// Create Dot Manager
 		this.#DOT_MANAGER = new DotManager(displayWidthPx, displayHeightPx);
@@ -81,7 +83,11 @@ export default class DirectableDotMatrix {
 		// Create Project Views
 		const projectViewClasses = new Map([
 			['battlebuilder', DotMatrixViewProject_battlebuilder],
+			['ferrari', DotMatrixViewProject_ferrari],
+			['google', DotMatrixViewProject_google],
 			['greenpeace', DotMatrixViewProject_greenpeace],
+			['honda', DotMatrixViewProject_honda],
+			['pikcellsonfigr', DotMatrixViewProject_pikcellsonfigr],
 			['postmatter', DotMatrixViewProject_postmatter],
 		]);
 

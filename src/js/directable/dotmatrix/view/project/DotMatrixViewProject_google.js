@@ -10,7 +10,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
-export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
+export default class DotMatrixViewProject_google extends DotMatrixView {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start
@@ -57,6 +57,9 @@ export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
 
 		// TODO Long or Short Name
 
+		// Next
+		gridY += LINE_HEIGHT * 2;
+
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
@@ -68,7 +71,7 @@ export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.PassThrough,
+			FillStrategyType.Random,
 			drawType,
 		);
 
@@ -89,7 +92,7 @@ export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.PassThrough,
+			FillStrategyType.Random,
 			drawType,
 		);
 
@@ -112,7 +115,7 @@ export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.PassThrough,
+				FillStrategyType.Random,
 				drawType,
 			);
 
@@ -136,28 +139,12 @@ export default class DotMatrixViewProject_greenpeace extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.PassThrough,
+				FillStrategyType.Random,
 				drawType,
 			);
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
 		}
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		super.tick();
-
-		// Active ?
-		if (this.isActive !== true) {
-			return;
-		}
-
-		// if (Math.random() < 0.01) {
-		// 	this.draw(0, DrawType.Clear);
-		// 	this.draw(7, DrawType.Fill);
-		// }
 	}
 }
