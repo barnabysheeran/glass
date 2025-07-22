@@ -2,7 +2,7 @@ import player from '@vimeo/player';
 
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-export default class DirectableVimeo {
+export default class MediaSurfaceVimeo {
 	#CONTAINER;
 
 	#HOLDER;
@@ -27,7 +27,7 @@ export default class DirectableVimeo {
 	// _________________________________________________________________________
 
 	constructor(container, vimeoId) {
-		ApplicationLogger.log(`DirectableVimeo ${vimeoId}`, this.#LOG_LEVEL);
+		ApplicationLogger.log(`MediaSurfaceVimeo ${vimeoId}`, this.#LOG_LEVEL);
 
 		// Store
 		this.#CONTAINER = container;
@@ -54,22 +54,18 @@ export default class DirectableVimeo {
 		if (this.#PLAYER) {
 			this.#PLAYER.setVolume(this.#volume).catch((error) => {
 				ApplicationLogger.error(
-					`DirectableVimeo setVolume error: ${error.message}`,
+					`MediaSurfaceVimeo setVolume error: ${error.message}`,
 					this.#LOG_LEVEL,
 				);
 			});
 		}
 
+		// Stopping ?
 		if (
 			this.#isStopping &&
 			this.#opacity <= this.#LERP_MARGIN &&
 			this.#volume <= this.#LERP_MARGIN
 		) {
-			this.#HOLDER.remove();
-
-			this.#HOLDER = null;
-			this.#PLAYER = null;
-
 			return true;
 		}
 
@@ -81,7 +77,7 @@ export default class DirectableVimeo {
 
 	#createPlayer(vimeoId) {
 		ApplicationLogger.log(
-			`DirectableVimeo createPlayer ${vimeoId}`,
+			`MediaSurfaceVimeo createPlayer ${vimeoId}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -95,7 +91,6 @@ export default class DirectableVimeo {
 		const OPTIONS = {
 			id: vimeoId,
 			loop: true,
-			// background: true,
 			controls: false,
 			dnt: true, // Do Not Track
 			responsive: false,
@@ -105,9 +100,9 @@ export default class DirectableVimeo {
 		// Create Player
 		this.#PLAYER = new player(this.#HOLDER, OPTIONS);
 
+		// Add Event Listeners
 		this.#PLAYER.ready().then(this.#onReady.bind(this));
 
-		// Add event listeners
 		this.#PLAYER.on('play', this.#onPlay.bind(this));
 		this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
 	}
@@ -116,24 +111,22 @@ export default class DirectableVimeo {
 
 	#onLoaded(data) {
 		ApplicationLogger.log(
-			`DirectableVimeo onLoaded: video ${data.id} has loaded.`,
+			`MediaSurfaceVimeo onLoaded: video ${data.id} has loaded.`,
 			this.#LOG_LEVEL,
 		);
 
 		// Play Video
 		this.#playVideo();
 
-		// Set Opacity Target
+		// Show
 		this.#opacityTarget = 1;
-
-		// Set Volume Target
 		this.#volumeTarget = 1;
 	}
 
 	// ___________________________________________________________________ Ready
 
 	#onReady() {
-		ApplicationLogger.log('DirectableVimeo onReady', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceVimeo onReady', this.#LOG_LEVEL);
 
 		// Set Size
 		this.setSize(this.#width, this.#height);
@@ -142,33 +135,33 @@ export default class DirectableVimeo {
 	// ____________________________________________________________________ Play
 
 	async #playVideo() {
+		ApplicationLogger.log('MediaSurfaceVimeo playVideo', this.#LOG_LEVEL);
+
 		// Play Video
 		try {
 			await this.#PLAYER.play();
-			ApplicationLogger.log(' - Video started playing', this.#LOG_LEVEL);
 		} catch (error) {
 			ApplicationLogger.error(
-				' - Error starting video',
-				error,
+				`MediaSurfaceVimeo play error: ${error.message}`,
 				this.#LOG_LEVEL,
 			);
 		}
 	}
 
 	#onPlay() {
-		ApplicationLogger.log('DirectableVimeo onPlay', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 	}
 
 	// ____________________________________________________________________ Stop
 
 	stop() {
-		ApplicationLogger.log('DirectableVimeo stop', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceVimeo stop', this.#LOG_LEVEL);
 
 		// Pause Video
 		if (this.#PLAYER) {
 			this.#PLAYER.pause().catch((error) => {
 				ApplicationLogger.error(
-					`DirectableVimeo pause error: ${error.message}`,
+					`MediaSurfaceVimeo pause error: ${error.message}`,
 					this.#LOG_LEVEL,
 				);
 			});
@@ -186,16 +179,19 @@ export default class DirectableVimeo {
 
 	// ____________________________________________________________________ Size
 
-	setSize(width, height) {
-		ApplicationLogger.log('DirectableVimeo setSize', width, height);
+	setSize(widthPx, heightPx) {
+		ApplicationLogger.log(
+			`MediaSurfaceVimeo setSize ${widthPx}, ${heightPx}`,
+			this.#LOG_LEVEL,
+		);
 
 		// Store
-		this.#width = width;
-		this.#height = height;
+		this.#width = widthPx;
+		this.#height = heightPx;
 
 		// Size Holder
-		this.#HOLDER.style.width = width + 'px';
-		this.#HOLDER.style.height = height + 'px';
+		this.#HOLDER.style.width = widthPx + 'px';
+		this.#HOLDER.style.height = heightPx + 'px';
 
 		// Size Iframe ?
 		const iframe = this.#HOLDER.querySelector('iframe');
@@ -206,7 +202,25 @@ export default class DirectableVimeo {
 			return;
 		}
 
-		iframe.style.width = `${width}px`;
-		iframe.style.height = `${height}px`;
+		iframe.style.width = `${widthPx}px`;
+		iframe.style.height = `${heightPx}px`;
+	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {
+		ApplicationLogger.log('MediaSurfaceVimeo destroy', this.#LOG_LEVEL);
+
+		// Remove Holder
+		if (this.#HOLDER) {
+			this.#HOLDER.remove();
+			this.#HOLDER = null;
+		}
+
+		// Stop Player
+		if (this.#PLAYER) {
+			this.#PLAYER.destroy();
+			this.#PLAYER = null;
+		}
 	}
 }

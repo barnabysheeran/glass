@@ -39,6 +39,10 @@ export default class MediaSurface {
 
 			// Remove if Complete
 			if (IS_COMPLETE) {
+				// Destroy Media Item
+				this.#MEDIA_ITEMS[i].destroy();
+
+				// Remove from Array
 				this.#MEDIA_ITEMS.splice(i, 1);
 				i--; // Adjust index after removal
 			}

@@ -33,4 +33,17 @@ export default class MediaSurfaceImageGallery {
 	// ____________________________________________________________________ Stop
 
 	stop() {}
+
+	// ____________________________________________________________________ Size
+
+	setSize(widthPx, heightPx) {
+		ApplicationLogger.log(
+			`MediaSurfaceImageGallery setSize ${widthPx}, ${heightPx}`,
+			this.#LOG_LEVEL,
+		);
+	}
+
+	// _________________________________________________________________ Destroy
+
+	destroy() {}
 }
