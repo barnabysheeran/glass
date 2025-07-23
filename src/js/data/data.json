@@ -41,17 +41,43 @@
             "id": "pikcellsonfigr",
             "name": "Pikcells / Onfigr",
             "name-short": "Pikcells / Onfigr",
+            "media": [
+                {
+                    "type": "image",
+                    "url": "project/pikcellsonfigr/1.jpg"
+                }
+            ],
             "technology": "Javascript, WebGL, Three js, Unity, & Unreal Engine"
         },
 
 
-
-
+        {
+            "id": "hotstepper",
+            "name": "Nexus Hotstepper",
+            "name-short": "Nexus Hotstepper",
+            "media-aspect": "16:9",
+            "credit": {
+                "text": "Nexus Studios",
+                "url": "https://nexusstudios.com/work/hotstepper"
+            },
+            "technology": "AR. Unity"
+        },
 
         {
             "id": "ferrari",
             "name": "Ferrari - Flagship Store",
             "name-short": "Ferrari",
+            "media-aspect": "16:9",
+            "media": [
+                {
+                    "type": "vimeo",
+                    "vimeo-id": "206564571"
+                }
+            ],
+            "credit": {
+                "text": "{heart} MORE",
+                "url": "https://www.remiparingaux.com/ferrari"
+            },
             "technology": "Unity, Kinect"
         },
 
@@ -60,7 +86,7 @@
             "id": "postmatter",
             "name": "postMATTER Exhibition",
             "name-short": "postMATTER",
-            "media-aspect": "4:3",
+            "media-aspect": "16:9",
             "media": [
                 {
                     "type": "vimeo",
@@ -68,7 +94,7 @@
                 }
             ],
             "credit": {
-                "text": "{heart}",
+                "text": "{heart} MORE",
                 "url": "https://www.remiparingaux.com/postmatter-exhibition"
             },
             "technology": "C++, Cinder, & Kinect"

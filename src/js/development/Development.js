@@ -3,7 +3,6 @@ import ApplicationLogger from '../application/ApplicationLogger.js';
 import Display from '../display/Display.js';
 
 import DevelopmentGuides from './guide/DevelopmentGuides.js';
-import DevelopmentGrid from './grid/DevelopmentGrid.js';
 
 export default class Development {
 	static #CONTAINER;
