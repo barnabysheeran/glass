@@ -53,32 +53,14 @@
 
         {
             "id": "hotstepper",
-            "name": "Nexus Hotstepper",
+            "name": "Nexus - Hotstepper",
             "name-short": "Nexus Hotstepper",
             "media-aspect": "16:9",
             "credit": {
                 "text": "Nexus Studios",
                 "url": "https://nexusstudios.com/work/hotstepper"
             },
-            "technology": "AR. Unity"
-        },
-
-        {
-            "id": "ferrari",
-            "name": "Ferrari - Flagship Store",
-            "name-short": "Ferrari",
-            "media-aspect": "16:9",
-            "media": [
-                {
-                    "type": "vimeo",
-                    "vimeo-id": "206564571"
-                }
-            ],
-            "credit": {
-                "text": "{heart} MORE",
-                "url": "https://www.remiparingaux.com/ferrari"
-            },
-            "technology": "Unity, Kinect"
+            "technology": "Unity"
         },
 
 
@@ -102,6 +84,25 @@
 
 
         {
+            "id": "ferrari",
+            "name": "Ferrari - Flagship Store",
+            "name-short": "Ferrari",
+            "media-aspect": "16:9",
+            "media": [
+                {
+                    "type": "vimeo",
+                    "vimeo-id": "206564571"
+                }
+            ],
+            "credit": {
+                "text": "{heart} MORE",
+                "url": "https://www.remiparingaux.com/ferrari"
+            },
+            "technology": "Unity, Kinect"
+        },
+
+
+        {
             "id": "honda",
             "name": "HONDA - The Other Side",
             "name-short": "HONDA",
@@ -120,11 +121,16 @@
             "technology": "JavaScript, WebGL"
         },
 
-
+        {
+            "id": "adidas-flash",
+            "name": "ADIDAS - Flash",
+            "name-short": "ADIDAS Flash",
+            "technology": "Flash, ActionScript"
+        },
 
         {
             "id": "greenpeace",
-            "name": "Greenpeace - Love Letters",
+            "name": "Greenpeace",
             "name-short": "Greenpeace",
             "media-aspect": "4:3",
             "media": [
