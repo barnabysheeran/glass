@@ -65,6 +65,13 @@
 
 
         {
+            "id": "science-museum",
+            "name": "Science Museum - Sun",
+            "name-short": "Science Museum"
+        },
+
+
+        {
             "id": "postmatter",
             "name": "postMATTER Exhibition",
             "name-short": "postMATTER",
@@ -121,12 +128,14 @@
             "technology": "JavaScript, WebGL"
         },
 
+
         {
             "id": "adidas-flash",
             "name": "ADIDAS - Flash",
             "name-short": "ADIDAS Flash",
             "technology": "Flash, ActionScript"
         },
+
 
         {
             "id": "greenpeace",
