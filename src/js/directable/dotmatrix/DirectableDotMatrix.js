@@ -10,13 +10,16 @@ import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
 import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
 import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
 
+import DotMatrixViewProject_adidas from './view/project/DotMatrixViewProject_adidas.js';
 import DotMatrixViewProject_battlebuilder from './view/project/DotMatrixViewProject_battlebuilder.js';
-import DotMatrixViewProject_pikcellsonfigr from './view/project/DotMatrixViewProject_pikcellsonfigr.js';
 import DotMatrixViewProject_ferrari from './view/project/DotMatrixViewProject_ferrari.js';
-import DotMatrixViewProject_honda from './view/project/DotMatrixViewProject_honda.js';
 import DotMatrixViewProject_google from './view/project/DotMatrixViewProject_google.js';
 import DotMatrixViewProject_greenpeace from './view/project/DotMatrixViewProject_greenpeace.js';
+import DotMatrixViewProject_honda from './view/project/DotMatrixViewProject_honda.js';
+import DotMatrixViewProject_hotstepper from './view/project/DotMatrixViewProject_hotstepper.js';
+import DotMatrixViewProject_pikcellsonfigr from './view/project/DotMatrixViewProject_pikcellsonfigr.js';
 import DotMatrixViewProject_postmatter from './view/project/DotMatrixViewProject_postmatter.js';
+import DotMatrixViewProject_sciencemuseum from './view/project/DotMatrixViewProject_sciencemuseum.js';
 
 import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
 import DataController from '../../data/DataController.js';
@@ -82,13 +85,16 @@ export default class DirectableDotMatrix {
 
 		// Create Project Views
 		const projectViewClasses = new Map([
+			['adidas', DotMatrixViewProject_adidas],
 			['battlebuilder', DotMatrixViewProject_battlebuilder],
 			['ferrari', DotMatrixViewProject_ferrari],
 			['google', DotMatrixViewProject_google],
 			['greenpeace', DotMatrixViewProject_greenpeace],
 			['honda', DotMatrixViewProject_honda],
-			['pikcellsonfigr', DotMatrixViewProject_pikcellsonfigr],
+			['hotstepper', DotMatrixViewProject_hotstepper],
 			['postmatter', DotMatrixViewProject_postmatter],
+			['pikcellsonfigr', DotMatrixViewProject_pikcellsonfigr],
+			['sciencemuseum', DotMatrixViewProject_sciencemuseum],
 		]);
 
 		PROJECT_DATA.forEach((project) => {
