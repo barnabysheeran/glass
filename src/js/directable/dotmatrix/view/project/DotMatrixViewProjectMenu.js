@@ -113,6 +113,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Calculate Line Distribution
 		const LINE_SPACING = 2;
 		const FREE_SPACE_PROPORTION = 0.33;
+		const LINE_HEIGHT_MENU_START_MINIMUM = 7;
 
 		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
@@ -121,9 +122,13 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const FREE_SPACE_IN_LINES =
 			GRID_HEIGHT_IN_LINES - LINE_HEIGHT_HEADER - MENU_HEIGHT_IN_LINES;
 
-		const LINE_HEIGHT_MENU_START =
+		let lineHeightMenuStart =
 			LINE_HEIGHT_HEADER +
 			Math.floor(FREE_SPACE_IN_LINES * FREE_SPACE_PROPORTION);
+
+		if (lineHeightMenuStart < LINE_HEIGHT_MENU_START_MINIMUM) {
+			lineHeightMenuStart = LINE_HEIGHT_MENU_START_MINIMUM;
+		}
 
 		// Draw
 		for (let i = 0; i < PROJECT_DATA.length; i += 1) {
@@ -136,7 +141,7 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 			const PROJECT_DATA_ITEM = PROJECT_DATA[i];
 
 			// Grid Y
-			const GRID_Y = LINE_HEIGHT * (LINE_HEIGHT_MENU_START + i * LINE_SPACING);
+			const GRID_Y = LINE_HEIGHT * (lineHeightMenuStart + i * LINE_SPACING);
 
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
