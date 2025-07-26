@@ -189,6 +189,9 @@ export default class DirectableDotMatrix {
 		// Stop Current View
 		this.#stopCurrentView();
 
+		// Set Is Menu Open
+		this.#VIEW_HEADER.setIsMenuOpen(false);
+
 		// Show Project View
 		const PROJECT_VIEW = this.#getViewById(projectId);
 
@@ -214,10 +217,11 @@ export default class DirectableDotMatrix {
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
-		// Order Important
-
 		// Stop Current View
 		this.#stopCurrentView();
+
+		// Set Is Menu Open
+		this.#VIEW_HEADER.setIsMenuOpen(true);
 
 		// Show Project Menu View
 		this.#getViewById('project-menu').start(DELAY_PAGE_TRANSITION);
@@ -235,10 +239,11 @@ export default class DirectableDotMatrix {
 		const DELAY_PAGE_TRANSITION =
 			DirectableDotMatrixDelays.getDelayPageTransition();
 
-		// Order Important
-
 		// Stop Current View
 		this.#stopCurrentView();
+
+		// Set Is Menu Open
+		this.#VIEW_HEADER.setIsMenuOpen(false);
 
 		// Show Intro View
 		this.#getViewById('intro').start(DELAY_PAGE_TRANSITION);

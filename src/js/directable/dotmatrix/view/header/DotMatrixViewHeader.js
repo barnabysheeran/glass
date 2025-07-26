@@ -29,6 +29,8 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
 
+	#isMenuOpen = false;
+
 	// ______________________________________________________________ Start Stop
 
 	start(delayFrames) {
@@ -44,9 +46,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 
 		// Create Interactive Block - After Draw
 		this.#createInteractiveBlock();
-
-		// Header is Unique, isActive Tracks App State
-		this.isActive = false;
 	}
 
 	stop(delayFrames = 0) {
@@ -116,21 +115,22 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuClick() {
-		if (this.isActive === true) {
+		// Toggle Menu
+		if (this.#isMenuOpen === true) {
+			// Project Menu Close
 			ApplicationDispatcher.dispatch('project-menu-close');
-
 			// Inactive
-			this.isActive = false;
+			this.#isMenuOpen = false;
 		} else {
+			// Project Menu Open
 			ApplicationDispatcher.dispatch('project-menu-open');
-
 			// Active
-			this.isActive = true;
+			this.#isMenuOpen = true;
 		}
 	}
 
 	onButtonMenuOver() {
-		if (this.isActive === false) {
+		if (this.#isMenuOpen === false) {
 			this.#drawButtonSurrounded();
 		} else {
 			this.#drawButtonUnsurrounded();
@@ -138,10 +138,24 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 	}
 
 	onButtonMenuOut() {
-		if (this.isActive === false) {
+		if (this.#isMenuOpen === false) {
 			this.#drawButtonUnsurrounded();
 		} else {
 			this.#drawButtonSurrounded();
+		}
+	}
+
+	// ____________________________________________________________ Is Menu Open
+
+	setIsMenuOpen(isMenuOpen) {
+		// Store
+		this.#isMenuOpen = isMenuOpen;
+
+		// Set
+		if (this.#isMenuOpen === true) {
+			this.#drawButtonSurrounded();
+		} else {
+			this.#drawButtonUnsurrounded();
 		}
 	}
 
