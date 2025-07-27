@@ -74,15 +74,9 @@ export default class MediaSurfaceImage {
 
 		// Stopping ?
 		if (this.#isStopping && this.#opacity <= this.#LERP_MARGIN) {
-			console.log('MediaSurfaceImage - Stopping and opacity is low enough');
-
 			// Complete
 			return true;
 		}
-
-		console.log(
-			`MediaSurfaceImage - Tick opacity: ${this.#opacity}, target: ${this.#opacityTarget}`,
-		);
 
 		// Return Not Complete
 		return false;
