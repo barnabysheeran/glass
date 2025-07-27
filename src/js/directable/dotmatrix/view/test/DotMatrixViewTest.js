@@ -3,7 +3,6 @@ import GridData from '../../../../grid/GridData.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -239,7 +238,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 				'HELLO',
 				0,
 				LINE_HEIGHT * Y,
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, Y),
+				DirectableDotMatrixConstants.getDelayFromGridPosition(0, Y),
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
 			);

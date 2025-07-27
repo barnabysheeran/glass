@@ -21,7 +21,7 @@ import DotMatrixViewProject_pikcellsonfigr from './view/project/DotMatrixViewPro
 import DotMatrixViewProject_postmatter from './view/project/DotMatrixViewProject_postmatter.js';
 import DotMatrixViewProject_sciencemuseum from './view/project/DotMatrixViewProject_sciencemuseum.js';
 
-import DirectableDotMatrixDelays from './DirectableDotMatrixDelays.js';
+import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
 import DataController from '../../data/DataController.js';
 
 export default class DirectableDotMatrix {
@@ -184,7 +184,7 @@ export default class DirectableDotMatrix {
 		);
 
 		const DELAY_PAGE_TRANSITION =
-			DirectableDotMatrixDelays.getDelayPageTransition();
+			DirectableDotMatrixConstants.getDelayPageTransition();
 
 		// Stop Current View
 		this.#stopCurrentView();
@@ -215,7 +215,7 @@ export default class DirectableDotMatrix {
 		);
 
 		const DELAY_PAGE_TRANSITION =
-			DirectableDotMatrixDelays.getDelayPageTransition();
+			DirectableDotMatrixConstants.getDelayPageTransition();
 
 		// Stop Current View
 		this.#stopCurrentView();
@@ -237,7 +237,7 @@ export default class DirectableDotMatrix {
 		);
 
 		const DELAY_PAGE_TRANSITION =
-			DirectableDotMatrixDelays.getDelayPageTransition();
+			DirectableDotMatrixConstants.getDelayPageTransition();
 
 		// Stop Current View
 		this.#stopCurrentView();

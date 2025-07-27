@@ -82,4 +82,26 @@ export default class DirectableDotMatrixConstants {
 	static getBlockWidthMobile() {
 		return this.#BLOCK_WIDTH_MOBILE;
 	}
+
+	// _________________________________________________________ Delay Page Transition
+
+	// TODO Move to Views
+
+	static #DELAY_PAGE_TRANSITION = 60;
+
+	static getDelayPageTransition() {
+		return this.#DELAY_PAGE_TRANSITION;
+	}
+
+	// __________________________________________________________ DelayGlyph Position
+
+	// TODO Transition Type
+
+	static getDelayFromGridPosition(gridX, gridY) {
+		// Remove Header
+
+		const DELAY = gridX * 1 + gridY * 1;
+
+		return Math.floor(DELAY);
+	}
 }

@@ -6,15 +6,13 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
+import { viewAddRectanglesBlock } from '../../DirectableDotMatrixUtils.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-
-import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
@@ -79,7 +77,7 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 			'Menu',
 			this.#gridY,
 			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, this.#gridY),
+				DirectableDotMatrixConstants.getDelayFromGridPosition(0, this.#gridY),
 			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,

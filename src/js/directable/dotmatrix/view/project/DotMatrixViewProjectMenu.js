@@ -7,14 +7,13 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
+import { viewAddRectanglesBlock } from '../../DirectableDotMatrixUtils.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
-
-import { viewAddRectanglesBlock } from '../DotMatrixViewUtils.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Tune with Menu Text

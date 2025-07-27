@@ -3,7 +3,6 @@ import GridData from '../../../../grid/GridData.js';
 import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import DirectableDotMatrixDelays from '../../DirectableDotMatrixDelays.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -90,7 +89,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 			this.SHAPE_MANAGER,
 			gridY,
 			delayFrames +
-				DirectableDotMatrixDelays.getDelayFromGridPosition(0, gridY),
+				DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			drawType,
@@ -109,7 +108,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				0,
 				GRID_Y,
 				delayFrames +
-					DirectableDotMatrixDelays.getDelayFromGridPosition(0, GRID_Y),
+					DirectableDotMatrixConstants.getDelayFromGridPosition(0, GRID_Y),
 				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,

@@ -570,18 +570,18 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M187.93,-1501.42C204.56,-1448.88 292.41,-1194.23 463.75,-1089 472.53,-1083.6 482.66,-1080.03 492.91,-1077.71"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="493.05,-1079.82 498.54,-1076.62 492.25,-1075.7 493.05,-1079.82"/>
 </g>
-<!-- src/js/directable/dotmatrix/DirectableDotMatrixDelays.js -->
+<!-- src/js/directable/dotmatrix/DirectableDotMatrixConstants.js -->
 <g id="node20" class="node">
-<title>src/js/directable/dotmatrix/DirectableDotMatrixDelays.js</title>
-<g id="a_node20"><a xlink:href="src/js/directable/dotmatrix/DirectableDotMatrixDelays.js" xlink:title="DirectableDotMatrixDelays.js">
+<title>src/js/directable/dotmatrix/DirectableDotMatrixConstants.js</title>
+<g id="a_node20"><a xlink:href="src/js/directable/dotmatrix/DirectableDotMatrixConstants.js" xlink:title="DirectableDotMatrixConstants.js">
 <path fill="#ffffcc" stroke="black" d="M617.46,-966.25C617.46,-966.25 495.29,-966.25 495.29,-966.25 492.21,-966.25 489.12,-963.17 489.12,-960.08 489.12,-960.08 489.12,-953.92 489.12,-953.92 489.12,-950.83 492.21,-947.75 495.29,-947.75 495.29,-947.75 617.46,-947.75 617.46,-947.75 620.54,-947.75 623.62,-950.83 623.62,-953.92 623.62,-953.92 623.62,-960.08 623.62,-960.08 623.62,-963.17 620.54,-966.25 617.46,-966.25"/>
-<text text-anchor="start" x="497.12" y="-953.7" font-family="Helvetica,sans-Serif" font-size="9.00">DirectableDotMatrixDelays.js</text>
+<text text-anchor="start" x="497.12" y="-953.7" font-family="Helvetica,sans-Serif" font-size="9.00">DirectableDotMatrixConstants.js</text>
 </a>
 </g>
 </g>
-<!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js -->
+<!-- src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js -->
 <g id="edge23" class="edge">
-<title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js</title>
+<title>src/js/directable/dotmatrix/DirectableDotMatrix.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M185.71,-1501.45C190.04,-1445.7 214.22,-1162.38 263.5,-1093 316.04,-1019.02 419.29,-984.18 487.82,-968.59"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="488.05,-970.69 493.46,-967.34 487.15,-966.59 488.05,-970.69"/>
 </g>
@@ -882,9 +882,9 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M367.09,-1379.39C379.54,-1330.42 435.61,-1103.54 455.75,-914 459.98,-874.21 449.8,-591.5 463.75,-554 478.61,-514.06 514.33,-478.07 536.53,-458.5"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="537.75,-460.22 540.92,-454.71 535.01,-457.04 537.75,-460.22"/>
 </g>
-<!-- src/js/directable/dotmatrix/view/header/DotMatrixViewHeader.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js -->
+<!-- src/js/directable/dotmatrix/view/header/DotMatrixViewHeader.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js -->
 <g id="edge101" class="edge">
-<title>src/js/directable/dotmatrix/view/header/DotMatrixViewHeader.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js</title>
+<title>src/js/directable/dotmatrix/view/header/DotMatrixViewHeader.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M421.18,-1392.82C434.29,-1390.79 446.96,-1385.93 455.75,-1376 470.52,-1359.31 449.42,-992.07 463.75,-975 468.37,-969.5 474.13,-965.36 480.5,-962.29"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="481.27,-964.24 486.05,-960.06 479.7,-960.34 481.27,-964.24"/>
 </g>
@@ -972,9 +972,9 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M415.05,-1449.38C430.46,-1446.51 445.93,-1440.36 455.75,-1428 470.37,-1409.6 448.06,-599.49 463.75,-582 490.24,-552.47 602.39,-570.1 641,-561 657.82,-557.03 675.98,-550.69 690.8,-544.95"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="691.49,-546.94 696.29,-542.78 689.94,-543.03 691.49,-546.94"/>
 </g>
-<!-- src/js/directable/dotmatrix/view/intro/DotMatrixViewIntro.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js -->
+<!-- src/js/directable/dotmatrix/view/intro/DotMatrixViewIntro.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js -->
 <g id="edge111" class="edge">
-<title>src/js/directable/dotmatrix/view/intro/DotMatrixViewIntro.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js</title>
+<title>src/js/directable/dotmatrix/view/intro/DotMatrixViewIntro.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M414.99,-1449.34C430.4,-1446.46 445.88,-1440.32 455.75,-1428 471.49,-1408.36 447.59,-994.3 463.75,-975 468.36,-969.49 474.12,-965.36 480.49,-962.28"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="481.26,-964.23 486.04,-960.04 479.69,-960.33 481.26,-964.23"/>
 </g>
@@ -1251,9 +1251,9 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M414.1,-1510.56C429.83,-1507.76 445.73,-1501.61 455.75,-1489 471.18,-1469.58 447.14,-614.42 463.75,-596 490.29,-566.56 605.29,-593.2 641,-576 645.53,-573.82 644.92,-570.93 649,-568 661.4,-559.09 676.33,-551.27 689.42,-545.21"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="689.93,-547.29 694.54,-542.92 688.2,-543.46 689.93,-547.29"/>
 </g>
-<!-- src/js/directable/dotmatrix/view/test/DotMatrixViewTest.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js -->
+<!-- src/js/directable/dotmatrix/view/test/DotMatrixViewTest.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js -->
 <g id="edge155" class="edge">
-<title>src/js/directable/dotmatrix/view/test/DotMatrixViewTest.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixDelays.js</title>
+<title>src/js/directable/dotmatrix/view/test/DotMatrixViewTest.js&#45;&gt;src/js/directable/dotmatrix/DirectableDotMatrixConstants.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M414.05,-1510.52C429.77,-1507.72 445.68,-1501.58 455.75,-1489 473.11,-1467.31 447.49,-1011.52 463.75,-989 469.62,-980.86 477.72,-974.78 486.7,-970.24"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="487.39,-972.23 492.01,-967.86 485.67,-968.4 487.39,-972.23"/>
 </g>
