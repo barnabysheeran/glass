@@ -36,7 +36,7 @@ export default class MediaSurfaceImage {
 		const GRID_CELL_HEIGHT_PX = GridData.getGridCellHeightPx();
 
 		const MEDIA_HEADER_HEIGHT_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getMediaHeaderHeightInGridCells();
+			DirectableDotMatrixConstants.getMediaMarginTopInGridCells();
 
 		const HOLDER_TOP_PX =
 			GRID_CELL_HEIGHT_PX * MEDIA_HEADER_HEIGHT_IN_GRID_CELLS;

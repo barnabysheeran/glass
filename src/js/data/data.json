@@ -5,7 +5,7 @@
             "id": "battlebuilder",
             "name": "BattleBuilder",
             "name-short": "BattleBuilder",
-            "media-aspect": "4:3",
+            "media-aspect": "16:9",
             "media": [
                 {
                     "type": "image",

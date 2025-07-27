@@ -19,16 +19,32 @@ export default class DirectableDotMatrixConstants {
 		return this.#HEADER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
-	// ____________________________________________________________ Media Header
+	// ___________________________________________________________________ Media
 
-	static #MEDIA_HEADER_HEIGHT_IN_LINES = 6;
+	static #MEDIA_MARGIN_TOP_IN_LINES = 6;
 
-	static getMediaHeaderHeightInLines() {
-		return this.#MEDIA_HEADER_HEIGHT_IN_LINES;
+	static getMediaMarginTopInLines() {
+		return this.#MEDIA_MARGIN_TOP_IN_LINES;
 	}
 
-	static getMediaHeaderHeightInGridCells() {
-		return this.#MEDIA_HEADER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
+	static getMediaMarginTopInGridCells() {
+		return this.#MEDIA_MARGIN_TOP_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
+	}
+
+	static getMediaHeightInLines() {
+		return 10; // TODO: This should be dynamic based on media content
+	}
+
+	static getMediaHeightInGridCells() {
+		return this.getMediaHeightInLines() * this.#LINE_HEIGHT_IN_GRID_CELLS;
+	}
+
+	static getMediaBottomInLines() {
+		return this.getMediaMarginTopInLines() + this.getMediaHeightInLines();
+	}
+
+	static getMediaBottomInGridCells() {
+		return this.getMediaBottomInLines() * this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
 	// __________________________________________________________________ Footer

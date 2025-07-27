@@ -45,8 +45,6 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
 
-		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
-
 		// Get Project Data
 		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
 
@@ -60,9 +58,18 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 			return;
 		}
 
+		// Get Heights
+		const LINE_HEIGHT_IN_GRID_CELLS =
+			DirectableDotMatrixConstants.getLineHeightInGridCells();
+
+		const MEDIA_BOTTOM_IN_GRID_CELLS =
+			DirectableDotMatrixConstants.getMediaBottomInGridCells(
+				DATA_PROJECT['media-aspect'],
+			);
+
 		//
 		let gridX = 0;
-		let gridY = LINE_HEIGHT * 10;
+		let gridY = MEDIA_BOTTOM_IN_GRID_CELLS;
 
 		// TODO Long or Short Name
 
@@ -82,7 +89,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_WINGED_SKULL);
 
 		// Next
-		gridY += LINE_HEIGHT * 2;
+		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
@@ -103,7 +110,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
 		// Next
-		gridY += LINE_HEIGHT * 2;
+		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 		// Add Component Name Short
 		const COMPONENT_NAME_SHORT = new ComponentGlyphBox(
@@ -126,7 +133,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		// Add Comment
 		if (DATA_PROJECT['comment']) {
 			// Next
-			gridY += LINE_HEIGHT * 2;
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Component
 			const COMPONENT_COMMENT = new ComponentGlyphBox(
@@ -150,7 +157,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		// Add Technology
 		if (DATA_PROJECT['technology']) {
 			// Next
-			gridY += LINE_HEIGHT * 2;
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Component
 			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
@@ -174,7 +181,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		// Add Credit ?
 		if (DATA_PROJECT['credit']) {
 			// Next
-			gridY += LINE_HEIGHT * 2;
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphBox(
