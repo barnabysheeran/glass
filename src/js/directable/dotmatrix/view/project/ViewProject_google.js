@@ -1,6 +1,6 @@
 import DataController from '../../../../data/DataController.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -10,7 +10,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
-export default class DotMatrixViewProject_pikcellsonfigr extends DotMatrixView {
+export default class ViewProject_google extends View {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start
@@ -41,7 +41,7 @@ export default class DotMatrixViewProject_pikcellsonfigr extends DotMatrixView {
 
 		if (!DATA_PROJECT) {
 			console.warn(
-				'DotMatrixViewBattleBuilder draw. No Project Data, ViewId ' +
+				'ViewBattleBuilder draw. No Project Data, ViewId ' +
 					this.getViewId(),
 				this.LOG_LEVEL,
 			);

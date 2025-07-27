@@ -1,6 +1,6 @@
 import GridData from '../../../../grid/GridData.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -11,7 +11,7 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
-export default class DotMatrixViewIntro extends DotMatrixView {
+export default class ViewIntro extends View {
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;

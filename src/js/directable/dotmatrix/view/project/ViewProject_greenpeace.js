@@ -1,6 +1,6 @@
 import DataController from '../../../../data/DataController.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -10,7 +10,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 
-export default class DotMatrixViewProject_honda extends DotMatrixView {
+export default class ViewProject_greenpeace extends View {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start
@@ -41,7 +41,7 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 
 		if (!DATA_PROJECT) {
 			console.warn(
-				'DotMatrixViewBattleBuilder draw. No Project Data, ViewId ' +
+				'ViewBattleBuilder draw. No Project Data, ViewId ' +
 					this.getViewId(),
 				this.LOG_LEVEL,
 			);
@@ -57,9 +57,6 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 
 		// TODO Long or Short Name
 
-		// Next
-		gridY += LINE_HEIGHT * 2;
-
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
@@ -71,7 +68,7 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 
@@ -92,7 +89,7 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 			delayFrames,
 			this.#DELAY_GLYPH,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 
@@ -115,7 +112,7 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.Random,
+				FillStrategyType.PassThrough,
 				drawType,
 			);
 
@@ -139,12 +136,28 @@ export default class DotMatrixViewProject_honda extends DotMatrixView {
 				delayFrames,
 				this.#DELAY_GLYPH,
 				FillType.PassThrough,
-				FillStrategyType.Random,
+				FillStrategyType.PassThrough,
 				drawType,
 			);
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
 		}
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick() {
+		super.tick();
+
+		// Active ?
+		if (this.isActive !== true) {
+			return;
+		}
+
+		// if (Math.random() < 0.01) {
+		// 	this.draw(0, DrawType.Clear);
+		// 	this.draw(7, DrawType.Fill);
+		// }
 	}
 }

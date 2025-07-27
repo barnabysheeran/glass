@@ -4,22 +4,22 @@ import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
 import ComponentManager from './component/ComponentManager.js';
 
-import DotMatrixViewTest from './view/test/DotMatrixViewTest.js';
+import ViewTest from './view/test/ViewTest.js';
 
-import DotMatrixViewHeader from './view/header/DotMatrixViewHeader.js';
-import DotMatrixViewIntro from './view/intro/DotMatrixViewIntro.js';
-import DotMatrixViewProjectMenu from './view/project/DotMatrixViewProjectMenu.js';
+import ViewHeader from './view/header/ViewHeader.js';
+import ViewIntro from './view/intro/ViewIntro.js';
+import ViewProjectMenu from './view/project/ViewProjectMenu.js';
 
-import DotMatrixViewProject_adidas from './view/project/DotMatrixViewProject_adidas.js';
-import DotMatrixViewProject_battlebuilder from './view/project/DotMatrixViewProject_battlebuilder.js';
-import DotMatrixViewProject_ferrari from './view/project/DotMatrixViewProject_ferrari.js';
-import DotMatrixViewProject_google from './view/project/DotMatrixViewProject_google.js';
-import DotMatrixViewProject_greenpeace from './view/project/DotMatrixViewProject_greenpeace.js';
-import DotMatrixViewProject_honda from './view/project/DotMatrixViewProject_honda.js';
-import DotMatrixViewProject_hotstepper from './view/project/DotMatrixViewProject_hotstepper.js';
-import DotMatrixViewProject_pikcellsonfigr from './view/project/DotMatrixViewProject_pikcellsonfigr.js';
-import DotMatrixViewProject_postmatter from './view/project/DotMatrixViewProject_postmatter.js';
-import DotMatrixViewProject_sciencemuseum from './view/project/DotMatrixViewProject_sciencemuseum.js';
+import ViewProject_adidas from './view/project/ViewProject_adidas.js';
+import ViewProject_battlebuilder from './view/project/ViewProject_battlebuilder.js';
+import ViewProject_ferrari from './view/project/ViewProject_ferrari.js';
+import ViewProject_google from './view/project/ViewProject_google.js';
+import ViewProject_greenpeace from './view/project/ViewProject_greenpeace.js';
+import ViewProject_honda from './view/project/ViewProject_honda.js';
+import ViewProject_hotstepper from './view/project/ViewProject_hotstepper.js';
+import ViewProject_pikcellsonfigr from './view/project/ViewProject_pikcellsonfigr.js';
+import ViewProject_postmatter from './view/project/ViewProject_postmatter.js';
+import ViewProject_sciencemuseum from './view/project/ViewProject_sciencemuseum.js';
 
 import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
 import DataController from '../../data/DataController.js';
@@ -59,7 +59,7 @@ export default class DirectableDotMatrix {
 		this.#COMPONENT_MANAGER = new ComponentManager();
 
 		// Create View Header
-		this.#VIEW_HEADER = new DotMatrixViewHeader(
+		this.#VIEW_HEADER = new ViewHeader(
 			this.#SHAPE_MANAGER,
 			this.#COMPONENT_MANAGER,
 			'header',
@@ -67,7 +67,7 @@ export default class DirectableDotMatrix {
 
 		// Create View Intro
 		this.#VIEWS.push(
-			new DotMatrixViewIntro(
+			new ViewIntro(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
 				'intro',
@@ -76,7 +76,7 @@ export default class DirectableDotMatrix {
 
 		// Create View Project Menu
 		this.#VIEWS.push(
-			new DotMatrixViewProjectMenu(
+			new ViewProjectMenu(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
 				'project-menu',
@@ -85,16 +85,16 @@ export default class DirectableDotMatrix {
 
 		// Create Project Views
 		const projectViewClasses = new Map([
-			['adidas', DotMatrixViewProject_adidas],
-			['battlebuilder', DotMatrixViewProject_battlebuilder],
-			['ferrari', DotMatrixViewProject_ferrari],
-			['google', DotMatrixViewProject_google],
-			['greenpeace', DotMatrixViewProject_greenpeace],
-			['honda', DotMatrixViewProject_honda],
-			['hotstepper', DotMatrixViewProject_hotstepper],
-			['postmatter', DotMatrixViewProject_postmatter],
-			['pikcellsonfigr', DotMatrixViewProject_pikcellsonfigr],
-			['sciencemuseum', DotMatrixViewProject_sciencemuseum],
+			['adidas', ViewProject_adidas],
+			['battlebuilder', ViewProject_battlebuilder],
+			['ferrari', ViewProject_ferrari],
+			['google', ViewProject_google],
+			['greenpeace', ViewProject_greenpeace],
+			['honda', ViewProject_honda],
+			['hotstepper', ViewProject_hotstepper],
+			['postmatter', ViewProject_postmatter],
+			['pikcellsonfigr', ViewProject_pikcellsonfigr],
+			['sciencemuseum', ViewProject_sciencemuseum],
 		]);
 
 		PROJECT_DATA.forEach((project) => {
@@ -123,7 +123,7 @@ export default class DirectableDotMatrix {
 
 		// Create Test View
 		this.#VIEWS.push(
-			new DotMatrixViewTest(
+			new ViewTest(
 				this.#SHAPE_MANAGER,
 				this.#COMPONENT_MANAGER,
 				'test',

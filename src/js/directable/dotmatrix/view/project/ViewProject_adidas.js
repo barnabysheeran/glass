@@ -1,6 +1,6 @@
 import DataController from '../../../../data/DataController.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -9,34 +9,23 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
-import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
-	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
+export default class ViewProject_adidas extends View {
+	#DELAY_GLYPH = 1;
 
-	#DELAY_GLYPH_IN = 2;
-	#DELAY_GLYPH_OUT = 0;
-	#delayGlyph;
+	// ___________________________________________________________________ Start
 
-	// ______________________________________________________________ Start Stop
-
-	start(delayFrames) {
+	start(delayFrames = 0) {
 		super.start(delayFrames);
 
-		// Set Delay Glyph
-		this.#delayGlyph = this.#DELAY_GLYPH_IN;
-
-		// Draw
+		// Start
 		this.draw(delayFrames, DrawType.Fill);
 	}
 
-	stop(delayFrames) {
+	stop(delayFrames = 0) {
 		super.stop(delayFrames);
 
-		// Set Delay Glyph
-		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
-
-		// Draw
+		// Stop
 		this.draw(delayFrames, DrawType.Clear);
 	}
 
@@ -45,12 +34,14 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 	draw(delayFrames, drawType) {
 		super.draw(delayFrames, drawType);
 
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
+
 		// Get Project Data
 		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
 
 		if (!DATA_PROJECT) {
 			console.warn(
-				'DotMatrixViewBattleBuilder draw. No Project Data, ViewId ' +
+				'ViewBattleBuilder draw. No Project Data, ViewId ' +
 					this.getViewId(),
 				this.LOG_LEVEL,
 			);
@@ -58,38 +49,16 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 			return;
 		}
 
-		// Get Heights
-		const LINE_HEIGHT_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getLineHeightInGridCells();
-
-		const MEDIA_BOTTOM_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getMediaBottomInGridCells(
-				DATA_PROJECT['media-aspect'],
-			);
+		console.log('BattleBuilder Project Data Item', DATA_PROJECT);
 
 		//
 		let gridX = 0;
-		let gridY = MEDIA_BOTTOM_IN_GRID_CELLS;
+		let gridY = LINE_HEIGHT * 10;
 
 		// TODO Long or Short Name
 
-		// Add Component Winged Skull
-		const COMPONENT_WINGED_SKULL = new ComponentGlyphLineCentered(
-			this.SHAPE_MANAGER,
-			this.#STRING_WINGED_SKULL,
-			gridY,
-			delayFrames,
-			this.#delayGlyph,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_WINGED_SKULL);
-
 		// Next
-		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+		gridY += LINE_HEIGHT * 2;
 
 		// Add Component Name
 		const COMPONENT_NAME = new ComponentGlyphBox(
@@ -100,7 +69,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 			100,
 			50,
 			delayFrames,
-			this.#delayGlyph,
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -110,7 +79,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
 		// Next
-		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+		gridY += LINE_HEIGHT * 2;
 
 		// Add Component Name Short
 		const COMPONENT_NAME_SHORT = new ComponentGlyphBox(
@@ -121,7 +90,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 			100,
 			50,
 			delayFrames,
-			this.#delayGlyph,
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -130,34 +99,10 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
 
-		// Add Comment
-		if (DATA_PROJECT['comment']) {
-			// Next
-			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
-
-			// Create Component
-			const COMPONENT_COMMENT = new ComponentGlyphBox(
-				this.SHAPE_MANAGER,
-				DATA_PROJECT['comment'],
-				gridX,
-				gridY,
-				100,
-				50,
-				delayFrames,
-				this.#delayGlyph,
-				FillType.PassThrough,
-				FillStrategyType.Random,
-				drawType,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT_COMMENT);
-		}
-
 		// Add Technology
 		if (DATA_PROJECT['technology']) {
 			// Next
-			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+			gridY += LINE_HEIGHT * 2;
 
 			// Create Component
 			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
@@ -168,7 +113,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 				100,
 				50,
 				delayFrames,
-				this.#delayGlyph,
+				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.Random,
 				drawType,
@@ -181,7 +126,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 		// Add Credit ?
 		if (DATA_PROJECT['credit']) {
 			// Next
-			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+			gridY += LINE_HEIGHT * 2;
 
 			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphBox(
@@ -192,7 +137,7 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 				100,
 				50,
 				delayFrames,
-				this.#delayGlyph,
+				this.#DELAY_GLYPH,
 				FillType.PassThrough,
 				FillStrategyType.Random,
 				drawType,
@@ -200,23 +145,6 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
-		}
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		super.tick();
-
-		// Active ?
-		if (this.isActive !== true) {
-			return;
-		}
-
-		// TODO Hardcoded Delay
-		if (Math.random() < 0.005) {
-			this.draw(0, DrawType.Clear);
-			this.draw(10, DrawType.Fill);
 		}
 	}
 }

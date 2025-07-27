@@ -4,7 +4,7 @@ import DataController from '../../../../data/DataController.js';
 import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 import { viewAddRectanglesBlock } from '../../DirectableDotMatrixUtils.js';
@@ -15,7 +15,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class DotMatrixViewProjectMenu extends DotMatrixView {
+export default class ViewProjectMenu extends View {
 	// TODO Tune with Menu Text
 	#DELAY_ROLLOVER_REDRAW = 20;
 

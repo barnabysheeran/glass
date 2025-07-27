@@ -3,7 +3,7 @@ import ApplicationDispatcher from '../../../../application/ApplicationDispatcher
 import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
-import DotMatrixView from '../DotMatrixView.js';
+import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 import { viewAddRectanglesBlock } from '../../DirectableDotMatrixUtils.js';
@@ -14,7 +14,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class DotMatrixViewHeader extends DotMatrixView {
+export default class ViewHeader extends View {
 	#DELAY_ROLLOVER_REDRAW = 6;
 
 	#gridXCenteredStart = 0;

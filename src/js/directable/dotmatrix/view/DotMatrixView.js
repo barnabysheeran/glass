@@ -3,7 +3,7 @@ import InteractiveSurface from '../../../interactive/InteractiveSurface.js';
 
 import DrawType from '../enum/DrawType.js';
 
-export default class DotMatrixView {
+export default class View {
 	SHAPE_MANAGER;
 	COMPONENT_MANAGER;
 
@@ -18,7 +18,7 @@ export default class DotMatrixView {
 	// _________________________________________________________________________
 
 	constructor(shapeManager, componentManager, viewId) {
-		ApplicationLogger.log(`DotMatrixView '${viewId}'`, this.#LOG_LEVEL);
+		ApplicationLogger.log(`View '${viewId}'`, this.#LOG_LEVEL);
 
 		// Store
 		this.SHAPE_MANAGER = shapeManager;
@@ -30,7 +30,7 @@ export default class DotMatrixView {
 
 	start(delayFrames = 0) {
 		ApplicationLogger.log(
-			`DotMatrixView '${this.#VIEW_ID}' start delay ${delayFrames}`,
+			`View '${this.#VIEW_ID}' start delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -42,7 +42,7 @@ export default class DotMatrixView {
 
 	stop(delayFrames = 0) {
 		ApplicationLogger.log(
-			`DotMatrixView '${this.#VIEW_ID}' stop delay ${delayFrames}`,
+			`View '${this.#VIEW_ID}' stop delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -57,14 +57,14 @@ export default class DotMatrixView {
 
 	draw(delayFrames = 0, drawType = DrawType.Fill) {
 		ApplicationLogger.log(
-			`DotMatrixView '${this.#VIEW_ID}' draw delay ${delayFrames} drawType ${drawType}`,
+			`View '${this.#VIEW_ID}' draw delay ${delayFrames} drawType ${drawType}`,
 			this.#LOG_LEVEL,
 		);
 	}
 
 	onDrawComplete() {
 		ApplicationLogger.log(
-			`DotMatrixView '${this.#VIEW_ID}' onDrawComplete`,
+			`View '${this.#VIEW_ID}' onDrawComplete`,
 			this.#LOG_LEVEL,
 		);
 	}
@@ -77,7 +77,7 @@ export default class DotMatrixView {
 
 	#clearInteractiveBlocks() {
 		ApplicationLogger.log(
-			`DotMatrixView '${this.#VIEW_ID}' clearInteractiveBlocks`,
+			`View '${this.#VIEW_ID}' clearInteractiveBlocks`,
 			this.#LOG_LEVEL,
 		);
 
