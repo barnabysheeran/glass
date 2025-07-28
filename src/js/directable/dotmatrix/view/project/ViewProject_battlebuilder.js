@@ -50,8 +50,7 @@ export default class ViewProject_battlebuilder extends View {
 
 		if (!DATA_PROJECT) {
 			console.warn(
-				'ViewBattleBuilder draw. No Project Data, ViewId ' +
-					this.getViewId(),
+				'ViewBattleBuilder draw. No Project Data, ViewId ' + this.getViewId(),
 				this.LOG_LEVEL,
 			);
 
