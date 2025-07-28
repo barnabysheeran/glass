@@ -1,3 +1,5 @@
+import GridData from '../../grid/GridData.js';
+
 export default class DirectableDotMatrixConstants {
 	// ____________________________________________________________________ Line
 
@@ -31,8 +33,24 @@ export default class DirectableDotMatrixConstants {
 		return this.#MEDIA_MARGIN_TOP_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
-	static getMediaHeightInLines() {
-		return 10; // TODO: This should be dynamic based on media content
+	static getMediaHeightInLines(aspectRatioString = '16:9') {
+		console.log(
+			`DirectableDotMatrixConstants getMediaHeightInLines aspectRatioString: ${aspectRatioString}`,
+		);
+
+		const DISPLAY_WIDTH_IN_GRID_CELLS = GridData.getGridWidthInCells();
+
+		console.log(` - ${DISPLAY_WIDTH_IN_GRID_CELLS}`);
+
+		const [widthRatio, heightRatio] = aspectRatioString.split(':').map(Number);
+
+		console.log(` - widthRatio: ${widthRatio}, heightRatio: ${heightRatio}`);
+
+		const RATIO = widthRatio / heightRatio;
+
+		return Math.floor(
+			DISPLAY_WIDTH_IN_GRID_CELLS / RATIO / this.#LINE_HEIGHT_IN_GRID_CELLS,
+		);
 	}
 
 	static getMediaHeightInGridCells() {

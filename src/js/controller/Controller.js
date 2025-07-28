@@ -30,8 +30,8 @@ export default class Controller {
 		// Order Important
 		Display.initialise();
 
-		const DISPLAY_WIDTH = Display.getWidth();
-		const DISPLAY_HEIGHT = Display.getHeight();
+		const DISPLAY_WIDTH = Display.getWidthPx();
+		const DISPLAY_HEIGHT = Display.getHeightPx();
 
 		GridData.initialize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
 		MediaSurface.initialise(DISPLAY_WIDTH, DISPLAY_HEIGHT);
@@ -133,8 +133,8 @@ export default class Controller {
 	// _________________________________________________________________ Display
 
 	#onDisplayUpdated() {
-		const DISPLAY_WIDTH = Display.getWidth();
-		const DISPLAY_HEIGHT = Display.getHeight();
+		const DISPLAY_WIDTH = Display.getWidthPx();
+		const DISPLAY_HEIGHT = Display.getHeightPx();
 
 		ApplicationLogger.log(
 			`Controller onDisplayUpdated ${DISPLAY_WIDTH} ${DISPLAY_HEIGHT}`,

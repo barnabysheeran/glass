@@ -7,8 +7,8 @@ export default class Display {
 	static #APPLICATION_CONTAINER;
 	static #DISPLAY_HOLDER;
 
-	static #width = -1;
-	static #height = -1;
+	static #widthPx = -1;
+	static #heightPx = -1;
 
 	static #LOG_LEVEL = 2;
 
@@ -71,19 +71,19 @@ export default class Display {
 		height = Math.floor(height);
 
 		// Changed Width Height ?
-		if (width !== this.#width || height !== this.#height) {
+		if (width !== this.#widthPx || height !== this.#heightPx) {
 			ApplicationLogger.log(
 				`Display - Resizing to ${width} ${height}`,
 				this.#LOG_LEVEL,
 			);
 
 			// Store
-			this.#width = width;
-			this.#height = height;
+			this.#widthPx = width;
+			this.#heightPx = height;
 
 			// Set Display Holder Size
-			this.#DISPLAY_HOLDER.style.width = `${this.#width}px`;
-			this.#DISPLAY_HOLDER.style.height = `${this.#height}px`;
+			this.#DISPLAY_HOLDER.style.width = `${this.#widthPx}px`;
+			this.#DISPLAY_HOLDER.style.height = `${this.#heightPx}px`;
 
 			// Resized This Frame
 			didResizeThisFrame = true;
@@ -94,12 +94,12 @@ export default class Display {
 
 	// __________________________________________________________________ Access
 
-	static getWidth() {
-		return this.#width;
+	static getWidthPx() {
+		return this.#widthPx;
 	}
 
-	static getHeight() {
-		return this.#height;
+	static getHeightPx() {
+		return this.#heightPx;
 	}
 
 	static getDisplayHolder() {
