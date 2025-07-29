@@ -1,5 +1,7 @@
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
+import DataController from '../../data/DataController.js';
+
 import DotManager from './dot/DotManager.js';
 import ShapeManager from './shape/ShapeManager.js';
 import ComponentManager from './component/ComponentManager.js';
@@ -22,7 +24,6 @@ import ViewProject_postmatter from './view/project/ViewProject_postmatter.js';
 import ViewProject_sciencemuseum from './view/project/ViewProject_sciencemuseum.js';
 
 import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
-import DataController from '../../data/DataController.js';
 
 export default class DirectableDotMatrix {
 	#DOT_MANAGER;
