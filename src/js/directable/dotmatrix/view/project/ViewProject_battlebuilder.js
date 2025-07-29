@@ -1,5 +1,7 @@
 import DataController from '../../../../data/DataController.js';
 
+import GridData from '../../../../grid/GridData.js';
+
 import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
@@ -66,11 +68,12 @@ export default class ViewProject_battlebuilder extends View {
 				DATA_PROJECT['media-aspect'],
 			);
 
-		//
-		let gridX = 0;
-		let gridY = MEDIA_BOTTOM_IN_GRID_CELLS;
+		// Get Is Mobile
+		const IS_MOBILE = GridData.getIsMobile();
 
-		// TODO Long or Short Name
+		// Initialise Grid Positions
+		let gridX = 0;
+		let gridY = MEDIA_BOTTOM_IN_GRID_CELLS + LINE_HEIGHT_IN_GRID_CELLS;
 
 		// Add Component Winged Skull
 		const COMPONENT_WINGED_SKULL = new ComponentGlyphLineCentered(
@@ -91,9 +94,17 @@ export default class ViewProject_battlebuilder extends View {
 		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 		// Add Component Name
+		let textName;
+
+		if (IS_MOBILE) {
+			textName = DATA_PROJECT['name-short'];
+		} else {
+			textName = DATA_PROJECT['name'];
+		}
+
 		const COMPONENT_NAME = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			DATA_PROJECT['name'],
+			textName,
 			gridX,
 			gridY,
 			100,
@@ -107,27 +118,6 @@ export default class ViewProject_battlebuilder extends View {
 
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
-
-		// Next
-		gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
-
-		// Add Component Name Short
-		const COMPONENT_NAME_SHORT = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			DATA_PROJECT['name-short'],
-			gridX,
-			gridY,
-			100,
-			50,
-			delayFrames,
-			this.#delayGlyph,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME_SHORT);
 
 		// Add Comment
 		if (DATA_PROJECT['comment']) {
