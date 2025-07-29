@@ -8,7 +8,7 @@ import ViewTest from './view/test/ViewTest.js';
 
 import ViewHeader from './view/header/ViewHeader.js';
 import ViewIntro from './view/intro/ViewIntro.js';
-import ViewProjectMenu from './view/project/ViewProjectMenu.js';
+import ViewProjectMenu from './view/menu/ViewProjectMenu.js';
 
 import ViewProject_adidas from './view/project/ViewProject_adidas.js';
 import ViewProject_battlebuilder from './view/project/ViewProject_battlebuilder.js';
@@ -67,11 +67,7 @@ export default class DirectableDotMatrix {
 
 		// Create View Intro
 		this.#VIEWS.push(
-			new ViewIntro(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				'intro',
-			),
+			new ViewIntro(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'intro'),
 		);
 
 		// Create View Project Menu
@@ -123,11 +119,7 @@ export default class DirectableDotMatrix {
 
 		// Create Test View
 		this.#VIEWS.push(
-			new ViewTest(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				'test',
-			),
+			new ViewTest(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'test'),
 		);
 
 		// Start Initial View
