@@ -33,17 +33,6 @@ export default class ViewProject_honda extends View {
 		// Get Project Data
 		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
 
-		if (!DATA_PROJECT) {
-			console.warn(
-				'ViewBattleBuilder draw. No Project Data, ViewId ' + this.getViewId(),
-				this.LOG_LEVEL,
-			);
-
-			return;
-		}
-
-		console.log('BattleBuilder Project Data Item', DATA_PROJECT);
-
 		// Get Heights
 		const LINE_HEIGHT_IN_GRID_CELLS =
 			DirectableDotMatrixConstants.getLineHeightInGridCells();

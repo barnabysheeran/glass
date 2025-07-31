@@ -22,7 +22,7 @@ export default class View {
 
 	isActive = false;
 
-	#LOG_LEVEL = 4; // -1;
+	#LOG_LEVEL = -1; // 4;
 
 	// _________________________________________________________________________
 
