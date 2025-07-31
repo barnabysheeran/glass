@@ -6,7 +6,6 @@ import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 import View from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
-import { viewAddRectanglesBlock } from '../../DirectableDotMatrixUtils.js';
 
 import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
@@ -187,7 +186,7 @@ export default class ViewHeader extends View {
 		const GRID_WIDTH = this.#gridWidthGlyphs + 2;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
-		viewAddRectanglesBlock(
+		this.addRectanglesBlock(
 			this.SHAPE_MANAGER,
 			this.COMPONENT_MANAGER,
 			GRID_X,
