@@ -16,7 +16,7 @@ export default class MediaSurfaceImage {
 
 	#isStopping = false;
 
-	// _________________________________________________________________ Opacity
+	// _________________________________________________________________________
 
 	constructor(container, imageURL, callbackOnLoaded) {
 		// Store
@@ -49,6 +49,8 @@ export default class MediaSurfaceImage {
 		// Load
 		this.#IMAGE.src = this.#IMAGE_URL;
 	}
+
+	// ______________________________________________________________ Image Load
 
 	#onImageLoaded() {
 		// Set Image as Background of Holder

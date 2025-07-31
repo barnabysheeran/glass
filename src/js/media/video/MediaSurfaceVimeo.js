@@ -2,6 +2,9 @@ import player from '@vimeo/player';
 
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
+import GridData from '../../grid/GridData.js';
+import DirectableDotMatrixConstants from '../../directable/dotmatrix/DirectableDotMatrixConstants.js';
+
 export default class MediaSurfaceVimeo {
 	#CONTAINER;
 
@@ -215,6 +218,17 @@ export default class MediaSurfaceVimeo {
 
 		iframe.style.width = `${widthPx}px`;
 		// iframe.style.height = `${heightPx}px`;
+
+		// Position Top from Grid
+		const GRID_CELL_HEIGHT_PX = GridData.getGridCellHeightPx();
+
+		const MEDIA_HEADER_HEIGHT_IN_GRID_CELLS =
+			DirectableDotMatrixConstants.getMediaMarginTopInGridCells();
+
+		const HOLDER_TOP_PX =
+			GRID_CELL_HEIGHT_PX * MEDIA_HEADER_HEIGHT_IN_GRID_CELLS;
+
+		this.#HOLDER.style.top = `${HOLDER_TOP_PX}px`;
 	}
 
 	// _________________________________________________________________ Destroy
