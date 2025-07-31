@@ -216,7 +216,7 @@ export default class ViewProjectMenu extends View {
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 
 		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
-			const INTERACTIVE_BLOCK = InteractiveSurface.createBlock(
+			const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
 				this.#GRID_X_CENTERED_STARTS[i] * GridData.getGridCellWidthPx(),
 				this.#GRID_YS[i] * GridData.getGridCellHeightPx(),
 				this.#GRID_WIDTH_GLYPHS[i] * GridData.getGridCellWidthPx(),
@@ -228,7 +228,7 @@ export default class ViewProjectMenu extends View {
 			);
 
 			// Store
-			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK);
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
 		}
 	}
 

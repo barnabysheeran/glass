@@ -26,11 +26,16 @@ export default class MediaSurfaceVimeo {
 
 	// _________________________________________________________________________
 
-	constructor(container, vimeoId) {
-		ApplicationLogger.log(`MediaSurfaceVimeo ${vimeoId}`, this.#LOG_LEVEL);
+	constructor(container, vimeoId, width, height) {
+		ApplicationLogger.log(
+			`MediaSurfaceVimeo ${vimeoId} ${width} ${height}`,
+			this.#LOG_LEVEL,
+		);
 
 		// Store
 		this.#CONTAINER = container;
+		this.#width = width;
+		this.#height = height;
 
 		// Create Player
 		this.#createPlayer(vimeoId);
@@ -188,6 +193,8 @@ export default class MediaSurfaceVimeo {
 			`MediaSurfaceVimeo setSize ${widthPx}, ${heightPx}`,
 			this.#LOG_LEVEL,
 		);
+
+		console.log(`MediaSurfaceVimeo setSize ${widthPx}, ${heightPx}`);
 
 		// Store
 		this.#width = widthPx;

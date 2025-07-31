@@ -13,6 +13,10 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class ViewProject_battlebuilder extends View {
 	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
 
+	#gridXCenteredStart = 0;
+	#gridY = 0;
+	#gridWidthGlyphs = 0;
+
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;

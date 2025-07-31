@@ -11,6 +11,9 @@ export default class MediaSurface {
 
 	static #MEDIA_ITEMS = [];
 
+	static #width;
+	static #height;
+
 	static #LOG_LEVEL = 2;
 
 	// _________________________________________________________________________
@@ -127,7 +130,14 @@ export default class MediaSurface {
 		);
 
 		// Create Vimeo Player Instance
-		this.#MEDIA_ITEMS.push(new MediaSurfaceVimeo(this.#CONTAINER, vimeoId));
+		this.#MEDIA_ITEMS.push(
+			new MediaSurfaceVimeo(
+				this.#CONTAINER,
+				vimeoId,
+				this.#width,
+				this.#height,
+			),
+		);
 	}
 
 	// ___________________________________________________________________ Image
@@ -158,7 +168,19 @@ export default class MediaSurface {
 	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {
+		// Container
 		this.#CONTAINER.style.width = `${width}px`;
 		this.#CONTAINER.style.height = `${height}px`;
+
+		console.log(`MediaSurface setSize ${width}, ${height}`);
+
+		// Media Items
+		for (let i = 0; i < this.#MEDIA_ITEMS.length; i++) {
+			this.#MEDIA_ITEMS[i].setSize(width, height);
+		}
+
+		// Store
+		this.#width = width;
+		this.#height = height;
 	}
 }

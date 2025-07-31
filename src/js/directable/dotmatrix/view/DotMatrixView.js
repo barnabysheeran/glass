@@ -189,6 +189,25 @@ export default class View {
 		}
 	}
 
+	// _____________________________________________________________ Interaction
+
+	#createInteractiveBlocks() {
+		// // Get Height
+		// const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+		// const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
+		// 	this.#GRID_X_CENTERED_STARTS[i] * GridData.getGridCellWidthPx(),
+		// 	this.#GRID_YS[i] * GridData.getGridCellHeightPx(),
+		// 	this.#GRID_WIDTH_GLYPHS[i] * GridData.getGridCellWidthPx(),
+		// 	CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+		// 	this.onButtonMenuClick.bind(this),
+		// 	this.onButtonMenuOver.bind(this),
+		// 	this.onButtonMenuOut.bind(this),
+		// 	{ projectId: this.#PROJECT_IDS[i] },
+		// );
+		// // Store
+		// this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
+	}
+
 	// ______________________________________________________________ Rectangles
 
 	addRectanglesBlock(
