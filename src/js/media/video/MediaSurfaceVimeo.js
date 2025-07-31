@@ -202,7 +202,7 @@ export default class MediaSurfaceVimeo {
 
 		// Size Holder
 		this.#HOLDER.style.width = widthPx + 'px';
-		this.#HOLDER.style.height = heightPx + 'px';
+		// this.#HOLDER.style.height = heightPx + 'px';
 
 		// Size Iframe ?
 		const iframe = this.#HOLDER.querySelector('iframe');
@@ -214,7 +214,7 @@ export default class MediaSurfaceVimeo {
 		}
 
 		iframe.style.width = `${widthPx}px`;
-		iframe.style.height = `${heightPx}px`;
+		// iframe.style.height = `${heightPx}px`;
 	}
 
 	// _________________________________________________________________ Destroy
