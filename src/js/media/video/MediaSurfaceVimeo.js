@@ -20,7 +20,7 @@ export default class MediaSurfaceVimeo {
 	#volume = 0;
 	#volumeTarget = 0;
 
-	#LERP = 0.05;
+	#LERP = 0.015;
 	#LERP_MARGIN = 0.01;
 
 	#isStopping = false;

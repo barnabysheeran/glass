@@ -34,10 +34,6 @@ export default class DirectableDotMatrixConstants {
 	}
 
 	static getMediaHeightInLines(aspectRatioString = '16:9') {
-		console.warn(
-			`DirectableDotMatrixConstants getMediaHeightInLines ${aspectRatioString}`,
-		);
-
 		const DISPLAY_WIDTH_IN_GRID_CELLS = GridData.getGridWidthInCells();
 
 		const [widthRatio, heightRatio] = aspectRatioString.split(':').map(Number);

@@ -108,7 +108,7 @@ export default class ViewProjectMenu extends View {
 
 		// Calculate Line Distribution
 		const LINE_SPACING = 2;
-		const FREE_SPACE_PROPORTION = 0.33;
+		const FREE_SPACE_PROPORTION = 0.22; // 0.33;
 		const LINE_HEIGHT_MENU_START_MINIMUM = 7;
 
 		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);

@@ -172,8 +172,6 @@ export default class MediaSurface {
 		this.#CONTAINER.style.width = `${width}px`;
 		this.#CONTAINER.style.height = `${height}px`;
 
-		console.log(`MediaSurface setSize ${width}, ${height}`);
-
 		// Media Items
 		for (let i = 0; i < this.#MEDIA_ITEMS.length; i++) {
 			this.#MEDIA_ITEMS[i].setSize(width, height);
