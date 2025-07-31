@@ -70,6 +70,24 @@
         },
 
         {
+            "id": "ferrari",
+            "name": "Ferrari - Flagship Store",
+            "name-short": "Ferrari",
+            "media-aspect": "16:9",
+            "media": [
+                {
+                    "type": "vimeo",
+                    "vimeo-id": "206564571"
+                }
+            ],
+            "credit": {
+                "text": "{heart} MORE",
+                "url": "https://www.remiparingaux.com/ferrari"
+            },
+            "technology": "Unity, Kinect"
+        },
+
+        {
             "id": "hotstepper",
             "name": "Nexus - Hotstepper",
             "name-short": "Nexus Hotstepper",
@@ -88,23 +106,7 @@
             "technology": "Unity"
         },
 
-        {
-            "id": "ferrari",
-            "name": "Ferrari - Flagship Store",
-            "name-short": "Ferrari",
-            "media-aspect": "16:9",
-            "media": [
-                {
-                    "type": "vimeo",
-                    "vimeo-id": "206564571"
-                }
-            ],
-            "credit": {
-                "text": "{heart} MORE",
-                "url": "https://www.remiparingaux.com/ferrari"
-            },
-            "technology": "Unity, Kinect"
-        },
+
 
 
         {
