@@ -63,6 +63,13 @@
             "technology": "Unity"
         },
 
+        {
+            "id": "goodwood",
+            "name": "Goodwood Festival",
+            "name-short": "Goodwood",
+            "technology": ""
+        },
+
 
         {
             "id": "sciencemuseum",

@@ -198,6 +198,14 @@ export default class GridData {
 		return this.#gridHeightInCells;
 	}
 
+	// __________________________________________________________________ Mobile
+
+	static #GRID_WIDTH_MOBILE = 130;
+
+	static getIsMobile() {
+		return this.#gridWidthInCells < this.#GRID_WIDTH_MOBILE;
+	}
+
 	// ____________________________________________________________________ Size
 
 	static setSize(width, height) {

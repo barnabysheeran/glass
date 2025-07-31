@@ -102,8 +102,7 @@ export default class ViewProjectMenu extends View {
 			DirectableDotMatrixConstants.getHeaderHeightInLines();
 
 		// Get Width Mobile
-		const BLOCK_WIDTH_MOBILE =
-			DirectableDotMatrixConstants.getBlockWidthMobile();
+		const IS_MOBILE = GridData.getIsMobile();
 
 		// Get Grid Data
 		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
@@ -145,7 +144,7 @@ export default class ViewProjectMenu extends View {
 			// Text
 			let text = PROJECT_DATA_ITEM['name'];
 
-			if (GRID_WIDTH_IN_CELLS < BLOCK_WIDTH_MOBILE) {
+			if (IS_MOBILE === true) {
 				text = PROJECT_DATA_ITEM['name-short'];
 			}
 

@@ -89,15 +89,7 @@ export default class DirectableDotMatrixConstants {
 		return this.#GLYPH_SPACING_X;
 	}
 
-	// ______________________________________________________________ Responsive
-
-	static #BLOCK_WIDTH_MOBILE = 130;
-
-	static getBlockWidthMobile() {
-		return this.#BLOCK_WIDTH_MOBILE;
-	}
-
-	// _________________________________________________________ Delay Page Transition
+	// ___________________________________________________ Delay Page Transition
 
 	// TODO Move to Views
 
@@ -107,7 +99,7 @@ export default class DirectableDotMatrixConstants {
 		return this.#DELAY_PAGE_TRANSITION;
 	}
 
-	// __________________________________________________________ DelayGlyph Position
+	// _____________________________________________________ DelayGlyph Position
 
 	// TODO Transition Type
 
