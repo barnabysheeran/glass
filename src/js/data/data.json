@@ -67,14 +67,7 @@
             "id": "goodwood",
             "name": "Goodwood Festival",
             "name-short": "Goodwood",
-            "technology": ""
-        },
-
-
-        {
-            "id": "sciencemuseum",
-            "name": "Science Museum - Sun",
-            "name-short": "Science Museum"
+            "technology": "Unity"
         },
 
 

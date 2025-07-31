@@ -15,13 +15,13 @@ import ViewProjectMenu from './view/menu/ViewProjectMenu.js';
 import ViewProject_adidas from './view/project/ViewProject_adidas.js';
 import ViewProject_battlebuilder from './view/project/ViewProject_battlebuilder.js';
 import ViewProject_ferrari from './view/project/ViewProject_ferrari.js';
+import ViewProject_goodwood from './view/project/ViewProject_goodwood.js';
 import ViewProject_google from './view/project/ViewProject_google.js';
 import ViewProject_greenpeace from './view/project/ViewProject_greenpeace.js';
 import ViewProject_honda from './view/project/ViewProject_honda.js';
 import ViewProject_hotstepper from './view/project/ViewProject_hotstepper.js';
 import ViewProject_pikcellsonfigr from './view/project/ViewProject_pikcellsonfigr.js';
 import ViewProject_postmatter from './view/project/ViewProject_postmatter.js';
-import ViewProject_sciencemuseum from './view/project/ViewProject_sciencemuseum.js';
 
 import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
 
@@ -91,7 +91,7 @@ export default class DirectableDotMatrix {
 			['hotstepper', ViewProject_hotstepper],
 			['postmatter', ViewProject_postmatter],
 			['pikcellsonfigr', ViewProject_pikcellsonfigr],
-			['sciencemuseum', ViewProject_sciencemuseum],
+			['goodwood', ViewProject_goodwood],
 		]);
 
 		PROJECT_DATA.forEach((project) => {
