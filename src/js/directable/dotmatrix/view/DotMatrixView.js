@@ -1,7 +1,12 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 import InteractiveSurface from '../../../interactive/InteractiveSurface.js';
 
+import GridData from '../../../grid/GridData.js';
+
+import DirectableDotMatrixConstants from '../DirectableDotMatrixConstants.js';
+
 import ComponentRectangle from '../component/primative/ComponentRectangle.js';
+import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
 
 import FillType from '../enum/FillType.js';
 import FillStrategyType from '../enum/FillStrategyType.js';
@@ -97,6 +102,115 @@ export default class View {
 
 		// Reset Interactive Block Ids
 		this.INTERACTIVE_BLOCK_IDS = [];
+	}
+
+	// ____________________________________________________________ Project Text
+
+	addProjectText(dataProject, gridX, gridY, delayGlyph, delayFrames, drawType) {
+		// Get Heights
+		const LINE_HEIGHT_IN_GRID_CELLS =
+			DirectableDotMatrixConstants.getLineHeightInGridCells();
+
+		// Get Is Mobile
+		const IS_MOBILE = GridData.getIsMobile();
+
+		// Add Component Name
+		let textName;
+
+		if (IS_MOBILE) {
+			textName = dataProject['name-short'];
+		} else {
+			textName = dataProject['name'];
+		}
+
+		const COMPONENT_NAME = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			textName,
+			gridX,
+			gridY,
+			100,
+			50,
+			delayFrames,
+			delayGlyph,
+			FillType.PassThrough,
+			FillStrategyType.Random,
+			drawType,
+		);
+
+		// Store
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
+
+		// Add Comment
+		if (dataProject['comment']) {
+			// Next
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+
+			// Create Component
+			const COMPONENT_COMMENT = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				dataProject['comment'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				delayGlyph,
+				FillType.PassThrough,
+				FillStrategyType.Random,
+				drawType,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_COMMENT);
+		}
+
+		// Add Technology
+		if (dataProject['technology']) {
+			// Next
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+
+			// Create Component
+			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				dataProject['technology'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				delayGlyph,
+				FillType.PassThrough,
+				FillStrategyType.Random,
+				drawType,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_TECHNOLOGY);
+		}
+
+		// Add Credit ?
+		if (dataProject['credit']) {
+			// Next
+			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
+
+			// Create Component
+			const COMPONENT_CREDIT = new ComponentGlyphBox(
+				this.SHAPE_MANAGER,
+				dataProject['credit']['text'],
+				gridX,
+				gridY,
+				100,
+				50,
+				delayFrames,
+				delayGlyph,
+				FillType.PassThrough,
+				FillStrategyType.Random,
+				drawType,
+			);
+
+			// Store
+			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
+		}
 	}
 
 	// ______________________________________________________________ Rectangles
