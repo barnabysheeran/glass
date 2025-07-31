@@ -52,26 +52,6 @@
 
 
         {
-            "id": "hotstepper",
-            "name": "Nexus - Hotstepper",
-            "name-short": "Nexus Hotstepper",
-            "media-aspect": "16:9",
-            "credit": {
-                "text": "Nexus Studios",
-                "url": "https://nexusstudios.com/work/hotstepper"
-            },
-            "technology": "Unity"
-        },
-
-        {
-            "id": "goodwood",
-            "name": "Goodwood Festival",
-            "name-short": "Goodwood",
-            "technology": "Unity"
-        },
-
-
-        {
             "id": "postmatter",
             "name": "postMATTER Exhibition",
             "name-short": "postMATTER",
@@ -89,6 +69,24 @@
             "technology": "C++, Cinder, & Kinect"
         },
 
+        {
+            "id": "hotstepper",
+            "name": "Nexus - Hotstepper",
+            "name-short": "Nexus Hotstepper",
+            "media-aspect": "16:9",
+            "credit": {
+                "text": "Nexus Studios",
+                "url": "https://nexusstudios.com/work/hotstepper"
+            },
+            "technology": "Unity"
+        },
+
+        {
+            "id": "goodwood",
+            "name": "Goodwood Festival of Speed",
+            "name-short": "Goodwood",
+            "technology": "Unity"
+        },
 
         {
             "id": "ferrari",
