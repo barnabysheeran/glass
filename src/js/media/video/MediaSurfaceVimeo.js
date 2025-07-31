@@ -128,6 +128,8 @@ export default class MediaSurfaceVimeo {
 	#onReady() {
 		ApplicationLogger.log('MediaSurfaceVimeo onReady', this.#LOG_LEVEL);
 
+		console.log('Ready');
+
 		// Set Size
 		this.setSize(this.#width, this.#height);
 	}
@@ -150,6 +152,8 @@ export default class MediaSurfaceVimeo {
 
 	#onPlay() {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
+
+		console.log('Play');
 	}
 
 	// ____________________________________________________________________ Stop

@@ -67,7 +67,7 @@ export default class MediaSurfaceImageGallery {
 		}
 
 		if (this.#isStopping && isComplete === true) {
-			console.log(
+			ApplicationLogger.log(
 				`MediaSurfaceImageGallery - All images stopped`,
 				this.#LOG_LEVEL,
 			);

@@ -172,7 +172,7 @@ export default class View {
 			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
-				`> ${dataProject['credit']['text']}`,
+				`${dataProject['credit']['text']}`,
 				gridX,
 				gridY,
 				100,
