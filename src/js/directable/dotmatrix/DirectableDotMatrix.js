@@ -144,10 +144,10 @@ export default class DirectableDotMatrix {
 			this.#COMPONENT_MANAGER.getActiveComponentTotal();
 
 		// Components Complete ?
-		// if (ACTIVE_COMPONENT_TOTAL === 0) {
-		// 	// View Draw Complete
-		// 	this.#getViewById(this.#viewIdCurrent).onDrawComplete();
-		// }
+		if (ACTIVE_COMPONENT_TOTAL === 0) {
+			// View Draw Complete
+			this.#getViewById(this.#viewIdCurrent).onDrawComplete();
+		}
 	}
 
 	// ____________________________________________________________________ View

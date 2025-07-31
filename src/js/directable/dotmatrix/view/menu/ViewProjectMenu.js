@@ -104,7 +104,6 @@ export default class ViewProjectMenu extends View {
 		const IS_MOBILE = GridData.getIsMobile();
 
 		// Get Grid Data
-		const GRID_WIDTH_IN_CELLS = GridData.getGridWidthInCells();
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
 		// Calculate Line Distribution
@@ -197,6 +196,17 @@ export default class ViewProjectMenu extends View {
 			// Updated
 			this.#REQUIRES_UPDATES[i] = false;
 		}
+	}
+
+	onDrawComplete() {
+		super.onDrawComplete();
+
+		console.log('ViewProjectMenu onDrawComplete');
+
+		this.draw(0, DrawType.Clear);
+
+		// TODO Hard coded for now
+		this.draw(120, DrawType.Fill);
 	}
 
 	// _____________________________________________________________ Interaction

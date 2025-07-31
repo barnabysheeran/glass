@@ -12,6 +12,8 @@ import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class ViewIntro extends View {
+	#drawGlyphName = '{heart}';
+
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
@@ -62,6 +64,17 @@ export default class ViewIntro extends View {
 		// }
 	}
 
+	onDrawComplete() {
+		super.onDrawComplete();
+
+		console.log('ViewIntro onDrawComplete');
+
+		this.draw(0, DrawType.Clear);
+
+		// TODO Hard coded for now
+		this.draw(120, DrawType.Fill);
+	}
+
 	// ____________________________________________________________________ Draw
 
 	draw(delayFrames, drawType) {
@@ -104,7 +117,7 @@ export default class ViewIntro extends View {
 
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				'{heart}',
+				this.#drawGlyphName,
 				0,
 				GRID_Y,
 				delayFrames +
