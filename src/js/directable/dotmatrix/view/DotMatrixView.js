@@ -140,30 +140,6 @@ export default class View {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
-		// Add Technology
-		if (dataProject['technology']) {
-			// Next
-			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
-
-			// Create Component
-			const COMPONENT_TECHNOLOGY = new ComponentGlyphBox(
-				this.SHAPE_MANAGER,
-				dataProject['technology'],
-				gridX,
-				gridY,
-				100,
-				50,
-				delayFrames,
-				delayGlyph,
-				FillType.PassThrough,
-				FillStrategyType.Random,
-				drawType,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT_TECHNOLOGY);
-		}
-
 		// Add Credit ?
 		if (dataProject['credit']) {
 			// Next
