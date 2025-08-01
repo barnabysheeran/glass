@@ -97,8 +97,6 @@ export default class ViewProjectMenu extends View {
 
 		// Get Line Heights
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
-		const LINE_HEIGHT_HEADER =
-			DirectableDotMatrixConstants.getHeaderHeightInLines();
 
 		// Get Width Mobile
 		const IS_MOBILE = GridData.getIsMobile();
@@ -108,18 +106,17 @@ export default class ViewProjectMenu extends View {
 
 		// Calculate Line Distribution
 		const LINE_SPACING = 2;
-		const FREE_SPACE_PROPORTION = 0.22; // 0.33;
+		const FREE_SPACE_PROPORTION = 0.5; // 0.33;
 		const LINE_HEIGHT_MENU_START_MINIMUM = 7;
 
 		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
 
 		const MENU_HEIGHT_IN_LINES = PROJECT_DATA.length * LINE_SPACING;
 
-		const FREE_SPACE_IN_LINES =
-			GRID_HEIGHT_IN_LINES - LINE_HEIGHT_HEADER - MENU_HEIGHT_IN_LINES;
+		const FREE_SPACE_IN_LINES = GRID_HEIGHT_IN_LINES - MENU_HEIGHT_IN_LINES;
 
 		let lineHeightMenuStart =
-			LINE_HEIGHT_HEADER +
+			// LINE_HEIGHT_HEADER +
 			Math.floor(FREE_SPACE_IN_LINES * FREE_SPACE_PROPORTION);
 
 		if (lineHeightMenuStart < LINE_HEIGHT_MENU_START_MINIMUM) {
