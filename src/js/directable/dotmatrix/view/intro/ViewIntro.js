@@ -50,7 +50,7 @@ export default class ViewIntro extends View {
 			return;
 		}
 
-		// TODO
+		// TODO Tidy / Remove ?
 
 		// Redraw ?
 		// if (this.#delayFramesReDraw > 0) {
@@ -67,11 +67,10 @@ export default class ViewIntro extends View {
 	onDrawComplete() {
 		super.onDrawComplete();
 
-		console.log('ViewIntro onDrawComplete');
-
+		// Clear
 		this.draw(0, DrawType.Clear);
 
-		// TODO Hard coded for now
+		// TODO Hard Coded Delay
 		this.draw(120, DrawType.Fill);
 	}
 
