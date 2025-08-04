@@ -10,12 +10,20 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
+export default class ViewProject extends DotMatrixView {
 	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
 
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
+
+	// _________________________________________________________________________
+
+	constructor(shapeManager, componentManager, viewId, projectId) {
+		super(shapeManager, componentManager, viewId);
+
+		console.log(`ViewProject '${viewId}' for project '${projectId}'`);
+	}
 
 	// ______________________________________________________________ Start Stop
 

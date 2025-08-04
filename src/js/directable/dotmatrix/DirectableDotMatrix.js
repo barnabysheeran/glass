@@ -11,17 +11,7 @@ import ViewTest from './view/test/ViewTest.js';
 import ViewHeader from './view/header/ViewHeader.js';
 import ViewIntro from './view/intro/ViewIntro.js';
 import ViewProjectMenu from './view/menu/ViewProjectMenu.js';
-
-import ViewProject_adidas from './view/project/ViewProject_adidas.js';
-import ViewProject_battlebuilder from './view/project/ViewProject_battlebuilder.js';
-import ViewProject_ferrari from './view/project/ViewProject_ferrari.js';
-import ViewProject_goodwood from './view/project/ViewProject_goodwood.js';
-import ViewProject_google from './view/project/ViewProject_google.js';
-import ViewProject_greenpeace from './view/project/ViewProject_greenpeace.js';
-import ViewProject_honda from './view/project/ViewProject_honda.js';
-import ViewProject_hotstepper from './view/project/ViewProject_hotstepper.js';
-import ViewProject_pikcellsonfigr from './view/project/ViewProject_pikcellsonfigr.js';
-import ViewProject_postmatter from './view/project/ViewProject_postmatter.js';
+import ViewProject from './view/project/ViewProject.js';
 
 import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
 
@@ -81,41 +71,14 @@ export default class DirectableDotMatrix {
 		);
 
 		// Create Project Views
-		const projectViewClasses = new Map([
-			['adidas', ViewProject_adidas],
-			['battlebuilder', ViewProject_battlebuilder],
-			['ferrari', ViewProject_ferrari],
-			['google', ViewProject_google],
-			['greenpeace', ViewProject_greenpeace],
-			['honda', ViewProject_honda],
-			['hotstepper', ViewProject_hotstepper],
-			['postmatter', ViewProject_postmatter],
-			['pikcellsonfigr', ViewProject_pikcellsonfigr],
-			['goodwood', ViewProject_goodwood],
-		]);
-
 		PROJECT_DATA.forEach((project) => {
-			const ProjectViewClass = projectViewClasses.get(project.id);
-
-			if (ProjectViewClass) {
-				ApplicationLogger.log(
-					`DirectableDotMatrix - Creating Project View '${project.id}'`,
-					this.#LOG_LEVEL,
-				);
-
-				this.#VIEWS.push(
-					new ProjectViewClass(
-						this.#SHAPE_MANAGER,
-						this.#COMPONENT_MANAGER,
-						project.id,
-					),
-				);
-			} else {
-				ApplicationLogger.warn(
-					`DirectableDotMatrix - No View Found for Project '${project.id}'`,
-					this.#LOG_LEVEL,
-				);
-			}
+			this.#VIEWS.push(
+				new ViewProject(
+					this.#SHAPE_MANAGER,
+					this.#COMPONENT_MANAGER,
+					project.id,
+				),
+			);
 		});
 
 		// Create Test View
