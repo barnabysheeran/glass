@@ -89,4 +89,10 @@ export default class ComponentGlyphBox extends Component {
 			}
 		}
 	}
+
+	// __________________________________________________________________ Access
+
+	getGridWidth() {
+		return this.GRID_WIDTH;
+	}
 }

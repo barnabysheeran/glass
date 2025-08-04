@@ -1,12 +1,7 @@
 import ApplicationLogger from '../../../application/ApplicationLogger.js';
 import InteractiveSurface from '../../../interactive/InteractiveSurface.js';
 
-import GridData from '../../../grid/GridData.js';
-
-import DirectableDotMatrixConstants from '../DirectableDotMatrixConstants.js';
-
 import ComponentRectangle from '../component/primative/ComponentRectangle.js';
-import ComponentGlyphBox from '../component/glyph/ComponentGlyphBox.js';
 
 import FillType from '../enum/FillType.js';
 import FillStrategyType from '../enum/FillStrategyType.js';
@@ -111,75 +106,6 @@ export default class DotMatrixView {
 
 		// Reset Interactive Block Ids
 		this.INTERACTIVE_BLOCK_IDS = [];
-	}
-
-	// ____________________________________________________________ Project Text
-
-	addProjectText(dataProject, gridX, gridY, delayGlyph, delayFrames, drawType) {
-		// Get Heights
-		const LINE_HEIGHT_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getLineHeightInGridCells();
-
-		// Get Is Mobile
-		const IS_MOBILE = GridData.getIsMobile();
-
-		// Add Component Name
-		let textName;
-
-		if (IS_MOBILE) {
-			textName = dataProject['name-short'];
-		} else {
-			textName = dataProject['name'];
-		}
-
-		const COMPONENT_NAME = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			textName,
-			gridX,
-			gridY,
-			100,
-			50,
-			delayFrames,
-			delayGlyph,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-			drawType,
-		);
-
-		// Store
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
-
-		// Add Credits
-		for (let i = 0; i < dataProject['credit'].length; i += 1) {
-			//
-			const credit = dataProject['credit'][i];
-
-			// Next
-			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
-
-			// Create Component
-			const COMPONENT_CREDIT = new ComponentGlyphBox(
-				this.SHAPE_MANAGER,
-				`${credit['text']}`,
-				gridX,
-				gridY,
-				100,
-				50,
-				delayFrames + i,
-				delayGlyph,
-				FillType.PassThrough,
-				FillStrategyType.Random,
-				drawType,
-			);
-
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
-
-			// Store Interactive Grid Position
-			this.INTERACTIVE_GRID_XS.push(gridX);
-			this.INTERACTIVE_GRID_YS.push(gridY);
-			this.INTERACTIVE_GLYPH_WIDTHS.push(10);
-		}
 	}
 
 	// ______________________________________________________________ Rectangles
