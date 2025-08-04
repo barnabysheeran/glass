@@ -6,7 +6,7 @@ import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js'
 
 import DrawType from '../../enum/DrawType.js';
 
-export default class ViewProject_adidas extends View {
+export default class DotMatrixViewProject_adidas extends View {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start

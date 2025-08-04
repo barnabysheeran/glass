@@ -14,7 +14,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class ViewProjectMenu extends View {
+export default class DotMatrixViewProjectMenu extends View {
 	// TODO Tune with Menu Text
 	#DELAY_ROLLOVER_REDRAW = 20;
 

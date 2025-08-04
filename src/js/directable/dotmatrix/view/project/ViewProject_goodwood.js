@@ -6,7 +6,7 @@ import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js'
 
 import DrawType from '../../enum/DrawType.js';
 
-export default class ViewProject_sciencemuseum extends View {
+export default class DotMatrixViewProject_sciencemuseum extends View {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start

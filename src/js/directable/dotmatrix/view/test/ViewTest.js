@@ -13,7 +13,7 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
-export default class ViewTest extends View {
+export default class DotMatrixViewTest extends View {
 	#STRING_CHAR_TEST_1 = `- _ / : ; , . ' ! "`;
 	#STRING_CHAR_TEST_2 = `^ < {heart} > ^`;
 

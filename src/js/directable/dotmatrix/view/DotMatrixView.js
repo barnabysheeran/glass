@@ -12,7 +12,7 @@ import FillType from '../enum/FillType.js';
 import FillStrategyType from '../enum/FillStrategyType.js';
 import DrawType from '../enum/DrawType.js';
 
-export default class View {
+export default class DotMatrixView {
 	SHAPE_MANAGER;
 	COMPONENT_MANAGER;
 
@@ -140,20 +140,23 @@ export default class View {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
-		// Add Credit ?
-		if (dataProject['credit']) {
+		// Add Credits
+		for (let i = 0; i < dataProject['credit'].length; i += 1) {
+			//
+			const credit = dataProject['credit'][i];
+
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphBox(
 				this.SHAPE_MANAGER,
-				`${dataProject['credit']['text']}`,
+				`${credit['text']}`,
 				gridX,
 				gridY,
 				100,
 				50,
-				delayFrames,
+				delayFrames + i,
 				delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.Random,

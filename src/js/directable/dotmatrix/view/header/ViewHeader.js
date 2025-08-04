@@ -13,7 +13,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class ViewHeader extends View {
+export default class DotMatrixViewHeader extends View {
 	#DELAY_ROLLOVER_REDRAW = 6;
 
 	#gridXCenteredStart = 0;

@@ -11,7 +11,7 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
-export default class ViewIntro extends View {
+export default class DotMatrixViewIntro extends View {
 	#drawGlyphName = '{heart}';
 
 	#DELAY_GLYPH_IN = 2;
