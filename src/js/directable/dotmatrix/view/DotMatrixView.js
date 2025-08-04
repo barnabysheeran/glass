@@ -182,38 +182,6 @@ export default class DotMatrixView {
 		}
 	}
 
-	// _____________________________________________________________ Interaction
-
-	createInteractiveBlocks() {
-		// Get Height
-		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
-
-		// Create Interactive Blocks
-		for (let i = 0; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
-			console.log(' --- ' + i + ' ---');
-
-			const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
-				this.INTERACTIVE_GRID_XS[i] * GridData.getGridCellWidthPx(),
-				this.INTERACTIVE_GRID_YS[i] * GridData.getGridCellHeightPx(),
-				this.INTERACTIVE_GLYPH_WIDTHS[i] * GridData.getGridCellWidthPx(),
-				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-				this.onButtonMenuClick.bind(this),
-				this.onButtonMenuOver.bind(this),
-				this.onButtonMenuOut.bind(this),
-				{ projectId: 'todo' },
-			);
-
-			// Store
-			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
-		}
-	}
-
-	onButtonMenuClick(event) {}
-
-	onButtonMenuOver(event) {}
-
-	onButtonMenuOut(event) {}
-
 	// ______________________________________________________________ Rectangles
 
 	addRectanglesBlock(

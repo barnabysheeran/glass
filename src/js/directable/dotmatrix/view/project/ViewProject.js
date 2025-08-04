@@ -8,6 +8,9 @@ import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
+import GridData from '../../../../grid/GridData.js';
+import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
+
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class ViewProject extends DotMatrixView {
@@ -17,13 +20,7 @@ export default class ViewProject extends DotMatrixView {
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
 
-	// _________________________________________________________________________
-
-	constructor(shapeManager, componentManager, viewId, projectId) {
-		super(shapeManager, componentManager, viewId);
-
-		console.log(`ViewProject '${viewId}' for project '${projectId}'`);
-	}
+	#LOG_LEVEL = 4;
 
 	// ______________________________________________________________ Start Stop
 
@@ -117,5 +114,49 @@ export default class ViewProject extends DotMatrixView {
 			this.draw(0, DrawType.Clear);
 			this.draw(10, DrawType.Fill);
 		}
+	}
+
+	// _____________________________________________________________ Interaction
+
+	createInteractiveBlocks() {
+		// Get Height
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+
+		// Create Interactive Blocks
+		for (let i = 0; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
+			console.log(' --- ' + i + ' ---');
+
+			const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
+				this.INTERACTIVE_GRID_XS[i] * GridData.getGridCellWidthPx(),
+				this.INTERACTIVE_GRID_YS[i] * GridData.getGridCellHeightPx(),
+				this.INTERACTIVE_GLYPH_WIDTHS[i] * GridData.getGridCellWidthPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+				{ projectId: 'todo' },
+			);
+
+			// Store
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
+		}
+	}
+
+	onButtonMenuClick(event) {
+		console.log(
+			`ViewProject onButtonMenuClick: ${event.target.dataset.projectId}`,
+		);
+	}
+
+	onButtonMenuOver(event) {
+		console.log(
+			`ViewProject onButtonMenuOver: ${event.target.dataset.projectId}`,
+		);
+	}
+
+	onButtonMenuOut(event) {
+		console.log(
+			`ViewProject onButtonMenuOut: ${event.target.dataset.projectId}`,
+		);
 	}
 }
