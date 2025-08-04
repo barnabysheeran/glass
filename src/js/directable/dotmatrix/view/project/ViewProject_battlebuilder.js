@@ -22,11 +22,16 @@ export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 	start(delayFrames) {
 		super.start(delayFrames);
 
+		// Order Important - Draw Stores Grid Position Information
+
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
 		// Draw
 		this.draw(delayFrames, DrawType.Fill);
+
+		// Create Interactive Blocks
+		this.createInteractiveBlocks();
 	}
 
 	stop(delayFrames) {

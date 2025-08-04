@@ -16,6 +16,9 @@ export default class DotMatrixView {
 	SHAPE_MANAGER;
 	COMPONENT_MANAGER;
 
+	INTERACTIVE_GRID_XS = [];
+	INTERACTIVE_GRID_YS = [];
+	INTERACTIVE_GLYPH_WIDTHS = [];
 	INTERACTIVE_BLOCK_IDS = [];
 
 	#VIEW_ID;
@@ -42,6 +45,12 @@ export default class DotMatrixView {
 			`View '${this.#VIEW_ID}' start delay ${delayFrames}`,
 			this.#LOG_LEVEL,
 		);
+
+		// Reset
+		this.INTERACTIVE_GRID_XS = [];
+		this.INTERACTIVE_GRID_YS = [];
+		this.INTERACTIVE_GLYPH_WIDTHS = [];
+		this.INTERACTIVE_BLOCK_IDS = [];
 
 		// Active
 		this.isActive = true;
@@ -165,27 +174,45 @@ export default class DotMatrixView {
 
 			// Store
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
+
+			// Store Interactive Grid Position
+			this.INTERACTIVE_GRID_XS.push(gridX);
+			this.INTERACTIVE_GRID_YS.push(gridY);
+			this.INTERACTIVE_GLYPH_WIDTHS.push(10);
 		}
 	}
 
 	// _____________________________________________________________ Interaction
 
-	#createInteractiveBlocks() {
-		// // Get Height
-		// const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
-		// const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
-		// 	this.#GRID_X_CENTERED_STARTS[i] * GridData.getGridCellWidthPx(),
-		// 	this.#GRID_YS[i] * GridData.getGridCellHeightPx(),
-		// 	this.#GRID_WIDTH_GLYPHS[i] * GridData.getGridCellWidthPx(),
-		// 	CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
-		// 	this.onButtonMenuClick.bind(this),
-		// 	this.onButtonMenuOver.bind(this),
-		// 	this.onButtonMenuOut.bind(this),
-		// 	{ projectId: this.#PROJECT_IDS[i] },
-		// );
-		// // Store
-		// this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
+	createInteractiveBlocks() {
+		// Get Height
+		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
+
+		// Create Interactive Blocks
+		for (let i = 0; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
+			console.log(' --- ' + i + ' ---');
+
+			const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
+				this.INTERACTIVE_GRID_XS[i] * GridData.getGridCellWidthPx(),
+				this.INTERACTIVE_GRID_YS[i] * GridData.getGridCellHeightPx(),
+				this.INTERACTIVE_GLYPH_WIDTHS[i] * GridData.getGridCellWidthPx(),
+				CHARACTER_HEIGHT * GridData.getGridCellHeightPx(),
+				this.onButtonMenuClick.bind(this),
+				this.onButtonMenuOver.bind(this),
+				this.onButtonMenuOut.bind(this),
+				{ projectId: 'todo' },
+			);
+
+			// Store
+			this.INTERACTIVE_BLOCK_IDS.push(INTERACTIVE_BLOCK_ID);
+		}
 	}
+
+	onButtonMenuClick(event) {}
+
+	onButtonMenuOver(event) {}
+
+	onButtonMenuOut(event) {}
 
 	// ______________________________________________________________ Rectangles
 
