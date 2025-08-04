@@ -46,7 +46,7 @@ export default class DotMatrixView {
 			this.#LOG_LEVEL,
 		);
 
-		// Reset
+		// Reset Interactive Blocks
 		this.INTERACTIVE_GRID_XS = [];
 		this.INTERACTIVE_GRID_YS = [];
 		this.INTERACTIVE_GLYPH_WIDTHS = [];
