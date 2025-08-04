@@ -1,12 +1,12 @@
 import DataController from '../../../../data/DataController.js';
 
-import View from '../DotMatrixView.js';
+import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
 import DrawType from '../../enum/DrawType.js';
 
-export default class DotMatrixViewProject_sciencemuseum extends View {
+export default class DotMatrixViewProject_sciencemuseum extends DotMatrixView {
 	#DELAY_GLYPH = 1;
 
 	// ___________________________________________________________________ Start

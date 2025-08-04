@@ -1,6 +1,6 @@
 import DataController from '../../../../data/DataController.js';
 
-import View from '../DotMatrixView.js';
+import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -10,7 +10,7 @@ import DrawType from '../../enum/DrawType.js';
 
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
-export default class DotMatrixViewProject_battlebuilder extends View {
+export default class DotMatrixViewProject_battlebuilder extends DotMatrixView {
 	#STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
 
 	#DELAY_GLYPH_IN = 2;

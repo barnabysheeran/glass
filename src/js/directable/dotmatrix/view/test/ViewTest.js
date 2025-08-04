@@ -1,6 +1,6 @@
 import GridData from '../../../../grid/GridData.js';
 
-import View from '../DotMatrixView.js';
+import DotMatrixView from '../DotMatrixView.js';
 
 import DirectableDotMatrixConstants from '../../DirectableDotMatrixConstants.js';
 
@@ -13,7 +13,7 @@ import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
 
-export default class DotMatrixViewTest extends View {
+export default class DotMatrixViewTest extends DotMatrixView {
 	#STRING_CHAR_TEST_1 = `- _ / : ; , . ' ! "`;
 	#STRING_CHAR_TEST_2 = `^ < {heart} > ^`;
 
