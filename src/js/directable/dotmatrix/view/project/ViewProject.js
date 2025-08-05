@@ -12,6 +12,7 @@ import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
+import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class ViewProject extends DotMatrixView {
 	// #STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
@@ -116,13 +117,10 @@ export default class ViewProject extends DotMatrixView {
 			textName = dataProject['name'];
 		}
 
-		const COMPONENT_NAME = new ComponentGlyphBox(
+		const COMPONENT_NAME = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
 			textName,
-			gridX,
 			gridY,
-			100,
-			50,
 			delayFrames,
 			delayGlyph,
 			FillType.PassThrough,
@@ -142,13 +140,10 @@ export default class ViewProject extends DotMatrixView {
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Component
-			const COMPONENT_CREDIT = new ComponentGlyphBox(
+			const COMPONENT_CREDIT = new ComponentGlyphLineCentered(
 				this.SHAPE_MANAGER,
 				`${credit['text']}`,
-				gridX,
 				gridY,
-				100,
-				50,
 				delayFrames + i,
 				delayGlyph,
 				FillType.PassThrough,
@@ -162,7 +157,7 @@ export default class ViewProject extends DotMatrixView {
 			// Store Interactive Grid Position
 			this.INTERACTIVE_GRID_XS.push(gridX);
 			this.INTERACTIVE_GRID_YS.push(gridY);
-			this.INTERACTIVE_GLYPH_WIDTHS.push(10);
+			this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_CREDIT.getGridWidth());
 		}
 	}
 
@@ -208,8 +203,6 @@ export default class ViewProject extends DotMatrixView {
 	}
 
 	onButtonMenuClick(data) {
-		console.log('click', data);
-
 		// Get Project Data
 		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
 
