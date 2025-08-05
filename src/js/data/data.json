@@ -121,10 +121,24 @@
             "id": "google",
             "name": "GOOGLE - ABBEY ROAD",
             "name-short": "GOOGLE",
+            "media": [
+                {
+                    "type": "image",
+                    "vimeo-id": "project/google-abbey-road/1.jpg"
+                },
+                {
+                    "type": "image",
+                    "vimeo-id": "project/google-abbey-road/2.jpg"
+                },
+                {
+                    "type": "image",
+                    "vimeo-id": "project/google-abbey-road/3.jpg"
+                }
+            ],
             "credit": [
                 {
-                    "text": "Stink",
-                    "url": ""
+                    "text": "Stink Studios",
+                    "url": "https://www.stinkstudios.com/work/inside-abbey-road"
                 }
             ]
         },
@@ -142,7 +156,7 @@
             "credit": [
                 {
                     "text": "Hi-ReS!",
-                    "url": "https://vimeo.com/hireslondon"
+                    "url": "https://hi-res.net/"
                 }
             ]
         },
