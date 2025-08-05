@@ -136,8 +136,6 @@ export default class MediaSurfaceVimeo {
 	#onReady() {
 		ApplicationLogger.log('MediaSurfaceVimeo onReady', this.#LOG_LEVEL);
 
-		console.log('Ready');
-
 		// Set Size
 		this.setSize(this.#width, this.#height);
 	}
@@ -197,15 +195,13 @@ export default class MediaSurfaceVimeo {
 			this.#LOG_LEVEL,
 		);
 
-		console.log(`MediaSurfaceVimeo setSize ${widthPx}, ${heightPx}`);
-
 		// Store
 		this.#width = widthPx;
 		this.#height = heightPx;
 
 		// Size Holder
 		this.#HOLDER.style.width = widthPx + 'px';
-		// this.#HOLDER.style.height = heightPx + 'px';
+		this.#HOLDER.style.height = heightPx + 'px';
 
 		// Size Iframe ?
 		const iframe = this.#HOLDER.querySelector('iframe');
@@ -217,18 +213,7 @@ export default class MediaSurfaceVimeo {
 		}
 
 		iframe.style.width = `${widthPx}px`;
-		// iframe.style.height = `${heightPx}px`;
-
-		// Position Top from Grid
-		const GRID_CELL_HEIGHT_PX = GridData.getGridCellHeightPx();
-
-		const MEDIA_HEADER_HEIGHT_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getMediaMarginTopInGridCells();
-
-		const HOLDER_TOP_PX =
-			GRID_CELL_HEIGHT_PX * MEDIA_HEADER_HEIGHT_IN_GRID_CELLS;
-
-		this.#HOLDER.style.top = `${HOLDER_TOP_PX}px`;
+		iframe.style.height = `${heightPx}px`;
 	}
 
 	// _________________________________________________________________ Destroy

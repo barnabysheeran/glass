@@ -21,42 +21,6 @@ export default class DirectableDotMatrixConstants {
 		return this.#HEADER_HEIGHT_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
 	}
 
-	// ___________________________________________________________________ Media
-
-	static #MEDIA_MARGIN_TOP_IN_LINES = 6;
-
-	static getMediaMarginTopInLines() {
-		return this.#MEDIA_MARGIN_TOP_IN_LINES;
-	}
-
-	static getMediaMarginTopInGridCells() {
-		return this.#MEDIA_MARGIN_TOP_IN_LINES * this.#LINE_HEIGHT_IN_GRID_CELLS;
-	}
-
-	static getMediaHeightInLines(aspectRatioString = '16:9') {
-		const DISPLAY_WIDTH_IN_GRID_CELLS = GridData.getGridWidthInCells();
-
-		const [widthRatio, heightRatio] = aspectRatioString.split(':').map(Number);
-
-		const RATIO = widthRatio / heightRatio;
-
-		return Math.ceil(
-			DISPLAY_WIDTH_IN_GRID_CELLS / RATIO / this.#LINE_HEIGHT_IN_GRID_CELLS,
-		);
-	}
-
-	static getMediaHeightInGridCells() {
-		return this.getMediaHeightInLines() * this.#LINE_HEIGHT_IN_GRID_CELLS;
-	}
-
-	static getMediaBottomInLines() {
-		return this.getMediaMarginTopInLines() + this.getMediaHeightInLines();
-	}
-
-	static getMediaBottomInGridCells() {
-		return this.getMediaBottomInLines() * this.#LINE_HEIGHT_IN_GRID_CELLS;
-	}
-
 	// __________________________________________________________________ Footer
 
 	static #FOOTER_HEIGHT_IN_LINES = 7;
