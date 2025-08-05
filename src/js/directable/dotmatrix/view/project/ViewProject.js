@@ -60,61 +60,25 @@ export default class ViewProject extends DotMatrixView {
 		const LINE_HEIGHT_IN_GRID_CELLS =
 			DirectableDotMatrixConstants.getLineHeightInGridCells();
 
-		const MEDIA_BOTTOM_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getMediaBottomInGridCells(
-				DATA_PROJECT['media-aspect'],
-			);
-
-		// Initialise Grid Positions
-		let gridX = 0;
-		let gridY = MEDIA_BOTTOM_IN_GRID_CELLS + LINE_HEIGHT_IN_GRID_CELLS;
-
-		// Add Component Winged Skull
-		// const COMPONENT_WINGED_SKULL = new ComponentGlyphLineCentered(
-		// 	this.SHAPE_MANAGER,
-		// 	this.#STRING_WINGED_SKULL,
-		// 	gridY,
-		// 	delayFrames,
-		// 	this.#delayGlyph,
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.Random,
-		// 	drawType,
-		// );
-
-		// // Store
-		// this.COMPONENT_MANAGER.addComponent(COMPONENT_WINGED_SKULL);
-
-		// // Next
-		// gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
-
-		// Add Project Text
-		this.addProjectText(
-			DATA_PROJECT,
-			gridX,
-			gridY,
-			this.#delayGlyph,
-			delayFrames,
-			drawType,
-		);
-	}
-
-	// ____________________________________________________________ Project Text
-
-	addProjectText(dataProject, gridX, gridY, delayGlyph, delayFrames, drawType) {
-		// Get Heights
-		const LINE_HEIGHT_IN_GRID_CELLS =
-			DirectableDotMatrixConstants.getLineHeightInGridCells();
+		const GRID_HEIGHT_IN_GRID_CELLS = GridData.getGridHeightInCells();
 
 		// Get Is Mobile
 		const IS_MOBILE = GridData.getIsMobile();
+
+		// Calculate Distance from Bottom
+		// TODO Hard-Coded Margin
+		const ITEM_TOTAL = 4 + DATA_PROJECT['credit'].length * 2;
+
+		let gridY =
+			GRID_HEIGHT_IN_GRID_CELLS - ITEM_TOTAL * LINE_HEIGHT_IN_GRID_CELLS;
 
 		// Add Component Name
 		let textName;
 
 		if (IS_MOBILE) {
-			textName = dataProject['name-short'];
+			textName = DATA_PROJECT['name-short'];
 		} else {
-			textName = dataProject['name'];
+			textName = DATA_PROJECT['name'];
 		}
 
 		const COMPONENT_NAME = new ComponentGlyphLineCentered(
@@ -122,7 +86,7 @@ export default class ViewProject extends DotMatrixView {
 			textName,
 			gridY,
 			delayFrames,
-			delayGlyph,
+			this.#delayGlyph,
 			FillType.PassThrough,
 			FillStrategyType.Random,
 			drawType,
@@ -132,9 +96,9 @@ export default class ViewProject extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
 		// Add Credits
-		for (let i = 0; i < dataProject['credit'].length; i += 1) {
+		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
 			//
-			const credit = dataProject['credit'][i];
+			const credit = DATA_PROJECT['credit'][i];
 
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
@@ -145,7 +109,7 @@ export default class ViewProject extends DotMatrixView {
 				`${credit['text']}`,
 				gridY,
 				delayFrames + i,
-				delayGlyph,
+				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.Random,
 				drawType,
