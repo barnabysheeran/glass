@@ -40,6 +40,7 @@
             "id": "pikcellsonfigr",
             "name": "Pikcells / Onfigr",
             "name-short": "Pikcells / Onfigr",
+            "media-aspect": "16:9",
             "media": [
                 {
                     "type": "image",
@@ -48,11 +49,11 @@
             ],
             "credit": [
                 {
-                    "text": "PIKCELLS",
+                    "text": "PIKCELLS.COM",
                     "url": "https://www.pikcells.com"
                 },
                 {
-                    "text": "ONFIGR",
+                    "text": "ONFIGR.COM",
                     "url": "https://www.onfigr.com"
                 }
             ]
@@ -71,7 +72,7 @@
             ],
             "credit": [
                 {
-                    "text": "{heart} MORE",
+                    "text": "MORE",
                     "url": "https://www.remiparingaux.com/postmatter-exhibition"
                 }
             ]
@@ -90,7 +91,7 @@
             ],
             "credit": [
                 {
-                    "text": "{heart} MORE",
+                    "text": "MORE",
                     "url": "https://www.remiparingaux.com/ferrari"
                 }
             ]
@@ -152,7 +153,7 @@
             ],
             "credit": [
                 {
-                    "text": "Hi-ReS!",
+                    "text": "MORE {heart} Hi-ReS!",
                     "url": "https://alexandrajugovic.com/loveletters"
                 }
             ]

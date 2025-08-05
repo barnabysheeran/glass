@@ -155,7 +155,7 @@ export default class ViewProject extends DotMatrixView {
 			this.COMPONENT_MANAGER.addComponent(COMPONENT_CREDIT);
 
 			// Store Interactive Grid Position
-			this.INTERACTIVE_GRID_XS.push(gridX);
+			this.INTERACTIVE_GRID_XS.push(COMPONENT_CREDIT.getGridXCenteredStart());
 			this.INTERACTIVE_GRID_YS.push(gridY);
 			this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_CREDIT.getGridWidth());
 		}
