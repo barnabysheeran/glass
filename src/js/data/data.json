@@ -132,7 +132,19 @@
         {
             "id": "adidas",
             "name": "ADIDAS - Flash",
-            "name-short": "ADIDAS Flash"
+            "name-short": "ADIDAS",
+            "media": [
+                {
+                    "type": "vimeo",
+                    "vimeo-id": "22551157"
+                }
+            ],
+            "credit": [
+                {
+                    "text": "Hi-ReS!",
+                    "url": "https://vimeo.com/hireslondon"
+                }
+            ]
         },
 
         {
