@@ -176,10 +176,16 @@ export default class MediaSurfaceYoutube {
 			this.#HOLDER.style.height = heightPx + 'px';
 		}
 
-		// Size the iframe directly
+		// Size the iframe to be full-width, maintain aspect ratio, and be vertically centered
 		if (this.#IFRAME) {
-			this.#IFRAME.style.width = `${widthPx}px`;
-			this.#IFRAME.style.height = `${heightPx}px`;
+			const videoAspectRatio = 16 / 9;
+			const newVideoWidth = widthPx;
+			const newVideoHeight = newVideoWidth / videoAspectRatio;
+
+			this.#IFRAME.style.width = `${newVideoWidth}px`;
+			this.#IFRAME.style.height = `${newVideoHeight}px`;
+			this.#IFRAME.style.left = `0px`;
+			this.#IFRAME.style.top = `${(heightPx - newVideoHeight) / 2}px`;
 		}
 	}
 
