@@ -21,6 +21,7 @@ export default class MediaSurfaceYoutube {
 
 	#isStopping = false;
 	#isReady = false;
+	#IFRAME; // Add a property to hold the iframe reference
 
 	#LOG_LEVEL = 1;
 
@@ -74,9 +75,9 @@ export default class MediaSurfaceYoutube {
 		// Lerp Volume
 		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP;
 
-		// Set Opacity
-		if (this.#HOLDER) {
-			this.#HOLDER.style.opacity = this.#opacity;
+		// Set Opacity on the iframe
+		if (this.#IFRAME) {
+			this.#IFRAME.style.opacity = this.#opacity;
 		}
 
 		// Set Volume
@@ -99,13 +100,15 @@ export default class MediaSurfaceYoutube {
 
 	// ___________________________________________________________ Player Events
 
-	#onReady(event) {
+	async #onReady(event) {
 		ApplicationLogger.log(`MediaSurfaceYoutube onReady`, this.#LOG_LEVEL);
 
+		// Get the iframe and store it
+		this.#IFRAME = await this.#PLAYER.getIframe();
+		this.#IFRAME.style.opacity = this.#opacity; // Set initial opacity
+
 		this.#isReady = true;
-
 		this.setSize(this.#width, this.#height);
-
 		event.target.playVideo();
 	}
 
@@ -142,7 +145,7 @@ export default class MediaSurfaceYoutube {
 
 		// Pause Video
 		if (this.#PLAYER) {
-			// this.#PLAYER.pauseVideo();
+			this.#PLAYER.pauseVideo();
 		}
 
 		// Set Opacity Target
@@ -163,29 +166,21 @@ export default class MediaSurfaceYoutube {
 			this.#LOG_LEVEL,
 		);
 
-		console.log(`MediaSurfaceYoutube setSize ${widthPx}, ${heightPx}`);
-
 		// Store
 		this.#width = widthPx;
 		this.#height = heightPx;
 
 		// Size Holder
-		this.#HOLDER.style.width = widthPx + 'px';
-		this.#HOLDER.style.height = heightPx + 'px';
-
-		// Size Iframe ?
-		const iframe = this.#HOLDER.querySelector('iframe');
-
-		if (!iframe) {
-			ApplicationLogger.log(' - No iframe');
-
-			return;
+		if (this.#HOLDER) {
+			this.#HOLDER.style.width = widthPx + 'px';
+			this.#HOLDER.style.height = heightPx + 'px';
 		}
 
-		console.log(`MediaSurfaceYoutube setSize iframe ${iframe}`);
-
-		iframe.style.width = `${widthPx}px`;
-		iframe.style.height = `${heightPx}px`;
+		// Size the iframe directly
+		if (this.#IFRAME) {
+			this.#IFRAME.style.width = `${widthPx}px`;
+			this.#IFRAME.style.height = `${heightPx}px`;
+		}
 	}
 
 	// _________________________________________________________________ Destroy
@@ -194,17 +189,16 @@ export default class MediaSurfaceYoutube {
 		ApplicationLogger.log('MediaSurfaceYoutube destroy', this.#LOG_LEVEL);
 
 		if (this.#PLAYER) {
-			console.log('- destroy player');
-
 			this.#PLAYER.destroy();
 			this.#PLAYER = null;
 		}
 
+		// The holder is now empty after player.destroy(), so we can remove it.
 		if (this.#HOLDER) {
-			console.log('- destroy holder');
-
 			this.#HOLDER.remove();
 			this.#HOLDER = null;
 		}
+
+		this.#IFRAME = null;
 	}
 }
