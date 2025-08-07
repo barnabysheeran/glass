@@ -82,6 +82,20 @@ export default class ComponentGlyphLineCentered extends Component {
 			// Get Glyph Name
 			const GLYPH_CODE = GLYPH_CODES[i];
 
+			if (GLYPH_CODE === 'space') {
+				gridX += DirectableDotMatrixConstants.getWidthSpace() + GLYPH_SPACING_X;
+
+				// Skip Space Glyphs
+				continue;
+			}
+
+			if (GLYPH_CODE === 'space') {
+				gridX += GLYPH_SPACING_X;
+
+				// Skip Space Glyphs
+				continue;
+			}
+
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 				GLYPH_CODE,

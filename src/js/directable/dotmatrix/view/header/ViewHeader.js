@@ -91,24 +91,6 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
 	}
 
-	onDrawComplete() {
-		super.onDrawComplete();
-
-		console.log(`DirectableDotMatrix ViewHeader onDrawComplete`);
-
-		// Prevent Infinite Redraws
-		// TODO Hard Coded Value
-		if (Math.random() > 0.5) {
-			return;
-		}
-
-		// Clear
-		this.draw(0, DrawType.Clear);
-
-		// Redraw
-		this.draw(this.#DELAY_FRAMES_REDRAW, DrawType.Fill);
-	}
-
 	// _____________________________________________________________ Interaction
 
 	#createInteractiveBlock() {

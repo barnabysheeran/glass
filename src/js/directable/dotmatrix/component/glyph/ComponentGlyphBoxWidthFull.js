@@ -91,6 +91,14 @@ export default class ComponentGlyphBoxWidthFull extends Component {
 			// Get Glyph Name
 			const GLYPH_CODE = GLYPH_CODES_DRAW[i];
 
+			if (GLYPH_CODE === 'space') {
+				currentGridX +=
+					DirectableDotMatrixConstants.getWidthSpace() + GLYPH_SPACING_X;
+
+				// Skip Space Glyphs
+				continue;
+			}
+
 			// Create Shape Glyph
 			const SHAPE = this.SHAPE_MANAGER.addShapeGlyph(
 				GLYPH_CODE,

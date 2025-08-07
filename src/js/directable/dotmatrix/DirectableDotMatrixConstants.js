@@ -39,6 +39,12 @@ export default class DirectableDotMatrixConstants {
 		return this.#CHARACTER_HEIGHT;
 	}
 
+	static #GLYPH_WIDTH_SPACE = 3;
+
+	static getWidthSpace() {
+		return this.#GLYPH_WIDTH_SPACE;
+	}
+
 	// _________________________________________________________________________
 
 	static #GLYPH_SPACING_X = 1;
