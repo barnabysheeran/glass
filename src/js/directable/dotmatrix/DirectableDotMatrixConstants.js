@@ -61,13 +61,19 @@ export default class DirectableDotMatrixConstants {
 
 	// _____________________________________________________ DelayGlyph Position
 
-	// TODO Transition Type
-
 	static getDelayFromGridPosition(gridX, gridY) {
-		// Remove Header
-
+		// Calculate Delay
 		const DELAY = gridX * 1 + gridY * 1;
 
 		return Math.floor(DELAY);
+	}
+
+	static getDelayFromGridPositionQuadratic(gridY, gridYStart, gridYMax) {
+		// Calculate Delay
+		const DELAY = Math.floor(
+			Math.pow(gridY - gridYStart, 2) / Math.pow(gridYMax - gridYStart, 2),
+		);
+
+		return DELAY;
 	}
 }

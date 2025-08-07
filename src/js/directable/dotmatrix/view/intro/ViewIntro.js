@@ -22,6 +22,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		'{smile}',
 		'.',
 		'.,',
+		'-',
 	];
 	#drawGlyphNameIndex = -1;
 
@@ -104,10 +105,21 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
+		//
+
 		// Add Text with Line Height
 		for (let i = LINE_HEIGHT_HEADER + 1; i < LINE_HEIGHT_MAX; i += 1) {
 			// Create Component
 			const GRID_Y = LINE_HEIGHT * i;
+
+			const DELAY =
+				delayFrames +
+				DirectableDotMatrixConstants.getDelayFromGridPositionQuadratic(
+					GRID_Y,
+					LINE_HEIGHT_HEADER,
+					LINE_HEIGHT_MAX,
+				) *
+					10;
 
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
@@ -115,8 +127,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 				this.#getNextDrawGlyphName(),
 				0,
 				GRID_Y,
-				delayFrames +
-					DirectableDotMatrixConstants.getDelayFromGridPosition(0, GRID_Y),
+				DELAY,
 				this.#delayGlyph,
 				FillType.PassThrough,
 				FillStrategyType.PassThrough,
