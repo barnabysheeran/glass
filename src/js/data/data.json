@@ -94,18 +94,6 @@
         },
 
         {
-            "id": "hotstepper",
-            "name": "Nexus - Hotstepper",
-            "name-short": "Hotstepper",
-            "credit": [
-                {
-                    "text": "Nexus Studios",
-                    "url": "https://nexusstudios.com/work/hotstepper"
-                }
-            ]
-        },
-
-        {
             "id": "goodwood",
             "name": "Goodwood Festival of Speed",
             "name-short": "Goodwood",

@@ -89,24 +89,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Calculate
 		const LINE_HEIGHT_MAX = GRID_HEIGHT_IN_LINES - LINE_HEIGHT_FOOTER;
 
-		// Variable
-		//let gridY = LINE_HEIGHT * LINE_HEIGHT_HEADER;
-
-		// Create Component Line Top
-		// const LINE_TOP = new ComponentLineWidthFull(
-		// 	this.SHAPE_MANAGER,
-		// 	gridY,
-		// 	delayFrames +
-		// 		DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-		// 	FillType.PassThrough,
-		// 	FillStrategyType.PassThrough,
-		// 	drawType,
-		// );
-
-		// this.COMPONENT_MANAGER.addComponent(LINE_TOP);
-
-		//
-
 		// Add Text with Line Height
 		for (let i = LINE_HEIGHT_HEADER + 1; i < LINE_HEIGHT_MAX; i += 1) {
 			// Create Component
