@@ -16,7 +16,7 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Tune with Menu Text
-	#DELAY_ROLLOVER_REDRAW = 20;
+	#DELAY_ROLLOVER_REDRAW = 24;
 	#DELAY_FRAMES_REDRAW = 120;
 
 	#PROJECT_IDS;
@@ -106,19 +106,18 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		const GRID_HEIGHT_IN_CELLS = GridData.getGridHeightInCells();
 
 		// Calculate Line Distribution
+		// TODO Hard Coded Values
 		const LINE_SPACING = 2;
-		const FREE_SPACE_PROPORTION = 0.5; // 0.33;
+		const FREE_SPACE_PROPORTION = 0.5;
 		const LINE_HEIGHT_MENU_START_MINIMUM = 7;
 
 		const GRID_HEIGHT_IN_LINES = Math.floor(GRID_HEIGHT_IN_CELLS / LINE_HEIGHT);
-
 		const MENU_HEIGHT_IN_LINES = PROJECT_DATA.length * LINE_SPACING;
-
 		const FREE_SPACE_IN_LINES = GRID_HEIGHT_IN_LINES - MENU_HEIGHT_IN_LINES;
 
-		let lineHeightMenuStart =
-			// LINE_HEIGHT_HEADER +
-			Math.floor(FREE_SPACE_IN_LINES * FREE_SPACE_PROPORTION);
+		let lineHeightMenuStart = Math.floor(
+			FREE_SPACE_IN_LINES * FREE_SPACE_PROPORTION,
+		);
 
 		if (lineHeightMenuStart < LINE_HEIGHT_MENU_START_MINIMUM) {
 			lineHeightMenuStart = LINE_HEIGHT_MENU_START_MINIMUM;

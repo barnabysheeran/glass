@@ -106,8 +106,17 @@ export default class DirectableDotMatrix {
 		const ACTIVE_COMPONENT_TOTAL =
 			this.#COMPONENT_MANAGER.getActiveComponentTotal();
 
+		console.log(
+			`DirectableDotMatrix tick Active Components: ${ACTIVE_COMPONENT_TOTAL}`,
+		);
+
+		// TODO Using Space Chars
+
 		// Components Complete ?
 		if (ACTIVE_COMPONENT_TOTAL === 0) {
+			// Header Draw Complete
+			this.#VIEW_HEADER.onDrawComplete();
+
 			// View Draw Complete
 			this.#getViewById(this.#viewIdCurrent).onDrawComplete();
 		}

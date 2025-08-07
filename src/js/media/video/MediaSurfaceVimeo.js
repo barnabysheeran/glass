@@ -144,7 +144,7 @@ export default class MediaSurfaceVimeo {
 	#onPlay() {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 
-		console.log('Play');
+		// TODO
 	}
 
 	// ____________________________________________________________________ Stop

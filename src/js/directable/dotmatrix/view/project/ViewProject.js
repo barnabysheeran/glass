@@ -20,7 +20,6 @@ export default class ViewProject extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 20;
 
 	#IS_OVERS;
-	#REQUIRES_UPDATES;
 
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
@@ -35,7 +34,6 @@ export default class ViewProject extends DotMatrixView {
 
 		// Initialise
 		this.#IS_OVERS = [];
-		this.#REQUIRES_UPDATES = [];
 
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
@@ -55,6 +53,14 @@ export default class ViewProject extends DotMatrixView {
 
 		// Draw
 		this.draw(delayFrames, DrawType.Clear);
+
+		// Get Project Data
+		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
+
+		// Undraw Unsurrounding Rectangles
+		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
+			this.#drawSurroundingRectangle(i, delayFrames, DrawType.Clear);
+		}
 	}
 
 	// ____________________________________________________________________ Draw
@@ -97,7 +103,7 @@ export default class ViewProject extends DotMatrixView {
 			delayFrames,
 			this.#delayGlyph,
 			FillType.PassThrough,
-			FillStrategyType.Random,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 
@@ -111,11 +117,6 @@ export default class ViewProject extends DotMatrixView {
 
 			// Get Rollover Status
 			const IS_OVER = this.#IS_OVERS[i];
-			const REQUIRES_UPDATE = this.#REQUIRES_UPDATES[i];
-
-			console.log(
-				`ViewProject draw ${i} ${DATA_CREDIT['text']} ${IS_OVER} ${REQUIRES_UPDATE}`,
-			);
 
 			// Draw Mode
 			let drawType = DrawType.Fill;
@@ -125,18 +126,25 @@ export default class ViewProject extends DotMatrixView {
 				drawType = DrawType.Clear;
 			}
 
+			// Text
+			let text = DATA_CREDIT['text'];
+
+			if (IS_OVER) {
+				text = '>' + text + '<';
+			}
+
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
 			// Create Glyph Line
 			const COMPONENT_CREDIT = new ComponentGlyphLineCentered(
 				this.SHAPE_MANAGER,
-				`${DATA_CREDIT['text']}`,
+				text,
 				gridY,
-				delayFrames + i,
+				delayFrames + i + this.#DELAY_ROLLOVER_REDRAW,
 				this.#delayGlyph,
 				FillType.PassThrough,
-				FillStrategyType.Random,
+				FillStrategyType.PassThrough,
 				drawType,
 			);
 
@@ -156,9 +164,6 @@ export default class ViewProject extends DotMatrixView {
 				// Is Not Over
 				this.#drawSurroundingRectangle(i, delayFrames, DrawType.Clear);
 			}
-
-			// Updated
-			this.#REQUIRES_UPDATES[i] = false;
 		}
 	}
 
@@ -200,13 +205,8 @@ export default class ViewProject extends DotMatrixView {
 	}
 
 	onButtonMenuOver(data) {
-		console.log('over', data);
-
 		// Set Is Over
 		this.#IS_OVERS[data.buttonId] = true;
-
-		// Requires Update
-		this.#REQUIRES_UPDATES[data.buttonId] = true;
 
 		// Draw
 		this.draw(0, DrawType.Clear);
@@ -214,25 +214,17 @@ export default class ViewProject extends DotMatrixView {
 	}
 
 	onButtonMenuOut(data) {
-		console.log('out', data);
-
 		// Set Is Not Over
 		this.#IS_OVERS[data.buttonId] = false;
-
-		// Requires Update
-		this.#REQUIRES_UPDATES[data.buttonId] = true;
 
 		// Draw
 		this.draw(0, DrawType.Clear);
 		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
-	// __________________________________________________________ Rectangles
+	// ______________________________________________________________ Rectangles
 
 	#drawSurroundingRectangle(buttonIndex, delayFrames, drawType) {
-		// Get Project Index
-		// const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(projectId);
-
 		// Get Height
 		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
 
@@ -241,6 +233,7 @@ export default class ViewProject extends DotMatrixView {
 		const GRID_Y = this.INTERACTIVE_GRID_YS[buttonIndex] - 1;
 
 		// Size
+		// TODO Hard-Coded Width
 		const GRID_WIDTH = this.INTERACTIVE_GLYPH_WIDTHS[buttonIndex] + 2;
 		const GRID_HEIGHT = LINE_HEIGHT * 1;
 
@@ -253,7 +246,7 @@ export default class ViewProject extends DotMatrixView {
 			GRID_HEIGHT,
 			delayFrames,
 			FillType.PassThrough,
-			FillStrategyType.Reverse,
+			FillStrategyType.PassThrough,
 			drawType,
 		);
 	}

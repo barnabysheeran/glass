@@ -15,6 +15,7 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
+	#DELAY_FRAMES_REDRAW = 120;
 
 	#gridXCenteredStart = 0;
 	#gridY = 0;
@@ -88,6 +89,24 @@ export default class DotMatrixViewHeader extends DotMatrixView {
 		// Store Component Details
 		this.#gridXCenteredStart = COMPONENT.getGridXCenteredStart();
 		this.#gridWidthGlyphs = COMPONENT.getGridWidth();
+	}
+
+	onDrawComplete() {
+		super.onDrawComplete();
+
+		console.log(`DirectableDotMatrix ViewHeader onDrawComplete`);
+
+		// Prevent Infinite Redraws
+		// TODO Hard Coded Value
+		if (Math.random() > 0.5) {
+			return;
+		}
+
+		// Clear
+		this.draw(0, DrawType.Clear);
+
+		// Redraw
+		this.draw(this.#DELAY_FRAMES_REDRAW, DrawType.Fill);
 	}
 
 	// _____________________________________________________________ Interaction

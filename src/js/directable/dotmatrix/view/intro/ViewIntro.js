@@ -114,8 +114,6 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 	onDrawComplete() {
 		super.onDrawComplete();
 
-		console.log('ViewIntro onDrawComplete');
-
 		// Reset Draw Glyph Index
 		this.#drawGlyphNameIndex = -1;
 
