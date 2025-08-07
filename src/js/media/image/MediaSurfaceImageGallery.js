@@ -14,7 +14,7 @@ export default class MediaSurfaceImageGallery {
 
 	#isStopping = false;
 
-	#LOG_LEVEL = 4;
+	#LOG_LEVEL = -1; // 4;
 
 	// _________________________________________________________________________
 

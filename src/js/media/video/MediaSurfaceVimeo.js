@@ -22,7 +22,7 @@ export default class MediaSurfaceVimeo {
 
 	#isStopping = false;
 
-	#LOG_LEVEL = 1;
+	#LOG_LEVEL = -1; // 4;
 
 	// _________________________________________________________________________
 

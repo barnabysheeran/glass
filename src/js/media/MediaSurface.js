@@ -15,7 +15,7 @@ export default class MediaSurface {
 	static #width;
 	static #height;
 
-	static #LOG_LEVEL = 2;
+	static #LOG_LEVEL = -1; // 2
 
 	// _________________________________________________________________________
 
@@ -43,8 +43,6 @@ export default class MediaSurface {
 
 			// Remove if Complete
 			if (IS_COMPLETE) {
-				console.log(`MediaSurface - Removing media item at index ${i}`);
-
 				// Destroy Media Item
 				this.#MEDIA_ITEMS[i].destroy();
 
