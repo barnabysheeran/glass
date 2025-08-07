@@ -17,6 +17,7 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	// TODO Tune with Menu Text
 	#DELAY_ROLLOVER_REDRAW = 20;
+	#DELAY_FRAMES_REDRAW = 120;
 
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;
@@ -198,12 +199,11 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	onDrawComplete() {
 		super.onDrawComplete();
 
-		console.log('ViewProjectMenu onDrawComplete');
-
+		// Clear
 		this.draw(0, DrawType.Clear);
 
-		// TODO Hard coded for now
-		this.draw(120, DrawType.Fill);
+		// Redraw
+		this.draw(this.#DELAY_FRAMES_REDRAW, DrawType.Fill);
 	}
 
 	// _____________________________________________________________ Interaction

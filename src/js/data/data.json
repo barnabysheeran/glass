@@ -108,13 +108,49 @@
         {
             "id": "goodwood",
             "name": "Goodwood Festival of Speed",
-            "name-short": "Goodwood"
+            "name-short": "Goodwood",
+            "media": [
+                {
+                    "type": "youtube",
+                    "youtube-id": "5jPf6kJampU"
+                }
+            ],
+            "credit": [
+                {
+                    "text": "A+E",
+                    "url": "https://www.artistsandengineers.co.uk/work/sensum"
+                }
+            ]
         },
 
         {
             "id": "honda",
             "name": "HONDA - The Other Side",
-            "name-short": "HONDA"
+            "name-short": "HONDA",
+            "media": [
+                {
+                    "type": "image",
+                    "url": "project/honda/1.jpg"
+                },
+                                {
+                    "type": "image",
+                    "url": "project/honda/2.jpg"
+                },
+                {
+                    "type": "image",
+                    "url": "project/honda/3.jpg"
+                }
+            ],
+            "credit": [
+                {
+                    "text": "Stink Studios",
+                    "url": "https://www.stinkstudios.com/work/honda-type-r"
+                },
+                {
+                    "text": "W+K",
+                    "url": "https://wklondon.com/work/the-other-side/"
+                }
+            ]
         },
 
         {
@@ -124,15 +160,15 @@
             "media": [
                 {
                     "type": "image",
-                    "vimeo-id": "project/google-abbey-road/1.jpg"
+                    "url": "project/google-abbey-road/1.jpg"
                 },
                 {
                     "type": "image",
-                    "vimeo-id": "project/google-abbey-road/2.jpg"
+                    "url": "project/google-abbey-road/2.jpg"
                 },
                 {
                     "type": "image",
-                    "vimeo-id": "project/google-abbey-road/3.jpg"
+                    "url": "project/google-abbey-road/3.jpg"
                 }
             ],
             "credit": [

@@ -8,15 +8,38 @@ import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
-import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
+// import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
-	#drawGlyphName = '{heart}';
+	#DRAW_GLYPH_NAME_LIST = [
+		'{heart}',
+		'1',
+		'.',
+		'0',
+		'/',
+		'0',
+		'{smile}',
+		'.',
+		'.,',
+	];
+	#drawGlyphNameIndex = -1;
+
+	// #drawGlyphName = '{heart} ';
 
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
+
+	#getNextDrawGlyphName() {
+		this.#drawGlyphNameIndex += 1;
+
+		if (this.#drawGlyphNameIndex >= this.#DRAW_GLYPH_NAME_LIST.length) {
+			this.#drawGlyphNameIndex = 0;
+		}
+
+		return this.#DRAW_GLYPH_NAME_LIST[this.#drawGlyphNameIndex];
+	}
 
 	// ___________________________________________________________________ Start
 
@@ -25,6 +48,9 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
+
+		// Reset Draw Glyph Index
+		this.#drawGlyphNameIndex = -1;
 
 		// Start
 		this.draw(delayFrames, DrawType.Fill);
@@ -36,42 +62,11 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
+		// Reset Draw Glyph Index
+		this.#drawGlyphNameIndex = -1;
+
 		// Stop
 		this.draw(delayFrames, DrawType.Clear);
-	}
-
-	// ____________________________________________________________________ Tick
-
-	tick() {
-		// Not calling super
-
-		// Active ?
-		if (this.isActive === false) {
-			return;
-		}
-
-		// TODO Tidy / Remove ?
-
-		// Redraw ?
-		// if (this.#delayFramesReDraw > 0) {
-		// 	// Count Down
-		// 	this.#delayFramesReDraw -= 1;
-
-		// 	// Redraw
-		// 	if (this.#delayFramesReDraw === 0) {
-		// 		this.draw(0);
-		// 	}
-		// }
-	}
-
-	onDrawComplete() {
-		super.onDrawComplete();
-
-		// Clear
-		this.draw(0, DrawType.Clear);
-
-		// TODO Hard Coded Delay
-		this.draw(120, DrawType.Fill);
 	}
 
 	// ____________________________________________________________________ Draw
@@ -94,20 +89,20 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		const LINE_HEIGHT_MAX = GRID_HEIGHT_IN_LINES - LINE_HEIGHT_FOOTER;
 
 		// Variable
-		let gridY = LINE_HEIGHT * LINE_HEIGHT_HEADER;
+		//let gridY = LINE_HEIGHT * LINE_HEIGHT_HEADER;
 
 		// Create Component Line Top
-		const LINE_TOP = new ComponentLineWidthFull(
-			this.SHAPE_MANAGER,
-			gridY,
-			delayFrames +
-				DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-			drawType,
-		);
+		// const LINE_TOP = new ComponentLineWidthFull(
+		// 	this.SHAPE_MANAGER,
+		// 	gridY,
+		// 	delayFrames +
+		// 		DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// 	drawType,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
+		// this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
 		// Add Text with Line Height
 		for (let i = LINE_HEIGHT_HEADER + 1; i < LINE_HEIGHT_MAX; i += 1) {
@@ -116,7 +111,8 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 			const COMPONENT = new ComponentGlyphBoxWidthFull(
 				this.SHAPE_MANAGER,
-				this.#drawGlyphName,
+				// this.#drawGlyphName,
+				this.#getNextDrawGlyphName(),
 				0,
 				GRID_Y,
 				delayFrames +
@@ -132,20 +128,23 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 	}
 
-	// TODO
+	// ____________________________________________________________________ Tick
 
-	// onDrawComplete() {
-	// 	super.onDrawComplete();
+	onDrawComplete() {
+		super.onDrawComplete();
 
-	// 	// // Active ?
-	// 	// if (this.isActive === false) {
-	// 	// 	return;
-	// 	// }
+		console.log('ViewIntro onDrawComplete');
 
-	// 	// // Undraw
-	// 	// this.draw(0, DrawType.Clear);
+		// Reset Draw Glyph Index
+		this.#drawGlyphNameIndex = -1;
 
-	// 	// // Redraw
-	// 	// this.#delayFramesReDraw = this.#DELAY_FRAMES_REDRAW;
-	// }
+		// Clear
+		this.draw(0, DrawType.Clear);
+
+		// Reset Draw Glyph Index
+		this.#drawGlyphNameIndex = -1;
+
+		// TODO Hard Coded Delay
+		this.draw(120, DrawType.Fill);
+	}
 }
