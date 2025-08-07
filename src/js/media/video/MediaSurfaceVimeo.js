@@ -51,6 +51,8 @@ export default class MediaSurfaceVimeo {
 			dnt: true, // Do Not Track
 			responsive: false,
 			width: this.#width,
+			muted: true,
+			autoplay: true,
 		};
 
 		// Create Player
@@ -109,11 +111,11 @@ export default class MediaSurfaceVimeo {
 		);
 
 		// Play Video
-		this.#playVideo();
+		// this.#playVideo(); // Autoplay is now handled by player options
 
 		// Show
 		this.#opacityTarget = 1;
-		this.#volumeTarget = 1;
+		// this.#volumeTarget = 1; // Start muted
 	}
 
 	// ___________________________________________________________________ Ready
@@ -123,6 +125,13 @@ export default class MediaSurfaceVimeo {
 
 		// Set Size
 		this.setSize(this.#width, this.#height);
+
+		// Unmute and fade in volume
+		// This might not work on all mobile browsers without user interaction
+		if (this.#PLAYER) {
+			this.#PLAYER.setVolume(0); // Ensure it's muted initially
+			this.#volumeTarget = 1;
+		}
 	}
 
 	// ____________________________________________________________________ Play
@@ -144,7 +153,7 @@ export default class MediaSurfaceVimeo {
 	#onPlay() {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 
-		// TODO
+		// The video is now playing
 	}
 
 	// ____________________________________________________________________ Stop

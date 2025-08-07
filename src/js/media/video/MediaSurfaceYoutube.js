@@ -111,7 +111,8 @@ export default class MediaSurfaceYoutube {
 
 		this.#isReady = true;
 		this.setSize(this.#width, this.#height);
-		event.target.playVideo();
+		// The player should autoplay because of the playerVars
+		// event.target.playVideo();
 	}
 
 	#onStateChange(event) {
@@ -134,10 +135,11 @@ export default class MediaSurfaceYoutube {
 		// Unmute and fade in volume and opacity
 		if (this.#PLAYER) {
 			this.#PLAYER.unMute();
+			this.#volumeTarget = 1;
 		}
 
 		this.#opacityTarget = 1;
-		this.#volumeTarget = 1;
+		// this.#volumeTarget = 1; // Moved into the #PLAYER check
 	}
 
 	// ____________________________________________________________________ Stop
