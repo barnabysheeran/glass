@@ -1,8 +1,8 @@
-import player from '@vimeo/player';
+import YouTubePlayer from 'youtube-player';
 
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
-export default class MediaSurfaceVimeo {
+export default class MediaSurfaceYoutube {
 	#CONTAINER;
 
 	#HOLDER;
@@ -13,7 +13,6 @@ export default class MediaSurfaceVimeo {
 
 	#opacity = 0;
 	#opacityTarget = 0;
-
 	#volume = 0;
 	#volumeTarget = 0;
 
@@ -21,14 +20,15 @@ export default class MediaSurfaceVimeo {
 	#LERP_MARGIN = 0.01;
 
 	#isStopping = false;
+	#isReady = false;
 
 	#LOG_LEVEL = 1;
 
 	// _________________________________________________________________________
 
-	constructor(container, vimeoId, width, height) {
+	constructor(container, youtubeId, width, height) {
 		ApplicationLogger.log(
-			`MediaSurfaceVimeo ${vimeoId} ${width} ${height}`,
+			`MediaSurfaceYoutube ${youtubeId} ${width} ${height}`,
 			this.#LOG_LEVEL,
 		);
 
@@ -41,26 +41,28 @@ export default class MediaSurfaceVimeo {
 		this.#HOLDER = document.createElement('div');
 		this.#HOLDER.id = 'video-holder';
 		this.#HOLDER.className = 'video-holder';
+		this.#HOLDER.style.opacity = 0.5;
 		this.#CONTAINER.appendChild(this.#HOLDER);
 
-		// Create a Vimeo Player Instance
-		const OPTIONS = {
-			id: vimeoId,
-			loop: true,
-			controls: false,
-			dnt: true, // Do Not Track
-			responsive: false,
-			width: this.#width,
-		};
+		// Create a YouTube Player Instance
+		this.#PLAYER = YouTubePlayer(this.#HOLDER, {
+			videoId: youtubeId,
+			playerVars: {
+				autoplay: 1,
+				controls: 0,
+				loop: 1,
+				playlist: youtubeId, // Required for loop to work
+				mute: 1, // Start muted, control volume via API
+				playsinline: 1,
+				rel: 0, // Do not show related videos
+				modestbranding: 1, // Hide YouTube logo
+				iv_load_policy: 3, // Hide annotations
+			},
+		});
 
-		// Create Player
-		this.#PLAYER = new player(this.#HOLDER, OPTIONS);
-
-		// Add Event Listeners
-		this.#PLAYER.ready().then(this.#onReady.bind(this));
-
-		this.#PLAYER.on('play', this.#onPlay.bind(this));
-		this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
+		// Add event listeners
+		this.#PLAYER.on('ready', this.#onReady.bind(this));
+		this.#PLAYER.on('stateChange', this.#onStateChange.bind(this));
 	}
 
 	// ____________________________________________________________________ Tick
@@ -78,13 +80,8 @@ export default class MediaSurfaceVimeo {
 		}
 
 		// Set Volume
-		if (this.#PLAYER) {
-			this.#PLAYER.setVolume(this.#volume).catch((error) => {
-				ApplicationLogger.error(
-					`MediaSurfaceVimeo setVolume error: ${error.message}`,
-					this.#LOG_LEVEL,
-				);
-			});
+		if (this.#PLAYER && this.#isReady) {
+			this.#PLAYER.setVolume(this.#volume * 100); // YouTube volume is 0-100
 		}
 
 		// Stopping ?
@@ -100,66 +97,52 @@ export default class MediaSurfaceVimeo {
 		return false;
 	}
 
-	// __________________________________________________________________ Loaded
+	// ___________________________________________________________ Player Events
 
-	#onLoaded(data) {
+	#onReady(event) {
+		ApplicationLogger.log(`MediaSurfaceYoutube onReady`, this.#LOG_LEVEL);
+
+		this.#isReady = true;
+
+		this.setSize(this.#width, this.#height);
+
+		event.target.playVideo();
+	}
+
+	#onStateChange(event) {
 		ApplicationLogger.log(
-			`MediaSurfaceVimeo onLoaded: video ${data.id} has loaded.`,
+			`MediaSurfaceYoutube onStateChange: ${event.data}`,
 			this.#LOG_LEVEL,
 		);
 
-		// Play Video
-		this.#playVideo();
-
-		// Show
-		this.#opacityTarget = 1;
-		this.#volumeTarget = 1;
-	}
-
-	// ___________________________________________________________________ Ready
-
-	#onReady() {
-		ApplicationLogger.log('MediaSurfaceVimeo onReady', this.#LOG_LEVEL);
-
-		// Set Size
-		this.setSize(this.#width, this.#height);
-	}
-
-	// ____________________________________________________________________ Play
-
-	async #playVideo() {
-		ApplicationLogger.log('MediaSurfaceVimeo playVideo', this.#LOG_LEVEL);
-
-		// Play Video
-		try {
-			await this.#PLAYER.play();
-		} catch (error) {
-			ApplicationLogger.error(
-				`MediaSurfaceVimeo play error: ${error.message}`,
-				this.#LOG_LEVEL,
-			);
+		// event.data contains the player state
+		// -1 (unstarted), 0 (ended), 1 (playing), 2 (paused), 3 (buffering), 5 (video cued)
+		if (event.data === 1) {
+			// playing
+			this.#onPlay();
 		}
 	}
 
 	#onPlay() {
-		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceYoutube onPlay', this.#LOG_LEVEL);
 
-		console.log('Play');
+		// Unmute and fade in volume and opacity
+		if (this.#PLAYER) {
+			this.#PLAYER.unMute();
+		}
+
+		this.#opacityTarget = 1;
+		this.#volumeTarget = 1;
 	}
 
 	// ____________________________________________________________________ Stop
 
 	stop() {
-		ApplicationLogger.log('MediaSurfaceVimeo stop', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceYoutube stop', this.#LOG_LEVEL);
 
 		// Pause Video
 		if (this.#PLAYER) {
-			this.#PLAYER.pause().catch((error) => {
-				ApplicationLogger.error(
-					`MediaSurfaceVimeo pause error: ${error.message}`,
-					this.#LOG_LEVEL,
-				);
-			});
+			// this.#PLAYER.pauseVideo();
 		}
 
 		// Set Opacity Target
@@ -176,9 +159,11 @@ export default class MediaSurfaceVimeo {
 
 	setSize(widthPx, heightPx) {
 		ApplicationLogger.log(
-			`MediaSurfaceVimeo setSize ${widthPx}, ${heightPx}`,
+			`MediaSurfaceYoutube setSize ${widthPx}, ${heightPx}`,
 			this.#LOG_LEVEL,
 		);
+
+		console.log(`MediaSurfaceYoutube setSize ${widthPx}, ${heightPx}`);
 
 		// Store
 		this.#width = widthPx;
@@ -197,6 +182,8 @@ export default class MediaSurfaceVimeo {
 			return;
 		}
 
+		console.log(`MediaSurfaceYoutube setSize iframe ${iframe}`);
+
 		iframe.style.width = `${widthPx}px`;
 		iframe.style.height = `${heightPx}px`;
 	}
@@ -204,18 +191,20 @@ export default class MediaSurfaceVimeo {
 	// _________________________________________________________________ Destroy
 
 	destroy() {
-		ApplicationLogger.log('MediaSurfaceVimeo destroy', this.#LOG_LEVEL);
+		ApplicationLogger.log('MediaSurfaceYoutube destroy', this.#LOG_LEVEL);
 
-		// Remove Holder
-		if (this.#HOLDER) {
-			this.#HOLDER.remove();
-			this.#HOLDER = null;
-		}
-
-		// Stop Player
 		if (this.#PLAYER) {
+			console.log('- destroy player');
+
 			this.#PLAYER.destroy();
 			this.#PLAYER = null;
+		}
+
+		if (this.#HOLDER) {
+			console.log('- destroy holder');
+
+			this.#HOLDER.remove();
+			this.#HOLDER = null;
 		}
 	}
 }

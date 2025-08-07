@@ -4,6 +4,7 @@ import DataController from '../data/DataController.js';
 import Display from '../display/Display.js';
 
 import MediaSurfaceVimeo from './video/MediaSurfaceVimeo.js';
+import MediaSurfaceYoutube from './video/MediaSurfaceYoutube.js';
 import MediaSurfaceImageGallery from './image/MediaSurfaceImageGallery.js';
 
 export default class MediaSurface {
@@ -89,7 +90,8 @@ export default class MediaSurface {
 
 					break;
 				case 'youtube':
-					// this.#createYouTubePlayer(MEDIA_DATA);
+					// YouTube - Add YouTube Player
+					this.#addYouTubePlayer(MEDIA_DATA['youtube-id']);
 					break;
 				case 'image':
 					// Image - Store URL
@@ -111,13 +113,8 @@ export default class MediaSurface {
 				this.#LOG_LEVEL,
 			);
 
-			this.#addImageGallery(imageUrls);
-
 			// Create Image Gallery
-			// this.#mediaSurfaceImageGallery = new MediaSurfaceImage(
-			// 	this.#CONTAINER,
-			// 	imageUrls,
-			// );
+			this.#addImageGallery(imageUrls);
 		}
 	}
 
@@ -134,6 +131,25 @@ export default class MediaSurface {
 			new MediaSurfaceVimeo(
 				this.#CONTAINER,
 				vimeoId,
+				this.#width,
+				this.#height,
+			),
+		);
+	}
+
+	// _________________________________________________________________ YouTube
+
+	static #addYouTubePlayer(youtubeId) {
+		ApplicationLogger.log(
+			`MediaSurface addYouTubePlayer ${youtubeId}`,
+			this.#LOG_LEVEL,
+		);
+
+		// Create YouTube Player Instance
+		this.#MEDIA_ITEMS.push(
+			new MediaSurfaceYoutube(
+				this.#CONTAINER,
+				youtubeId,
 				this.#width,
 				this.#height,
 			),
