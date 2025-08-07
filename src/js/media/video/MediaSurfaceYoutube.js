@@ -51,13 +51,15 @@ export default class MediaSurfaceYoutube {
 			playerVars: {
 				autoplay: 1,
 				controls: 0,
+				disablekb: 1, // Disable keyboard controls
+				enablejsapi: 1, // Enable JavaScript API
+				iv_load_policy: 3, // Hide annotations
+				showinfo: 0, // Hide video title and uploader
 				loop: 1,
 				playlist: youtubeId, // Required for loop to work
 				mute: 1, // Start muted, control volume via API
-				playsinline: 1,
-				rel: 0, // Do not show related videos
-				modestbranding: 1, // Hide YouTube logo
-				iv_load_policy: 3, // Hide annotations
+				playsinline: 1, // Play inline on mobile
+				rel: 0, // Related videos from the same channel
 			},
 		});
 
