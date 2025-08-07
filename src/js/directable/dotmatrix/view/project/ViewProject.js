@@ -16,6 +16,9 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 export default class ViewProject extends DotMatrixView {
 	// #STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
 
+	// TODO Tune with Menu Text
+	#DELAY_ROLLOVER_REDRAW = 20;
+
 	#IS_OVERS;
 	#REQUIRES_UPDATES;
 
@@ -103,13 +106,29 @@ export default class ViewProject extends DotMatrixView {
 
 		// Add Credits
 		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
-			//
+			// Get Credit Data
 			const DATA_CREDIT = DATA_PROJECT['credit'][i];
+
+			// Get Rollover Status
+			const IS_OVER = this.#IS_OVERS[i];
+			const REQUIRES_UPDATE = this.#REQUIRES_UPDATES[i];
+
+			console.log(
+				`ViewProject draw ${i} ${DATA_CREDIT['text']} ${IS_OVER} ${REQUIRES_UPDATE}`,
+			);
+
+			// Draw Mode
+			let drawType = DrawType.Fill;
+
+			// Is Over ?
+			if (this.#IS_OVERS[i] === true) {
+				drawType = DrawType.Clear;
+			}
 
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
 
-			// Create Component
+			// Create Glyph Line
 			const COMPONENT_CREDIT = new ComponentGlyphLineCentered(
 				this.SHAPE_MANAGER,
 				`${DATA_CREDIT['text']}`,
@@ -128,6 +147,18 @@ export default class ViewProject extends DotMatrixView {
 			this.INTERACTIVE_GRID_XS.push(COMPONENT_CREDIT.getGridXCenteredStart());
 			this.INTERACTIVE_GRID_YS.push(gridY);
 			this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_CREDIT.getGridWidth());
+
+			// Rectangle
+			if (this.#IS_OVERS[i] === true) {
+				// Is Over
+				this.#drawSurroundingRectangle(i, delayFrames, DrawType.Fill);
+			} else {
+				// Is Not Over
+				this.#drawSurroundingRectangle(i, delayFrames, DrawType.Clear);
+			}
+
+			// Updated
+			this.#REQUIRES_UPDATES[i] = false;
 		}
 	}
 
@@ -176,6 +207,10 @@ export default class ViewProject extends DotMatrixView {
 
 		// Requires Update
 		this.#REQUIRES_UPDATES[data.buttonId] = true;
+
+		// Draw
+		this.draw(0, DrawType.Clear);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
 	}
 
 	onButtonMenuOut(data) {
@@ -186,5 +221,40 @@ export default class ViewProject extends DotMatrixView {
 
 		// Requires Update
 		this.#REQUIRES_UPDATES[data.buttonId] = true;
+
+		// Draw
+		this.draw(0, DrawType.Clear);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
+	}
+
+	// __________________________________________________________ Rectangles
+
+	#drawSurroundingRectangle(buttonIndex, delayFrames, drawType) {
+		// Get Project Index
+		// const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(projectId);
+
+		// Get Height
+		const LINE_HEIGHT = DirectableDotMatrixConstants.getLineHeightInGridCells();
+
+		// Position
+		const GRID_X = this.INTERACTIVE_GRID_XS[buttonIndex] - 1;
+		const GRID_Y = this.INTERACTIVE_GRID_YS[buttonIndex] - 1;
+
+		// Size
+		const GRID_WIDTH = this.INTERACTIVE_GLYPH_WIDTHS[buttonIndex] + 2;
+		const GRID_HEIGHT = LINE_HEIGHT * 1;
+
+		this.addRectanglesBlock(
+			this.SHAPE_MANAGER,
+			this.COMPONENT_MANAGER,
+			GRID_X,
+			GRID_Y,
+			GRID_WIDTH,
+			GRID_HEIGHT,
+			delayFrames,
+			FillType.PassThrough,
+			FillStrategyType.Reverse,
+			drawType,
+		);
 	}
 }
