@@ -1,5 +1,3 @@
-import GridData from '../../grid/GridData.js';
-
 export default class DirectableDotMatrixConstants {
 	// ____________________________________________________________________ Line
 

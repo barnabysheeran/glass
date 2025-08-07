@@ -1,6 +1,3 @@
-import GridData from '../../grid/GridData.js';
-import DirectableDotMatrixConstants from '../../directable/dotmatrix/DirectableDotMatrixConstants.js';
-
 export default class MediaSurfaceImage {
 	#IMAGE_URL;
 	#CALLBACK_ON_LOADED;

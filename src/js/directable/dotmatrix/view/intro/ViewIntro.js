@@ -8,7 +8,6 @@ import FillType from '../../enum/FillType.js';
 import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
-// import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 
 export default class DotMatrixViewIntro extends DotMatrixView {
@@ -24,23 +23,12 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		'.,',
 		'-',
 	];
-	#drawGlyphNameIndex = -1;
 
-	// #drawGlyphName = '{heart} ';
+	#drawGlyphNameIndex = -1;
 
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
 	#delayGlyph;
-
-	#getNextDrawGlyphName() {
-		this.#drawGlyphNameIndex += 1;
-
-		if (this.#drawGlyphNameIndex >= this.#DRAW_GLYPH_NAME_LIST.length) {
-			this.#drawGlyphNameIndex = 0;
-		}
-
-		return this.#DRAW_GLYPH_NAME_LIST[this.#drawGlyphNameIndex];
-	}
 
 	// ___________________________________________________________________ Start
 
@@ -121,7 +109,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 	}
 
-	// ____________________________________________________________________ Tick
+	// ____________________________________________________________________ Draw
 
 	onDrawComplete() {
 		super.onDrawComplete();
@@ -139,5 +127,17 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 
 		// TODO Hard Coded Delay
 		this.draw(120, DrawType.Fill);
+	}
+
+	// ___________________________________________________________________ Glyph
+
+	#getNextDrawGlyphName() {
+		this.#drawGlyphNameIndex += 1;
+
+		if (this.#drawGlyphNameIndex >= this.#DRAW_GLYPH_NAME_LIST.length) {
+			this.#drawGlyphNameIndex = 0;
+		}
+
+		return this.#DRAW_GLYPH_NAME_LIST[this.#drawGlyphNameIndex];
 	}
 }

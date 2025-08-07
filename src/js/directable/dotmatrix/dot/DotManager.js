@@ -7,8 +7,8 @@ import Dot from './Dot.js';
 export default class DotManager {
 	#DOTS = [];
 
-	#displayWidthPx = 0;
-	#displayHeightPx = 0;
+	// #displayWidthPx = 0;
+	// #displayHeightPx = 0;
 
 	#LOG_LEVEL = 4;
 
@@ -100,7 +100,7 @@ export default class DotManager {
 		}
 
 		// Store Display Size
-		this.#displayWidthPx = displayWidthPx;
-		this.#displayHeightPx = displayHeightPx;
+		// this.#displayWidthPx = displayWidthPx;
+		// this.#displayHeightPx = displayHeightPx;
 	}
 }

@@ -11,11 +11,13 @@ import DrawType from '../../enum/DrawType.js';
 import GridData from '../../../../grid/GridData.js';
 import InteractiveSurface from '../../../../interactive/InteractiveSurface.js';
 
-import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class ViewProject extends DotMatrixView {
 	// #STRING_WINGED_SKULL = '{wing-left} {skull} {wing-right}';
+
+	#IS_OVERS;
+	#REQUIRES_UPDATES;
 
 	#DELAY_GLYPH_IN = 2;
 	#DELAY_GLYPH_OUT = 0;
@@ -27,6 +29,10 @@ export default class ViewProject extends DotMatrixView {
 		super.start(delayFrames);
 
 		// Order Important - Draw Stores Grid Position Information
+
+		// Initialise
+		this.#IS_OVERS = [];
+		this.#REQUIRES_UPDATES = [];
 
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
@@ -98,7 +104,7 @@ export default class ViewProject extends DotMatrixView {
 		// Add Credits
 		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
 			//
-			const credit = DATA_PROJECT['credit'][i];
+			const DATA_CREDIT = DATA_PROJECT['credit'][i];
 
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
@@ -106,7 +112,7 @@ export default class ViewProject extends DotMatrixView {
 			// Create Component
 			const COMPONENT_CREDIT = new ComponentGlyphLineCentered(
 				this.SHAPE_MANAGER,
-				`${credit['text']}`,
+				`${DATA_CREDIT['text']}`,
 				gridY,
 				delayFrames + i,
 				this.#delayGlyph,
@@ -124,23 +130,6 @@ export default class ViewProject extends DotMatrixView {
 			this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_CREDIT.getGridWidth());
 		}
 	}
-
-	// ____________________________________________________________________ Tick
-
-	// tick() {
-	// 	super.tick();
-
-	// 	// Active ?
-	// 	if (this.isActive !== true) {
-	// 		return;
-	// 	}
-
-	// 	// TODO Hardcoded Delay
-	// 	if (Math.random() < 0.005) {
-	// 		this.draw(0, DrawType.Clear);
-	// 		this.draw(10, DrawType.Fill);
-	// 	}
-	// }
 
 	// _____________________________________________________________ Interaction
 
@@ -181,9 +170,21 @@ export default class ViewProject extends DotMatrixView {
 
 	onButtonMenuOver(data) {
 		console.log('over', data);
+
+		// Set Is Over
+		this.#IS_OVERS[data.buttonId] = true;
+
+		// Requires Update
+		this.#REQUIRES_UPDATES[data.buttonId] = true;
 	}
 
 	onButtonMenuOut(data) {
 		console.log('out', data);
+
+		// Set Is Not Over
+		this.#IS_OVERS[data.buttonId] = false;
+
+		// Requires Update
+		this.#REQUIRES_UPDATES[data.buttonId] = true;
 	}
 }
