@@ -51,14 +51,8 @@ export default class ViewProject extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
-		// Draw
-		this.draw(delayFrames, DrawType.Clear);
-
-		// Get Project Data
-		const DATA_PROJECT = DataController.getProjectById(this.getViewId());
-
 		// Undraw Unsurrounding Rectangles
-		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
+		for (let i = 0; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
 			this.#drawSurroundingRectangle(i, delayFrames, DrawType.Clear);
 		}
 	}
@@ -110,6 +104,11 @@ export default class ViewProject extends DotMatrixView {
 		// Store
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_NAME);
 
+		// Store Interactive Grid Position
+		this.INTERACTIVE_GRID_XS.push(COMPONENT_NAME.getGridXCenteredStart());
+		this.INTERACTIVE_GRID_YS.push(gridY);
+		this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_NAME.getGridWidth());
+
 		// Add Credits
 		for (let i = 0; i < DATA_PROJECT['credit'].length; i += 1) {
 			// Get Credit Data
@@ -122,16 +121,12 @@ export default class ViewProject extends DotMatrixView {
 			let drawType = DrawType.Fill;
 
 			// Is Over ?
-			if (this.#IS_OVERS[i] === true) {
+			if (IS_OVER === true) {
 				drawType = DrawType.Clear;
 			}
 
 			// Text
 			let text = DATA_CREDIT['text'];
-
-			if (IS_OVER) {
-				text = '>' + text + '<';
-			}
 
 			// Next
 			gridY += LINE_HEIGHT_IN_GRID_CELLS * 2;
@@ -157,12 +152,12 @@ export default class ViewProject extends DotMatrixView {
 			this.INTERACTIVE_GLYPH_WIDTHS.push(COMPONENT_CREDIT.getGridWidth());
 
 			// Rectangle
-			if (this.#IS_OVERS[i] === true) {
+			if (IS_OVER === true) {
 				// Is Over
-				this.#drawSurroundingRectangle(i, delayFrames, DrawType.Fill);
+				this.#drawSurroundingRectangle(i + 1, delayFrames, DrawType.Fill);
 			} else {
 				// Is Not Over
-				this.#drawSurroundingRectangle(i, delayFrames, DrawType.Clear);
+				this.#drawSurroundingRectangle(i + 1, delayFrames, DrawType.Clear);
 			}
 		}
 	}
@@ -174,7 +169,8 @@ export default class ViewProject extends DotMatrixView {
 		const CHARACTER_HEIGHT = DirectableDotMatrixConstants.getCharacterHeight();
 
 		// Create Interactive Blocks
-		for (let i = 0; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
+		// +1 To Avoid Title
+		for (let i = 1; i < this.INTERACTIVE_GRID_XS.length; i += 1) {
 			const INTERACTIVE_BLOCK_ID = InteractiveSurface.createBlock(
 				this.INTERACTIVE_GRID_XS[i] * GridData.getGridCellWidthPx(),
 				this.INTERACTIVE_GRID_YS[i] * GridData.getGridCellHeightPx(),
@@ -183,7 +179,7 @@ export default class ViewProject extends DotMatrixView {
 				this.onButtonMenuClick.bind(this),
 				this.onButtonMenuOver.bind(this),
 				this.onButtonMenuOut.bind(this),
-				{ buttonId: i },
+				{ buttonId: i - 1 },
 			);
 
 			// Store
