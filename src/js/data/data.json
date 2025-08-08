@@ -42,6 +42,10 @@
             "media": [
                 {
                     "type": "image",
+                    "url": "project/pikcellsonfigr/4.jpg"
+                },
+                {
+                    "type": "image",
                     "url": "project/pikcellsonfigr/1.jpg"
                 },
                 {
@@ -107,8 +111,8 @@
             "name-short": "Goodwood",
             "media": [
                 {
-                    "type": "youtube",
-                    "youtube-id": "5jPf6kJampU"
+                    "type": "image",
+                    "url": "project/goodwood/1.jpg"
                 }
             ],
             "credit": [
