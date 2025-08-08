@@ -22,6 +22,9 @@ export default class MediaSurfaceYoutube {
 	#isStopping = false;
 	#isReady = false;
 	#IFRAME; // Add a property to hold the iframe reference
+	#PLAY_BUTTON = null; // To hold the play button element
+	#hasStartedPlaying = false; // To track if playback has begun
+	#playCheckTimeout = null; // To hold the timeout ID
 
 	#LOG_LEVEL = 1;
 
@@ -43,13 +46,14 @@ export default class MediaSurfaceYoutube {
 		this.#HOLDER.id = 'video-holder';
 		this.#HOLDER.className = 'video-holder';
 		this.#HOLDER.style.opacity = 0.5;
+		this.#HOLDER.style.position = 'relative'; // Set positioning context for the button
 		this.#CONTAINER.appendChild(this.#HOLDER);
 
 		// Create a YouTube Player Instance
 		this.#PLAYER = YouTubePlayer(this.#HOLDER, {
 			videoId: youtubeId,
 			playerVars: {
-				autoplay: 1,
+				autoplay: 0, // Rely on explicit playVideo() call
 				controls: 0,
 				disablekb: 1, // Disable keyboard controls
 				enablejsapi: 1, // Enable JavaScript API
@@ -111,8 +115,29 @@ export default class MediaSurfaceYoutube {
 
 		this.#isReady = true;
 		this.setSize(this.#width, this.#height);
-		// The player should autoplay because of the playerVars
-		// event.target.playVideo();
+
+		// Explicitly call playVideo() when ready for maximum compatibility,
+		// especially on iOS Safari.
+		try {
+			await this.#PLAYER.playVideo();
+			// Set a timeout to check if the video actually started playing
+			this.#playCheckTimeout = setTimeout(() => {
+				if (!this.#hasStartedPlaying) {
+					ApplicationLogger.log(
+						'MediaSurfaceYoutube: Autoplay failed, showing play button.',
+						this.#LOG_LEVEL,
+					);
+					this.#showPlayButton();
+				}
+			}, 3000); // 3-second timeout
+		} catch (error) {
+			ApplicationLogger.error(
+				`MediaSurfaceYoutube playVideo error: ${error.name}: ${error.message}`,
+				this.#LOG_LEVEL,
+			);
+			// If playVideo() throws an error, show the button immediately.
+			this.#showPlayButton();
+		}
 	}
 
 	#onStateChange(event) {
@@ -132,6 +157,9 @@ export default class MediaSurfaceYoutube {
 	#onPlay() {
 		ApplicationLogger.log('MediaSurfaceYoutube onPlay', this.#LOG_LEVEL);
 
+		this.#hasStartedPlaying = true;
+		this.#hidePlayButton();
+
 		// Unmute and fade in volume and opacity
 		if (this.#PLAYER) {
 			this.#PLAYER.unMute();
@@ -139,7 +167,55 @@ export default class MediaSurfaceYoutube {
 		}
 
 		this.#opacityTarget = 1;
-		// this.#volumeTarget = 1; // Moved into the #PLAYER check
+	}
+
+	// ____________________________________________________________________ Play Button
+
+	#showPlayButton() {
+		if (this.#PLAY_BUTTON) return; // Button already exists
+
+		this.#PLAY_BUTTON = document.createElement('button');
+		this.#PLAY_BUTTON.className = 'video-play-button';
+		this.#PLAY_BUTTON.innerText = '▶'; // Simple play icon
+
+		// Apply styles directly to the element
+		Object.assign(this.#PLAY_BUTTON.style, {
+			position: 'absolute',
+			top: '50%',
+			left: '50%',
+			transform: 'translate(-50%, -50%)',
+			zIndex: '10',
+			padding: '1em 2em',
+			fontSize: '2rem',
+			background: 'rgba(0, 0, 0, 0.5)',
+			color: 'white',
+			border: '2px solid white',
+			borderRadius: '10px',
+			pointerEvents: 'auto', // Ensure the button is clickable
+			cursor: 'pointer',
+		});
+
+		this.#HOLDER.appendChild(this.#PLAY_BUTTON);
+
+		this.#PLAY_BUTTON.addEventListener('click', async () => {
+			try {
+				await this.#PLAYER.playVideo();
+				this.#hidePlayButton();
+			} catch (e) {
+				ApplicationLogger.error(
+					'Failed to play video on button click.',
+					this.#LOG_LEVEL,
+				);
+			}
+		});
+	}
+
+	#hidePlayButton() {
+		clearTimeout(this.#playCheckTimeout);
+		if (this.#PLAY_BUTTON) {
+			this.#PLAY_BUTTON.remove();
+			this.#PLAY_BUTTON = null;
+		}
 	}
 
 	// ____________________________________________________________________ Stop
@@ -197,6 +273,8 @@ export default class MediaSurfaceYoutube {
 
 	destroy() {
 		ApplicationLogger.log('MediaSurfaceYoutube destroy', this.#LOG_LEVEL);
+
+		this.#hidePlayButton(); // Ensure button and timeout are cleaned up
 
 		if (this.#PLAYER) {
 			this.#PLAYER.destroy();

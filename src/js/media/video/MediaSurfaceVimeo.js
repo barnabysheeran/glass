@@ -21,6 +21,9 @@ export default class MediaSurfaceVimeo {
 	#LERP_MARGIN = 0.01;
 
 	#isStopping = false;
+	#PLAY_BUTTON = null; // To hold the play button element
+	#hasStartedPlaying = false; // To track if playback has begun
+	#playCheckTimeout = null; // To hold the timeout ID
 
 	#LOG_LEVEL = -1; // 4;
 
@@ -52,7 +55,8 @@ export default class MediaSurfaceVimeo {
 			responsive: false,
 			width: this.#width,
 			muted: true,
-			autoplay: true,
+			autoplay: false, // Rely on explicit play() call
+			playsinline: true, // Required for iOS
 		};
 
 		// Create Player
@@ -110,12 +114,9 @@ export default class MediaSurfaceVimeo {
 			this.#LOG_LEVEL,
 		);
 
-		// Play Video
-		// this.#playVideo(); // Autoplay is now handled by player options
-
-		// Show
+		// The 'loaded' event confirms the video data is available.
+		// We will trigger the fade-in here.
 		this.#opacityTarget = 1;
-		// this.#volumeTarget = 1; // Start muted
 	}
 
 	// ___________________________________________________________________ Ready
@@ -126,12 +127,19 @@ export default class MediaSurfaceVimeo {
 		// Set Size
 		this.setSize(this.#width, this.#height);
 
-		// Unmute and fade in volume
-		// This might not work on all mobile browsers without user interaction
-		if (this.#PLAYER) {
-			this.#PLAYER.setVolume(0); // Ensure it's muted initially
-			this.#volumeTarget = 1;
-		}
+		// Explicitly call play() when ready.
+		this.#playVideo();
+
+		// Set a timeout to check if the video actually started playing
+		this.#playCheckTimeout = setTimeout(() => {
+			if (!this.#hasStartedPlaying) {
+				ApplicationLogger.log(
+					'MediaSurfaceVimeo: Autoplay failed, showing play button.',
+					this.#LOG_LEVEL,
+				);
+				this.#showPlayButton();
+			}
+		}, 3000); // 3-second timeout
 	}
 
 	// ____________________________________________________________________ Play
@@ -144,16 +152,65 @@ export default class MediaSurfaceVimeo {
 			await this.#PLAYER.play();
 		} catch (error) {
 			ApplicationLogger.error(
-				`MediaSurfaceVimeo play error: ${error.message}`,
+				`MediaSurfaceVimeo playVideo error: ${error.name}: ${error.message}`,
 				this.#LOG_LEVEL,
 			);
+			// If play() throws an error, show the button immediately.
+			this.#showPlayButton();
 		}
 	}
 
 	#onPlay() {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 
-		// The video is now playing
+		this.#hasStartedPlaying = true;
+		this.#hidePlayButton();
+
+		// The video is now playing, so we can try to fade in the volume.
+		// This is allowed because a user gesture started this whole process.
+		this.#volumeTarget = 1;
+	}
+
+	// ____________________________________________________________________ Play Button
+
+	#showPlayButton() {
+		if (this.#PLAY_BUTTON) return; // Button already exists
+
+		this.#PLAY_BUTTON = document.createElement('button');
+		this.#PLAY_BUTTON.className = 'video-play-button';
+		this.#PLAY_BUTTON.innerText = '▶';
+
+		// Apply styles directly to the element
+		Object.assign(this.#PLAY_BUTTON.style, {
+			position: 'absolute',
+			top: '50%',
+			left: '50%',
+			transform: 'translate(-50%, -50%)',
+			zIndex: '10',
+			padding: '1em 2em',
+			fontSize: '2rem',
+			background: 'rgba(0, 0, 0, 0.5)',
+			color: 'white',
+			border: '2px solid white',
+			borderRadius: '10px',
+			pointerEvents: 'auto',
+			cursor: 'pointer',
+		});
+
+		this.#HOLDER.appendChild(this.#PLAY_BUTTON);
+
+		this.#PLAY_BUTTON.addEventListener('click', () => {
+			this.#playVideo();
+			// The onPlay handler will hide the button
+		});
+	}
+
+	#hidePlayButton() {
+		clearTimeout(this.#playCheckTimeout);
+		if (this.#PLAY_BUTTON) {
+			this.#PLAY_BUTTON.remove();
+			this.#PLAY_BUTTON = null;
+		}
 	}
 
 	// ____________________________________________________________________ Stop
@@ -215,13 +272,8 @@ export default class MediaSurfaceVimeo {
 	destroy() {
 		ApplicationLogger.log('MediaSurfaceVimeo destroy', this.#LOG_LEVEL);
 
-		// Remove Holder
-		if (this.#HOLDER) {
-			this.#HOLDER.remove();
-			this.#HOLDER = null;
-		}
+		this.#hidePlayButton(); // Ensure button and timeout are cleaned up
 
-		// Stop Player
 		if (this.#PLAYER) {
 			this.#PLAYER.destroy();
 			this.#PLAYER = null;
