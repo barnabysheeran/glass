@@ -42,7 +42,11 @@
             "media": [
                 {
                     "type": "image",
-                    "url": "project/pikcellsonfigr/4.jpg"
+                    "url": "project/pikcellsonfigr/2.jpg"
+                },
+                {
+                    "type": "image",
+                    "url": "project/pikcellsonfigr/3.jpg"
                 },
                 {
                     "type": "image",
@@ -50,11 +54,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "project/pikcellsonfigr/2.jpg"
-                },
-                {
-                    "type": "image",
-                    "url": "project/pikcellsonfigr/3.jpg"
+                    "url": "project/pikcellsonfigr/4.jpg"
                 }
             ],
             "credit": [
