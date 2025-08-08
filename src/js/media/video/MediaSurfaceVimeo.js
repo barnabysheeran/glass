@@ -180,19 +180,24 @@ export default class MediaSurfaceVimeo {
 		this.#PLAY_BUTTON.className = 'video-play-button';
 		this.#PLAY_BUTTON.innerText = '▶';
 
+		// TODO to css
+
 		// Apply styles directly to the element
 		Object.assign(this.#PLAY_BUTTON.style, {
 			position: 'absolute',
-			top: '50%',
-			left: '50%',
-			transform: 'translate(-50%, -50%)',
+			top: '0',
+			left: '0',
+			width: '100%',
+			height: '100%',
 			zIndex: '10',
-			padding: '1em 2em',
-			fontSize: '2rem',
-			background: 'rgba(0, 0, 0, 0.5)',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			fontSize: '3rem',
+			background: 'rgba(0, 0, 0, 0.3)',
 			color: 'white',
-			border: '2px solid white',
-			borderRadius: '10px',
+			border: 'none',
+			borderRadius: '0',
 			pointerEvents: 'auto',
 			cursor: 'pointer',
 		});
