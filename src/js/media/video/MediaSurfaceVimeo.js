@@ -2,11 +2,15 @@ import player from '@vimeo/player';
 
 import ApplicationLogger from '../../application/ApplicationLogger.js';
 
+import MediaSurface from '../MediaSurface.js';
+
 export default class MediaSurfaceVimeo {
 	#CONTAINER;
 
 	#HOLDER;
 	#PLAYER;
+
+	#BUTTON_PLAY;
 
 	#width;
 	#height;
@@ -17,13 +21,13 @@ export default class MediaSurfaceVimeo {
 	#volume = 0;
 	#volumeTarget = 0;
 
-	#LERP = 0.015;
-	#LERP_MARGIN = 0.01;
+	#LERP;
+	#LERP_MARGIN;
 
 	#isStopping = false;
-	#PLAY_BUTTON = null; // To hold the play button element
-	#hasStartedPlaying = false; // To track if playback has begun
-	#playCheckTimeout = null; // To hold the timeout ID
+
+	#hasStartedPlaying = false;
+	#playCheckTimeout = null;
 
 	#LOG_LEVEL = -1; // 4;
 
@@ -39,6 +43,9 @@ export default class MediaSurfaceVimeo {
 		this.#CONTAINER = container;
 		this.#width = width;
 		this.#height = height;
+
+		this.#LERP = MediaSurface.LERP;
+		this.#LERP_MARGIN = MediaSurface.LERP_MARGIN;
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
@@ -64,9 +71,19 @@ export default class MediaSurfaceVimeo {
 
 		// Add Event Listeners
 		this.#PLAYER.ready().then(this.#onReady.bind(this));
-
 		this.#PLAYER.on('play', this.#onPlay.bind(this));
 		this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
+
+		// Create Button Play
+		this.#BUTTON_PLAY = document.createElement('div');
+		this.#BUTTON_PLAY.className = 'button-play';
+		this.#BUTTON_PLAY.innerText = '▶';
+		this.#HOLDER.appendChild(this.#BUTTON_PLAY);
+
+		// Add Event Listeners
+		this.#BUTTON_PLAY.addEventListener('click', () => {
+			this.#playVideo();
+		});
 	}
 
 	// ____________________________________________________________________ Tick
@@ -171,50 +188,17 @@ export default class MediaSurfaceVimeo {
 		this.#volumeTarget = 1;
 	}
 
-	// ____________________________________________________________________ Play Button
+	// _____________________________________________________________ Play Button
 
 	#showPlayButton() {
-		if (this.#PLAY_BUTTON) return; // Button already exists
-
-		this.#PLAY_BUTTON = document.createElement('button');
-		this.#PLAY_BUTTON.className = 'video-play-button';
-		this.#PLAY_BUTTON.innerText = '▶';
-
-		// TODO to css
-
-		// Apply styles directly to the element
-		Object.assign(this.#PLAY_BUTTON.style, {
-			position: 'absolute',
-			top: '0',
-			left: '0',
-			width: '100%',
-			height: '100%',
-			zIndex: '10',
-			display: 'flex',
-			alignItems: 'center',
-			justifyContent: 'center',
-			fontSize: '3rem',
-			background: 'rgba(0, 0, 0, 0.3)',
-			color: 'white',
-			border: 'none',
-			borderRadius: '0',
-			pointerEvents: 'auto',
-			cursor: 'pointer',
-		});
-
-		this.#HOLDER.appendChild(this.#PLAY_BUTTON);
-
-		this.#PLAY_BUTTON.addEventListener('click', () => {
-			this.#playVideo();
-			// The onPlay handler will hide the button
-		});
+		this.#BUTTON_PLAY.style.display = 'initial';
 	}
 
 	#hidePlayButton() {
 		clearTimeout(this.#playCheckTimeout);
-		if (this.#PLAY_BUTTON) {
-			this.#PLAY_BUTTON.remove();
-			this.#PLAY_BUTTON = null;
+		if (this.#BUTTON_PLAY) {
+			this.#BUTTON_PLAY.remove();
+			this.#BUTTON_PLAY = null;
 		}
 	}
 

@@ -1,3 +1,5 @@
+import MediaSurface from '../MediaSurface.js';
+
 export default class MediaSurfaceImage {
 	#IMAGE_URL;
 	#CALLBACK_ON_LOADED;
@@ -5,8 +7,8 @@ export default class MediaSurfaceImage {
 	#HOLDER;
 	#IMAGE;
 
-	#LERP = 0.015;
-	#LERP_MARGIN = 0.01;
+	#LERP;
+	#LERP_MARGIN;
 
 	#opacity = 0;
 	#opacityTarget = 0;
@@ -19,6 +21,10 @@ export default class MediaSurfaceImage {
 		// Store
 		this.#IMAGE_URL = imageURL;
 		this.#CALLBACK_ON_LOADED = callbackOnLoaded;
+
+		// Set Lerp Values
+		this.#LERP = MediaSurface.LERP;
+		this.#LERP_MARGIN = MediaSurface.LERP_MARGIN;
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');

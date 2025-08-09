@@ -4,7 +4,6 @@ import DataController from '../data/DataController.js';
 import Display from '../display/Display.js';
 
 import MediaSurfaceVimeo from './video/MediaSurfaceVimeo.js';
-import MediaSurfaceYoutube from './video/MediaSurfaceYoutube.js';
 import MediaSurfaceImageGallery from './image/MediaSurfaceImageGallery.js';
 
 export default class MediaSurface {
@@ -14,6 +13,9 @@ export default class MediaSurface {
 
 	static #width;
 	static #height;
+
+	static LERP = 0.015;
+	static LERP_MARGIN = 0.01;
 
 	static #LOG_LEVEL = -1; // 2
 
@@ -87,14 +89,12 @@ export default class MediaSurface {
 					this.#addVideoPlayer(MEDIA_DATA['vimeo-id']);
 
 					break;
-				case 'youtube':
-					// YouTube - Add YouTube Player
-					this.#addYouTubePlayer(MEDIA_DATA['youtube-id']);
-					break;
+
 				case 'image':
 					// Image - Store URL
 					imageUrls.push(MEDIA_DATA['url']);
 					break;
+
 				default:
 					ApplicationLogger.warn(
 						`MediaSurface showProject: Unknown media type`,
@@ -129,25 +129,6 @@ export default class MediaSurface {
 			new MediaSurfaceVimeo(
 				this.#CONTAINER,
 				vimeoId,
-				this.#width,
-				this.#height,
-			),
-		);
-	}
-
-	// _________________________________________________________________ YouTube
-
-	static #addYouTubePlayer(youtubeId) {
-		ApplicationLogger.log(
-			`MediaSurface addYouTubePlayer ${youtubeId}`,
-			this.#LOG_LEVEL,
-		);
-
-		// Create YouTube Player Instance
-		this.#MEDIA_ITEMS.push(
-			new MediaSurfaceYoutube(
-				this.#CONTAINER,
-				youtubeId,
 				this.#width,
 				this.#height,
 			),
