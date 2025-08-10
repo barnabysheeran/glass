@@ -33,7 +33,7 @@ export default class MediaSurfaceImageGallery {
 
 		// Event Listeners
 		this.#HOLDER.addEventListener('mousedown', this.#onMouseDown.bind(this));
-		// this.#HOLDER.addEventListener('mouseup', this.#onMouseUp.bind(this));
+		this.#HOLDER.addEventListener('touchstart', this.#onMouseDown.bind(this));
 
 		// Store Images
 		const ASSET_PATH = ApplicationConfiguration.getAssetPath();
@@ -56,11 +56,14 @@ export default class MediaSurfaceImageGallery {
 
 	// _____________________________________________________________ Interaction
 
-	#onMouseDown() {
+	#onMouseDown(event) {
 		ApplicationLogger.log(
 			`MediaSurfaceImageGallery #onMouseDown`,
 			this.#LOG_LEVEL,
 		);
+
+		// Prevent a Tap firing both mouse and touch events
+		event.preventDefault();
 
 		// Stopping ?
 		if (this.#isStopping) {
@@ -231,8 +234,15 @@ export default class MediaSurfaceImageGallery {
 	destroy() {
 		ApplicationLogger.log('MediaSurfaceImageGallery destroy', this.#LOG_LEVEL);
 
+		// Images
 		for (let i = 0; i < this.#IMAGES.length; i++) {
 			this.#IMAGES[i].destroy();
+		}
+
+		// Remove Holder
+		if (this.#HOLDER) {
+			this.#HOLDER.remove();
+			this.#HOLDER = null;
 		}
 	}
 }

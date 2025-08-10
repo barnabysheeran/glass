@@ -22,7 +22,6 @@ export default class MediaSurfaceVimeo {
 	#volumeTarget = 0;
 
 	#LERP_SLOW;
-	#LERP_FAST;
 	#LERP_MARGIN;
 
 	#isStopping = false;
@@ -46,7 +45,6 @@ export default class MediaSurfaceVimeo {
 		this.#height = height;
 
 		this.#LERP_SLOW = MediaSurface.LERP_SLOW;
-		this.#LERP_FAST = MediaSurface.LERP_FAST;
 		this.#LERP_MARGIN = MediaSurface.LERP_MARGIN;
 
 		// Create Holder
@@ -268,9 +266,16 @@ export default class MediaSurfaceVimeo {
 
 		this.#hidePlayButton(); // Ensure button and timeout are cleaned up
 
+		// Player
 		if (this.#PLAYER) {
 			this.#PLAYER.destroy();
 			this.#PLAYER = null;
+		}
+
+		// Holder
+		if (this.#HOLDER) {
+			this.#HOLDER.remove();
+			this.#HOLDER = null;
 		}
 	}
 }

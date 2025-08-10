@@ -57,7 +57,7 @@ export default class DirectableDotMatrixConstants {
 
 	// TODO Move to Views
 
-	static #DELAY_PAGE_TRANSITION = 60;
+	static #DELAY_PAGE_TRANSITION = 20;
 
 	static getDelayPageTransition() {
 		return this.#DELAY_PAGE_TRANSITION;

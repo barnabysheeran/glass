@@ -121,7 +121,7 @@ export default class MediaSurfaceImage {
 	destroy() {
 		// Remove Holder
 		if (this.#HOLDER && this.#HOLDER.parentNode) {
-			this.#HOLDER.parentNode.removeChild(this.#HOLDER);
+			this.#HOLDER.remove();
 		}
 
 		// Clear References
