@@ -31,6 +31,8 @@ export default class MediaSurfaceVimeo {
 	#hasStartedPlaying = false;
 	#playCheckTimeout = null;
 
+	#DELAY_CHECK_PLAYING = 3000; // ms
+
 	#LOG_LEVEL = -1; // 4;
 
 	// _________________________________________________________________________
@@ -90,14 +92,13 @@ export default class MediaSurfaceVimeo {
 		this.#HOLDER.appendChild(this.#BUTTON_PLAY);
 
 		// Add Event Listeners
-		// this.#BUTTON_PLAY.addEventListener('click', () => {
-		// 	this.#playVideo();
-		// });
-
 		this.#BUTTON_PLAY.addEventListener(
 			'click',
 			this.#onPlayButtonClick.bind(this),
 		);
+
+		// Initial State
+		this.#hidePlayButton();
 	}
 
 	// ____________________________________________________________________ Tick
@@ -110,8 +111,8 @@ export default class MediaSurfaceVimeo {
 		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP_SLOW;
 
 		// Set Opacity
-		if (this.#PLAYER_HOLDER) {
-			this.#PLAYER_HOLDER.style.opacity = this.#opacity;
+		if (this.#HOLDER) {
+			this.#HOLDER.style.opacity = this.#opacity;
 		}
 
 		// Set Volume
@@ -157,22 +158,32 @@ export default class MediaSurfaceVimeo {
 		// Start Fade In
 		this.#opacityTarget = 1;
 
-		// Explicitly call play() when ready.
-		this.#playVideo();
-
-		// Set a timeout to check if the video actually started playing
-		this.#playCheckTimeout = setTimeout(() => {
-			if (!this.#hasStartedPlaying) {
-				ApplicationLogger.log(
-					'MediaSurfaceVimeo: Autoplay failed, showing play button.',
-					this.#LOG_LEVEL,
-				);
-				this.#showPlayButton();
-			}
-		}, 3000); // 3-second timeout
+		// Start trying to play the video
+		this.#attemptToPlay();
 	}
 
 	// ____________________________________________________________________ Play
+
+	#attemptToPlay() {
+		// If the video has already started or the component is stopping, do nothing.
+		if (this.#hasStartedPlaying || this.#isStopping) {
+			return;
+		}
+
+		ApplicationLogger.log(
+			'MediaSurfaceVimeo: Attempting to play...',
+			this.#LOG_LEVEL,
+		);
+
+		// Try to play the video
+		this.#playVideo();
+
+		// Set a timeout to try again if it hasn't started playing
+		this.#playCheckTimeout = setTimeout(
+			this.#attemptToPlay.bind(this),
+			this.#DELAY_CHECK_PLAYING,
+		);
+	}
 
 	async #playVideo() {
 		ApplicationLogger.log('MediaSurfaceVimeo playVideo', this.#LOG_LEVEL);
@@ -194,6 +205,12 @@ export default class MediaSurfaceVimeo {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 
 		this.#hasStartedPlaying = true;
+
+		// Stop the play check loop
+		if (this.#playCheckTimeout) {
+			clearTimeout(this.#playCheckTimeout);
+			this.#playCheckTimeout = null;
+		}
 
 		this.#hidePlayButton();
 
@@ -242,6 +259,12 @@ export default class MediaSurfaceVimeo {
 
 	stop() {
 		ApplicationLogger.log('MediaSurfaceVimeo stop', this.#LOG_LEVEL);
+
+		// Stop the play check loop
+		if (this.#playCheckTimeout) {
+			clearTimeout(this.#playCheckTimeout);
+			this.#playCheckTimeout = null;
+		}
 
 		// Pause Video
 		if (this.#PLAYER) {
@@ -297,7 +320,13 @@ export default class MediaSurfaceVimeo {
 	destroy() {
 		ApplicationLogger.log('MediaSurfaceVimeo destroy', this.#LOG_LEVEL);
 
-		this.#hidePlayButton(); // Ensure button and timeout are cleaned up
+		this.#hidePlayButton();
+
+		// Stop the play check loop
+		if (this.#playCheckTimeout) {
+			clearTimeout(this.#playCheckTimeout);
+			this.#playCheckTimeout = null;
+		}
 
 		// Player
 		if (this.#PLAYER) {
