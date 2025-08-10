@@ -8,6 +8,8 @@ export default class MediaSurfaceVimeo {
 	#CONTAINER;
 
 	#HOLDER;
+
+	#PLAYER_HOLDER;
 	#PLAYER;
 
 	#BUTTON_PLAY;
@@ -53,6 +55,12 @@ export default class MediaSurfaceVimeo {
 		this.#HOLDER.className = 'video-holder';
 		this.#CONTAINER.appendChild(this.#HOLDER);
 
+		// Create Player Holder
+		this.#PLAYER_HOLDER = document.createElement('div');
+		this.#PLAYER_HOLDER.id = 'player-holder';
+		this.#PLAYER_HOLDER.className = 'player-holder';
+		this.#HOLDER.appendChild(this.#PLAYER_HOLDER);
+
 		// Create a Vimeo Player Instance
 		const OPTIONS = {
 			id: vimeoId,
@@ -67,12 +75,13 @@ export default class MediaSurfaceVimeo {
 		};
 
 		// Create Player
-		this.#PLAYER = new player(this.#HOLDER, OPTIONS);
+		this.#PLAYER = new player(this.#PLAYER_HOLDER, OPTIONS);
 
 		// Add Event Listeners
 		this.#PLAYER.ready().then(this.#onReady.bind(this));
 		this.#PLAYER.on('play', this.#onPlay.bind(this));
-		this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
+		this.#PLAYER.on('pause', this.#onPause.bind(this));
+		// this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
 
 		// Create Button Play
 		this.#BUTTON_PLAY = document.createElement('div');
@@ -81,9 +90,14 @@ export default class MediaSurfaceVimeo {
 		this.#HOLDER.appendChild(this.#BUTTON_PLAY);
 
 		// Add Event Listeners
-		this.#BUTTON_PLAY.addEventListener('click', () => {
-			this.#playVideo();
-		});
+		// this.#BUTTON_PLAY.addEventListener('click', () => {
+		// 	this.#playVideo();
+		// });
+
+		this.#BUTTON_PLAY.addEventListener(
+			'click',
+			this.#onPlayButtonClick.bind(this),
+		);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -96,8 +110,8 @@ export default class MediaSurfaceVimeo {
 		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP_SLOW;
 
 		// Set Opacity
-		if (this.#HOLDER) {
-			this.#HOLDER.style.opacity = this.#opacity;
+		if (this.#PLAYER_HOLDER) {
+			this.#PLAYER_HOLDER.style.opacity = this.#opacity;
 		}
 
 		// Set Volume
@@ -125,16 +139,12 @@ export default class MediaSurfaceVimeo {
 
 	// __________________________________________________________________ Loaded
 
-	#onLoaded(data) {
-		ApplicationLogger.log(
-			`MediaSurfaceVimeo onLoaded: video ${data.id} has loaded.`,
-			this.#LOG_LEVEL,
-		);
-
-		// The 'loaded' event confirms the video data is available.
-		// We will trigger the fade-in here.
-		// this.#opacityTarget = 1;
-	}
+	// #onLoaded(data) {
+	// 	ApplicationLogger.log(
+	// 		`MediaSurfaceVimeo onLoaded: video ${data.id} has loaded.`,
+	// 		this.#LOG_LEVEL,
+	// 	);
+	// }
 
 	// ___________________________________________________________________ Ready
 
@@ -184,6 +194,7 @@ export default class MediaSurfaceVimeo {
 		ApplicationLogger.log('MediaSurfaceVimeo onPlay', this.#LOG_LEVEL);
 
 		this.#hasStartedPlaying = true;
+
 		this.#hidePlayButton();
 
 		// The video is now playing, so we can try to fade in the volume.
@@ -191,17 +202,39 @@ export default class MediaSurfaceVimeo {
 		this.#volumeTarget = 1;
 	}
 
+	#onPause() {
+		ApplicationLogger.log('MediaSurfaceVimeo onPause', this.#LOG_LEVEL);
+		this.#showPlayButton();
+	}
+
 	// _____________________________________________________________ Play Button
 
 	#showPlayButton() {
-		this.#BUTTON_PLAY.style.display = 'initial';
+		this.#BUTTON_PLAY.style.opacity = 1;
 	}
 
 	#hidePlayButton() {
-		clearTimeout(this.#playCheckTimeout);
-		if (this.#BUTTON_PLAY) {
-			this.#BUTTON_PLAY.remove();
-			this.#BUTTON_PLAY = null;
+		this.#BUTTON_PLAY.style.opacity = 0;
+	}
+
+	async #onPlayButtonClick() {
+		ApplicationLogger.log(
+			'MediaSurfaceVimeo onPlayButtonClick',
+			this.#LOG_LEVEL,
+		);
+
+		try {
+			const isPaused = await this.#PLAYER.getPaused();
+			if (isPaused) {
+				this.#playVideo();
+			} else {
+				this.#PLAYER.pause();
+			}
+		} catch (error) {
+			ApplicationLogger.error(
+				`MediaSurfaceVimeo onPlayButtonClick error: ${error.name}: ${error.message}`,
+				this.#LOG_LEVEL,
+			);
 		}
 	}
 
@@ -243,11 +276,11 @@ export default class MediaSurfaceVimeo {
 		this.#height = heightPx;
 
 		// Size Holder
-		this.#HOLDER.style.width = widthPx + 'px';
-		this.#HOLDER.style.height = heightPx + 'px';
+		this.#PLAYER_HOLDER.style.width = widthPx + 'px';
+		this.#PLAYER_HOLDER.style.height = heightPx + 'px';
 
 		// Size Iframe ?
-		const iframe = this.#HOLDER.querySelector('iframe');
+		const iframe = this.#PLAYER_HOLDER.querySelector('iframe');
 
 		if (!iframe) {
 			ApplicationLogger.log(' - No iframe');
@@ -273,9 +306,9 @@ export default class MediaSurfaceVimeo {
 		}
 
 		// Holder
-		if (this.#HOLDER) {
-			this.#HOLDER.remove();
-			this.#HOLDER = null;
+		if (this.#PLAYER_HOLDER) {
+			this.#PLAYER_HOLDER.remove();
+			this.#PLAYER_HOLDER = null;
 		}
 	}
 }
