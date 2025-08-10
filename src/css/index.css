@@ -89,6 +89,8 @@
 
 	pointer-events: auto;
 	cursor: pointer;
+
+	-webkit-tap-highlight-color: transparent;
 }
 
 .application .display .media-surface .image-gallery {
