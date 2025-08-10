@@ -133,7 +133,7 @@ export default class MediaSurfaceVimeo {
 
 		// The 'loaded' event confirms the video data is available.
 		// We will trigger the fade-in here.
-		this.#opacityTarget = 1;
+		// this.#opacityTarget = 1;
 	}
 
 	// ___________________________________________________________________ Ready
@@ -143,6 +143,9 @@ export default class MediaSurfaceVimeo {
 
 		// Set Size
 		this.setSize(this.#width, this.#height);
+
+		// Start Fade In
+		this.#opacityTarget = 1;
 
 		// Explicitly call play() when ready.
 		this.#playVideo();

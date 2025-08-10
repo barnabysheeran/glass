@@ -4,6 +4,8 @@ import ApplicationConfiguration from '../../application/ApplicationConfiguration
 import MediaSurfaceImage from './MediaSurfaceImage.js';
 
 export default class MediaSurfaceImageGallery {
+	#HOLDER;
+
 	#IMAGES = [];
 	#imagesToLoad = 0;
 
@@ -14,19 +16,29 @@ export default class MediaSurfaceImageGallery {
 
 	#isStopping = false;
 
-	#LOG_LEVEL = -1; // 4;
+	#LOG_LEVEL = 4;
 
 	// _________________________________________________________________________
 
 	constructor(container, imageUrls) {
 		ApplicationLogger.log(`MediaSurfaceImageGallery`, this.#LOG_LEVEL);
 
+		// Create Holder
+		this.#HOLDER = document.createElement('div');
+		this.#HOLDER.className = 'image-gallery';
+		container.appendChild(this.#HOLDER);
+
+		// Event Listeners
+		this.#HOLDER.addEventListener('mousedown', this.#onMouseDown.bind(this));
+		this.#HOLDER.addEventListener('mouseup', this.#onMouseUp.bind(this));
+
+		// Store Images
 		const ASSET_PATH = ApplicationConfiguration.getAssetPath();
 
 		for (let i = 0; i < imageUrls.length; i++) {
 			// Create
 			const MEDIA_SURFACE_IMAGE = new MediaSurfaceImage(
-				container,
+				this.#HOLDER,
 				ASSET_PATH + imageUrls[i],
 				this.#onImageLoaded.bind(this),
 			);
@@ -37,6 +49,22 @@ export default class MediaSurfaceImageGallery {
 
 		// Images to Load
 		this.#imagesToLoad = this.#IMAGES.length;
+	}
+
+	// _____________________________________________________________ Interaction
+
+	#onMouseDown() {
+		ApplicationLogger.log(
+			`MediaSurfaceImageGallery #onMouseDown`,
+			this.#LOG_LEVEL,
+		);
+	}
+
+	#onMouseUp() {
+		ApplicationLogger.log(
+			`MediaSurfaceImageGallery #onMouseUp`,
+			this.#LOG_LEVEL,
+		);
 	}
 
 	// ____________________________________________________________________ Tick

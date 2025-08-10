@@ -109,7 +109,7 @@ export default class DotMatrixViewIntro extends DotMatrixView {
 		}
 	}
 
-	// ____________________________________________________________________ Draw
+	// ___________________________________________________________ Draw Complete
 
 	onDrawComplete() {
 		super.onDrawComplete();

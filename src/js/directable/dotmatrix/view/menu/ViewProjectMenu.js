@@ -19,6 +19,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 24;
 	#DELAY_FRAMES_REDRAW = 120;
 
+	#DELAY_FRAMES_AUTO_REFRESH_MAX = 60 * 4;
+	#delayFramesAutoRefresh = -1;
+
 	#PROJECT_IDS;
 	#GRID_X_CENTERED_STARTS;
 	#GRID_YS;
@@ -33,8 +36,8 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 
 	// ______________________________________________________________ Start Stop
 
-	start(delayFrames, drawType) {
-		super.draw(delayFrames, drawType);
+	start(delayFrames) {
+		super.start(delayFrames);
 
 		// Order Important - Draw Stores Grid Position Information
 
@@ -64,6 +67,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_IN;
 
+		// Initialise Delay Frames Auto Refresh
+		this.#delayFramesAutoRefresh = -1;
+
 		// Draw
 		this.draw(delayFrames, DrawType.Fill);
 
@@ -78,6 +84,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Set Delay Glyph
 		this.#delayGlyph = this.#DELAY_GLYPH_OUT;
 
+		// Initialise Delay Frames Auto Refresh
+		this.#delayFramesAutoRefresh = -1;
+
 		// Undraw Unsurrounding Rectangles
 		for (let i = 0; i < this.#PROJECT_IDS.length; i += 1) {
 			this.#drawSurroundingRectangle(
@@ -86,6 +95,56 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 				DrawType.Clear,
 			);
 		}
+	}
+
+	// ____________________________________________________________________ Tick
+
+	tick() {
+		// Active ?
+		if (this.isActive === false) {
+			return;
+		}
+
+		// Delay Auto Refresh
+		if (this.#delayFramesAutoRefresh > -1) {
+			this.#delayFramesAutoRefresh -= 1;
+
+			if (this.#delayFramesAutoRefresh === 0) {
+				this.#onAutoRefresh();
+			}
+		}
+	}
+
+	#onAutoRefresh() {
+		// End Delay
+		this.#delayFramesAutoRefresh = -1;
+
+		// Require Updates
+		for (let i = 0; i < this.#REQUIRES_UPDATES.length; i += 1) {
+			// TODO Hard Coded
+			if (Math.random() < 0.5) {
+				this.#REQUIRES_UPDATES[i] = true;
+
+				if (Math.random() < 0.5) {
+					this.#IS_OVERS[i] = true;
+				} else {
+					this.#IS_OVERS[i] = false;
+				}
+			}
+		}
+
+		// Draw
+		this.draw(0, DrawType.Clear);
+		this.draw(this.#DELAY_ROLLOVER_REDRAW, DrawType.Fill);
+	}
+
+	// ___________________________________________________________ Draw Complete
+
+	onDrawComplete() {
+		super.onDrawComplete();
+
+		// Initialise Delay Frames Auto Refresh
+		this.#delayFramesAutoRefresh = this.#DELAY_FRAMES_AUTO_REFRESH_MAX;
 	}
 
 	// ____________________________________________________________________ Draw
@@ -195,16 +254,6 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		}
 	}
 
-	onDrawComplete() {
-		super.onDrawComplete();
-
-		// Clear
-		this.draw(0, DrawType.Clear);
-
-		// Redraw
-		this.draw(this.#DELAY_FRAMES_REDRAW, DrawType.Fill);
-	}
-
 	// _____________________________________________________________ Interaction
 
 	#createInteractiveBlocks() {
@@ -239,6 +288,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 		// Get Project Index
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(clickData.projectId);
 
+		// End Delay Frames Auto Refresh
+		this.#delayFramesAutoRefresh = -1;
+
 		// Is Over
 		this.#IS_OVERS[PROJECT_INDEX] = true;
 
@@ -253,6 +305,9 @@ export default class DotMatrixViewProjectMenu extends DotMatrixView {
 	onButtonMenuOut(clickData) {
 		// Get Project Index
 		const PROJECT_INDEX = this.#PROJECT_IDS.indexOf(clickData.projectId);
+
+		// End Delay Frames Auto Refresh
+		this.#delayFramesAutoRefresh = -1;
 
 		// Is Not Over
 		this.#IS_OVERS[PROJECT_INDEX] = false;

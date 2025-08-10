@@ -14,7 +14,7 @@ export default class MediaSurface {
 	static #width;
 	static #height;
 
-	static LERP = 0.015;
+	static LERP = 0.014; // 0.015;
 	static LERP_MARGIN = 0.01;
 
 	static #LOG_LEVEL = -1; // 2
@@ -93,6 +93,7 @@ export default class MediaSurface {
 				case 'image':
 					// Image - Store URL
 					imageUrls.push(MEDIA_DATA['url']);
+
 					break;
 
 				default:
