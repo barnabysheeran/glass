@@ -14,7 +14,7 @@ export default class MediaSurface {
 	static #width;
 	static #height;
 
-	static LERP_SLOW = 0.014; // 0.015;
+	static LERP_SLOW = 0.05; // 0.015;
 	static LERP_FAST = 0.1;
 	static LERP_MARGIN = 0.01;
 

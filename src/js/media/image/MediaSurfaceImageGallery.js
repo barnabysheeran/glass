@@ -62,6 +62,11 @@ export default class MediaSurfaceImageGallery {
 			this.#LOG_LEVEL,
 		);
 
+		// Stopping ?
+		if (this.#isStopping) {
+			return;
+		}
+
 		// End Delay Next Image
 		this.#delayNextImage = -1;
 
