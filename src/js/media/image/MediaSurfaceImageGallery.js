@@ -14,6 +14,9 @@ export default class MediaSurfaceImageGallery {
 	#DELAY_NEXT_IMAGE_MAX = 60 * 4; // Frames
 	#delayNextImage = -1;
 
+	#DELAY_RESTART_AUTO = 60 * 4; // Frames
+	#delayRestartAuto = -1;
+
 	#isStopping = false;
 
 	#LOG_LEVEL = 4;
@@ -30,7 +33,7 @@ export default class MediaSurfaceImageGallery {
 
 		// Event Listeners
 		this.#HOLDER.addEventListener('mousedown', this.#onMouseDown.bind(this));
-		this.#HOLDER.addEventListener('mouseup', this.#onMouseUp.bind(this));
+		// this.#HOLDER.addEventListener('mouseup', this.#onMouseUp.bind(this));
 
 		// Store Images
 		const ASSET_PATH = ApplicationConfiguration.getAssetPath();
@@ -58,19 +61,26 @@ export default class MediaSurfaceImageGallery {
 			`MediaSurfaceImageGallery #onMouseDown`,
 			this.#LOG_LEVEL,
 		);
-	}
 
-	#onMouseUp() {
-		ApplicationLogger.log(
-			`MediaSurfaceImageGallery #onMouseUp`,
-			this.#LOG_LEVEL,
-		);
+		// End Delay Next Image
+		this.#delayNextImage = -1;
+
+		// Start Delay Restart Auto
+		this.#delayRestartAuto = this.#DELAY_RESTART_AUTO;
+
+		// Set All Lerps to Fast
+		for (let i = 0; i < this.#IMAGES.length; i++) {
+			this.#IMAGES[i].setLerpFast();
+		}
+
+		// Show Next Image
+		this.#showNextImage();
 	}
 
 	// ____________________________________________________________________ Tick
 
 	tick() {
-		// Delay ?
+		// Delay Next Image ?
 		if (this.#delayNextImage > 0) {
 			// Decrement Delay
 			this.#delayNextImage -= 1;
@@ -80,6 +90,22 @@ export default class MediaSurfaceImageGallery {
 
 				// Reset Delay
 				this.#delayNextImage = this.#DELAY_NEXT_IMAGE_MAX;
+			}
+		}
+
+		// Delay Restart Auto ?
+		if (this.#delayRestartAuto > 0) {
+			// Decrement Delay
+			this.#delayRestartAuto -= 1;
+
+			if (this.#delayRestartAuto === 0) {
+				// Set Lerps to Slow
+				for (let i = 0; i < this.#IMAGES.length; i++) {
+					this.#IMAGES[i].setLerpSlow();
+				}
+
+				// Restart Auto
+				this.#showNextImage();
 			}
 		}
 
@@ -166,8 +192,16 @@ export default class MediaSurfaceImageGallery {
 	// ____________________________________________________________________ Stop
 
 	stop() {
-		// End Delay
+		// End Delay Next Image
 		this.#delayNextImage = -1;
+
+		// End Delay Restart Auto
+		this.#delayRestartAuto = -1;
+
+		// Set Lerps to Slow
+		for (let i = 0; i < this.#IMAGES.length; i++) {
+			this.#IMAGES[i].setLerpSlow();
+		}
 
 		// Stop All Images
 		for (let i = 0; i < this.#IMAGES.length; i++) {

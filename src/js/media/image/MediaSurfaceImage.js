@@ -7,8 +7,10 @@ export default class MediaSurfaceImage {
 	#HOLDER;
 	#IMAGE;
 
-	#LERP;
+	#LERP_SLOW;
+	#LERP_FAST;
 	#LERP_MARGIN;
+	#lerp;
 
 	#opacity = 0;
 	#opacityTarget = 0;
@@ -23,8 +25,12 @@ export default class MediaSurfaceImage {
 		this.#CALLBACK_ON_LOADED = callbackOnLoaded;
 
 		// Set Lerp Values
-		this.#LERP = MediaSurface.LERP;
+		this.#LERP_SLOW = MediaSurface.LERP_SLOW;
+		this.#LERP_FAST = MediaSurface.LERP_FAST;
 		this.#LERP_MARGIN = MediaSurface.LERP_MARGIN;
+
+		// Start Slow
+		this.#lerp = this.#LERP_SLOW;
 
 		// Create Holder
 		this.#HOLDER = document.createElement('div');
@@ -61,7 +67,7 @@ export default class MediaSurfaceImage {
 
 	tick() {
 		// Lerp Opacity
-		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#LERP;
+		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#lerp;
 
 		// Set Opacity
 		this.#HOLDER.style.opacity = this.#opacity;
@@ -94,7 +100,17 @@ export default class MediaSurfaceImage {
 		this.hide();
 	}
 
-	// __________________________________________________________________ Holder
+	// ____________________________________________________________________ Lerp
+
+	setLerpFast() {
+		this.#lerp = this.#LERP_FAST;
+	}
+
+	setLerpSlow() {
+		this.#lerp = this.#LERP_SLOW;
+	}
+
+	// __________________________________________________________________ Access
 
 	getHolder() {
 		return this.#HOLDER;

@@ -21,7 +21,8 @@ export default class MediaSurfaceVimeo {
 	#volume = 0;
 	#volumeTarget = 0;
 
-	#LERP;
+	#LERP_SLOW;
+	#LERP_FAST;
 	#LERP_MARGIN;
 
 	#isStopping = false;
@@ -44,7 +45,8 @@ export default class MediaSurfaceVimeo {
 		this.#width = width;
 		this.#height = height;
 
-		this.#LERP = MediaSurface.LERP;
+		this.#LERP_SLOW = MediaSurface.LERP_SLOW;
+		this.#LERP_FAST = MediaSurface.LERP_FAST;
 		this.#LERP_MARGIN = MediaSurface.LERP_MARGIN;
 
 		// Create Holder
@@ -90,10 +92,10 @@ export default class MediaSurfaceVimeo {
 
 	tick() {
 		// Lerp Opacity
-		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#LERP;
+		this.#opacity += (this.#opacityTarget - this.#opacity) * this.#LERP_SLOW;
 
 		// Lerp Volume
-		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP;
+		this.#volume += (this.#volumeTarget - this.#volume) * this.#LERP_SLOW;
 
 		// Set Opacity
 		if (this.#HOLDER) {
