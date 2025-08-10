@@ -343,9 +343,9 @@ export default class MediaSurfaceVimeo {
 		}
 
 		// Holder
-		if (this.#PLAYER_HOLDER) {
-			this.#PLAYER_HOLDER.remove();
-			this.#PLAYER_HOLDER = null;
+		if (this.#HOLDER) {
+			this.#HOLDER.remove();
+			this.#HOLDER = null;
 		}
 	}
 }
