@@ -15,9 +15,7 @@ import DrawType from '../../enum/DrawType.js';
 import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
 
 export default class DotMatrixViewProjectMenu extends DotMatrixView {
-	// TODO Tune with Menu Text
 	#DELAY_ROLLOVER_REDRAW = 24;
-	#DELAY_FRAMES_REDRAW = 120;
 
 	#DELAY_FRAMES_AUTO_REFRESH_MAX = 60 * 4;
 	#delayFramesAutoRefresh = -1;
