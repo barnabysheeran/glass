@@ -152,7 +152,15 @@ export default class MediaSurfaceImageGallery {
 		}
 
 		// Show Next Image
+		this.#bringImageToFront(this.#indexImageCurrent);
 		this.#IMAGES[this.#indexImageCurrent].show();
+	}
+
+	#bringImageToFront(indexImage) {
+		// Bring Image to Front
+		const HOLDER = this.#IMAGES[indexImage].getHolder();
+
+		HOLDER.parentNode.appendChild(HOLDER);
 	}
 
 	// ____________________________________________________________________ Stop

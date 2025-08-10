@@ -94,6 +94,12 @@ export default class MediaSurfaceImage {
 		this.hide();
 	}
 
+	// __________________________________________________________________ Holder
+
+	getHolder() {
+		return this.#HOLDER;
+	}
+
 	// _________________________________________________________________ Destroy
 
 	destroy() {
