@@ -86,14 +86,19 @@ export default class MediaSurfaceVimeo {
 		// this.#PLAYER.on('loaded', this.#onLoaded.bind(this));
 
 		// Create Button Play
-		this.#BUTTON_PLAY = document.createElement('div');
+		this.#BUTTON_PLAY = document.createElement('button');
 		this.#BUTTON_PLAY.className = 'button-play';
 		this.#BUTTON_PLAY.innerText = '▶';
 		this.#HOLDER.appendChild(this.#BUTTON_PLAY);
+		this.#BUTTON_PLAY.tabIndex = -1; // Added line
 
 		// Add Event Listeners
 		this.#BUTTON_PLAY.addEventListener(
 			'click',
+			this.#onPlayButtonClick.bind(this),
+		);
+		this.#HOLDER.addEventListener(
+			'touchstart',
 			this.#onPlayButtonClick.bind(this),
 		);
 
@@ -234,11 +239,14 @@ export default class MediaSurfaceVimeo {
 		this.#BUTTON_PLAY.style.opacity = 0;
 	}
 
-	async #onPlayButtonClick() {
+	async #onPlayButtonClick(event) {
 		ApplicationLogger.log(
 			'MediaSurfaceVimeo onPlayButtonClick',
 			this.#LOG_LEVEL,
 		);
+
+		// Prevent a Tap firing both mouse and touch events
+		event.preventDefault();
 
 		try {
 			const isPaused = await this.#PLAYER.getPaused();

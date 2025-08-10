@@ -19,6 +19,8 @@
 	background-color: #161616;
 
 	pointer-events: none;
+
+	-webkit-tap-highlight-color: transparent;
 }
 
 .application img {
@@ -90,7 +92,25 @@
 	pointer-events: auto;
 	cursor: pointer;
 
+	outline: none;
+	border: none;
+	box-shadow: none;
+	background-clip: padding-box;
+
 	-webkit-tap-highlight-color: transparent;
+	-webkit-focus-ring-color: transparent;
+	-webkit-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.application .display .media-surface .video-holder .button-play:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	border: none !important;
 }
 
 .application .display .media-surface .image-gallery {
