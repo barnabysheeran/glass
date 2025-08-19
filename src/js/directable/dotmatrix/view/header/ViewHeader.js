@@ -15,7 +15,6 @@ import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLine
 
 export default class DotMatrixViewHeader extends DotMatrixView {
 	#DELAY_ROLLOVER_REDRAW = 6;
-	#DELAY_FRAMES_REDRAW = 120;
 
 	#gridXCenteredStart = 0;
 	#gridY = 0;
