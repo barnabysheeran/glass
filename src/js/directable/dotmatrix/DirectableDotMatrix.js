@@ -20,7 +20,7 @@ export default class DirectableDotMatrix {
 	#SHAPE_MANAGER;
 	#COMPONENT_MANAGER;
 
-	#VIEW_HEADER;
+	// #VIEW_HEADER;
 	#VIEWS = [];
 
 	#viewIdCurrent = 'intro';
@@ -51,11 +51,11 @@ export default class DirectableDotMatrix {
 		this.#COMPONENT_MANAGER = new ComponentManager();
 
 		// Create View Header
-		this.#VIEW_HEADER = new ViewHeader(
-			this.#SHAPE_MANAGER,
-			this.#COMPONENT_MANAGER,
-			'header',
-		);
+		// this.#VIEW_HEADER = new ViewHeader(
+		// 	this.#SHAPE_MANAGER,
+		// 	this.#COMPONENT_MANAGER,
+		// 	'header',
+		// );
 
 		// Create View Intro
 		this.#VIEWS.push(
@@ -88,7 +88,7 @@ export default class DirectableDotMatrix {
 		);
 
 		// Start Initial View
-		this.#VIEW_HEADER.start(0);
+		// this.#VIEW_HEADER.start(0);
 		this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
@@ -155,7 +155,7 @@ export default class DirectableDotMatrix {
 		this.#stopCurrentView();
 
 		// Set Is Menu Open
-		this.#VIEW_HEADER.setIsMenuOpen(false);
+		// this.#VIEW_HEADER.setIsMenuOpen(false);
 
 		// Show Project View
 		const PROJECT_VIEW = this.#getViewById(projectId);
@@ -186,7 +186,7 @@ export default class DirectableDotMatrix {
 		this.#stopCurrentView();
 
 		// Set Is Menu Open
-		this.#VIEW_HEADER.setIsMenuOpen(true);
+		// this.#VIEW_HEADER.setIsMenuOpen(true);
 
 		// Show Project Menu View
 		this.#getViewById('project-menu').start(DELAY_PAGE_TRANSITION);
@@ -208,7 +208,7 @@ export default class DirectableDotMatrix {
 		this.#stopCurrentView();
 
 		// Set Is Menu Open
-		this.#VIEW_HEADER.setIsMenuOpen(false);
+		// this.#VIEW_HEADER.setIsMenuOpen(false);
 
 		// Show Intro View
 		this.#getViewById('intro').start(DELAY_PAGE_TRANSITION);
@@ -223,7 +223,7 @@ export default class DirectableDotMatrix {
 
 	setSize(width, height) {
 		// Stop
-		this.#VIEW_HEADER.stop();
+		// this.#VIEW_HEADER.stop();
 		this.#getViewById(this.#viewIdCurrent).stop();
 
 		// Reset Component Manager
@@ -237,7 +237,7 @@ export default class DirectableDotMatrix {
 		this.#DOT_MANAGER.setSize(width, height);
 
 		// Start Current View
-		this.#VIEW_HEADER.start(0);
+		// this.#VIEW_HEADER.start(0);
 		this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
