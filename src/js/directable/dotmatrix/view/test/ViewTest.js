@@ -24,7 +24,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		super.start(delayFrames);
 
 		// Start
-		// this.draw(delayFrames);
+		this.draw(delayFrames, DrawType.Fill);
 	}
 
 	stop(delayFrames = 0) {
@@ -67,24 +67,6 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Next
 		gridY += 2;
 
-		// Create Component ABC
-		const COMPONENT_ABC = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
-
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
-
-		// Next
-		gridY += 2;
-
 		// Create Component abc
 		const COMPONENT_abc = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
@@ -106,7 +88,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		// Add Component 0001
 		const COMPONENT_0001 = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
-			'0123456789',
+			'0123 4567 89',
 			0,
 			LINE_HEIGHT * gridY,
 			100,
@@ -119,7 +101,25 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
 
 		// Next
-		gridY += 2;
+		gridY += 1;
+
+		// Add Component 0002
+		const COMPONENT_0002 = new ComponentGlyphBox(
+			this.SHAPE_MANAGER,
+			'9876 5432 10',
+			0,
+			LINE_HEIGHT * gridY,
+			100,
+			50,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+			FillType.PassThrough,
+			FillStrategyType.PassThrough,
+		);
+
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_0002);
+
+		// Next
+		gridY += 1;
 
 		// Add Component Character Test 1
 		const COMPONENT_CHARACTER_TEST_1 = new ComponentGlyphBox(
@@ -258,10 +258,6 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(LINE_BOTTOM);
 	}
 
-	// __________________________________________________________________ Undraw
-
-	undraw() {}
-
 	// ____________________________________________________________________ Tick
 
 	tick() {
@@ -272,16 +268,16 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			return;
 		}
 
-		const RANDOM_DRAW = Math.random();
+		// const RANDOM_DRAW = Math.random();
 
-		if (RANDOM_DRAW < 0.02) {
-			// Draw
-			this.draw();
-		}
+		// if (RANDOM_DRAW < 0.02) {
+		// 	// Draw
+		// 	this.draw();
+		// }
 
-		if (RANDOM_DRAW > 0.99) {
-			// Undraw
-			this.undraw();
-		}
+		// if (RANDOM_DRAW > 0.99) {
+		// 	// Undraw
+		// 	this.undraw();
+		// }
 	}
 }
