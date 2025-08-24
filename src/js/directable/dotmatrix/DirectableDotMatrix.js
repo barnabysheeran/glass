@@ -8,10 +8,10 @@ import ComponentManager from './component/ComponentManager.js';
 
 import ViewTest from './view/test/ViewTest.js';
 
-import ViewHeader from './view/header/ViewHeader.js';
-import ViewIntro from './view/intro/ViewIntro.js';
-import ViewProjectMenu from './view/menu/ViewProjectMenu.js';
-import ViewProject from './view/project/ViewProject.js';
+// import ViewHeader from './view/header/ViewHeader.js';
+// import ViewIntro from './view/intro/ViewIntro.js';
+// import ViewProjectMenu from './view/menu/ViewProjectMenu.js';
+// import ViewProject from './view/project/ViewProject.js';
 
 import DirectableDotMatrixConstants from './DirectableDotMatrixConstants.js';
 
@@ -21,7 +21,7 @@ export default class DirectableDotMatrix {
 	#COMPONENT_MANAGER;
 
 	// #VIEW_HEADER;
-	#VIEWS = [];
+	// #VIEWS = [];
 
 	#viewIdCurrent = 'intro';
 	#hasDrawCompleted = false;
@@ -39,7 +39,7 @@ export default class DirectableDotMatrix {
 		);
 
 		// Get Project Data
-		const PROJECT_DATA = DataController.getProjects();
+		// const PROJECT_DATA = DataController.getProjects();
 
 		// Create Dot Manager
 		this.#DOT_MANAGER = new DotManager(displayWidthPx, displayHeightPx);
@@ -58,34 +58,34 @@ export default class DirectableDotMatrix {
 		// );
 
 		// Create View Intro
-		this.#VIEWS.push(
-			new ViewIntro(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'intro'),
-		);
+		// this.#VIEWS.push(
+		// 	new ViewIntro(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'intro'),
+		// );
 
 		// Create View Project Menu
-		this.#VIEWS.push(
-			new ViewProjectMenu(
-				this.#SHAPE_MANAGER,
-				this.#COMPONENT_MANAGER,
-				'project-menu',
-			),
-		);
+		// this.#VIEWS.push(
+		// 	new ViewProjectMenu(
+		// 		this.#SHAPE_MANAGER,
+		// 		this.#COMPONENT_MANAGER,
+		// 		'project-menu',
+		// 	),
+		// );
 
 		// Create Project Views
-		PROJECT_DATA.forEach((project) => {
-			this.#VIEWS.push(
-				new ViewProject(
-					this.#SHAPE_MANAGER,
-					this.#COMPONENT_MANAGER,
-					project.id,
-				),
-			);
-		});
+		// PROJECT_DATA.forEach((project) => {
+		// 	this.#VIEWS.push(
+		// 		new ViewProject(
+		// 			this.#SHAPE_MANAGER,
+		// 			this.#COMPONENT_MANAGER,
+		// 			project.id,
+		// 		),
+		// 	);
+		// });
 
 		// Create Test View
-		this.#VIEWS.push(
-			new ViewTest(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'test'),
-		);
+		// this.#VIEWS.push(
+		// 	new ViewTest(this.#SHAPE_MANAGER, this.#COMPONENT_MANAGER, 'test'),
+		// );
 
 		// Start Initial View
 		// this.#VIEW_HEADER.start(0);
@@ -96,9 +96,9 @@ export default class DirectableDotMatrix {
 
 	tick(frameDeltaMS) {
 		// Tick Views
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			this.#VIEWS[i].tick(frameDeltaMS);
-		}
+		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
+		// 	this.#VIEWS[i].tick(frameDeltaMS);
+		// }
 
 		// Tick Component Manager
 		this.#COMPONENT_MANAGER.tick();
@@ -244,11 +244,11 @@ export default class DirectableDotMatrix {
 	// ____________________________________________________________________ Util
 
 	#getViewById(viewId) {
-		for (let i = 0; i < this.#VIEWS.length; i += 1) {
-			if (this.#VIEWS[i].getViewId() === viewId) {
-				return this.#VIEWS[i];
-			}
-		}
+		// for (let i = 0; i < this.#VIEWS.length; i += 1) {
+		// 	if (this.#VIEWS[i].getViewId() === viewId) {
+		// 		return this.#VIEWS[i];
+		// 	}
+		// }
 
 		return null;
 	}
