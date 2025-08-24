@@ -65,9 +65,11 @@ export default class DirectableDotMatrixConstants {
 
 	// _____________________________________________________ DelayGlyph Position
 
+	// TODO Hard Coded
+
 	static getDelayFromGridPosition(gridX, gridY) {
 		// Calculate Delay
-		const DELAY = gridX * 1 + gridY * 1;
+		const DELAY = gridX * 10 + gridY * 10;
 
 		return Math.floor(DELAY);
 	}

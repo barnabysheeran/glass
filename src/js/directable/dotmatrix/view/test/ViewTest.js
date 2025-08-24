@@ -16,8 +16,7 @@ import ComponentRectangle from '../../component/primative/ComponentRectangle.js'
 export default class DotMatrixViewTest extends DotMatrixView {
 	#STRING_CHAR_TEST_1 = `- _ / : ; , . ' ! "`;
 	#STRING_CHAR_TEST_2 = `^ < {heart} > ^`;
-
-	#STRING_CHAR_TEST_BB = '{wing-left} {skull} {wing-right}';
+	#STRING_CHAR_TEST_BB = '{wing-left}{skull}{wing-right}';
 
 	// ___________________________________________________________________ Start
 
@@ -56,7 +55,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		const LINE_TOP = new ComponentLineWidthFull(
 			this.SHAPE_MANAGER,
 			LINE_HEIGHT * gridY,
-			1,
+			10,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 			DrawType.Fill,
@@ -76,7 +75,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -94,7 +93,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -112,7 +111,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -130,7 +129,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -148,7 +147,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
@@ -166,7 +165,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			LINE_HEIGHT * gridY,
 			100,
 			50,
-			1,
+			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
