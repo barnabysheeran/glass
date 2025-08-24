@@ -224,21 +224,17 @@ export default class DirectableDotMatrix {
 	setSize(width, height) {
 		// Stop
 		// this.#VIEW_HEADER.stop();
-		this.#getViewById(this.#viewIdCurrent).stop();
-
-		// Reset Component Manager
-		this.#COMPONENT_MANAGER.reset();
-
-		// Reset Shape Manager
-		this.#SHAPE_MANAGER.reset();
-
-		// Reset Dot Manager
-		this.#DOT_MANAGER.reset();
-		this.#DOT_MANAGER.setSize(width, height);
-
-		// Start Current View
-		// this.#VIEW_HEADER.start(0);
-		this.#getViewById(this.#viewIdCurrent).start(0);
+		// this.#getViewById(this.#viewIdCurrent).stop();
+		// // Reset Component Manager
+		// this.#COMPONENT_MANAGER.reset();
+		// // Reset Shape Manager
+		// this.#SHAPE_MANAGER.reset();
+		// // Reset Dot Manager
+		// this.#DOT_MANAGER.reset();
+		// this.#DOT_MANAGER.setSize(width, height);
+		// // Start Current View
+		// // this.#VIEW_HEADER.start(0);
+		// this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
 	// ____________________________________________________________________ Util
