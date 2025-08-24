@@ -25,14 +25,14 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		super.start(delayFrames);
 
 		// Start
-		this.draw(delayFrames);
+		// this.draw(delayFrames);
 	}
 
 	stop(delayFrames = 0) {
 		super.stop(delayFrames);
 
 		// Stop
-		this.undraw(delayFrames);
+		// this.undraw(delayFrames);
 	}
 
 	// ____________________________________________________________________ Draw
