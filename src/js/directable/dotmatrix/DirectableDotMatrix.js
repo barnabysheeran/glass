@@ -89,7 +89,7 @@ export default class DirectableDotMatrix {
 
 		// Start Initial View
 		// this.#VIEW_HEADER.start(0);
-		this.#getViewById(this.#viewIdCurrent).start(0);
+		// this.#getViewById(this.#viewIdCurrent).start(0);
 	}
 
 	// ____________________________________________________________________ Tick
@@ -110,7 +110,7 @@ export default class DirectableDotMatrix {
 		// Components Complete ?
 		if (ACTIVE_COMPONENT_TOTAL === 0 && this.#hasDrawCompleted === false) {
 			// View Draw Complete
-			this.#getViewById(this.#viewIdCurrent).onDrawComplete();
+			// this.#getViewById(this.#viewIdCurrent).onDrawComplete();
 
 			// Set Dot Manager Draw Complete
 			this.#hasDrawCompleted = true;
