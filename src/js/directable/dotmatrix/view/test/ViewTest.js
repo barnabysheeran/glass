@@ -9,6 +9,8 @@ import FillStrategyType from '../../enum/FillStrategyType.js';
 import DrawType from '../../enum/DrawType.js';
 
 import ComponentLineWidthFull from '../../component/line/ComponentLineWidthFull.js';
+import ComponentGlyphLineCentered from '../../component/glyph/ComponentGlyphLineCentered.js';
+
 import ComponentGlyphBox from '../../component/glyph/ComponentGlyphBox.js';
 import ComponentGlyphBoxWidthFull from '../../component/glyph/ComponentGlyphBoxWidthFull.js';
 import ComponentRectangle from '../../component/primative/ComponentRectangle.js';
@@ -68,7 +70,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		gridY += 2;
 
 		// Create Component abc
-		const COMPONENT_abc = new ComponentGlyphBox(
+		const COMPONENT_ABC = new ComponentGlyphBox(
 			this.SHAPE_MANAGER,
 			'abcd efgh ijkl mnop qrst uvwx yz',
 			0,
@@ -80,7 +82,7 @@ export default class DotMatrixViewTest extends DotMatrixView {
 			FillStrategyType.PassThrough,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_abc);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
 
 		// Next
 		gridY += 2;
