@@ -20,6 +20,8 @@ export default class DotMatrixViewTest extends DotMatrixView {
 	#STRING_CHAR_TEST_2 = `^ < {heart} > ^`;
 	#STRING_CHAR_TEST_BB = '{wing-left}{skull}{wing-right}';
 
+	#DELAY_GLYPH = 2;
+
 	// ___________________________________________________________________ Start
 
 	start(delayFrames = 0) {
@@ -67,186 +69,190 @@ export default class DotMatrixViewTest extends DotMatrixView {
 		this.COMPONENT_MANAGER.addComponent(LINE_TOP);
 
 		// Next
-		gridY += 2;
+		gridY += 6;
 
 		// Create Component abc
-		const COMPONENT_ABC = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'abcd efgh ijkl mnop qrst uvwx yz',
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_ABC = new ComponentGlyphBox(
+		// 	this.SHAPE_MANAGER,
+		// 	'abcd efgh ijkl mnop qrst uvwx yz',
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	100,
+		// 	50,
+		// 	DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	this.#DELAY_GLYPH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_ABC);
 
 		// Next
-		gridY += 2;
+		// gridY += 2;
 
 		// Add Component 0001
-		const COMPONENT_0001 = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'0123 4567 89',
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_0001 = new ComponentGlyphBox(
+		// 	this.SHAPE_MANAGER,
+		// 	'0123 4567 89',
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	100,
+		// 	50,
+		// 	DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	this.#DELAY_GLYPH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_0001);
 
 		// Next
-		gridY += 1;
+		// gridY += 1;
 
 		// Add Component 0002
-		const COMPONENT_0002 = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			'9876 5432 10',
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_0002 = new ComponentGlyphBox(
+		// 	this.SHAPE_MANAGER,
+		// 	'9876 5432 10',
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	100,
+		// 	50,
+		// 	DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	this.#DELAY_GLYPH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_0002);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_0002);
 
 		// Next
-		gridY += 1;
+		// gridY += 1;
 
 		// Add Component Character Test 1
-		const COMPONENT_CHARACTER_TEST_1 = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			this.#STRING_CHAR_TEST_1,
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_CHARACTER_TEST_1 = new ComponentGlyphBox(
+		// 	this.SHAPE_MANAGER,
+		// 	this.#STRING_CHAR_TEST_1,
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	100,
+		// 	50,
+		// 	DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	this.#DELAY_GLYPH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_1);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_1);
 
 		// Next
-		gridY += 2;
+		// gridY += 2;
 
 		// Add Component Character Test 2
-		const COMPONENT_CHARACTER_TEST_2 = new ComponentGlyphBox(
-			this.SHAPE_MANAGER,
-			this.#STRING_CHAR_TEST_2,
-			0,
-			LINE_HEIGHT * gridY,
-			100,
-			50,
-			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_CHARACTER_TEST_2 = new ComponentGlyphBox(
+		// 	this.SHAPE_MANAGER,
+		// 	this.#STRING_CHAR_TEST_2,
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	100,
+		// 	50,
+		// 	DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+		// 	this.#DELAY_GLYPH,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_2);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_2);
 
 		// Next
-		gridY += 2;
+		// gridY += 2;
 
-		// Add Component Character Test BB
-		const COMPONENT_CHARACTER_TEST_BB = new ComponentGlyphBox(
+		// Add Component Character Test BB_CENTER
+		const COMPONENT_CHARACTER_TEST_BB_CENTER = new ComponentGlyphLineCentered(
 			this.SHAPE_MANAGER,
 			this.#STRING_CHAR_TEST_BB,
-			0,
 			LINE_HEIGHT * gridY,
-			100,
-			50,
 			DirectableDotMatrixConstants.getDelayFromGridPosition(0, gridY),
+			this.#DELAY_GLYPH,
 			FillType.PassThrough,
 			FillStrategyType.PassThrough,
 		);
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_BB);
+		this.COMPONENT_MANAGER.addComponent(COMPONENT_CHARACTER_TEST_BB_CENTER);
 
 		// Next
 		gridY += 2;
 
 		// Rectangles
-		const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
-		const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
+		// const RECTANGLE_WIDTH = LINE_HEIGHT * 1;
+		// const RECTANGLE_HEIGHT = LINE_HEIGHT * 1;
 
 		// Create Component Rectangle A
-		const COMPONENT_RECTANGLE_A = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			0,
-			LINE_HEIGHT * gridY,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			GRID_WIDTH_IN_CELLS_THIRD,
-			FillType.PassThrough,
-			FillStrategyType.Reverse,
-		);
+		// const COMPONENT_RECTANGLE_A = new ComponentRectangle(
+		// 	this.SHAPE_MANAGER,
+		// 	0,
+		// 	LINE_HEIGHT * gridY,
+		// 	RECTANGLE_WIDTH,
+		// 	RECTANGLE_HEIGHT,
+		// 	GRID_WIDTH_IN_CELLS_THIRD,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.Reverse,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_A);
 
 		// Create Component Rectangle B
-		const COMPONENT_RECTANGLE_B = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			RECTANGLE_WIDTH + 2,
-			LINE_HEIGHT * gridY,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			GRID_WIDTH_IN_CELLS - GRID_WIDTH_IN_CELLS_THIRD,
-			FillType.PassThrough,
-			FillStrategyType.Random,
-		);
+		// const COMPONENT_RECTANGLE_B = new ComponentRectangle(
+		// 	this.SHAPE_MANAGER,
+		// 	RECTANGLE_WIDTH + 2,
+		// 	LINE_HEIGHT * gridY,
+		// 	RECTANGLE_WIDTH,
+		// 	RECTANGLE_HEIGHT,
+		// 	GRID_WIDTH_IN_CELLS - GRID_WIDTH_IN_CELLS_THIRD,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.Random,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_B);
 
 		// Create Component Rectangle C
-		const COMPONENT_RECTANGLE_C = new ComponentRectangle(
-			this.SHAPE_MANAGER,
-			RECTANGLE_WIDTH * 2 + 4,
-			LINE_HEIGHT * gridY,
-			RECTANGLE_WIDTH,
-			RECTANGLE_HEIGHT,
-			GRID_WIDTH_IN_CELLS,
-			FillType.PassThrough,
-			FillStrategyType.PassThrough,
-		);
+		// const COMPONENT_RECTANGLE_C = new ComponentRectangle(
+		// 	this.SHAPE_MANAGER,
+		// 	RECTANGLE_WIDTH * 2 + 4,
+		// 	LINE_HEIGHT * gridY,
+		// 	RECTANGLE_WIDTH,
+		// 	RECTANGLE_HEIGHT,
+		// 	GRID_WIDTH_IN_CELLS,
+		// 	FillType.PassThrough,
+		// 	FillStrategyType.PassThrough,
+		// );
 
-		this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
+		// this.COMPONENT_MANAGER.addComponent(COMPONENT_RECTANGLE_C);
 
 		// Next
-		gridY += 2;
+		// gridY += 2;
 
 		// Dummy Text with Line Height
-		const BLOCK_GRID_TOP = gridY;
-		const BLOCK_GRID_BOTTOM = gridY + 2;
+		// const BLOCK_GRID_TOP = gridY;
+		// const BLOCK_GRID_BOTTOM = gridY + 2;
 
-		for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
-			// Create Component
-			const Y = LINE_HEIGHT * i;
+		// for (let i = BLOCK_GRID_TOP; i < BLOCK_GRID_BOTTOM; i += 1) {
+		// 	// Create Component
+		// 	const Y = LINE_HEIGHT * i;
 
-			const COMPONENT = new ComponentGlyphBoxWidthFull(
-				this.SHAPE_MANAGER,
-				'HELLO',
-				0,
-				LINE_HEIGHT * Y,
-				DirectableDotMatrixConstants.getDelayFromGridPosition(0, Y),
-				FillType.PassThrough,
-				FillStrategyType.PassThrough,
-			);
+		// 	const COMPONENT = new ComponentGlyphBoxWidthFull(
+		// 		this.SHAPE_MANAGER,
+		// 		'HELLO',
+		// 		0,
+		// 		LINE_HEIGHT * Y,
+		// 		DirectableDotMatrixConstants.getDelayFromGridPosition(0, Y),
+		// 		this.#DELAY_GLYPH,
+		// 		FillType.PassThrough,
+		// 		FillStrategyType.PassThrough,
+		// 	);
 
-			// Store
-			this.COMPONENT_MANAGER.addComponent(COMPONENT);
-		}
+		// 	// Store
+		// 	this.COMPONENT_MANAGER.addComponent(COMPONENT);
+		// }
 
 		// Create Component Line Bottom
 		const LINE_BOTTOM = new ComponentLineWidthFull(

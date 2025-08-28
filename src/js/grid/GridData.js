@@ -3,8 +3,8 @@ import { vec2 } from 'gl-matrix';
 import ApplicationLogger from '../application/ApplicationLogger.js';
 
 export default class GridData {
-	static #gridCellWidthPx = 5; // 3;
-	static #gridCellHeightPx = 5; // 3;
+	static #gridCellWidthPx = 2; // 3;
+	static #gridCellHeightPx = 2; // 3;
 
 	static #resolutionWidth = 0;
 	static #resolutionHeight = 0;
